@@ -1,0 +1,115 @@
+{
+  "family": "Treasury term premium A",
+  "status": "FAIL_DEVELOPMENT",
+  "validation": "LOCKED; no 2015+ ETF price loaded",
+  "plan_sha256": "ee99196aa672009171c999d4aba36028fb2238ae23feabca6dbacd12c9aab186",
+  "inputs_sha256": {
+    "IEF": "684a4a7a017f8494dd56d376ed780a9486026edcdcc4301208cf161c4e7171f7",
+    "SHY": "5590f99c4db64b628765a7f87a3281d7c498a462439314a4b635b18dbb3d52bf",
+    "TLT": "8a2e20d6556457168e8397afbbb86683401f0dd126e0833abb2cbe6c2965c0c9",
+    "SPY": "c927a8371ad9d9552e5a1cd0d96bfcd005ae62f72d4f590c51681a81c6e4fc0c"
+  },
+  "window": [
+    "2003-01-02",
+    "2014-12-31"
+  ],
+  "years": 11.994524298425736,
+  "days": 3020,
+  "active_sharpe_gate": 0.5197338352751221,
+  "candidate_base": {
+    "annual_mean": 0.05560077590302742,
+    "sharpe": 0.8166868136190958,
+    "total_return": 0.893623870308732,
+    "max_drawdown": -0.10376704710437124
+  },
+  "candidate_stress": {
+    "annual_mean": 0.055500643452696286,
+    "sharpe": 0.8151031613158554,
+    "total_return": 0.8913386978197002,
+    "max_drawdown": -0.10376704710437057
+  },
+  "c0_shy": {
+    "annual_mean": 0.02254051924936053,
+    "sharpe": 1.3993921408284493,
+    "total_return": 0.3080840611836928,
+    "max_drawdown": -0.02111342820847517
+  },
+  "c1_barbell": {
+    "annual_mean": 0.041478681085962484,
+    "sharpe": 0.820255779255025,
+    "total_return": 0.61887653494566,
+    "max_drawdown": -0.10142711591645548
+  },
+  "active_vs_c0": {
+    "annual_mean": 0.03306025665366689,
+    "sharpe": 0.5693181201090496,
+    "total_return": 0.4564184507466005,
+    "max_drawdown": -0.09423840888395174
+  },
+  "active_stress_vs_c0": {
+    "annual_mean": 0.03296012420333576,
+    "sharpe": 0.5675118413155558,
+    "total_return": 0.45466347669745666,
+    "max_drawdown": -0.09423840888395196
+  },
+  "vs_c1": {
+    "annual_mean": 0.014122094817064928,
+    "sharpe": 0.4927500373747527,
+    "total_return": 0.17858906904675842,
+    "max_drawdown": -0.046474844924007774
+  },
+  "null": {
+    "worlds": 5000,
+    "block": 21,
+    "seed": 20260923,
+    "null_method": "paired mean-centered circular block bootstrap",
+    "p_observed_one_sided": 0.02299540091981604,
+    "p_full_development_pass_null": 0.0164,
+    "pass_probability_mc_se": 0.0017961648031291561,
+    "annual_mean_95pct_block_ci": [
+      0.0012601259947829415,
+      0.06536772983482098
+    ],
+    "null_active_sharpe_quantiles": {
+      "0.05": -0.4564109020640088,
+      "0.5": -0.0009052024069232233,
+      "0.95": 0.4677289787976933,
+      "0.99": 0.672998176403376
+    }
+  },
+  "correlation_active_spy_minus_shy": -0.3881861831817691,
+  "annual_active_sum": {
+    "2003": 0.03601466709890085,
+    "2004": 0.037159062995236636,
+    "2005": 0.00938150383748948,
+    "2006": -0.007647003967292787,
+    "2007": 0.025033544857960832,
+    "2008": 0.10840233058011173,
+    "2009": -0.06901858160450092,
+    "2010": 0.06242289859272632,
+    "2011": 0.13386354847724624,
+    "2012": 0.036726978522592546,
+    "2013": -0.057491712968133046,
+    "2014": 0.08135107744303513
+  },
+  "best_12m_removed": {
+    "removed_start": "2011-02-14",
+    "removed_end_exclusive": "2012-02-14",
+    "remaining": {
+      "annual_mean": 0.022331686805776293,
+      "sharpe": 0.39136590080608075,
+      "total_return": 0.2553454193218816,
+      "max_drawdown": -0.10215294146125597
+    }
+  },
+  "best_24m_removed": {
+    "removed_start": "2010-06-03",
+    "removed_end_exclusive": "2012-06-03",
+    "remaining": {
+      "annual_mean": 0.01967802991853115,
+      "sharpe": 0.34950498853295536,
+      "total_return": 0.19790443057775264,
+      "max_drawdown": -0.1074971497767544
+    }
+  }
+}

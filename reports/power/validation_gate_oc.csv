@@ -1,0 +1,106 @@
+case,val_gate,true_net_sharpe,p_dev,p_val_given_dev_pass,p_joint,val_threshold_sharpe,years80_joint_total_50_50
+tsy_like_12+11.6y,current: S>=0.75 & p<.05 & stress,-0.3,0.00582,0.00124,1e-05,0.75,
+tsy_like_12+11.6y,current: S>=0.75 & p<.05 & stress,0.0,0.05,0.01532,0.00077,0.75,
+tsy_like_12+11.6y,current: S>=0.75 & p<.05 & stress,0.05,0.067,0.02182,0.00146,0.75,inf
+tsy_like_12+11.6y,current: S>=0.75 & p<.05 & stress,0.3,0.22159,0.09734,0.02157,0.75,inf
+tsy_like_12+11.6y,current: S>=0.75 & p<.05 & stress,0.5,0.42796,0.23565,0.10085,0.75,inf
+tsy_like_12+11.6y,current: S>=0.75 & p<.05 & stress,0.7,0.6567,0.44273,0.29075,0.75,inf
+tsy_like_12+11.6y,current: S>=0.75 & p<.05 & stress,1.0,0.89979,0.76419,0.68761,0.75,37.20576
+tsy_like_12+11.6y,PROPOSED PAV: HAC-t p<.05/k_val & stress,-0.3,0.00582,0.00605,4e-05,0.57069,
+tsy_like_12+11.6y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.0,0.05,0.05,0.0025,0.57069,
+tsy_like_12+11.6y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.05,0.067,0.06671,0.00447,0.57069,inf
+tsy_like_12+11.6y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.3,0.22159,0.21766,0.04823,0.57069,437.87328
+tsy_like_12+11.6y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.5,0.42796,0.41929,0.17944,0.57069,93.90543
+tsy_like_12+11.6y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.7,0.6567,0.64524,0.42374,0.57069,47.92079
+tsy_like_12+11.6y,PROPOSED PAV: HAC-t p<.05/k_val & stress,1.0,0.89979,0.8918,0.80243,0.57069,23.49144
+tsy_like_12+11.6y,PAV + floor S>=0.3,-0.3,0.00582,0.00605,4e-05,0.57069,
+tsy_like_12+11.6y,PAV + floor S>=0.3,0.0,0.05,0.05,0.0025,0.57069,
+tsy_like_12+11.6y,PAV + floor S>=0.3,0.05,0.067,0.06671,0.00447,0.57069,inf
+tsy_like_12+11.6y,PAV + floor S>=0.3,0.3,0.22159,0.21766,0.04823,0.57069,inf
+tsy_like_12+11.6y,PAV + floor S>=0.3,0.5,0.42796,0.41929,0.17944,0.57069,98.55354
+tsy_like_12+11.6y,PAV + floor S>=0.3,0.7,0.6567,0.64524,0.42374,0.57069,47.92078
+tsy_like_12+11.6y,PAV + floor S>=0.3,1.0,0.89979,0.8918,0.80243,0.57069,23.49144
+tsy_like_12+11.6y,PAV at k_val=3,-0.3,0.00582,0.00138,1e-05,0.73834,
+tsy_like_12+11.6y,PAV at k_val=3,0.0,0.05,0.01667,0.00083,0.73834,
+tsy_like_12+11.6y,PAV at k_val=3,0.05,0.067,0.02363,0.00158,0.73834,inf
+tsy_like_12+11.6y,PAV at k_val=3,0.3,0.22159,0.10325,0.02288,0.73834,437.87327
+tsy_like_12+11.6y,PAV at k_val=3,0.5,0.42796,0.24611,0.10533,0.73834,113.20279
+tsy_like_12+11.6y,PAV at k_val=3,0.7,0.6567,0.45603,0.29948,0.73834,57.76698
+tsy_like_12+11.6y,PAV at k_val=3,1.0,0.89979,0.7744,0.6968,0.73834,28.31671
+tsy_like_12+11.6y,effect-size: S_val >= 0.5 x S_dev & p<.05,-0.3,0.00582,0.00605,4e-05,,
+tsy_like_12+11.6y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.0,0.05,0.04991,0.0025,,
+tsy_like_12+11.6y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.05,0.067,0.06656,0.00446,,inf
+tsy_like_12+11.6y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.3,0.22159,0.21636,0.04794,,449.95061
+tsy_like_12+11.6y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.5,0.42796,0.41432,0.17731,,100.3469
+tsy_like_12+11.6y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.7,0.6567,0.63178,0.4149,,51.2106
+tsy_like_12+11.6y,effect-size: S_val >= 0.5 x S_dev & p<.05,1.0,0.89979,0.86115,0.77485,,25.10694
+generic_daily_5+5y,current: S>=0.75 & p<.05 & stress,-0.3,0.00939,0.01122,0.00011,0.77335,
+generic_daily_5+5y,current: S>=0.75 & p<.05 & stress,0.0,0.04344,0.05,0.00217,0.77335,
+generic_daily_5+5y,current: S>=0.75 & p<.05 & stress,0.05,0.05416,0.06196,0.00336,0.77335,inf
+generic_daily_5+5y,current: S>=0.75 & p<.05 & stress,0.3,0.14142,0.15704,0.02221,0.77335,inf
+generic_daily_5+5y,current: S>=0.75 & p<.05 & stress,0.5,0.25832,0.28053,0.07247,0.77335,inf
+generic_daily_5+5y,current: S>=0.75 & p<.05 & stress,0.7,0.41169,0.43804,0.18034,0.77335,inf
+generic_daily_5+5y,current: S>=0.75 & p<.05 & stress,1.0,0.66071,0.68497,0.45257,0.77335,29.82436
+generic_daily_5+5y,PROPOSED PAV: HAC-t p<.05/k_val & stress,-0.3,0.00939,0.01122,0.00011,0.77335,
+generic_daily_5+5y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.0,0.04344,0.05,0.00217,0.77335,
+generic_daily_5+5y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.05,0.05416,0.06196,0.00336,0.77335,inf
+generic_daily_5+5y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.3,0.14142,0.15704,0.02221,0.77335,210.83468
+generic_daily_5+5y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.5,0.25832,0.28053,0.07247,0.77335,75.90983
+generic_daily_5+5y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.7,0.41169,0.43804,0.18034,0.77335,38.73665
+generic_daily_5+5y,PROPOSED PAV: HAC-t p<.05/k_val & stress,1.0,0.66071,0.68497,0.45257,0.77335,18.9884
+generic_daily_5+5y,PAV + floor S>=0.3,-0.3,0.00939,0.01122,0.00011,0.77335,
+generic_daily_5+5y,PAV + floor S>=0.3,0.0,0.04344,0.05,0.00217,0.77335,
+generic_daily_5+5y,PAV + floor S>=0.3,0.05,0.05416,0.06196,0.00336,0.77335,inf
+generic_daily_5+5y,PAV + floor S>=0.3,0.3,0.14142,0.15704,0.02221,0.77335,inf
+generic_daily_5+5y,PAV + floor S>=0.3,0.5,0.25832,0.28053,0.07247,0.77335,80.21812
+generic_daily_5+5y,PAV + floor S>=0.3,0.7,0.41169,0.43804,0.18034,0.77335,38.73665
+generic_daily_5+5y,PAV + floor S>=0.3,1.0,0.66071,0.68497,0.45257,0.77335,18.9884
+generic_daily_5+5y,PAV at k_val=3,-0.3,0.00939,0.00284,3e-05,1.00053,
+generic_daily_5+5y,PAV at k_val=3,0.0,0.04344,0.01667,0.00072,1.00053,
+generic_daily_5+5y,PAV at k_val=3,0.05,0.05416,0.0216,0.00117,1.00053,inf
+generic_daily_5+5y,PAV at k_val=3,0.3,0.14142,0.06813,0.00964,1.00053,251.79829
+generic_daily_5+5y,PAV at k_val=3,0.5,0.25832,0.14359,0.03709,1.00053,90.65735
+generic_daily_5+5y,PAV at k_val=3,0.7,0.41169,0.26144,0.10763,1.00053,46.26138
+generic_daily_5+5y,PAV at k_val=3,1.0,0.66071,0.49955,0.33006,1.00053,22.67601
+generic_daily_5+5y,effect-size: S_val >= 0.5 x S_dev & p<.05,-0.3,0.00939,0.01121,0.00011,,
+generic_daily_5+5y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.0,0.04344,0.04987,0.00217,,
+generic_daily_5+5y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.05,0.05416,0.06178,0.00335,,inf
+generic_daily_5+5y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.3,0.14142,0.15613,0.02208,,225.39956
+generic_daily_5+5y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.5,0.25832,0.27788,0.07178,,81.15638
+generic_daily_5+5y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.7,0.41169,0.43157,0.17767,,41.41591
+generic_daily_5+5y,effect-size: S_val >= 0.5 x S_dev & p<.05,1.0,0.66071,0.66761,0.4411,,20.30379
+generic_daily_10+10y,current: S>=0.75 & p<.05 & stress,-0.3,0.00447,0.00079,0.0,0.75,
+generic_daily_10+10y,current: S>=0.75 & p<.05 & stress,0.0,0.04344,0.01204,0.00052,0.75,
+generic_daily_10+10y,current: S>=0.75 & p<.05 & stress,0.05,0.05917,0.01762,0.00104,0.75,inf
+generic_daily_10+10y,current: S>=0.75 & p<.05 & stress,0.3,0.20906,0.08795,0.01839,0.75,inf
+generic_daily_10+10y,current: S>=0.75 & p<.05 & stress,0.5,0.41756,0.22608,0.0944,0.75,inf
+generic_daily_10+10y,current: S>=0.75 & p<.05 & stress,0.7,0.65293,0.44025,0.28745,0.75,inf
+generic_daily_10+10y,current: S>=0.75 & p<.05 & stress,1.0,0.90227,0.77377,0.69815,0.75,29.82436
+generic_daily_10+10y,PROPOSED PAV: HAC-t p<.05/k_val & stress,-0.3,0.00447,0.00543,2e-05,0.54684,
+generic_daily_10+10y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.0,0.04344,0.05,0.00217,0.54684,
+generic_daily_10+10y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.05,0.05917,0.06753,0.004,0.54684,inf
+generic_daily_10+10y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.3,0.20906,0.22892,0.04786,0.54684,210.83468
+generic_daily_10+10y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.5,0.41756,0.44399,0.18539,0.54684,75.90983
+generic_daily_10+10y,PROPOSED PAV: HAC-t p<.05/k_val & stress,0.7,0.65293,0.67742,0.4423,0.54684,38.73665
+generic_daily_10+10y,PROPOSED PAV: HAC-t p<.05/k_val & stress,1.0,0.90227,0.91338,0.82412,0.54684,18.9884
+generic_daily_10+10y,PAV + floor S>=0.3,-0.3,0.00447,0.00543,2e-05,0.54684,
+generic_daily_10+10y,PAV + floor S>=0.3,0.0,0.04344,0.05,0.00217,0.54684,
+generic_daily_10+10y,PAV + floor S>=0.3,0.05,0.05917,0.06753,0.004,0.54684,inf
+generic_daily_10+10y,PAV + floor S>=0.3,0.3,0.20906,0.22892,0.04786,0.54684,inf
+generic_daily_10+10y,PAV + floor S>=0.3,0.5,0.41756,0.44399,0.18539,0.54684,80.21812
+generic_daily_10+10y,PAV + floor S>=0.3,0.7,0.65293,0.67742,0.4423,0.54684,38.73665
+generic_daily_10+10y,PAV + floor S>=0.3,1.0,0.90227,0.91338,0.82412,0.54684,18.9884
+generic_daily_10+10y,PAV at k_val=3,-0.3,0.00447,0.00122,1e-05,0.70748,
+generic_daily_10+10y,PAV at k_val=3,0.0,0.04344,0.01667,0.00072,0.70748,
+generic_daily_10+10y,PAV at k_val=3,0.05,0.05917,0.02398,0.00142,0.70748,inf
+generic_daily_10+10y,PAV at k_val=3,0.3,0.20906,0.11018,0.02303,0.70748,251.79829
+generic_daily_10+10y,PAV at k_val=3,0.5,0.41756,0.26633,0.11121,0.70748,90.65735
+generic_daily_10+10y,PAV at k_val=3,0.7,0.65293,0.49103,0.32061,0.70748,46.26138
+generic_daily_10+10y,PAV at k_val=3,1.0,0.90227,0.81032,0.73113,0.70748,22.67601
+generic_daily_10+10y,effect-size: S_val >= 0.5 x S_dev & p<.05,-0.3,0.00447,0.00543,2e-05,,
+generic_daily_10+10y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.0,0.04344,0.04987,0.00217,,
+generic_daily_10+10y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.05,0.05917,0.06732,0.00398,,inf
+generic_daily_10+10y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.3,0.20906,0.22711,0.04748,,225.39956
+generic_daily_10+10y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.5,0.41756,0.43734,0.18262,,81.15638
+generic_daily_10+10y,effect-size: S_val >= 0.5 x S_dev & p<.05,0.7,0.65293,0.66053,0.43128,,41.41591
+generic_daily_10+10y,effect-size: S_val >= 0.5 x S_dev & p<.05,1.0,0.90227,0.87956,0.7936,,20.30379

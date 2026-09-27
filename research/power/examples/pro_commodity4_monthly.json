@@ -1,0 +1,53 @@
+{
+ "name": "pro_commodity4_monthly",
+ "description": "4 commodities x 35y monthly carry, common crash factor.",
+ "assumptions": [
+  "ASSUMPTION common crash: 3%/month chance of a -4 sd jump -> book skew/kurt via one-factor cumulants"
+ ],
+ "design": "carry",
+ "params": {
+  "n_assets": 4,
+  "periods_per_year": 12,
+  "rho": 0.4,
+  "autocorr": 0.05,
+  "skew": -0.7121,
+  "exkurt": 2.0956,
+  "sharpe_per_asset": 0.4
+ },
+ "windows": {
+  "dev_years": 17.5,
+  "val_years": 17.5
+ },
+ "gates": {
+  "batch_k": 1,
+  "stress_drag_sr": 0.1,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  }
+ },
+ "scenarios": [
+  {
+   "label": "s_asset=0.3",
+   "params": {
+    "sharpe_per_asset": 0.3
+   }
+  },
+  {
+   "label": "s_asset=0.4",
+   "params": {
+    "sharpe_per_asset": 0.4
+   }
+  },
+  {
+   "label": "s_asset=0.5",
+   "params": {
+    "sharpe_per_asset": 0.5
+   }
+  }
+ ]
+}

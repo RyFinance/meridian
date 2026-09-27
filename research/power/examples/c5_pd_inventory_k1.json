@@ -1,0 +1,138 @@
+{
+ "name": "c5_pd_inventory_k1",
+ "description": "NY Fed FR 2004 primary-dealer net outright positions in long Treasury coupons (inventory stock), weekly signal, daily P&L of a constant-duration 10y Treasury position. Signal 1998-01-28+ (first trade 1998-05-01 after a 13-week minimum history; flat 13 weeks after the 2001-07 and 2013-04 bucket-definition breaks).",
+ "assumptions": [
+  "dev 1998-05-01..2012-06-29 (14.2y less 0.25y break flat = 13.9y), val 2012-07-02..2026-08-31 (14.2y less 0.25y = 13.9y)",
+  "daily 10y-duration Treasury returns have ~zero autocorrelation; weekly-held position => D ASSUMPTION 1.1",
+  "exkurt 3 for daily Treasury returns (ASSUMPTION, typical)",
+  "vol 6.5%/yr for a 7-duration Treasury position (ASSUMPTION)",
+  "base cost 1 bp/side, stress 3 bp/side, turnover 0.3/week => stress drag 0.62%/yr / 6.5% = 0.10 Sharpe",
+  "implied net Sharpe from literature (Fleming-Rosenberg 2008 inventory compensation; intermediary asset pricing) discounted for decay: 0.2-0.45; base 0.30 (ASSUMPTION)",
+  "batch k=2, k_val=2"
+ ],
+ "design": "timeseries",
+ "params": {
+  "periods_per_year": 252,
+  "autocorr": {
+   "model": "lrv",
+   "D": 1.1
+  },
+  "skew": 0.0,
+  "exkurt": 3.0,
+  "mean_ann": 0.0195,
+  "vol_ann": 0.065
+ },
+ "windows": {
+  "dev_years": 13.9,
+  "val_years": 13.9
+ },
+ "gates": {
+  "batch_k": 1,
+  "stress_drag_sr": 0.1,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 1,
+   "floor": 0.3
+  }
+ },
+ "scenarios": [
+  {
+   "label": "implied net S=0.2",
+   "params": {
+    "mean_ann": 0.013000000000000001,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.3",
+   "params": {
+    "mean_ann": 0.0195,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.45",
+   "params": {
+    "mean_ann": 0.02925,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.6",
+   "params": {
+    "mean_ann": 0.039,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.8",
+   "params": {
+    "mean_ann": 0.052000000000000005,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "D=1.3 (weekly overlap residue), S=0.3",
+   "params": {
+    "autocorr": {
+     "model": "lrv",
+     "D": 1.3
+    }
+   }
+  },
+  {
+   "label": "IEF-only window 2002-08.. (24.0y), S=0.3",
+   "windows": {
+    "dev_years": 11.9,
+    "val_years": 12.1
+   }
+  },
+  {
+   "label": "D=1.0 (Amendment-4 Q3 floor), S=0.7 check",
+   "params": {
+    "autocorr": {
+     "model": "lrv",
+     "D": 1.0
+    },
+    "mean_ann": 0.0455
+   }
+  },
+  {
+   "label": "D=1.0, batch k=1 (registered alone), S=0.7",
+   "params": {
+    "autocorr": {
+     "model": "lrv",
+     "D": 1.0
+    },
+    "mean_ann": 0.0455
+   },
+   "gates": {
+    "batch_k": 1,
+    "pav": {
+     "k_val": 1,
+     "floor": 0.3
+    }
+   }
+  },
+  {
+   "label": "D=1.1, batch k=1, S=0.7",
+   "params": {
+    "mean_ann": 0.0455
+   },
+   "gates": {
+    "batch_k": 1,
+    "pav": {
+     "k_val": 1,
+     "floor": 0.3
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+c4c_tsy_auction_surprise  [event_study]  dev 12.00y + val 12.50y
+  raw obs (total) 1004 events;  D_time 1.000  deff_cross 1.744  ->  effective obs 576.0
+  SE(Sharpe) dev 0.289, val 0.283;  SE(mean, mean net CAR per event (return units)) total 0.0004167
+  dev gate threshold 0.614 (binding: p_lt_alpha);  val threshold 0.750 (binding: sharpe_abs);  proposed val threshold 0.465
+  MDE Sharpe (80%): single test 0.60, dev gate 0.86, joint current 1.05, joint proposed 0.91
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.000   0.001   0.000   0.000   | 0.003  0.000
+  zero_net_null             0.00  0.017   0.017   0.004   0.000   | 0.050  0.001
+  structural_leak           0.05  0.030   0.025   0.007   0.000   | 0.071  0.002
+  S=0.3                     0.30  0.260   0.138   0.056   0.008   | 0.280  0.039
+  S=0.5                     0.50  0.636   0.346   0.188   0.065   | 0.549  0.190
+  S=0.7                     0.70  0.909   0.617   0.430   0.265   | 0.797  0.491
+  S=1.0                     1.00  0.998   0.909   0.811   0.738   | 0.971  0.882
+  implied_by_primitives     0.63  0.839   0.522   0.336   0.176   | 0.720  0.376
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   97.99     97.99             inf           226.30
+                     0.50   35.28     35.28             inf            81.48
+                     0.70   18.00     18.00             inf            41.58
+                     1.00    8.82      8.82           30.14            20.38
+                     0.63   22.20     22.20             inf            51.27
+  VERDICT (current gates): MARGINAL   [joint@0.7 = 0.265, false-pass = 0.0001];  with proposed val gate: MARGINAL
+  scenarios: label | n_eff | implied net S | joint(cur) | joint(prop) | yrs80 single | yrs80 joint(prop) | MDE natural (joint prop)
+   sd=0.7% icc=0.1 gross=10bp                   32.9 | 0.655 | 0.205 | 0.416 | 20.6 | 47.5 | 0.00131
+   sd=0.7% icc=0.1 gross=20bp                   32.9 | 1.47 | 0.993 | 0.998 | 4.06 | 9.39 | 0.00131
+   sd=0.7% icc=0.1 gross=40bp                   32.9 | 3.11 | 1 | 1 | 0.916 | 2.12 | 0.00131
+   sd=0.7% icc=0.3 gross=10bp                   23.5 | 0.554 | 0.102 | 0.26 | 28.7 | 66.3 | 0.00152
+   sd=0.7% icc=0.3 gross=20bp                   23.5 | 1.25 | 0.946 | 0.983 | 5.68 | 13.1 | 0.00152
+   sd=0.7% icc=0.3 gross=40bp                   23.5 | 2.63 | 1 | 1 | 1.28 | 2.95 | 0.00152
+   sd=0.7% icc=0.6 gross=10bp                   16.5 | 0.464 | 0.047 | 0.15 | 41 | 94.6 | 0.00177
+   sd=0.7% icc=0.6 gross=20bp                   16.5 | 1.04 | 0.792 | 0.912 | 8.1 | 18.7 | 0.00177
+   sd=0.7% icc=0.6 gross=40bp                   16.5 | 2.2 | 1 | 1 | 1.82 | 4.21 | 0.00177
+   sd=1.0% icc=0.1 gross=10bp                   32.9 | 0.459 | 0.0446 | 0.145 | 41.9 | 96.9 | 0.00179
+   sd=1.0% icc=0.1 gross=20bp                   32.9 | 1.03 | 0.778 | 0.905 | 8.29 | 19.1 | 0.00179
+   sd=1.0% icc=0.1 gross=40bp                   32.9 | 2.18 | 1 | 1 | 1.86 | 4.31 | 0.00179
+   sd=1.0% icc=0.3 gross=10bp                   23.5 | 0.388 | 0.0217 | 0.0849 | 58.6 | 135 | 0.00208
+   sd=1.0% icc=0.3 gross=20bp                   23.5 | 0.873 | 0.544 | 0.753 | 11.6 | 26.8 | 0.00208
+   sd=1.0% icc=0.3 gross=40bp                   23.5 | 1.84 | 1 | 1 | 2.6 | 6.01 | 0.00208
+   sd=1.0% icc=0.6 gross=10bp                   16.5 | 0.325 | 0.0105 | 0.0489 | 83.6 | 193 | 0.00245
+   sd=1.0% icc=0.6 gross=20bp                   16.5 | 0.731 | 0.31 | 0.542 | 16.5 | 38.2 | 0.00245
+   sd=1.0% icc=0.6 gross=40bp                   16.5 | 1.54 | 0.997 | 0.999 | 3.71 | 8.57 | 0.00245
+   sd=1.2% icc=0.1 gross=10bp                   32.9 | 0.382 | 0.0204 | 0.081 | 60.4 | 139 | 0.00211
+   sd=1.2% icc=0.1 gross=20bp                   32.9 | 0.86 | 0.522 | 0.737 | 11.9 | 27.6 | 0.00211
+   sd=1.2% icc=0.1 gross=40bp                   32.9 | 1.82 | 1 | 1 | 2.68 | 6.2 | 0.00211
+   sd=1.2% icc=0.3 gross=10bp                   23.5 | 0.323 | 0.0103 | 0.0482 | 84.4 | 195 | 0.00246
+   sd=1.2% icc=0.3 gross=20bp                   23.5 | 0.727 | 0.305 | 0.537 | 16.7 | 38.5 | 0.00246
+   sd=1.2% icc=0.3 gross=40bp                   23.5 | 1.54 | 0.996 | 0.999 | 3.75 | 8.65 | 0.00246
+   sd=1.2% icc=0.6 gross=10bp                   16.5 | 0.271 | 0.00527 | 0.0287 | 120 | 288 | 0.0029
+   sd=1.2% icc=0.6 gross=20bp                   16.5 | 0.609 | 0.152 | 0.342 | 23.8 | 54.9 | 0.0029
+   sd=1.2% icc=0.6 gross=40bp                   16.5 | 1.29 | 0.961 | 0.988 | 5.34 | 12.3 | 0.0029

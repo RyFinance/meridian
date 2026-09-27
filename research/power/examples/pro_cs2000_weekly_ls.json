@@ -1,0 +1,203 @@
+{
+ "name": "pro_cs2000_weekly_ls",
+ "description": "2,000 stocks x 15y, weekly decile long-short.",
+ "assumptions": [
+  "ASSUMPTION weekly residual cs sd 4.5%",
+  "ASSUMPTION weekly signal autocorr 0.8",
+  "ASSUMPTION 10 bp one-way"
+ ],
+ "design": "long_short",
+ "params": {
+  "n_assets": 2000,
+  "periods_per_year": 52,
+  "ic": 0.02,
+  "cs_dispersion": 0.045,
+  "quantile": 0.1,
+  "rho_resid": 0.2,
+  "rho_signal": 0.25,
+  "signal_autocorr": 0.8,
+  "cost_bps_one_way": 10,
+  "spread_autocorr": 0.0,
+  "exkurt": 2.0
+ },
+ "windows": {
+  "dev_years": 7.5,
+  "val_years": 7.5
+ },
+ "gates": {
+  "batch_k": 1,
+  "stress_drag_sr": 0.1,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  }
+ },
+ "scenarios": [
+  {
+   "label": "IC=0.01 rho=0.1 tilt0.25",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.1,
+    "rho_signal": 0.25,
+    "correlation_mode": "factor_tilt"
+   }
+  },
+  {
+   "label": "IC=0.01 rho=0.1 LITERAL",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.1,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "IC=0.01 rho=0.2 tilt0.25",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.2,
+    "rho_signal": 0.25,
+    "correlation_mode": "factor_tilt"
+   }
+  },
+  {
+   "label": "IC=0.01 rho=0.2 LITERAL",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.2,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "IC=0.01 rho=0.3 tilt0.25",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.3,
+    "rho_signal": 0.25,
+    "correlation_mode": "factor_tilt"
+   }
+  },
+  {
+   "label": "IC=0.01 rho=0.3 LITERAL",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.3,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "IC=0.02 rho=0.1 tilt0.25",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.1,
+    "rho_signal": 0.25,
+    "correlation_mode": "factor_tilt"
+   }
+  },
+  {
+   "label": "IC=0.02 rho=0.1 LITERAL",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.1,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "IC=0.02 rho=0.2 tilt0.25",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.2,
+    "rho_signal": 0.25,
+    "correlation_mode": "factor_tilt"
+   }
+  },
+  {
+   "label": "IC=0.02 rho=0.2 LITERAL",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.2,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "IC=0.02 rho=0.3 tilt0.25",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.3,
+    "rho_signal": 0.25,
+    "correlation_mode": "factor_tilt"
+   }
+  },
+  {
+   "label": "IC=0.02 rho=0.3 LITERAL",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.3,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "IC=0.03 rho=0.1 tilt0.25",
+   "params": {
+    "ic": 0.03,
+    "rho_resid": 0.1,
+    "rho_signal": 0.25,
+    "correlation_mode": "factor_tilt"
+   }
+  },
+  {
+   "label": "IC=0.03 rho=0.1 LITERAL",
+   "params": {
+    "ic": 0.03,
+    "rho_resid": 0.1,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "IC=0.03 rho=0.2 tilt0.25",
+   "params": {
+    "ic": 0.03,
+    "rho_resid": 0.2,
+    "rho_signal": 0.25,
+    "correlation_mode": "factor_tilt"
+   }
+  },
+  {
+   "label": "IC=0.03 rho=0.2 LITERAL",
+   "params": {
+    "ic": 0.03,
+    "rho_resid": 0.2,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "IC=0.03 rho=0.3 tilt0.25",
+   "params": {
+    "ic": 0.03,
+    "rho_resid": 0.3,
+    "rho_signal": 0.25,
+    "correlation_mode": "factor_tilt"
+   }
+  },
+  {
+   "label": "IC=0.03 rho=0.3 LITERAL",
+   "params": {
+    "ic": 0.03,
+    "rho_resid": 0.3,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  }
+ ]
+}

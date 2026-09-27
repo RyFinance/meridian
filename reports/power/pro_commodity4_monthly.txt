@@ -1,0 +1,25 @@
+pro_commodity4_monthly  [carry]  dev 17.50y + val 17.50y
+  raw obs (total) 1680 asset-periods;  D_time 1.105  deff_cross 2.200  ->  effective obs 690.9
+  SE(Sharpe) dev 0.251, val 0.251;  SE(mean, per-asset net Sharpe) total 0.1318
+  dev gate threshold 0.430 (binding: sharpe_c_over_sqrtT);  val threshold 0.750 (binding: sharpe_abs);  proposed val threshold 0.413
+  MDE Sharpe (80%): single test 0.45, dev gate 0.66, joint current 1.01, joint proposed 0.77
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.000   0.001   0.000   0.000   | 0.002  0.000
+  zero_net_null             0.00  0.050   0.043   0.001   0.000   | 0.050  0.002
+  structural_leak           0.05  0.087   0.066   0.003   0.000   | 0.075  0.005
+  S=0.3                     0.30  0.517   0.308   0.041   0.013   | 0.331  0.102
+  S=0.5                     0.50  0.866   0.604   0.173   0.105   | 0.628  0.379
+  S=0.7                     0.70  0.983   0.839   0.427   0.358   | 0.854  0.716
+  S=1.0                     1.00  1.000   0.978   0.811   0.793   | 0.981  0.959
+  implied_by_primitives     0.54  0.905   0.659   0.215   0.142   | 0.682  0.449
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   77.60     81.81             inf           216.68
+                     0.50   28.40     29.93             inf            79.64
+                     0.70   14.75     15.54             inf            41.55
+                     1.00    7.44      7.83           36.34            21.11
+                     0.54   24.49     25.80             inf            68.73
+  VERDICT (current gates): MARGINAL   [joint@0.7 = 0.358, false-pass = 0.0001];  with proposed val gate: DECISIVE
+  scenarios: label | n_eff | implied net S | joint(cur) | joint(prop) | yrs80 single | yrs80 joint(prop) | MDE natural (joint prop)
+   s_asset=0.3                                  1.82 | 0.405 | 0.0434 | 0.224 | 43 | 120 | 0.568
+   s_asset=0.4                                  1.82 | 0.539 | 0.142 | 0.449 | 24.5 | 68.7 | 0.568
+   s_asset=0.5                                  1.82 | 0.674 | 0.318 | 0.678 | 15.9 | 44.7 | 0.568

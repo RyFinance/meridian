@@ -1,0 +1,107 @@
+[
+  {
+    "name": "sec_edgar_submissions_aapl",
+    "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+    "headers_sent": {
+      "User-Agent": "quant_v7-research/1.0"
+    },
+    "fetched_at_utc": "2026-09-25T05:06:49.177113+00:00",
+    "status_code": 200,
+    "content_length_bytes": 163991,
+    "content_type": "application/json",
+    "ok": true,
+    "note": "SEC asks for an email in the UA (sec.gov/os/webmaster-faq#developers); we deliberately omit it per instructions.",
+    "sample_saved": "data/event_scout/sec_edgar_submissions_aapl.json",
+    "sample_bytes_saved": 20000
+  },
+  {
+    "name": "sec_edgar_fts_8k_402",
+    "url": "https://efts.sec.gov/LATEST/search-index?q=%22non-reliance%22&forms=8-K&dateRange=custom&startdt=2026-01-01&enddt=2026-01-31",
+    "headers_sent": {
+      "User-Agent": "quant_v7-research/1.0"
+    },
+    "fetched_at_utc": "2026-09-25T05:06:50.596787+00:00",
+    "status_code": 200,
+    "content_length_bytes": 57562,
+    "content_type": "application/json",
+    "ok": true,
+    "note": "Full text search, item 4.02 non-reliance proxy query, Jan 2026 only.",
+    "sample_saved": "data/event_scout/sec_edgar_fts_8k_402.json",
+    "sample_bytes_saved": 20000
+  },
+  {
+    "name": "binance_funding_btcusdt",
+    "url": "https://fapi.binance.com/fapi/v1/fundingRate?symbol=BTCUSDT&limit=5",
+    "headers_sent": {
+      "User-Agent": "quant_v7-research/1.0"
+    },
+    "fetched_at_utc": "2026-09-25T05:06:52.670421+00:00",
+    "status_code": 200,
+    "content_length_bytes": 631,
+    "content_type": "application/json;charset=UTF-8",
+    "ok": true,
+    "note": "Funding rate history, most recent 5 settlements.",
+    "sample_saved": "data/event_scout/binance_funding_btcusdt.json",
+    "sample_bytes_saved": 631
+  },
+  {
+    "name": "binance_exchangeinfo",
+    "url": "https://fapi.binance.com/fapi/v1/exchangeInfo",
+    "headers_sent": {
+      "User-Agent": "quant_v7-research/1.0"
+    },
+    "fetched_at_utc": "2026-09-25T05:06:54.096577+00:00",
+    "status_code": 200,
+    "content_length_bytes": 1127773,
+    "content_type": "application/json",
+    "ok": true,
+    "note": "To count TRADING PERPETUAL symbols for 8h funding cross-section size.",
+    "sample_saved": "data/event_scout/binance_exchangeinfo.json",
+    "sample_bytes_saved": 20000
+  },
+  {
+    "name": "nasdaq_regsho_threshold_today",
+    "url": "https://www.nasdaqtrader.com/dynamic/SymDir/regsho/nasdaqth20260924.txt",
+    "headers_sent": {
+      "User-Agent": "quant_v7-research/1.0"
+    },
+    "fetched_at_utc": "2026-09-25T05:06:59.907614+00:00",
+    "status_code": 200,
+    "content_length_bytes": 3140,
+    "content_type": "text/plain",
+    "ok": true,
+    "note": "Daily Reg SHO threshold list, today's date; expect possible 404 if markets closed/not yet posted.",
+    "sample_saved": "data/event_scout/nasdaq_regsho_threshold_today.txt",
+    "sample_bytes_saved": 3140
+  },
+  {
+    "name": "occ_daily_open_interest",
+    "url": "https://marketdata.theocc.com/daily-open-interest?reportDate=09/23/2026&action=download&format=csv",
+    "headers_sent": {
+      "User-Agent": "quant_v7-research/1.0"
+    },
+    "fetched_at_utc": "2026-09-25T05:07:04.007638+00:00",
+    "status_code": 200,
+    "content_length_bytes": 2362,
+    "content_type": "application/octet-stream",
+    "ok": true,
+    "note": "Free daily OI by OCC; WebFetch tool got 403 on the info page, testing direct CSV endpoint with curl-equivalent UA.",
+    "sample_saved": "data/event_scout/occ_daily_open_interest.txt",
+    "sample_bytes_saved": 2362
+  },
+  {
+    "name": "finra_regsho_daily_shortvol",
+    "url": "https://cdn.finra.org/equity/regsho/daily/CNMSshvol20260924.txt",
+    "headers_sent": {
+      "User-Agent": "quant_v7-research/1.0"
+    },
+    "fetched_at_utc": "2026-09-25T05:07:07.139939+00:00",
+    "status_code": 200,
+    "content_length_bytes": 548969,
+    "content_type": "text/plain",
+    "ok": true,
+    "note": "Cross-check only; FINRA/short-volume territory belongs to another workload agent.",
+    "sample_saved": "data/event_scout/finra_regsho_daily_shortvol.txt",
+    "sample_bytes_saved": 20000
+  }
+]

@@ -1,0 +1,48 @@
+{
+ "spec_version": "future_lab2.proposed_sprt.v1",
+ "status": "PROPOSED, UNREGISTERED. Not a pre-specified rule until its sha256 is registered in research/preregistrations.jsonl before forward data (after 2026-09-24) is used to evaluate it. The director decides whether to register it.",
+ "candidate": "tsy_month_end_v1",
+ "frozen_candidate_spec": "research/forward_audit/tsy_month_end_v1_spec.json",
+ "rule_type": "Wald SPRT (Sequential Probability Ratio Test), one look per calendar month, on the monthly window excess return net of the frozen base cost.",
+ "statistic": {
+  "definition": "x_n = (window n's TLT return over its 3 held sessions, minus the T-bill return accrued over the same sessions) minus 4 bp (base cost, 2 bp/side x 2 sides: entry + exit). Equivalently: win_ex - 0.0004, where win_ex reproduces reports/audit_tsy/e_postpub.json's window_ex figures exactly.",
+  "look_cadence": "one look at the close of each month's last held session (the same close that ends book M's position), i.e. one look per month, matching the ~12 windows/year of the frozen spec."
+ },
+ "hypotheses": {
+  "H0_kill": "true mean = -0.000400 (gross edge exactly zero; base cost still paid)",
+  "H1_confirm": "true mean = 0.001564 (the post-publication, 2019-10..2026-08 sample mean, net of base cost -- world W2 in reports/future_lab2/results.json)"
+ },
+ "parameters": {
+  "mu0": -0.0004,
+  "mu1": 0.0015639747035341163,
+  "sigma": 0.01326029995722243,
+  "alpha": 0.05,
+  "beta": 0.2,
+  "A_upper_confirm": 2.772588722239781,
+  "B_lower_kill": -1.5581446180465497
+ },
+ "sigma_source": "sample std (ddof=1) of win_ex over the full 2003-01..2026-08 history (284 months; reports/audit_tsy/c_months_{dev,val}.csv), fixed and not re-estimated on forward data.",
+ "decision_rule": [
+  "LLR_n = sum_{i=1}^{n} (mu1-mu0)/sigma^2 * (x_i - (mu0+mu1)/2), cumulative over months.",
+  "CONFIRM (accept H1) at the first month where LLR_n >= A = 2.7726.",
+  "KILL (accept H0) at the first month where LLR_n <= B = -1.5581.",
+  "Otherwise CONTINUE. Decisions are terminal.",
+  "At 120 months (10 years) with no decision: END_NO_DECISION -- stays forward observation only; this cap is a reporting convention of this lab, not part of the SPRT itself, which in principle continues until it exits (mu1-mu0)/sigma^2)-scaled boundaries."
+ ],
+ "max_months_reported": 120,
+ "evaluator": "research.future_lab2.rule.sprt_run(X, mu0, mu1, sigma, alpha=0.05, beta=0.2), X = the realised monthly x_n sequence from forward_start onward",
+ "forward_start": "2026-09-24 (per reports/tsy_month_end/ADDENDUM_AUDIT_2026-09-23.md: forward judgement uses only data after this date, with official closes)",
+ "operating_characteristics": {
+  "months_needed_80pow_fixed_sample_W0_vs_W1": 71.7737172936184,
+  "months_needed_80pow_fixed_sample_W0_vs_W2": 281.8402805176705,
+  "note": "The SPRT is sequential and on average decides faster than the fixed-sample test above at the same alpha/beta, but the fixed-sample number is the right answer to 'how long for 80% power' since the SPRT's own decision time is itself a random variable (see sprt_oc.csv / results.json for its simulated distribution per world).",
+  "full_operating_characteristics": "reports/future_lab2/tsy_sprt.csv and results.json (tsy.sprt), simulated under W0-W5, 8000+ paths, seed 20260924"
+ },
+ "not_evidence": "mu1 and sigma are estimated from already-observed history, including the same window effect this rule will judge. The rule tests whether forward data is consistent with that history; it cannot anticipate a regime absent from it. It also does not use a haircut/sceptical-prior structure the way research/future_lab/forward.py's Bayesian rule does -- it is deliberately the simplest classical rule that matches the brief's alpha/beta request.",
+ "limitations": [
+  "sigma is treated as known and fixed; in truth it is estimated once from 284 months of history and could itself be wrong (e.g. under W4's vol x1.5, the true sigma is 50% higher than what this rule assumes, which changes its effective alpha/beta -- see W4's row in tsy_sprt.csv, where the rule's actual error rates drift from the nominal 5%/20%).",
+  "H1 is pinned to the post-publication mean; a candidate that is real but weaker (e.g. W3's decaying edge) will often drift into KILL well before it would under W2, because the rule has no notion of a time-varying mean.",
+  "The rule only ever chooses between exactly two points (mu0, mu1); it is not a test of 'is there some edge', only of 'does the data look like mu0 or like mu1'."
+ ],
+ "sha256": "824f64a5d7f80e5f56466cc3045497fc754a9a0492b4fb8bb8956f9813c11432"
+}

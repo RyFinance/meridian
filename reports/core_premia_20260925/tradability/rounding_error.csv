@@ -1,0 +1,37 @@
+account_size_cad,n_markets,bucket,representative_instrument,market_vol,ideal_notional_usd,smallest_contract_notional_usd,contracts_held,achieved_notional_usd,unholdable,notional_rounding_error_pct,risk_deviation_pct
+25000,40,equity_index,MES,0.18,2196.03,33250,0,0,True,-100.0,-100.0
+25000,40,gov_bond,ZN (standard 10Y T-Note; NO micro price future exists),0.07,5646.92,109000.0,0,0.0,True,-100.0,-100.0
+25000,40,fx,M6E,0.08,4941.06,13500.0,0,0.0,True,-100.0,-100.0
+25000,40,commodity,MGC,0.25,1581.14,38000,0,0,True,-100.0,-100.0
+25000,50,equity_index,MES,0.18,1964.19,33250,0,0,True,-100.0,-100.0
+25000,50,gov_bond,ZN (standard 10Y T-Note; NO micro price future exists),0.07,5050.76,109000.0,0,0.0,True,-100.0,-100.0
+25000,50,fx,M6E,0.08,4419.42,13500.0,0,0.0,True,-100.0,-100.0
+25000,50,commodity,MGC,0.25,1414.21,38000,0,0,True,-100.0,-100.0
+25000,60,equity_index,MES,0.18,1793.05,33250,0,0,True,-100.0,-100.0
+25000,60,gov_bond,ZN (standard 10Y T-Note; NO micro price future exists),0.07,4610.69,109000.0,0,0.0,True,-100.0,-100.0
+25000,60,fx,M6E,0.08,4034.36,13500.0,0,0.0,True,-100.0,-100.0
+25000,60,commodity,MGC,0.25,1290.99,38000,0,0,True,-100.0,-100.0
+100000,40,equity_index,MES,0.18,8784.1,33250,0,0,True,-100.0,-100.0
+100000,40,gov_bond,ZN (standard 10Y T-Note; NO micro price future exists),0.07,22587.7,109000.0,0,0.0,True,-100.0,-100.0
+100000,40,fx,M6E,0.08,19764.24,13500.0,1,13500.0,False,-31.7,-31.7
+100000,40,commodity,MGC,0.25,6324.56,38000,0,0,True,-100.0,-100.0
+100000,50,equity_index,MES,0.18,7856.74,33250,0,0,True,-100.0,-100.0
+100000,50,gov_bond,ZN (standard 10Y T-Note; NO micro price future exists),0.07,20203.05,109000.0,0,0.0,True,-100.0,-100.0
+100000,50,fx,M6E,0.08,17677.67,13500.0,1,13500.0,False,-23.6,-23.6
+100000,50,commodity,MGC,0.25,5656.85,38000,0,0,True,-100.0,-100.0
+100000,60,equity_index,MES,0.18,7172.19,33250,0,0,True,-100.0,-100.0
+100000,60,gov_bond,ZN (standard 10Y T-Note; NO micro price future exists),0.07,18442.78,109000.0,0,0.0,True,-100.0,-100.0
+100000,60,fx,M6E,0.08,16137.43,13500.0,1,13500.0,False,-16.3,-16.3
+100000,60,commodity,MGC,0.25,5163.98,38000,0,0,True,-100.0,-100.0
+250000,40,equity_index,MES,0.18,21960.26,33250,1,33250,False,51.4,51.4
+250000,40,gov_bond,ZN (standard 10Y T-Note; NO micro price future exists),0.07,56469.24,109000.0,1,109000.0,False,93.0,93.0
+250000,40,fx,M6E,0.08,49410.59,13500.0,4,54000.0,False,9.3,9.3
+250000,40,commodity,MGC,0.25,15811.39,38000,0,0,True,-100.0,-100.0
+250000,50,equity_index,MES,0.18,19641.86,33250,1,33250,False,69.3,69.3
+250000,50,gov_bond,ZN (standard 10Y T-Note; NO micro price future exists),0.07,50507.63,109000.0,0,0.0,True,-100.0,-100.0
+250000,50,fx,M6E,0.08,44194.17,13500.0,3,40500.0,False,-8.4,-8.4
+250000,50,commodity,MGC,0.25,14142.14,38000,0,0,True,-100.0,-100.0
+250000,60,equity_index,MES,0.18,17930.48,33250,1,33250,False,85.4,85.4
+250000,60,gov_bond,ZN (standard 10Y T-Note; NO micro price future exists),0.07,46106.94,109000.0,0,0.0,True,-100.0,-100.0
+250000,60,fx,M6E,0.08,40343.58,13500.0,3,40500.0,False,0.4,0.4
+250000,60,commodity,MGC,0.25,12909.94,38000,0,0,True,-100.0,-100.0

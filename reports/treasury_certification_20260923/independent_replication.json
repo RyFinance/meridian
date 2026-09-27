@@ -1,0 +1,267 @@
+{
+  "purpose": "independent certification of frozen development evidence, no validation read",
+  "source_hashes": {
+    "IEF": "684a4a7a017f8494dd56d376ed780a9486026edcdcc4301208cf161c4e7171f7",
+    "SHY": "5590f99c4db64b628765a7f87a3281d7c498a462439314a4b635b18dbb3d52bf",
+    "TLT": "8a2e20d6556457168e8397afbbb86683401f0dd126e0833abb2cbe6c2965c0c9",
+    "SPY": "c927a8371ad9d9552e5a1cd0d96bfcd005ae62f72d4f590c51681a81c6e4fc0c"
+  },
+  "dates": [
+    "2003-01-02",
+    "2014-12-31"
+  ],
+  "intervals": 3020,
+  "ietf_base": {
+    "annual_mean": 0.05560077590302742,
+    "annual_sharpe": 0.8166868136190958,
+    "compounded_total": 0.893623870308732,
+    "max_drawdown": -0.10376704710437124
+  },
+  "shy": {
+    "annual_mean": 0.02254051924936053,
+    "annual_sharpe": 1.3993921408284493,
+    "compounded_total": 0.3080840611836928,
+    "max_drawdown": -0.02111342820847517
+  },
+  "active_base": {
+    "annual_mean": 0.03306025665366689,
+    "annual_sharpe": 0.5693181201090496,
+    "compounded_total": 0.4564184507466005,
+    "max_drawdown": -0.09423840888395174
+  },
+  "active_stress": {
+    "annual_mean": 0.03296012420333576,
+    "annual_sharpe": 0.5675118413155558,
+    "compounded_total": 0.45466347669745666,
+    "max_drawdown": -0.09423840888395196
+  },
+  "barbell": {
+    "annual_mean": 0.041478681085962484,
+    "annual_sharpe": 0.820255779255025,
+    "compounded_total": 0.61887653494566,
+    "max_drawdown": -0.10142711591645548
+  },
+  "active_vs_barbell": {
+    "annual_mean": 0.014122094817064928,
+    "annual_sharpe": 0.4927500373747527,
+    "compounded_total": 0.17858906904675842,
+    "max_drawdown": -0.046474844924007774
+  },
+  "active_spy_minus_shy_corr": -0.3881861831817691,
+  "annual_active_sum": {
+    "2003": 0.03601466709890085,
+    "2004": 0.037159062995236636,
+    "2005": 0.00938150383748948,
+    "2006": -0.007647003967292787,
+    "2007": 0.025033544857960832,
+    "2008": 0.10840233058011173,
+    "2009": -0.06901858160450092,
+    "2010": 0.06242289859272632,
+    "2011": 0.13386354847724624,
+    "2012": 0.036726978522592546,
+    "2013": -0.057491712968133046,
+    "2014": 0.08135107744303513
+  },
+  "leave_one_calendar_year_out": {
+    "2003": {
+      "annual_mean": 0.03279128576053143,
+      "annual_sharpe": 0.5701981269162169,
+      "compounded_total": 0.4077778331444193,
+      "max_drawdown": -0.09423840888395285
+    },
+    "2004": {
+      "annual_mean": 0.032687099428928605,
+      "annual_sharpe": 0.5584356142547714,
+      "compounded_total": 0.4052471116324998,
+      "max_drawdown": -0.09423840888395252
+    },
+    "2005": {
+      "annual_mean": 0.03521598125976397,
+      "annual_sharpe": 0.5919358436937514,
+      "compounded_total": 0.44392631383452796,
+      "max_drawdown": -0.09423840888395274
+    },
+    "2006": {
+      "annual_mean": 0.036752986671661894,
+      "annual_sharpe": 0.6150336946891862,
+      "compounded_total": 0.4684551603861369,
+      "max_drawdown": -0.0942384088839523
+    },
+    "2007": {
+      "annual_mean": 0.03377880888041455,
+      "annual_sharpe": 0.5677524377848885,
+      "compounded_total": 0.4214904731744009,
+      "max_drawdown": -0.09423840888395318
+    },
+    "2008": {
+      "annual_mean": 0.02621054853194285,
+      "annual_sharpe": 0.46757162668095426,
+      "compounded_total": 0.3106723944322687,
+      "max_drawdown": -0.0968690658875393
+    },
+    "2009": {
+      "annual_mean": 0.04235356129277754,
+      "annual_sharpe": 0.7658908100800413,
+      "compounded_total": 0.565790235397327,
+      "max_drawdown": -0.08313981466841525
+    },
+    "2010": {
+      "annual_mean": 0.030387068153434598,
+      "annual_sharpe": 0.527361193939071,
+      "compounded_total": 0.3709925469156552,
+      "max_drawdown": -0.09423840888395174
+    },
+    "2011": {
+      "annual_mean": 0.02388307835180923,
+      "annual_sharpe": 0.4193466720015909,
+      "compounded_total": 0.27700490726963833,
+      "max_drawdown": -0.09423840888395174
+    },
+    "2012": {
+      "annual_mean": 0.032702807403025516,
+      "annual_sharpe": 0.5563662049375055,
+      "compounded_total": 0.4056127530496123,
+      "max_drawdown": -0.09423840888395174
+    },
+    "2013": {
+      "annual_mean": 0.041304149841778735,
+      "annual_sharpe": 0.710474113148949,
+      "compounded_total": 0.5451299546437747,
+      "max_drawdown": -0.09423840888395174
+    },
+    "2014": {
+      "annual_mean": 0.02865348630495816,
+      "annual_sharpe": 0.48555381801609565,
+      "compounded_total": 0.3440805683348349,
+      "max_drawdown": -0.09423840888395174
+    }
+  },
+  "lowest_sharpe_leave_one_year_out": [
+    {
+      "year": "2011",
+      "annual_mean": 0.02388307835180923,
+      "annual_sharpe": 0.4193466720015909,
+      "compounded_total": 0.27700490726963833,
+      "max_drawdown": -0.09423840888395174
+    },
+    {
+      "year": "2008",
+      "annual_mean": 0.02621054853194285,
+      "annual_sharpe": 0.46757162668095426,
+      "compounded_total": 0.3106723944322687,
+      "max_drawdown": -0.0968690658875393
+    },
+    {
+      "year": "2014",
+      "annual_mean": 0.02865348630495816,
+      "annual_sharpe": 0.48555381801609565,
+      "compounded_total": 0.3440805683348349,
+      "max_drawdown": -0.09423840888395174
+    }
+  ],
+  "remove_2008_and_2011": {
+    "annual_mean": 0.01542384635054465,
+    "annual_sharpe": 0.28267224198720303,
+    "compounded_total": 0.1492130428963303,
+    "max_drawdown": -0.0968690658875393
+  },
+  "best_12m_removed": {
+    "start": "2011-02-14",
+    "end_exclusive": "2012-02-14",
+    "remaining": {
+      "annual_mean": 0.022331686805776293,
+      "annual_sharpe": 0.39136590080608075,
+      "compounded_total": 0.2553454193218816,
+      "max_drawdown": -0.10215294146125597
+    }
+  },
+  "best_24m_removed": {
+    "start": "2010-06-03",
+    "end_exclusive": "2012-06-03",
+    "remaining": {
+      "annual_mean": 0.01967802991853115,
+      "annual_sharpe": 0.34950498853295536,
+      "compounded_total": 0.19790443057775264,
+      "max_drawdown": -0.1074971497767544
+    }
+  },
+  "null": {
+    "one_sided_null_p": 0.02299540091981604,
+    "annual_mean_95pct_block_ci": [
+      0.0012601259947829415,
+      0.06536772983482098
+    ],
+    "full_gate_false_pass_probability": 0.0164,
+    "full_gate_false_pass_mc_se": 0.0017961648031291561,
+    "annual_sharpe_gate": 0.5197338352751221,
+    "seed": 20260923,
+    "worlds": 5000,
+    "block_sessions": 21
+  },
+  "alternate_development_law_futures": {
+    "3y_21d_blocks": {
+      "annual_mean_5_50_95pct": [
+        -0.020497273903347914,
+        0.03249838417194284,
+        0.08724943946143916
+      ],
+      "sharpe_5_50_95pct": [
+        -0.35244832021176087,
+        0.5661853532915306,
+        1.5278041289973512
+      ],
+      "prob_positive_stress_mean": 0.8426,
+      "prob_sharpe_at_least_0_75": 0.3753,
+      "prob_both_validation_effect_gates": 0.3753,
+      "worlds": 10000
+    },
+    "3y_63d_blocks": {
+      "annual_mean_5_50_95pct": [
+        -0.017981885603797147,
+        0.03285569497081278,
+        0.08425279837107406
+      ],
+      "sharpe_5_50_95pct": [
+        -0.3096834322238972,
+        0.5684177701222926,
+        1.4361538725051033
+      ],
+      "prob_positive_stress_mean": 0.8559,
+      "prob_sharpe_at_least_0_75": 0.3708,
+      "prob_both_validation_effect_gates": 0.3708,
+      "worlds": 10000
+    },
+    "5y_21d_blocks": {
+      "annual_mean_5_50_95pct": [
+        -0.008954878608147256,
+        0.03322270936506224,
+        0.07605898113487496
+      ],
+      "sharpe_5_50_95pct": [
+        -0.1531461376400679,
+        0.5764472952205903,
+        1.3289137959700956
+      ],
+      "prob_positive_stress_mean": 0.9023,
+      "prob_sharpe_at_least_0_75": 0.3479,
+      "prob_both_validation_effect_gates": 0.3479,
+      "worlds": 10000
+    },
+    "5y_63d_blocks": {
+      "annual_mean_5_50_95pct": [
+        -0.0072359018748445235,
+        0.03312666863333532,
+        0.07292766738238271
+      ],
+      "sharpe_5_50_95pct": [
+        -0.12127670810115093,
+        0.5773247668482868,
+        1.254466941983136
+      ],
+      "prob_positive_stress_mean": 0.9113,
+      "prob_sharpe_at_least_0_75": 0.3425,
+      "prob_both_validation_effect_gates": 0.3425,
+      "worlds": 10000
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+ "real_book": {
+  "sharpe": 0.6998806027785588,
+  "cagr": 0.10294758733917364,
+  "ann_excess_mean": 0.06702889578209642,
+  "ann_vol": 0.09577190097280676,
+  "capm_alpha": 0.041826524615772936,
+  "capm_alpha_t": 1.148858690663348,
+  "capm_beta": 0.35216617767906017,
+  "avg_gross": 0.4168188869596106,
+  "ff6_alpha": 0.04480463379032976,
+  "ff6_alpha_t": 1.258481136019365,
+  "ff6_loadings": {
+   "ff_mkt_rf": 0.3550952164099457,
+   "smb": 0.025723076599004007,
+   "hml": -0.039709239620659004,
+   "rmw": 0.056645124292754,
+   "cma": 0.10705173650753305,
+   "umd": -0.05527417331976234
+  },
+  "ff6_days": 974,
+  "n_trades": 625,
+  "long_share": 0.8272,
+  "sharpe_ci95": [
+   -0.2485511508255806,
+   1.7024139879464055
+  ],
+  "sharpe_ha": 0.7022553204383568,
+  "sharpe_hb": 1.06316307565634,
+  "sharpe_hc": 0.4739174433729187,
+  "holdout_windows": {
+   "holdout_a": [
+    "2021-08-11",
+    "2022-11-16"
+   ],
+   "holdout_b": [
+    "2022-11-17",
+    "2024-03-13"
+   ],
+   "holdout_c": [
+    "2024-03-14",
+    "2025-06-27"
+   ]
+  }
+ },
+ "pvalues_primary": {
+  "family": "P1",
+  "stat": "sharpe",
+  "p": 0.11348865113488651
+ },
+ "pvalues": {
+  "P1:sharpe": 0.11348865113488651,
+  "P1:cagr": 0.013398660133986601,
+  "P1:capm_alpha": 0.025897410258974102,
+  "P1:ff6_alpha": 0.013398660133986601,
+  "P1L:sharpe": 0.024997500249975,
+  "P1L:cagr": 0.07839216078392161,
+  "P1L:capm_alpha": 0.03899610038996101,
+  "P1L:ff6_alpha": 0.0448955104489551,
+  "P1G:sharpe": 0.06409359064093591,
+  "P1G:cagr": 0.0053994600539946005,
+  "P1G:capm_alpha": 0.014098590140985901,
+  "P1G:ff6_alpha": 0.011398860113988602,
+  "P2:sharpe": 9.999000099990002e-05,
+  "P2:cagr": 9.999000099990002e-05,
+  "P2:capm_alpha": 9.999000099990002e-05,
+  "P2:ff6_alpha": 9.999000099990002e-05,
+  "P3:sharpe": 9.999000099990002e-05,
+  "P3:cagr": 0.00029997000299970003,
+  "P3:capm_alpha": 9.999000099990002e-05,
+  "P3:ff6_alpha": 9.999000099990002e-05
+ },
+ "pvalues_holm_secondary": {
+  "P2:sharpe": 0.0018998100189981002,
+  "P2:cagr": 0.0018998100189981002,
+  "P2:capm_alpha": 0.0018998100189981002,
+  "P2:ff6_alpha": 0.0018998100189981002,
+  "P3:sharpe": 0.0018998100189981002,
+  "P3:capm_alpha": 0.0018998100189981002,
+  "P3:ff6_alpha": 0.0018998100189981002,
+  "P3:cagr": 0.0035996400359964006,
+  "P1G:cagr": 0.059394060593940604,
+  "P1G:ff6_alpha": 0.11398860113988601,
+  "P1:cagr": 0.12058794120587941,
+  "P1:ff6_alpha": 0.12058794120587941,
+  "P1G:capm_alpha": 0.12058794120587941,
+  "P1L:sharpe": 0.14998500149985,
+  "P1:capm_alpha": 0.14998500149985,
+  "P1L:capm_alpha": 0.15598440155984403,
+  "P1L:ff6_alpha": 0.15598440155984403,
+  "P1G:sharpe": 0.15598440155984403,
+  "P1L:cagr": 0.15598440155984403
+ },
+ "classification": "C: EXPOSURE EDGE WITHOUT MODEL SKILL (beats generic long exposure, not random selection)",
+ "decomposition_capm": [
+  {
+   "component": "market beta (beta_R x mean Mkt-RF)",
+   "ann_excess_return": 0.025202371166323484,
+   "share_of_total": 0.37599263529946286
+  },
+  {
+   "component": "generic post-announcement premium (mean alpha, P1L)",
+   "ann_excess_return": 0.019461806164904744,
+   "share_of_total": 0.2903494968524163
+  },
+  {
+   "component": "SUE-sign direction on random selection (mean alpha P1 - P1L)",
+   "ann_excess_return": -0.005810943479924172,
+   "share_of_total": -0.08669311066700117
+  },
+  {
+   "component": "model selection residual (alpha_R - mean alpha P1)",
+   "ann_excess_return": 0.028175661930792364,
+   "share_of_total": 0.420350978515122
+  },
+  {
+   "component": "total = real book mean excess return",
+   "ann_excess_return": 0.06702889578209642,
+   "share_of_total": 1.0
+  }
+ ],
+ "decomposition_ff6": {
+  "alpha_R_ff6": 0.04480463379032976,
+  "mean_alpha_P1L_ff6": 0.02314115990744909,
+  "mean_alpha_P1_minus_P1L_ff6": -0.010436309452540229,
+  "selection_residual_ff6": 0.032099783335420906
+ },
+ "sharpe_split": {
+  "real": 0.6998806027785588,
+  "p1_mean": 0.45910376161976435,
+  "p1_median": 0.46162886056526753,
+  "selection_share_of_sharpe": 0.3440255955128619,
+  "p1l_mean": 0.47096970323171555,
+  "p3_mean": 0.1512586238222929,
+  "p1_minimum_detectable_sharpe_gap_5pct": 0.321718312379735
+ },
+ "diagnostics": {
+  "D1_point_in_time_liquidity_rank": {
+   "sharpe": 0.6733395350139569,
+   "cagr": 0.0998312633318661,
+   "ann_excess_mean": 0.06415459600423362,
+   "ann_vol": 0.09527822542441956,
+   "capm_alpha": 0.03923701109394937,
+   "capm_alpha_t": 1.1330348633861476,
+   "capm_beta": 0.34818670739100743,
+   "avg_gross": 0.41417047441784144,
+   "ff6_alpha": 0.04134755825958089,
+   "ff6_alpha_t": 1.2155333003317208,
+   "ff6_days": 974,
+   "n_trades": 619,
+   "percentile_in_P1_sharpe": 0.8604,
+   "trade_overlap_with_real": 0.872
+  },
+  "D2_exit_day_cash_fix": {
+   "sharpe": 0.6930730291036387,
+   "cagr": 0.10228193774977568,
+   "capm_alpha": 0.041208867592638136,
+   "sharpe_change": -0.006807573674920131
+  },
+  "D4_forward_power": {
+   "paired_vs_random_shadow": {
+    "hist_mean_excess_gap_ann": 0.0336367578285565,
+    "tracking_error_ann": 0.055017717127490026,
+    "corr_real_vs_P1": 0.8203792917162814,
+    "years_for_80pct_power_at_hist_gap": 16.54036239171321
+   },
+   "unpaired_sharpe_vs_zero_years_80pct": 12.621769097778738,
+   "unpaired_sharpe_gap_vs_P1_mean_years_80pct": 213.28912668630477
+  }
+ },
+ "context": {
+  "audit_universe_control_sharpe": 0.6015105133031711,
+  "audit_spy_control_sharpe": 0.5311649671559102
+ },
+ "n_draws": {
+  "P1": 10000,
+  "P1L": 10000,
+  "P1G": 10000,
+  "P2": 10000,
+  "P3": 10000
+ }
+}

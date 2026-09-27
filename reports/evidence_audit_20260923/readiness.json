@@ -1,0 +1,17 @@
+{
+  "registry_chain_ok": true,
+  "registry_head_seq": 2,
+  "registry_head_hash": "0f2c2c1dcc06da02f0bf36aa1bc21dd8580cf2bf7a42af3e341abb462dbb66d4",
+  "external_anchors_checked": 0,
+  "momentum_gold_registered": true,
+  "forward_decision_count": 0,
+  "registered_payload_hash_valid": true,
+  "paper_rules_equal_registered": true,
+  "expected_next_decision": "2026-10-01",
+  "expected_next_fill": "2026-10-02",
+  "registry_entries": 63,
+  "plan_hash_mismatches": [
+    "research/momentum_lab/DECISION_RULE.md"
+  ],
+  "manual_action_remaining": "Record the Oct 1 decision after the official close and anchor the resulting registry head externally before the Oct 2 open; no decision exists now."
+}

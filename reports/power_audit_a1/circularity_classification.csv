@@ -1,0 +1,57 @@
+design,check,param,analytic,mc,within_tolerance,dgp_equals_analytic_model,mc_statistic,tolerance_vacuous_for_size,note
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (current_0.75),S=0.0,0.0007,0.0,True,True,literal CBB p + literal Sharpe legs (independent of D formula),True,
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (proposed_PAV),S=0.0,0.0026,0.002,True,True,literal CBB p + literal Sharpe legs (independent of D formula),True,
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (current_0.75),S=0.5,0.1027,0.098,True,True,literal CBB p + literal Sharpe legs (independent of D formula),False,
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (proposed_PAV),S=0.5,0.1921,0.181,True,True,literal CBB p + literal Sharpe legs (independent of D formula),False,
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (current_0.75),S=0.7,0.2979,0.2875,True,True,literal CBB p + literal Sharpe legs (independent of D formula),False,
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (proposed_PAV),S=0.7,0.4467,0.4355,True,True,literal CBB p + literal Sharpe legs (independent of D formula),False,
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (current_0.75),S=1.0,0.6994,0.711,True,True,literal CBB p + literal Sharpe legs (independent of D formula),False,
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (proposed_PAV),S=1.0,0.8221,0.8145,True,True,literal CBB p + literal Sharpe legs (independent of D formula),False,
+timeseries daily AR(1) phi=.15,kappa = sd(S_hat) sqrt(Y) (Lo 2002),S=0.7,1.1636,1.1649,True,True,literal sample Sharpe,False,
+monthly; 3-month overlapping holding (D=3),test power (true-D null),S=0.0,0.05,0.054,True,True,ideal_null=True: threshold = analytic z*sqrt(D/Y) (shares D),True,
+monthly; 3-month overlapping holding (D=3),"INFO: literal NW(6 lags) t, n=120 (finite-sample HAC bias; not a formula check)",S=0.0,0.05,0.0757,,True,literal NW t (the only practitioner HAC row) -- excluded from the count,True,
+monthly; 3-month overlapping holding (D=3),test power (true-D null),S=0.6,0.2924,0.2995,True,True,ideal_null=True: threshold = analytic z*sqrt(D/Y) (shares D),False,
+monthly; 3-month overlapping holding (D=3),"INFO: literal NW(6 lags) t, n=120 (finite-sample HAC bias; not a formula check)",S=0.6,0.2924,0.3535,,True,literal NW t (the only practitioner HAC row) -- excluded from the count,False,
+monthly; 3-month overlapping holding (D=3),kappa0 = sqrt(D),S=0,1.7321,1.7673,True,True,literal sample Sharpe,False,
+event study 510/yr; 20d hold; seasons 45%,calendar-time test power,icc=0.02 S=0.0,0.05,0.0525,True,True,Sharpe >= z/sqrt(Y) threshold = the analytic's own iid-day null threshold,True,does not test a clustered/HAC estimator; checks the deff variance only
+event study 510/yr; 20d hold; seasons 45%,sd(mean CAR) = car_sd sqrt(deff/N),icc=0.02,0.0015,0.0015,True,True,literal sd across paths,False,
+event study 510/yr; 20d hold; seasons 45%,naive independent-event t false-positive,icc=0.02,0.1436,0.148,True,True,literal naive t,False,
+event study 510/yr; 20d hold; seasons 45%,calendar-time test power,icc=0.02 S=0.7,0.7151,0.7183,True,True,Sharpe >= z/sqrt(Y) threshold = the analytic's own iid-day null threshold,False,does not test a clustered/HAC estimator; checks the deff variance only
+event study 510/yr; 20d hold; seasons 45%,sd(mean CAR) = car_sd sqrt(deff/N),icc=0.02,0.0015,0.0015,True,True,literal sd across paths,False,
+event study 510/yr; 20d hold; seasons 45%,calendar-time test power,icc=0.1 S=0.5,0.4746,0.4888,True,True,Sharpe >= z/sqrt(Y) threshold = the analytic's own iid-day null threshold,False,does not test a clustered/HAC estimator; checks the deff variance only
+event study 510/yr; 20d hold; seasons 45%,sd(mean CAR) = car_sd sqrt(deff/N),icc=0.1,0.0028,0.0028,True,True,literal sd across paths,False,
+event study 5-pair month-end clusters,calendar-time test power,icc=0.4 S=0.7,0.5278,0.525,True,True,Sharpe >= z/sqrt(Y) threshold = the analytic's own iid-day null threshold,False,does not test a clustered/HAC estimator; checks the deff variance only
+cross-sectional IC; N=200; T=120,sd(IC_t) = sqrt((1+(N-1)rho_bet)/N),IC=0.0 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.3233,0.3197,True,True,literal moments; DGP = exactly the one-factor Rademacher model the formula is derived from,False,
+cross-sectional IC; N=200; T=120,sd(mean IC) incl. overlap D,IC=0.0 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.0295,0.0287,True,True,literal moments; DGP = exactly the one-factor Rademacher model the formula is derived from,False,
+cross-sectional IC; N=200; T=120,IC t-test power,IC=0.0 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.05,0.0485,True,True,rejection uses m / (sd_ANALYTIC * sqrt(D_ANALYTIC/T)) -- the analytic SE itself,True,fully circular for the SE; practitioner HAC rejection is computed but never reported
+cross-sectional IC; N=200; T=120,sd(IC_t) = sqrt((1+(N-1)rho_bet)/N),IC=0.02 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.3233,0.3202,True,True,literal moments; DGP = exactly the one-factor Rademacher model the formula is derived from,False,
+cross-sectional IC; N=200; T=120,sd(mean IC) incl. overlap D,IC=0.02 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.0295,0.0298,True,True,literal moments; DGP = exactly the one-factor Rademacher model the formula is derived from,False,
+cross-sectional IC; N=200; T=120,IC t-test power,IC=0.02 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.167,0.1665,True,True,rejection uses m / (sd_ANALYTIC * sqrt(D_ANALYTIC/T)) -- the analytic SE itself,False,fully circular for the SE; practitioner HAC rejection is computed but never reported
+cross-sectional IC; N=200; T=120,sd(IC_t) = sqrt((1+(N-1)rho_bet)/N),IC=0.03 rho_r=0.1 rho_s=1.0 H=1 phi_s=0.0,0.3233,0.3206,True,True,literal moments; DGP = exactly the one-factor Rademacher model the formula is derived from,False,
+cross-sectional IC; N=200; T=120,sd(mean IC) incl. overlap D,IC=0.03 rho_r=0.1 rho_s=1.0 H=1 phi_s=0.0,0.0295,0.0288,True,True,literal moments; DGP = exactly the one-factor Rademacher model the formula is derived from,False,
+cross-sectional IC; N=200; T=120,IC t-test power,IC=0.03 rho_r=0.1 rho_s=1.0 H=1 phi_s=0.0,0.2654,0.257,True,True,rejection uses m / (sd_ANALYTIC * sqrt(D_ANALYTIC/T)) -- the analytic SE itself,False,fully circular for the SE; practitioner HAC rejection is computed but never reported
+cross-sectional IC; N=200; T=120,sd(IC_t) = sqrt((1+(N-1)rho_bet)/N),IC=0.0 rho_r=0.1 rho_s=0.25 H=3 phi_s=0.9,0.1728,0.1676,True,True,literal moments; DGP = exactly the one-factor Rademacher model the formula is derived from,False,
+cross-sectional IC; N=200; T=120,sd(mean IC) incl. overlap D,IC=0.0 rho_r=0.1 rho_s=0.25 H=3 phi_s=0.9,0.0261,0.0258,True,True,literal moments; DGP = exactly the one-factor Rademacher model the formula is derived from,False,
+cross-sectional IC; N=200; T=120,IC t-test power,IC=0.0 rho_r=0.1 rho_s=0.25 H=3 phi_s=0.9,0.05,0.045,True,True,rejection uses m / (sd_ANALYTIC * sqrt(D_ANALYTIC/T)) -- the analytic SE itself,True,fully circular for the SE; practitioner HAC rejection is computed but never reported
+decile long-short; weekly; 5y,spread sd,N=200 IC=0.03 rho_r=0.1 rho_s=0.25 sig_ac=0.8 10bp,0.0207,0.0206,True,True,literal sort/turnover/cost; DGP = the analytic's two-block tilt model,False,
+decile long-short; weekly; 5y,gross mean spread,N=200 IC=0.03 rho_r=0.1 rho_s=0.25 sig_ac=0.8 10bp,0.0041,0.0041,True,True,literal sort/turnover/cost; DGP = the analytic's two-block tilt model,False,
+decile long-short; weekly; 5y,one-way turnover per leg,N=200 IC=0.03 rho_r=0.1 rho_s=0.25 sig_ac=0.8 10bp,0.4376,0.4468,True,True,literal sort/turnover/cost; DGP = the analytic's two-block tilt model,False,
+decile long-short; weekly; 5y,P(net S_hat >= 0.5),N=200 IC=0.03 rho_r=0.1 rho_s=0.25 sig_ac=0.8 10bp,0.7647,0.7575,True,True,literal sort/turnover/cost; DGP = the analytic's two-block tilt model,False,
+decile long-short; weekly; 5y,spread sd,N=200 IC=0.02 rho_r=0.2 rho_s=0.5 sig_ac=0.9 5bp,0.0307,0.0306,True,True,literal sort/turnover/cost; DGP = the analytic's two-block tilt model,False,
+decile long-short; weekly; 5y,gross mean spread,N=200 IC=0.02 rho_r=0.2 rho_s=0.5 sig_ac=0.9 5bp,0.0026,0.0025,True,True,literal sort/turnover/cost; DGP = the analytic's two-block tilt model,False,
+decile long-short; weekly; 5y,one-way turnover per leg,N=200 IC=0.02 rho_r=0.2 rho_s=0.5 sig_ac=0.9 5bp,0.3114,0.3275,True,True,literal sort/turnover/cost; DGP = the analytic's two-block tilt model,False,
+decile long-short; weekly; 5y,P(net S_hat >= 0.5),N=200 IC=0.02 rho_r=0.2 rho_s=0.5 sig_ac=0.9 5bp,0.4617,0.4425,True,True,literal sort/turnover/cost; DGP = the analytic's two-block tilt model,False,
+carry monthly; common crash factor,dev-gate power (Opdyke SE),K=4 rho=0.4 crash p=0.05 jump=-4.0sd S=0.7,0.8473,0.8478,True,True,ideal_null=True: threshold uses the analytic D_null (=1),False,
+carry monthly; common crash factor,kappa(S) (Mertens/Opdyke),K=4 rho=0.4 crash p=0.05 jump=-4.0sd S=0.7,1.1009,1.1067,True,True,literal moments,False,
+carry monthly; common crash factor,book skew (one-factor cumulants),K=4 rho=0.4 crash p=0.05 jump=-4.0sd S=0.7,-0.842,-0.8057,True,True,literal moments,False,
+carry monthly; common crash factor,dev-gate power (Opdyke SE),K=4 rho=0.4 crash p=0.05 jump=-4.0sd S=0.0,0.0359,0.0425,True,True,ideal_null=True: threshold uses the analytic D_null (=1),True,
+carry monthly; common crash factor,dev-gate power (Opdyke SE),K=8 rho=0.3 crash p=0.03 jump=-6.0sd S=0.5,0.4224,0.4487,True,True,ideal_null=True: threshold uses the analytic D_null (=1),False,
+carry monthly; common crash factor,kappa(S) (Mertens/Opdyke),K=8 rho=0.3 crash p=0.03 jump=-6.0sd S=0.5,1.1173,1.1576,True,True,literal moments,False,
+carry monthly; common crash factor,book skew (one-factor cumulants),K=8 rho=0.3 crash p=0.03 jump=-6.0sd S=0.5,-1.4632,-1.2865,True,True,literal moments,False,
+panel 30 markets monthly 10y,EW-book test power,K=30 rho=0.3 phi=0.05 S=0.7,0.676,0.6743,True,True,t = mean/(sd*sqrt(D_TRUE/n)); per-market Sharpe set from the analytic N_eff (book S = S by construction),False,"the N_eff part is an algebraic identity, not a check"
+panel 30 markets monthly 10y,EW-book test power,K=30 blocks phi=0.05 S=0.5,0.4442,0.4447,True,True,t = mean/(sd*sqrt(D_TRUE/n)); per-market Sharpe set from the analytic N_eff (book S = S by construction),False,"the N_eff part is an algebraic identity, not a check"
+panel 30 markets monthly 10y,EW-book test power,K=30 rho=0.6 phi=0.1 S=0.0,0.05,0.0513,True,True,t = mean/(sd*sqrt(D_TRUE/n)); per-market Sharpe set from the analytic N_eff (book S = S by construction),True,"the N_eff part is an algebraic identity, not a check"
+panel 30 markets monthly 10y,naive pooled K*T t false-positive,K=30 rho=0.6 phi=0.1 S=0.0,0.3644,0.3597,True,True,literal naive t,False,
+17-sleeve screen (weekly); hold-out HAC t>=2,joint pass,s_sleeve=0.0 m_real=0,0.0222,0.0203,True,True,"hold t = mean/(sd*sqrt(D_TRUE/n)) -- analytic D, not an estimated HAC",True,
+17-sleeve screen (weekly); hold-out HAC t>=2,joint pass,s_sleeve=0.4 m_real=5,0.1957,0.2203,True,True,"hold t = mean/(sd*sqrt(D_TRUE/n)) -- analytic D, not an estimated HAC",False,
+17-sleeve screen (weekly); hold-out HAC t>=2,joint pass,s_sleeve=0.6 m_real=5,0.4745,0.507,False,True,"hold t = mean/(sd*sqrt(D_TRUE/n)) -- analytic D, not an estimated HAC",False,

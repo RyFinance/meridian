@@ -1,0 +1,456 @@
+{
+ "name": "retro_tsy_month_end",
+ "design": "event_study",
+ "inputs": {
+  "events_per_year": 12,
+  "car_sd": 0.0133,
+  "hold_days": 3,
+  "icc": 0.0,
+  "concurrency": {
+   "model": "clusters",
+   "mean_size": 1
+  },
+  "concurrency_profile": {
+   "model": "clusters",
+   "m_w": 1.0,
+   "mean_size": 1.0,
+   "cv": 0.0
+  },
+  "portfolio_autocorr": {
+   "model": "lrv",
+   "D": 1.4
+  },
+  "mean_car": 0.003,
+  "cost_per_event": 0.0004,
+  "days_per_year": 252,
+  "skew": 0.0,
+  "exkurt": 0.0,
+  "assume_independent": null
+ },
+ "series_model": {
+  "periods_per_year": 252.0,
+  "autocorr": {
+   "model": "lrv",
+   "D": 1.4
+  },
+  "skew": 0.0,
+  "exkurt": 0.0,
+  "null_block": null,
+  "null_D": null,
+  "D1": 1.4,
+  "D2": 1.4,
+  "D_null": 1.4,
+  "kappa_at_0": 1.1832159566199232
+ },
+ "windows": {
+  "dev_years": 11.99,
+  "val_years": 11.63,
+  "total_years": 23.62,
+  "dev_fraction_for_years_solver": 0.5076206604572396,
+  "val_sharpe_multiplier": 1.0
+ },
+ "gates": {
+  "dev": {
+   "name": "A2_dev(k=1)",
+   "sharpe_c": 1.8,
+   "alpha": 0.05,
+   "null_center_sr": -0.098,
+   "stress_drag_sr": 0.2,
+   "description": "Sharpe >= c/sqrt(T), stress mean > 0, p < 0.05/k (mean-centred block bootstrap)",
+   "threshold": 0.519831884032117,
+   "binding_leg": "sharpe_c_over_sqrtT",
+   "legs": {
+    "sharpe_c_over_sqrtT": 0.519831884032117,
+    "p_lt_alpha": 0.4640587110258131,
+    "stress_mean_gt_0": 0.2
+   }
+  },
+  "val_current": {
+   "name": "val_sharpe_0.75",
+   "sharpe_abs": 0.75,
+   "alpha": 0.05,
+   "stress_drag_sr": 0.2,
+   "threshold": 0.75,
+   "binding_leg": "sharpe_abs",
+   "legs": {
+    "sharpe_abs": 0.75,
+    "p_lt_alpha": 0.5706915172732709,
+    "stress_mean_gt_0": 0.2
+   }
+  },
+  "val_proposed": {
+   "name": "PAV",
+   "alpha": 0.05,
+   "stress_drag_sr": 0.2,
+   "description": "validation HAC-t / bootstrap p < 0.05/1, stress mean > 0",
+   "threshold": 0.5706915172732709,
+   "binding_leg": "p_lt_alpha"
+  },
+  "batch_k": 1,
+  "alpha_batch": 0.05,
+  "stress_drag_sr": 0.2
+ },
+ "observations": {
+  "raw_dev": 143.88,
+  "raw_val": 139.56,
+  "raw_total": 283.44,
+  "raw_unit": "events",
+  "periods_dev": 3021,
+  "deff_time_D1": 1.4,
+  "deff_time_D1_finite_dev": 1.4,
+  "deff_cross": 1.0,
+  "deff_total": 1.4,
+  "n_eff_dev": 102.77142857142857,
+  "n_eff_val": 99.6857142857143,
+  "n_eff_total": 202.45714285714286,
+  "n_units": 1.0,
+  "n_eff_units": 12.0
+ },
+ "standard_errors": {
+  "se_sharpe_null_dev": 0.3417074333036657,
+  "se_sharpe_null_val": 0.34695580684037836,
+  "se_sharpe_null_total": 0.24345801189590827,
+  "se_sharpe_at": {
+   "0.3": 0.24347974824806942,
+   "0.5": 0.24351838586134866,
+   "0.7": 0.2435763307895019,
+   "1.0": 0.24369941801560002
+  },
+  "kappa0": 1.1832159566199232,
+  "kappa_at_0.7": 1.1837909913118578,
+  "natural_unit": "mean net CAR per event (return units)",
+  "se_mean_natural_dev": 0.0013119444427030836,
+  "se_mean_natural_total": 0.0009347276488847503
+ },
+ "newey_west_check": {
+  "nw_lags_default": 8,
+  "D_nw_expected": 1.4,
+  "D_true": 1.4,
+  "actual_size_nominal_alpha_with_default_nw": 0.049999999999999975,
+  "actual_size_nominal_alpha_if_iid_se": 0.08224090118101579
+ },
+ "mde": {
+  "alpha": 0.05,
+  "power": 0.8,
+  "single_test_all_years": {
+   "sharpe": 0.6054267204714935,
+   "natural": 0.0027244628122580802
+  },
+  "dev_gate_only": {
+   "sharpe": 0.807606141281285,
+   "natural": 0.003500706293401833
+  },
+  "joint_current_gates": {
+   "sharpe": 1.0941610396718209,
+   "natural": 0.004600899235762321
+  },
+  "joint_with_proposed_val_gate": {
+   "sharpe": 0.9777500238174471,
+   "natural": 0.004153953192350254
+  }
+ },
+ "power": [
+  {
+   "world": "cost_drag_null",
+   "true_net_sharpe": -0.3,
+   "single_test_all_years": 0.0020083825790059907,
+   "p_dev": 0.008219789033911226,
+   "p_val_current": 0.0012388490373182578,
+   "p_joint_current": 1.0183077731620095e-05,
+   "p_val_proposed": 0.006048654250051296,
+   "p_joint_proposed": 4.971866187449218e-05,
+   "natural_mean": -0.0007518137870333032
+  },
+  {
+   "world": "zero_net_null",
+   "true_net_sharpe": 0.0,
+   "single_test_all_years": 0.049999999999999975,
+   "p_dev": 0.06409508717255392,
+   "p_val_current": 0.015322250892389968,
+   "p_joint_current": 0.000982081006627477,
+   "p_val_proposed": 0.049999999999999975,
+   "p_joint_proposed": 0.0032047543586276946,
+   "natural_mean": 0.0004
+  },
+  {
+   "world": "structural_leak",
+   "true_net_sharpe": 0.05,
+   "single_test_all_years": 0.07500787603489387,
+   "p_dev": 0.08457343541392925,
+   "p_val_current": 0.02181943851888713,
+   "p_joint_current": 0.001845344874345301,
+   "p_val_proposed": 0.06671149781849495,
+   "p_joint_proposed": 0.0056420205521189645,
+   "natural_mean": 0.0005919689645055505
+  },
+  {
+   "world": "S=0.3",
+   "true_net_sharpe": 0.3,
+   "single_test_all_years": 0.33996030946408756,
+   "p_dev": 0.2600224486956305,
+   "p_val_current": 0.09733634858791507,
+   "p_joint_current": 0.025309635706921154,
+   "p_val_proposed": 0.21765996352522798,
+   "p_joint_proposed": 0.0565964766988314,
+   "natural_mean": 0.001551813787033303
+  },
+  {
+   "world": "S=0.5",
+   "true_net_sharpe": 0.5,
+   "single_test_all_years": 0.6586520934974751,
+   "p_dev": 0.4768650644627448,
+   "p_val_current": 0.23564730888089064,
+   "p_joint_current": 0.11237196913995824,
+   "p_val_proposed": 0.4192949922236093,
+   "p_joint_proposed": 0.19994713349561752,
+   "natural_mean": 0.0023196896450555053
+  },
+  {
+   "world": "S=0.7",
+   "true_net_sharpe": 0.7,
+   "single_test_all_years": 0.8906117157612287,
+   "p_dev": 0.7009039990550063,
+   "p_val_current": 0.44273421675001856,
+   "p_joint_current": 0.310314183038574,
+   "p_val_proposed": 0.6452446632462113,
+   "p_joint_proposed": 0.4522545648381704,
+   "natural_mean": 0.0030875655030777075
+  },
+  {
+   "world": "S=1.0",
+   "true_net_sharpe": 1.0,
+   "single_test_all_years": 0.9930568526333425,
+   "p_dev": 0.9198123496353323,
+   "p_val_current": 0.7641879632915041,
+   "p_joint_current": 0.7029095260781975,
+   "p_val_proposed": 0.8917952698372117,
+   "p_joint_proposed": 0.8202843025426408,
+   "natural_mean": 0.0042393792901110105
+  },
+  {
+   "world": "implied_by_primitives",
+   "true_net_sharpe": 0.6771927969442226,
+   "single_test_all_years": 0.8720611524093784,
+   "p_dev": 0.6773510603033077,
+   "p_val_current": 0.416931262896869,
+   "p_joint_current": 0.28240883299679137,
+   "p_val_proposed": 0.6205096754213812,
+   "p_joint_proposed": 0.4203028865751339,
+   "natural_mean": 0.0029999999999999996
+  }
+ ],
+ "years_for_power": [
+  {
+   "true_net_sharpe": 0.3,
+   "single_test": 96.17892529876258,
+   "dev_gate_only": 99.18339026976624,
+   "joint_current": "inf",
+   "joint_proposed": 437.94497686115574
+  },
+  {
+   "true_net_sharpe": 0.5,
+   "single_test": 34.62813299490048,
+   "dev_gate_only": 31.2719541137283,
+   "joint_current": "inf",
+   "joint_proposed": 90.26692202783765
+  },
+  {
+   "true_net_sharpe": 0.7,
+   "single_test": 17.670261272482172,
+   "dev_gate_only": 15.957783632302604,
+   "joint_current": "inf",
+   "joint_proposed": 46.06417769985319
+  },
+  {
+   "true_net_sharpe": 1.0,
+   "single_test": 8.661391191609084,
+   "dev_gate_only": 7.822129961150905,
+   "joint_current": 36.39464939347127,
+   "joint_proposed": 22.581469303775737
+  },
+  {
+   "true_net_sharpe": 0.6771927969442226,
+   "single_test": 18.88014109554016,
+   "dev_gate_only": 17.050391682098702,
+   "joint_current": "inf",
+   "joint_proposed": 49.21787691800914
+  }
+ ],
+ "implied": {
+  "events_per_year": 12,
+  "deff": 1.0,
+  "m_w": 1.0,
+  "n_eff_per_year": 12.0,
+  "per_event_ir_per_unit_sharpe": 0.28867513459481287,
+  "sharpe_gross": 0.7813763041664108,
+  "sharpe_net": 0.6771927969442226
+ },
+ "breadth_curve": [
+  {
+   "events_per_year": 1.5,
+   "m_w": 1.0,
+   "deff": 1.0,
+   "n_eff_per_year": 1.5
+  },
+  {
+   "events_per_year": 3.0,
+   "m_w": 1.0,
+   "deff": 1.0,
+   "n_eff_per_year": 3.0
+  },
+  {
+   "events_per_year": 6.0,
+   "m_w": 1.0,
+   "deff": 1.0,
+   "n_eff_per_year": 6.0
+  },
+  {
+   "events_per_year": 12,
+   "m_w": 1.0,
+   "deff": 1.0,
+   "n_eff_per_year": 12.0
+  },
+  {
+   "events_per_year": 24,
+   "m_w": 1.0,
+   "deff": 1.0,
+   "n_eff_per_year": 24.0
+  },
+  {
+   "events_per_year": 48,
+   "m_w": 1.0,
+   "deff": 1.0,
+   "n_eff_per_year": 48.0
+  },
+  {
+   "events_per_year": 96,
+   "m_w": 1.0,
+   "deff": 1.0,
+   "n_eff_per_year": 96.0
+  }
+ ],
+ "correlation_sensitivity": [
+  {
+   "icc": 0.0,
+   "deff": 1.0,
+   "n_eff_per_year": 12.0,
+   "natural_slope": 0.0038393792901110107,
+   "sharpe_net": 0.6771927969442226,
+   "mde_natural_single_test": 0.0027244628122580802,
+   "single_test_power_at_implied": 0.8720611524093784,
+   "joint_current_at_implied": 0.28240883299679137
+  },
+  {
+   "icc": 0.005,
+   "deff": 1.0,
+   "n_eff_per_year": 12.0,
+   "natural_slope": 0.0038393792901110107,
+   "sharpe_net": 0.6771927969442226,
+   "mde_natural_single_test": 0.0027244628122580802,
+   "single_test_power_at_implied": 0.8720611524093784,
+   "joint_current_at_implied": 0.28240883299679137
+  },
+  {
+   "icc": 0.01,
+   "deff": 1.0,
+   "n_eff_per_year": 12.0,
+   "natural_slope": 0.0038393792901110107,
+   "sharpe_net": 0.6771927969442226,
+   "mde_natural_single_test": 0.0027244628122580802,
+   "single_test_power_at_implied": 0.8720611524093784,
+   "joint_current_at_implied": 0.28240883299679137
+  },
+  {
+   "icc": 0.02,
+   "deff": 1.0,
+   "n_eff_per_year": 12.0,
+   "natural_slope": 0.0038393792901110107,
+   "sharpe_net": 0.6771927969442226,
+   "mde_natural_single_test": 0.0027244628122580802,
+   "single_test_power_at_implied": 0.8720611524093784,
+   "joint_current_at_implied": 0.28240883299679137
+  },
+  {
+   "icc": 0.05,
+   "deff": 1.0,
+   "n_eff_per_year": 12.0,
+   "natural_slope": 0.0038393792901110107,
+   "sharpe_net": 0.6771927969442226,
+   "mde_natural_single_test": 0.0027244628122580802,
+   "single_test_power_at_implied": 0.8720611524093784,
+   "joint_current_at_implied": 0.28240883299679137
+  },
+  {
+   "icc": 0.1,
+   "deff": 1.0,
+   "n_eff_per_year": 12.0,
+   "natural_slope": 0.0038393792901110107,
+   "sharpe_net": 0.6771927969442226,
+   "mde_natural_single_test": 0.0027244628122580802,
+   "single_test_power_at_implied": 0.8720611524093784,
+   "joint_current_at_implied": 0.28240883299679137
+  },
+  {
+   "icc": 0.2,
+   "deff": 1.0,
+   "n_eff_per_year": 12.0,
+   "natural_slope": 0.0038393792901110107,
+   "sharpe_net": 0.6771927969442226,
+   "mde_natural_single_test": 0.0027244628122580802,
+   "single_test_power_at_implied": 0.8720611524093784,
+   "joint_current_at_implied": 0.28240883299679137
+  },
+  {
+   "icc": 0.4,
+   "deff": 1.0,
+   "n_eff_per_year": 12.0,
+   "natural_slope": 0.0038393792901110107,
+   "sharpe_net": 0.6771927969442226,
+   "mde_natural_single_test": 0.0027244628122580802,
+   "single_test_power_at_implied": 0.8720611524093784,
+   "joint_current_at_implied": 0.28240883299679137
+  }
+ ],
+ "naive_independence": {
+  "deff_ignored": 1.4,
+  "naive_se_ratio": 0.8451542547285166,
+  "naive_false_positive_at_nominal_0.05": 0.08224090118101579
+ },
+ "winners_curse": {
+  "dev_estimate": 0.664,
+  "conditional_median_unbiased": 0.20076191782927152,
+  "normal_prior_posterior_mean_sd0.5": 0.4524811464041911,
+  "at_dev_estimate": {
+   "p_val_current": 0.40215934150355565,
+   "p_val_proposed": 0.6059648306687404
+  },
+  "at_conditional_median_unbiased": {
+   "p_val_current": 0.0567156331504614,
+   "p_val_proposed": 0.14317279084079282
+  },
+  "at_posterior_mean": {
+   "p_val_current": 0.19562902147842842,
+   "p_val_proposed": 0.36668802043976767
+  }
+ },
+ "verdict": "MARGINAL",
+ "verdict_with_proposed_val_gate": "MARGINAL",
+ "verdict_rule": {
+  "decisive_min_joint_power_at_0.7": 0.5,
+  "max_false_pass": 0.05,
+  "incapable_below_joint_power_at_0.7": 0.25,
+  "incapable_above_false_pass": 0.1
+ },
+ "joint_power_at_0.7": 0.310314183038574,
+ "false_pass_zero_net": 0.000982081006627477,
+ "notes": [
+  "calendar-time equivalence: per-event IR x sqrt(N_eff/yr); m_w=1.00, deff=1.00",
+  "m_w = 1 (no concurrent events): icc cannot matter; deff = 1."
+ ],
+ "description": "TLT last-3-sessions month-end window, active vs C_EXP; shift-null gate (registered).",
+ "assumptions": [
+  "one window per month on one asset => m_w = 1, icc irrelevant",
+  "D = 1.40 from the family's own shift-null sd (0.342 x sqrt(11.99))^2"
+ ],
+ "scenarios": []
+}

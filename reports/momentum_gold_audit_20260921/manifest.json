@@ -1,0 +1,7 @@
+{
+  "research/momentum_verification/codex_gold_recency_audit.py": "718837021af188b76aa2ec0e129ea5d81493764b6d8ef66211db06ceaedfa08d",
+  "research/momentum_verification/codex_gold_early_control.py": "95c1deef702abf7ea4fbe949b83e7ee92163bfbfd450a667bca8123bd241f992",
+  "research/momentum_verification/codex_gold_source_check.py": "e0c03906ddaecbf66250be9f20a09564b571387a6ab361ce5f297eef7560f638",
+  "reports/momentum_verification_20260919/inputs/SPMO.parquet": "523717c7dd2f5c4b3120efc4b6cf600ee73a2f13da2c32c1f0f505edd5fe17a4",
+  "data/multiasset/etf/GLD.parquet": "95fd1fbaef9d8cb458942b5d03fe5e7c6b918e78d5244a5d407c882988658994"
+}

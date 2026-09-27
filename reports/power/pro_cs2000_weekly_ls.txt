@@ -1,0 +1,40 @@
+pro_cs2000_weekly_ls  [long_short]  dev 7.50y + val 7.50y
+  raw obs (total) 1560000 asset-periods;  D_time 1.000  deff_cross 100.950  ->  effective obs 15453.2
+  SE(Sharpe) dev 0.365, val 0.365;  SE(mean, mean IC per period (net of costs via offset)) total 0.006211
+  dev gate threshold 0.657 (binding: sharpe_c_over_sqrtT);  val threshold 0.750 (binding: sharpe_abs);  proposed val threshold 0.601
+  MDE Sharpe (80%): single test 0.64, dev gate 0.97, joint current 1.17, joint proposed 1.09
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.003   0.004   0.002   0.000   | 0.007  0.000
+  zero_net_null             0.00  0.050   0.036   0.020   0.001   | 0.050  0.002
+  structural_leak           0.05  0.073   0.048   0.028   0.001   | 0.066  0.003
+  S=0.3                     0.30  0.315   0.164   0.109   0.018   | 0.205  0.034
+  S=0.5                     0.50  0.614   0.334   0.247   0.083   | 0.392  0.131
+  S=0.7                     0.70  0.856   0.546   0.446   0.244   | 0.607  0.332
+  S=1.0                     1.00  0.986   0.824   0.751   0.619   | 0.861  0.709
+  implied_by_primitives     0.36  0.401   0.208   0.143   0.030   | 0.255  0.053
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   68.74     77.58             inf           197.12
+                     0.50   24.77     27.96             inf            71.05
+                     0.70   12.66     14.28             inf            36.32
+                     1.00    6.22      7.02           27.93            17.87
+                     0.36   47.73     53.87             inf           136.88
+  VERDICT (current gates): INCAPABLE   [joint@0.7 = 0.244, false-pass = 0.0007];  with proposed val gate: MARGINAL
+  scenarios: label | n_eff | implied net S | joint(cur) | joint(prop) | yrs80 single | yrs80 joint(prop) | MDE natural (joint prop)
+   IC=0.01 rho=0.1 tilt0.25                     39.2 | -0.0776 | 0.000259 | 0.000699 | inf | inf | 0.0302
+   IC=0.01 rho=0.1 LITERAL                      9.96 | -0.0428 | 0.000413 | 0.00108 | inf | inf | 0.0387
+   IC=0.01 rho=0.2 tilt0.25                     19.8 | -0.0557 | 0.000348 | 0.00092 | inf | inf | 0.0376
+   IC=0.01 rho=0.2 LITERAL                      4.99 | -0.0305 | 0.000486 | 0.00125 | inf | inf | 0.0499
+   IC=0.01 rho=0.3 tilt0.25                     13.3 | -0.0457 | 0.000398 | 0.00104 | inf | inf | 0.0434
+   IC=0.01 rho=0.3 LITERAL                      3.33 | -0.0249 | 0.000522 | 0.00134 | inf | inf | 0.0585
+   IC=0.02 rho=0.1 tilt0.25                     39.2 | 0.502 | 0.0837 | 0.132 | 24.6 | 70.5 | 0.0302
+   IC=0.02 rho=0.1 LITERAL                      9.96 | 0.353 | 0.0281 | 0.0505 | 49.6 | 142 | 0.0387
+   IC=0.02 rho=0.2 tilt0.25                     19.8 | 0.36 | 0.0298 | 0.0531 | 47.7 | 137 | 0.0376
+   IC=0.02 rho=0.2 LITERAL                      4.99 | 0.251 | 0.0115 | 0.0226 | 98 | 281 | 0.0499
+   IC=0.02 rho=0.3 tilt0.25                     13.3 | 0.295 | 0.0172 | 0.0325 | 70.9 | 203 | 0.0434
+   IC=0.02 rho=0.3 LITERAL                      3.33 | 0.206 | 0.00736 | 0.0151 | 146 | 420 | 0.0585
+   IC=0.03 rho=0.1 tilt0.25                     39.2 | 1.08 | 0.714 | 0.791 | 5.32 | 15.3 | 0.0302
+   IC=0.03 rho=0.1 LITERAL                      9.96 | 0.749 | 0.299 | 0.393 | 11.1 | 31.7 | 0.0387
+   IC=0.03 rho=0.2 tilt0.25                     19.8 | 0.776 | 0.331 | 0.428 | 10.3 | 29.6 | 0.0376
+   IC=0.03 rho=0.2 LITERAL                      4.99 | 0.533 | 0.102 | 0.157 | 21.8 | 62.6 | 0.0499
+   IC=0.03 rho=0.3 tilt0.25                     13.3 | 0.637 | 0.181 | 0.257 | 15.3 | 43.9 | 0.0434
+   IC=0.03 rho=0.3 LITERAL                      3.33 | 0.436 | 0.0533 | 0.089 | 32.6 | 93.4 | 0.0585

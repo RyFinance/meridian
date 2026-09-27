@@ -1,0 +1,6 @@
+component,ann_excess_return,share_of_total
+market beta (beta_R x mean Mkt-RF),0.025202371166323484,0.37599263529946286
+"generic post-announcement premium (mean alpha, P1L)",0.019461806164904744,0.2903494968524163
+SUE-sign direction on random selection (mean alpha P1 - P1L),-0.005810943479924172,-0.08669311066700117
+model selection residual (alpha_R - mean alpha P1),0.028175661930792364,0.420350978515122
+total = real book mean excess return,0.06702889578209642,1.0

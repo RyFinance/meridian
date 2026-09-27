@@ -1,0 +1,21 @@
+spec,change,joint_current_0.7,joint_proposed_0.7,false_pass_current,false_pass_proposed,verdict_current,verdict_proposed,n_eff_total,raw_total,val_proposed_threshold,m_w,deff,events_per_year,n_eff_per_year
+retro_commodity_roll,D=0.6,0.304151,0.632681,1.3e-05,0.000503,MARGINAL,DECISIVE,17310.681818,15233.4,0.408878,,,,
+retro_commodity_roll,D=0.8,0.300069,0.545114,9.9e-05,0.001104,MARGINAL,DECISIVE,12983.011364,15233.4,0.472131,,,,
+retro_commodity_roll,D=1.0,0.270893,0.433848,0.000243,0.00125,MARGINAL,MARGINAL,10386.409091,15233.4,0.527859,,,,
+retro_commodity_roll,D=1.2,0.240327,0.343371,0.000411,0.00125,INCAPABLE,MARGINAL,8655.340909,15233.4,0.57824,,,,
+c4c_tsy_auction_surprise,pav k_val=1,0.265081,0.491233,6.7e-05,0.000833,MARGINAL,MARGINAL,575.974771,1004.5,0.465235,,,,
+c4c_tsy_auction_surprise,pav k_val=3,0.265081,0.391925,6.7e-05,0.000278,MARGINAL,MARGINAL,575.974771,1004.5,0.601902,,,,
+c4c_tsy_auction_surprise,pav k_val=3 floor=0.3,0.265081,0.391925,6.7e-05,0.000278,MARGINAL,MARGINAL,575.974771,1004.5,0.601902,,,,
+c4_tsy_auction_demand,pav k_val=1,0.304454,0.590144,6.9e-05,0.00125,MARGINAL,DECISIVE,917.545872,1600.2,0.44488,,,,
+c4_tsy_auction_demand,pav k_val=2,0.304454,0.524386,6.9e-05,0.000625,MARGINAL,DECISIVE,917.545872,1600.2,0.530107,,,,
+c4_tsy_auction_demand,pav k_val=2 floor=0.3,0.304454,0.524386,6.9e-05,0.000625,MARGINAL,DECISIVE,917.545872,1600.2,0.530107,,,,
+c4a_binance_funding_ls_daily,pav k_val=1,0.033078,0.059437,0.000278,0.000833,INCAPABLE,INCAPABLE,26144.665819,243455.0,0.902666,,,,
+c4a_binance_funding_ls_daily,pav k_val=3,0.033078,0.033078,0.000278,0.000278,INCAPABLE,INCAPABLE,26144.665819,243455.0,1.167833,,,,
+c4a_binance_funding_ls_daily,pav k_val=3 floor=0.3,0.033078,0.033078,0.000278,0.000278,INCAPABLE,INCAPABLE,26144.665819,243455.0,1.167833,,,,
+c4b_finra_svr_weekly,pav k_val=1,0.055094,0.091093,0.000278,0.000833,INCAPABLE,INCAPABLE,11089.682409,842400.0,0.758714,,,,
+c4b_finra_svr_weekly,pav k_val=3,0.055094,0.055094,0.000278,0.000278,INCAPABLE,INCAPABLE,11089.682409,842400.0,0.981594,,,,
+c4b_finra_svr_weekly,pav k_val=3 floor=0.3,0.055094,0.055094,0.000278,0.000278,INCAPABLE,INCAPABLE,11089.682409,842400.0,0.981594,,,,
+retro_pead_2004_2014,event deff,,,,,,,,,,70.441964,2.388839,510,213.492805
+pro_events_8000,event deff,,,,,,,,,,337.734694,7.734694,8000,1034.300792
+retro_fx_hedge_rebal,event deff,,,,,,,,,,5.0,2.6,60,23.076923
+c4c_tsy_auction_surprise,event deff,,,,,,,,,,3.48,1.744,41,23.509174

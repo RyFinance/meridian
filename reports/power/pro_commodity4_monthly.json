@@ -1,0 +1,489 @@
+{
+ "name": "pro_commodity4_monthly",
+ "design": "carry",
+ "inputs": {
+  "n_assets": 4,
+  "periods_per_year": 12,
+  "rho": 0.4,
+  "blocks": null,
+  "autocorr": {
+   "model": "ar1",
+   "phi": 0.05
+  },
+  "skew": -0.7121,
+  "exkurt": 2.0956,
+  "sharpe_per_asset": 0.4,
+  "signal_scale_cv": 0.0,
+  "assume_independent": null
+ },
+ "series_model": {
+  "periods_per_year": 12,
+  "autocorr": {
+   "model": "ar1",
+   "phi": 0.05
+  },
+  "skew": -0.7121,
+  "exkurt": 2.0956,
+  "null_block": null,
+  "null_D": null,
+  "D1": 1.105263157894737,
+  "D2": 1.005012531328321,
+  "D_null": 1.105263157894737,
+  "kappa_at_0": 1.0513149660756937
+ },
+ "windows": {
+  "dev_years": 17.5,
+  "val_years": 17.5,
+  "total_years": 35.0,
+  "dev_fraction_for_years_solver": 0.5,
+  "val_sharpe_multiplier": 1.0
+ },
+ "gates": {
+  "dev": {
+   "name": "A2_dev(k=1)",
+   "sharpe_c": 1.8,
+   "alpha": 0.05,
+   "stress_drag_sr": 0.1,
+   "description": "Sharpe >= c/sqrt(T), stress mean > 0, p < 0.05/k (mean-centred block bootstrap)",
+   "threshold": 0.4302822993603817,
+   "binding_leg": "sharpe_c_over_sqrtT",
+   "legs": {
+    "sharpe_c_over_sqrtT": 0.4302822993603817,
+    "p_lt_alpha": 0.413372022129837,
+    "stress_mean_gt_0": 0.1
+   }
+  },
+  "val_current": {
+   "name": "val_sharpe_0.75",
+   "sharpe_abs": 0.75,
+   "alpha": 0.05,
+   "stress_drag_sr": 0.1,
+   "threshold": 0.75,
+   "binding_leg": "sharpe_abs",
+   "legs": {
+    "sharpe_abs": 0.75,
+    "p_lt_alpha": 0.413372022129837,
+    "stress_mean_gt_0": 0.1
+   }
+  },
+  "val_proposed": {
+   "name": "PAV",
+   "alpha": 0.05,
+   "stress_drag_sr": 0.1,
+   "description": "validation HAC-t / bootstrap p < 0.05/1, stress mean > 0",
+   "threshold": 0.413372022129837,
+   "binding_leg": "p_lt_alpha"
+  },
+  "batch_k": 1,
+  "alpha_batch": 0.05,
+  "stress_drag_sr": 0.1
+ },
+ "observations": {
+  "raw_dev": 840.0,
+  "raw_val": 840.0,
+  "raw_total": 1680.0,
+  "raw_unit": "asset-periods",
+  "periods_dev": 210,
+  "deff_time_D1": 1.105263157894737,
+  "deff_time_D1_finite_dev": 1.104735523018071,
+  "deff_cross": 2.2,
+  "deff_total": 2.4315789473684215,
+  "n_eff_dev": 345.4545454545454,
+  "n_eff_val": 345.4545454545454,
+  "n_eff_total": 690.9090909090908,
+  "n_units": 4,
+  "n_eff_units": 1.8181818181818181
+ },
+ "standard_errors": {
+  "se_sharpe_null_dev": 0.2513123449750173,
+  "se_sharpe_null_val": 0.2513123449750173,
+  "se_sharpe_null_total": 0.17770466332772772,
+  "se_sharpe_at": {
+   "0.3": 0.18345707439395906,
+   "0.5": 0.18784711787564465,
+   "0.7": 0.19264627533755949,
+   "1.0": 0.20054717776381556
+  },
+  "kappa0": 1.0513149660756937,
+  "kappa_at_0.7": 1.1397107348139779,
+  "natural_unit": "per-asset net Sharpe",
+  "se_mean_natural_dev": 0.18637822325921868,
+  "se_mean_natural_total": 0.13178930553209384
+ },
+ "newey_west_check": {
+  "nw_lags_default": 4,
+  "D_nw_expected": 1.0831025,
+  "D_true": 1.105263157894737,
+  "actual_size_nominal_alpha_with_default_nw": 0.05173272420066238,
+  "actual_size_nominal_alpha_if_iid_se": 0.05884213266220818
+ },
+ "mde": {
+  "alpha": 0.05,
+  "power": 0.8,
+  "single_test_all_years": {
+   "sharpe": 0.4494265503656449,
+   "natural": 0.33330365028823183
+  },
+  "dev_gate_only": {
+   "sharpe": 0.6583479391655248,
+   "natural": 0.4882438990421913
+  },
+  "joint_current_gates": {
+   "sharpe": 1.0069087681361069,
+   "natural": 0.7467435282894354
+  },
+  "joint_with_proposed_val_gate": {
+   "sharpe": 0.7656179479741716,
+   "natural": 0.5677974667459338
+  }
+ },
+ "power": [
+  {
+   "world": "cost_drag_null",
+   "true_net_sharpe": -0.3,
+   "single_test_all_years": 0.0003097592486905103,
+   "p_dev": 0.0014214615690868399,
+   "p_val_current": 8.904441709707866e-06,
+   "p_joint_current": 1.2657321684523646e-08,
+   "p_val_proposed": 0.0017777109064776554,
+   "p_joint_proposed": 2.5269477345045166e-06,
+   "natural_mean": -0.22248595461286988
+  },
+  {
+   "world": "zero_net_null",
+   "true_net_sharpe": 0.0,
+   "single_test_all_years": 0.049999999999999975,
+   "p_dev": 0.04343529604489954,
+   "p_val_current": 0.001420981360998754,
+   "p_joint_current": 6.172074608926516e-05,
+   "p_val_proposed": 0.049999999999999975,
+   "p_joint_proposed": 0.002171764802244976,
+   "natural_mean": 0.0
+  },
+  {
+   "world": "structural_leak",
+   "true_net_sharpe": 0.05,
+   "single_test_all_years": 0.08743437960604089,
+   "p_dev": 0.06607467528440025,
+   "p_val_current": 0.002789402293497451,
+   "p_joint_current": 0.0001843088507804054,
+   "p_val_proposed": 0.07511410699120742,
+   "p_joint_proposed": 0.0049631402287217295,
+   "natural_mean": 0.03708099243547832
+  },
+  {
+   "world": "S=0.3",
+   "true_net_sharpe": 0.3,
+   "single_test_all_years": 0.5167433570328027,
+   "p_dev": 0.30777999446809606,
+   "p_val_current": 0.04141868619735906,
+   "p_joint_current": 0.012747843008698979,
+   "p_val_proposed": 0.3310647975455525,
+   "p_joint_proposed": 0.1018951215571515,
+   "natural_mean": 0.22248595461286988
+  },
+  {
+   "world": "S=0.5",
+   "true_net_sharpe": 0.5,
+   "single_test_all_years": 0.8655709772415089,
+   "p_dev": 0.6035073654797679,
+   "p_val_current": 0.1733353014192635,
+   "p_joint_current": 0.1046091311041812,
+   "p_val_proposed": 0.6278221987470483,
+   "p_joint_proposed": 0.37889532115554636,
+   "natural_mean": 0.37080992435478316
+  },
+  {
+   "world": "S=0.7",
+   "true_net_sharpe": 0.7,
+   "single_test_all_years": 0.9828413483669161,
+   "p_dev": 0.8389121825577075,
+   "p_val_current": 0.4271931920958195,
+   "p_joint_current": 0.35837757315489793,
+   "p_val_proposed": 0.8536153537346323,
+   "p_joint_proposed": 0.7161083194662898,
+   "natural_mean": 0.5191338940966964
+  },
+  {
+   "world": "S=1.0",
+   "true_net_sharpe": 1.0,
+   "single_test_all_years": 0.9997913188488463,
+   "p_dev": 0.9777187305345862,
+   "p_val_current": 0.8109687628650595,
+   "p_joint_current": 0.7928993493316299,
+   "p_val_proposed": 0.9806980468471528,
+   "p_joint_proposed": 0.9588468494011464,
+   "natural_mean": 0.7416198487095663
+  },
+  {
+   "world": "implied_by_primitives",
+   "true_net_sharpe": 0.5393598899705937,
+   "single_test_all_years": 0.904710055804237,
+   "p_dev": 0.6585874398251308,
+   "p_val_current": 0.21503548833762526,
+   "p_joint_current": 0.14161967173582338,
+   "p_val_proposed": 0.6815215947049209,
+   "p_joint_proposed": 0.4488415622422543,
+   "natural_mean": 0.4
+  }
+ ],
+ "years_for_power": [
+  {
+   "true_net_sharpe": 0.3,
+   "single_test": 77.59907144929281,
+   "dev_gate_only": 81.80905942167173,
+   "joint_current": "inf",
+   "joint_proposed": 216.6818776345258
+  },
+  {
+   "true_net_sharpe": 0.5,
+   "single_test": 28.39970143115246,
+   "dev_gate_only": 29.92766803685469,
+   "joint_current": "inf",
+   "joint_proposed": 79.63547001690391
+  },
+  {
+   "true_net_sharpe": 0.7,
+   "single_test": 14.750691067767448,
+   "dev_gate_only": 15.537164776667797,
+   "joint_current": "inf",
+   "joint_proposed": 41.54933735390549
+  },
+  {
+   "true_net_sharpe": 1.0,
+   "single_test": 7.4409111703949105,
+   "dev_gate_only": 7.831849234542686,
+   "joint_current": 36.34148367274166,
+   "joint_proposed": 21.111519166280942
+  },
+  {
+   "true_net_sharpe": 0.5393598899705937,
+   "single_test": 24.489348309292424,
+   "dev_gate_only": 25.80465511714582,
+   "joint_current": "inf",
+   "joint_proposed": 68.7299034831735
+  }
+ ],
+ "implied": {
+  "rho_bar": 0.4,
+  "n_eff": 1.8181818181818181,
+  "skew_used": -0.7121,
+  "exkurt_used": 2.0956,
+  "kappa0": 1.0513149660756937,
+  "kappa_at_0.7": 1.1397107348139779,
+  "kappa_at_0.7_if_gaussian": 1.0610288232384124,
+  "sharpe_net": 0.5393598899705937
+ },
+ "breadth_curve": [
+  {
+   "n_assets": 1,
+   "n_eff": 1.0
+  },
+  {
+   "n_assets": 2,
+   "n_eff": 1.4285714285714286
+  },
+  {
+   "n_assets": 4,
+   "n_eff": 1.8181818181818181
+  },
+  {
+   "n_assets": 8,
+   "n_eff": 2.1052631578947367
+  },
+  {
+   "n_assets": 16,
+   "n_eff": 2.2857142857142856
+  },
+  {
+   "n_assets": 32,
+   "n_eff": 2.388059701492537
+  },
+  {
+   "n_assets": 64,
+   "n_eff": 2.442748091603053
+  },
+  {
+   "n_assets": 128,
+   "n_eff": 2.471042471042471
+  }
+ ],
+ "correlation_sensitivity": [
+  {
+   "rho": 0.0,
+   "n_eff": 4.0,
+   "natural_slope": 0.5,
+   "sharpe_net": 0.8,
+   "mde_natural_single_test": 0.22471327518282244,
+   "single_test_power_at_implied": 0.995353265654259,
+   "joint_current_at_implied": 0.5202707172507908
+  },
+  {
+   "rho": 0.1,
+   "n_eff": 3.0769230769230766,
+   "natural_slope": 0.570087712549569,
+   "sharpe_net": 0.7016464154456235,
+   "mde_natural_single_test": 0.25621255405699417,
+   "single_test_power_at_implied": 0.9831823277194885,
+   "joint_current_at_implied": 0.3609902369218613
+  },
+  {
+   "rho": 0.2,
+   "n_eff": 2.5,
+   "natural_slope": 0.6324555320336759,
+   "sharpe_net": 0.632455532033676,
+   "mde_natural_single_test": 0.2842423080215636,
+   "single_test_power_at_implied": 0.962551963437597,
+   "joint_current_at_implied": 0.2563869210371147
+  },
+  {
+   "rho": 0.3,
+   "n_eff": 2.1052631578947367,
+   "natural_slope": 0.6892024376045112,
+   "sharpe_net": 0.5803810000880093,
+   "mde_natural_single_test": 0.3097458740361891,
+   "single_test_power_at_implied": 0.9355426609546518,
+   "joint_current_at_implied": 0.18772796962996113
+  },
+  {
+   "rho": 0.4,
+   "n_eff": 1.8181818181818181,
+   "natural_slope": 0.7416198487095663,
+   "sharpe_net": 0.5393598899705937,
+   "mde_natural_single_test": 0.33330365028823183,
+   "single_test_power_at_implied": 0.904710055804237,
+   "joint_current_at_implied": 0.14161967173582338
+  },
+  {
+   "rho": 0.5,
+   "n_eff": 1.6,
+   "natural_slope": 0.7905694150420948,
+   "sharpe_net": 0.5059644256269408,
+   "mde_natural_single_test": 0.3553028850269544,
+   "single_test_power_at_implied": 0.872150697801203,
+   "joint_current_at_implied": 0.10975624719692706
+  },
+  {
+   "rho": 0.6,
+   "n_eff": 1.4285714285714286,
+   "natural_slope": 0.8366600265340756,
+   "sharpe_net": 0.47809144373375745,
+   "mde_natural_single_test": 0.3760172295540385,
+   "single_test_power_at_implied": 0.839331346269224,
+   "joint_current_at_implied": 0.08710080196454557
+  },
+  {
+   "rho": 0.8,
+   "n_eff": 1.176470588235294,
+   "natural_slope": 0.9219544457292888,
+   "sharpe_net": 0.4338609156373123,
+   "mde_natural_single_test": 0.41435080613838443,
+   "single_test_power_at_implied": 0.7762729675840254,
+   "joint_current_at_implied": 0.05819728889227527
+  }
+ ],
+ "naive_independence": {
+  "deff_ignored": 2.4315789473684215,
+  "naive_se_ratio": 0.6412919859591348,
+  "naive_false_positive_at_nominal_0.05": 0.14575120928551516
+ },
+ "winners_curse": null,
+ "verdict": "MARGINAL",
+ "verdict_with_proposed_val_gate": "DECISIVE",
+ "verdict_rule": {
+  "decisive_min_joint_power_at_0.7": 0.5,
+  "max_false_pass": 0.05,
+  "incapable_below_joint_power_at_0.7": 0.25,
+  "incapable_above_false_pass": 0.1
+ },
+ "joint_power_at_0.7": 0.35837757315489793,
+ "false_pass_zero_net": 6.172074608926516e-05,
+ "notes": [],
+ "description": "4 commodities x 35y monthly carry, common crash factor.",
+ "assumptions": [
+  "ASSUMPTION common crash: 3%/month chance of a -4 sd jump -> book skew/kurt via one-factor cumulants"
+ ],
+ "scenarios": [
+  {
+   "label": "s_asset=0.3",
+   "overrides": {
+    "label": "s_asset=0.3",
+    "params": {
+     "sharpe_per_asset": 0.3
+    }
+   },
+   "n_eff_units": 1.8181818181818181,
+   "deff_cross": 2.2,
+   "implied_sharpe_net": 0.4045199174779452,
+   "implied_sharpe_gross": null,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.4494265503656449,
+   "mde_natural_single_test": 0.33330365028823183,
+   "mde_sharpe_joint_proposed": 0.7656179479741716,
+   "mde_natural_joint_proposed": 0.5677974667459338,
+   "single_test_power_at_implied": 0.7271854084455218,
+   "joint_current_at_implied": 0.043403842712733946,
+   "joint_proposed_at_implied": 0.22426647515268605,
+   "years_80_single_test_at_implied": 43.040713602367404,
+   "years_80_joint_proposed_at_implied": 120.44322325358104,
+   "years_80_joint_current_at_implied": "inf",
+   "joint_current_at_0.7": 0.35837757315489793,
+   "verdict_current": "MARGINAL"
+  },
+  {
+   "label": "s_asset=0.4",
+   "overrides": {
+    "label": "s_asset=0.4",
+    "params": {
+     "sharpe_per_asset": 0.4
+    }
+   },
+   "n_eff_units": 1.8181818181818181,
+   "deff_cross": 2.2,
+   "implied_sharpe_net": 0.5393598899705937,
+   "implied_sharpe_gross": null,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.4494265503656449,
+   "mde_natural_single_test": 0.33330365028823183,
+   "mde_sharpe_joint_proposed": 0.7656179479741716,
+   "mde_natural_joint_proposed": 0.5677974667459338,
+   "single_test_power_at_implied": 0.904710055804237,
+   "joint_current_at_implied": 0.14161967173582338,
+   "joint_proposed_at_implied": 0.4488415622422543,
+   "years_80_single_test_at_implied": 24.489348309292424,
+   "years_80_joint_proposed_at_implied": 68.7299034831735,
+   "years_80_joint_current_at_implied": "inf",
+   "joint_current_at_0.7": 0.35837757315489793,
+   "verdict_current": "MARGINAL"
+  },
+  {
+   "label": "s_asset=0.5",
+   "overrides": {
+    "label": "s_asset=0.5",
+    "params": {
+     "sharpe_per_asset": 0.5
+    }
+   },
+   "n_eff_units": 1.8181818181818181,
+   "deff_cross": 2.2,
+   "implied_sharpe_net": 0.674199862463242,
+   "implied_sharpe_gross": null,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.4494265503656449,
+   "mde_natural_single_test": 0.33330365028823183,
+   "mde_sharpe_joint_proposed": 0.7656179479741716,
+   "mde_natural_joint_proposed": 0.5677974667459338,
+   "single_test_power_at_implied": 0.976650337995566,
+   "joint_current_at_implied": 0.3180906524740171,
+   "joint_proposed_at_implied": 0.6781676403698951,
+   "years_80_single_test_at_implied": 15.863511411492778,
+   "years_80_joint_proposed_at_implied": 44.65721658781863,
+   "years_80_joint_current_at_implied": "inf",
+   "joint_current_at_0.7": 0.35837757315489793,
+   "verdict_current": "MARGINAL"
+  }
+ ]
+}

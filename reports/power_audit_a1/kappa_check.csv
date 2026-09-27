@@ -1,0 +1,5 @@
+case,marginal_skew,marginal_exkurt,kappa_mc,kappa_formula,kappa_formula_gaussian,mean_S_hat,bias_S_hat
+"monthly AR .3, 10y, S=1, crash innovations",-1.343588,4.195665,1.662111,1.60942,1.38096,1.059241,0.059241
+"monthly AR .3, 10y, S=1, gaussian",0.000254,-0.003939,1.391037,1.380885,1.38096,1.014204,0.014204
+"monthly AR .5, 5y, S=1, gaussian",-0.000971,-0.003141,1.814344,1.752131,1.751983,1.03813,0.03813
+"weekly AR .1, 3.4y, S=1, crash innovations",-1.481475,4.920343,1.236134,1.218841,1.109969,1.053753,0.053753

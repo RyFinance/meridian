@@ -1,0 +1,999 @@
+[
+ {
+  "name": "nis_f1_pd_treasury_inventory",
+  "years": 27.8,
+  "joint_0.7": 0.4916213407942321,
+  "false_pass": 0.000624999999999999,
+  "verdict": "MARGINAL",
+  "verdict_proposed": "MARGINAL",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.5574147372420795,
+    "natural": 0.036231957920735164
+   },
+   "dev_gate_only": {
+    "sharpe": 0.7884855686274252,
+    "natural": 0.05125156196078264
+   },
+   "joint_current_gates": {
+    "sharpe": 0.9038333467798346,
+    "natural": 0.058749167540689255
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 0.9038333467798346,
+    "natural": 0.058749167540689255
+   }
+  },
+  "implied": {
+   "sharpe_net": 0.3
+  },
+  "scenarios": [
+   {
+    "label": "implied net S=0.2",
+    "implied_sharpe_net": 0.2,
+    "joint_proposed_at_implied": 0.011204907363701617,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.3",
+    "implied_sharpe_net": 0.3,
+    "joint_proposed_at_implied": 0.034536126242923404,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.45",
+    "implied_sharpe_net": 0.45,
+    "joint_proposed_at_implied": 0.12914812837683037,
+    "years_80_joint_proposed_at_implied": 123.29204969959756
+   },
+   {
+    "label": "implied net S=0.6",
+    "implied_sharpe_net": 0.6,
+    "joint_proposed_at_implied": 0.3232749682825461,
+    "years_80_joint_proposed_at_implied": 63.02841969735777
+   },
+   {
+    "label": "implied net S=0.8",
+    "implied_sharpe_net": 0.8,
+    "joint_proposed_at_implied": 0.6580991490800665,
+    "years_80_joint_proposed_at_implied": 35.47263754574844
+   },
+   {
+    "label": "D=1.3 (weekly overlap residue), S=0.3",
+    "implied_sharpe_net": 0.3,
+    "joint_proposed_at_implied": 0.02684556085480191,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "IEF-only window 2002-08.. (24.0y), S=0.3",
+    "implied_sharpe_net": 0.3,
+    "joint_proposed_at_implied": 0.027655413874244982,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "D=1.0 (Amendment-4 Q3 floor), S=0.7 check",
+    "implied_sharpe_net": 0.7,
+    "joint_proposed_at_implied": 0.5503306934293279,
+    "years_80_joint_proposed_at_implied": 42.10746265605942
+   },
+   {
+    "label": "D=1.0, batch k=1 (registered alone), S=0.7",
+    "implied_sharpe_net": 0.7,
+    "joint_proposed_at_implied": 0.6581821217654247,
+    "years_80_joint_proposed_at_implied": 36.21573611361293
+   },
+   {
+    "label": "D=1.1, batch k=1, S=0.7",
+    "implied_sharpe_net": 0.7,
+    "joint_proposed_at_implied": 0.6239397945037201,
+    "years_80_joint_proposed_at_implied": 38.63417523962671
+   }
+  ]
+ },
+ {
+  "name": "nis_f2_fed_custody_official_flows",
+  "years": 23.2,
+  "joint_0.7": 0.38783794952821127,
+  "false_pass": 0.000624999999999999,
+  "verdict": "MARGINAL",
+  "verdict_proposed": "MARGINAL",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.6102061748613827,
+    "natural": 0.03966340136598988
+   },
+   "dev_gate_only": {
+    "sharpe": 0.8669502115375606,
+    "natural": 0.05635176374994144
+   },
+   "joint_current_gates": {
+    "sharpe": 0.9895950863002182,
+    "natural": 0.06432368060951418
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 0.9895950863002182,
+    "natural": 0.06432368060951418
+   }
+  },
+  "implied": {
+   "sharpe_net": 0.19999999999999998
+  },
+  "scenarios": [
+   {
+    "label": "implied net S=0.2",
+    "implied_sharpe_net": 0.2,
+    "joint_proposed_at_implied": 0.009031828322954759,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.3",
+    "implied_sharpe_net": 0.3,
+    "joint_proposed_at_implied": 0.026301794196313785,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.45",
+    "implied_sharpe_net": 0.45,
+    "joint_proposed_at_implied": 0.0955389908785616,
+    "years_80_joint_proposed_at_implied": 123.64875648275438
+   },
+   {
+    "label": "implied net S=0.6",
+    "implied_sharpe_net": 0.6,
+    "joint_proposed_at_implied": 0.24540414953976367,
+    "years_80_joint_proposed_at_implied": 63.035056621110726
+   },
+   {
+    "label": "implied net S=0.8",
+    "implied_sharpe_net": 0.8,
+    "joint_proposed_at_implied": 0.5444728394424572,
+    "years_80_joint_proposed_at_implied": 35.476371533047896
+   }
+  ]
+ },
+ {
+  "name": "nis_f3_margin_debt_deleveraging",
+  "years": 29.4,
+  "joint_0.7": 0.45602249786939675,
+  "false_pass": 0.000624999999999999,
+  "verdict": "MARGINAL",
+  "verdict_proposed": "MARGINAL",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.576524603065747,
+    "natural": 0.08647869045986205
+   },
+   "dev_gate_only": {
+    "sharpe": 0.8233036497767791,
+    "natural": 0.12349554746651685
+   },
+   "joint_current_gates": {
+    "sharpe": 0.9582196672381453,
+    "natural": 0.1437329500857218
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 0.9582196672381453,
+    "natural": 0.1437329500857218
+   }
+  },
+  "implied": {
+   "sharpe_net": 0.25
+  },
+  "scenarios": [
+   {
+    "label": "implied net S=0.2",
+    "implied_sharpe_net": 0.2,
+    "joint_proposed_at_implied": 0.011685392989561942,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.3",
+    "implied_sharpe_net": 0.3,
+    "joint_proposed_at_implied": 0.03546893647846584,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.45",
+    "implied_sharpe_net": 0.45000000000000007,
+    "joint_proposed_at_implied": 0.1270692527359573,
+    "years_80_joint_proposed_at_implied": 142.2309736379355
+   },
+   {
+    "label": "implied net S=0.6",
+    "implied_sharpe_net": 0.6,
+    "joint_proposed_at_implied": 0.30504939086695715,
+    "years_80_joint_proposed_at_implied": 72.2258496644167
+   },
+   {
+    "label": "implied net S=0.8",
+    "implied_sharpe_net": 0.8,
+    "joint_proposed_at_implied": 0.607130628626242,
+    "years_80_joint_proposed_at_implied": 41.46108288285139
+   }
+  ]
+ },
+ {
+  "name": "nis_f4_treasury_supply_maturity",
+  "years": 25.5,
+  "joint_0.7": 0.2827490386957623,
+  "false_pass": 0.000624999999999999,
+  "verdict": "MARGINAL",
+  "verdict_proposed": "MARGINAL",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.682433709735877,
+    "natural": 0.04435819113283201
+   },
+   "dev_gate_only": {
+    "sharpe": 0.9712295258833369,
+    "natural": 0.0631299191824169
+   },
+   "joint_current_gates": {
+    "sharpe": 1.117590827631114,
+    "natural": 0.07264340379602241
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 1.117590827631114,
+    "natural": 0.07264340379602241
+   }
+  },
+  "implied": {
+   "sharpe_net": 0.3
+  },
+  "scenarios": [
+   {
+    "label": "implied net S=0.2",
+    "implied_sharpe_net": 0.2,
+    "joint_proposed_at_implied": 0.007147368209662883,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.3",
+    "implied_sharpe_net": 0.3,
+    "joint_proposed_at_implied": 0.01947788193641849,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.45",
+    "implied_sharpe_net": 0.45,
+    "joint_proposed_at_implied": 0.06749939847620952,
+    "years_80_joint_proposed_at_implied": 169.543783980959
+   },
+   {
+    "label": "implied net S=0.6",
+    "implied_sharpe_net": 0.6,
+    "joint_proposed_at_implied": 0.17428610635526426,
+    "years_80_joint_proposed_at_implied": 86.64013258270204
+   },
+   {
+    "label": "implied net S=0.8",
+    "implied_sharpe_net": 0.8,
+    "joint_proposed_at_implied": 0.41281657691534124,
+    "years_80_joint_proposed_at_implied": 49.06131109956048
+   }
+  ]
+ },
+ {
+  "name": "nis_f5_crypto_dated_basis_term",
+  "years": 11.6,
+  "joint_0.7": 0.1322412433756112,
+  "false_pass": 0.000624999999999999,
+  "verdict": "INCAPABLE",
+  "verdict_proposed": "INCAPABLE",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.8664339445834943,
+    "natural": 0.5631820639792713
+   },
+   "dev_gate_only": {
+    "sharpe": 1.2281474367341108,
+    "natural": 0.7982958338771721
+   },
+   "joint_current_gates": {
+    "sharpe": 1.4124447971229035,
+    "natural": 0.9180891181298872
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 1.4124447971229035,
+    "natural": 0.9180891181298872
+   }
+  },
+  "implied": {
+   "sharpe_net": 0.5
+  },
+  "scenarios": [
+   {
+    "label": "implied net S=0.3",
+    "implied_sharpe_net": 0.3,
+    "joint_proposed_at_implied": 0.010571189640237072,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.5",
+    "implied_sharpe_net": 0.5,
+    "joint_proposed_at_implied": 0.04417935886785457,
+    "years_80_joint_proposed_at_implied": 91.23148418991669
+   },
+   {
+    "label": "implied net S=0.8",
+    "implied_sharpe_net": 0.8,
+    "joint_proposed_at_implied": 0.20402459832518227,
+    "years_80_joint_proposed_at_implied": 35.78892765545774
+   },
+   {
+    "label": "implied net S=1.2",
+    "implied_sharpe_net": 1.2,
+    "joint_proposed_at_implied": 0.6114777349446511,
+    "years_80_joint_proposed_at_implied": 16.009640626379475
+   },
+   {
+    "label": "implied net S=1.6",
+    "implied_sharpe_net": 1.6,
+    "joint_proposed_at_implied": 0.9059154950868724,
+    "years_80_joint_proposed_at_implied": 9.072237122212977
+   }
+  ]
+ },
+ {
+  "name": "nis_f6_cross_venue_basis_dispersion",
+  "years": 6.6,
+  "joint_0.7": 0.04162390213026676,
+  "false_pass": 0.000624999999999999,
+  "verdict": "INCAPABLE",
+  "verdict_proposed": "INCAPABLE",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 1.2588116905327176,
+    "natural": 0.12588116905327176
+   },
+   "dev_gate_only": {
+    "sharpe": 1.7919853488235715,
+    "natural": 0.17919853488235715
+   },
+   "joint_current_gates": {
+    "sharpe": 2.074984345896287,
+    "natural": 0.2074984345896287
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 2.074984345896287,
+    "natural": 0.2074984345896287
+   }
+  },
+  "implied": {
+   "sharpe_net": 0.7999999999999999
+  },
+  "scenarios": [
+   {
+    "label": "implied net S=0.5",
+    "implied_sharpe_net": 0.5,
+    "joint_proposed_at_implied": 0.01580958260970375,
+    "years_80_joint_proposed_at_implied": 108.39721991268163
+   },
+   {
+    "label": "implied net S=0.8",
+    "implied_sharpe_net": 0.8000000000000002,
+    "joint_proposed_at_implied": 0.06336767004571355,
+    "years_80_joint_proposed_at_implied": 42.668968933606486
+   },
+   {
+    "label": "implied net S=1.2",
+    "implied_sharpe_net": 1.2,
+    "joint_proposed_at_implied": 0.23189460556552013,
+    "years_80_joint_proposed_at_implied": 19.17914328916761
+   },
+   {
+    "label": "implied net S=1.6",
+    "implied_sharpe_net": 1.6000000000000003,
+    "joint_proposed_at_implied": 0.5065334286107261,
+    "years_80_joint_proposed_at_implied": 10.922991321606494
+   },
+   {
+    "label": "implied net S=2.0",
+    "implied_sharpe_net": 2.0,
+    "joint_proposed_at_implied": 0.7630171174313823,
+    "years_80_joint_proposed_at_implied": 7.08547773016319
+   }
+  ]
+ },
+ {
+  "name": "nis_f7_binance_oi_positioning_xs",
+  "years": 6.0,
+  "joint_0.7": 0.0447524260504364,
+  "false_pass": 0.000624999999999999,
+  "verdict": "INCAPABLE",
+  "verdict_proposed": "INCAPABLE",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 1.2076305546254424,
+    "natural": 0.026640242005858846
+   },
+   "dev_gate_only": {
+    "sharpe": 1.7125045863290842,
+    "natural": 0.03348380043526847
+   },
+   "joint_current_gates": {
+    "sharpe": 1.9705242189005414,
+    "natural": 0.03698125191931324
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 1.9705242189005414,
+    "natural": 0.03698125191931324
+   }
+  },
+  "implied": {
+   "spread_mean_gross": 0.0016582732178074676,
+   "spread_sd": 0.0286292655029051,
+   "cost_per_period": 0.0011354563237901416,
+   "turnover_one_way_per_leg": 0.35483010118441927,
+   "spread_mean_net": 0.000522816894017326,
+   "sharpe_gross": 1.1066041962920647,
+   "sharpe_net": 0.34888784465620487,
+   "V_over_sigma2": 0.512271777022395,
+   "E_signal_spread": 2.7637886963457796,
+   "position_efficiency": 0.19516495829835512,
+   "n_eff_positions": 7.806598331934205,
+   "cost_drag_sharpe": 0.7577163516358599,
+   "rho_bet_linear": 0.075,
+   "n_eff_linear": 11.869436201780415,
+   "sharpe_gross_linear_book_TC1": 0.9873081829252791,
+   "ic_breakeven_costs": 0.010270831533642721
+  },
+  "scenarios": [
+   {
+    "label": "IC=0.01 rho=0.2",
+    "implied_sharpe_net": -0.023356360099535234,
+    "joint_proposed_at_implied": 0.0005205506729605404,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "IC=0.01 rho=0.4",
+    "implied_sharpe_net": -0.017740969062161167,
+    "joint_proposed_at_implied": 0.000544080811165838,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "IC=0.02 rho=0.2",
+    "implied_sharpe_net": 0.8391062062388208,
+    "joint_proposed_at_implied": 0.08037728332409039,
+    "years_80_joint_proposed_at_implied": 32.58165608368636
+   },
+   {
+    "label": "IC=0.02 rho=0.4",
+    "implied_sharpe_net": 0.6373848714182477,
+    "joint_proposed_at_implied": 0.033469048664190384,
+    "years_80_joint_proposed_at_implied": 56.35407390162995
+   },
+   {
+    "label": "IC=0.03 rho=0.2",
+    "implied_sharpe_net": 1.701801090474661,
+    "joint_proposed_at_implied": 0.6323271968396791,
+    "years_80_joint_proposed_at_implied": 8.010080497531664
+   },
+   {
+    "label": "IC=0.03 rho=0.4",
+    "implied_sharpe_net": 1.2927504445317743,
+    "joint_proposed_at_implied": 0.32080720306519317,
+    "years_80_joint_proposed_at_implied": 13.800955777502711
+   },
+   {
+    "label": "IC=0.02 rho=0.3 LITERAL",
+    "implied_sharpe_net": 0.4680955946415506,
+    "joint_proposed_at_implied": 0.013988423406000842,
+    "years_80_joint_proposed_at_implied": 109.61766516620723
+   }
+  ]
+ },
+ {
+  "name": "nis_f8_liquidation_cascades",
+  "years": 6.0,
+  "joint_0.7": 0.05092668549215915,
+  "false_pass": 0.000624999999999999,
+  "verdict": "INCAPABLE",
+  "verdict_proposed": "INCAPABLE",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 1.140126591178617,
+    "natural": 0.011912579411266066
+   },
+   "dev_gate_only": {
+    "sharpe": 1.6115342717850114,
+    "natural": 0.01650729312669998
+   },
+   "joint_current_gates": {
+    "sharpe": 1.8444465805503012,
+    "natural": 0.018777441500609907
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 1.8444465805503012,
+    "natural": 0.018777441500609907
+   }
+  },
+  "implied": {
+   "events_per_year": 40,
+   "deff": 2.375,
+   "m_w": 3.75,
+   "n_eff_per_year": 16.842105263157894,
+   "per_event_ir_per_unit_sharpe": 0.24366985862022408,
+   "sharpe_gross": 0.512989176042577,
+   "sharpe_net": 0.43091090787576464
+  },
+  "scenarios": [
+   {
+    "label": "snapshot archive only (0.65+0.65y)",
+    "implied_sharpe_net": 0.43091090787576464,
+    "joint_proposed_at_implied": 0.0027607720700193413,
+    "years_80_joint_proposed_at_implied": 129.6481582806772
+   },
+   {
+    "label": "gross 150 bp",
+    "implied_sharpe_net": 1.4568892599609187,
+    "joint_proposed_at_implied": 0.5122719299816492,
+    "years_80_joint_proposed_at_implied": 9.622051672019303
+   }
+  ]
+ },
+ {
+  "name": "nis_f9_stablecoin_supply",
+  "years": 7.6,
+  "joint_0.7": 0.06620622684451562,
+  "false_pass": 0.0006249999999999999,
+  "verdict": "INCAPABLE",
+  "verdict_proposed": "INCAPABLE",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 1.0717903453193056,
+    "natural": 0.6430742071915834
+   },
+   "dev_gate_only": {
+    "sharpe": 1.520451193559,
+    "natural": 0.9122707161353999
+   },
+   "joint_current_gates": {
+    "sharpe": 1.7507533982051606,
+    "natural": 1.0504520389230962
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 1.7507533982051606,
+    "natural": 1.0504520389230962
+   }
+  },
+  "implied": {
+   "sharpe_net": 0.4
+  },
+  "scenarios": [
+   {
+    "label": "implied net S=0.2",
+    "implied_sharpe_net": 0.2,
+    "joint_proposed_at_implied": 0.003205310957166073,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.3",
+    "implied_sharpe_net": 0.3,
+    "joint_proposed_at_implied": 0.006609542326606875,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.45",
+    "implied_sharpe_net": 0.45000000000000007,
+    "joint_proposed_at_implied": 0.017474124819093897,
+    "years_80_joint_proposed_at_implied": 124.23226693528842
+   },
+   {
+    "label": "implied net S=0.6",
+    "implied_sharpe_net": 0.6,
+    "joint_proposed_at_implied": 0.04051955009640035,
+    "years_80_joint_proposed_at_implied": 63.441140254294346
+   },
+   {
+    "label": "implied net S=0.8",
+    "implied_sharpe_net": 0.8,
+    "joint_proposed_at_implied": 0.10256593286712881,
+    "years_80_joint_proposed_at_implied": 35.78892765545774
+   }
+  ]
+ },
+ {
+  "name": "nis_f10_index_inclusion_flows",
+  "years": 31.2,
+  "joint_0.7": 0.6231625423691638,
+  "false_pass": 0.000624999999999999,
+  "verdict": "DECISIVE",
+  "verdict_proposed": "DECISIVE",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.5016018870200142,
+    "natural": 0.004876387114036958
+   },
+   "dev_gate_only": {
+    "sharpe": 0.7117107531400281,
+    "natural": 0.0065001116698021185
+   },
+   "joint_current_gates": {
+    "sharpe": 0.8130519771046066,
+    "natural": 0.007283278210563859
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 0.8130519771046066,
+    "natural": 0.007283278210563859
+   }
+  },
+  "implied": {
+   "events_per_year": 45,
+   "deff": 1.075,
+   "m_w": 2.5,
+   "n_eff_per_year": 41.86046511627907,
+   "per_event_ir_per_unit_sharpe": 0.15456030825826172,
+   "sharpe_gross": 0.3881979835323783,
+   "sharpe_net": 0.2587986556882522
+  },
+  "scenarios": [
+   {
+    "label": "gross 30 bp",
+    "implied_sharpe_net": 0.2587986556882522,
+    "joint_proposed_at_implied": 0.03034208132309469,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "gross 100 bp",
+    "implied_sharpe_net": 1.164593950597135,
+    "joint_proposed_at_implied": 0.9916275920346146,
+    "years_80_joint_proposed_at_implied": 15.21511898327612
+   },
+   {
+    "label": "gross 200 bp",
+    "implied_sharpe_net": 2.4585872290383954,
+    "joint_proposed_at_implied": 0.9999999999999866,
+    "years_80_joint_proposed_at_implied": 3.4262470014002284
+   }
+  ]
+ },
+ {
+  "name": "nis_f11_cftc_tff_dealer",
+  "years": 20.1,
+  "joint_0.7": 0.3156827350204531,
+  "false_pass": 0.000624999999999999,
+  "verdict": "MARGINAL",
+  "verdict_proposed": "MARGINAL",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.6556033031388191,
+    "natural": 0.04261421470402324
+   },
+   "dev_gate_only": {
+    "sharpe": 0.9297785410531085,
+    "natural": 0.060435605168452054
+   },
+   "joint_current_gates": {
+    "sharpe": 1.0632894561692334,
+    "natural": 0.06911381465100018
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 1.0632894561692334,
+    "natural": 0.06911381465100018
+   }
+  },
+  "implied": {
+   "sharpe_net": 0.25076923076923074
+  },
+  "scenarios": [
+   {
+    "label": "implied net S=0.2",
+    "implied_sharpe_net": 0.2,
+    "joint_proposed_at_implied": 0.007684351035035443,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.3",
+    "implied_sharpe_net": 0.3,
+    "joint_proposed_at_implied": 0.021369797241909613,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.45",
+    "implied_sharpe_net": 0.45,
+    "joint_proposed_at_implied": 0.07530951595705171,
+    "years_80_joint_proposed_at_implied": 123.49577070408729
+   },
+   {
+    "label": "implied net S=0.6",
+    "implied_sharpe_net": 0.6,
+    "joint_proposed_at_implied": 0.19523801057332774,
+    "years_80_joint_proposed_at_implied": 63.03063002654687
+   },
+   {
+    "label": "implied net S=0.8",
+    "implied_sharpe_net": 0.8,
+    "joint_proposed_at_implied": 0.4573921665567412,
+    "years_80_joint_proposed_at_implied": 35.47388109492839
+   }
+  ]
+ },
+ {
+  "name": "nis_f12_repo_quarter_end_gsib",
+  "years": 8.4,
+  "joint_0.7": 0.0898467306601868,
+  "false_pass": 0.000624999999999999,
+  "verdict": "INCAPABLE",
+  "verdict_proposed": "INCAPABLE",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.9669078765583681,
+    "natural": 0.002033815753116736
+   },
+   "dev_gate_only": {
+    "sharpe": 1.3677952181281527,
+    "natural": 0.002835590436256305
+   },
+   "joint_current_gates": {
+    "sharpe": 1.567994101043212,
+    "natural": 0.0032359882020864235
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 1.567994101043212,
+    "natural": 0.0032359882020864235
+   }
+  },
+  "implied": {
+   "events_per_year": 4,
+   "deff": 1.0,
+   "m_w": 1.0,
+   "n_eff_per_year": 4.0,
+   "per_event_ir_per_unit_sharpe": 0.5,
+   "sharpe_gross": 0.25,
+   "sharpe_net": 0.2
+  },
+  "scenarios": [
+   {
+    "label": "GCF 2005+ (10.5+10.5y)",
+    "implied_sharpe_net": 0.2,
+    "joint_proposed_at_implied": 0.00898465575802565,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "gross 20 bp",
+    "implied_sharpe_net": 0.95,
+    "joint_proposed_at_implied": 0.24482828730684222,
+    "years_80_joint_proposed_at_implied": 22.855980735172444
+   }
+  ]
+ },
+ {
+  "name": "nis_f13_13f_holdings_changes",
+  "years": 13.0,
+  "joint_0.7": 0.1885686066524356,
+  "false_pass": 0.0006249999999999995,
+  "verdict": "INCAPABLE",
+  "verdict_proposed": "INCAPABLE",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.7947754327873431,
+    "natural": 0.10055456227724655
+   },
+   "dev_gate_only": {
+    "sharpe": 1.159270113299885,
+    "natural": 0.1438834587951645
+   },
+   "joint_current_gates": {
+    "sharpe": 1.3624088124867952,
+    "natural": 0.16803134392610053
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 1.3624088124867952,
+    "natural": 0.16803134392610053
+   }
+  },
+  "implied": {
+   "spread_mean_gross": 0.0066330928712298705,
+   "spread_sd": 0.07885014788339795,
+   "cost_per_period": 0.0020153073058554057,
+   "turnover_one_way_per_leg": 0.5038268264638515,
+   "spread_mean_net": 0.004617785565374465,
+   "sharpe_gross": 0.1682455404151875,
+   "sharpe_net": 0.11712813962513187,
+   "V_over_sigma2": 0.43176012647456435,
+   "E_signal_spread": 2.7637886963457796,
+   "position_efficiency": 0.02315174419097008,
+   "n_eff_positions": 9.26069767638803,
+   "cost_drag_sharpe": 0.05111740079005565,
+   "rho_bet_linear": 0.075,
+   "n_eff_linear": 13.170892327955219,
+   "sharpe_gross_linear_book_TC1": 0.14516689610489145,
+   "ic_breakeven_costs": 0.006076523712178143
+  },
+  "scenarios": []
+ },
+ {
+  "name": "nis_f15_tga_reserves_liquidity",
+  "years": 23.2,
+  "joint_0.7": 0.3863793508372003,
+  "false_pass": 0.000624999999999999,
+  "verdict": "MARGINAL",
+  "verdict_proposed": "MARGINAL",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.6117814614766175,
+    "natural": 0.0978850338362588
+   },
+   "dev_gate_only": {
+    "sharpe": 0.8702694852981385,
+    "natural": 0.13924311764770217
+   },
+   "joint_current_gates": {
+    "sharpe": 0.9953239869461038,
+    "natural": 0.15925183791137662
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 0.9953239869461038,
+    "natural": 0.15925183791137662
+   }
+  },
+  "implied": {
+   "sharpe_net": 0.2
+  },
+  "scenarios": [
+   {
+    "label": "implied net S=0.2",
+    "implied_sharpe_net": 0.2,
+    "joint_proposed_at_implied": 0.0091422366595423,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.3",
+    "implied_sharpe_net": 0.3,
+    "joint_proposed_at_implied": 0.02661541291613862,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "implied net S=0.45",
+    "implied_sharpe_net": 0.45000000000000007,
+    "joint_proposed_at_implied": 0.0962038781786062,
+    "years_80_joint_proposed_at_implied": 124.57984207214469
+   },
+   {
+    "label": "implied net S=0.6",
+    "implied_sharpe_net": 0.6,
+    "joint_proposed_at_implied": 0.24544235412508608,
+    "years_80_joint_proposed_at_implied": 63.44848517823698
+   },
+   {
+    "label": "implied net S=0.8",
+    "implied_sharpe_net": 0.8,
+    "joint_proposed_at_implied": 0.5409718114793336,
+    "years_80_joint_proposed_at_implied": 35.79691888120719
+   }
+  ]
+ },
+ {
+  "name": "nis_f16_buyback_issuance_events",
+  "years": 22.0,
+  "joint_0.7": 0.4109090932494386,
+  "false_pass": 0.0006249999999999999,
+  "verdict": "MARGINAL",
+  "verdict_proposed": "MARGINAL",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.5973634793406658,
+    "natural": 0.003248627217781045
+   },
+   "dev_gate_only": {
+    "sharpe": 0.8526800454317978,
+    "natural": 0.0042097033456631565
+   },
+   "joint_current_gates": {
+    "sharpe": 0.968545048726257,
+    "natural": 0.004645848521936364
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 0.968545048726257,
+    "natural": 0.004645848521936364
+   }
+  },
+  "implied": {
+   "events_per_year": 1000,
+   "deff": 3.9360000000000004,
+   "m_w": 147.8,
+   "n_eff_per_year": 254.06504065040647,
+   "per_event_ir_per_unit_sharpe": 0.0627375485654325,
+   "sharpe_gross": 0.7969708913291729,
+   "sharpe_net": 0.5313139275527818
+  },
+  "scenarios": [
+   {
+    "label": "gross 20 bp",
+    "implied_sharpe_net": 0.2656569637763909,
+    "joint_proposed_at_implied": 0.0196913291790356,
+    "years_80_joint_proposed_at_implied": "inf"
+   },
+   {
+    "label": "gross 30 bp",
+    "implied_sharpe_net": 0.5313139275527818,
+    "joint_proposed_at_implied": 0.1777122103494689,
+    "years_80_joint_proposed_at_implied": 73.07018545174878
+   },
+   {
+    "label": "gross 60 bp",
+    "implied_sharpe_net": 1.328284818881955,
+    "joint_proposed_at_implied": 0.9853280430347936,
+    "years_80_joint_proposed_at_implied": 11.704604666902306
+   }
+  ]
+ },
+ {
+  "name": "nis_f14_borrow_constraint_proxy",
+  "years": 8.5,
+  "joint_0.7": 0.09267211835591369,
+  "false_pass": 0.000624999999999999,
+  "verdict": "INCAPABLE",
+  "verdict_proposed": "INCAPABLE",
+  "mde": {
+   "alpha": 0.025,
+   "power": 0.8,
+   "single_test_all_years": {
+    "sharpe": 0.9664999523853817,
+    "natural": 0.05594891822140599
+   },
+   "dev_gate_only": {
+    "sharpe": 1.3830861505345482,
+    "natural": 0.07637517366680364
+   },
+   "joint_current_gates": {
+    "sharpe": 1.588506895130829,
+    "natural": 0.08644746271898433
+   },
+   "joint_with_proposed_val_gate": {
+    "sharpe": 1.588506895130829,
+    "natural": 0.08644746271898433
+   }
+  },
+  "implied": {
+   "spread_mean_gross": 0.0024874098267112016,
+   "spread_sd": 0.03983323596534462,
+   "cost_per_period": 0.0014193204047376771,
+   "turnover_one_way_per_leg": 0.35483010118441927,
+   "spread_mean_net": 0.0010680894219735244,
+   "sharpe_gross": 0.3059196527205599,
+   "sharpe_net": 0.13136136294704,
+   "V_over_sigma2": 0.44074630207522897,
+   "E_signal_spread": 2.7637886963457796,
+   "position_efficiency": 0.045367368724030854,
+   "n_eff_positions": 9.073473744806172,
+   "cost_drag_sharpe": 0.17455828977351984,
+   "rho_bet_linear": 0.075,
+   "n_eff_linear": 13.012361743656475,
+   "sharpe_gross_linear_book_TC1": 0.26507876832320043,
+   "ic_breakeven_costs": 0.008559026278035602
+  },
+  "scenarios": []
+ }
+]

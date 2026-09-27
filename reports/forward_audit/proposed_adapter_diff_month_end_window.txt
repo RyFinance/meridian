@@ -1,0 +1,67 @@
+--- a/research/forward/nyse.py
++++ b/research/forward/nyse.py
+@@ -126,6 +126,23 @@
+     return d
+ 
+ 
++def nth_last_session_of_month(year: int, month: int, n: int) -> dt.date:
++    """The n-th-to-last NYSE session of the month (n=1 -> last session, n=4 -> 4th-to-last).
++
++    Needed for rules like tsy_month_end_v1 ("hold from the close of the
++    4th-to-last session to the close of the last session"), which
++    first_session_of_month cannot express.
++    """
++    if n < 1:
++        raise ValueError("n must be >= 1")
++    start = dt.date(year, month, 1)
++    end = dt.date(year + (month == 12), month % 12 + 1, 1) - dt.timedelta(days=1)
++    sessions = sessions_between(start, end)
++    if n > len(sessions):
++        raise ValueError(f"{year}-{month:02d} has only {len(sessions)} sessions; n={n} is out of range")
++    return sessions[-n]
++
++
+ def add_sessions(day: dt.date, n: int) -> dt.date:
+     d = day
+     for _ in range(n):
+
+--- a/research/forward/adapters.py
++++ b/research/forward/adapters.py
+@@ -114,6 +114,17 @@
+         upcoming = this if this > day else nxt
+         raise AdapterError(f"{strategy_id} decides only on the first NYSE session of a month; "
+                            f"{day} is not one (next: {upcoming})")
++    elif rule == "month_end_window":
++        # "hold for N sessions then exit": one decision at the entry_n-to-last session
++        # (the position is opened at its close), another at the exit_n-to-last session
++        # (the position is closed at its close). exit_n defaults to 1 (the last session).
++        entry_n = int(ev.get("entry_n_from_end", 1))
++        exit_n = int(ev.get("exit_n_from_end", 1))
++        entry_day = nyse.nth_last_session_of_month(day.year, day.month, entry_n)
++        exit_day = nyse.nth_last_session_of_month(day.year, day.month, exit_n)
++        if day not in (entry_day, exit_day):
++            raise AdapterError(f"{strategy_id} decides only on the {entry_n}-to-last or {exit_n}-to-last "
++                               f"NYSE session of a month; {day} is neither (entry {entry_day}, exit {exit_day})")
+     targets = _validate_targets(targets if targets is not None else ev["fixed_targets"], ev["instruments"])
+     if ev["execution"] == "next_open":
+         exec_day = nyse.next_session(day)
+@@ -247,10 +258,17 @@
+                      dry_run: bool = False) -> dict:
+     """spec JSON: any frozen rules plus an "evaluation" block:
+         {"type": "targets", "instruments": [...], "execution": "next_open" | "close",
+-         "decision_rule": "any_session" | "first_session_of_month",
++         "decision_rule": "any_session" | "first_session_of_month" | "month_end_window",
++         "entry_n_from_end": 4, "exit_n_from_end": 1,  # only for "month_end_window"
+          "capital_usd": 100000, "cost_per_side_bps": 5, "stress_cost_per_side_bps": 15,
+          "fee_per_order_usd": 0, "benchmark_targets": {...} (optional),
+-         "fixed_targets": {...} (optional)}"""
++         "fixed_targets": {...} (optional)}
++
++    "month_end_window" validates that a decision date is the entry_n_from_end-to-last
++    or the exit_n_from_end-to-last NYSE session of its month (both default to 1, the
++    last session); it does not decide which of the two a given --date/--targets call
++    is, or enforce that both legs of a month are ever recorded — the caller supplies
++    the date and targets for each leg."""
+     spec = json.loads(Path(spec_path).read_text())
+     ev = spec.get("evaluation")
+     if not isinstance(ev, dict) or ev.get("type") != "targets" or any(k not in ev for k in GENERIC_REQUIRED):

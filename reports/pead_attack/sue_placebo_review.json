@@ -1,0 +1,58 @@
+{
+ "input_sha256": "32558639aa733af85264fed67cc01660f28475341db1ed7b35993a1ab8e3584a",
+ "input_sha256_matches_published_spec": true,
+ "n_events": 18588,
+ "true_event_stats_bps": {
+  "s1_signed_mean_bps": 90.46531784206498,
+  "s2_long_short_spread_bps": 9.683368546086461,
+  "s3_abs_sue_ge1_mean_bps": 173.72263732304378
+ },
+ "published_true_event_stats_bps": {
+  "s1_signed_mean_bps": 90.46531784206498,
+  "s2_long_short_spread_bps": 9.683368546086461,
+  "s3_abs_sue_ge1_mean_bps": 173.72263732304378
+ },
+ "reproduced_event_p": {
+  "s1_p": 0.2918,
+  "s2_p": 0.2918,
+  "s3_p": 0.927
+ },
+ "published_event_p": {
+  "s1_p": 0.2918,
+  "s2_p": 0.2918,
+  "s3_p": 0.927
+ },
+ "event_p_match": true,
+ "event_p_plus1_corrected": {
+  "s1_p": 0.291970802919708,
+  "s2_p": 0.291970802919708,
+  "s3_p": 0.9271072892710729
+ },
+ "s1_s2_rank_correlation_across_perms": 1.0,
+ "n_sue_exactly_zero": 0,
+ "singleton_date_event_share": 0.01958252636109318,
+ "s2_placebo_quantiles_bps": [
+  -8.529838922787766,
+  3.3166538788573448,
+  15.411230378936068
+ ],
+ "s2_minimum_detectable_one_sided_5pct_bps": 10.11469802828883,
+ "timing_note": "events enter at the next session open after the reaction day (edge_executable_probe.py:91,97); the production bot fills at the reaction day's close.",
+ "extra_s3_spy_excess_bps": {
+  "true": 33.89886061712567,
+  "p_two": 0.9271072892710729,
+  "placebo_ci": [
+   23.62463754998271,
+   45.31836197165354
+  ]
+ },
+ "extra_s2_production_window_2021_08_2025_06_bps": {
+  "n": 7151,
+  "true": 3.571680034792886,
+  "p_two": 0.7321267873212679,
+  "placebo_ci": [
+   -19.487790282872535,
+   20.114014453202376
+  ]
+ }
+}

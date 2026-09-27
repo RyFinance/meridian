@@ -1,0 +1,31 @@
+{
+  "strategy": "momentum_gold_v1",
+  "registered_date": "2026-09-20",
+  "status": "frozen for forward paper evaluation; no fills yet",
+  "weights": {
+    "SPMO": 0.5,
+    "GLD": 0.5
+  },
+  "capital_usd": 100000,
+  "leverage": 1,
+  "decision": "first NYSE session close each month",
+  "fill": "following NYSE session open",
+  "expected_next_decision": "2026-10-01",
+  "expected_next_fill": "2026-10-02",
+  "base_cost_per_side_bps": 5,
+  "stress_cost_per_side_bps": 15,
+  "additional_order_fee_usd": 1,
+  "marks": "daily adjusted total-return NAV; actual paper fills must record nominal prices, dividends, splits, shares and fees separately",
+  "benchmark": {
+    "SPY": 0.5,
+    "GLD": 0.5
+  },
+  "code_sha256": "d2ee55e479f36b6cd6e529634324df3d32e7be42629c6aa89df7836cd26c7bdc",
+  "freeze_rule": "No changing weights, assets, timing or cost assumptions based on subsequent paper performance without registering a new strategy version.",
+  "audit_2026_09_21": {
+    "status": "research benchmark / optional frozen paper observation only; not validated for promotion",
+    "reason": "material recent-regime dependence and retrospective asset selection",
+    "report": "/Users/rytty/CCP/quant_v7/reports/momentum_gold_audit_20260921/REPORT.md",
+    "rule_changes": false
+  }
+}

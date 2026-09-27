@@ -1,0 +1,79 @@
+{
+ "name": "nis_f15_tga_reserves_liquidity",
+ "description": "Treasury General Account / bank reserves / ON RRP (H.4.1 via FRED WTREGEN, WRESBAL; RRPONTSYD), weekly 2002-12+, 4-week change -> SPY timing, daily P&L.",
+ "assumptions": [
+  "dev 2003-07..2014-12 (11.5y), val 2015-01..2026-08 (11.7y)",
+  "D 1.1, skew -0.4, exkurt 8, vol 16%",
+  "implied 0.1-0.3; the 2022-23 'liquidity' narrative is known to the director",
+  "stress drag 0.02"
+ ],
+ "design": "timeseries",
+ "params": {
+  "periods_per_year": 252,
+  "autocorr": {
+   "model": "lrv",
+   "D": 1.1
+  },
+  "skew": -0.4,
+  "exkurt": 8.0,
+  "mean_ann": 0.032,
+  "vol_ann": 0.16
+ },
+ "windows": {
+  "dev_years": 11.5,
+  "val_years": 11.7
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.02,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 2,
+   "floor": 0.3
+  }
+ },
+ "scenarios": [
+  {
+   "label": "implied net S=0.2",
+   "params": {
+    "mean_ann": 0.032,
+    "vol_ann": 0.16
+   }
+  },
+  {
+   "label": "implied net S=0.3",
+   "params": {
+    "mean_ann": 0.048,
+    "vol_ann": 0.16
+   }
+  },
+  {
+   "label": "implied net S=0.45",
+   "params": {
+    "mean_ann": 0.07200000000000001,
+    "vol_ann": 0.16
+   }
+  },
+  {
+   "label": "implied net S=0.6",
+   "params": {
+    "mean_ann": 0.096,
+    "vol_ann": 0.16
+   }
+  },
+  {
+   "label": "implied net S=0.8",
+   "params": {
+    "mean_ann": 0.128,
+    "vol_ann": 0.16
+   }
+  }
+ ]
+}

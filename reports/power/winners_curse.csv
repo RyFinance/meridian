@@ -1,0 +1,9 @@
+family,dev_threshold,estimate,S,p_val_current,p_val_proposed
+tsy_month_end,0.51983,dev estimate,0.664,0.40216,0.60596
+tsy_month_end,0.51983,conditional median-unbiased,0.20076,0.05672,0.14317
+tsy_month_end,0.51983,"N(0,0.5^2) posterior mean",0.45248,0.19563,0.36669
+commodity_roll,0.55709,dev estimate,0.596,0.26984,0.77192
+commodity_roll,0.55709,conditional median-unbiased,-0.38647,0.0,0.00066
+commodity_roll,0.55709,"N(0,0.5^2) posterior mean",0.48276,0.14304,0.61597
+ief_shy (did not pass),0.60503,dev estimate,0.569,0.26487,0.62975
+ief_shy (did not pass),0.60503,"N(0,0.5^2) posterior mean",0.42991,0.13318,0.43969

@@ -1,0 +1,7 @@
+# Null-gate consistency finding
+
+The concurrent `sector_month_end` development run illustrates why a circular-shift rank p is not by itself a positive-premium test. Its observed rate-hedged active Sharpe was **−0.43**, and stress active mean **−3.12%/yr**. Yet the preregistered shift p was **0.038**, because shifted calendars also paid costs and had a still worse null Sharpe mean of **−0.96**. Its mean-centred block p was **0.993**. The registered full gate correctly **failed** because it separately required positive stress mean and Sharpe above 0.55. No old verdict changes.
+
+For future registrations: state explicitly whether a shift/permutation null tests **selection relative to comparable alternative windows** or **a positive net return premium**. If the former, require both the matched-control effect and a mean-zero active-return test; do not describe a small shift p as evidence of positive alpha. Keep the original null distribution and cost drag visible in reports. This is a prospective reporting/registration rule suggestion, not a post-hoc relaxation.
+
+The synthetic [structural null calibration](../structural_null_calibration_20260923/REPORT.md) adds another warning: rare-crash carry nulls can produce more false passes than the nominal batch-three threshold. Future carry reports should calibrate the complete gate under tail-aware, family-level worlds rather than assuming the nominal p alone is a universal error rate.

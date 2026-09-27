@@ -1,0 +1,899 @@
+{
+ "timing": {
+  "sharpe_base_raw": 2.435302227865199,
+  "sharpe_base_hour_rounded_same_weights": 2.4135422429524565,
+  "sharpe_base_hour_rounded_signal_and_funding": 2.4135422429524565,
+  "funding_leg_ann_raw": 0.22294474100932787,
+  "funding_leg_ann_hour": 0.21714101089311696,
+  "partition_max_abs_err": 1.6708856520608606e-14,
+  "settlements_per_day_hist": {
+   "3": 105099,
+   "2": 463,
+   "1": 396,
+   "0": 174,
+   "4": 15,
+   "5": 6
+  },
+  "fund_days_per_symbol_raw_vs_hour_count_mismatch": 81,
+  "sharpe_weights_lagged_1d": 1.9758531737509148,
+  "sharpe_weights_lagged_2d": 1.8652096556656712,
+  "held_open_vs_prevclose": {
+   "n": 30582,
+   "abs_gt_0.5pct": 7,
+   "abs_gt_2pct": 0,
+   "max_abs": 0.006849315068493178
+  }
+ },
+ "missing_while_held": {
+  "days": [
+   "2021-12-20",
+   "2022-01-27",
+   "2022-02-16",
+   "2022-02-26",
+   "2022-04-01",
+   "2022-05-14",
+   "2022-05-28"
+  ],
+  "position_days": 32,
+  "gross_weight_missing_by_day": {
+   "2021-12-20": 0.025,
+   "2022-01-27": 0.025,
+   "2022-02-16": 0.025,
+   "2022-02-26": 0.225,
+   "2022-04-01": 0.42500000000000004,
+   "2022-05-14": 0.05,
+   "2022-05-28": 0.025
+  },
+  "stress_delist_penalty_total": 0.16000000000000003,
+  "stress_sharpe": 1.5224803481954443,
+  "stress_sharpe_no_delist_penalty": 1.8717195191503904,
+  "universe_n_on_hole_days": {
+   "2022-02-26": 100,
+   "2022-02-27": 84,
+   "2022-02-28": 84,
+   "2022-03-01": 84,
+   "2022-04-01": 100,
+   "2022-04-02": 86,
+   "2022-04-03": 86
+  },
+  "base_net_on_hole_days": 0.004566310305926531,
+  "sharpe_excluding_hole_days": 2.4434786683180203
+ },
+ "delistings_in_dev": [
+  {
+   "sym": "1000BTTCUSDT",
+   "last_day": "2022-04-11",
+   "held_near_delist": false,
+   "w_on_last_day": 0.0,
+   "w_after_last_day": 0.0,
+   "last4_ret": [
+    -0.0303,
+    0.0195,
+    -0.0186,
+    -0.0164
+   ],
+   "last4_qv_musd": [
+    6.84,
+    3.02,
+    3.98,
+    1.96
+   ],
+   "pnl_contrib_last5d": 0.0
+  },
+  {
+   "sym": "AKROUSDT",
+   "last_day": "2022-05-27",
+   "held_near_delist": false,
+   "w_on_last_day": 0.0,
+   "w_after_last_day": 0.0,
+   "last4_ret": [
+    0.3659,
+    -0.1496,
+    -0.1594,
+    -0.0632
+   ],
+   "last4_qv_musd": [
+    247.75,
+    111.85,
+    55.67,
+    9.87
+   ],
+   "pnl_contrib_last5d": 0.0
+  },
+  {
+   "sym": "ANCUSDT",
+   "last_day": "2022-05-13",
+   "held_near_delist": true,
+   "w_on_last_day": 0.025,
+   "w_after_last_day": 0.025,
+   "last4_ret": [
+    -0.4188,
+    -0.3188,
+    -0.7402,
+    -0.3321
+   ],
+   "last4_qv_musd": [
+    446.62,
+    411.56,
+    233.4,
+    53.91
+   ],
+   "pnl_contrib_last5d": -0.05754346481492608
+  },
+  {
+   "sym": "BTTUSDT",
+   "last_day": "2022-01-26",
+   "held_near_delist": true,
+   "w_on_last_day": -0.025,
+   "w_after_last_day": -0.025,
+   "last4_ret": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "last4_qv_musd": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "pnl_contrib_last5d": 0.0
+  },
+  {
+   "sym": "BZRXUSDT",
+   "last_day": "2021-12-19",
+   "held_near_delist": true,
+   "w_on_last_day": -0.025,
+   "w_after_last_day": -0.025,
+   "last4_ret": [
+    -0.0965,
+    -0.0686,
+    -0.0164,
+    0.0088
+   ],
+   "last4_qv_musd": [
+    120.94,
+    70.33,
+    31.2,
+    2.33
+   ],
+   "pnl_contrib_last5d": 0.0021614515236550924
+  },
+  {
+   "sym": "DODOUSDT",
+   "last_day": "2022-05-27",
+   "held_near_delist": true,
+   "w_on_last_day": 0.025,
+   "w_after_last_day": 0.025,
+   "last4_ret": [
+    0.2207,
+    -0.0339,
+    -0.0994,
+    -0.0784
+   ],
+   "last4_qv_musd": [
+    272.49,
+    85.14,
+    41.53,
+    15.76
+   ],
+   "pnl_contrib_last5d": 0.00039603311461059495
+  },
+  {
+   "sym": "DOTECOUSDT",
+   "last_day": "2021-02-19",
+   "held_near_delist": false,
+   "w_on_last_day": 0.0,
+   "w_after_last_day": 0.0,
+   "last4_ret": [
+    0.0184,
+    0.1056,
+    -0.0063,
+    -0.0309
+   ],
+   "last4_qv_musd": [
+    33.91,
+    32.29,
+    31.83,
+    13.15
+   ],
+   "pnl_contrib_last5d": 0.0
+  },
+  {
+   "sym": "KEEPUSDT",
+   "last_day": "2022-02-15",
+   "held_near_delist": true,
+   "w_on_last_day": 0.025,
+   "w_after_last_day": 0.025,
+   "last4_ret": [
+    -0.0181,
+    -0.0459,
+    -0.0343,
+    0.0131
+   ],
+   "last4_qv_musd": [
+    56.5,
+    39.18,
+    101.34,
+    5.09
+   ],
+   "pnl_contrib_last5d": -0.0027522360806504493
+  },
+  {
+   "sym": "LENDUSDT",
+   "last_day": "2020-11-10",
+   "held_near_delist": false,
+   "w_on_last_day": 0.0,
+   "w_after_last_day": 0.0,
+   "last4_ret": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "last4_qv_musd": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "pnl_contrib_last5d": 0.0
+  },
+  {
+   "sym": "LUNAUSDT",
+   "last_day": "2022-05-13",
+   "held_near_delist": true,
+   "w_on_last_day": 0.025,
+   "w_after_last_day": 0.025,
+   "last4_ret": [
+    -0.4188,
+    -0.9377,
+    -0.9927,
+    0.0
+   ],
+   "last4_qv_musd": [
+    22279.05,
+    28809.71,
+    5311.42,
+    0.0
+   ],
+   "pnl_contrib_last5d": -0.07201468083537706
+  },
+  {
+   "sym": "NUUSDT",
+   "last_day": "2022-02-15",
+   "held_near_delist": false,
+   "w_on_last_day": 0.0,
+   "w_after_last_day": 0.0,
+   "last4_ret": [
+    -0.0349,
+    0.0082,
+    -0.0048,
+    0.0235
+   ],
+   "last4_qv_musd": [
+    30.22,
+    16.23,
+    22.94,
+    1.87
+   ],
+   "pnl_contrib_last5d": 0.0
+  },
+  {
+   "sym": "YFIIUSDT",
+   "last_day": "2022-04-12",
+   "held_near_delist": false,
+   "w_on_last_day": 0.0,
+   "w_after_last_day": 0.0,
+   "last4_ret": [
+    0.0311,
+    -0.0533,
+    -0.0582,
+    0.0466
+   ],
+   "last4_qv_musd": [
+    9.04,
+    8.61,
+    14.13,
+    3.74
+   ],
+   "pnl_contrib_last5d": 0.0
+  }
+ ],
+ "attrib": {
+  "2020": {
+   "net_total": 0.5439448632390224,
+   "gross_sym_sum": 0.5754218271084861,
+   "top10_pos": {
+    "THETAUSDT": 0.1181,
+    "LINKUSDT": 0.0637,
+    "CRVUSDT": 0.0634,
+    "ZILUSDT": 0.0586,
+    "WAVESUSDT": 0.0571,
+    "XMRUSDT": 0.0421,
+    "OMGUSDT": 0.0351,
+    "BNBUSDT": 0.0325,
+    "TRBUSDT": 0.0286,
+    "YFIUSDT": 0.0276
+   },
+   "top10_neg": {
+    "TRXUSDT": -0.035,
+    "ETHUSDT": -0.032,
+    "KNCUSDT": -0.032,
+    "ZECUSDT": -0.0265,
+    "ONTUSDT": -0.0212,
+    "XTZUSDT": -0.019,
+    "BATUSDT": -0.0176,
+    "UNIUSDT": -0.0131,
+    "DOTUSDT": -0.0123,
+    "MKRUSDT": -0.0118
+   },
+   "top5_share_of_gross": 0.627108607244822,
+   "n_syms_traded": 69,
+   "k_per_leg_mean": 8.150943396226415,
+   "live_days": 159
+  },
+  "2021": {
+   "net_total": 0.899877098861894,
+   "gross_sym_sum": 0.9711720321462739,
+   "top10_pos": {
+    "SOLUSDT": 0.098,
+    "CRVUSDT": 0.0847,
+    "DOGEUSDT": 0.079,
+    "BNBUSDT": 0.078,
+    "AXSUSDT": 0.0709,
+    "DASHUSDT": 0.0683,
+    "IOSTUSDT": 0.0611,
+    "AVAXUSDT": 0.0588,
+    "ETCUSDT": 0.0567,
+    "OMGUSDT": 0.0474
+   },
+   "top10_neg": {
+    "ENJUSDT": -0.0636,
+    "IOTAUSDT": -0.0558,
+    "EGLDUSDT": -0.0486,
+    "FLMUSDT": -0.0416,
+    "MANAUSDT": -0.0387,
+    "LINKUSDT": -0.0353,
+    "UNFIUSDT": -0.0351,
+    "SXPUSDT": -0.0342,
+    "XRPUSDT": -0.032,
+    "KEEPUSDT": -0.0319
+   },
+   "top5_share_of_gross": 0.4227205121581904,
+   "n_syms_traded": 124,
+   "k_per_leg_mean": 18.435616438356163,
+   "live_days": 365
+  },
+  "2022": {
+   "net_total": -0.06315988196606197,
+   "gross_sym_sum": 0.005968720975114583,
+   "top10_pos": {
+    "BELUSDT": 0.0597,
+    "SRMUSDT": 0.0554,
+    "ARUSDT": 0.0553,
+    "ENJUSDT": 0.0351,
+    "COMPUSDT": 0.0325,
+    "RSRUSDT": 0.0296,
+    "LRCUSDT": 0.0286,
+    "RUNEUSDT": 0.026,
+    "SXPUSDT": 0.0237,
+    "DODOUSDT": 0.0232
+   },
+   "top10_neg": {
+    "LUNAUSDT": -0.0969,
+    "ANCUSDT": -0.0632,
+    "1INCHUSDT": -0.0384,
+    "GMTUSDT": -0.0371,
+    "COTIUSDT": -0.0366,
+    "AXSUSDT": -0.0343,
+    "DYDXUSDT": -0.0324,
+    "LITUSDT": -0.0314,
+    "DOTUSDT": -0.0294,
+    "MATICUSDT": -0.0288
+   },
+   "top5_share_of_gross": 39.897034379975665,
+   "n_syms_traded": 153,
+   "k_per_leg_mean": 19.95068493150685,
+   "live_days": 365
+  },
+  "whole_top10": {
+   "THETAUSDT": 0.1725,
+   "CRVUSDT": 0.1365,
+   "SOLUSDT": 0.0989,
+   "SRMUSDT": 0.0966,
+   "OMGUSDT": 0.0939,
+   "BNBUSDT": 0.0908,
+   "BELUSDT": 0.0811,
+   "IOSTUSDT": 0.079,
+   "ZILUSDT": 0.0766,
+   "DASHUSDT": 0.075
+  },
+  "whole_bottom5": {
+   "DOTUSDT": -0.0448,
+   "FLMUSDT": -0.0545,
+   "ANCUSDT": -0.0632,
+   "1INCHUSDT": -0.0687,
+   "LUNAUSDT": -0.0834
+  },
+  "sharpe_minus_top1_symbols_pnl": 2.1254597268941717,
+  "sharpe_minus_top3_symbols_pnl": 1.7217788236742093,
+  "sharpe_minus_top5_symbols_pnl": 1.3954000316950812,
+  "sharpe_2021_2022_only": 1.825922771825235,
+  "sharpe_2020_only": 5.0666875722112925,
+  "sharpe_universe_ge_50_days_only": 2.1520093413477834,
+  "legs_ann": {
+   "long_price": 0.47886797493798683,
+   "short_price": -0.06437138660658998,
+   "long_fund": 0.057389193281317946,
+   "short_fund": 0.1655555477280099
+  }
+ },
+ "as_run_vs_corrected": {
+  "new_traded_symbols": [
+   "AAVEUSDT",
+   "ALICEUSDT",
+   "DASHUSDT",
+   "KSMUSDT",
+   "LENDUSDT",
+   "LINAUSDT",
+   "LINKUSDT",
+   "LTCUSDT",
+   "MATICUSDT",
+   "MKRUSDT",
+   "NEARUSDT",
+   "NEOUSDT",
+   "OCEANUSDT",
+   "OGNUSDT",
+   "ONEUSDT",
+   "ONTUSDT",
+   "QTUMUSDT",
+   "RLCUSDT",
+   "SKLUSDT",
+   "SNXUSDT",
+   "SUSHIUSDT",
+   "THETAUSDT",
+   "TRXUSDT",
+   "UNFIUSDT",
+   "WAVESUSDT",
+   "XLMUSDT",
+   "XMRUSDT",
+   "XRPUSDT",
+   "XTZUSDT",
+   "ZECUSDT",
+   "ZILUSDT"
+  ],
+  "as_run_first_live": "2020-10-31",
+  "as_run_live_days_2020": 62,
+  "corrected_live_days_2020": 159,
+  "as_run_2020_on_common_days": 0.1563254044901227,
+  "corrected_2020_on_as_run_days": 0.2680676555280992,
+  "corrected_2020_on_extra_days": 0.2758772077109232,
+  "new_symbols_direct_contrib_by_year": {
+   "2020": 0.25650982268976297,
+   "2021": 0.16329830516118696,
+   "2022": 0.06702777280283642
+  },
+  "new_symbols_top_2020": {
+   "THETAUSDT": 0.1181,
+   "LINKUSDT": 0.0637,
+   "ZILUSDT": 0.0586,
+   "WAVESUSDT": 0.0571,
+   "XMRUSDT": 0.0421,
+   "SUSHIUSDT": 0.0245,
+   "SNXUSDT": 0.0196,
+   "XLMUSDT": 0.0133,
+   "QTUMUSDT": 0.0071,
+   "KSMUSDT": 0.0047
+  }
+ },
+ "extremes": {
+  "total_simple_sum": 1.3806620801348544,
+  "top10_days_share": 0.35592834992664585,
+  "top20_share": 0.5731357352262971,
+  "days_gt_5pct": {
+   "2021-01-28": 0.1467
+  },
+  "days_lt_-5pct": {},
+  "sharpe_ex_top10": 1.827605814876565,
+  "sharpe_winsor_1pct": 2.5591122966211293,
+  "top10_detail_[contrib,ret,qv$m]": {
+   "2021-01-28": {
+    "net": 0.1467,
+    "top3": {
+     "DOGEUSDT": [
+      0.1299,
+      3.899,
+      3118.9
+     ],
+     "FTMUSDT": [
+      0.0159,
+      0.476,
+      116.5
+     ],
+     "RUNEUSDT": [
+      0.0084,
+      0.253,
+      52.3
+     ]
+    },
+    "open_vs_prevclose_top3": {
+     "DOGEUSDT": -0.0003,
+     "FTMUSDT": 0.0,
+     "RUNEUSDT": -0.0007
+    }
+   },
+   "2022-05-29": {
+    "net": 0.0448,
+    "top3": {
+     "BELUSDT": [
+      0.0361,
+      1.413,
+      2866.2
+     ],
+     "RSRUSDT": [
+      0.0084,
+      0.335,
+      202.7
+     ],
+     "BAKEUSDT": [
+      0.0056,
+      0.224,
+      150.8
+     ]
+    },
+    "open_vs_prevclose_top3": {
+     "BELUSDT": 0.0,
+     "RSRUSDT": 0.0,
+     "BAKEUSDT": 0.0
+    }
+   },
+   "2021-02-20": {
+    "net": 0.0444,
+    "top3": {
+     "UNIUSDT": [
+      0.0141,
+      0.431,
+      1244.4
+     ],
+     "SUSHIUSDT": [
+      0.0085,
+      0.258,
+      549.7
+     ],
+     "ADAUSDT": [
+      0.0065,
+      0.203,
+      2310.6
+     ]
+    },
+    "open_vs_prevclose_top3": {
+     "UNIUSDT": 0.0001,
+     "SUSHIUSDT": 0.0,
+     "ADAUSDT": 0.0
+    }
+   },
+   "2021-02-06": {
+    "net": 0.0392,
+    "top3": {
+     "DOGEUSDT": [
+      0.0076,
+      0.232,
+      878.2
+     ],
+     "ADAUSDT": [
+      0.006,
+      0.18,
+      1064.1
+     ],
+     "FTMUSDT": [
+      0.0048,
+      -0.14,
+      47.2
+     ]
+    },
+    "open_vs_prevclose_top3": {
+     "DOGEUSDT": 0.0006,
+     "ADAUSDT": -0.0004,
+     "FTMUSDT": -0.001
+    }
+   },
+   "2020-11-10": {
+    "net": 0.0391,
+    "top3": {
+     "CRVUSDT": [
+      0.0139,
+      0.242,
+      64.3
+     ],
+     "BALUSDT": [
+      0.0092,
+      0.165,
+      13.7
+     ],
+     "SRMUSDT": [
+      0.0083,
+      0.149,
+      11.3
+     ]
+    },
+    "open_vs_prevclose_top3": {
+     "CRVUSDT": 0.0,
+     "BALUSDT": -0.0001,
+     "SRMUSDT": 0.0003
+    }
+   },
+   "2021-02-23": {
+    "net": 0.0377,
+    "top3": {
+     "FLMUSDT": [
+      0.0083,
+      -0.248,
+      58.8
+     ],
+     "KAVAUSDT": [
+      0.008,
+      -0.24,
+      84.9
+     ],
+     "BLZUSDT": [
+      0.0078,
+      -0.233,
+      29.4
+     ]
+    },
+    "open_vs_prevclose_top3": {
+     "FLMUSDT": -0.0009,
+     "KAVAUSDT": 0.0,
+     "BLZUSDT": 0.0006
+    }
+   },
+   "2021-04-06": {
+    "net": 0.0367,
+    "top3": {
+     "QTUMUSDT": [
+      0.0083,
+      0.287,
+      339.3
+     ],
+     "HNTUSDT": [
+      0.0051,
+      0.183,
+      279.1
+     ],
+     "ETCUSDT": [
+      0.003,
+      0.105,
+      340.7
+     ]
+    },
+    "open_vs_prevclose_top3": {
+     "QTUMUSDT": -0.0003,
+     "HNTUSDT": 0.0008,
+     "ETCUSDT": 0.0
+    }
+   },
+   "2021-02-07": {
+    "net": 0.0346,
+    "top3": {
+     "DOGEUSDT": [
+      0.0116,
+      0.352,
+      2663.4
+     ],
+     "AVAXUSDT": [
+      0.0104,
+      0.311,
+      195.9
+     ],
+     "NEARUSDT": [
+      0.0088,
+      0.265,
+      48.0
+     ]
+    },
+    "open_vs_prevclose_top3": {
+     "DOGEUSDT": 0.0,
+     "AVAXUSDT": -0.0002,
+     "NEARUSDT": -0.0004
+    }
+   },
+   "2021-07-23": {
+    "net": 0.0346,
+    "top3": {
+     "AXSUSDT": [
+      0.018,
+      0.714,
+      7847.5
+     ],
+     "SANDUSDT": [
+      0.0082,
+      0.323,
+      770.8
+     ],
+     "CHRUSDT": [
+      0.0062,
+      0.246,
+      364.3
+     ]
+    },
+    "open_vs_prevclose_top3": {
+     "AXSUSDT": -0.0,
+     "SANDUSDT": -0.0,
+     "CHRUSDT": 0.0
+    }
+   },
+   "2021-04-18": {
+    "net": 0.0336,
+    "top3": {
+     "SOLUSDT": [
+      0.0089,
+      0.301,
+      621.8
+     ],
+     "RUNEUSDT": [
+      0.0052,
+      0.171,
+      213.6
+     ],
+     "CRVUSDT": [
+      0.0044,
+      -0.15,
+      337.4
+     ]
+    },
+    "open_vs_prevclose_top3": {
+     "SOLUSDT": 0.0007,
+     "RUNEUSDT": -0.0003,
+     "CRVUSDT": 0.0
+    }
+   }
+  }
+ },
+ "costs": {
+  "turnover_mean": 0.2762341316005467,
+  "turnover_with_drift": 0.3193854648812148,
+  "sharpe_drift_turnover_7bp": 2.387987939886591,
+  "turnover_by_year": {
+   "2020": 0.2828118946043474,
+   "2021": 0.279040834772524,
+   "2022": 0.27056204673650286
+  },
+  "gross_ann": 0.6374413293407246,
+  "breakeven_bp_per_side": 63.222259711878266,
+  "sharpe_10bp_drift_nodelist": 2.2376784807195436,
+  "by_year_10bp": {
+   "2020": 0.524,
+   "2021": 0.851,
+   "2022": -0.106
+  },
+  "sharpe_15bp_drift_nodelist": 1.987120898331014,
+  "by_year_15bp": {
+   "2020": 0.499,
+   "2021": 0.79,
+   "2022": -0.162
+  },
+  "sharpe_20bp_drift_nodelist": 1.736535542949929,
+  "by_year_20bp": {
+   "2020": 0.473,
+   "2021": 0.73,
+   "2022": -0.219
+  },
+  "sharpe_30bp_drift_nodelist": 1.2353945324489137,
+  "by_year_30bp": {
+   "2020": 0.422,
+   "2021": 0.61,
+   "2022": -0.331
+  },
+  "sharpe_30bp_if_medqv<20m_else_7bp": 2.1851265329174967,
+  "share_turnover_in_names_medqv<20m_2020": 0.5126386208350175,
+  "sharpe_30bp_if_medqv<50m_else_7bp": 1.784465585523881,
+  "share_turnover_in_names_medqv<50m_2020": 0.7890490416338963
+ },
+ "liquidation": {
+  "short_pos_days": 15292,
+  "short_intraday_high_ge_25pct": 228,
+  "ge_50pct": 35,
+  "ge_100pct": 3,
+  "long_intraday_low_le_-25pct": 209,
+  "le_-50pct": 32,
+  "short_ge_50pct_events": {
+   "2020-11-24 XLMUSDT": 0.504,
+   "2021-01-02 DOGEUSDT": 1.478,
+   "2021-01-08 ENJUSDT": 0.656,
+   "2021-01-30 XRPUSDT": 0.836,
+   "2021-02-05 CVCUSDT": 0.699,
+   "2021-02-11 ENJUSDT": 0.568,
+   "2021-02-11 IOTAUSDT": 0.505,
+   "2021-02-21 FTMUSDT": 0.62,
+   "2021-03-01 FTMUSDT": 0.526,
+   "2021-03-03 ENJUSDT": 0.704,
+   "2021-03-11 MATICUSDT": 0.884,
+   "2021-04-14 DOGEUSDT": 0.538,
+   "2021-05-11 EOSUSDT": 0.57,
+   "2021-05-24 YFIUSDT": 0.601,
+   "2021-09-08 ALGOUSDT": 0.543,
+   "2021-10-15 KEEPUSDT": 1.842,
+   "2021-10-27 MASKUSDT": 0.947,
+   "2021-10-30 CHZUSDT": 0.855,
+   "2021-11-01 SANDUSDT": 0.503,
+   "2021-11-02 SANDUSDT": 0.544,
+   "2021-11-13 KEEPUSDT": 0.742,
+   "2021-12-15 NEARUSDT": 0.882,
+   "2021-12-22 OCEANUSDT": 0.531,
+   "2022-04-01 ALPHAUSDT": 0.528,
+   "2022-04-02 1000XECUSDT": 0.523,
+   "2022-06-07 LITUSDT": 0.594,
+   "2022-06-08 LITUSDT": 0.777,
+   "2022-06-13 UNFIUSDT": 0.609,
+   "2022-07-13 FLMUSDT": 0.66,
+   "2022-07-18 TRBUSDT": 0.547,
+   "2022-07-29 UNFIUSDT": 1.089,
+   "2022-07-30 TRBUSDT": 0.666,
+   "2022-10-29 DOGEUSDT": 0.812,
+   "2022-11-11 PEOPLEUSDT": 0.709,
+   "2022-11-29 TRBUSDT": 0.819
+  },
+  "max_short_intraday_up": 1.8417752050168832,
+  "sharpe_if_shorts_stopped_at_+50pct_intraday": 2.2221303948960562,
+  "n_stops_50": 35,
+  "sharpe_if_shorts_stopped_at_+30pct_intraday": 2.425097310780118,
+  "n_stops_30": 127,
+  "sharpe_if_shorts_stopped_at_+20pct_intraday": 2.387110908559171,
+  "n_stops_20": 437,
+  "short_spells": 2490,
+  "spells_maxup_ge_50pct": 84,
+  "spells_maxup_ge_100pct": 21,
+  "worst_spells": [
+   [
+    "DOGEUSDT",
+    "2022-10-15",
+    15,
+    1.591
+   ],
+   [
+    "MATICUSDT",
+    "2021-03-05",
+    15,
+    1.716
+   ],
+   [
+    "IOTAUSDT",
+    "2021-02-07",
+    23,
+    1.813
+   ],
+   [
+    "KEEPUSDT",
+    "2021-10-15",
+    1,
+    1.842
+   ],
+   [
+    "SANDUSDT",
+    "2021-11-01",
+    22,
+    2.172
+   ],
+   [
+    "FLMUSDT",
+    "2021-01-30",
+    28,
+    2.259
+   ],
+   [
+    "ENJUSDT",
+    "2021-03-03",
+    32,
+    2.91
+   ],
+   [
+    "EGLDUSDT",
+    "2021-01-01",
+    37,
+    3.028
+   ]
+  ]
+ }
+}

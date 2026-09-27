@@ -1,0 +1,694 @@
+{
+ "name": "pro_events_8000",
+ "design": "event_study",
+ "inputs": {
+  "events_per_year": 8000,
+  "car_sd": 0.06,
+  "hold_days": 5,
+  "icc": 0.02,
+  "concurrency": {
+   "model": "seasonal_poisson",
+   "season_fraction": 0.45,
+   "n_seasons": 4
+  },
+  "concurrency_profile": {
+   "model": "seasonal_poisson",
+   "m_w": 337.7346938775511,
+   "mean_active_when_active": 312.5,
+   "lambda_per_season_day": 71.42857142857143,
+   "season_days": 112.0,
+   "active_day_fraction": 0.5079365079365079
+  },
+  "portfolio_autocorr": {
+   "model": "ar1",
+   "phi": 0.0
+  },
+  "mean_car": 0.002,
+  "cost_per_event": 0.001,
+  "days_per_year": 252,
+  "skew": 0.0,
+  "exkurt": 0.0,
+  "assume_independent": null
+ },
+ "series_model": {
+  "periods_per_year": 252.0,
+  "autocorr": {
+   "model": "ar1",
+   "phi": 0.0
+  },
+  "skew": 0.0,
+  "exkurt": 0.0,
+  "null_block": null,
+  "null_D": null,
+  "D1": 1.0,
+  "D2": 1.0,
+  "D_null": 1.0,
+  "kappa_at_0": 1.0
+ },
+ "windows": {
+  "dev_years": 5.0,
+  "val_years": 5.0,
+  "total_years": 10.0,
+  "dev_fraction_for_years_solver": 0.5,
+  "val_sharpe_multiplier": 1.0
+ },
+ "gates": {
+  "dev": {
+   "name": "A2_dev(k=1)",
+   "sharpe_c": 1.8,
+   "alpha": 0.05,
+   "stress_drag_sr": 0.1,
+   "description": "Sharpe >= c/sqrt(T), stress mean > 0, p < 0.05/k (mean-centred block bootstrap)",
+   "threshold": 0.8049844718999243,
+   "binding_leg": "sharpe_c_over_sqrtT",
+   "legs": {
+    "sharpe_c_over_sqrtT": 0.8049844718999243,
+    "p_lt_alpha": 0.7356009045801146,
+    "stress_mean_gt_0": 0.1
+   }
+  },
+  "val_current": {
+   "name": "val_sharpe_0.75",
+   "sharpe_abs": 0.75,
+   "alpha": 0.05,
+   "stress_drag_sr": 0.1,
+   "threshold": 0.75,
+   "binding_leg": "sharpe_abs",
+   "legs": {
+    "sharpe_abs": 0.75,
+    "p_lt_alpha": 0.7356009045801146,
+    "stress_mean_gt_0": 0.1
+   }
+  },
+  "val_proposed": {
+   "name": "PAV",
+   "alpha": 0.05,
+   "stress_drag_sr": 0.1,
+   "description": "validation HAC-t / bootstrap p < 0.05/1, stress mean > 0",
+   "threshold": 0.7356009045801146,
+   "binding_leg": "p_lt_alpha"
+  },
+  "batch_k": 1,
+  "alpha_batch": 0.05,
+  "stress_drag_sr": 0.1
+ },
+ "observations": {
+  "raw_dev": 40000.0,
+  "raw_val": 40000.0,
+  "raw_total": 80000.0,
+  "raw_unit": "events",
+  "periods_dev": 1260,
+  "deff_time_D1": 1.0,
+  "deff_time_D1_finite_dev": 1.0,
+  "deff_cross": 7.734693877551022,
+  "deff_total": 7.734693877551022,
+  "n_eff_dev": 5171.50395778364,
+  "n_eff_val": 5171.50395778364,
+  "n_eff_total": 10343.00791556728,
+  "n_units": 337.7346938775511,
+  "n_eff_units": 1034.300791556728
+ },
+ "standard_errors": {
+  "se_sharpe_null_dev": 0.4472135954999579,
+  "se_sharpe_null_val": 0.4472135954999579,
+  "se_sharpe_null_total": 0.31622776601683794,
+  "se_sharpe_at": {
+   "0.3": 0.31625599937844207,
+   "0.5": 0.31630618579882874,
+   "0.7": 0.3163814505027471,
+   "1.0": 0.3165413285787698
+  },
+  "kappa0": 1.0,
+  "kappa_at_0.7": 1.000485993016505,
+  "natural_unit": "mean net CAR per event (return units)",
+  "se_mean_natural_dev": 0.0008343395285970765,
+  "se_mean_natural_total": 0.0005899671384829802
+ },
+ "newey_west_check": {
+  "nw_lags_default": 7,
+  "D_nw_expected": 1.0,
+  "D_true": 1.0,
+  "actual_size_nominal_alpha_with_default_nw": 0.049999999999999975,
+  "actual_size_nominal_alpha_if_iid_se": 0.049999999999999975
+ },
+ "mde": {
+  "alpha": 0.05,
+  "power": 0.8,
+  "single_test_all_years": {
+   "sharpe": 0.7864558268893179,
+   "natural": 0.0024672433720081734
+  },
+  "dev_gate_only": {
+   "sharpe": 1.1818901466355174,
+   "natural": 0.0032049814176490082
+  },
+  "joint_current_gates": {
+   "sharpe": 1.3389175764347176,
+   "natural": 0.003497938056431443
+  },
+  "joint_with_proposed_val_gate": {
+   "sharpe": 1.33243408464367,
+   "natural": 0.0034858421954401014
+  }
+ },
+ "power": [
+  {
+   "world": "cost_drag_null",
+   "true_net_sharpe": -0.3,
+   "single_test_all_years": 0.0047529160124302715,
+   "p_dev": 0.006744333524302397,
+   "p_val_current": 0.009445833702822376,
+   "p_joint_current": 6.37058529069304e-05,
+   "p_val_proposed": 0.010293686297639435,
+   "p_joint_proposed": 6.942405358582187e-05,
+   "natural_mean": 0.00044030802932254216
+  },
+  {
+   "world": "zero_net_null",
+   "true_net_sharpe": 0.0,
+   "single_test_all_years": 0.049999999999999975,
+   "p_dev": 0.03593031911292579,
+   "p_val_current": 0.04676625634454651,
+   "p_joint_current": 0.0016803265141764464,
+   "p_val_proposed": 0.05000000000000001,
+   "p_joint_proposed": 0.0017965159556462898,
+   "natural_mean": 0.001
+  },
+  {
+   "world": "structural_leak",
+   "true_net_sharpe": 0.05,
+   "single_test_all_years": 0.06854226783796596,
+   "p_dev": 0.04568714946920336,
+   "p_val_current": 0.05876288899609739,
+   "p_joint_current": 0.002684708892806907,
+   "p_val_proposed": 0.06263220820029479,
+   "p_joint_proposed": 0.0028614870576331324,
+   "natural_mean": 0.0010932819951129096
+  },
+  {
+   "world": "S=0.3",
+   "true_net_sharpe": 0.3,
+   "single_test_all_years": 0.24318054233751096,
+   "p_dev": 0.12943229665847528,
+   "p_val_current": 0.15717393201228258,
+   "p_joint_current": 0.020343382995192782,
+   "p_val_proposed": 0.1650416069900843,
+   "p_joint_proposed": 0.02136171423693208,
+   "natural_mean": 0.0015596919706774579
+  },
+  {
+   "world": "S=0.5",
+   "true_net_sharpe": 0.5,
+   "single_test_all_years": 0.47460495032381994,
+   "p_dev": 0.24768368107557082,
+   "p_val_current": 0.2881223555907857,
+   "p_joint_current": 0.07136320563289038,
+   "p_val_proposed": 0.2992047783902113,
+   "p_joint_proposed": 0.07410814090708794,
+   "natural_mean": 0.0019328199511290966
+  },
+  {
+   "world": "S=0.7",
+   "true_net_sharpe": 0.7,
+   "single_test_all_years": 0.715140186088572,
+   "p_dev": 0.407244707824888,
+   "p_val_current": 0.45551117759566745,
+   "p_joint_current": 0.18550451643091825,
+   "p_val_proposed": 0.46829067254000023,
+   "p_joint_proposed": 0.19070889811567268,
+   "natural_mean": 0.0023059479315807353
+  },
+  {
+   "world": "S=1.0",
+   "true_net_sharpe": 1.0,
+   "single_test_all_years": 0.935230321153899,
+   "p_dev": 0.6684495812403584,
+   "p_val_current": 0.7117359495410115,
+   "p_joint_current": 0.47575959742439794,
+   "p_val_proposed": 0.722615384600542,
+   "p_joint_proposed": 0.4830319512340728,
+   "natural_mean": 0.002865639902258193
+  },
+  {
+   "world": "implied_by_primitives",
+   "true_net_sharpe": 0.5360091187959627,
+   "single_test_all_years": 0.5199952832380347,
+   "p_dev": 0.2738281461807395,
+   "p_val_current": 0.3161963476646767,
+   "p_joint_current": 0.086583459710139,
+   "p_val_proposed": 0.3277359083236031,
+   "p_joint_proposed": 0.08974331621311302,
+   "natural_mean": 0.002
+  }
+ ],
+ "years_for_power": [
+  {
+   "true_net_sharpe": 0.3,
+   "single_test": 68.69923235625902,
+   "dev_gate_only": 77.53955173224058,
+   "joint_current": "inf",
+   "joint_proposed": 196.9889745284035
+  },
+  {
+   "true_net_sharpe": 0.5,
+   "single_test": 24.734380710643197,
+   "dev_gate_only": 27.91706180263735,
+   "joint_current": "inf",
+   "joint_proposed": 70.9254525042525
+  },
+  {
+   "true_net_sharpe": 0.7,
+   "single_test": 12.621615194630126,
+   "dev_gate_only": 14.245558921784887,
+   "joint_current": "inf",
+   "joint_proposed": 36.193664824919495
+  },
+  {
+   "true_net_sharpe": 1.0,
+   "single_test": 6.186707994006489,
+   "dev_gate_only": 6.9825724577575246,
+   "joint_current": 27.562644226790393,
+   "joint_proposed": 17.742400236443142
+  },
+  {
+   "true_net_sharpe": 0.5360091187959627,
+   "single_test": 21.52323613831412,
+   "dev_gate_only": 24.292689780707622,
+   "joint_current": "inf",
+   "joint_proposed": 61.71791003293421
+  }
+ ],
+ "implied": {
+  "events_per_year": 8000,
+  "deff": 7.734693877551022,
+  "m_w": 337.7346938775511,
+  "n_eff_per_year": 1034.300791556728,
+  "per_event_ir_per_unit_sharpe": 0.031093998370969884,
+  "sharpe_gross": 1.0720182375919254,
+  "sharpe_net": 0.5360091187959627
+ },
+ "breadth_curve": [
+  {
+   "events_per_year": 1000.0,
+   "m_w": 43.091836734693885,
+   "deff": 1.8418367346938778,
+   "n_eff_per_year": 542.9362880886426
+  },
+  {
+   "events_per_year": 2000.0,
+   "m_w": 85.18367346938777,
+   "deff": 2.6836734693877555,
+   "n_eff_per_year": 745.2471482889732
+  },
+  {
+   "events_per_year": 4000.0,
+   "m_w": 169.36734693877554,
+   "deff": 4.367346938775511,
+   "n_eff_per_year": 915.8878504672896
+  },
+  {
+   "events_per_year": 8000,
+   "m_w": 337.7346938775511,
+   "deff": 7.734693877551022,
+   "n_eff_per_year": 1034.300791556728
+  },
+  {
+   "events_per_year": 16000,
+   "m_w": 674.4693877551022,
+   "deff": 14.469387755102044,
+   "n_eff_per_year": 1105.7827926657262
+  },
+  {
+   "events_per_year": 32000,
+   "m_w": 1347.9387755102043,
+   "deff": 27.93877551020409,
+   "n_eff_per_year": 1145.36157779401
+  },
+  {
+   "events_per_year": 64000,
+   "m_w": 2694.8775510204086,
+   "deff": 54.87755102040818,
+   "n_eff_per_year": 1166.232800297508
+  }
+ ],
+ "correlation_sensitivity": [
+  {
+   "icc": 0.0,
+   "deff": 1.0,
+   "n_eff_per_year": 8000.0,
+   "natural_slope": 0.0006708203932499369,
+   "sharpe_net": 1.4907119849998598,
+   "mde_natural_single_test": 0.0015275706070675965,
+   "single_test_power_at_implied": 0.9989023253813124,
+   "joint_current_at_implied": 0.8908857607742611
+  },
+  {
+   "icc": 0.005,
+   "deff": 2.6836734693877555,
+   "n_eff_per_year": 2980.988593155893,
+   "natural_slope": 0.00109893269185355,
+   "sharpe_net": 0.9099738386282037,
+   "mde_natural_single_test": 0.001864262018867388,
+   "single_test_power_at_implied": 0.8909740658401752,
+   "joint_current_at_implied": 0.3791159432288264
+  },
+  {
+   "icc": 0.01,
+   "deff": 4.367346938775511,
+   "n_eff_per_year": 1831.7757009345792,
+   "natural_slope": 0.0014018937628968108,
+   "sharpe_net": 0.7133208139350334,
+   "mde_natural_single_test": 0.0021025275185099887,
+   "single_test_power_at_implied": 0.7292534598505697,
+   "joint_current_at_implied": 0.19573759161070045
+  },
+  {
+   "icc": 0.02,
+   "deff": 7.734693877551022,
+   "n_eff_per_year": 1034.300791556728,
+   "natural_slope": 0.001865639902258193,
+   "sharpe_net": 0.5360091187959627,
+   "mde_natural_single_test": 0.0024672433720081734,
+   "single_test_power_at_implied": 0.5199952832380347,
+   "joint_current_at_implied": 0.086583459710139
+  },
+  {
+   "icc": 0.05,
+   "deff": 17.836734693877556,
+   "n_eff_per_year": 448.51258581235686,
+   "natural_slope": 0.002833113236749442,
+   "sharpe_net": 0.35296859547603004,
+   "mde_natural_single_test": 0.0032281184132788546,
+   "single_test_power_at_implied": 0.2985402338576745,
+   "joint_current_at_implied": 0.0292465072368599
+  },
+  {
+   "icc": 0.1,
+   "deff": 34.67346938775511,
+   "n_eff_per_year": 230.7239552678045,
+   "natural_slope": 0.00395007104043583,
+   "sharpe_net": 0.25316000389949067,
+   "mde_natural_single_test": 0.004106556386377509,
+   "single_test_power_at_implied": 0.19926828850356743,
+   "joint_current_at_implied": 0.014481263402890434
+  },
+  {
+   "icc": 0.2,
+   "deff": 68.34693877551022,
+   "n_eff_per_year": 117.04986563153176,
+   "natural_slope": 0.0055458202683624355,
+   "sharpe_net": 0.18031597700790236,
+   "mde_natural_single_test": 0.005361542664934518,
+   "single_test_power_at_implied": 0.14127473585486316,
+   "joint_current_at_implied": 0.008235257565019615
+  },
+  {
+   "icc": 0.4,
+   "deff": 135.69387755102045,
+   "n_eff_per_year": 58.95623402015339,
+   "natural_slope": 0.007814233481152148,
+   "sharpe_net": 0.1279716049452566,
+   "mde_natural_single_test": 0.007145549453925706,
+   "single_test_power_at_implied": 0.10745963895572136,
+   "joint_current_at_implied": 0.005341469884800305
+  }
+ ],
+ "naive_independence": {
+  "deff_ignored": 7.734693877551022,
+  "naive_se_ratio": 0.3595658478562599,
+  "naive_false_positive_at_nominal_0.05": 0.27711510411782436
+ },
+ "winners_curse": null,
+ "verdict": "INCAPABLE",
+ "verdict_with_proposed_val_gate": "INCAPABLE",
+ "verdict_rule": {
+  "decisive_min_joint_power_at_0.7": 0.5,
+  "max_false_pass": 0.05,
+  "incapable_below_joint_power_at_0.7": 0.25,
+  "incapable_above_false_pass": 0.1
+ },
+ "joint_power_at_0.7": 0.18550451643091825,
+ "false_pass_zero_net": 0.0016803265141764464,
+ "notes": [
+  "calendar-time equivalence: per-event IR x sqrt(N_eff/yr); m_w=337.73, deff=7.73"
+ ],
+ "description": "8,000 events/yr, 5-day hold, earnings-season clustering, 10y.",
+ "assumptions": [
+  "ASSUMPTION 5-day CAR sd 6%",
+  "ASSUMPTION 10 bp round-trip cost per event"
+ ],
+ "scenarios": [
+  {
+   "label": "icc=0.005 gross=15bp",
+   "overrides": {
+    "label": "icc=0.005 gross=15bp",
+    "params": {
+     "icc": 0.005,
+     "mean_car": 0.0015
+    }
+   },
+   "n_eff_units": 2980.988593155893,
+   "deff_cross": 2.6836734693877555,
+   "implied_sharpe_net": 0.45498691931410185,
+   "implied_sharpe_gross": 1.3649607579423055,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.7864558268893179,
+   "mde_natural_single_test": 0.001864262018867388,
+   "mde_sharpe_joint_proposed": 1.33243408464367,
+   "mde_natural_joint_proposed": 0.0024642553753548894,
+   "single_test_power_at_implied": 0.4183890694786987,
+   "joint_current_at_implied": 0.05527957993813062,
+   "joint_proposed_at_implied": 0.05754492142057528,
+   "years_80_single_test_at_implied": 29.869688510882533,
+   "years_80_joint_proposed_at_implied": 85.65028379440501,
+   "years_80_joint_current_at_implied": "inf",
+   "joint_current_at_0.7": 0.18550451643091825,
+   "verdict_current": "INCAPABLE"
+  },
+  {
+   "label": "icc=0.005 gross=20bp",
+   "overrides": {
+    "label": "icc=0.005 gross=20bp",
+    "params": {
+     "icc": 0.005,
+     "mean_car": 0.002
+    }
+   },
+   "n_eff_units": 2980.988593155893,
+   "deff_cross": 2.6836734693877555,
+   "implied_sharpe_net": 0.9099738386282037,
+   "implied_sharpe_gross": 1.8199476772564074,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.7864558268893179,
+   "mde_natural_single_test": 0.001864262018867388,
+   "mde_sharpe_joint_proposed": 1.33243408464367,
+   "mde_natural_joint_proposed": 0.0024642553753548894,
+   "single_test_power_at_implied": 0.8909740658401752,
+   "joint_current_at_implied": 0.3791159432288264,
+   "joint_proposed_at_implied": 0.3862104247429989,
+   "years_80_single_test_at_implied": 7.470535163278133,
+   "years_80_joint_proposed_at_implied": 21.423609129410234,
+   "years_80_joint_current_at_implied": 55.94116932239838,
+   "joint_current_at_0.7": 0.18550451643091825,
+   "verdict_current": "INCAPABLE"
+  },
+  {
+   "label": "icc=0.005 gross=30bp",
+   "overrides": {
+    "label": "icc=0.005 gross=30bp",
+    "params": {
+     "icc": 0.005,
+     "mean_car": 0.003
+    }
+   },
+   "n_eff_units": 2980.988593155893,
+   "deff_cross": 2.6836734693877555,
+   "implied_sharpe_net": 1.8199476772564074,
+   "implied_sharpe_gross": 2.729921515884611,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.7864558268893179,
+   "mde_natural_single_test": 0.001864262018867388,
+   "mde_sharpe_joint_proposed": 1.33243408464367,
+   "mde_natural_joint_proposed": 0.0024642553753548894,
+   "single_test_power_at_implied": 0.9999790627734743,
+   "joint_current_at_implied": 0.979708192545366,
+   "joint_proposed_at_implied": 0.9804173210296061,
+   "years_80_single_test_at_implied": 1.87074366697911,
+   "years_80_joint_proposed_at_implied": 5.366930208683407,
+   "years_80_joint_current_at_implied": 5.366930208691866,
+   "joint_current_at_0.7": 0.18550451643091825,
+   "verdict_current": "INCAPABLE"
+  },
+  {
+   "label": "icc=0.02 gross=15bp",
+   "overrides": {
+    "label": "icc=0.02 gross=15bp",
+    "params": {
+     "icc": 0.02,
+     "mean_car": 0.0015
+    }
+   },
+   "n_eff_units": 1034.300791556728,
+   "deff_cross": 7.734693877551022,
+   "implied_sharpe_net": 0.26800455939798135,
+   "implied_sharpe_gross": 0.804013678193944,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.7864558268893179,
+   "mde_natural_single_test": 0.0024672433720081734,
+   "mde_sharpe_joint_proposed": 1.33243408464367,
+   "mde_natural_joint_proposed": 0.0034858421954401014,
+   "single_test_power_at_implied": 0.21264073683329898,
+   "joint_current_at_implied": 0.016159580462528605,
+   "joint_proposed_at_implied": 0.016999951396581243,
+   "years_80_single_test_at_implied": 86.08048965144228,
+   "years_80_joint_proposed_at_implied": 246.82748315060329,
+   "years_80_joint_current_at_implied": "inf",
+   "joint_current_at_0.7": 0.18550451643091825,
+   "verdict_current": "INCAPABLE"
+  },
+  {
+   "label": "icc=0.02 gross=20bp",
+   "overrides": {
+    "label": "icc=0.02 gross=20bp",
+    "params": {
+     "icc": 0.02,
+     "mean_car": 0.002
+    }
+   },
+   "n_eff_units": 1034.300791556728,
+   "deff_cross": 7.734693877551022,
+   "implied_sharpe_net": 0.5360091187959627,
+   "implied_sharpe_gross": 1.0720182375919254,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.7864558268893179,
+   "mde_natural_single_test": 0.0024672433720081734,
+   "mde_sharpe_joint_proposed": 1.33243408464367,
+   "mde_natural_joint_proposed": 0.0034858421954401014,
+   "single_test_power_at_implied": 0.5199952832380347,
+   "joint_current_at_implied": 0.086583459710139,
+   "joint_proposed_at_implied": 0.08974331621311302,
+   "years_80_single_test_at_implied": 21.52323613831412,
+   "years_80_joint_proposed_at_implied": 61.71791003293421,
+   "years_80_joint_current_at_implied": "inf",
+   "joint_current_at_0.7": 0.18550451643091825,
+   "verdict_current": "INCAPABLE"
+  },
+  {
+   "label": "icc=0.02 gross=30bp",
+   "overrides": {
+    "label": "icc=0.02 gross=30bp",
+    "params": {
+     "icc": 0.02,
+     "mean_car": 0.003
+    }
+   },
+   "n_eff_units": 1034.300791556728,
+   "deff_cross": 7.734693877551022,
+   "implied_sharpe_net": 1.0720182375919254,
+   "implied_sharpe_gross": 1.608027356387888,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.7864558268893179,
+   "mde_natural_single_test": 0.0024672433720081734,
+   "mde_sharpe_joint_proposed": 1.33243408464367,
+   "mde_natural_joint_proposed": 0.0034858421954401014,
+   "single_test_power_at_implied": 0.9593488609402525,
+   "joint_current_at_implied": 0.5535612046741228,
+   "joint_proposed_at_implied": 0.5606551718410654,
+   "years_80_single_test_at_implied": 5.383921660746862,
+   "years_80_joint_proposed_at_implied": 15.440514276479103,
+   "years_80_joint_current_at_implied": 20.145143612391575,
+   "joint_current_at_0.7": 0.18550451643091825,
+   "verdict_current": "INCAPABLE"
+  },
+  {
+   "label": "icc=0.05 gross=15bp",
+   "overrides": {
+    "label": "icc=0.05 gross=15bp",
+    "params": {
+     "icc": 0.05,
+     "mean_car": 0.0015
+    }
+   },
+   "n_eff_units": 448.51258581235686,
+   "deff_cross": 17.836734693877556,
+   "implied_sharpe_net": 0.17648429773801502,
+   "implied_sharpe_gross": 0.5294528932140451,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.7864558268893179,
+   "mde_natural_single_test": 0.0032281184132788546,
+   "mde_sharpe_joint_proposed": 1.33243408464367,
+   "mde_natural_joint_proposed": 0.004774936642300108,
+   "single_test_power_at_implied": 0.13857858508437465,
+   "joint_current_at_implied": 0.007984596557998165,
+   "joint_proposed_at_implied": 0.008445302469617718,
+   "years_80_single_test_at_implied": 198.5020916197104,
+   "years_80_joint_proposed_at_implied": 579.0691574779692,
+   "years_80_joint_current_at_implied": "inf",
+   "joint_current_at_0.7": 0.18550451643091825,
+   "verdict_current": "INCAPABLE"
+  },
+  {
+   "label": "icc=0.05 gross=20bp",
+   "overrides": {
+    "label": "icc=0.05 gross=20bp",
+    "params": {
+     "icc": 0.05,
+     "mean_car": 0.002
+    }
+   },
+   "n_eff_units": 448.51258581235686,
+   "deff_cross": 17.836734693877556,
+   "implied_sharpe_net": 0.35296859547603004,
+   "implied_sharpe_gross": 0.7059371909520601,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.7864558268893179,
+   "mde_natural_single_test": 0.0032281184132788546,
+   "mde_sharpe_joint_proposed": 1.33243408464367,
+   "mde_natural_joint_proposed": 0.004774936642300108,
+   "single_test_power_at_implied": 0.2985402338576745,
+   "joint_current_at_implied": 0.0292465072368599,
+   "joint_proposed_at_implied": 0.030617767224399958,
+   "years_80_single_test_at_implied": 49.62863683813351,
+   "years_80_joint_proposed_at_implied": 142.30651149766396,
+   "years_80_joint_current_at_implied": "inf",
+   "joint_current_at_0.7": 0.18550451643091825,
+   "verdict_current": "INCAPABLE"
+  },
+  {
+   "label": "icc=0.05 gross=30bp",
+   "overrides": {
+    "label": "icc=0.05 gross=30bp",
+    "params": {
+     "icc": 0.05,
+     "mean_car": 0.003
+    }
+   },
+   "n_eff_units": 448.51258581235686,
+   "deff_cross": 17.836734693877556,
+   "implied_sharpe_net": 0.7059371909520601,
+   "implied_sharpe_gross": 1.0589057864280902,
+   "turnover": null,
+   "cost_drag_sharpe": null,
+   "mde_sharpe_single_test": 0.7864558268893179,
+   "mde_natural_single_test": 0.0032281184132788546,
+   "mde_sharpe_joint_proposed": 1.33243408464367,
+   "mde_natural_joint_proposed": 0.004774936642300108,
+   "single_test_power_at_implied": 0.7214738770264937,
+   "joint_current_at_implied": 0.19002558382215196,
+   "joint_proposed_at_implied": 0.19530207565640464,
+   "years_80_single_test_at_implied": 12.41027266564324,
+   "years_80_joint_proposed_at_implied": 35.58766728234906,
+   "years_80_joint_current_at_implied": "inf",
+   "joint_current_at_0.7": 0.18550451643091825,
+   "verdict_current": "INCAPABLE"
+  }
+ ]
+}

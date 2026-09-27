@@ -1,0 +1,67 @@
+{
+ "name": "retro_pead_2004_2014",
+ "description": "Production PEAD model replayed 2004-2014 (single stage: HAC t >= 2 and positive both halves).",
+ "assumptions": [
+  "ASSUMPTION 20-day CAR sd 7%",
+  "ASSUMPTION signed residual correlation of concurrent events 0.02",
+  "ASSUMPTION earnings seasons = 45% of trading days",
+  "beats-all-events-control leg not modelled"
+ ],
+ "design": "event_study",
+ "params": {
+  "events_per_year": 510,
+  "car_sd": 0.07,
+  "hold_days": 20,
+  "icc": 0.02,
+  "concurrency": {
+   "model": "seasonal_poisson",
+   "season_fraction": 0.45,
+   "n_seasons": 4
+  },
+  "portfolio_autocorr": 0.05
+ },
+ "windows": {
+  "dev_years": 10.96,
+  "val_years": null
+ },
+ "gates": {
+  "batch_k": 1,
+  "stress_drag_sr": null,
+  "dev": {
+   "kind": "custom",
+   "hac_t": 2.0,
+   "both_halves_positive": true,
+   "stress": false,
+   "name": "HAC t>=2 & both halves"
+  },
+  "val": {
+   "kind": "none"
+  }
+ },
+ "scenarios": [
+  {
+   "label": "icc=0.005",
+   "params": {
+    "icc": 0.005
+   }
+  },
+  {
+   "label": "icc=0.02",
+   "params": {
+    "icc": 0.02
+   }
+  },
+  {
+   "label": "icc=0.05",
+   "params": {
+    "icc": 0.05
+   }
+  },
+  {
+   "label": "icc=0.1",
+   "params": {
+    "icc": 0.1
+   }
+  }
+ ]
+}

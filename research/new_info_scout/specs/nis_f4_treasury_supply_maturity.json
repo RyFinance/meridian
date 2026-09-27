@@ -1,0 +1,78 @@
+{
+ "name": "nis_f4_treasury_supply_maturity",
+ "description": "Maturity-weighted marketable Treasury debt (fiscaldata MSPD, monthly 2001-01+) / GDP (Greenwood-Vayanos 2014) -> duration timing, monthly.",
+ "assumptions": [
+  "dev 2001-03..2013-10 (12.7y), val 2013-11..2026-08 (12.8y)",
+  "signal AR(1) ~0.99 monthly: returns ~iid but the test has ~2-3 independent regimes; D ASSUMPTION 1.5 as a partial allowance",
+  "implied net Sharpe 0.2-0.4 (G-V 1952-2008 in-sample, halved for decay)",
+  "stress drag 0.02"
+ ],
+ "design": "timeseries",
+ "params": {
+  "periods_per_year": 12,
+  "autocorr": {
+   "model": "lrv",
+   "D": 1.5
+  },
+  "exkurt": 1.0,
+  "mean_ann": 0.0195,
+  "vol_ann": 0.065
+ },
+ "windows": {
+  "dev_years": 12.7,
+  "val_years": 12.8
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.02,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 2,
+   "floor": 0.3
+  }
+ },
+ "scenarios": [
+  {
+   "label": "implied net S=0.2",
+   "params": {
+    "mean_ann": 0.013000000000000001,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.3",
+   "params": {
+    "mean_ann": 0.0195,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.45",
+   "params": {
+    "mean_ann": 0.02925,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.6",
+   "params": {
+    "mean_ann": 0.039,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.8",
+   "params": {
+    "mean_ann": 0.052000000000000005,
+    "vol_ann": 0.065
+   }
+  }
+ ]
+}

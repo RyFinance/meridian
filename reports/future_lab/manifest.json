@@ -1,0 +1,33 @@
+{
+ "seed": 20260923,
+ "fast": false,
+ "n_paths": 5000,
+ "n_boundary_paths": 20000,
+ "n_oc_paths": 4000,
+ "n_permutations": 2000,
+ "n_order_bootstrap": 2000,
+ "horizon_days": 1260,
+ "runtime_seconds": 142.3,
+ "code_sha256": {
+  "research/future_lab/__init__.py": "e95f23b0aa0a733acb656df322f9d26dce9a6333bdbc92c028d9b357bb87a9d6",
+  "research/future_lab/data.py": "94621d81ccc4088c420544fdfc8a2859683eabe799378061e093c7669532d9ad",
+  "research/future_lab/engines.py": "697399a79348b55f1f99fb681552efe711f33312b2165d09a8e1621b3468ef8c",
+  "research/future_lab/forward.py": "fccee0d8a62cb0e960b075e6ede0b6e125916139c4356cae5b0e653a0d51f445",
+  "research/future_lab/ordering.py": "bf865162087ada957c9df83075060f0fe0a8d1823e58d848e1d8889cdced6e5c",
+  "research/future_lab/paths.py": "1143f55b4fe2867fda96bf673d96334ac22b8eb3ca8851715ac59643ec47fda9",
+  "research/future_lab/risk.py": "f0ee7ab8b32b1f9dca345b4db514e55aa41acc1fb4c2967f1059d5a12552babd",
+  "research/future_lab/run.py": "1307902aa82bfc4902c4ab2350bc9f7960c2444bb40a2e224b28798209bd5921"
+ },
+ "input_sha256": {
+  "reports/pead_audit/wide_5p0_curves.csv": "37aa320759f16b4cd377546f7d1479f75c7e9e3df87b3c021c8e4430e2f6ee73",
+  "reports/pead_audit/wide_2p5_curves.csv": "4bcf166040c9f88098e4008dd465b958cb34863442c0071d5f2d9ee91126328b",
+  "live_backtest/state/sweep_wide_5p0_ledger.jsonl": "fc7df04d6748d53fdd06a0aaa81158cfb18f65fd779b5b03d3b8cbe65e3d7ab7",
+  "live_backtest/state/sweep_wide_2p5_ledger.jsonl": "9c8c2b683cddb3bcb4155dca859961b4462d8d3715c51524aa53c745263cb470",
+  "reports/momentum_gold_audit_20260921/momentum_gold_full.csv": "9edc5108785f4fcded0022475bce7a55c28fdbbd13b0400f18f55cf7e10103b3",
+  "reports/momentum_gold_audit_20260921/market_gold_full.csv": "37d87ea6a654a141e4910fa15f24df93aad6d233a7b3d2fa478e2da758bd48fa",
+  "data/multiasset/etf/SPY.parquet": "c927a8371ad9d9552e5a1cd0d96bfcd005ae62f72d4f590c51681a81c6e4fc0c",
+  "data/multiasset/etf/GLD.parquet": "95fd1fbaef9d8cb458942b5d03fe5e7c6b918e78d5244a5d407c882988658994",
+  "data/multiasset/rates/IRX.parquet": "a1621c36fbd30709a390cdbd7297e235ceff251fd15b5c5834c4b24eda4a6b3e"
+ },
+ "spec_sha256": "0cf8986f26e7ad89cecf6f594f85b55d7c47ef87b1b4d73ea8a4f128d01ebf79"
+}

@@ -1,0 +1,78 @@
+{
+ "name": "nis_f11_cftc_tff_dealer",
+ "description": "CFTC Traders-in-Financial-Futures dealer/intermediary net positions in Treasury and equity-index futures (2006-06+, weekly, released Friday for Tuesday) -> futures timing, daily P&L.",
+ "assumptions": [
+  "dev 2006-07..2016-07 (10.0y), val 2016-08..2026-08 (10.1y)",
+  "D 1.1, exkurt 3, vol 6.5%",
+  "implied 0.2-0.3",
+  "COT information family already viewed/spent in research/cot"
+ ],
+ "design": "timeseries",
+ "params": {
+  "periods_per_year": 252,
+  "autocorr": {
+   "model": "lrv",
+   "D": 1.1
+  },
+  "exkurt": 3.0,
+  "mean_ann": 0.0163,
+  "vol_ann": 0.065
+ },
+ "windows": {
+  "dev_years": 10.0,
+  "val_years": 10.1
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.05,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 2,
+   "floor": 0.3
+  }
+ },
+ "scenarios": [
+  {
+   "label": "implied net S=0.2",
+   "params": {
+    "mean_ann": 0.013000000000000001,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.3",
+   "params": {
+    "mean_ann": 0.0195,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.45",
+   "params": {
+    "mean_ann": 0.02925,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.6",
+   "params": {
+    "mean_ann": 0.039,
+    "vol_ann": 0.065
+   }
+  },
+  {
+   "label": "implied net S=0.8",
+   "params": {
+    "mean_ann": 0.052000000000000005,
+    "vol_ann": 0.065
+   }
+  }
+ ]
+}

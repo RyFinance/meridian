@@ -1,0 +1,413 @@
+{
+ "kl_headers": 1665,
+ "kl_noheader": 1952,
+ "fr_headers": 3576,
+ "fr_noheader": 0,
+ "us_timestamps": 0,
+ "multi_member_zip": 0,
+ "files_skipped_post_lock": 34144,
+ "dup_kline_days": {
+  "rows": 0,
+  "conflicting_values": 0
+ },
+ "zero_or_nonpos_price": 0,
+ "open_ne_prevclose_big": 79,
+ "kline_gaps": [
+  {
+   "sym": "BNXUSDT",
+   "n": 3,
+   "max_gap_days": 4,
+   "at": "2022-08-13"
+  },
+  {
+   "sym": "FILUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "FLMUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "FLOWUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "FTMUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "GMTUSDT",
+   "n": 1,
+   "max_gap_days": 3,
+   "at": "2022-04-03"
+  },
+  {
+   "sym": "GRTUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "GTCUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "HBARUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "HOTUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "ICPUSDT",
+   "n": 1,
+   "max_gap_days": 27,
+   "at": "2022-09-27"
+  },
+  {
+   "sym": "IMXUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "IOTAUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "KNCUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "KSMUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "LINAUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "LITUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "LRCUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "LTCUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "LUNAUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "MANAUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "MASKUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "MKRUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "NEARUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "OCEANUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "OGNUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "OMGUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "ONEUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "PEOPLEUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "RLCUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "ROSEUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "RSRUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "RVNUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "SANDUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "SKLUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "SOLUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "STORJUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "SUSHIUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "TRBUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "TRXUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "UNFIUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "VETUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "WAVESUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "XEMUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "XLMUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "XRPUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "YFIIUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "YFIUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "ZECUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "ZENUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  },
+  {
+   "sym": "ZILUSDT",
+   "n": 2,
+   "max_gap_days": 4,
+   "at": "2022-03-01"
+  }
+ ],
+ "open_time_not_midnight": 0,
+ "hdr_variants": [
+  "calc_time,funding_interval_hours,last_funding_rate",
+  "open_time,open,high,low,close,volume,close_time,quote_volume,count,taker_buy_volume,taker_buy_quote_volume,ignore"
+ ],
+ "open_vs_prevclose_abs_gt_2pct_examples": [
+  [
+   "BNXUSDT",
+   "2022-04-18",
+   "100.55"
+  ],
+  [
+   "BNXUSDT",
+   "2022-08-13",
+   "133.84"
+  ],
+  [
+   "FILUSDT",
+   "2022-03-01",
+   "21.679"
+  ],
+  [
+   "FILUSDT",
+   "2022-04-03",
+   "23.933"
+  ],
+  [
+   "FLMUSDT",
+   "2022-03-01",
+   "0.2194"
+  ],
+  [
+   "FLMUSDT",
+   "2022-04-03",
+   "0.2728"
+  ],
+  [
+   "FLOWUSDT",
+   "2022-03-01",
+   "6.361"
+  ],
+  [
+   "FLOWUSDT",
+   "2022-04-03",
+   "7.802"
+  ],
+  [
+   "FTMUSDT",
+   "2022-03-01",
+   "1.7799"
+  ],
+  [
+   "FTMUSDT",
+   "2022-04-03",
+   "1.5364"
+  ]
+ ],
+ "funding_dup_rows": 0,
+ "funding_calc_ms_offset_by_year": {
+  "2020": {
+   "n": 42647,
+   "exact_hour": 0.5840973573756654,
+   "max_offset_ms": 45
+  },
+  "2021": {
+   "n": 122605,
+   "exact_hour": 0.3361689980017128,
+   "max_offset_ms": 47
+  },
+  "2022": {
+   "n": 153742,
+   "exact_hour": 0.32698937180471177,
+   "max_offset_ms": 31
+  }
+ },
+ "funding_interval_hours_counts": {
+  "8.0": 318812,
+  "2.0": 153,
+  "4.0": 29
+ },
+ "funding_interval_non8_syms_dev": [
+  "FTTUSDT",
+  "HNTUSDT",
+  "OMGUSDT",
+  "SOLUSDT"
+ ],
+ "n_syms_klines": 162,
+ "n_syms_funding": 161,
+ "kline_max_day": "2022-12-31 00:00:00",
+ "funding_max_ts": "2022-12-31 16:00:00"
+}

@@ -1,0 +1,44 @@
+{
+ "name": "nis_f13_13f_holdings_changes",
+ "description": "13F institutional-ownership breadth / change, quarterly long-short on ~1000 US stocks, structured 13F data 2013q2+.",
+ "assumptions": [
+  "dev 2013-08..2019-12 (6.4y), val 2020-01..2026-08 (6.6y)",
+  "IC 0.02 quarterly, rho_resid 0.3, rho_signal 0.25, cost 10 bp",
+  "OSAP DelBreadth/IO predictors already viewed; prices survivor-only"
+ ],
+ "design": "long_short",
+ "params": {
+  "n_assets": 1000,
+  "periods_per_year": 4,
+  "ic": 0.02,
+  "cs_dispersion": 0.12,
+  "quantile": 0.2,
+  "rho_resid": 0.3,
+  "rho_signal": 0.25,
+  "signal_autocorr": 0.6,
+  "cost_bps_one_way": 10,
+  "spread_autocorr": 0.0,
+  "skew": 0.0,
+  "exkurt": 2.0
+ },
+ "windows": {
+  "dev_years": 6.4,
+  "val_years": 6.6
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.05,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 2,
+   "floor": 0.3
+  }
+ }
+}

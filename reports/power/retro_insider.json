@@ -1,0 +1,340 @@
+{
+ "name": "retro_insider",
+ "design": "timeseries",
+ "inputs": {
+  "periods_per_year": 252,
+  "autocorr": {
+   "model": "ar1",
+   "phi": 0.05
+  },
+  "skew": 0.0,
+  "exkurt": 0.0,
+  "mean_ann": null,
+  "vol_ann": null,
+  "null_block": null,
+  "null_D": null
+ },
+ "series_model": {
+  "periods_per_year": 252,
+  "autocorr": {
+   "model": "ar1",
+   "phi": 0.05
+  },
+  "skew": 0.0,
+  "exkurt": 0.0,
+  "null_block": null,
+  "null_D": null,
+  "D1": 1.105263157894737,
+  "D2": 1.005012531328321,
+  "D_null": 1.105263157894737,
+  "kappa_at_0": 1.0513149660756937
+ },
+ "windows": {
+  "dev_years": 10.0,
+  "val_years": 10.5,
+  "total_years": 20.5,
+  "dev_fraction_for_years_solver": 0.4878048780487805,
+  "val_sharpe_multiplier": 1.0
+ },
+ "gates": {
+  "dev": {
+   "name": "flat 0.5, no null",
+   "sharpe_abs": 0.5,
+   "threshold": 0.5,
+   "binding_leg": "sharpe_abs",
+   "legs": {
+    "sharpe_abs": 0.5
+   }
+  },
+  "val_current": {
+   "name": "val_sharpe_0.75",
+   "sharpe_abs": 0.75,
+   "alpha": 0.0125,
+   "stress_drag_sr": 0.073,
+   "threshold": 0.75,
+   "binding_leg": "sharpe_abs",
+   "legs": {
+    "sharpe_abs": 0.75,
+    "p_lt_alpha": 0.7272070715968832,
+    "stress_mean_gt_0": 0.073
+   }
+  },
+  "val_proposed": {
+   "name": "PAV",
+   "alpha": 0.05,
+   "stress_drag_sr": 0.073,
+   "description": "validation HAC-t / bootstrap p < 0.05/1, stress mean > 0",
+   "threshold": 0.5336609858323141,
+   "binding_leg": "p_lt_alpha"
+  },
+  "batch_k": 4,
+  "alpha_batch": 0.0125,
+  "stress_drag_sr": 0.073
+ },
+ "observations": {
+  "raw_dev": 2520.0,
+  "raw_val": 2646.0,
+  "raw_total": 5166.0,
+  "raw_unit": "periods",
+  "periods_dev": 2520,
+  "deff_time_D1": 1.105263157894737,
+  "deff_time_D1_finite_dev": 1.1052191883216809,
+  "deff_cross": 1.0,
+  "deff_total": 1.105263157894737,
+  "n_eff_dev": 2280.0,
+  "n_eff_val": 2393.9999999999995,
+  "n_eff_total": 4674.0,
+  "n_units": 1.0,
+  "n_eff_units": 1.0
+ },
+ "standard_errors": {
+  "se_sharpe_null_dev": 0.33245498310218435,
+  "se_sharpe_null_val": 0.3244428422615251,
+  "se_sharpe_null_total": 0.23219663217812875,
+  "se_sharpe_at": {
+   "0.3": 0.2322154828159049,
+   "0.5": 0.23224899128300314,
+   "0.7": 0.23229924492084647,
+   "1.0": 0.2324059978212572
+  },
+  "kappa0": 1.0513149660756937,
+  "kappa_at_0.7": 1.0517795650283885,
+  "natural_unit": "annualised Sharpe",
+  "se_mean_natural_dev": 0.33245498310218435,
+  "se_mean_natural_total": 0.23219663217812875
+ },
+ "newey_west_check": {
+  "nw_lags_default": 8,
+  "D_nw_expected": 1.092951677439236,
+  "D_true": 1.105263157894737,
+  "actual_size_nominal_alpha_with_default_nw": 0.012910801215573281,
+  "actual_size_nominal_alpha_if_iid_se": 0.01650345377786
+ },
+ "mde": {
+  "alpha": 0.0125,
+  "power": 0.8,
+  "single_test_all_years": {
+   "sharpe": 0.7159581235296146,
+   "natural": 0.7159581235296146
+  },
+  "dev_gate_only": {
+   "sharpe": 0.779954529564439,
+   "natural": 0.779954529564439
+  },
+  "joint_current_gates": {
+   "sharpe": 1.0685177567331696,
+   "natural": 1.0685177567331696
+  },
+  "joint_with_proposed_val_gate": {
+   "sharpe": 0.9283020140439764,
+   "natural": 0.9283020140439764
+  }
+ },
+ "power": [
+  {
+   "world": "cost_drag_null",
+   "true_net_sharpe": -0.3,
+   "single_test_all_years": 0.00020533966907094813,
+   "p_dev": 0.008060921384911063,
+   "p_val_current": 0.000605970923015508,
+   "p_joint_current": 4.884683971970005e-06,
+   "p_val_proposed": 0.005095104766337315,
+   "p_joint_proposed": 4.1071238969330754e-05,
+   "natural_mean": -0.3
+  },
+  {
+   "world": "zero_net_null",
+   "true_net_sharpe": 0.0,
+   "single_test_all_years": 0.012499999999999999,
+   "p_dev": 0.06629544452763142,
+   "p_val_current": 0.010398344625689589,
+   "p_joint_current": 0.0006893628793115985,
+   "p_val_proposed": 0.049999999999999975,
+   "p_joint_proposed": 0.0033147722263815694,
+   "natural_mean": 0.0
+  },
+  {
+   "world": "structural_leak",
+   "true_net_sharpe": 0.05,
+   "single_test_all_years": 0.02137914279288042,
+   "p_dev": 0.08793781294686304,
+   "p_val_current": 0.01548180560389048,
+   "p_joint_current": 0.001361436125274617,
+   "p_val_proposed": 0.06801489611928545,
+   "p_joint_proposed": 0.0059810812125380445,
+   "natural_mean": 0.05
+  },
+  {
+   "world": "S=0.3",
+   "true_net_sharpe": 0.3,
+   "single_test_all_years": 0.171229640122183,
+   "p_dev": 0.27374139675478454,
+   "p_val_current": 0.0827390935621416,
+   "p_joint_current": 0.02264911503792544,
+   "p_val_proposed": 0.23572153604750684,
+   "p_joint_proposed": 0.06452674252282782,
+   "natural_mean": 0.3
+  },
+  {
+   "world": "S=0.5",
+   "true_net_sharpe": 0.5,
+   "single_test_all_years": 0.46492421560262215,
+   "p_dev": 0.5,
+   "p_val_current": 0.22053783969438462,
+   "p_joint_current": 0.11026891984719231,
+   "p_val_proposed": 0.45869310426644283,
+   "p_joint_proposed": 0.22934655213322142,
+   "natural_mean": 0.5
+  },
+  {
+   "world": "S=0.7",
+   "true_net_sharpe": 0.7,
+   "single_test_all_years": 0.7802216367949432,
+   "p_dev": 0.7261863884457527,
+   "p_val_current": 0.4387882011951932,
+   "p_joint_current": 0.3186420191185456,
+   "p_val_proposed": 0.695837126870769,
+   "p_joint_proposed": 0.5053074501087528,
+   "natural_mean": 0.7
+  },
+  {
+   "world": "S=1.0",
+   "true_net_sharpe": 1.0,
+   "single_test_all_years": 0.9804641707706173,
+   "p_dev": 0.9335299405546418,
+   "p_val_current": 0.7793078132454101,
+   "p_joint_current": 0.7275071765727555,
+   "p_val_proposed": 0.9245071547311552,
+   "p_joint_proposed": 0.8630551091985164,
+   "natural_mean": 1.0
+  }
+ ],
+ "years_for_power": [
+  {
+   "true_net_sharpe": 0.3,
+   "single_test": 116.73369537605738,
+   "dev_gate_only": "inf",
+   "joint_current": "inf",
+   "joint_proposed": "inf"
+  },
+  {
+   "true_net_sharpe": 0.5,
+   "single_test": 42.02744138804162,
+   "dev_gate_only": "inf",
+   "joint_current": "inf",
+   "joint_proposed": "inf"
+  },
+  {
+   "true_net_sharpe": 0.7,
+   "single_test": 21.445105773472537,
+   "dev_gate_only": 19.589476962017585,
+   "joint_current": "inf",
+   "joint_proposed": 51.90618683852031
+  },
+  {
+   "true_net_sharpe": 1.0,
+   "single_test": 10.510739330280531,
+   "dev_gate_only": 3.137197672161404,
+   "joint_current": 30.759245903749505,
+   "joint_proposed": 16.901345885270953
+  }
+ ],
+ "implied": {},
+ "breadth_curve": [
+  {
+   "years": 1,
+   "n_raw": 252,
+   "n_eff": 227.99999999999997
+  },
+  {
+   "years": 2,
+   "n_raw": 504,
+   "n_eff": 455.99999999999994
+  },
+  {
+   "years": 5,
+   "n_raw": 1260,
+   "n_eff": 1140.0
+  },
+  {
+   "years": 10,
+   "n_raw": 2520,
+   "n_eff": 2280.0
+  },
+  {
+   "years": 15,
+   "n_raw": 3780,
+   "n_eff": 3419.9999999999995
+  },
+  {
+   "years": 20,
+   "n_raw": 5040,
+   "n_eff": 4560.0
+  },
+  {
+   "years": 30,
+   "n_raw": 7560,
+   "n_eff": 6839.999999999999
+  }
+ ],
+ "correlation_sensitivity": [
+  {
+   "phi": 0.0,
+   "D1": 1.0,
+   "kappa0": 1.0,
+   "n_eff_per_year": 252.0
+  },
+  {
+   "phi": 0.05,
+   "D1": 1.105263157894737,
+   "kappa0": 1.0513149660756937,
+   "n_eff_per_year": 227.99999999999997
+  },
+  {
+   "phi": 0.1,
+   "D1": 1.2222222222222223,
+   "kappa0": 1.1055415967851334,
+   "n_eff_per_year": 206.18181818181816
+  },
+  {
+   "phi": 0.2,
+   "D1": 1.4999999999999998,
+   "kappa0": 1.224744871391589,
+   "n_eff_per_year": 168.00000000000003
+  },
+  {
+   "phi": 0.3,
+   "D1": 1.8571428571428574,
+   "kappa0": 1.362770287738494,
+   "n_eff_per_year": 135.69230769230768
+  },
+  {
+   "phi": 0.5,
+   "D1": 3.0,
+   "kappa0": 1.7320508075688772,
+   "n_eff_per_year": 84.0
+  }
+ ],
+ "naive_independence": {
+  "deff_ignored": 1.105263157894737,
+  "naive_se_ratio": 0.9511897312113418,
+  "naive_false_positive_at_nominal_0.05": 0.05884213266220818
+ },
+ "winners_curse": null,
+ "verdict": "MARGINAL",
+ "verdict_with_proposed_val_gate": "DECISIVE",
+ "verdict_rule": {
+  "decisive_min_joint_power_at_0.7": 0.5,
+  "max_false_pass": 0.05,
+  "incapable_below_joint_power_at_0.7": 0.25,
+  "incapable_above_false_pass": 0.1
+ },
+ "joint_power_at_0.7": 0.3186420191185456,
+ "false_pass_zero_net": 0.0006893628793115985,
+ "notes": [],
+ "description": "insider N1-N4, pre-amendment flat-0.5 dev gate (control leg not modelled).",
+ "assumptions": [
+  "vol 11% / phi 0.05 / stress drag 0.8%/yr from null_lab2 sim_params"
+ ],
+ "scenarios": []
+}

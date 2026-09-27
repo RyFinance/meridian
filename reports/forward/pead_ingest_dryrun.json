@@ -1,0 +1,55 @@
+{
+  "strategy_id": "pead_bot_v1",
+  "spec_hash": "7b2c28a7173f158f1a61fb0b7893240cc4cc054599a535bf212b51eed1bf1b20",
+  "dry_run": true,
+  "n_live_decisions_in_bot_logs": 2,
+  "n_new": 2,
+  "n_already_in_registry": 0,
+  "flag_counts": {
+    "decided_after_execution": 2,
+    "decided_under_earlier_code": 1,
+    "filled_after_execution_time": 1
+  },
+  "excluded": {
+    "backfill_ledger_opens": 51,
+    "backfill_ledger_closes": 38,
+    "backfill_cycle_records_in_live_log": 0,
+    "live_exits_of_backfilled_positions": [
+      {
+        "ticker": "DE",
+        "exit_date": "2026-09-17",
+        "realized_pnl": 162.53437623844584
+      },
+      {
+        "ticker": "ROST",
+        "exit_date": "2026-09-18",
+        "realized_pnl": -105.25199237553008
+      }
+    ],
+    "live_ledger_opens_without_cycle_entry": []
+  },
+  "source_sha256": {
+    "cycle_log.jsonl": "f192cbbf9a65db5ed9336e6a49c7b4303606f36608196519e1da85716c7d34ed",
+    "paper_ledger.jsonl": "bcb4c87a36c7b00b062153b102bea2904b5e8a85b08cfc1447541f20595e24a9"
+  },
+  "new_decisions": [
+    {
+      "key": "LEN|2026-09-16",
+      "flags": [
+        "decided_after_execution",
+        "decided_under_earlier_code"
+      ],
+      "decided": "2026-09-17T20:40:53.653947Z",
+      "execution": "2026-09-17T20:00:00.000000Z"
+    },
+    {
+      "key": "AZO|2026-09-22",
+      "flags": [
+        "decided_after_execution",
+        "filled_after_execution_time"
+      ],
+      "decided": "2026-09-22T23:35:43.917007Z",
+      "execution": "2026-09-22T20:00:00.000000Z"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+ "name": "nis_f16_buyback_issuance_events",
+ "description": "Buyback authorisations / follow-on issuance announcements from 8-K text (EDGAR 2004-08+), next-open entry, 20-day hold, fixed-dollar calendar-time book.",
+ "assumptions": [
+  "~1,000 informative events/yr; icc 0.02 same-day; seasonal clustering around earnings (season_fraction 0.4)",
+  "car_sd 6% over 20d; post-announcement drift after decay 30 bp gross; cost 10 bp",
+  "dev 2004-09..2015-06 (10.8y), val 2015-07..2026-08 (11.2y)",
+  "DATA NOT ASSEMBLABLE: survivor-only prices; www.sec.gov intermittently 403 without email; OSAP ShareRepurchase/ShareIss viewed; fundamentals F1 failed"
+ ],
+ "design": "event_study",
+ "params": {
+  "events_per_year": 1000,
+  "car_sd": 0.06,
+  "hold_days": 20,
+  "icc": 0.02,
+  "concurrency": {
+   "model": "seasonal_poisson",
+   "season_fraction": 0.4,
+   "n_seasons": 4
+  },
+  "portfolio_autocorr": 0.0,
+  "mean_car": 0.003,
+  "cost_per_event": 0.001
+ },
+ "windows": {
+  "dev_years": 10.8,
+  "val_years": 11.2
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.1,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 2,
+   "floor": 0.3
+  }
+ },
+ "scenarios": [
+  {
+   "label": "gross 20 bp",
+   "params": {
+    "mean_car": 0.002
+   }
+  },
+  {
+   "label": "gross 30 bp",
+   "params": {
+    "mean_car": 0.003
+   }
+  },
+  {
+   "label": "gross 60 bp",
+   "params": {
+    "mean_car": 0.006
+   }
+  }
+ ]
+}

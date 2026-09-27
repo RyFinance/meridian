@@ -1,0 +1,2 @@
+{"event": "strategy_registered", "date": "2026-09-20", "strategy": "momentum_gold_v1", "spec_sha256": "56ee118ce04e7ea4383630628b5c46790fc4c3ea0aab90b5d4736aab6293e221", "executed_orders": 0}
+{"event": "recency_audit_completed", "date": "2026-09-21", "decision": "not validated for promotion", "weights_changed": false, "executed_orders": 0, "report": "/Users/rytty/CCP/quant_v7/reports/momentum_gold_audit_20260921/REPORT.md"}

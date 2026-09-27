@@ -1,0 +1,9 @@
+# Pre-return source-integrity amendment to J1
+
+Written and registered after the raw LSE bars were archived and compared with a second **price source**, but before any J1 or control return was computed. The original plan's signal sign, ES execution, windows, costs, controls, null and gates remain frozen.
+
+The LSE `JP225/USD` series is **not a faithful cash-index bar feed**: it has ten cash-hour bars on 72 dates without an official Nikkei daily record, including 2018-02-12 and 2020-05-05, when the Tokyo market was closed. Against 1,112 common-date Yahoo `^N225` official daily closes in 2016-06 through 2020-12, the LSE 05:30 close differs by a median 9.1 bp, 95th percentile 49.7 bp, and maximum 242.5 bp. The source should be called an indicative Nikkei-linked Asia-hours quote; its levels and volume should not be treated as official cash-index observations. The prior mechanism sentence is narrowed to "Asia-hours Japan equity-index pricing may carry global information not fully incorporated in ES by the US open."
+
+**Frozen data-quality rule added before returns:** require the date to be in the Yahoo `^N225` daily trading-date set, as well as all ten LSE cash-hour bars and existing ES requirements. Yahoo is used only as an exchange-date mask, never as a predictor or a return series. The downloaded reference snapshot is `data/lse/japan_us_flow/JPX_official_calendar_reference.parquet`; the implementation reads only its `date` column. No selection based on price discrepancies is allowed. The date mask avoids treating holiday CFD-like quotes as completed Japanese cash sessions, though remaining LSE levels are still indicative.
+
+This correction can only make the registered data definition more faithful. If the source fails the development gates, stop. If it passes, independent quote-source and official-session replication is mandatory before validation, because the LSE history has no as-of vintage and nontrivial cross-vendor discrepancies.

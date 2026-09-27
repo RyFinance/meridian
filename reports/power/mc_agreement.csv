@@ -1,0 +1,57 @@
+design,check,param,analytic,mc,mc_se,diff,tolerance,within_tolerance
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (current_0.75),S=0.0,0.0007,0.0,0.0,-0.0007,0.03,True
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (proposed_PAV),S=0.0,0.0026,0.002,0.001,-0.0006,0.03,True
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (current_0.75),S=0.5,0.1027,0.098,0.0066,-0.0047,0.03,True
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (proposed_PAV),S=0.5,0.1921,0.181,0.0086,-0.0111,0.03,True
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (current_0.75),S=0.7,0.2979,0.2875,0.0101,-0.0104,0.0304,True
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (proposed_PAV),S=0.7,0.4467,0.4355,0.0111,-0.0112,0.0333,True
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (current_0.75),S=1.0,0.6994,0.711,0.0101,0.0116,0.0304,True
+timeseries daily AR(1) phi=.15; literal 21-day CBB,joint dev+val (proposed_PAV),S=1.0,0.8221,0.8145,0.0087,-0.0076,0.03,True
+timeseries daily AR(1) phi=.15,kappa = sd(S_hat) sqrt(Y) (Lo 2002),S=0.7,1.1636,1.1649,,0.0014,0.0582,True
+monthly; 3-month overlapping holding (D=3),test power (true-D null),S=0.0,0.05,0.054,0.0036,0.004,0.03,True
+monthly; 3-month overlapping holding (D=3),"INFO: literal NW(6 lags) t, n=120 (finite-sample HAC bias; not a formula check)",S=0.0,0.05,0.0757,0.0042,0.0258,0.03,
+monthly; 3-month overlapping holding (D=3),test power (true-D null),S=0.6,0.2924,0.2995,0.0072,0.0071,0.03,True
+monthly; 3-month overlapping holding (D=3),"INFO: literal NW(6 lags) t, n=120 (finite-sample HAC bias; not a formula check)",S=0.6,0.2924,0.3535,0.0076,0.0611,0.03,
+monthly; 3-month overlapping holding (D=3),kappa0 = sqrt(D),S=0,1.7321,1.7673,,0.0353,0.0866,True
+event study 510/yr; 20d hold; seasons 45%,calendar-time test power,icc=0.02 S=0.0,0.05,0.0525,0.0035,0.0025,0.03,True
+event study 510/yr; 20d hold; seasons 45%,sd(mean CAR) = car_sd sqrt(deff/N),icc=0.02,0.0015,0.0015,,0.0,0.0001,True
+event study 510/yr; 20d hold; seasons 45%,naive independent-event t false-positive,icc=0.02,0.1436,0.148,0.0079,0.0044,0.03,True
+event study 510/yr; 20d hold; seasons 45%,calendar-time test power,icc=0.02 S=0.7,0.7151,0.7183,0.0071,0.0031,0.03,True
+event study 510/yr; 20d hold; seasons 45%,sd(mean CAR) = car_sd sqrt(deff/N),icc=0.02,0.0015,0.0015,,0.0,0.0001,True
+event study 510/yr; 20d hold; seasons 45%,calendar-time test power,icc=0.1 S=0.5,0.4746,0.4888,0.0079,0.0141,0.03,True
+event study 510/yr; 20d hold; seasons 45%,sd(mean CAR) = car_sd sqrt(deff/N),icc=0.1,0.0028,0.0028,,0.0,0.0001,True
+event study 5-pair month-end clusters,calendar-time test power,icc=0.4 S=0.7,0.5278,0.525,0.0079,-0.0028,0.03,True
+cross-sectional IC; N=200; T=120,sd(IC_t) = sqrt((1+(N-1)rho_bet)/N),IC=0.0 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.3233,0.3197,,-0.0036,0.0162,True
+cross-sectional IC; N=200; T=120,sd(mean IC) incl. overlap D,IC=0.0 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.0295,0.0287,,-0.0008,0.0015,True
+cross-sectional IC; N=200; T=120,IC t-test power,IC=0.0 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.05,0.0485,0.0048,-0.0015,0.03,True
+cross-sectional IC; N=200; T=120,sd(IC_t) = sqrt((1+(N-1)rho_bet)/N),IC=0.02 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.3233,0.3202,,-0.0031,0.0162,True
+cross-sectional IC; N=200; T=120,sd(mean IC) incl. overlap D,IC=0.02 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.0295,0.0298,,0.0003,0.0015,True
+cross-sectional IC; N=200; T=120,IC t-test power,IC=0.02 rho_r=0.2 rho_s=0.5 H=1 phi_s=0.0,0.167,0.1665,0.0083,-0.0005,0.03,True
+cross-sectional IC; N=200; T=120,sd(IC_t) = sqrt((1+(N-1)rho_bet)/N),IC=0.03 rho_r=0.1 rho_s=1.0 H=1 phi_s=0.0,0.3233,0.3206,,-0.0026,0.0162,True
+cross-sectional IC; N=200; T=120,sd(mean IC) incl. overlap D,IC=0.03 rho_r=0.1 rho_s=1.0 H=1 phi_s=0.0,0.0295,0.0288,,-0.0007,0.0015,True
+cross-sectional IC; N=200; T=120,IC t-test power,IC=0.03 rho_r=0.1 rho_s=1.0 H=1 phi_s=0.0,0.2654,0.257,0.0098,-0.0084,0.03,True
+cross-sectional IC; N=200; T=120,sd(IC_t) = sqrt((1+(N-1)rho_bet)/N),IC=0.0 rho_r=0.1 rho_s=0.25 H=3 phi_s=0.9,0.1728,0.1676,,-0.0053,0.0086,True
+cross-sectional IC; N=200; T=120,sd(mean IC) incl. overlap D,IC=0.0 rho_r=0.1 rho_s=0.25 H=3 phi_s=0.9,0.0261,0.0258,,-0.0003,0.0013,True
+cross-sectional IC; N=200; T=120,IC t-test power,IC=0.0 rho_r=0.1 rho_s=0.25 H=3 phi_s=0.9,0.05,0.045,0.0046,-0.005,0.03,True
+decile long-short; weekly; 5y,spread sd,N=200 IC=0.03 rho_r=0.1 rho_s=0.25 sig_ac=0.8 10bp,0.0207,0.0206,,-0.0001,0.001,True
+decile long-short; weekly; 5y,gross mean spread,N=200 IC=0.03 rho_r=0.1 rho_s=0.25 sig_ac=0.8 10bp,0.0041,0.0041,0.0,-0.0,0.0002,True
+decile long-short; weekly; 5y,one-way turnover per leg,N=200 IC=0.03 rho_r=0.1 rho_s=0.25 sig_ac=0.8 10bp,0.4376,0.4468,,0.0093,0.0438,True
+decile long-short; weekly; 5y,P(net S_hat >= 0.5),N=200 IC=0.03 rho_r=0.1 rho_s=0.25 sig_ac=0.8 10bp,0.7647,0.7575,0.0152,-0.0072,0.0455,True
+decile long-short; weekly; 5y,spread sd,N=200 IC=0.02 rho_r=0.2 rho_s=0.5 sig_ac=0.9 5bp,0.0307,0.0306,,-0.0002,0.0015,True
+decile long-short; weekly; 5y,gross mean spread,N=200 IC=0.02 rho_r=0.2 rho_s=0.5 sig_ac=0.9 5bp,0.0026,0.0025,0.0001,-0.0001,0.0002,True
+decile long-short; weekly; 5y,one-way turnover per leg,N=200 IC=0.02 rho_r=0.2 rho_s=0.5 sig_ac=0.9 5bp,0.3114,0.3275,,0.0162,0.0311,True
+decile long-short; weekly; 5y,P(net S_hat >= 0.5),N=200 IC=0.02 rho_r=0.2 rho_s=0.5 sig_ac=0.9 5bp,0.4617,0.4425,0.0176,-0.0192,0.0527,True
+carry monthly; common crash factor,dev-gate power (Opdyke SE),K=4 rho=0.4 crash p=0.05 jump=-4.0sd S=0.7,0.8473,0.8478,0.0046,0.0005,0.03,True
+carry monthly; common crash factor,kappa(S) (Mertens/Opdyke),K=4 rho=0.4 crash p=0.05 jump=-4.0sd S=0.7,1.1009,1.1067,,0.0058,0.0826,True
+carry monthly; common crash factor,book skew (one-factor cumulants),K=4 rho=0.4 crash p=0.05 jump=-4.0sd S=0.7,-0.842,-0.8057,,0.0364,0.1263,True
+carry monthly; common crash factor,dev-gate power (Opdyke SE),K=4 rho=0.4 crash p=0.05 jump=-4.0sd S=0.0,0.0359,0.0425,0.0026,0.0066,0.03,True
+carry monthly; common crash factor,dev-gate power (Opdyke SE),K=8 rho=0.3 crash p=0.03 jump=-6.0sd S=0.5,0.4224,0.4487,0.0064,0.0263,0.03,True
+carry monthly; common crash factor,kappa(S) (Mertens/Opdyke),K=8 rho=0.3 crash p=0.03 jump=-6.0sd S=0.5,1.1173,1.1576,,0.0403,0.0838,True
+carry monthly; common crash factor,book skew (one-factor cumulants),K=8 rho=0.3 crash p=0.03 jump=-6.0sd S=0.5,-1.4632,-1.2865,,0.1767,0.2195,True
+panel 30 markets monthly 10y,EW-book test power,K=30 rho=0.3 phi=0.05 S=0.7,0.676,0.6743,0.0086,-0.0016,0.03,True
+panel 30 markets monthly 10y,EW-book test power,K=30 blocks phi=0.05 S=0.5,0.4442,0.4447,0.0091,0.0004,0.03,True
+panel 30 markets monthly 10y,EW-book test power,K=30 rho=0.6 phi=0.1 S=0.0,0.05,0.0513,0.004,0.0013,0.03,True
+panel 30 markets monthly 10y,naive pooled K*T t false-positive,K=30 rho=0.6 phi=0.1 S=0.0,0.3644,0.3597,0.004,-0.0047,0.03,True
+17-sleeve screen (weekly); hold-out HAC t>=2,joint pass,s_sleeve=0.0 m_real=0,0.0222,0.0203,0.0026,-0.0019,0.03,True
+17-sleeve screen (weekly); hold-out HAC t>=2,joint pass,s_sleeve=0.4 m_real=5,0.1957,0.2203,0.0076,0.0246,0.03,True
+17-sleeve screen (weekly); hold-out HAC t>=2,joint pass,s_sleeve=0.6 m_real=5,0.4745,0.507,0.0091,0.0325,0.03,False

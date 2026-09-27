@@ -1,0 +1,19 @@
+retro_ief_shy_duration  [timeseries]  dev 12.00y + val 11.70y
+  raw obs (total) 5972 periods;  D_time 0.970  deff_cross 1.000  ->  effective obs 6157.1
+  SE(Sharpe) dev 0.284, val 0.288;  SE(mean, annualised Sharpe) total 0.2023
+  dev gate threshold 0.605 (binding: p_lt_alpha);  val threshold 0.750 (binding: sharpe_abs);  proposed val threshold 0.474
+  MDE Sharpe (80%): single test 0.60, dev gate 0.84, joint current 1.05, joint proposed 0.91
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.000   0.001   0.000   0.000   | 0.004  0.000
+  zero_net_null             0.00  0.017   0.017   0.005   0.000   | 0.050  0.001
+  structural_leak           0.05  0.030   0.025   0.008   0.000   | 0.071  0.002
+  S=0.3                     0.30  0.259   0.142   0.059   0.008   | 0.273  0.039
+  S=0.5                     0.50  0.634   0.356   0.193   0.069   | 0.537  0.191
+  S=0.7                     0.70  0.908   0.631   0.431   0.272   | 0.784  0.495
+  S=1.0                     1.00  0.998   0.917   0.807   0.740   | 0.966  0.886
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   95.05     95.05             inf           216.94
+                     0.50   34.22     34.22             inf            78.11
+                     0.70   17.46     17.46             inf            39.86
+                     1.00    8.56      8.56           29.14            19.54
+  VERDICT (current gates): MARGINAL   [joint@0.7 = 0.272, false-pass = 0.0001];  with proposed val gate: MARGINAL

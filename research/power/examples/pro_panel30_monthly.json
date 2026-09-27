@@ -1,0 +1,98 @@
+{
+ "name": "pro_panel30_monthly",
+ "description": "30 futures markets x 20y monthly.",
+ "assumptions": [
+  "ASSUMPTION per-market net Sharpe grid 0.2-0.4"
+ ],
+ "design": "panel",
+ "params": {
+  "n_markets": 30,
+  "periods_per_year": 12,
+  "rho": 0.45,
+  "autocorr": 0.05,
+  "skew": -0.3,
+  "exkurt": 2.0,
+  "sharpe_per_market": 0.3
+ },
+ "windows": {
+  "dev_years": 10.0,
+  "val_years": 10.0
+ },
+ "gates": {
+  "batch_k": 1,
+  "stress_drag_sr": 0.1,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  }
+ },
+ "scenarios": [
+  {
+   "label": "rho=0.3 s_mkt=0.2",
+   "params": {
+    "rho": 0.3,
+    "sharpe_per_market": 0.2
+   }
+  },
+  {
+   "label": "rho=0.3 s_mkt=0.3",
+   "params": {
+    "rho": 0.3,
+    "sharpe_per_market": 0.3
+   }
+  },
+  {
+   "label": "rho=0.3 s_mkt=0.4",
+   "params": {
+    "rho": 0.3,
+    "sharpe_per_market": 0.4
+   }
+  },
+  {
+   "label": "rho=0.45 s_mkt=0.2",
+   "params": {
+    "rho": 0.45,
+    "sharpe_per_market": 0.2
+   }
+  },
+  {
+   "label": "rho=0.45 s_mkt=0.3",
+   "params": {
+    "rho": 0.45,
+    "sharpe_per_market": 0.3
+   }
+  },
+  {
+   "label": "rho=0.45 s_mkt=0.4",
+   "params": {
+    "rho": 0.45,
+    "sharpe_per_market": 0.4
+   }
+  },
+  {
+   "label": "rho=0.6 s_mkt=0.2",
+   "params": {
+    "rho": 0.6,
+    "sharpe_per_market": 0.2
+   }
+  },
+  {
+   "label": "rho=0.6 s_mkt=0.3",
+   "params": {
+    "rho": 0.6,
+    "sharpe_per_market": 0.3
+   }
+  },
+  {
+   "label": "rho=0.6 s_mkt=0.4",
+   "params": {
+    "rho": 0.6,
+    "sharpe_per_market": 0.4
+   }
+  }
+ ]
+}

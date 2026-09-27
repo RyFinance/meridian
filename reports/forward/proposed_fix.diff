@@ -1,0 +1,691 @@
+# PROPOSED FIX -- NOT APPLIED. quant_v7 paper bot: forward-evidence hygiene.
+# Author: research/forward review, 2026-09-23. Diagnosis: reports/forward/PEAD_FORWARD_DIAGNOSIS.md
+#
+# What it changes (behaviour on a healthy day is unchanged: same candidates, same
+# risk gate, same sizing, same fills):
+#  1. earnings/ingestion.py: an endpoint that RAISES (DNS, timeout) is recorded in
+#     df.attrs["primary_error"/"history_error"] instead of looking like an empty
+#     answer; the frozen training-cache stand-in rows are tagged
+#     date_source="cached_announced" instead of "announced".
+#  2. bot/earnings_watcher.py: counts tickers whose fetches all raised
+#     (fetch_errors) and exposes data_unreachable() (>= 90% of the universe);
+#     newest_report ignores "cached_announced" rows, so the staleness check can no
+#     longer report the training cache's 2025-06-26 as "the feed".
+#  3. bot/run_cycle.py:
+#     - one accurate alert when data is unreachable (replaces the misleading
+#       "feed down" + "newest report 2025-06-26" pair of 2026-09-21 19:58 ET);
+#       such a cycle is `degraded`: no entries evaluated, heartbeat NOT refreshed
+#       (the watchdog then reports it), no marked_nav;
+#     - marked_nav/unrealized_pnl are written only when EVERY open position was
+#       priced (the 2026-09-21 19:58 record carried all 11 positions at cost);
+#     - every cycle record carries provenance="live", started_at and code_sha256
+#       (code + model fingerprint); every entry carries decided_at (wall clock at
+#       the risk-gate decision, before the fill), decided_after_close, and the
+#       exact inputs (EPS estimate/actual, surprise, trailing surprises, features)
+#       -- Yahoo revises consensus after the fact, so they cannot be re-fetched.
+#  4. bot/signal_pipeline.py: ScoredEvent carries `features` and `inputs`.
+#  5. bot/execution.py: ledger records carry provenance ("live" by default),
+#     price_source and decided_at. A record WITHOUT provenance predates this patch
+#     and must be treated as "unknown", never as live.
+#  6. live_backtest/backfill_missed_season.py: any future backfill writes
+#     provenance="backfill" and the REAL write time (written_at), since its `ts`
+#     is simulated.
+#
+# What it deliberately does NOT change: the entry convention. Every live entry is
+# decided ~2.5-3.5 h AFTER the close it is filled at (launchd 15:42 PT = 18:42 ET).
+# Fixing that changes the strategy (pre-close decision at the last price, or fill
+# at the next official open) and needs a new registered spec version -- see
+# PEAD_FORWARD_DIAGNOSIS.md section 7 and REPORT.md. This patch makes the lateness
+# explicit per record (decided_after_close) instead of implicit.
+#
+# Tests: new tests/test_bot_forward_hygiene.py (7 tests: network failure vs empty
+# answer; unreachable universe -> degraded, no stale alert, no heartbeat; one
+# failing ticker is not an outage; partial marks -> no marked_nav; entry records
+# decided_at <= fill ts, inputs, provenance). tests/test_earnings_outage_fallback.py
+# updated for the "cached_announced" tag (2 assertions).
+# Validated ONLY in a scratch copy of the repo (never in this tree): with the patch
+# applied, tests/test_bot_forward_hygiene.py, test_earnings_outage_fallback.py,
+# test_bot_earnings_watcher.py, test_bot_execution.py, test_bot_signal_pipeline.py,
+# test_bot_run_cycle.py, test_backfill_missed_season.py, test_bot_performance.py,
+# test_bot_position_manager.py, test_dashboard_backend.py: 125 passed, 6 skipped
+# (skips = pre-existing network-dependent tests). Unpatched baseline of the first
+# six files in the same copy: 50 passed, 4 skipped.
+#
+# To apply (the operator's decision; between cycles, i.e. not 15:40-16:45 PT on a weekday):
+#   git apply --check reports/forward/proposed_fix.diff && git apply reports/forward/proposed_fix.diff
+#   PYTHONPATH=. .venv/bin/python -m pytest -q tests/test_bot_forward_hygiene.py tests/test_earnings_outage_fallback.py
+# Applying it changes the code fingerprint: the next `record --strategy pead_bot_v1 --ingest`
+# registers a new pead_bot_v1 spec hash, and decisions made before it stay under the old one.
+#
+diff -ruN a/bot/earnings_watcher.py b/bot/earnings_watcher.py
+--- a/bot/earnings_watcher.py	2026-09-23 05:06:54
++++ b/bot/earnings_watcher.py	2026-09-23 05:07:28
+@@ -45,6 +45,12 @@
+ # Below this share of tickers answering, the announcement-dated endpoint is treated
+ # as down (it answers for nearly every name when it works).
+ DATED_FEED_MIN_COVERAGE = 0.5
++# At or above this share of tickers whose earnings fetches RAISED (both endpoints),
++# the problem is this machine's connectivity, not the feed: report it as such.
++DATA_UNREACHABLE_SHARE = 0.9
++# Rows that date a report but must never count as evidence the feed is current:
++# quarter-end placeholders and the frozen training cache used during an outage.
++UNTRUSTED_DATE_SOURCES = ("quarter_end", "cached_announced")
+ 
+ # Earnings history is fetched per ticker over the network, which at 503 names
+ # takes ~10 minutes sequentially -- longer than the gap between a report and the
+@@ -143,6 +149,9 @@
+         self.dated_feed_answered = 0
+         self.dated_feed_asked = 0
+         self.schedule_dated_reports = 0
++        # Tickers for which every earnings request raised (network/DNS, timeout).
++        self.fetch_errors = 0
++        self.fetch_error_sample: str | None = None
+ 
+     def get_upcoming_earnings(self, days_ahead: int = 14, now: pd.Timestamp | None = None) -> list[UpcomingEarnings]:
+         """Real query against real, current yfinance data (`Ticker.calendar`
+@@ -206,13 +215,17 @@
+         self.last_fetched = {}
+         self.newest_report = None
+         self.dated_feed_answered = self.dated_feed_asked = self.schedule_dated_reports = 0
++        self.fetch_errors = 0
++        self.fetch_error_sample = None
+ 
+         def fetch(ticker: str):
+             try:
+                 return ticker, fetch_ticker_earnings_live(ticker)
+             except Exception as e:  # a single bad ticker must not sink the cycle
+                 logger.warning(f"{ticker}: earnings history fetch failed ({e!r})")
+-                return ticker, pd.DataFrame()
++                failed = pd.DataFrame()
++                failed.attrs["primary_error"] = failed.attrs["history_error"] = repr(e)[:200]
++                return ticker, failed
+ 
+         if len(self.tickers) > 1:
+             with ThreadPoolExecutor(max_workers=MAX_FETCH_WORKERS) as pool:
+@@ -226,6 +239,9 @@
+             df = fetched.get(ticker)
+             if df is None:
+                 continue
++            if df.attrs.get("primary_error") and df.attrs.get("history_error"):
++                self.fetch_errors += 1
++                self.fetch_error_sample = self.fetch_error_sample or df.attrs["primary_error"]
+             if "primary_ok" in df.attrs:
+                 self.dated_feed_asked += 1
+                 self.dated_feed_answered += bool(df.attrs["primary_ok"])
+@@ -235,7 +251,8 @@
+             reported = df[df["eps_actual"].notna() & (df["earnings_date"].dt.normalize() <= now)]
+             # A quarter-end date is only a placeholder for an unknown announcement date,
+             # so it never counts as evidence that the feed is current.
+-            trusted = reported[reported["date_source"] != "quarter_end"] if "date_source" in reported else reported
++            trusted = (reported[~reported["date_source"].isin(UNTRUSTED_DATE_SOURCES)]
++                       if "date_source" in reported else reported)
+             if not trusted.empty:
+                 latest = trusted["earnings_date"].max()
+                 self.newest_report = latest if self.newest_report is None else max(self.newest_report, latest)
+@@ -259,6 +276,13 @@
+         """True when the announcement-dated endpoint answered for too few tickers
+         in the last get_recently_reported() call."""
+         return self.dated_feed_asked > 0 and self.dated_feed_answered < min_coverage * self.dated_feed_asked
++
++    def data_unreachable(self, min_share: float = DATA_UNREACHABLE_SHARE) -> bool:
++        """True when the earnings requests themselves failed (raised) for nearly
++        every ticker: a connectivity outage on this machine, not a stale feed.
++        On 2026-09-21 19:57 ET every request failed with a DNS error, and the
++        cycle reported it as "feed down" plus "newest report 2025-06-26"."""
++        return bool(self.tickers) and self.fetch_errors >= min_share * len(self.tickers)
+ 
+     def feed_looks_stale(self, now: pd.Timestamp | None = None) -> bool:
+         """True when the last get_recently_reported() call saw no report
+diff -ruN a/bot/execution.py b/bot/execution.py
+--- a/bot/execution.py	2026-09-23 05:06:54
++++ b/bot/execution.py	2026-09-23 05:07:28
+@@ -41,6 +41,7 @@
+ LEDGER_FILE = STATE_DIR / "paper_ledger.jsonl"
+ 
+ Direction = Literal["long", "short"]
++PRICE_SOURCE = "yfinance fast_info lastPrice (regular session; daily close fallback), fetched at ts"
+ 
+ 
+ def get_current_price(ticker: str) -> float:
+@@ -139,7 +140,11 @@
+         ledger_path: Path = LEDGER_FILE,
+         alerter: BotAlerter | None = None,
+         round_trip_cost_bps: float = ROUND_TRIP_COST_BPS_DEFAULT,
++        provenance: str = "live",
+     ):
++        # Written into every ledger record, so a live record says so positively:
++        # a record WITHOUT the field predates this change and is "unknown", never "live".
++        self.provenance = provenance
+         self.round_trip_cost_bps = round_trip_cost_bps
+         self.starting_capital = starting_capital
+         self.cash = starting_capital
+@@ -265,6 +270,7 @@
+         direction: Direction,
+         decision: RiskGateDecision,
+         entry_date: str,
++        decided_at: float | None = None,
+     ) -> PaperFill:
+         """Requires a PASSING RiskGateDecision with a live approval token
+         (see bot/risk_gate.py). The token is consumed here -- a decision
+@@ -289,7 +295,9 @@
+             ticker=ticker, direction=direction, fill_price=price,
+             size_fraction=decision.size_fraction, notional=notional, ts=time.time(),
+         )
+-        self._append_ledger({"event": "open", "entry_date": entry_date, **asdict(fill)})
++        self._append_ledger({"event": "open", "entry_date": entry_date, **asdict(fill),
++                             "provenance": self.provenance, "price_source": PRICE_SOURCE,
++                             "decided_at": decided_at})
+         self.alerter.alert(
+             ALERT_POSITION_OPENED, f"paper position opened: {ticker} {direction} @ {price:.2f}",
+             ticker=ticker, direction=direction, fill_price=price, notional=round(notional, 2),
+@@ -327,6 +335,7 @@
+             "notional": position.notional, "realized_pnl": pnl, "reason": reason,
+             "gross_pnl": gross_pnl, "cost": cost, "cost_bps_round_trip": self.round_trip_cost_bps,
+             "exit_date": exit_date, "ts": time.time(),
++            "provenance": self.provenance, "price_source": PRICE_SOURCE,
+         })
+         self.alerter.alert(
+             ALERT_POSITION_CLOSED,
+diff -ruN a/bot/run_cycle.py b/bot/run_cycle.py
+--- a/bot/run_cycle.py	2026-09-23 05:06:54
++++ b/bot/run_cycle.py	2026-09-23 05:07:56
+@@ -44,9 +44,22 @@
+ price used per open position and unmarked any position that could not be
+ priced (carried at cost, and reported in errors). Performance -- Sharpe,
+ volatility, drawdown -- is computed from marked_nav (bot/performance.py).
++
++FORWARD-EVIDENCE HYGIENE (proposed 2026-09-23, reports/forward/PEAD_FORWARD_DIAGNOSIS.md):
++  * every cycle record says `provenance: "live"`, when it started, and a
++    fingerprint of the code and model it ran (`code_sha256`);
++  * every entry records `decided_at` (wall clock at the risk-gate decision, before
++    any fill), whether that was after the close it fills at, and the exact inputs
++    (EPS estimate/actual, surprise, trailing surprises, features);
++  * a cycle whose earnings requests nearly all RAISED is `degraded`: it says the
++    data was unreachable (one alert, not a misleading "feed stale"), evaluates no
++    entries, and does not refresh the heartbeat, so the watchdog reports it;
++  * marked_nav is recorded only when every open position was priced -- a NAV with
++    positions silently carried at cost is not a mark.
+ """
+ from __future__ import annotations
+ 
++import hashlib
+ import json
+ import os
+ import time
+@@ -103,6 +116,15 @@
+ # -10.6% this configuration drew down historically.
+ BOT_RISK_LIMITS = RiskLimits(max_position_pct=0.05, max_total_exposure_pct=1.00)
+ SESSION_SETTLED_AFTER = (16, 15)  # ET; daily bars and last prices reflect the close by then
++REPO_ROOT = Path(__file__).resolve().parent.parent
++# Files whose bytes define what the paper bot trades; hashed into every cycle record.
++FINGERPRINT_FILES = (
++    "bot/run_cycle.py", "bot/signal_pipeline.py", "bot/earnings_watcher.py", "bot/execution.py",
++    "bot/position_manager.py", "bot/risk_gate.py", "bot/kill_switch.py", "earnings/ingestion.py",
++    "earnings/sue.py", "earnings/features.py", "earnings/signal.py", "earnings/labeling.py",
++    "data/ingestion.py", "risk/limits.py", "risk/kelly.py", "risk/transaction_costs.py",
++    "bot/state/model/pead_model_expanded.joblib",
++)
+ 
+ 
+ @dataclass
+@@ -116,6 +138,10 @@
+     detail: str
+     size_fraction: float = 0.0
+     earnings_date: str = ""
++    decided_at: float = 0.0            # wall clock at the risk-gate decision, before any fill
++    decided_after_close: bool | None = None  # True: the close this entry fills at had already printed
++    inputs: dict = field(default_factory=dict)
++    features: dict = field(default_factory=dict)
+ 
+ 
+ @dataclass
+@@ -137,8 +163,26 @@
+     unrealized_pnl: float | None = None
+     marks: dict[str, float] = field(default_factory=dict)
+     unmarked: list[str] = field(default_factory=list)
++    provenance: str = "live"
++    started_at: float = 0.0
++    code_sha256: str = ""
++    degraded: bool = False
+ 
+ 
++def code_fingerprint(root: Path = REPO_ROOT) -> str:
++    """SHA-256 over (path, file SHA-256) of FINGERPRINT_FILES; missing files count as absent."""
++    h = hashlib.sha256()
++    for rel in FINGERPRINT_FILES:
++        path = root / rel
++        digest = hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else "absent"
++        h.update(f"{rel}:{digest}\n".encode())
++    return h.hexdigest()
++
++
++def _close_epoch(as_of: str) -> float:
++    return pd.Timestamp(f"{as_of} 16:00", tz=MARKET_TZ).timestamp()
++
++
+ def _append_cycle_log(report: CycleReport) -> None:
+     CYCLE_LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+     record = {"ts": time.time(), **asdict(report)}
+@@ -203,9 +247,11 @@
+ 
+ 
+ def run_cycle(as_of_date: str | None = None, ledger_path: Path = LEDGER_FILE) -> CycleReport:
++    started_at = time.time()
+     as_of = as_of_date or pd.Timestamp.now(tz=MARKET_TZ).strftime("%Y-%m-%d")
+     logger.info(f"=== paper-trading cycle, as_of={as_of} ===")
+     errors: list[str] = []
++    degraded = False
+ 
+     if int(yf.__version__.split(".")[0]) < 1:
+         errors.append(f"yfinance {yf.__version__} serves stale earnings dates; run the bot with quant_v7/.venv")
+@@ -241,13 +287,23 @@
+ 
+     # -- 3. candidate entries -------------------------------------------------
+     reported = watcher.get_recently_reported(days_back=EARNINGS_LOOKBACK_DAYS, now=pd.Timestamp(as_of))
+-    if watcher.dated_feed_down():
++    if watcher.data_unreachable():
++        # One accurate message instead of "feed down" + "feed stale": when the
++        # requests themselves fail, the fallback cache ends in 2025 and every
++        # staleness number derived from it is meaningless.
++        degraded = True
++        message = (f"earnings data unreachable: requests raised for {watcher.fetch_errors}/{len(watcher.tickers)} "
++                   f"tickers (e.g. {watcher.fetch_error_sample}); cycle degraded -- no entries evaluated, "
++                   f"heartbeat not refreshed")
++        errors.append(message)
++        build_alerter().alert(ALERT_EARNINGS_FEED_STALE, message)
++    elif watcher.dated_feed_down():
+         message = (f"announcement-date feed down: answered for {watcher.dated_feed_answered}/{watcher.dated_feed_asked} "
+                    f"tickers; recent reports are being dated from the bot's schedule log "
+                    f"({watcher.schedule_dated_reports} in the window this cycle)")
+         errors.append(message)
+         build_alerter().alert(ALERT_EARNINGS_FEED_STALE, message)
+-    if watcher.feed_looks_stale(now=pd.Timestamp(as_of)):
++    if not degraded and watcher.feed_looks_stale(now=pd.Timestamp(as_of)):
+         newest = watcher.newest_report.date() if watcher.newest_report is not None else "never"
+         message = f"earnings feed looks stale: newest report in the universe is {newest} (> {EARNINGS_FEED_STALE_DAYS}d)"
+         errors.append(message)
+@@ -267,7 +323,7 @@
+     # accident of the earnings calendar, so the strongest signal could be turned
+     # away for a marginal one that merely reported earlier.
+     candidates: list[tuple[ReportedEarnings, ScoredEvent, str]] = []
+-    for event in reported if session_open else []:
++    for event in reported if session_open and not degraded else []:
+         if event.ticker in client.positions and client.positions[event.ticker].open:
+             continue  # already holding this name -- position_manager owns its exit, not a new entry
+         event_key = _event_key(event.ticker, event.earnings_date)
+@@ -292,17 +348,20 @@
+             paper_nav=client.nav(), paper_high_water_mark=client.high_water_mark,
+             limits=BOT_RISK_LIMITS, breaker_tier=tier,
+         )
++        decided_at = time.time()
+         outcome = EntryOutcome(
+             ticker=scored.ticker, sue=scored.sue, calibrated_proba=scored.calibrated_proba,
+             direction=scored.direction, allowed=decision.allowed,
+             reason=decision.reason.value if decision.reason else None, detail=decision.detail,
+             size_fraction=decision.size_fraction, earnings_date=earnings_date_key,
++            decided_at=decided_at, decided_after_close=decided_at > _close_epoch(as_of),
++            inputs=scored.inputs, features=scored.features,
+         )
+         entries.append(outcome)
+ 
+         if decision.allowed:
+             try:
+-                client.place_order(scored.ticker, scored.direction, decision, entry_date=as_of)
++                client.place_order(scored.ticker, scored.direction, decision, entry_date=as_of, decided_at=decided_at)
+                 logger.info(f"ENTRY {scored.ticker} {scored.direction} size={decision.size_fraction:.3%} "
+                             f"proba={scored.calibrated_proba:.3f}")
+             except Exception as e:
+@@ -311,23 +370,29 @@
+             logger.info(f"SKIP {scored.ticker}: {outcome.reason} -- {outcome.detail}")
+ 
+     # -- 4. mark to market: read-only, after every decision of this cycle ----
+-    marked = client.marked_nav() if session_open else None
+-    if marked is not None and marked.unmarked:
+-        errors.append(f"no price to mark {', '.join(marked.unmarked)}: carried at cost in marked_nav")
++    marked = client.marked_nav() if session_open and not degraded else None
++    partial_marks = marked is not None and bool(marked.unmarked)
++    if partial_marks:
++        errors.append(f"no price to mark {', '.join(marked.unmarked)}: marked_nav not recorded "
++                      f"(positions carried at cost are not a mark)")
+ 
+     report = CycleReport(
+         as_of_date=as_of, kill_switch_engaged=is_kill_switch_engaged(), breaker_tier=tier,
+         nav_before=nav_before, nav_after=client.nav(),
+         exits=[asdict(e) for e in exit_results], entries_considered=len(reported),
+         entries=entries, errors=errors, session_open=session_open, session_detail=session_detail,
+-        marked_nav=marked.nav if marked else None, unrealized_pnl=marked.unrealized_pnl if marked else None,
++        marked_nav=marked.nav if marked and not partial_marks else None,
++        unrealized_pnl=marked.unrealized_pnl if marked and not partial_marks else None,
+         marks=marked.marks if marked else {}, unmarked=marked.unmarked if marked else [],
++        provenance="live", started_at=started_at, code_sha256=code_fingerprint(), degraded=degraded,
+     )
+     _append_cycle_log(report)
+     # Touched LAST, only once everything above has genuinely completed --
+     # see bot/heartbeat.py's docstring for why a mid-cycle crash must NOT
+     # refresh this (that's precisely the failure the watchdog exists to catch).
+-    touch_heartbeat()
++    # A cycle that could not reach its data did not genuinely complete either.
++    if not degraded:
++        touch_heartbeat()
+     logger.info(f"cycle complete: {len(exit_results)} exits, {len(entries)} entries considered "
+                 f"({sum(1 for e in entries if e.allowed)} placed), nav {nav_before:.2f} -> {client.nav():.2f}"
+                 + (f", marked {marked.nav:.2f}" if marked else ""))
+diff -ruN a/bot/signal_pipeline.py b/bot/signal_pipeline.py
+--- a/bot/signal_pipeline.py	2026-09-23 05:06:54
++++ b/bot/signal_pipeline.py	2026-09-23 05:07:28
+@@ -30,7 +30,7 @@
+ """
+ from __future__ import annotations
+ 
+-from dataclasses import dataclass
++from dataclasses import dataclass, field
+ from pathlib import Path
+ 
+ import joblib
+@@ -150,6 +150,15 @@
+     rank_row = ranking[ranking["ticker"] == event.ticker]
+     dollar_volume_rank = float(rank_row["dollar_volume_rank"].iloc[0]) if not rank_row.empty else float(len(ranking) + 1)
+ 
++    # The exact inputs of this decision, for the forward record: Yahoo revises
++    # consensus estimates after the fact, so they cannot be re-fetched later.
++    prior = sue_df[sue_df["earnings_date"] < event.earnings_date]["surprise_pct_winsorized"].tail(8)
++    inputs = {
++        "earnings_ts": str(event.earnings_date),
++        "eps_estimate": _num(sue_row.get("eps_estimate")), "eps_actual": _num(sue_row.get("eps_actual")),
++        "surprise_pct": _num(sue_row.get("surprise_pct")), "date_source": sue_row.get("date_source"),
++        "trailing_surprises_winsorized": [_num(x) for x in prior],
++    }
+     row = {
+         "signal": float(sue_row["sue"]),
+         "abs_sue": float(abs(sue_row["sue"])),
+@@ -158,9 +167,19 @@
+         "pre_earnings_return_20d": ret_20d,
+         "dollar_volume_rank": dollar_volume_rank,
+     }
+-    return pd.DataFrame([row])[PEAD_FEATURE_COLUMNS]
++    out = pd.DataFrame([row])[PEAD_FEATURE_COLUMNS]
++    out.attrs["inputs"] = inputs
++    return out
+ 
+ 
++def _num(value) -> float | None:
++    try:
++        value = float(value)
++    except (TypeError, ValueError):
++        return None
++    return value if np.isfinite(value) else None
++
++
+ @dataclass
+ class ScoredEvent:
+     ticker: str
+@@ -168,6 +187,8 @@
+     sue: float
+     calibrated_proba: float
+     direction: str  # "long" if sue > 0 else "short"
++    features: dict = field(default_factory=dict)
++    inputs: dict = field(default_factory=dict)
+ 
+ 
+ def score_event(event: ReportedEarnings, pipeline: FittedPipeline) -> ScoredEvent | None:
+@@ -183,4 +204,5 @@
+     return ScoredEvent(
+         ticker=event.ticker, earnings_date=event.earnings_date, sue=sue,
+         calibrated_proba=float(calibrated[0]), direction="long" if sue > 0 else "short",
++        features={k: float(v) for k, v in features.iloc[0].items()}, inputs=dict(features.attrs.get("inputs", {})),
+     )
+diff -ruN a/earnings/ingestion.py b/earnings/ingestion.py
+--- a/earnings/ingestion.py	2026-09-23 05:06:54
++++ b/earnings/ingestion.py	2026-09-23 05:07:28
+@@ -44,13 +44,21 @@
+ FETCH_LIMIT = 100  # comfortably covers 2015-2026 (~44 quarters) with margin
+ 
+ 
++def _failed(error: Exception) -> pd.DataFrame:
++    df = pd.DataFrame()
++    df.attrs["error"] = repr(error)[:200]
++    return df
++
++
+ def fetch_ticker_earnings(ticker: str, limit: int = FETCH_LIMIT) -> pd.DataFrame:
+     t = yf.Ticker(ticker)
+     try:
+         df = t.get_earnings_dates(limit=limit)
+     except Exception as e:
+         logger.warning(f"{ticker}: earnings fetch failed ({e!r})")
+-        return pd.DataFrame()
++        # An exception (DNS, timeout, HTTP error) is not the same as the endpoint
++        # answering with nothing; callers tell the two apart by this attribute.
++        return _failed(e)
+     if df is None or df.empty:
+         return pd.DataFrame()
+     df = df.rename(columns={"EPS Estimate": "eps_estimate", "Reported EPS": "eps_actual", "Surprise(%)": "surprise_pct"})
+@@ -95,7 +103,7 @@
+         df = t.earnings_history
+     except Exception as e:
+         logger.warning(f"{ticker}: earnings_history fetch failed ({e!r})")
+-        return pd.DataFrame()
++        return _failed(e)
+     if df is None or df.empty:
+         return pd.DataFrame()
+     df = df.reset_index().rename(columns={
+@@ -217,7 +225,14 @@
+         no logged date keeps its quarter-end date and so never triggers an entry;
+       * the next scheduled date is returned as an upcoming row.
+     `date_source` says which of "announced", "scheduled" or "quarter_end" dated
+-    each row, and `df.attrs["primary_ok"]` whether the dated endpoint answered."""
++    each row, and `df.attrs["primary_ok"]` whether the dated endpoint answered.
++
++    The stand-in rows from the training cache are tagged "cached_announced", not
++    "announced": they end in mid-2025 and must never count as evidence that the
++    live feed is current (they made the 2026-09-21 outage read as "newest report
++    2025-06-26"). `df.attrs["primary_error"]` / `["history_error"]` carry the
++    exception text when an endpoint RAISED (network/DNS, timeout) rather than
++    answered empty, so an outage of this machine's network is reported as such."""
+     today = (now or pd.Timestamp.now()).normalize()
+     historical = fetch_ticker_earnings(ticker, limit=limit)
+     recent = fetch_recent_earnings_actuals(ticker)
+@@ -227,7 +242,7 @@
+                                source="get_earnings_dates")
+         announced = historical.assign(date_source="announced")
+     else:
+-        announced = load_cached_earnings(ticker).assign(date_source="announced")
++        announced = load_cached_earnings(ticker).assign(date_source="cached_announced")
+         upcoming = fetch_upcoming_earnings_date(ticker)
+         if upcoming is not None:
+             record_scheduled_dates(ticker, [upcoming], source="calendar")
+@@ -256,6 +271,8 @@
+         out = pd.concat(parts, ignore_index=True)
+         out = out.drop_duplicates(subset=["earnings_date"], keep="first").sort_values("earnings_date").reset_index(drop=True)
+     out.attrs["primary_ok"] = primary_ok
++    out.attrs["primary_error"] = historical.attrs.get("error")
++    out.attrs["history_error"] = recent.attrs.get("error")
+     return out
+ 
+ 
+diff -ruN a/live_backtest/backfill_missed_season.py b/live_backtest/backfill_missed_season.py
+--- a/live_backtest/backfill_missed_season.py	2026-09-23 05:06:54
++++ b/live_backtest/backfill_missed_season.py	2026-09-23 05:07:28
+@@ -33,6 +33,7 @@
+ import argparse
+ import json
+ from datetime import datetime
++from time import time as real_time
+ from functools import lru_cache
+ from pathlib import Path
+ from zoneinfo import ZoneInfo
+@@ -123,7 +124,10 @@
+     original_append = PaperExecutionClient._append_ledger
+ 
+     def append_backfill(self, record: dict) -> None:
+-        original_append(self, {**record, "backfill": True})
++        # provenance overrides the client's default "live"; `ts` is SIMULATED (see
++        # SimulatedClock), so the real write time is kept separately.
++        original_append(self, {**record, "backfill": True, "provenance": "backfill",
++                               "written_at": real_time()})
+ 
+     def build_backfill_alerter() -> BotAlerter:
+         return BackfillAlerter(webhook_url="", alerts_path=ALERTS_LOG_FILE)
+diff -ruN a/tests/test_bot_forward_hygiene.py b/tests/test_bot_forward_hygiene.py
+--- a/tests/test_bot_forward_hygiene.py	1969-12-31 16:00:00
++++ b/tests/test_bot_forward_hygiene.py	2026-09-23 05:08:33
+@@ -0,0 +1,134 @@
++"""Forward-evidence hygiene of the paper bot (reports/forward/PEAD_FORWARD_DIAGNOSIS.md).
++
++Offline: every network touch point is stubbed, every state file is a tmp path.
++"""
++from __future__ import annotations
++
++import json
++
++import pandas as pd
++import pytest
++
++import bot.earnings_watcher as ew
++import bot.execution as ex
++import bot.heartbeat as hb
++import bot.kill_switch as ks
++import bot.risk_gate as rg
++import bot.run_cycle as rc
++import earnings.ingestion as ing
++from bot.earnings_watcher import ReportedEarnings
++from bot.signal_pipeline import ScoredEvent
++
++
++def raising_ticker(*_a, **_k):
++    class Down:
++        def get_earnings_dates(self, limit=100):
++            raise ConnectionError("Could not resolve host: query2.finance.yahoo.com")
++
++        @property
++        def earnings_history(self):
++            raise ConnectionError("Could not resolve host: query2.finance.yahoo.com")
++
++        @property
++        def calendar(self):
++            raise ConnectionError("Could not resolve host: query2.finance.yahoo.com")
++
++    return Down()
++
++
++@pytest.fixture
++def training_cache(tmp_path, monkeypatch):
++    monkeypatch.setattr(ing, "RAW_DIR", tmp_path)
++    pd.DataFrame({"ticker": "AAA", "earnings_date": pd.to_datetime(["2025-03-01 16:30", "2025-06-26 16:30"]),
++                  "eps_estimate": [1.0, 1.1], "eps_actual": [1.1, 1.2], "surprise_pct": [10.0, 9.0]}
++                 ).to_parquet(tmp_path / "AAA.parquet", index=False)
++    return tmp_path
++
++
++def test_network_failure_is_not_an_empty_answer(monkeypatch, training_cache):
++    monkeypatch.setattr(ing.yf, "Ticker", raising_ticker)
++    df = ing.fetch_ticker_earnings_live("AAA", now=pd.Timestamp("2026-09-21"))
++    assert df.attrs["primary_ok"] is False
++    assert "resolve host" in df.attrs["primary_error"] and "resolve host" in df.attrs["history_error"]
++    assert set(df["date_source"]) == {"cached_announced"}
++
++
++def test_watcher_reports_unreachable_data_and_ignores_the_training_cache(monkeypatch, training_cache):
++    monkeypatch.setattr(ing.yf, "Ticker", raising_ticker)
++    watcher = ew.EarningsWatcher(tickers=["AAA", "BBB"])
++    assert watcher.get_recently_reported(days_back=3, now=pd.Timestamp("2026-09-21")) == []
++    assert watcher.fetch_errors == 2 and watcher.data_unreachable()
++    assert watcher.newest_report is None  # 2025-06-26 from the cache is not evidence of anything
++
++
++def test_one_failing_ticker_is_not_an_outage(monkeypatch, training_cache):
++    monkeypatch.setattr(ing.yf, "Ticker", raising_ticker)
++    watcher = ew.EarningsWatcher(tickers=["AAA"] + [f"T{i}" for i in range(19)])
++    monkeypatch.setattr(ew, "fetch_ticker_earnings_live",
++                        lambda t: ing.fetch_ticker_earnings_live(t) if t == "AAA" else pd.DataFrame())
++    watcher.get_recently_reported(days_back=3, now=pd.Timestamp("2026-09-21"))
++    assert watcher.fetch_errors == 1 and not watcher.data_unreachable()
++
++
++@pytest.fixture
++def isolated(tmp_path, monkeypatch):
++    from bot.alerting import BotAlerter
++    alerter = lambda: BotAlerter(webhook_url="", alerts_path=tmp_path / "alerts.jsonl")
++    for module in (rg, ex, rc):
++        monkeypatch.setattr(module, "build_alerter", alerter)
++    monkeypatch.setattr(ks, "KILL_SWITCH_FILE", tmp_path / "KILL_SWITCH")
++    monkeypatch.setattr(rc, "CYCLE_LOG_FILE", tmp_path / "cycle_log.jsonl")
++    monkeypatch.setattr(rc, "BACKFILL_CYCLE_LOG_FILE", tmp_path / "backfill_cycle_log.jsonl")
++    monkeypatch.setattr(rc, "UPCOMING_EARNINGS_FILE", tmp_path / "upcoming_earnings.json")
++    monkeypatch.setattr(rc, "prepare_market_session", lambda tickers, as_of: (True, "test session"))
++    monkeypatch.setattr(rc, "current_breaker_tier", lambda: ("armed", {}))
++    monkeypatch.setattr(rc, "touch_heartbeat", lambda: hb.touch_heartbeat(tmp_path / "heartbeat.txt"))
++    monkeypatch.setattr(ex, "get_current_price", lambda ticker: 100.0)
++    return tmp_path
++
++
++def test_unreachable_cycle_is_degraded_and_does_not_refresh_the_heartbeat(isolated, monkeypatch):
++    def down(self, **kw):
++        self.fetch_errors = len(self.tickers)
++        self.fetch_error_sample = "DNSError"
++        return []
++
++    monkeypatch.setattr(rc.EarningsWatcher, "get_recently_reported", down)
++    report = rc.run_cycle(as_of_date="2026-09-21", ledger_path=isolated / "ledger.jsonl")
++    assert report.degraded and report.marked_nav is None
++    assert any("unreachable" in e for e in report.errors)
++    assert not any("looks stale" in e for e in report.errors)
++    assert not (isolated / "heartbeat.txt").exists()
++    logged = json.loads((isolated / "cycle_log.jsonl").read_text().splitlines()[-1])
++    assert logged["provenance"] == "live" and logged["degraded"] is True and len(logged["code_sha256"]) == 64
++
++
++def test_partial_marks_record_no_marked_nav(isolated, monkeypatch):
++    ledger = isolated / "ledger.jsonl"
++    ledger.write_text(json.dumps({"event": "open", "entry_date": "2026-09-18", "ticker": "AAA", "direction": "long",
++                                  "fill_price": 100.0, "size_fraction": 0.05, "notional": 5000.0, "ts": 0}) + "\n")
++    monkeypatch.setattr(rc.EarningsWatcher, "get_recently_reported", lambda self, **kw: [])
++
++    def no_price(ticker):
++        raise RuntimeError("no price")
++
++    monkeypatch.setattr(ex, "get_current_price", no_price)
++    report = rc.run_cycle(as_of_date="2026-09-21", ledger_path=ledger)
++    assert report.unmarked == ["AAA"] and report.marked_nav is None
++    assert (isolated / "heartbeat.txt").exists()  # a missing mark is reported, not an outage
++
++
++def test_entry_records_decision_time_inputs_and_provenance(isolated, monkeypatch):
++    event = ReportedEarnings(ticker="AZO", earnings_date=pd.Timestamp("2026-09-22 06:00"), eps_estimate=53.89,
++                             eps_actual=56.05, surprise_pct=4.01, days_since=0)
++    monkeypatch.setattr(rc.EarningsWatcher, "get_recently_reported", lambda self, **kw: [event])
++    monkeypatch.setattr(rc, "score_event", lambda e, p: ScoredEvent(
++        ticker="AZO", earnings_date=e.earnings_date, sue=1.18, calibrated_proba=0.9, direction="long",
++        features={"signal": 1.18}, inputs={"eps_estimate": 53.89, "eps_actual": 56.05}))
++    report = rc.run_cycle(as_of_date="2026-09-22", ledger_path=isolated / "ledger.jsonl")
++    entry = report.entries[0]
++    assert entry.allowed and entry.decided_at > 0 and entry.decided_after_close is True
++    assert entry.inputs["eps_estimate"] == 53.89
++    opened = json.loads((isolated / "ledger.jsonl").read_text().splitlines()[-1])
++    assert opened["provenance"] == "live" and opened["decided_at"] == entry.decided_at
++    assert opened["decided_at"] <= opened["ts"]  # decided before the price was fetched
+diff -ruN a/tests/test_earnings_outage_fallback.py b/tests/test_earnings_outage_fallback.py
+--- a/tests/test_earnings_outage_fallback.py	2026-09-23 05:06:54
++++ b/tests/test_earnings_outage_fallback.py	2026-09-23 05:13:12
+@@ -69,7 +69,7 @@
+     assert row["date_source"] == "scheduled"
+     assert ew.effective_trading_date(row["earnings_date"]) == pd.Timestamp("2026-07-31")  # next session
+     # the cached announcement-dated history is there for SUE's trailing surprises
+-    assert (df["date_source"] == "announced").sum() == 2
++    assert (df["date_source"] == "cached_announced").sum() == 2
+     # a quarter with no logged date keeps its quarter-end placeholder
+     assert df[df["eps_actual"] == 1.50].iloc[0]["date_source"] == "quarter_end"
+     # the calendar's next date was logged, and returned as an upcoming row
+@@ -105,9 +105,9 @@
+     reported = watcher.get_recently_reported(days_back=3, now=pd.Timestamp("2026-08-03"))
+     assert reported == []
+     assert watcher.dated_feed_down()
+-    # the 2026-06-30 quarter-end placeholder is not evidence of a current feed;
+-    # the newest trusted date is the cached 2025-05-01 announcement -> stale
+-    assert watcher.newest_report == pd.Timestamp("2025-05-01 16:30")
++    # neither the 2026-06-30 quarter-end placeholder nor the training cache's
++    # 2025-05-01 row is evidence of a current feed: nothing trusted -> stale
++    assert watcher.newest_report is None
+     assert watcher.feed_looks_stale(now=pd.Timestamp("2026-08-03"))
+ 
+ 

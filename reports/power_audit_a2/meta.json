@@ -1,0 +1,9 @@
+{
+  "W_MAIN": 20000,
+  "W_GRID": 10000,
+  "B": 999,
+  "block": "round(n^(1/3)), circular, mean-centred",
+  "stress": "net minus extra drag (default 0.10 Sharpe units)",
+  "fast": false,
+  "runtime_min": 14.6
+}

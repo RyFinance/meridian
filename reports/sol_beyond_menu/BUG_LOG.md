@@ -1,0 +1,5 @@
+# Non-performance implementation diagnoses
+
+2026-09-26, `aggregate_short_interest`: the registered evaluation stopped before calculating any short-interest strategy return because the author workbook represents missing early recursive index values with the literal string `NA`. The parser had accepted only empty cells as missing. Changed the parser to skip `NA` as missing; signal definition, sample cut, costs, and inference were not altered. The already completed factor-momentum result was not rerun.
+
+2026-09-26, `overnight_equity`: its first registered development calculation completed and saved `overnight_equity_dev.csv`, but JSON result serialization failed because a negative cumulative active P&L made the concentration ratio undefined (`inf`). This is an output-representation bug, not a signal or performance adjustment. The summary serializer now records an undefined concentration as `null` and the positive gate treats it as failure. Recover the result from the already saved development series; do not recompute strategy returns.

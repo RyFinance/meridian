@@ -1,0 +1,266 @@
+{
+  "bucket": "https://s3-ap-northeast-1.amazonaws.com/data.binance.vision",
+  "checked_at_utc": "2026-09-25T05:09:25Z",
+  "n_symbols": {
+    "um_fundingRate": 952,
+    "um_klines": 1018,
+    "spot_klines": 3710
+  },
+  "n_usdt_symbols": {
+    "um_fundingRate": 865,
+    "um_klines": 864,
+    "spot_klines": 735
+  },
+  "delisted_probes": {
+    "LUNAUSDT": {
+      "event": "Terra collapse",
+      "approx_delisting": "2022-05",
+      "in_um_fundingRate_archive": true,
+      "in_um_klines_archive": true,
+      "in_spot_klines_archive": true,
+      "um_funding_months": [
+        "2021-01",
+        "2022-05",
+        17
+      ],
+      "spot_1d_months": [
+        "2020-08",
+        "2026-08",
+        73
+      ]
+    },
+    "FTTUSDT": {
+      "event": "FTX collapse; perp delisted",
+      "approx_delisting": "2022-11",
+      "in_um_fundingRate_archive": true,
+      "in_um_klines_archive": true,
+      "in_spot_klines_archive": true,
+      "um_funding_months": [
+        "2022-04",
+        "2025-06",
+        39
+      ],
+      "spot_1d_months": [
+        "2019-12",
+        "2026-08",
+        72
+      ]
+    },
+    "SRMUSDT": {
+      "event": "Serum, FTX-linked; delisted",
+      "approx_delisting": "2022-11/2023",
+      "in_um_fundingRate_archive": true,
+      "in_um_klines_archive": true,
+      "in_spot_klines_archive": true,
+      "um_funding_months": [
+        "2020-09",
+        "2024-07",
+        47
+      ],
+      "spot_1d_months": [
+        "2020-08",
+        "2022-11",
+        28
+      ]
+    },
+    "WAVESUSDT": {
+      "event": "delisted from Binance",
+      "approx_delisting": "2024-06",
+      "in_um_fundingRate_archive": true,
+      "in_um_klines_archive": true,
+      "in_spot_klines_archive": true,
+      "um_funding_months": [
+        "2020-08",
+        "2025-06",
+        59
+      ],
+      "spot_1d_months": [
+        "2019-01",
+        "2024-06",
+        66
+      ]
+    },
+    "BTSUSDT": {
+      "event": "BitShares delisted",
+      "approx_delisting": "2022/2023",
+      "in_um_fundingRate_archive": true,
+      "in_um_klines_archive": true,
+      "in_spot_klines_archive": true,
+      "um_funding_months": [
+        "2021-02",
+        "2024-08",
+        43
+      ],
+      "spot_1d_months": [
+        "2020-02",
+        "2023-12",
+        47
+      ]
+    },
+    "ANCUSDT": {
+      "event": "Anchor (Terra) delisted",
+      "approx_delisting": "2022-05",
+      "in_um_fundingRate_archive": true,
+      "in_um_klines_archive": true,
+      "in_spot_klines_archive": true,
+      "um_funding_months": [
+        "2022-03",
+        "2022-05",
+        3
+      ],
+      "spot_1d_months": [
+        "2022-01",
+        "2022-12",
+        12
+      ]
+    },
+    "OMGUSDT": {
+      "event": "delisted",
+      "approx_delisting": "2024-06",
+      "in_um_fundingRate_archive": true,
+      "in_um_klines_archive": true,
+      "in_spot_klines_archive": true,
+      "um_funding_months": [
+        "2020-07",
+        "2025-06",
+        60
+      ],
+      "spot_1d_months": [
+        "2019-04",
+        "2024-06",
+        63
+      ]
+    },
+    "XEMUSDT": {
+      "event": "NEM delisted",
+      "approx_delisting": "2024-06",
+      "in_um_fundingRate_archive": true,
+      "in_um_klines_archive": true,
+      "in_spot_klines_archive": true,
+      "um_funding_months": [
+        "2021-03",
+        "2025-06",
+        52
+      ],
+      "spot_1d_months": [
+        "2020-11",
+        "2024-06",
+        44
+      ]
+    },
+    "BZRXUSDT": {
+      "event": "bZx delisted",
+      "approx_delisting": "2021/2022",
+      "in_um_fundingRate_archive": true,
+      "in_um_klines_archive": true,
+      "in_spot_klines_archive": true,
+      "um_funding_months": [
+        "2020-09",
+        "2021-12",
+        16
+      ],
+      "spot_1d_months": [
+        "2020-08",
+        "2021-12",
+        17
+      ]
+    }
+  },
+  "BTCUSDT_funding_months": [
+    "2020-01",
+    "2026-08",
+    80
+  ],
+  "ETHUSDT_funding_months": [
+    "2020-01",
+    "2026-08",
+    80
+  ],
+  "um_monthly_datasets": [
+    "aggTrades",
+    "bookTicker",
+    "fundingRate",
+    "indexPriceKlines",
+    "klines",
+    "markPriceKlines",
+    "premiumIndexKlines",
+    "trades"
+  ],
+  "um_daily_datasets": [
+    "aggTrades",
+    "bookDepth",
+    "bookTicker",
+    "indexPriceKlines",
+    "klines",
+    "markPriceKlines",
+    "metrics",
+    "premiumIndexKlines",
+    "trades"
+  ],
+  "live_perpetual_trading_now": 570,
+  "archived_funding_symbols_not_trading_now": 385,
+  "share_archive_not_trading_now": 0.404,
+  "examples_not_trading_now": [
+    "1000BTTCUSDT",
+    "1000LUNCBUSD",
+    "1000SHIBBUSD",
+    "1000WHYUSDT",
+    "1000XUSDT",
+    "42USDT",
+    "A2ZUSDT",
+    "AAOIUSDT",
+    "AAPLUSDT",
+    "ACXUSDT",
+    "ADABUSD",
+    "ADBEUSDT",
+    "AERGOUSDT",
+    "AGIXBUSD",
+    "AGIXUSDT",
+    "AI16ZUSDT",
+    "AIUSDT",
+    "AKROUSDT",
+    "ALABUSDT",
+    "ALPACAUSDT",
+    "ALPHAUSDT",
+    "AMATUSDT",
+    "AMBBUSD",
+    "AMBUSDT",
+    "AMDUSDT",
+    "AMZNUSDT",
+    "ANCBUSD",
+    "ANCUSDT",
+    "ANTHROPICUSDT",
+    "ANTUSDT",
+    "APEBUSD",
+    "APPUSDT",
+    "APTBUSD",
+    "ARMUSDT",
+    "ASMLUSDT",
+    "ASTSUSDT",
+    "ATAUSDT",
+    "AUCTIONBUSD",
+    "AUDIOUSDT",
+    "AVAXBUSD",
+    "AVGOUSDT",
+    "AXTIUSDT",
+    "B3USDT",
+    "BABAUSDT",
+    "BADGERUSDT",
+    "BAKEUSDT",
+    "BALUSDT",
+    "BBXUSDT",
+    "BDXNUSDT",
+    "BEUSDT",
+    "BIDUSDT",
+    "BITOUSDT",
+    "BLUEBIRDUSDT",
+    "BLZUSDT",
+    "BMNRUSDT",
+    "BNBBUSD",
+    "BNCUSDT",
+    "BNXUSDT",
+    "BOBUSDT",
+    "BONDUSDT"
+  ],
+  "http_calls": 30
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "re-analysis; no new strategy-return trial",
+  "source_result": "reports/sol_beyond_menu/scheduled_fomc_risk_result.json",
+  "source_development_series": "reports/sol_beyond_menu/scheduled_fomc_risk_dev.csv",
+  "original_daily_effective_n": 2964.863408444992,
+  "patched_event_effective_n": {
+    "n_events": 153.0,
+    "n_clusters": 19.0,
+    "cluster_D": 1.0136469096409277,
+    "event_hac_D": 1.1934832753697593,
+    "overlap_multiplicity": 1.0,
+    "event_D": 1.1934832753697593,
+    "effective_n": 128.19618268433487
+  },
+  "calibrated_p_unchanged": 0.0625,
+  "why_p_unchanged": "A4 calibrated p is calculated from the calendar-time active-return series and does not consume the effective-N diagnostic.",
+  "positive_threshold": 0.0125,
+  "passes_p": false,
+  "verdict": "FAIL"
+}

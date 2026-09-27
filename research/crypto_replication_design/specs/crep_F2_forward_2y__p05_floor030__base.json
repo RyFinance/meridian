@@ -1,0 +1,55 @@
+{
+ "name": "crep_F2_forward_2y__p05_floor030__base",
+ "description": "forward-only, 2 years | gate p05_floor030 | SE model base",
+ "assumptions": [
+  "series model copied from research/power/examples/c4a_binance_funding_ls_daily.json (registered for the frozen rule)",
+  "ASSUMPTION rho_resid 0.3, rho_signal 0.25 (factor tilt), signal autocorr 0.9, spread AR(1) 0.05, skew -0.3, exkurt 10",
+  "SE model 'heavy': spread AR(1) 0.30 -> kappa0 ~1.36/sqrt(yr), matching the SE implied by the ALREADY-REPORTED Binance dev bootstrap (1.65 / z(0.038) = 0.93 over 2.17 y); no new data used",
+  "single-stage design: the replication window is the only tested window (val_years null); the 'dev' gate below IS the replication gate",
+  "stress_drag_sr 0.15 (stress cost minus base cost, Sharpe units), as c4a"
+ ],
+ "design": "long_short",
+ "params": {
+  "n_assets": 100,
+  "periods_per_year": 365,
+  "ic": 0.02,
+  "cs_dispersion": 0.04,
+  "quantile": 0.2,
+  "rho_resid": 0.3,
+  "rho_signal": 0.25,
+  "signal_autocorr": 0.9,
+  "cost_bps_one_way": 8,
+  "spread_autocorr": 0.05,
+  "skew": -0.3,
+  "exkurt": 10.0
+ },
+ "windows": {
+  "dev_years": 2.0,
+  "val_years": null
+ },
+ "gates": {
+  "batch_k": 1,
+  "stress_drag_sr": 0.15,
+  "dev": {
+   "kind": "custom",
+   "alpha": 0.05,
+   "sharpe_abs": 0.3,
+   "stress": true,
+   "description": "one-sided p<0.05, stress mean>0, Sharpe>=0.30 (amendment-3 P2 form, k=1)"
+  },
+  "val": {
+   "kind": "none"
+  }
+ },
+ "power": {
+  "alpha": 0.05,
+  "sharpe_grid": [
+   0.3,
+   0.5,
+   0.7,
+   1.0,
+   1.2,
+   1.65
+  ]
+ }
+}

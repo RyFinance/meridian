@@ -1,0 +1,147 @@
+{
+  "status": "FAIL_DEVELOPMENT",
+  "plan_sha256": "0f43d9baa60eccce72140661ff0ee039d40672d23831da0a00ebbe9fa4439267",
+  "amendment_sha256": "c68d39aa1ae47a35c299f7e062cff4f8d8f3e7aa8780f8281fa7da660b1921bd",
+  "input_sha256": {
+    "jp": "4eeacc4695e4f3378bbc4fae60a3f5f5d78e8cd8b830e74e7b4318a1c27ba664",
+    "official_date_mask": "9f92005fb040c51cada4ae14cefeb782098a735218da1a229fa377a9e9c926ef",
+    "es": "d59fa3906915f499d17a225b9bfa0238fd61171ee8a7c6b0e61ee33e18279ff9"
+  },
+  "window": [
+    "2016-06-01",
+    "2020-12-31"
+  ],
+  "years": 4.583162217659138,
+  "days": 1145,
+  "trades": 1025,
+  "japan_audit": {
+    "lse_dates": 1184,
+    "not_official_session": 72,
+    "wrong_bar_schedule": 2,
+    "bad_ohlc": 0,
+    "accepted": 1110
+  },
+  "es_audit": {
+    "es_full_sessions": 1145,
+    "japan_missing": 71,
+    "roll_excluded": 56,
+    "bad_ohlc": 1,
+    "rth_jump_excluded": 0,
+    "eligible": 1025
+  },
+  "dev_sharpe_gate": 0.8407945550911756,
+  "j1_gross": {
+    "annual_mean": 0.06007652573268382,
+    "sharpe": 0.4782674725780617,
+    "max_drawdown": -0.27888300439751
+  },
+  "j1_base": {
+    "annual_mean": 0.03753958250124279,
+    "sharpe": 0.29886130176268244,
+    "max_drawdown": -0.2873663461906385
+  },
+  "j1_stress": {
+    "annual_mean": -0.0075343039616393714,
+    "sharpe": -0.059983543611957124,
+    "max_drawdown": -0.3063579312473077
+  },
+  "c1_own_overnight": {
+    "annual_mean": -0.008704769221524624,
+    "sharpe": -0.06950166234850688,
+    "max_drawdown": -0.27354092249129924
+  },
+  "c2_always_long": {
+    "annual_mean": 0.015465826214692429,
+    "sharpe": 0.12309161159412711,
+    "max_drawdown": -0.21097317267528126
+  },
+  "p2_reversed_japan": {
+    "annual_mean": -0.08261346896412484,
+    "sharpe": -0.6576519701602033,
+    "max_drawdown": -0.523639638420365
+  },
+  "j1_minus_c1": {
+    "annual_mean": 0.04624435172276741,
+    "sharpe": 0.3632263123473014,
+    "max_drawdown": -0.20853117439056124
+  },
+  "j1_minus_c1_bootstrap_p": 0.16596680663867228,
+  "corr_j1_c1": 0.4848337141625954,
+  "null": {
+    "p_pass_dev": {
+      "p": 0.0128,
+      "se": 0.0015897270205919003,
+      "n": 5000
+    },
+    "p_sharpe_at_least_observed": 0.15716856628674264,
+    "sr_dev": {
+      "mean": -0.18731909630852453,
+      "sd": 0.4833079482532994,
+      "sd_x_sqrt_years": 1.030211539972499,
+      "q01": -1.4272635814275343,
+      "q05": -0.9292814745902828,
+      "q25": -0.5050492574664067,
+      "q50": -0.2087298235343344,
+      "q75": 0.11630317229512392,
+      "q95": 0.6327023785045257,
+      "q99": 0.8945100652270638,
+      "mean_se": 0.0068350065522253005,
+      "n": 5000
+    },
+    "signal": "circular shift of the finite segment >= 252 periods",
+    "n_worlds": 5000
+  },
+  "best_12m_removed": {
+    "removed_start": "2019-06-12",
+    "removed_end_exclusive": "2020-06-12",
+    "removed_sum": 0.41497866583785126,
+    "remaining": {
+      "annual_mean": -0.06881765567286652,
+      "sharpe": -0.6373710191940135,
+      "max_drawdown": -0.342329745399363
+    }
+  },
+  "best_24m_removed": {
+    "removed_start": "2018-05-14",
+    "removed_end_exclusive": "2020-05-14",
+    "removed_sum": 0.4768586625945837,
+    "remaining": {
+      "annual_mean": -0.11929762134453183,
+      "sharpe": -1.1163618245763243,
+      "max_drawdown": -0.34969930417611716
+    }
+  },
+  "yearly": {
+    "2016": {
+      "j1_annual_mean": -0.041899889350386785,
+      "c1_annual_mean": -0.035419001570585064,
+      "j1_total": -0.024607871523243032,
+      "trades": 131
+    },
+    "2017": {
+      "j1_annual_mean": 0.06593672785800371,
+      "c1_annual_mean": -0.046976051634012805,
+      "j1_total": 0.0651517668120751,
+      "trades": 228
+    },
+    "2018": {
+      "j1_annual_mean": 0.032276471557156516,
+      "c1_annual_mean": -0.15174943315725303,
+      "j1_total": 0.03176414661180483,
+      "trades": 226
+    },
+    "2019": {
+      "j1_annual_mean": 0.027119604565591867,
+      "c1_annual_mean": 0.03252588783729848,
+      "j1_total": 0.0267967521302872,
+      "trades": 218
+    },
+    "2020": {
+      "j1_annual_mean": 0.07174666879733116,
+      "c1_annual_mean": 0.1454462218413606,
+      "j1_total": 0.07146195979416714,
+      "trades": 222
+    }
+  },
+  "validation": "LOCKED; no validation JP data loaded or validation returns computed"
+}

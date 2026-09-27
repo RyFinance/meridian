@@ -1,0 +1,113 @@
+{
+  "family": "High-yield credit carry B",
+  "status": "FAIL_DEVELOPMENT",
+  "validation": "LOCKED; no 2017+ ETF price loaded",
+  "plan_sha256": "ee99196aa672009171c999d4aba36028fb2238ae23feabca6dbacd12c9aab186",
+  "inputs_sha256": {
+    "HYG": "5fbacb7f08534ab3915458b6b0b90a087ec411360faf94911552ace6244acd32",
+    "LQD": "7fa21e1d84549afc21f0bed004ca4c31159bc1ffaec638b42192b74677c9b196",
+    "SHY": "5590f99c4db64b628765a7f87a3281d7c498a462439314a4b635b18dbb3d52bf",
+    "SPY": "c927a8371ad9d9552e5a1cd0d96bfcd005ae62f72d4f590c51681a81c6e4fc0c"
+  },
+  "window": [
+    "2008-01-02",
+    "2016-12-30"
+  ],
+  "years": 8.993839835728952,
+  "days": 2266,
+  "active_sharpe_gate": 0.6002054442792616,
+  "candidate_base": {
+    "annual_mean": 0.06278183483346617,
+    "sharpe": 0.5251004148271166,
+    "total_return": 0.6497883697266398,
+    "max_drawdown": -0.3245510980272335
+  },
+  "candidate_stress": {
+    "annual_mean": 0.06255941647512547,
+    "sharpe": 0.5232367741703499,
+    "total_return": 0.6464915507362925,
+    "max_drawdown": -0.3245510980272337
+  },
+  "c0_lqd_shy": {
+    "annual_mean": 0.028446624323293902,
+    "sharpe": 0.8301453889831204,
+    "total_return": 0.2846722822252965,
+    "max_drawdown": -0.06934593618198603
+  },
+  "c1_spy_shy": {
+    "annual_mean": 0.031449567180874584,
+    "sharpe": 0.6705142186159672,
+    "total_return": 0.31375516091006106,
+    "max_drawdown": -0.13220546038771874
+  },
+  "active_vs_c0": {
+    "annual_mean": 0.034335210510172263,
+    "sharpe": 0.2962993531428736,
+    "total_return": 0.2821185856085695,
+    "max_drawdown": -0.327292774603677
+  },
+  "active_stress_vs_c0": {
+    "annual_mean": 0.03411279215183158,
+    "sharpe": 0.2943744581274316,
+    "total_return": 0.2795543639434914,
+    "max_drawdown": -0.3272927746036769
+  },
+  "vs_c1": {
+    "annual_mean": 0.031332267652591575,
+    "sharpe": 0.31189300714980034,
+    "total_return": 0.2669867392363183,
+    "max_drawdown": -0.2669052030027097
+  },
+  "null": {
+    "worlds": 5000,
+    "block": 21,
+    "seed": 20260923,
+    "null_method": "paired mean-centered circular block bootstrap",
+    "p_observed_one_sided": 0.1863627274545091,
+    "p_full_development_pass_null": 0.0164,
+    "pass_probability_mc_se": 0.0017961648031291561,
+    "annual_mean_95pct_block_ci": [
+      -0.04326537341866722,
+      0.1094297558906226
+    ],
+    "null_active_sharpe_quantiles": {
+      "0.05": -0.5307810179824501,
+      "0.5": 0.00685533423705517,
+      "0.95": 0.5832830810363157,
+      "0.99": 0.8037405711969663
+    }
+  },
+  "beta_active_to_spy_minus_shy": 0.3218862531465289,
+  "correlation_active_spy_minus_shy": 0.6004758459597741,
+  "annual_active_sum": {
+    "2008": -0.21415186642309186,
+    "2009": 0.23919752255600893,
+    "2010": 0.0735917083385432,
+    "2011": 0.03353388669630382,
+    "2012": 0.07593564268561201,
+    "2013": 0.05373916951751967,
+    "2014": -0.008062017964424798,
+    "2015": -0.05690659530420822,
+    "2016": 0.11186694281857196
+  },
+  "best_12m_removed": {
+    "removed_start": "2009-03-09",
+    "removed_end_exclusive": "2010-03-09",
+    "remaining": {
+      "annual_mean": -0.008864910650890142,
+      "sharpe": -0.07866969326564305,
+      "total_return": -0.11438526851006325,
+      "max_drawdown": -0.3732874785788616
+    }
+  },
+  "best_24m_removed": {
+    "removed_start": "2009-03-09",
+    "removed_end_exclusive": "2011-03-09",
+    "remaining": {
+      "annual_mean": -0.024404561842347346,
+      "sharpe": -0.21216089645389785,
+      "total_return": -0.19480553459438588,
+      "max_drawdown": -0.4025602053688654
+    }
+  }
+}

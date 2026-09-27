@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "research/power/design_schema.json",
+  "title": "quant_v7 power-calculator design spec",
+  "description": "Input to research.power.plan_check. Correlation / autocorrelation parameters have NO defaults: every design must state them. A zero correlation for events / panels / cross-sections is refused by the calculator unless params.assume_independent carries a written justification.",
+  "type": "object",
+  "required": ["name", "design", "params", "windows"],
+  "additionalProperties": false,
+  "definitions": {
+    "autocorr": {
+      "description": "number = AR(1) phi, or a model object",
+      "oneOf": [
+        {"type": "number", "minimum": -0.95, "maximum": 0.99},
+        {"type": "object", "required": ["model", "phi"], "properties": {"model": {"const": "ar1"}, "phi": {"type": "number"}}, "additionalProperties": false},
+        {"type": "object", "required": ["model", "horizon"], "properties": {"model": {"const": "overlap"}, "horizon": {"type": "integer", "minimum": 1}}, "additionalProperties": false},
+        {"type": "object", "required": ["model", "phi", "horizon"], "properties": {"model": {"enum": ["ar1_overlap", "overlap_persistent"]}, "phi": {"type": "number"}, "horizon": {"type": "integer", "minimum": 1}}, "additionalProperties": false},
+        {"type": "object", "required": ["model", "rho"], "properties": {"model": {"const": "acf"}, "rho": {"type": "array", "items": {"type": "number"}}}, "additionalProperties": false},
+        {"type": "object", "required": ["model", "D"], "properties": {"model": {"const": "lrv"}, "D": {"type": "number", "exclusiveMinimum": 0}}, "additionalProperties": false},
+        {"type": "object", "required": ["model"], "properties": {"model": {"const": "iid"}}, "additionalProperties": false}
+      ]
+    },
+    "blocks": {"type": "object", "required": ["sizes", "rho_within", "rho_between"],
+               "properties": {"sizes": {"type": "array", "items": {"type": "integer", "minimum": 1}},
+                              "rho_within": {"type": "number"}, "rho_between": {"type": "number"}}},
+    "concurrency": {"oneOf": [
+      {"type": "object", "required": ["model", "season_fraction"], "properties": {"model": {"const": "seasonal_poisson"}, "season_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}, "n_seasons": {"type": "integer", "minimum": 1}}},
+      {"type": "object", "required": ["model"], "properties": {"model": {"const": "uniform_poisson"}}},
+      {"type": "object", "required": ["model", "mean_size"], "properties": {"model": {"const": "clusters"}, "mean_size": {"type": "number", "minimum": 1}, "cv": {"type": "number", "minimum": 0}}},
+      {"type": "object", "required": ["model", "sizes"], "properties": {"model": {"const": "cluster_sizes"}, "sizes": {"type": "array", "items": {"type": "number", "minimum": 1}}}}
+    ]},
+    "alpha": {"oneOf": [{"const": "auto"}, {"type": "number", "exclusiveMinimum": 0, "maximum": 0.5}, {"type": "null"}]}
+  },
+  "properties": {
+    "name": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+$"},
+    "description": {"type": "string"},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "design": {"enum": ["timeseries", "event_study", "cross_sectional_ic", "long_short", "carry", "panel", "sleeve_screen"]},
+    "params": {"type": "object"},
+    "windows": {"type": "object", "required": ["dev_years"],
+                "properties": {"dev_years": {"type": "number", "exclusiveMinimum": 0},
+                               "val_years": {"type": ["number", "null"], "minimum": 0}}, "additionalProperties": false},
+    "gates": {"type": "object", "additionalProperties": false, "properties": {
+      "batch_k": {"type": "integer", "minimum": 1, "description": "Amendment 2 N2 workstream batch size; alpha = 0.05/k"},
+      "stress_drag_sr": {"type": ["number", "null"], "description": "(stress cost - base cost) per year / vol, in Sharpe units"},
+      "dev": {"type": "object", "properties": {
+        "kind": {"enum": ["amendment2", "custom"]},
+        "sharpe_c": {"type": ["number", "null"]}, "sharpe_abs": {"type": ["number", "null"]},
+        "alpha": {"$ref": "#/definitions/alpha"}, "hac_t": {"type": ["number", "null"]},
+        "null_center_sr": {"type": "number"}, "stress": {"type": "boolean"},
+        "both_halves_positive": {"type": "boolean"}, "description": {"type": "string"}, "name": {"type": "string"}}},
+      "val": {"type": "object", "required": ["kind"], "properties": {
+        "kind": {"enum": ["sharpe", "tstat", "hac_t", "fraction_of_dev", "natural", "none"]},
+        "value": {"type": "number"}, "fraction": {"type": "number"}, "t": {"type": "number"},
+        "alpha": {"$ref": "#/definitions/alpha"}, "floor": {"type": ["number", "null"]},
+        "stress": {"type": "boolean"}, "null_center_sr": {"type": "number"}, "hac_t": {"type": ["number", "null"]}}},
+      "pav": {"type": "object", "properties": {"k_val": {"type": "integer", "minimum": 1}, "floor": {"type": ["number", "null"]}}}
+    }},
+    "power": {"type": "object", "additionalProperties": false, "properties": {
+      "alpha": {"$ref": "#/definitions/alpha"}, "power": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+      "sharpe_grid": {"type": "array", "items": {"type": "number"}},
+      "val_multiplier": {"type": "number", "description": "true validation Sharpe = S x this (e.g. post-publication decay)"},
+      "dev_estimate": {"type": ["number", "null"], "description": "observed dev Sharpe, for the winner's-curse table"}}},
+    "scenarios": {"type": "array", "items": {"type": "object", "properties": {
+      "label": {"type": "string"}, "params": {"type": "object"}, "gates": {"type": "object"}, "windows": {"type": "object"}}}}
+  },
+  "allOf": [
+    {"if": {"properties": {"design": {"const": "timeseries"}}}, "then": {"properties": {"params": {"required": ["periods_per_year", "autocorr"]}}}},
+    {"if": {"properties": {"design": {"const": "event_study"}}}, "then": {"properties": {"params": {"required": ["events_per_year", "car_sd", "hold_days", "icc", "concurrency", "portfolio_autocorr"], "properties": {"concurrency": {"$ref": "#/definitions/concurrency"}, "portfolio_autocorr": {"$ref": "#/definitions/autocorr"}}}}}},
+    {"if": {"properties": {"design": {"const": "cross_sectional_ic"}}}, "then": {"properties": {"params": {"required": ["n_assets", "periods_per_year", "ic", "ic_autocorr", "rho_resid", "rho_signal"]}}}},
+    {"if": {"properties": {"design": {"const": "long_short"}}}, "then": {"properties": {"params": {"required": ["n_assets", "periods_per_year", "ic", "cs_dispersion", "quantile", "rho_resid", "rho_signal", "signal_autocorr", "cost_bps_one_way", "spread_autocorr"]}}}},
+    {"if": {"properties": {"design": {"const": "carry"}}}, "then": {"properties": {"params": {"required": ["n_assets", "periods_per_year", "autocorr", "skew", "exkurt"], "anyOf": [{"required": ["rho"]}, {"required": ["blocks"]}]}}}},
+    {"if": {"properties": {"design": {"const": "panel"}}}, "then": {"properties": {"params": {"required": ["n_markets", "periods_per_year", "autocorr"], "anyOf": [{"required": ["rho"]}, {"required": ["blocks"]}]}}}},
+    {"if": {"properties": {"design": {"const": "sleeve_screen"}}}, "then": {"properties": {"params": {"required": ["k", "m_real", "rho", "incl_sharpe", "periods_per_year", "autocorr"]}, "windows": {"required": ["dev_years", "val_years"]}}}}
+  ]
+}

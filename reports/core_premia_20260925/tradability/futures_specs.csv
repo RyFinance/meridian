@@ -1,0 +1,23 @@
+exchange,symbol,name,asset_class,multiplier,ref_price,tick,tick_value,notional_usd,ibkr_commission_usd,exch_fee_usd,source
+CME,MES,Micro E-mini S&P 500,equity_index,5.0,6650,0.25,1.25,33250,0.62,1.02,https://www.cmegroup.com/markets/equities/sp/micro-e-mini-sandp500.contractSpecs.html ; IBKR fee page https://www.interactivebrokers.com/en/accounts/fees/CME.php
+CME,MNQ,Micro E-mini Nasdaq-100,equity_index,2.0,24500,0.25,0.5,49000,0.62,1.02,https://www.cmegroup.com/markets/equities/nasdaq/micro-e-mini-nasdaq-100.contractSpecs.html
+CME,M2K,Micro E-mini Russell 2000,equity_index,10.0,2350,0.1,1.0,23500,0.62,1.02,https://www.cmegroup.com/markets/equities/russell/e-micro-russell-2000-index.contractSpecs.html
+CME,MYM,Micro E-mini Dow,equity_index,0.5,46000,1.0,0.5,23000.0,0.62,1.02,https://www.cmegroup.com/markets/equities/dow-jones/micro-e-mini-dow.contractSpecs.html
+CME,2YY,Micro 2-Year Yield futures,gov_bond,10.0,350,0.1,1.0,,0.65,0.55,"https://www.cmegroup.com/markets/interest-rates/us-treasury/2-year-yield.contractSpecs.html ; yield futures are cash-settled on yield, BPV $10/bp -- notional concept doesn't map 1:1 like price-based futures, see rounding_error methodology note"
+CME,10Y,Micro 10-Year Yield futures,gov_bond,10.0,420,0.1,1.0,,0.65,0.55,https://www.cmegroup.com/markets/interest-rates/us-treasury/10-year-yield.contractSpecs.html
+CME,30Y,Micro 30-Year Yield futures,gov_bond,10.0,460,0.1,1.0,,0.65,0.55,https://www.cmegroup.com/markets/interest-rates/us-treasury/30-year-yield.contractSpecs.html
+CME,"ZT/ZN/ZB (standard, no micro price-based note)",Note: CME does not offer 'micro' PRICE-based T-note/bond futures (only yield futures are micro-sized); smallest price-based US treasury exposure is the standard 2Y/10Y/30Y note/bond contract at $200k/$100k face,gov_bond,,,,,,,,https://www.cmegroup.com/markets/interest-rates/us-treasury.html ; qualitative access-gap note for rounding-error section
+CME,M6E,Micro EUR/USD,fx,12500.0,1.08,0.0001,1.25,13500.0,0.42,0.35,https://www.cmegroup.com/markets/fx/g10/e-micro-euro.contractSpecs.html
+CME,M6A,Micro AUD/USD,fx,10000.0,0.65,0.0001,1.0,6500.0,0.42,0.35,https://www.cmegroup.com/markets/fx/g10/e-micro-australian-dollar.contractSpecs.html
+CME,M6B,Micro GBP/USD,fx,6250.0,1.27,0.0001,0.625,7937.5,0.42,0.35,https://www.cmegroup.com/markets/fx/g10/e-micro-british-pound.contractSpecs.html
+CME,MCD,Micro CAD/USD,fx,10000.0,0.73,0.0001,1.0,7300.0,0.42,0.35,https://www.cmegroup.com/markets/fx/g10/e-micro-cad.html (verify exact symbol/listing status directly -- CAD micro liquidity is thin)
+CME,M6J,"Micro JPY/USD (quoted M6J, not MJY)",fx,1250000.0,0.0068,5e-07,0.625,8500.0,0.42,0.35,"https://www.cmegroup.com/markets/fx/g10/e-micro-japanese-yen.contractSpecs.html (note: correct ticker is M6J, not 'MJY')"
+COMEX,MGC,Micro Gold,commodity,10.0,3800,0.1,1.0,38000,0.47,0.45,https://www.cmegroup.com/markets/metals/precious/e-micro-gold.contractSpecs.html
+COMEX,SIL,Micro Silver,commodity,1000.0,44,0.005,5.0,44000,0.47,0.45,https://www.cmegroup.com/markets/metals/precious/micro-silver.contractSpecs.html
+NYMEX,MCL,Micro WTI Crude Oil,commodity,100.0,65,0.01,1.0,6500,0.47,0.45,https://www.cmegroup.com/markets/energy/crude-oil/micro-wti.contractSpecs.html
+NYMEX,MNG (verify),Micro Henry Hub Natural Gas -- NOTE: CME's micro nat-gas ticker should be verified directly (commonly cited as MNG or via M-suite); treat with caution,commodity,2500.0,3.2,0.005,12.5,8000.0,0.47,0.45,https://www.cmegroup.com/markets/energy/natural-gas/micro-henry-hub-natural-gas.contractSpecs.html (confirm exact symbol before use)
+Eurex,FDXM,Mini-DAX,equity_index,5.0,24000,0.5,2.5,127200.0,,,https://www.eurex.com/ex-en/find/contracts (Mini-DAX Futures FDXM contract specs); IBKR does provide Eurex access but confirm CAD-account routing/fees directly
+Eurex,FESX (mini)/FSXE (micro),EURO STOXX 50 mini / micro futures,equity_index,10.0,5400,1.0,10.0,57240.0,,,https://www.eurex.com/ex-en/find/contracts (EURO STOXX 50 Index Futures family incl. Micro variant FSXE)
+MX (Montreal Exchange),CGB,10-Year Government of Canada Bond futures,gov_bond,1000.0,100.0,0.01,10.0,100000,,,"https://www.m-x.ca/en/markets/interest-rate-derivatives/cgb ; CAD100,000 nominal face value per contract"
+MX (Montreal Exchange),SXF,S&P/TSX 60 Index Standard futures,equity_index,200.0,1450,0.1,20.0,290000,,,https://www.m-x.ca/en/markets/equity-index-derivatives/sxf (SXF contract multiplier CAD200 x index)
+MX (Montreal Exchange),SXM,S&P/TSX 60 Index Mini futures,equity_index,50.0,1450,0.1,5.0,72500,,,"https://www.m-x.ca/en/markets/equity-index-derivatives/sxm (SXM = 1/4 size of SXF, CAD50 x index)"

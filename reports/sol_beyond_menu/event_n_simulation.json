@@ -1,0 +1,24 @@
+{
+  "paths": 40000,
+  "seed": 20260926,
+  "null": "zero mean Gaussian, 19 independent clusters of eight events, within-cluster ICC 0.35",
+  "event_count": 152,
+  "daily_effective_n_proxy": 2964.8634,
+  "event_design_effect": 3.4499999999999997,
+  "event_effective_n_oracle": 44.05797101449276,
+  "median_estimated_effective_n": 43.9258147657863,
+  "alpha": 0.05,
+  "false_pass_counts": {
+    "uncapped_daily_N_as_events": 16805,
+    "event_count_only_cap": 7596,
+    "estimated_event_cluster_cap": 2252,
+    "event_count_and_cluster_cap": 2045
+  },
+  "false_pass_rates": {
+    "uncapped_daily_N_as_events": 0.420125,
+    "event_count_only_cap": 0.1899,
+    "estimated_event_cluster_cap": 0.0563,
+    "event_count_and_cluster_cap": 0.051125
+  },
+  "note": "This demonstrates misuse of N in an event t; actual A4 calibrated p is independent of N and is not represented by the uncapped comparator."
+}

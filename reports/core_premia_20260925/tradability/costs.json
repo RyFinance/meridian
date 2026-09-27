@@ -1,0 +1,70 @@
+{
+  "generated": "2026-09-26",
+  "disclaimer": "Synthetic feasibility/cost arithmetic only. Not financial or tax advice. No strategy returns.",
+  "cad_usd_conversion": {
+    "norberts_gambit": {
+      "method": "Buy DLR.TO (CAD) then journal/convert to DLR.U.TO (USD) at broker, or reverse",
+      "typical_all_in_cost_pct": 0.15,
+      "note": "Bid-ask spread on DLR is typically ~1 cent/share; on a CAD 20,000 conversion this is ~CAD 30 round-trip (~0.15%) at a zero-commission broker plus a flat journaling fee at brokers that charge one (e.g. ~CAD 9.95 at Questrade); IBKR does not require manual journaling for DLR and the cost is essentially just the bid-ask spread + commission.",
+      "source": "https://www.questrade.com/learning/investing-basics/norberts-gambit-currency-conversion ; https://moneyengineer.ca/2025/08/21/tracking-norberts-gambit-costs-with-questrade/"
+    },
+    "ibkr_fx_conversion": {
+      "typical_all_in_cost_pct": 0.03,
+      "note": "IBKR's IdealPro FX conversion spread is typically ~0.5-1 pip on major pairs (roughly 0.01-0.03%) plus a small minimum commission -- the cheapest widely-available option for a Canadian retail account, materially cheaper than Norbert's Gambit for accounts already at IBKR.",
+      "source": "https://www.interactivebrokers.com/en/trading/forex.php (IBKR FX conversion / IdealPro spread disclosures)"
+    },
+    "bank_spread": {
+      "typical_all_in_cost_pct": 2.5,
+      "note": "Retail bank foreign-exchange counter/telephone conversion typically embeds a 2-3% spread vs. interbank rate.",
+      "source": "qualitative industry knowledge; compare posted bank FX rates vs. Bank of Canada noon rate on any given day"
+    },
+    "currency_exposure_note": "Every USD-listed ETF (e.g. IVV, TLT, GLD) leaves the Canadian investor with unhedged USD exposure on top of the strategy's own FX-market bets, unless a CAD-hedged share class is used. This compounds with the book's own systematic FX carry/trend positions and should be tracked as a separate FX exposure line, not netted informally against strategy signals."
+  },
+  "account_types": [
+    {
+      "topic": "TFSA - futures/margin",
+      "finding": "TFSAs are not eligible for margin and short selling is not permitted. Futures contracts where the holder's risk of loss can exceed the initial cost are not qualified investments in a TFSA (or RRSP/RRIF/RESP/RDSP/FHSA). Holding a non-qualified investment triggers a 50% tax on fair market value under ITA s.207.01/207.04, borne by the account holder.",
+      "source": "CRA Income Tax Folio S3-F10-C1 (Qualified Investments) and S3-F10-C2 (Prohibited Investments): https://www.canada.ca/en/revenue-agency/services/tax/technical-information/income-tax/income-tax-folios-index/series-3-property-investments-savings-plans/series-3-property-investments-savings-plan-folio-10-registered-plans-individuals/income-tax-folio-s3-f10-c1-qualified-investments-rrsps-resps-rrifs-rdsps-tfsas.html"
+    },
+    {
+      "topic": "RRSP - futures/margin/shorting",
+      "finding": "Same qualified-investment rules apply to RRSP as TFSA: leveraged futures positions and short selling are generally not permitted inside an RRSP at retail brokers, and naked futures are not a qualified investment. A long-only, fully-funded ETF sleeve (no margin, no short) IS permitted in both TFSA and RRSP.",
+      "source": "Same CRA folios as above; broker-level confirmation e.g. Questrade/RBC Direct Investing account type pages (https://www.questrade.com/learning/accounts-taxes/tfsa-and-margin-accounts)"
+    },
+    {
+      "topic": "RRSP US-dividend withholding treaty exemption vs TFSA",
+      "finding": "Under Article XXI of the Canada-US tax treaty, US-source dividends paid into an RRSP/RRIF are exempt from the normal 15% US withholding tax. This exemption does NOT extend to a TFSA (or RESP/RDSP): US dividends held in a TFSA are subject to the full 15% US withholding, non-recoverable because a TFSA is not recognized as a pension vehicle under the treaty. This matters directly for a Core Premia Book that holds long equity-index and bond ETFs with US dividend/coupon distributions -- RRSP is the tax-preferred registered wrapper for the long-only US-listed ETF sleeve, TFSA is not.",
+      "source": "CRA / IRS treaty guidance, summarized at e.g. https://www.taxtips.ca/rrsp/qualified-investments-rrsp-rrif-resp-rdsp-tfsa.htm ; primary source Canada-US Tax Convention Article XXI(2)"
+    },
+    {
+      "topic": "Margin account requirements for futures and shorting (IIROC/CIRO)",
+      "finding": "A prospective futures trader must open a separate futures-approved margin account, complete a futures trading application, pass KYC/suitability review, and sign futures-specific risk-disclosure agreements. Margin for futures at IIROC/CIRO-regulated dealers follows the 'greatest of' methodology under Dealer Member Rule/Form 1 s.5790 (SPAN or exchange-minimum margin, whichever the dealer's model requires); brokers commonly require CAD 5,000-25,000+ minimum futures account equity in practice (broker-specific, not an IIROC minimum) and demonstrated experience/net worth thresholds for approval. Short selling equities/ETFs requires a standard margin account (not cash/registered) and is subject to CIRO UMIR short-sale marking and locate/borrow rules.",
+      "source": "CIRO (formerly IIROC) Rules s.5790 futures margin framework; CIRO UMIR short-sale guidance: https://www.ciro.ca/newsroom/publications/guidance-umir-requirements-related-short-selling-and-failed-trades ; broker futures-account minimums are broker-specific (verify with IBKR Canada directly, not an IIROC/CIRO rule)"
+    }
+  ],
+  "taxes_not_advice": "NOT TAX ADVICE -- consult a qualified Canadian tax professional before implementing. In a non-registered (taxable) account: (1) Gains/losses on exchange-traded futures held by an individual are generally reported as capital gains/losses under ITA s.9/s.39, with an election available under s.39(4) to have ALL futures/commodity transactions treated on capital account consistently (once elected, binding for all subsequent years). (2) FX gains/losses on personal, non-business foreign-currency transactions are capital in nature, subject to the CAD 200 de minimis exemption (s.39(1.1)); FX conversion via Norbert's Gambit (buying/selling DLR/DLR.U) itself is a securities trade, not a currency trade, so its own gain/loss is capital in nature. (3) The CRA may recharacterize an active/frequent trading pattern (high turnover, short holding periods, use of leverage, time devoted, specialized knowledge) as carrying on a business, converting gains to fully-taxable business income (and losses to fully-deductible business losses) rather than capital gains/losses (50% inclusion). A systematic trend/carry book with monthly-or-faster rebalancing across 40-60 futures markets is a plausible candidate for business-income characterization -- this is a facts-and-circumstances determination the CRA makes, not a bright-line rule, and the s.39(4) capital-treatment election does NOT protect a trader whose overall conduct looks like a business. Get a professional opinion before implementation.",
+  "rounding_error_summary": {
+    "25000": {
+      "n_bucket_rows": 12,
+      "fraction_unholdable": 1.0,
+      "mean_abs_risk_deviation_pct": 100.0
+    },
+    "100000": {
+      "n_bucket_rows": 12,
+      "fraction_unholdable": 0.75,
+      "mean_abs_risk_deviation_pct": 81.0
+    },
+    "250000": {
+      "n_bucket_rows": 12,
+      "fraction_unholdable": 0.417,
+      "mean_abs_risk_deviation_pct": 68.1
+    }
+  },
+  "aum_class_legend": {
+    "mega": ">$10B",
+    "large": "$1B-$10B",
+    "mid": "$100M-$1B",
+    "small": "$10M-$100M",
+    "micro": "<$10M (closure/liquidity risk)"
+  }
+}

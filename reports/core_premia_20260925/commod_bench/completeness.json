@@ -1,0 +1,175 @@
+{
+  "endpoint": "yfinance (Ticker.history, period=max, auto_adjust=False)",
+  "retrieval_started_utc": "2026-09-26T07:20:11.062856+00:00",
+  "retrieval_finished_utc": "2026-09-26T07:20:30.488422+00:00",
+  "expected_instrument_count": 28,
+  "received_instrument_count": 24,
+  "unavailable_tickers": [
+    "UHN",
+    "JJC_ipath",
+    "SGG_ipath",
+    "COW_ipath"
+  ],
+  "date_range_by_ticker": {
+    "USO": {
+      "first": "2006-04-10",
+      "last": "2026-09-25",
+      "rows": 5148
+    },
+    "UNG": {
+      "first": "2007-04-18",
+      "last": "2026-09-25",
+      "rows": 4892
+    },
+    "UGA": {
+      "first": "2008-02-28",
+      "last": "2026-09-25",
+      "rows": 4674
+    },
+    "UHN": {
+      "first": null,
+      "last": null,
+      "rows": 0
+    },
+    "BNO": {
+      "first": "2010-06-02",
+      "last": "2026-09-25",
+      "rows": 4105
+    },
+    "DBO": {
+      "first": "2007-01-05",
+      "last": "2026-09-25",
+      "rows": 4962
+    },
+    "DBE": {
+      "first": "2007-01-05",
+      "last": "2026-09-25",
+      "rows": 4962
+    },
+    "UCO": {
+      "first": "2008-11-25",
+      "last": "2026-09-25",
+      "rows": 4485
+    },
+    "SCO": {
+      "first": "2008-11-25",
+      "last": "2026-09-25",
+      "rows": 4485
+    },
+    "GLD": {
+      "first": "2004-11-18",
+      "last": "2026-09-25",
+      "rows": 5497
+    },
+    "SLV": {
+      "first": "2006-04-28",
+      "last": "2026-09-25",
+      "rows": 5135
+    },
+    "PALL": {
+      "first": "2010-01-08",
+      "last": "2026-09-25",
+      "rows": 4204
+    },
+    "PPLT": {
+      "first": "2010-01-08",
+      "last": "2026-09-25",
+      "rows": 4204
+    },
+    "SIVR": {
+      "first": "2009-07-24",
+      "last": "2026-09-25",
+      "rows": 4320
+    },
+    "DBB": {
+      "first": "2007-01-05",
+      "last": "2026-09-25",
+      "rows": 4962
+    },
+    "CPER": {
+      "first": "2011-11-15",
+      "last": "2026-09-25",
+      "rows": 3736
+    },
+    "JJC_ipath": {
+      "first": null,
+      "last": null,
+      "rows": 0
+    },
+    "DBA": {
+      "first": "2007-01-05",
+      "last": "2026-09-25",
+      "rows": 4962
+    },
+    "CORN": {
+      "first": "2010-06-09",
+      "last": "2026-09-25",
+      "rows": 4100
+    },
+    "WEAT": {
+      "first": "2011-09-19",
+      "last": "2026-09-25",
+      "rows": 3777
+    },
+    "SOYB": {
+      "first": "2011-09-19",
+      "last": "2026-09-25",
+      "rows": 3777
+    },
+    "SGG_ipath": {
+      "first": null,
+      "last": null,
+      "rows": 0
+    },
+    "JO_ipath": {
+      "first": "2023-06-08",
+      "last": "2023-06-08",
+      "rows": 1
+    },
+    "COW_ipath": {
+      "first": null,
+      "last": null,
+      "rows": 0
+    },
+    "DBC": {
+      "first": "2006-02-06",
+      "last": "2026-09-25",
+      "rows": 5192
+    },
+    "GSG": {
+      "first": "2006-07-21",
+      "last": "2026-09-25",
+      "rows": 5077
+    },
+    "USL": {
+      "first": "2007-12-06",
+      "last": "2026-09-25",
+      "rows": 4730
+    },
+    "UNL": {
+      "first": "2010-01-04",
+      "last": "2026-09-25",
+      "rows": 4208
+    }
+  },
+  "failures": [
+    {
+      "ticker": "UHN",
+      "error": "empty_history"
+    },
+    {
+      "ticker": "JJC_ipath",
+      "error": "empty_history"
+    },
+    {
+      "ticker": "SGG_ipath",
+      "error": "empty_history"
+    },
+    {
+      "ticker": "COW_ipath",
+      "error": "empty_history"
+    }
+  ],
+  "retries": "yfinance internal default (no explicit retry loop added; single attempt per ticker, failures recorded as unavailable rather than silently dropped)",
+  "notes": "Delisted/closed iPath ETNs (JJC, SGG, JO, COW and similar JJ*-series products) are included in the requested universe; availability recorded per-ticker below. yfinance symbol used strips any internal '_suffix' disambiguator."
+}

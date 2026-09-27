@@ -1,0 +1,24 @@
+nis_f12_repo_quarter_end_gsib  [event_study]  dev 4.20y + val 4.20y
+  raw obs (total) 34 events;  D_time 1.000  deff_cross 1.000  ->  effective obs 33.6
+  SE(Sharpe) dev 0.488, val 0.488;  SE(mean, mean net CAR per event (return units)) total 0.0006901
+  dev gate threshold 0.956 (binding: p_lt_alpha);  val threshold 0.956 (binding: p_lt_alpha);  proposed val threshold 0.956
+  MDE Sharpe (80%): single test 0.97, dev gate 1.37, joint current 1.57, joint proposed 1.57
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.002   0.005   0.005   0.000   | 0.005  0.000
+  zero_net_null             0.00  0.025   0.025   0.025   0.001   | 0.025  0.001
+  structural_leak           0.05  0.035   0.032   0.032   0.001   | 0.032  0.001
+  S=0.3                     0.30  0.138   0.089   0.089   0.008   | 0.089  0.008
+  S=0.5                     0.50  0.305   0.175   0.175   0.031   | 0.175  0.031
+  S=0.7                     0.70  0.527   0.300   0.300   0.090   | 0.300  0.090
+  S=1.0                     1.00  0.826   0.536   0.536   0.287   | 0.536  0.287
+  implied_by_primitives     0.20  0.084   0.061   0.061   0.004   | 0.061  0.004
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   87.21     87.21             inf              inf
+                     0.50   31.40     31.40           82.47            82.47
+                     0.70   16.02     16.02           42.08            42.08
+                     1.00    7.85      7.85           20.63            20.63
+                     0.20  196.23    196.23             inf              inf
+  VERDICT (current gates): INCAPABLE   [joint@0.7 = 0.090, false-pass = 0.0006];  with proposed val gate: INCAPABLE
+  scenarios: label | n_eff | implied net S | joint(cur) | joint(prop) | yrs80 single | yrs80 joint(prop) | MDE natural (joint prop)
+   GCF 2005+ (10.5+10.5y)                       4 | 0.2 | 0.00898 | 0.00898 | 196 | inf | 0.00208
+   gross 20 bp                                  4 | 0.95 | 0.245 | 0.245 | 8.7 | 22.9 | 0.00324

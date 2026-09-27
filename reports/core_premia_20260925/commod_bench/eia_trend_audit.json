@@ -1,0 +1,348 @@
+{
+  "generated_utc": "2026-09-26T07:22:06.991554+00:00",
+  "commodities": {
+    "crude_oil_wti_cushing": {
+      "n_contract_columns": 4,
+      "continuity_by_contract": {
+        "c1": {
+          "n_obs": 10183,
+          "first_date": "1983-04-04",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 3,
+          "max_gap_calendar_days": 6,
+          "n_nonpositive_or_zero": 1
+        },
+        "c2": {
+          "n_obs": 9594,
+          "first_date": "1985-01-02",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 11,
+          "max_gap_calendar_days": 7,
+          "n_nonpositive_or_zero": 0
+        },
+        "c3": {
+          "n_obs": 10219,
+          "first_date": "1983-03-30",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 4,
+          "max_gap_calendar_days": 7,
+          "n_nonpositive_or_zero": 0
+        },
+        "c4": {
+          "n_obs": 9551,
+          "first_date": "1985-01-02",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 14,
+          "max_gap_calendar_days": 7,
+          "n_nonpositive_or_zero": 0
+        }
+      },
+      "discontinued_2024_04_05": true,
+      "artifact_path": "data/core_premia/commod_bench/eia_audit/crude_oil_wti_cushing.parquet"
+    },
+    "gasoline_conventional_ny_harbor": {
+      "n_contract_columns": 4,
+      "continuity_by_contract": {
+        "c1": {
+          "n_obs": 4845,
+          "first_date": "1985-01-02",
+          "last_date": "2006-12-29",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 35,
+          "max_gap_calendar_days": 9,
+          "n_nonpositive_or_zero": 0
+        },
+        "c2": {
+          "n_obs": 2704,
+          "first_date": "1994-01-20",
+          "last_date": "2006-11-29",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 35,
+          "max_gap_calendar_days": 11,
+          "n_nonpositive_or_zero": 0
+        },
+        "c3": {
+          "n_obs": 4831,
+          "first_date": "1984-12-03",
+          "last_date": "2006-10-31",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 33,
+          "max_gap_calendar_days": 12,
+          "n_nonpositive_or_zero": 0
+        },
+        "c4": {
+          "n_obs": 2685,
+          "first_date": "1994-01-28",
+          "last_date": "2006-09-29",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 33,
+          "max_gap_calendar_days": 12,
+          "n_nonpositive_or_zero": 0
+        }
+      },
+      "discontinued_2024_04_05": false,
+      "artifact_path": "data/core_premia/commod_bench/eia_audit/gasoline_conventional_ny_harbor.parquet"
+    },
+    "gasoline_rbob_ny_harbor": {
+      "n_contract_columns": 4,
+      "continuity_by_contract": {
+        "c1": {
+          "n_obs": 4609,
+          "first_date": "2005-10-03",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 0,
+          "max_gap_calendar_days": 5,
+          "n_nonpositive_or_zero": 0
+        },
+        "c2": {
+          "n_obs": 4618,
+          "first_date": "2005-10-03",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 0,
+          "max_gap_calendar_days": 5,
+          "n_nonpositive_or_zero": 0
+        },
+        "c3": {
+          "n_obs": 4625,
+          "first_date": "2005-10-03",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 2,
+          "max_gap_calendar_days": 6,
+          "n_nonpositive_or_zero": 0
+        },
+        "c4": {
+          "n_obs": 4623,
+          "first_date": "2005-10-03",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 1,
+          "max_gap_calendar_days": 6,
+          "n_nonpositive_or_zero": 0
+        }
+      },
+      "discontinued_2024_04_05": true,
+      "artifact_path": "data/core_premia/commod_bench/eia_audit/gasoline_rbob_ny_harbor.parquet"
+    },
+    "heating_oil_no2_ny_harbor": {
+      "n_contract_columns": 4,
+      "continuity_by_contract": {
+        "c1": {
+          "n_obs": 9894,
+          "first_date": "1980-01-02",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 90,
+          "max_gap_calendar_days": 15,
+          "n_nonpositive_or_zero": 0
+        },
+        "c2": {
+          "n_obs": 6746,
+          "first_date": "1994-02-02",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 74,
+          "max_gap_calendar_days": 15,
+          "n_nonpositive_or_zero": 0
+        },
+        "c3": {
+          "n_obs": 10199,
+          "first_date": "1980-01-02",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 52,
+          "max_gap_calendar_days": 14,
+          "n_nonpositive_or_zero": 0
+        },
+        "c4": {
+          "n_obs": 6957,
+          "first_date": "1994-01-14",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 45,
+          "max_gap_calendar_days": 11,
+          "n_nonpositive_or_zero": 0
+        }
+      },
+      "discontinued_2024_04_05": true,
+      "artifact_path": "data/core_premia/commod_bench/eia_audit/heating_oil_no2_ny_harbor.parquet"
+    },
+    "propane_mont_belvieu": {
+      "n_contract_columns": 4,
+      "continuity_by_contract": {
+        "c1": {
+          "n_obs": 3361,
+          "first_date": "1993-12-21",
+          "last_date": "2009-09-18",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 39,
+          "max_gap_calendar_days": 13,
+          "n_nonpositive_or_zero": 0
+        },
+        "c2": {
+          "n_obs": 3183,
+          "first_date": "1994-02-02",
+          "last_date": "2009-09-18",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 90,
+          "max_gap_calendar_days": 30,
+          "n_nonpositive_or_zero": 0
+        },
+        "c3": {
+          "n_obs": 3280,
+          "first_date": "1994-03-02",
+          "last_date": "2009-09-18",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 59,
+          "max_gap_calendar_days": 41,
+          "n_nonpositive_or_zero": 0
+        },
+        "c4": {
+          "n_obs": 3235,
+          "first_date": "1993-12-21",
+          "last_date": "2009-09-18",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 76,
+          "max_gap_calendar_days": 29,
+          "n_nonpositive_or_zero": 0
+        }
+      },
+      "discontinued_2024_04_05": false,
+      "artifact_path": "data/core_premia/commod_bench/eia_audit/propane_mont_belvieu.parquet"
+    },
+    "natural_gas_henry_hub_spot": {
+      "n_contract_columns": 1,
+      "continuity_by_contract": {
+        "c1": {
+          "n_obs": 5692,
+          "first_date": "1997-01-07",
+          "last_date": "2026-09-22",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 232,
+          "max_gap_calendar_days": 41,
+          "n_nonpositive_or_zero": 0
+        }
+      },
+      "discontinued_2024_04_05": false,
+      "artifact_path": "data/core_premia/commod_bench/eia_audit/natural_gas_henry_hub_spot.parquet"
+    },
+    "natural_gas_henry_hub_futures": {
+      "n_contract_columns": 4,
+      "continuity_by_contract": {
+        "c1": {
+          "n_obs": 7496,
+          "first_date": "1994-01-13",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 3,
+          "max_gap_calendar_days": 7,
+          "n_nonpositive_or_zero": 0
+        },
+        "c2": {
+          "n_obs": 7500,
+          "first_date": "1994-01-12",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 3,
+          "max_gap_calendar_days": 7,
+          "n_nonpositive_or_zero": 0
+        },
+        "c3": {
+          "n_obs": 7452,
+          "first_date": "1994-01-19",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 7,
+          "max_gap_calendar_days": 8,
+          "n_nonpositive_or_zero": 0
+        },
+        "c4": {
+          "n_obs": 7453,
+          "first_date": "1993-12-20",
+          "last_date": "2024-04-05",
+          "n_duplicate_dates": 0,
+          "n_gaps_gt_5_calendar_days": 7,
+          "max_gap_calendar_days": 7,
+          "n_nonpositive_or_zero": 0
+        }
+      },
+      "discontinued_2024_04_05": true,
+      "artifact_path": "data/core_premia/commod_bench/eia_audit/natural_gas_henry_hub_futures.parquet"
+    }
+  },
+  "roll_handling": {
+    "mechanism": "EIA's 'Contract 1' label is itself auto-rolling: it always denotes the nearest unexpired delivery month as of that trading date, per EIA's TblDefs page. Reading the c1 column day-over-day therefore yields a paper-rolled, zero-slippage front-month series with the delivery-month switch occurring invisibly at each contract's calendar expiry -- no explicit roll-date logic is needed on our side, and no look-ahead is introduced because c1(t) only reflects what NYMEX listed as the nearest contract as of date t.",
+    "expiry_rules_source": "EIA TblDefs pages (pet_pri_fut_tbldef2.asp and NG equivalent), reproduced in reports/eia_futures/REPORT.md sec 2",
+    "look_ahead_risk": "None identified in the c1 construction itself. A caveat: this produces an idealized (cost-free, slippage-free) roll -- it is not tradable as-is (see limitations)."
+  },
+  "synthetic_error_vs_etf_2006_2016": {
+    "crude_oil_vs_USO": {
+      "n_common_days": 2677,
+      "window": [
+        "2006-04-10",
+        "2016-12-31"
+      ],
+      "corr": 0.9029532304198553,
+      "tracking_error_daily_std": 0.010619377769227417,
+      "tracking_error_annualized": 0.16857739593374166,
+      "mean_daily_diff": 0.000549655446703117,
+      "eia_ann_vol": 0.39216965639191587,
+      "etf_ann_vol": 0.3506576881780223
+    },
+    "natural_gas_vs_UNG": {
+      "n_common_days": 2432,
+      "window": [
+        "2006-04-10",
+        "2016-12-31"
+      ],
+      "corr": 0.9004498316279111,
+      "tracking_error_daily_std": 0.01347964979092509,
+      "tracking_error_annualized": 0.21398280664218958,
+      "mean_daily_diff": 0.0012485653794795952,
+      "eia_ann_vol": 0.49042469635243346,
+      "etf_ann_vol": 0.4252831565850397
+    }
+  },
+  "known_events": {
+    "2020_04_20_negative_wti": {
+      "n_nonpositive_prints_in_c1": 1,
+      "dates": [
+        "2020-04-20"
+      ],
+      "note": "Matches the publicly documented 2020-04-20 negative WTI May-contract settlement (-$37.63); a genuine market event captured faithfully by EIA, not a parsing or data-quality defect. USO itself breached NAV rules and reverse-split around this date (see commodity_universe.csv)."
+    }
+  },
+  "heating_oil_ulsd_spec_change": {
+    "flag": "NYMEX heating-oil contract spec change (contextual, not read from price series)",
+    "detail": "The NYMEX No. 2 Heating Oil futures contract's deliverable grade was changed to ULSD (ultra-low-sulfur diesel, <=15ppm sulfur) around 2013 in stages (NY Harbor ULSD became the deliverable spec); EIA's own series metadata (sourcekey EER_EPD2F_PE1..4_Y35NY_DPG, description 'No. 2 Heating Oil') does not flag this spec change anywhere in the workbook. This is public CME/NYMEX contract-history knowledge, not something inferred from price levels here.",
+    "trend_use_implication": "A trend model spanning the spec-change date would be tracking a series whose underlying deliverable commodity changed mid-sample without a documented break; flag as a discontinuity risk for heating-oil specifically. Irrelevant to crude oil and natural gas, which had no analogous spec change in this window."
+  },
+  "publication_lag": {
+    "measured": false,
+    "reason": "The static XLS archive carries no per-row publish timestamp. The workbook's 'Contents' sheet shows a weekly release cadence (Release Date / Next Release Date fields) as of the 2026-09-25 pull, but this describes CURRENT cadence, not historical trading-date-to-publish-date lag across 1983-2024.",
+    "recommendation": "To measure historical lag, cross Wayback Machine snapshots of the EIA page against trading dates -- out of scope for this audit (would require external web-archive fetches beyond the quarantine's own files)."
+  },
+  "discontinuation": {
+    "date": "2024-04-05",
+    "detail": "EIA stopped publishing the entire PET/NG futures-price table after this date ('Futures prices after April 5, 2024, are not available' -- EIA's own header). Hard ceiling on usable history regardless of window choice."
+  },
+  "verdict": {
+    "clean_for_trend_use": true,
+    "clean_commodities": [
+      "crude_oil_wti",
+      "natural_gas_henry_hub"
+    ],
+    "scope_caveat": "Clean for CONTRACT-1 (front-month) and CONTRACT-4 (~3-4mo deferred) continuity for crude oil and natural gas only, through 2024-04-05. NOT clean/usable for heating oil, gasoline (conventional), or propane C2-C4 given the coverage gaps documented in reports/eia_futures/REPORT.md sec 3 (65-85% fill pre-2006, missing before ~1994). NOT a 12-month strip replication -- only a ~3-4 month front-curve slope is constructible; not equivalent to USL/UNL/USO's post-2020 basket.",
+    "detail_lines": [
+      "crude_oil_wti: dup_dates=0, nonpositive=1 (unexplained=0), gaps>5d=3, synthetic_TE_ann_vs_etf=0.16857739593374166",
+      "natural_gas_henry_hub: dup_dates=0, nonpositive=0 (unexplained=0), gaps>5d=3, synthetic_TE_ann_vs_etf=0.21398280664218958"
+    ],
+    "recommended_use": "Suitable as a supplementary front-curve TREND input (contract-1 daily log-return series) for crude oil and natural gas, 1983/1994-2024-04-05, with the explicit caveat that it is a cost-free/slippage-free idealized roll (see roll_handling), not a tradable series, and stops in April 2024. NOT suitable, on its own, for carry/curve-slope work beyond a narrow C1-C4 spread (see carry assessment)."
+  }
+}

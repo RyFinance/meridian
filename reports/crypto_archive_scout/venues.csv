@@ -1,0 +1,74 @@
+venue,field,value
+bybit,access,"""keyless (v5 public API + public.bybit.com static archives)"""
+bybit,instruments_status,200
+bybit,active_linear_perp_count,885
+bybit,luna_present_in_active_list,true
+bybit,static_archive_trading_status,200
+bybit,luna_static_archive_status,200
+bybit,luna_static_archive_present,true
+bybit,luna_funding_api_status,200
+bybit,luna_funding_api_count_returned,5
+bybit,luna_funding_api_sample_ts_range_utc,"[""2022-05-30T16:00:00+00:00"", ""2022-06-01T00:00:00+00:00""]"
+bybit,btc_kline_status,200
+bybit,btc_kline_rows_from_2018_start_request,5
+bybit,notes,"""v5 API: instruments-info, funding/history, kline, mark-price-kline, index-price-kline all public/keyless. public.bybit.com hosts daily trading (trade) and kline zip archives per symbol going back to each symbol's listing; folder-per-symbol layout persists for delisted symbols (tested LUNAUSDT). Historical funding via v5 API is generally capped to a limited lookback window per call (paginated by startTime/endTime, cursor); full history reconstruction requires iterating."""
+okx,access,"""keyless (static historical downloads at okx.com + public REST /api/v5/public,market)"""
+okx,instruments_status,200
+okx,active_swap_count,492
+okx,funding_history_status,200
+okx,funding_history_rows_returned,5
+okx,funding_history_sample_ts_range_utc,"[""2026-09-24T08:00:00+00:00"", ""2026-09-25T16:00:00+00:00""]"
+okx,luna_instrument_status,200
+okx,luna_instrument_active_list_hit,true
+okx,static_download_index_status,404
+okx,notes,"""OKX REST public endpoints (market/instruments, public/funding-rate-history, market/history-candles, market/index-candles, market/mark-price-candles) are keyless. funding-rate-history and funding-rate-history endpoints only return a limited recent window per call and OKX does not appear to expose a full historical bulk-download portal equivalent to Binance's data.vision for perp klines; OKX also purges/renames instruments on delisting so historical delisted instIds may 404 on the live instruments endpoint (survivorship risk) even though history endpoints can sometimes still be queried by instId for a bounded lookback."""
+deribit,access,"""keyless (public JSON-RPC/REST API at deribit.com; history.deribit.com UI)"""
+deribit,instruments_expired_status,200
+deribit,btc_expired_futures_count,1
+deribit,btc_expired_futures_earliest_creation_utc,"""2025-09-26T08:00:21+00:00"""
+deribit,funding_history_status,200
+deribit,funding_history_rows_early_2016_window,0
+deribit,funding_history_recent_rows,3
+deribit,funding_settlement_interval_hours_observed,"""8"""
+deribit,future_combo_status,200
+deribit,notes,"""Deribit public JSON-RPC API (get_instruments with expired=true, get_funding_rate_history, get_tradingview_chart_data for klines, get_index_price, get_historical_volatility) is fully keyless and retains expired/delisted instruments in get_instruments(expired=true), including creation/expiration timestamps -- good delisting discoverability. Deribit is primarily an options/futures venue; BTC-PERPETUAL and ETH-PERPETUAL are the main perps (funding settles hourly, not 8h). history.deribit.com is a human-facing statistics UI, not a bulk file archive."""
+bitmex,access,"""keyless (public REST /api/v1, plus public S3 trade/quote archives at s3.amazonaws.com/public.bitmex.com)"""
+bitmex,instrument_status,200
+bitmex,settled_instruments_status,200
+bitmex,settled_instruments_sample_count,5
+bitmex,settled_instruments_symbols_present,true
+bitmex,funding_status,200
+bitmex,funding_rows_returned,5
+bitmex,funding_sample_ts_range_utc,"[""2026-09-15T04:00:00.000Z"", ""2026-09-16T12:00:00.000Z""]"
+bitmex,s3_trade_archive_earliest_status,200
+bitmex,s3_trade_archive_earliest_present,true
+bitmex,notes,"""BitMEX public REST API (instrument, funding, trade, quote, orderBookL2, instrument?filter=state:Settled) is keyless with no auth required for read-only market data. Public S3 archive s3.amazonaws.com/public.bitmex.com/data/{trade,quote}/YYYYMMDD.csv.gz goes back to 2014-11-22 (BitMEX launch) and is a true survivor-free tick-level daily archive since it is organized by calendar day, not by currently-listed symbol. instrument?filter={state:Settled/Unlisted} enumerates delisted/expired contracts. BitMEX historically listed dated futures (e.g. XBTZ22) and a small number of altcoin perps; LUNA/FTT were never listed on BitMEX (verify via instrument search) so those exact symbols are not a valid survivorship test here -- use BitMEX's own delisted symbols (e.g. XRPZ22-style dated futures, or ADAH19) instead."""
+bitmex,luna_symbol_found_in_instrument_lookup,true
+kraken_futures,access,"""keyless (public REST at futures.kraken.com/derivatives/api/v3)"""
+kraken_futures,instruments_status,200
+kraken_futures,active_instrument_count,300
+kraken_futures,active_perp_like_count,288
+kraken_futures,luna_present_in_active_instruments,true
+kraken_futures,funding_history_status,200
+kraken_futures,funding_history_rows,8788
+kraken_futures,funding_history_ts_range_utc,"[""2025-09-24T08:00:00Z"", ""2026-09-25T19:00:00Z""]"
+kraken_futures,candles_probe_status,200
+kraken_futures,delisted_luna_history_probe_status,200
+kraken_futures,notes,"""Kraken Futures public REST (instruments, historicalfundingrates, api/charts candles, api/history/v3/market-history for trades) is keyless. The live /instruments endpoint only lists currently-tradeable contracts (no obvious flag to list delisted ones), so survivorship must be assessed via the separate history/market-history endpoints per known symbol or via Kraken's public download page (support.kraken.com futures historical data CSVs), not from a single enumerable delisted-list endpoint."""
+hyperliquid,access,"""keyless (public info API POST at api.hyperliquid.xyz/info; historical fills via S3-backed node data)"""
+hyperliquid,meta_status,200
+hyperliquid,active_perp_count,234
+hyperliquid,luna_present_in_active_universe,false
+hyperliquid,funding_history_status,200
+hyperliquid,funding_history_rows_sample_window,4
+hyperliquid,funding_history_sample_ts_range_utc,"[""2023-05-25T08:00:00.374000+00:00"", ""2023-05-26T08:00:00.044000+00:00""]"
+hyperliquid,meta_and_asset_ctxs_status,200
+hyperliquid,notes,"""Hyperliquid /info POST endpoint (meta, fundingHistory, candleSnapshot, metaAndAssetCtxs) is keyless. Mainnet launched 2023-05, so there is no pre-2020 sample and no 2020-2022 sample at all; it cannot serve as a LUNA/FTX-era survivorship test. Delisted perps (Hyperliquid has delisted some low-volume perps) drop out of the 'meta' universe response, so a survivor-free perp list requires the historical asset-index mapping preserved in fundingHistory/candleSnapshot by coin name, not a single delisted-list endpoint. Node-level historical fills/L2 book data is distributed via a requester-pays AWS S3 bucket (hyperliquid-archive), not a free public HTTP index; out of scope for a keyless, no-account probe."""
+dydx_v4,access,"""keyless (public indexer REST API at indexer.dydx.trade)"""
+dydx_v4,markets_status,200
+dydx_v4,active_market_count,296
+dydx_v4,luna_present_in_active_markets,false
+dydx_v4,funding_history_status,404
+dydx_v4,funding_history_rows,0
+dydx_v4,candles_status,200
+dydx_v4,notes,"""dYdX v4 (Cosmos appchain, launched 2023-10) indexer REST API (perpetualMarkets, historicalFunding, candles, trades) is keyless. dYdX v3 (StarkEx L2, 2021-2023) used a different, now-deprecated API (api.dydx.exchange) that has been shut down following the v4 migration, so v3 history is not reliably queryable via a live keyless endpoint any more -- a gap for a pre-2023 dYdX sample. v4 cannot serve a 2020-2022 survivorship test (chain did not exist). Delisted v4 markets: perpetualMarkets response includes a 'status' field (ACTIVE/DELISTED/etc.) enabling in-band survivorship discovery per market."""

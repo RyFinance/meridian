@@ -1,0 +1,21 @@
+retro_tsy_month_end  [event_study]  dev 11.99y + val 11.63y
+  raw obs (total) 283 events;  D_time 1.400  deff_cross 1.000  ->  effective obs 202.5
+  SE(Sharpe) dev 0.342, val 0.347;  SE(mean, mean net CAR per event (return units)) total 0.0009347
+  dev gate threshold 0.520 (binding: sharpe_c_over_sqrtT);  val threshold 0.750 (binding: sharpe_abs);  proposed val threshold 0.571
+  MDE Sharpe (80%): single test 0.61, dev gate 0.81, joint current 1.09, joint proposed 0.98
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.002   0.008   0.001   0.000   | 0.006  0.000
+  zero_net_null             0.00  0.050   0.064   0.015   0.001   | 0.050  0.003
+  structural_leak           0.05  0.075   0.085   0.022   0.002   | 0.067  0.006
+  S=0.3                     0.30  0.340   0.260   0.097   0.025   | 0.218  0.057
+  S=0.5                     0.50  0.659   0.477   0.236   0.112   | 0.419  0.200
+  S=0.7                     0.70  0.891   0.701   0.443   0.310   | 0.645  0.452
+  S=1.0                     1.00  0.993   0.920   0.764   0.703   | 0.892  0.820
+  implied_by_primitives     0.68  0.872   0.677   0.417   0.282   | 0.621  0.420
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   96.18     99.18             inf           437.94
+                     0.50   34.63     31.27             inf            90.27
+                     0.70   17.67     15.96             inf            46.06
+                     1.00    8.66      7.82           36.39            22.58
+                     0.68   18.88     17.05             inf            49.22
+  VERDICT (current gates): MARGINAL   [joint@0.7 = 0.310, false-pass = 0.0010];  with proposed val gate: MARGINAL

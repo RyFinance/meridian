@@ -1,0 +1,63 @@
+{
+ "name": "nis_f8_liquidation_cascades",
+ "description": "Forced-liquidation cascades (Binance COIN-M liquidationSnapshot 2023-06..2024-10 only; OI-drop proxy from metrics 2020-09+) -> post-cascade reversal, event study.",
+ "assumptions": [
+  "events: cascade days, ~40/yr across majors",
+  "cascades hit all coins together: clusters mean 3, icc 0.5 (ASSUMPTION)",
+  "car_sd 4%, 3-day hold, gross 50 bp, cost 8 bp",
+  "windows: proxy 2020-09..2026-08 split 3.0/3.0; literal snapshot data would be 0.65/0.65y"
+ ],
+ "design": "event_study",
+ "params": {
+  "events_per_year": 40,
+  "car_sd": 0.04,
+  "hold_days": 3,
+  "icc": 0.5,
+  "concurrency": {
+   "model": "clusters",
+   "mean_size": 3,
+   "cv": 0.5
+  },
+  "portfolio_autocorr": 0.0,
+  "mean_car": 0.005,
+  "cost_per_event": 0.0008,
+  "days_per_year": 365,
+  "skew": 0.5,
+  "exkurt": 8.0
+ },
+ "windows": {
+  "dev_years": 3.0,
+  "val_years": 3.0
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.1,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 2,
+   "floor": 0.3
+  }
+ },
+ "scenarios": [
+  {
+   "label": "snapshot archive only (0.65+0.65y)",
+   "windows": {
+    "dev_years": 0.65,
+    "val_years": 0.65
+   }
+  },
+  {
+   "label": "gross 150 bp",
+   "params": {
+    "mean_car": 0.015
+   }
+  }
+ ]
+}

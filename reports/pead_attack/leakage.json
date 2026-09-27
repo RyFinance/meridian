@@ -1,0 +1,246 @@
+{
+ "L1_features": {
+  "training_rank_vintage_check": {
+   "A": {
+    "rank_file_value": 300348753.78270227,
+    "mean_close_x_volume_last63_to_2026_08_17": 300348753.78270227,
+    "window": [
+     "2026-05-15",
+     "2026-08-14"
+    ]
+   },
+   "AAPL": {
+    "rank_file_value": 17211985295.531937,
+    "mean_close_x_volume_last63_to_2026_08_17": 17135904185.535395,
+    "window": [
+     "2026-05-18",
+     "2026-08-17"
+    ]
+   },
+   "NVDA": {
+    "rank_file_value": 30636015049.432858,
+    "mean_close_x_volume_last63_to_2026_08_17": 30321320597.203712,
+    "window": [
+     "2026-05-18",
+     "2026-08-17"
+    ]
+   },
+   "PLTR": {
+    "rank_file_value": 5964843986.529807,
+    "mean_close_x_volume_last63_to_2026_08_17": 5962798053.002906,
+    "window": [
+     "2026-05-18",
+     "2026-08-17"
+    ]
+   },
+   "SNDK": {
+    "rank_file_value": 21758881877.448383,
+    "mean_close_x_volume_last63_to_2026_08_17": 21957422184.3035,
+    "window": [
+     "2026-05-18",
+     "2026-08-17"
+    ]
+   }
+  },
+  "training_feature_equals_2026_rank": true,
+  "serving_vs_training_rank_spearman": 0.9999538992397691,
+  "window_scorable_events": 4884,
+  "spearman_static_rank_vs_calibrated_proba": -0.003946234618479006,
+  "spearman_static_rank_vs_fwd20_raw": -0.03242526566168838,
+  "spearman_static_rank_vs_fwd20_signed": -0.07632405176766023,
+  "spearman_static_vs_pit_rank": 0.7971896836812737,
+  "spearman_rank_improvement_vs_fwd20_raw": 0.10142750145913686,
+  "fwd20_raw_by_rank_improvement_quintile_bps": {
+   "0": 42.8,
+   "1": 114.7,
+   "2": 223.1,
+   "3": 221.5,
+   "4": 282.7
+  },
+  "pit_rescore": {
+   "mean_abs_proba_change": 0.012225777591611678,
+   "kelly_pass_share_static": 0.3366093366093366,
+   "kelly_pass_share_pit": 0.3366093366093366,
+   "kelly_pass_flip_share": 0.04176904176904177
+  },
+  "pre_return_5d_train_vs_serve": {
+   "n_matched": 4884,
+   "pearson": 0.22046536223218305,
+   "train_feature_std": 0.06644607021179166,
+   "serve_feature_std": 0.04210649980848583
+  },
+  "training_5d_feature_includes_effective_day": true,
+  "announcement_hour_counts_window": {
+   "2": 2,
+   "3": 5,
+   "5": 67,
+   "6": 2137,
+   "7": 1433,
+   "8": 421,
+   "9": 55,
+   "10": 1,
+   "11": 2,
+   "12": 1,
+   "13": 2,
+   "14": 2,
+   "15": 4,
+   "16": 2870,
+   "17": 145,
+   "18": 28,
+   "19": 8,
+   "20": 8,
+   "23": 1
+  },
+  "real_trades_with_announcement_before_05h": {
+   "n": 0,
+   "pnl": 0.0,
+   "total_pnl": 35411.00191372054
+  },
+  "entry_never_before_announcement_day": true
+ },
+ "L2_L3_partitions": {
+  "partitions": {
+   "train": {
+    "start": "2015-04-28",
+    "end": "2020-03-25",
+    "n_rows": 8785
+   },
+   "validation": {
+    "start": "2020-05-06",
+    "end": "2021-07-13",
+    "n_rows": 2039
+   },
+   "holdout_a": {
+    "start": "2021-08-11",
+    "end": "2022-10-17",
+    "n_rows": 1966
+   },
+   "holdout_b": {
+    "start": "2022-11-17",
+    "end": "2024-02-09",
+    "n_rows": 2231
+   },
+   "holdout_c": {
+    "start": "2024-03-14",
+    "end": "2025-06-27",
+    "n_rows": 2410
+   }
+  },
+  "train_last_label_end": "2020-04-23",
+  "validation_last_label_end": "2021-08-10",
+  "label_overlap": {
+   "train": false,
+   "validation": false
+  }
+ },
+ "L3_refit": {
+  "refit_payoff_b": 0.960814864537637,
+  "cached_payoff_b": 0.960814864537637,
+  "refit_weights": {
+   "mlp": 0.12631203438906516,
+   "adaboost": 0.23296688922844552,
+   "lightgbm": 0.2966948683952365,
+   "random_forest": 0.3440262079872528
+  },
+  "calibrator_method": "isotonic",
+  "max_abs_diff_calibrated_proba": 1.5482060078397808e-13,
+  "share_identical_to_1e-9": 1.0,
+  "validation_dates": [
+   "2020-05-06",
+   "2021-07-13"
+  ]
+ },
+ "L4_survivorship": {
+  "window_index_members_ever": 570,
+  "members_missing_from_universe": 92,
+  "missing_examples": [
+   "AAL",
+   "AAP",
+   "ABMD",
+   "ALK",
+   "AMTM",
+   "ANSS",
+   "ATVI",
+   "AVB",
+   "BBWI",
+   "BIO",
+   "BWA",
+   "CAG",
+   "CDAY",
+   "CE",
+   "CERN",
+   "CMA",
+   "CPB",
+   "CTLT",
+   "CTRA",
+   "CTXS",
+   "CZR",
+   "DAY",
+   "DFS",
+   "DISCA",
+   "DISCK"
+  ],
+  "membership_last_date": "2026-09-17",
+  "real_trades_not_index_member_on_entry": {
+   "n": 57,
+   "share": 0.0912,
+   "pnl": -4412.066301436524,
+   "total_pnl": 35411.00191372054,
+   "tickers": [
+    "APO",
+    "BG",
+    "BX",
+    "CASY",
+    "CIEN",
+    "CRWD",
+    "DASH",
+    "DECK",
+    "DELL",
+    "EME",
+    "FIX",
+    "FLEX",
+    "IBKR",
+    "JBL",
+    "LII",
+    "LITE",
+    "LULU",
+    "MRVL",
+    "UBER",
+    "VEEV",
+    "VRT",
+    "WSM"
+   ]
+  },
+  "universe_names_with_prices_starting_after_2015_03": 36
+ },
+ "L6_replay_fidelity": {
+  "visible_events": 7192,
+  "unscorable": 2289,
+  "unscorable_due_to_30_calendar_day_price_window": 2241,
+  "of_which_scorable_with_live_45_day_window": 2241,
+  "unscorable_by_month": {
+   "1": 490,
+   "2": 508,
+   "3": 49,
+   "4": 279,
+   "5": 230,
+   "6": 59,
+   "7": 309,
+   "8": 149,
+   "9": 21,
+   "10": 63,
+   "11": 100,
+   "12": 32
+  }
+ },
+ "posthoc_score_drivers": {
+  "spearman_proba_vs_own_raw_20d": -0.6307224022092788,
+  "spearman_proba_vs_own_raw_5d": -0.35689742582756656,
+  "spearman_proba_vs_abs_sue": -0.21195335998388848,
+  "spearman_proba_vs_sue": -0.12159282493454238,
+  "spearman_proba_vs_market_20d_before": -0.3331185462300929,
+  "date_level_spearman_mean_proba_vs_market_20d": -0.6949834699740612,
+  "n_dates_with_3plus_events": 337,
+  "between_date_share_of_proba_variance": 0.2150928139936515
+ }
+}

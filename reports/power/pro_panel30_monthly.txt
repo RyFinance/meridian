@@ -1,0 +1,31 @@
+pro_panel30_monthly  [panel]  dev 10.00y + val 10.00y
+  raw obs (total) 7200 market-periods;  D_time 1.105  deff_cross 14.050  ->  effective obs 463.7
+  SE(Sharpe) dev 0.332, val 0.332;  SE(mean, per-market net Sharpe) total 0.1609
+  dev gate threshold 0.569 (binding: sharpe_c_over_sqrtT);  val threshold 0.750 (binding: sharpe_abs);  proposed val threshold 0.547
+  MDE Sharpe (80%): single test 0.59, dev gate 0.87, joint current 1.13, joint proposed 1.01
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.002   0.004   0.001   0.000   | 0.005  0.000
+  zero_net_null             0.00  0.050   0.043   0.012   0.001   | 0.050  0.002
+  structural_leak           0.05  0.076   0.060   0.018   0.001   | 0.068  0.004
+  S=0.3                     0.30  0.358   0.213   0.091   0.019   | 0.232  0.049
+  S=0.5                     0.50  0.680   0.420   0.233   0.098   | 0.446  0.187
+  S=0.7                     0.70  0.899   0.647   0.443   0.286   | 0.670  0.433
+  S=1.0                     1.00  0.992   0.886   0.758   0.671   | 0.897  0.795
+  implied_by_primitives     0.44  0.585   0.351   0.180   0.063   | 0.375  0.131
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   76.73     80.92             inf           213.65
+                     0.50   27.89     29.40             inf            77.83
+                     0.70   14.39     15.16             inf            40.27
+                     1.00    7.19      7.58           33.57            20.23
+                     0.44   36.16     38.13             inf           100.86
+  VERDICT (current gates): MARGINAL   [joint@0.7 = 0.286, false-pass = 0.0005];  with proposed val gate: MARGINAL
+  scenarios: label | n_eff | implied net S | joint(cur) | joint(prop) | yrs80 single | yrs80 joint(prop) | MDE natural (joint prop)
+   rho=0.3 s_mkt=0.2                            3.09 | 0.352 | 0.0312 | 0.0735 | 56 | 156 | 0.572
+   rho=0.3 s_mkt=0.3                            3.09 | 0.528 | 0.117 | 0.216 | 25.1 | 70 | 0.572
+   rho=0.3 s_mkt=0.4                            3.09 | 0.703 | 0.29 | 0.438 | 14.2 | 39.9 | 0.572
+   rho=0.45 s_mkt=0.2                           2.14 | 0.292 | 0.018 | 0.0464 | 80.8 | 225 | 0.688
+   rho=0.45 s_mkt=0.3                           2.14 | 0.438 | 0.0632 | 0.131 | 36.2 | 101 | 0.688
+   rho=0.45 s_mkt=0.4                           2.14 | 0.584 | 0.163 | 0.281 | 20.5 | 57.3 | 0.688
+   rho=0.6 s_mkt=0.2                            1.63 | 0.255 | 0.0125 | 0.034 | 106 | 294 | 0.788
+   rho=0.6 s_mkt=0.3                            1.63 | 0.383 | 0.0408 | 0.0918 | 47.2 | 132 | 0.788
+   rho=0.6 s_mkt=0.4                            1.63 | 0.511 | 0.105 | 0.198 | 26.7 | 74.6 | 0.788

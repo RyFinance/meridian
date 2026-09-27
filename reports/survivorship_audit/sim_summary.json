@@ -1,0 +1,470 @@
+{
+  "generated": "2026-09-24 22:29",
+  "scenarios": [
+    {
+      "name": "base_perf3_L30",
+      "N": 3000,
+      "K": 450,
+      "buffer": 2.0,
+      "burn_years": 12,
+      "meas_years": 12,
+      "g": 0.07,
+      "s_m": 0.16,
+      "sig_med": 0.3,
+      "sig_disp": 0.45,
+      "mu_disp": 0.0,
+      "entry_x_mean": 1.8,
+      "lam_ma": 0.03,
+      "ma_prem_mean": 0.25,
+      "ma_prem_sd": 0.15,
+      "loss_mean": 0.3,
+      "loss_conc": 2.0,
+      "logshare_sd_init": 1.5,
+      "entrant_logshare_mean": -1.0,
+      "entrant_logshare_sd": 1.0,
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "base_perf3_L30_mu6",
+      "N": 3000,
+      "K": 450,
+      "buffer": 2.0,
+      "burn_years": 12,
+      "meas_years": 12,
+      "g": 0.07,
+      "s_m": 0.16,
+      "sig_med": 0.3,
+      "sig_disp": 0.45,
+      "mu_disp": 0.06,
+      "entry_x_mean": 1.8,
+      "lam_ma": 0.03,
+      "ma_prem_mean": 0.25,
+      "ma_prem_sd": 0.15,
+      "loss_mean": 0.3,
+      "loss_conc": 2.0,
+      "logshare_sd_init": 1.5,
+      "entrant_logshare_mean": -1.0,
+      "entrant_logshare_sd": 1.0,
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "base_perf3_L30_mu15",
+      "N": 3000,
+      "K": 450,
+      "buffer": 2.0,
+      "burn_years": 12,
+      "meas_years": 12,
+      "g": 0.07,
+      "s_m": 0.16,
+      "sig_med": 0.3,
+      "sig_disp": 0.45,
+      "mu_disp": 0.15,
+      "entry_x_mean": 1.8,
+      "lam_ma": 0.03,
+      "ma_prem_mean": 0.25,
+      "ma_prem_sd": 0.15,
+      "loss_mean": 0.3,
+      "loss_conc": 2.0,
+      "logshare_sd_init": 1.5,
+      "entrant_logshare_mean": -1.0,
+      "entrant_logshare_sd": 1.0,
+      "seeds": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "nasdaq_perf6_L55",
+      "N": 3000,
+      "K": 450,
+      "buffer": 2.0,
+      "burn_years": 12,
+      "meas_years": 12,
+      "g": 0.07,
+      "s_m": 0.16,
+      "sig_med": 0.3,
+      "sig_disp": 0.45,
+      "mu_disp": 0.0,
+      "entry_x_mean": 1.2,
+      "lam_ma": 0.03,
+      "ma_prem_mean": 0.25,
+      "ma_prem_sd": 0.15,
+      "loss_mean": 0.55,
+      "loss_conc": 2.0,
+      "logshare_sd_init": 1.5,
+      "entrant_logshare_mean": -1.0,
+      "entrant_logshare_sd": 1.0,
+      "seeds": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "lowdistress_perf1_L30",
+      "N": 3000,
+      "K": 450,
+      "buffer": 2.0,
+      "burn_years": 12,
+      "meas_years": 12,
+      "g": 0.07,
+      "s_m": 0.16,
+      "sig_med": 0.3,
+      "sig_disp": 0.45,
+      "mu_disp": 0.0,
+      "entry_x_mean": 4.5,
+      "lam_ma": 0.03,
+      "ma_prem_mean": 0.25,
+      "ma_prem_sd": 0.15,
+      "loss_mean": 0.3,
+      "loss_conc": 2.0,
+      "logshare_sd_init": 1.5,
+      "entrant_logshare_mean": -1.0,
+      "entrant_logshare_sd": 1.0,
+      "seeds": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "base_L15",
+      "N": 3000,
+      "K": 450,
+      "buffer": 2.0,
+      "burn_years": 12,
+      "meas_years": 12,
+      "g": 0.07,
+      "s_m": 0.16,
+      "sig_med": 0.3,
+      "sig_disp": 0.45,
+      "mu_disp": 0.0,
+      "entry_x_mean": 1.8,
+      "lam_ma": 0.03,
+      "ma_prem_mean": 0.25,
+      "ma_prem_sd": 0.15,
+      "loss_mean": 0.15,
+      "loss_conc": 2.0,
+      "logshare_sd_init": 1.5,
+      "entrant_logshare_mean": -1.0,
+      "entrant_logshare_sd": 1.0,
+      "seeds": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "base_noMA",
+      "N": 3000,
+      "K": 450,
+      "buffer": 2.0,
+      "burn_years": 12,
+      "meas_years": 12,
+      "g": 0.07,
+      "s_m": 0.16,
+      "sig_med": 0.3,
+      "sig_disp": 0.45,
+      "mu_disp": 0.0,
+      "entry_x_mean": 1.8,
+      "lam_ma": 0.0,
+      "ma_prem_mean": 0.25,
+      "ma_prem_sd": 0.15,
+      "loss_mean": 0.3,
+      "loss_conc": 2.0,
+      "logshare_sd_init": 1.5,
+      "entrant_logshare_mean": -1.0,
+      "entrant_logshare_sd": 1.0,
+      "seeds": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "realised_rates": {
+    "perf_delist_rate": {
+      "base_L15": 0.0427,
+      "base_noMA": 0.0172,
+      "base_perf3_L30": 0.0366,
+      "base_perf3_L30_mu15": 0.0394,
+      "base_perf3_L30_mu6": 0.0428,
+      "lowdistress_perf1_L30": 0.0154,
+      "nasdaq_perf6_L55": 0.0713
+    },
+    "ma_rate": {
+      "base_L15": 0.0298,
+      "base_noMA": 0.0,
+      "base_perf3_L30": 0.0296,
+      "base_perf3_L30_mu15": 0.03,
+      "base_perf3_L30_mu6": 0.0298,
+      "lowdistress_perf1_L30": 0.03,
+      "nasdaq_perf6_L55": 0.0302
+    }
+  },
+  "alpha_yardstick_by_h": {
+    "1": {
+      "xs_sd_h": 0.0224,
+      "gross_quintile_spread_ann_if_IC_0.01": 0.1578,
+      "gross_quintile_spread_ann_if_IC_0.02": 0.3157
+    },
+    "5": {
+      "xs_sd_h": 0.0519,
+      "gross_quintile_spread_ann_if_IC_0.01": 0.0732,
+      "gross_quintile_spread_ann_if_IC_0.02": 0.1464
+    },
+    "21": {
+      "xs_sd_h": 0.1074,
+      "gross_quintile_spread_ann_if_IC_0.01": 0.0361,
+      "gross_quintile_spread_ann_if_IC_0.02": 0.0721
+    },
+    "63": {
+      "xs_sd_h": 0.1884,
+      "gross_quintile_spread_ann_if_IC_0.01": 0.0211,
+      "gross_quintile_spread_ann_if_IC_0.02": 0.0422
+    },
+    "252": {
+      "xs_sd_h": 0.3844,
+      "gross_quintile_spread_ann_if_IC_0.01": 0.0108,
+      "gross_quintile_spread_ann_if_IC_0.02": 0.0215
+    }
+  },
+  "index_calibration_selected": {
+    "base_L15|1y": {
+      "share_in_today_index": 0.96,
+      "share_still_listed": 0.972,
+      "member_exit_rate_next_year": 0.04,
+      "member_perf_delist_rate_next_year": 0.002
+    },
+    "base_L15|7y": {
+      "share_in_today_index": 0.694,
+      "share_still_listed": 0.766,
+      "member_exit_rate_next_year": 0.052,
+      "member_perf_delist_rate_next_year": 0.008
+    },
+    "base_L15|12y": {
+      "share_in_today_index": 0.527,
+      "share_still_listed": 0.598,
+      "member_exit_rate_next_year": 0.053,
+      "member_perf_delist_rate_next_year": 0.014
+    },
+    "base_L15|18y": {
+      "share_in_today_index": 0.387,
+      "share_still_listed": 0.435,
+      "member_exit_rate_next_year": 0.058,
+      "member_perf_delist_rate_next_year": 0.025
+    },
+    "base_L15|23y": {
+      "share_in_today_index": 0.302,
+      "share_still_listed": 0.339,
+      "member_exit_rate_next_year": 0.048,
+      "member_perf_delist_rate_next_year": 0.013
+    },
+    "base_noMA|1y": {
+      "share_in_today_index": 0.981,
+      "share_still_listed": 0.996,
+      "member_exit_rate_next_year": 0.019,
+      "member_perf_delist_rate_next_year": 0.004
+    },
+    "base_noMA|7y": {
+      "share_in_today_index": 0.898,
+      "share_still_listed": 0.98,
+      "member_exit_rate_next_year": 0.013,
+      "member_perf_delist_rate_next_year": 0.0
+    },
+    "base_noMA|12y": {
+      "share_in_today_index": 0.824,
+      "share_still_listed": 0.947,
+      "member_exit_rate_next_year": 0.017,
+      "member_perf_delist_rate_next_year": 0.003
+    },
+    "base_noMA|18y": {
+      "share_in_today_index": 0.745,
+      "share_still_listed": 0.882,
+      "member_exit_rate_next_year": 0.022,
+      "member_perf_delist_rate_next_year": 0.007
+    },
+    "base_noMA|23y": {
+      "share_in_today_index": 0.669,
+      "share_still_listed": 0.807,
+      "member_exit_rate_next_year": 0.024,
+      "member_perf_delist_rate_next_year": 0.014
+    },
+    "base_perf3_L30|1y": {
+      "share_in_today_index": 0.954,
+      "share_still_listed": 0.968,
+      "member_exit_rate_next_year": 0.046,
+      "member_perf_delist_rate_next_year": 0.001
+    },
+    "base_perf3_L30|7y": {
+      "share_in_today_index": 0.704,
+      "share_still_listed": 0.763,
+      "member_exit_rate_next_year": 0.051,
+      "member_perf_delist_rate_next_year": 0.008
+    },
+    "base_perf3_L30|12y": {
+      "share_in_today_index": 0.537,
+      "share_still_listed": 0.606,
+      "member_exit_rate_next_year": 0.05,
+      "member_perf_delist_rate_next_year": 0.007
+    },
+    "base_perf3_L30|18y": {
+      "share_in_today_index": 0.387,
+      "share_still_listed": 0.441,
+      "member_exit_rate_next_year": 0.057,
+      "member_perf_delist_rate_next_year": 0.008
+    },
+    "base_perf3_L30|23y": {
+      "share_in_today_index": 0.298,
+      "share_still_listed": 0.338,
+      "member_exit_rate_next_year": 0.046,
+      "member_perf_delist_rate_next_year": 0.009
+    },
+    "base_perf3_L30_mu15|1y": {
+      "share_in_today_index": 0.952,
+      "share_still_listed": 0.966,
+      "member_exit_rate_next_year": 0.048,
+      "member_perf_delist_rate_next_year": 0.0
+    },
+    "base_perf3_L30_mu15|7y": {
+      "share_in_today_index": 0.726,
+      "share_still_listed": 0.788,
+      "member_exit_rate_next_year": 0.05,
+      "member_perf_delist_rate_next_year": 0.003
+    },
+    "base_perf3_L30_mu15|12y": {
+      "share_in_today_index": 0.558,
+      "share_still_listed": 0.636,
+      "member_exit_rate_next_year": 0.044,
+      "member_perf_delist_rate_next_year": 0.003
+    },
+    "base_perf3_L30_mu15|18y": {
+      "share_in_today_index": 0.361,
+      "share_still_listed": 0.437,
+      "member_exit_rate_next_year": 0.055,
+      "member_perf_delist_rate_next_year": 0.008
+    },
+    "base_perf3_L30_mu15|23y": {
+      "share_in_today_index": 0.242,
+      "share_still_listed": 0.299,
+      "member_exit_rate_next_year": 0.043,
+      "member_perf_delist_rate_next_year": 0.008
+    },
+    "base_perf3_L30_mu6|1y": {
+      "share_in_today_index": 0.952,
+      "share_still_listed": 0.971,
+      "member_exit_rate_next_year": 0.048,
+      "member_perf_delist_rate_next_year": 0.003
+    },
+    "base_perf3_L30_mu6|7y": {
+      "share_in_today_index": 0.7,
+      "share_still_listed": 0.774,
+      "member_exit_rate_next_year": 0.049,
+      "member_perf_delist_rate_next_year": 0.006
+    },
+    "base_perf3_L30_mu6|12y": {
+      "share_in_today_index": 0.522,
+      "share_still_listed": 0.601,
+      "member_exit_rate_next_year": 0.05,
+      "member_perf_delist_rate_next_year": 0.005
+    },
+    "base_perf3_L30_mu6|18y": {
+      "share_in_today_index": 0.358,
+      "share_still_listed": 0.419,
+      "member_exit_rate_next_year": 0.055,
+      "member_perf_delist_rate_next_year": 0.008
+    },
+    "base_perf3_L30_mu6|23y": {
+      "share_in_today_index": 0.261,
+      "share_still_listed": 0.307,
+      "member_exit_rate_next_year": 0.044,
+      "member_perf_delist_rate_next_year": 0.012
+    },
+    "lowdistress_perf1_L30|1y": {
+      "share_in_today_index": 0.968,
+      "share_still_listed": 0.974,
+      "member_exit_rate_next_year": 0.032,
+      "member_perf_delist_rate_next_year": 0.0
+    },
+    "lowdistress_perf1_L30|7y": {
+      "share_in_today_index": 0.773,
+      "share_still_listed": 0.807,
+      "member_exit_rate_next_year": 0.039,
+      "member_perf_delist_rate_next_year": 0.0
+    },
+    "lowdistress_perf1_L30|12y": {
+      "share_in_today_index": 0.636,
+      "share_still_listed": 0.686,
+      "member_exit_rate_next_year": 0.038,
+      "member_perf_delist_rate_next_year": 0.0
+    },
+    "lowdistress_perf1_L30|18y": {
+      "share_in_today_index": 0.518,
+      "share_still_listed": 0.564,
+      "member_exit_rate_next_year": 0.036,
+      "member_perf_delist_rate_next_year": 0.0
+    },
+    "lowdistress_perf1_L30|23y": {
+      "share_in_today_index": 0.431,
+      "share_still_listed": 0.473,
+      "member_exit_rate_next_year": 0.028,
+      "member_perf_delist_rate_next_year": 0.0
+    },
+    "nasdaq_perf6_L55|1y": {
+      "share_in_today_index": 0.942,
+      "share_still_listed": 0.966,
+      "member_exit_rate_next_year": 0.058,
+      "member_perf_delist_rate_next_year": 0.007
+    },
+    "nasdaq_perf6_L55|7y": {
+      "share_in_today_index": 0.593,
+      "share_still_listed": 0.664,
+      "member_exit_rate_next_year": 0.073,
+      "member_perf_delist_rate_next_year": 0.026
+    },
+    "nasdaq_perf6_L55|12y": {
+      "share_in_today_index": 0.443,
+      "share_still_listed": 0.508,
+      "member_exit_rate_next_year": 0.046,
+      "member_perf_delist_rate_next_year": 0.013
+    },
+    "nasdaq_perf6_L55|18y": {
+      "share_in_today_index": 0.303,
+      "share_still_listed": 0.337,
+      "member_exit_rate_next_year": 0.088,
+      "member_perf_delist_rate_next_year": 0.038
+    },
+    "nasdaq_perf6_L55|23y": {
+      "share_in_today_index": 0.212,
+      "share_still_listed": 0.227,
+      "member_exit_rate_next_year": 0.063,
+      "member_perf_delist_rate_next_year": 0.034
+    }
+  },
+  "repo_anchor_pit_coverage": "S&P PIT members priced by today's cache: 98% (2026), 94.5% (2025), 77% (2019, 7y), 62% (2013, 13y), 50% (2008, 18y) - reports/momentum_verification_20260919",
+  "runtime_s": 330.9
+}

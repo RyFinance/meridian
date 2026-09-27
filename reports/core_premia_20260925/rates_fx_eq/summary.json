@@ -1,0 +1,57 @@
+{
+ "aqr_tsmom_range": [
+  "1985-01-31",
+  "2026-05-29"
+ ],
+ "bond": {
+  "c3_120m_pass": 20,
+  "pass_all_mechanical_conditions_provisional": 2,
+  "pass_list": [
+   "BOND_UK_10Y",
+   "BOND_CA_10Y"
+  ],
+  "primary_candidates": 22
+ },
+ "equity": {
+  "c3_120m_pass": 39,
+  "pass_all_mechanical_conditions_provisional": 19,
+  "pass_list": [
+   "EQ_US_SPX",
+   "EQ_US_NDX",
+   "EQ_US_DJI",
+   "EQ_US_RUT",
+   "EQ_CA",
+   "EQ_UK",
+   "EQ_DE",
+   "EQ_FR",
+   "EQ_IT",
+   "EQ_CH",
+   "EQ_JP",
+   "EQ_HK",
+   "EQ_AU",
+   "EQ_SG",
+   "EQ_KR",
+   "EQ_TW",
+   "EQ_MX",
+   "EQ_IN",
+   "EQ_CN"
+  ],
+  "primary_candidates": 39
+ },
+ "fx": {
+  "c3_120m_pass": 23,
+  "pass_all_mechanical_conditions_provisional": 8,
+  "pass_list": [
+   "FX_AUD",
+   "FX_CAD",
+   "FX_CHF",
+   "FX_EUR",
+   "FX_GBP",
+   "FX_JPY",
+   "FX_NOK",
+   "FX_SEK"
+  ],
+  "primary_candidates": 23
+ },
+ "generated_at_utc": "2026-09-26T07:54:14.666820+00:00"
+}

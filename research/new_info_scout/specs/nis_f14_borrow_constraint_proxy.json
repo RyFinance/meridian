@@ -1,0 +1,44 @@
+{
+ "name": "nis_f14_borrow_constraint_proxy",
+ "description": "Borrow-constraint proxy (no free lending-fee data): FINRA bi-monthly short interest / days-to-cover change, 2018-01+ bulk file, long-short on ~500 US stocks, 2 periods/month.",
+ "assumptions": [
+  "dev 2018-02..2022-04 (4.2y), val 2022-05..2026-08 (4.3y)",
+  "IC 0.015, rho 0.3/0.25, cost 10 bp, signal_autocorr 0.8",
+  "OSAP ShortInterest viewed; survivor-only prices"
+ ],
+ "design": "long_short",
+ "params": {
+  "n_assets": 500,
+  "periods_per_year": 24,
+  "ic": 0.015,
+  "cs_dispersion": 0.06,
+  "quantile": 0.2,
+  "rho_resid": 0.3,
+  "rho_signal": 0.25,
+  "signal_autocorr": 0.8,
+  "cost_bps_one_way": 10,
+  "spread_autocorr": 0.0,
+  "skew": 0.0,
+  "exkurt": 2.0
+ },
+ "windows": {
+  "dev_years": 4.2,
+  "val_years": 4.3
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.05,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 2,
+   "floor": 0.3
+  }
+ }
+}

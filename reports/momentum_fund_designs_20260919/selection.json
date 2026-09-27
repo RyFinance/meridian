@@ -1,0 +1,9 @@
+{
+  "selected": "vol_scaled",
+  "eligible": [
+    "vol_scaled",
+    "diversified_trend",
+    "defensive_rotation"
+  ],
+  "code_sha256": "015c57f0ab539d67918222938b96b94ad74f9d52eb91958b1d18e5777e4f6e63"
+}

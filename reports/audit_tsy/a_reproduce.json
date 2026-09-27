@@ -1,0 +1,180 @@
+{
+ "integrity": {
+  "project_duplicates": 0,
+  "project_rows": 5966,
+  "project_last_row": "2026-09-18",
+  "rule_calendar_sessions": 5959,
+  "missing_vs_rule_calendar": [
+   "2004-06-11",
+   "2007-01-02",
+   "2012-10-29",
+   "2012-10-30",
+   "2018-12-05",
+   "2025-01-09"
+  ],
+  "extra_vs_rule_calendar(unscheduled closures expected)": [],
+  "sessions_per_month_min_max": [
+   13,
+   23
+  ],
+  "months_with_<18_sessions": [
+   "2026-09"
+  ],
+  "yf_today_minus_project_dates": [],
+  "project_minus_yf_today_dates": [],
+  "zero_return_days_project_total": 27,
+  "zero_return_days_on_window_sessions": [
+   "2006-01-27"
+  ]
+ },
+ "reproduction": {
+  "dev": {
+   "myimpl_project_prices": {
+    "active_sharpe_base": 0.6639367674924984,
+    "active_ann": 0.03130779591656769,
+    "max_abs_diff_vs_project_daily_active": 9.996344030316351e-17
+   },
+   "yf_raw_plus_div_gross": {
+    "active_sharpe": 0.7644845512580849,
+    "active_ann": 0.03610840366388551,
+    "M_sharpe": 0.9014727805080711
+   },
+   "yf_raw_plus_div_base": {
+    "active_sharpe": 0.6638874774530974,
+    "active_ann": 0.03130363703032047,
+    "M_sharpe": 0.8082441155646884
+   },
+   "yf_raw_plus_div_stress": {
+    "active_sharpe": 0.4611210872827391,
+    "active_ann": 0.021694103763190385,
+    "M_sharpe": 0.620195517000131
+   },
+   "yf_adjclose_today_base": {
+    "active_sharpe": 0.6639674244033594,
+    "active_ann": 0.03130929596548511
+   },
+   "window_return_diff_bp_project_minus_rawdiv": {
+    "mean": 0.003012930370934382,
+    "max_abs": 0.4494586131320588,
+    "n_gt_1bp": 0,
+    "worst": {
+     "2007-12": 0.45,
+     "2006-12": 0.25,
+     "2004-12": 0.23,
+     "2009-12": 0.23,
+     "2005-12": 0.12
+    }
+   },
+   "gross_window_bp_per_month_rawdiv": 39.58070909888594
+  },
+  "val": {
+   "myimpl_project_prices": {
+    "active_sharpe_base": 0.6921597992108343,
+    "active_ann": 0.03230392652911249,
+    "max_abs_diff_vs_project_daily_active": 9.985502008591496e-17
+   },
+   "yf_raw_plus_div_gross": {
+    "active_sharpe": 0.7949793367666308,
+    "active_ann": 0.03711784356549873,
+    "M_sharpe": 0.6968685195762446
+   },
+   "yf_raw_plus_div_base": {
+    "active_sharpe": 0.6921969077912599,
+    "active_ann": 0.03230474670328864,
+    "M_sharpe": 0.5995201519246417
+   },
+   "yf_raw_plus_div_stress": {
+    "active_sharpe": 0.48577849133521156,
+    "active_ann": 0.02267855297886844,
+    "M_sharpe": 0.40409047635824885
+   },
+   "yf_adjclose_today_base": {
+    "active_sharpe": 0.6921641113159757,
+    "active_ann": 0.03230417452313035
+   },
+   "window_return_diff_bp_project_minus_rawdiv": {
+    "mean": -6.793549810797066e-05,
+    "max_abs": 0.008626442518089306,
+    "n_gt_1bp": 0,
+    "worst": {
+     "2015-09": 0.01,
+     "2020-12": 0.01,
+     "2020-09": 0.01,
+     "2015-08": 0.01,
+     "2021-03": 0.01
+    }
+   },
+   "gross_window_bp_per_month_rawdiv": 30.556556814502034
+  }
+ },
+ "dividends": {
+  "n_exdates": 282,
+  "exdate_session_position_counts(k=1 first session)": {
+   "1": 259,
+   "10": 1,
+   "11": 2,
+   "12": 1,
+   "13": 2,
+   "14": 1,
+   "15": 2,
+   "16": 1,
+   "17": 1,
+   "18": 6,
+   "19": 2,
+   "20": 2,
+   "22": 2
+  },
+  "exdates_inside_earning_window": [
+   "2003-12-31",
+   "2004-12-31",
+   "2005-12-28",
+   "2006-12-27",
+   "2007-12-27",
+   "2008-12-29",
+   "2009-12-29"
+  ],
+  "exdate_is_next_session_after_window_share": 0.9184397163120568,
+  "adj_minus_rawdiv_bp": {
+   "on_exdates": {
+    "mean": -0.0018954675876939233,
+    "max_abs": 1.284424034360132
+   },
+   "session_before_exdate": {
+    "mean": -0.00018787160253029537,
+    "max_abs": 0.01932082849265271
+   },
+   "session_after_exdate": {
+    "mean": 3.6777404407935874e-05,
+    "max_abs": 0.013887806299406336
+   },
+   "all_other": {
+    "mean": -0.0006175887965928931,
+    "max_abs": 2.98346833885188,
+    "n_gt_2bp": 1
+   }
+  },
+  "days_adj_vs_rawdiv_gt_2bp": {
+   "2026-09-18": -3.0
+  },
+  "dev_price_only_active_sharpe_base": 0.7439212363869442,
+  "dev_exdates_removed_from_window_active_sharpe_base": 0.6546215735152197,
+  "dev_window_bp_next_session_is_exdate": [
+   37.23617567680896,
+   131
+  ],
+  "dev_window_bp_next_session_not_exdate": [
+   63.20639204443095,
+   13
+  ],
+  "val_price_only_active_sharpe_base": 0.7739389206387477,
+  "val_exdates_removed_from_window_active_sharpe_base": 0.6892238268738428,
+  "val_window_bp_next_session_is_exdate": [
+   34.31057428380087,
+   128
+  ],
+  "val_window_bp_next_session_not_exdate": [
+   -9.486296191352217,
+   12
+  ]
+ }
+}

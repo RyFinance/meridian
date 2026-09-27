@@ -1,0 +1,56 @@
+base_perf3_L30 seed 1: perf-delist 0.052/yr, M&A 0.030/yr, 9s
+base_perf3_L30 seed 2: perf-delist 0.023/yr, M&A 0.029/yr, 18s
+base_perf3_L30 seed 3: perf-delist 0.023/yr, M&A 0.030/yr, 28s
+base_perf3_L30 seed 4: perf-delist 0.034/yr, M&A 0.030/yr, 37s
+base_perf3_L30 seed 5: perf-delist 0.041/yr, M&A 0.030/yr, 46s
+base_perf3_L30 seed 6: perf-delist 0.047/yr, M&A 0.030/yr, 55s
+base_perf3_L30 seed 7: perf-delist 0.032/yr, M&A 0.030/yr, 64s
+base_perf3_L30 seed 8: perf-delist 0.041/yr, M&A 0.028/yr, 73s
+base_perf3_L30_mu6 seed 1: perf-delist 0.043/yr, M&A 0.030/yr, 82s
+base_perf3_L30_mu6 seed 2: perf-delist 0.051/yr, M&A 0.030/yr, 91s
+base_perf3_L30_mu6 seed 3: perf-delist 0.041/yr, M&A 0.031/yr, 100s
+base_perf3_L30_mu6 seed 4: perf-delist 0.053/yr, M&A 0.030/yr, 109s
+base_perf3_L30_mu6 seed 5: perf-delist 0.028/yr, M&A 0.030/yr, 118s
+base_perf3_L30_mu6 seed 6: perf-delist 0.041/yr, M&A 0.029/yr, 128s
+base_perf3_L30_mu6 seed 7: perf-delist 0.051/yr, M&A 0.030/yr, 137s
+base_perf3_L30_mu6 seed 8: perf-delist 0.036/yr, M&A 0.028/yr, 146s
+base_perf3_L30_mu15 seed 1: perf-delist 0.035/yr, M&A 0.030/yr, 155s
+base_perf3_L30_mu15 seed 2: perf-delist 0.037/yr, M&A 0.029/yr, 164s
+base_perf3_L30_mu15 seed 3: perf-delist 0.034/yr, M&A 0.030/yr, 174s
+base_perf3_L30_mu15 seed 4: perf-delist 0.052/yr, M&A 0.031/yr, 183s
+nasdaq_perf6_L55 seed 1: perf-delist 0.031/yr, M&A 0.030/yr, 192s
+nasdaq_perf6_L55 seed 2: perf-delist 0.095/yr, M&A 0.029/yr, 200s
+nasdaq_perf6_L55 seed 3: perf-delist 0.107/yr, M&A 0.031/yr, 208s
+nasdaq_perf6_L55 seed 4: perf-delist 0.052/yr, M&A 0.031/yr, 217s
+lowdistress_perf1_L30 seed 1: perf-delist 0.024/yr, M&A 0.030/yr, 227s
+lowdistress_perf1_L30 seed 2: perf-delist 0.015/yr, M&A 0.030/yr, 236s
+lowdistress_perf1_L30 seed 3: perf-delist 0.013/yr, M&A 0.030/yr, 245s
+lowdistress_perf1_L30 seed 4: perf-delist 0.010/yr, M&A 0.030/yr, 255s
+base_L15 seed 1: perf-delist 0.050/yr, M&A 0.029/yr, 264s
+base_L15 seed 2: perf-delist 0.044/yr, M&A 0.030/yr, 273s
+base_L15 seed 3: perf-delist 0.037/yr, M&A 0.030/yr, 282s
+base_L15 seed 4: perf-delist 0.040/yr, M&A 0.030/yr, 291s
+base_noMA seed 1: perf-delist 0.020/yr, M&A 0.000/yr, 301s
+base_noMA seed 2: perf-delist 0.011/yr, M&A 0.000/yr, 311s
+base_noMA seed 3: perf-delist 0.022/yr, M&A 0.000/yr, 321s
+base_noMA seed 4: perf-delist 0.017/yr, M&A 0.000/yr, 331s
+{
+ "perf_delist_rate": {
+  "base_L15": 0.0427,
+  "base_noMA": 0.0172,
+  "base_perf3_L30": 0.0366,
+  "base_perf3_L30_mu15": 0.0394,
+  "base_perf3_L30_mu6": 0.0428,
+  "lowdistress_perf1_L30": 0.0154,
+  "nasdaq_perf6_L55": 0.0713
+ },
+ "ma_rate": {
+  "base_L15": 0.0298,
+  "base_noMA": 0.0,
+  "base_perf3_L30": 0.0296,
+  "base_perf3_L30_mu15": 0.03,
+  "base_perf3_L30_mu6": 0.0298,
+  "lowdistress_perf1_L30": 0.03,
+  "nasdaq_perf6_L55": 0.0302
+ }
+}

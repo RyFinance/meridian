@@ -1,0 +1,177 @@
+{
+  "status": "FAIL_DEVELOPMENT",
+  "plan_sha256": "545d029a9c8a2ba6bbbcfb463fe90fcb4c6b37e327def33b5c53a80b5076dc8d",
+  "engine_dependency_sha256": "b58a8407b47b1835f3457ea0b61b9d4733a94e76315ed9d10668090c009df795",
+  "input_hashes": {
+    "SPY_price": "c927a8371ad9d9552e5a1cd0d96bfcd005ae62f72d4f590c51681a81c6e4fc0c",
+    "IEF_price": "684a4a7a017f8494dd56d376ed780a9486026edcdcc4301208cf161c4e7171f7",
+    "VIX_price": "58559ce3d364368845d066250e2a1e5e974b9d3c6ed82ca0b2273ca30fda68c7",
+    "weekly_options": "beb5f38c16a8aa8fac8ef63f4ed977d8e5446bd4773bae4b7727096b10f76e9b"
+  },
+  "window": [
+    "2015-07-06",
+    "2019-12-31"
+  ],
+  "years": 4.487337440109514,
+  "days": 1131,
+  "decisions": 235,
+  "source_weeks_available": 235,
+  "neutral_fallback": 0,
+  "first_decision": {
+    "decision": "2015-07-06",
+    "signal_week": "2015-06-29/2015-07-05",
+    "available": true
+  },
+  "last_decision": {
+    "decision": "2019-12-30",
+    "signal_week": "2019-12-23/2019-12-29",
+    "available": true
+  },
+  "spy_exposure_fraction": 0.5137046861184792,
+  "dev_active_sharpe_gate": 0.8497245004485859,
+  "strategy_base": {
+    "annual_mean": -0.017031798569473698,
+    "sharpe": -0.17119580547434826,
+    "max_drawdown": -0.21512304064404053,
+    "total_return": -0.09399701579538944
+  },
+  "strategy_stress": {
+    "annual_mean": -0.03775328398061426,
+    "sharpe": -0.37790995175442244,
+    "max_drawdown": -0.2527957465590974,
+    "total_return": -0.1746205032280882
+  },
+  "c0_matched": {
+    "annual_mean": 0.08075530691456012,
+    "sharpe": 1.276353393239417,
+    "max_drawdown": -0.08684364090736219,
+    "total_return": 0.4238902850597539
+  },
+  "fixed_50_50": {
+    "annual_mean": 0.0794312136400262,
+    "sharpe": 1.2918588382904785,
+    "max_drawdown": -0.08410486647222548,
+    "total_return": 0.416164954559356
+  },
+  "c1_spy_momentum": {
+    "annual_mean": 0.02659972678586496,
+    "sharpe": 0.27320303339491675,
+    "max_drawdown": -0.18202424213697566,
+    "total_return": 0.10289516093466622
+  },
+  "c2_vix_change": {
+    "annual_mean": -0.002323672411980788,
+    "sharpe": -0.02341526213628325,
+    "max_drawdown": -0.24250895143252937,
+    "total_return": -0.0321746621630693
+  },
+  "p1_reverse": {
+    "annual_mean": 0.15530642744103804,
+    "sharpe": 1.5036862164538376,
+    "max_drawdown": -0.11318707185957133,
+    "total_return": 0.9597072420968391
+  },
+  "active_c0_base": {
+    "annual_mean": -0.09778710548403381,
+    "sharpe": -1.2113904942981852,
+    "max_drawdown": -0.38031927562685297,
+    "total_return": -0.3646484994627245
+  },
+  "active_c0_stress": {
+    "annual_mean": -0.11837490389252188,
+    "sharpe": -1.459858182557892,
+    "max_drawdown": -0.4328071679544029,
+    "total_return": -0.4208257112400474
+  },
+  "vs_c1": {
+    "annual_mean": -0.043631525355338645,
+    "sharpe": -0.4224772971152327,
+    "max_drawdown": -0.2826957199818667,
+    "total_return": -0.1971961160979131
+  },
+  "vs_c2": {
+    "annual_mean": -0.014708126157492915,
+    "sharpe": -0.13960499232012513,
+    "max_drawdown": -0.22487942868495325,
+    "total_return": -0.08678138049442041
+  },
+  "paired_bootstrap_p": {
+    "c0": 0.9994001199760048,
+    "c1": 0.8358328334333134,
+    "c2": 0.6096780643871226
+  },
+  "null": {
+    "p_full_dev_pass": {
+      "p": 0.0076,
+      "se": 0.0012281889105508158,
+      "n": 5000
+    },
+    "p_active_sharpe_at_least_observed": 0.9916016796640672,
+    "sr_dev": {
+      "mean": -0.1374513193515478,
+      "sd": 0.4439719674422803,
+      "sd_x_sqrt_years": 0.9405601653416601,
+      "q01": -1.195683924424409,
+      "q05": -0.8208564480154185,
+      "q25": -0.44127094847049075,
+      "q50": -0.1556630614981733,
+      "q75": 0.1393897561287253,
+      "q95": 0.6526518816133002,
+      "q99": 0.7810768269132025,
+      "mean_se": 0.006278711776703389,
+      "n": 5000
+    },
+    "signal": "circular shift of the finite segment >= 52 periods",
+    "worlds": 5000
+  },
+  "best_12m_removed": {
+    "removed_start": "2016-02-11",
+    "removed_end_exclusive": "2017-02-11",
+    "removed_sum": 0.02008983657398005,
+    "remaining": {
+      "annual_mean": -0.13173104227686247,
+      "sharpe": -1.560660065246135,
+      "max_drawdown": -0.3913174846438071,
+      "total_return": -0.37592483633638296
+    }
+  },
+  "best_24m_removed": {
+    "removed_start": "2016-02-11",
+    "removed_end_exclusive": "2018-02-11",
+    "removed_sum": -0.026625484868808766,
+    "remaining": {
+      "annual_mean": -0.1656899427679465,
+      "sharpe": -1.7865222678796011,
+      "max_drawdown": -0.36112714278787084,
+      "total_return": -0.3449710269867281
+    }
+  },
+  "yearly": {
+    "2015": {
+      "strategy_total": -0.09832199771622485,
+      "active_total": -0.10334428069291013,
+      "active_sharpe": -1.7297539472798298
+    },
+    "2016": {
+      "strategy_total": 0.04273837818587223,
+      "active_total": -0.03257083443298879,
+      "active_sharpe": -0.41980185513204354
+    },
+    "2017": {
+      "strategy_total": 0.05617074442888934,
+      "active_total": -0.05846759266416459,
+      "active_sharpe": -1.3293318665072453
+    },
+    "2018": {
+      "strategy_total": -0.15130571717785687,
+      "active_total": -0.13115447436976974,
+      "active_sharpe": -1.3810986044154812
+    },
+    "2019": {
+      "strategy_total": 0.07427825822346798,
+      "active_total": -0.11334066031017567,
+      "active_sharpe": -1.5813425282728049
+    }
+  },
+  "validation": "LOCKED: no 2020+ option volume or ETF return loaded"
+}

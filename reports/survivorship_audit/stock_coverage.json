@@ -1,0 +1,299 @@
+{
+  "caches": [
+    {
+      "folder": "data/raw",
+      "n_files": 502,
+      "n_with_dates": 502,
+      "earliest_first_date": "2015-01-02",
+      "latest_first_date": "2026-06-15",
+      "most_common_last_dates": {
+        "2026-08-14": 386,
+        "2026-09-24": 75,
+        "2026-09-18": 39
+      },
+      "first_date_year_histogram": {
+        "2015": 464,
+        "2016": 5,
+        "2017": 3,
+        "2018": 3,
+        "2019": 7,
+        "2020": 5,
+        "2021": 4,
+        "2022": 2,
+        "2023": 2,
+        "2024": 3,
+        "2025": 2,
+        "2026": 2
+      },
+      "names_ending_before_2026_06": []
+    },
+    {
+      "folder": "data/multiasset/stocks",
+      "n_files": 503,
+      "n_with_dates": 503,
+      "earliest_first_date": "2003-01-02",
+      "latest_first_date": "2026-06-15",
+      "most_common_last_dates": {
+        "2026-09-18": 503
+      },
+      "first_date_year_histogram": {
+        "2003": 373,
+        "2004": 10,
+        "2005": 9,
+        "2006": 6,
+        "2007": 11,
+        "2008": 6,
+        "2009": 4,
+        "2010": 11,
+        "2011": 7,
+        "2012": 7,
+        "2013": 10,
+        "2014": 5,
+        "2015": 6,
+        "2016": 5,
+        "2017": 3,
+        "2018": 3,
+        "2019": 7,
+        "2020": 5,
+        "2021": 4,
+        "2022": 2,
+        "2023": 2,
+        "2024": 3,
+        "2025": 2,
+        "2026": 2
+      },
+      "names_ending_before_2026_06": []
+    },
+    {
+      "folder": "data/stocks_raw_2014",
+      "n_files": 103,
+      "n_with_dates": 103,
+      "earliest_first_date": "2014-05-01",
+      "latest_first_date": "2014-05-01",
+      "most_common_last_dates": {
+        "2026-09-17": 103
+      },
+      "first_date_year_histogram": {
+        "2014": 103
+      },
+      "names_ending_before_2026_06": []
+    },
+    {
+      "folder": "data/raw_legacy",
+      "n_files": 20,
+      "n_with_dates": 20,
+      "earliest_first_date": "2005-01-03",
+      "latest_first_date": "2005-01-03",
+      "most_common_last_dates": {
+        "2026-08-14": 20
+      },
+      "first_date_year_histogram": {
+        "2005": 20
+      },
+      "names_ending_before_2026_06": []
+    },
+    {
+      "folder": "data/lse/candles_1d",
+      "n_files": 496,
+      "n_with_dates": 496,
+      "earliest_first_date": "2003-09-10",
+      "latest_first_date": "2026-06-26",
+      "most_common_last_dates": {
+        "2026-09-17": 495,
+        "2026-09-18": 1
+      },
+      "first_date_year_histogram": {
+        "2003": 328,
+        "2004": 11,
+        "2005": 13,
+        "2006": 7,
+        "2007": 10,
+        "2008": 5,
+        "2009": 7,
+        "2010": 11,
+        "2011": 5,
+        "2012": 8,
+        "2013": 11,
+        "2014": 6,
+        "2015": 9,
+        "2016": 3,
+        "2017": 7,
+        "2018": 9,
+        "2019": 12,
+        "2020": 9,
+        "2021": 5,
+        "2022": 3,
+        "2023": 7,
+        "2024": 5,
+        "2025": 3,
+        "2026": 2
+      },
+      "names_ending_before_2026_06": []
+    },
+    {
+      "folder": "data/multiasset/crypto",
+      "n_files": 60,
+      "n_with_dates": 60,
+      "earliest_first_date": "2014-09-17",
+      "latest_first_date": "2025-05-01",
+      "most_common_last_dates": {
+        "2026-09-18": 58,
+        "2026-03-26": 2
+      },
+      "first_date_year_histogram": {
+        "2014": 1,
+        "2017": 5,
+        "2018": 7,
+        "2019": 15,
+        "2020": 14,
+        "2021": 4,
+        "2022": 4,
+        "2023": 8,
+        "2024": 1,
+        "2025": 1
+      },
+      "names_ending_before_2026_06": [
+        "MKRUSD",
+        "RNDRUSD"
+      ]
+    }
+  ],
+  "lse_catalog_20260917": {
+    "stocks": {
+      "n_total": 3982,
+      "n_live": 3855,
+      "n_not_live": 127,
+      "first_tick_year_histogram": {
+        "2003": 790,
+        "2004": 49,
+        "2005": 52,
+        "2006": 47,
+        "2007": 58,
+        "2008": 21,
+        "2009": 30,
+        "2010": 50,
+        "2011": 43,
+        "2012": 44,
+        "2013": 65,
+        "2014": 86,
+        "2015": 76,
+        "2016": 58,
+        "2017": 78,
+        "2018": 111,
+        "2019": 101,
+        "2020": 140,
+        "2021": 276,
+        "2022": 111,
+        "2023": 105,
+        "2024": 133,
+        "2025": 157,
+        "2026": 1301
+      },
+      "not_live_last_tick_min": "2026-04-13",
+      "not_live_last_tick_max": "2026-09-04"
+    },
+    "crypto": {
+      "n_total": 58,
+      "n_live": 56,
+      "n_not_live": 2,
+      "first_tick_year_histogram": {
+        "2017": 4,
+        "2018": 7,
+        "2019": 15,
+        "2020": 14,
+        "2021": 4,
+        "2022": 4,
+        "2023": 8,
+        "2024": 1,
+        "2025": 1
+      },
+      "not_live_last_tick_min": "2025-08-31",
+      "not_live_last_tick_max": "2026-06-24"
+    },
+    "etf": {
+      "n_total": 25,
+      "n_live": 25,
+      "n_not_live": 0,
+      "first_tick_year_histogram": {
+        "2026": 25
+      },
+      "not_live_last_tick_min": null,
+      "not_live_last_tick_max": null
+    },
+    "futures": {
+      "n_total": 68,
+      "n_live": 15,
+      "n_not_live": 53,
+      "first_tick_year_histogram": {
+        "2016": 4,
+        "2025": 51,
+        "2026": 13
+      },
+      "not_live_last_tick_min": "2026-03-20",
+      "not_live_last_tick_max": "2026-07-03"
+    },
+    "index": {
+      "n_total": 19,
+      "n_live": 13,
+      "n_not_live": 6,
+      "first_tick_year_histogram": {
+        "2023": 5,
+        "2024": 9,
+        "2025": 1,
+        "2026": 4
+      },
+      "not_live_last_tick_min": "2026-06-30",
+      "not_live_last_tick_max": "2026-06-30"
+    }
+  },
+  "universe_selection": {
+    "reports/universe_selection.txt": "Top 75 S&P 500 constituents (as of current Wikipedia constituent list) by 63-trading-day average dollar volume (close * volume), computed 2026-08-18.",
+    "reports/universe_ranking.csv_rows": 502,
+    "ranking_lookback_bars": 62,
+    "note": "Ranking = current Wikipedia S&P 500 list x 63-day dollar volume computed 2026-08-18: today-selected, i.e. look-ahead for any historical test."
+  },
+  "expanded_universe": {
+    "n_tickers_all": 503,
+    "log": "reports/expanded_universe_ingestion_log.txt: 428 new tickers, OHLCV 427/428 from 2015-01-02, earnings 418/428 (2026-08-18)"
+  },
+  "sp500_removals_2000_2026": {
+    "by_reason_total": {
+      "acquired_or_merged": 182,
+      "bankruptcy_or_distress": 7,
+      "market_cap_or_eligibility": 146,
+      "other_or_blank": 18,
+      "spin_or_restructure": 31
+    },
+    "share": {
+      "acquired_or_merged": 0.474,
+      "bankruptcy_or_distress": 0.018,
+      "market_cap_or_eligibility": 0.38,
+      "other_or_blank": 0.047,
+      "spin_or_restructure": 0.081
+    },
+    "per_year_mean_2011_2026": 20.125,
+    "caveat": "Wikipedia change-ledger reason text classified by regex; ~400 rows; thin before 2011."
+  },
+  "pit_sp500_priced_share_by_year": {
+    "2007": 0.0,
+    "2008": 0.501,
+    "2009": 0.558,
+    "2010": 0.563,
+    "2011": 0.576,
+    "2012": 0.593,
+    "2013": 0.617,
+    "2014": 0.636,
+    "2015": 0.653,
+    "2016": 0.683,
+    "2017": 0.72,
+    "2018": 0.749,
+    "2019": 0.769,
+    "2020": 0.804,
+    "2021": 0.83,
+    "2022": 0.852,
+    "2023": 0.883,
+    "2024": 0.912,
+    "2025": 0.945,
+    "2026": 0.979
+  }
+}

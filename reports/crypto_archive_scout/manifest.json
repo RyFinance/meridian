@@ -1,0 +1,29 @@
+[
+  {
+    "venue": "bybit",
+    "url": "https://public.bybit.com/trading/",
+    "local_path": "data/crypto_archive_scout/bybit/trading_index.html",
+    "bytes": 20000,
+    "sha256": "d039c820c8894d6d93d775ce90d93b6b651c9a99a1705f5f7de71b6e88305875",
+    "fetched_at": "2026-09-25T19:47:38.665338+00:00",
+    "note": "directory listing, truncated to 20KB"
+  },
+  {
+    "venue": "bybit",
+    "url": "https://public.bybit.com/trading/LUNAUSDT/",
+    "local_path": "data/crypto_archive_scout/bybit/LUNAUSDT_trading_index.html",
+    "bytes": 16454,
+    "sha256": "bb3e51f9d7a2ba050a31a1508fef231b85c382026ac2271ed325543c77683f52",
+    "fetched_at": "2026-09-25T19:47:39.408087+00:00",
+    "note": "delisted-symbol archive listing check"
+  },
+  {
+    "venue": "bitmex",
+    "url": "https://s3-eu-west-1.amazonaws.com/public.bitmex.com/data/trade/20141122.csv.gz",
+    "local_path": "data/crypto_archive_scout/bitmex/trade_20141122.csv.gz",
+    "bytes": 263,
+    "sha256": "73528214965bcfcf022dc51eed710b0d487737f8286e43ecac632b23c1b8430d",
+    "fetched_at": "2026-09-25T19:47:45.363757+00:00",
+    "note": "earliest-day trade archive sample"
+  }
+]

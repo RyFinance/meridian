@@ -1,0 +1,1150 @@
+{
+  "4_concentration": {
+    "full": {
+      "sharpe": 0.5964225468053841,
+      "ann_mean": 0.0634601809983162,
+      "gate": 0.557179207438254
+    },
+    "leave_one_year_out": {
+      "2006": {
+        "sharpe": 0.4558970644936103,
+        "ann_mean": 0.048377578479591725,
+        "passes_sharpe_gate": false
+      },
+      "2007": {
+        "sharpe": 0.6952316985128235,
+        "ann_mean": 0.07271965502386561,
+        "passes_sharpe_gate": true
+      },
+      "2008": {
+        "sharpe": 0.5425206471534089,
+        "ann_mean": 0.05076067198926328,
+        "passes_sharpe_gate": false
+      },
+      "2009": {
+        "sharpe": 0.6405605164719073,
+        "ann_mean": 0.06407198099296385,
+        "passes_sharpe_gate": true
+      },
+      "2010": {
+        "sharpe": 0.5992167062582213,
+        "ann_mean": 0.06586195790171011,
+        "passes_sharpe_gate": true
+      },
+      "2011": {
+        "sharpe": 0.6074942856823793,
+        "ann_mean": 0.06714964396006687,
+        "passes_sharpe_gate": true
+      },
+      "2012": {
+        "sharpe": 0.6156786452553188,
+        "ann_mean": 0.06728093447321919,
+        "passes_sharpe_gate": true
+      },
+      "2013": {
+        "sharpe": 0.6744703793361158,
+        "ann_mean": 0.0747979147439859,
+        "passes_sharpe_gate": true
+      },
+      "2014": {
+        "sharpe": 0.6121961687844731,
+        "ann_mean": 0.06647749557849311,
+        "passes_sharpe_gate": true
+      },
+      "2015": {
+        "sharpe": 0.5326291048669816,
+        "ann_mean": 0.05791180025136274,
+        "passes_sharpe_gate": false
+      },
+      "2016": {
+        "sharpe": 0.5943489556895394,
+        "ann_mean": 0.06352786804222799,
+        "passes_sharpe_gate": true
+      }
+    },
+    "ex_2008": {
+      "sharpe": 0.5425206471534089,
+      "ann_mean": 0.05076067198926328,
+      "gate": 0.5860817318275618,
+      "passes_sharpe_gate": false,
+      "monthly_t": 2.054938328077194
+    },
+    "ex_2014_2015": {
+      "sharpe": 0.5443049968985201,
+      "ann_mean": 0.06062910134422652,
+      "gate": 0.6197137687844868,
+      "passes_sharpe_gate": false,
+      "monthly_t": 2.2065572257226034
+    },
+    "ex_2008_2014_2015": {
+      "sharpe": 0.4577185573242011,
+      "ann_mean": 0.04412990429830901,
+      "gate": 0.6602431236909678,
+      "passes_sharpe_gate": false,
+      "monthly_t": 1.544027866392392
+    },
+    "ex_2006": {
+      "sharpe": 0.4558970644936103,
+      "ann_mean": 0.048377578479591725,
+      "gate": 0.5694359903455996,
+      "passes_sharpe_gate": false,
+      "monthly_t": 2.078438049496139
+    },
+    "ex_2006_2008": {
+      "sharpe": 0.36067455755811323,
+      "ann_mean": 0.033365379207293246,
+      "gate": 0.6003972195072634,
+      "passes_sharpe_gate": false,
+      "monthly_t": 1.4102521481664068
+    },
+    "ex_2006_2008_2015": {
+      "sharpe": 0.24563423577284915,
+      "ann_mean": 0.023043501677440705,
+      "gate": 0.6368701411992226,
+      "passes_sharpe_gate": false,
+      "monthly_t": 0.9045339960066511
+    },
+    "only_2009_2013": {
+      "sharpe": 0.25290912216484823,
+      "ann_mean": 0.022129216845647313,
+      "gate": 0.8056241100397042,
+      "passes_sharpe_gate": false,
+      "monthly_t": 0.691350035019341
+    },
+    "all_three_live_2010_2016": {
+      "sharpe": 0.5226706226681808,
+      "ann_mean": 0.03869526904987515,
+      "gate": 0.6809153074188761
+    },
+    "pre_2010_partial_book": {
+      "sharpe": 0.7467413362683789,
+      "ann_mean": 0.11364546286391426
+    },
+    "conditional_on_spot_composite": {
+      "up_months": {
+        "n": 65,
+        "mean_monthly": -0.0070180366612224805,
+        "t": -3.351303263001302
+      },
+      "down_months": {
+        "n": 60,
+        "mean_monthly": 0.018834365976085673,
+        "t": 7.405782894154393
+      },
+      "worst_decile_spot_months": {
+        "n": 13,
+        "sum": 0.39632348528439626,
+        "share_of_total_pnl": 0.588113393711352
+      }
+    },
+    "top5pct_months": {
+      "k": 6,
+      "months": {
+        "2009-01-02": 0.0664,
+        "2006-10-02": 0.0608,
+        "2007-01-03": 0.0542,
+        "2009-02-02": 0.0535,
+        "2015-01-02": 0.0524,
+        "2009-03-02": 0.0483
+      },
+      "share_of_total_pnl": 0.4979612117371378,
+      "total_pnl_sum": 0.6738895755856789,
+      "ex_top5pct_mean_ann": 0.03411617202857232,
+      "ex_top5pct_t": 1.5762311331665257
+    },
+    "sign_test_monthly": {
+      "n": 125,
+      "positive": 73,
+      "frac": 0.584,
+      "p_one_sided": 0.03660716004272626
+    },
+    "per_pair_monthly": {
+      "crude": {
+        "n": 108,
+        "pos": 61,
+        "sign_p": 0.105382896989391,
+        "mean_ann": 0.06869448541436043,
+        "t": 2.5840909440917965,
+        "median_monthly": 0.00167936806026772
+      },
+      "natgas": {
+        "n": 83,
+        "pos": 44,
+        "sign_p": 0.3304418238806076,
+        "mean_ann": 0.04328150489873982,
+        "t": 0.8196250953425307,
+        "median_monthly": 0.007583130624886825
+      },
+      "broad": {
+        "n": 125,
+        "pos": 67,
+        "sign_p": 0.23721078672047577,
+        "mean_ann": 0.05028194014506043,
+        "t": 2.1562531317715705,
+        "median_monthly": 0.002363973359657762
+      }
+    },
+    "vol_daily_ann": 0.10640137824806883,
+    "vol_monthly_ann": 0.07745445064274177,
+    "variance_ratio_monthly_over_daily": 0.529905282485933,
+    "daily_autocorr_lag1_book": -0.17072820579366385,
+    "daily_autocorr_lag1_pairs": {
+      "crude": -0.2143995021066912,
+      "natgas": -0.06994882247889757,
+      "broad": -0.22356979965399681
+    },
+    "monthly_sharpe_ann": 0.8352444400467458
+  },
+  "4b_contango_regime": {
+    "crude": {
+      "steep_contango_half_mean_ann": 0.06336787511783111,
+      "flat_or_backwardation_half_mean_ann": 0.09733099632273823,
+      "corr_prior_drag_next_ret": 0.12484256930854917,
+      "n": 108
+    },
+    "natgas": {
+      "steep_contango_half_mean_ann": 0.08254560273449296,
+      "flat_or_backwardation_half_mean_ann": 0.027754918050477462,
+      "corr_prior_drag_next_ret": -0.12250977583096567,
+      "n": 83
+    }
+  },
+  "5_broad_composition": {
+    "monthly_on_sectors_2007plus": {
+      "n": 120,
+      "lags": 4,
+      "r2": 0.5850920352597058,
+      "const": {
+        "coef": 0.004196363458462291,
+        "t": 3.1563217985699823
+      },
+      "WTI": {
+        "coef": -0.18349754322784928,
+        "t": -11.735575953378337
+      },
+      "NG": {
+        "coef": 0.00618638493829028,
+        "t": 0.43715823894134537
+      },
+      "GLD": {
+        "coef": 0.065273502883959,
+        "t": 2.6765957992332425
+      },
+      "DBB": {
+        "coef": 0.05712750216055821,
+        "t": 2.454137112480886
+      },
+      "DBA": {
+        "coef": 0.09997018071898718,
+        "t": 3.3982985473631446
+      },
+      "SPY": {
+        "coef": -0.013262634805326322,
+        "t": -0.4670885401561658
+      }
+    },
+    "monthly_on_sectors_alpha_ann": 0.0503563615015475,
+    "monthly_on_avgspot_and_tilt": {
+      "n": 125,
+      "lags": 4,
+      "r2": 0.4077717414530184,
+      "const": {
+        "coef": 0.005833932299910895,
+        "t": 3.241936249027243
+      },
+      "BROAD": {
+        "coef": -0.06532275399327092,
+        "t": -1.585819269953775
+      },
+      "TILT_DBC_minus_GSCI": {
+        "coef": 0.5824409829841068,
+        "t": 4.912525762779678
+      }
+    },
+    "monthly_on_USO": {
+      "n": 125,
+      "lags": 4,
+      "r2": 0.44323831183991613,
+      "const": {
+        "coef": 0.003836493648892397,
+        "t": 2.4216324679886
+      },
+      "USO": {
+        "coef": -0.1438461857583514,
+        "t": -10.613502908848746
+      }
+    },
+    "monthly_on_WTI_spot": {
+      "n": 125,
+      "lags": 4,
+      "r2": 0.41154169164428445,
+      "const": {
+        "coef": 0.005483466601387352,
+        "t": 3.109698882619781
+      },
+      "WTI": {
+        "coef": -0.13705111561905348,
+        "t": -10.368518349855634
+      }
+    },
+    "r2_level_only": 0.2699200281771972,
+    "r2_level_plus_tilt": 0.4077717414530184,
+    "tilt_contribution_ann": -0.0061742843792561225,
+    "level_contribution_ann": -0.002369399970536472,
+    "broad_pair_mean_ann": 0.061463503249138116,
+    "2006H2": {
+      "DBC": -0.012086427413571132,
+      "GSG": -0.18639594528275716,
+      "WTI_spot": -0.1723340587595208,
+      "NG_spot": -0.1242038216560517,
+      "GLD": 0.024307243919202248,
+      "USO": -0.2577675350151596,
+      "energy_spot_DBCw": -0.16145966672013823,
+      "broad_pair_sum": 0.1836943960040117
+    }
+  },
+  "6_costs": {
+    "turnover": {
+      "crude": {
+        "mean_monthly_traded_notional": 0.14730778934725539,
+        "annual_traded_notional": 1.7676934721670645
+      },
+      "natgas": {
+        "mean_monthly_traded_notional": 0.13647980251728944,
+        "annual_traded_notional": 1.6377576302074734
+      },
+      "broad": {
+        "mean_monthly_traded_notional": 0.10393502174144936,
+        "annual_traded_notional": 1.2472202608973924
+      }
+    },
+    "grid": {
+      "cost0bp_borrow0pct": {
+        "sharpe": 0.7039,
+        "ann_mean": 0.07492,
+        "passes_sharpe_gate": true
+      },
+      "cost0bp_borrow1pct": {
+        "sharpe": 0.6106,
+        "ann_mean": 0.06498,
+        "passes_sharpe_gate": true
+      },
+      "cost0bp_borrow2pct": {
+        "sharpe": 0.5173,
+        "ann_mean": 0.05504,
+        "passes_sharpe_gate": false
+      },
+      "cost0bp_borrow4pct": {
+        "sharpe": 0.3306,
+        "ann_mean": 0.03517,
+        "passes_sharpe_gate": false
+      },
+      "cost0bp_borrow6pct": {
+        "sharpe": 0.1437,
+        "ann_mean": 0.01529,
+        "passes_sharpe_gate": false
+      },
+      "cost0bp_borrow8pct": {
+        "sharpe": -0.0431,
+        "ann_mean": -0.00459,
+        "passes_sharpe_gate": false
+      },
+      "cost10bp_borrow0pct": {
+        "sharpe": 0.6897,
+        "ann_mean": 0.0734,
+        "passes_sharpe_gate": true
+      },
+      "cost10bp_borrow1pct": {
+        "sharpe": 0.5964,
+        "ann_mean": 0.06346,
+        "passes_sharpe_gate": true
+      },
+      "cost10bp_borrow2pct": {
+        "sharpe": 0.5031,
+        "ann_mean": 0.05352,
+        "passes_sharpe_gate": false
+      },
+      "cost10bp_borrow4pct": {
+        "sharpe": 0.3163,
+        "ann_mean": 0.03365,
+        "passes_sharpe_gate": false
+      },
+      "cost10bp_borrow6pct": {
+        "sharpe": 0.1295,
+        "ann_mean": 0.01377,
+        "passes_sharpe_gate": false
+      },
+      "cost10bp_borrow8pct": {
+        "sharpe": -0.0574,
+        "ann_mean": -0.00611,
+        "passes_sharpe_gate": false
+      },
+      "cost30bp_borrow0pct": {
+        "sharpe": 0.6613,
+        "ann_mean": 0.07036,
+        "passes_sharpe_gate": true
+      },
+      "cost30bp_borrow1pct": {
+        "sharpe": 0.568,
+        "ann_mean": 0.06042,
+        "passes_sharpe_gate": true
+      },
+      "cost30bp_borrow2pct": {
+        "sharpe": 0.4746,
+        "ann_mean": 0.05048,
+        "passes_sharpe_gate": false
+      },
+      "cost30bp_borrow4pct": {
+        "sharpe": 0.2878,
+        "ann_mean": 0.03061,
+        "passes_sharpe_gate": false
+      },
+      "cost30bp_borrow6pct": {
+        "sharpe": 0.1009,
+        "ann_mean": 0.01073,
+        "passes_sharpe_gate": false
+      },
+      "cost30bp_borrow8pct": {
+        "sharpe": -0.086,
+        "ann_mean": -0.00915,
+        "passes_sharpe_gate": false
+      },
+      "cost50bp_borrow0pct": {
+        "sharpe": 0.6328,
+        "ann_mean": 0.06732,
+        "passes_sharpe_gate": true
+      },
+      "cost50bp_borrow1pct": {
+        "sharpe": 0.5395,
+        "ann_mean": 0.05738,
+        "passes_sharpe_gate": false
+      },
+      "cost50bp_borrow2pct": {
+        "sharpe": 0.4461,
+        "ann_mean": 0.04744,
+        "passes_sharpe_gate": false
+      },
+      "cost50bp_borrow4pct": {
+        "sharpe": 0.2593,
+        "ann_mean": 0.02757,
+        "passes_sharpe_gate": false
+      },
+      "cost50bp_borrow6pct": {
+        "sharpe": 0.0723,
+        "ann_mean": 0.00769,
+        "passes_sharpe_gate": false
+      },
+      "cost50bp_borrow8pct": {
+        "sharpe": -0.1146,
+        "ann_mean": -0.01219,
+        "passes_sharpe_gate": false
+      },
+      "cost100bp_borrow0pct": {
+        "sharpe": 0.5613,
+        "ann_mean": 0.05972,
+        "passes_sharpe_gate": true
+      },
+      "cost100bp_borrow1pct": {
+        "sharpe": 0.468,
+        "ann_mean": 0.04978,
+        "passes_sharpe_gate": false
+      },
+      "cost100bp_borrow2pct": {
+        "sharpe": 0.3746,
+        "ann_mean": 0.03985,
+        "passes_sharpe_gate": false
+      },
+      "cost100bp_borrow4pct": {
+        "sharpe": 0.1878,
+        "ann_mean": 0.01997,
+        "passes_sharpe_gate": false
+      },
+      "cost100bp_borrow6pct": {
+        "sharpe": 0.0009,
+        "ann_mean": 9e-05,
+        "passes_sharpe_gate": false
+      },
+      "cost100bp_borrow8pct": {
+        "sharpe": -0.1861,
+        "ann_mean": -0.01978,
+        "passes_sharpe_gate": false
+      },
+      "cost200bp_borrow0pct": {
+        "sharpe": 0.4177,
+        "ann_mean": 0.04453,
+        "passes_sharpe_gate": false
+      },
+      "cost200bp_borrow1pct": {
+        "sharpe": 0.3245,
+        "ann_mean": 0.03459,
+        "passes_sharpe_gate": false
+      },
+      "cost200bp_borrow2pct": {
+        "sharpe": 0.2313,
+        "ann_mean": 0.02465,
+        "passes_sharpe_gate": false
+      },
+      "cost200bp_borrow4pct": {
+        "sharpe": 0.0448,
+        "ann_mean": 0.00477,
+        "passes_sharpe_gate": false
+      },
+      "cost200bp_borrow6pct": {
+        "sharpe": -0.1417,
+        "ann_mean": -0.0151,
+        "passes_sharpe_gate": false
+      },
+      "cost200bp_borrow8pct": {
+        "sharpe": -0.3283,
+        "ann_mean": -0.03498,
+        "passes_sharpe_gate": false
+      }
+    },
+    "gross_mean_ann": 0.074917966294492,
+    "breakeven_per_side_cost_bp_at_1pct_borrow": 418.5851174034305,
+    "breakeven_borrow_pct_at_10bp": 7.336707584006802,
+    "borrow_where_sharpe_hits_gate_at_10bp": 0.014205003438919558,
+    "borrow_where_sharpe_hits_gate_at_30bp": 0.011157323309082463,
+    "no_short_rebate_base": {
+      "sharpe": 0.5159005576619713,
+      "ann_mean": 0.05488251940135802,
+      "passes_sharpe_gate": false,
+      "avg_tbill_over_dev": 0.008577661596958174
+    },
+    "spread_estimates_by_year": {
+      "USL": {
+        "2007": {
+          "cs_spread_bp_mean": 13.0,
+          "ar_spread_bp": 111.3,
+          "median_dollar_vol_$k": 509.5
+        },
+        "2008": {
+          "cs_spread_bp_mean": 52.0,
+          "ar_spread_bp": 64.5,
+          "median_dollar_vol_$k": 135.9
+        },
+        "2009": {
+          "cs_spread_bp_mean": 57.1,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 3029.2
+        },
+        "2010": {
+          "cs_spread_bp_mean": 30.3,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 1553.1
+        },
+        "2011": {
+          "cs_spread_bp_mean": 34.3,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 2440.9
+        },
+        "2012": {
+          "cs_spread_bp_mean": 23.3,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 735.0
+        },
+        "2013": {
+          "cs_spread_bp_mean": 19.4,
+          "ar_spread_bp": 25.2,
+          "median_dollar_vol_$k": 450.1
+        },
+        "2014": {
+          "cs_spread_bp_mean": 15.6,
+          "ar_spread_bp": 52.9,
+          "median_dollar_vol_$k": 308.1
+        },
+        "2015": {
+          "cs_spread_bp_mean": 41.7,
+          "ar_spread_bp": 71.6,
+          "median_dollar_vol_$k": 1371.6
+        },
+        "2016": {
+          "cs_spread_bp_mean": 38.6,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 1318.8
+        }
+      },
+      "USO": {
+        "2006": {
+          "cs_spread_bp_mean": 45.0,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 82236.8
+        },
+        "2007": {
+          "cs_spread_bp_mean": 53.5,
+          "ar_spread_bp": 67.7,
+          "median_dollar_vol_$k": 168885.0
+        },
+        "2008": {
+          "cs_spread_bp_mean": 85.8,
+          "ar_spread_bp": 91.2,
+          "median_dollar_vol_$k": 807022.1
+        },
+        "2009": {
+          "cs_spread_bp_mean": 62.5,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 512932.3
+        },
+        "2010": {
+          "cs_spread_bp_mean": 44.4,
+          "ar_spread_bp": 35.7,
+          "median_dollar_vol_$k": 346988.5
+        },
+        "2011": {
+          "cs_spread_bp_mean": 43.2,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 432164.0
+        },
+        "2012": {
+          "cs_spread_bp_mean": 31.3,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 261923.0
+        },
+        "2013": {
+          "cs_spread_bp_mean": 26.4,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 176833.7
+        },
+        "2014": {
+          "cs_spread_bp_mean": 25.7,
+          "ar_spread_bp": 58.0,
+          "median_dollar_vol_$k": 133433.6
+        },
+        "2015": {
+          "cs_spread_bp_mean": 57.6,
+          "ar_spread_bp": 74.2,
+          "median_dollar_vol_$k": 414705.6
+        },
+        "2016": {
+          "cs_spread_bp_mean": 49.6,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 370287.1
+        }
+      },
+      "UNL": {
+        "2010": {
+          "cs_spread_bp_mean": 38.0,
+          "ar_spread_bp": 13.2,
+          "median_dollar_vol_$k": 654.9
+        },
+        "2011": {
+          "cs_spread_bp_mean": 25.4,
+          "ar_spread_bp": 47.7,
+          "median_dollar_vol_$k": 376.2
+        },
+        "2012": {
+          "cs_spread_bp_mean": 37.3,
+          "ar_spread_bp": 32.9,
+          "median_dollar_vol_$k": 619.1
+        },
+        "2013": {
+          "cs_spread_bp_mean": 25.4,
+          "ar_spread_bp": 40.0,
+          "median_dollar_vol_$k": 274.7
+        },
+        "2014": {
+          "cs_spread_bp_mean": 19.4,
+          "ar_spread_bp": 35.4,
+          "median_dollar_vol_$k": 152.3
+        },
+        "2015": {
+          "cs_spread_bp_mean": 21.2,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 117.0
+        },
+        "2016": {
+          "cs_spread_bp_mean": 27.8,
+          "ar_spread_bp": 104.4,
+          "median_dollar_vol_$k": 97.8
+        }
+      },
+      "UNG": {
+        "2007": {
+          "cs_spread_bp_mean": 59.7,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 33142.4
+        },
+        "2008": {
+          "cs_spread_bp_mean": 81.8,
+          "ar_spread_bp": 91.7,
+          "median_dollar_vol_$k": 89222.8
+        },
+        "2009": {
+          "cs_spread_bp_mean": 92.5,
+          "ar_spread_bp": 163.2,
+          "median_dollar_vol_$k": 270610.4
+        },
+        "2010": {
+          "cs_spread_bp_mean": 78.8,
+          "ar_spread_bp": 17.9,
+          "median_dollar_vol_$k": 170097.6
+        },
+        "2011": {
+          "cs_spread_bp_mean": 46.9,
+          "ar_spread_bp": 39.1,
+          "median_dollar_vol_$k": 110803.6
+        },
+        "2012": {
+          "cs_spread_bp_mean": 57.2,
+          "ar_spread_bp": 70.3,
+          "median_dollar_vol_$k": 179063.4
+        },
+        "2013": {
+          "cs_spread_bp_mean": 40.4,
+          "ar_spread_bp": 36.5,
+          "median_dollar_vol_$k": 91503.7
+        },
+        "2014": {
+          "cs_spread_bp_mean": 45.1,
+          "ar_spread_bp": 68.7,
+          "median_dollar_vol_$k": 163726.8
+        },
+        "2015": {
+          "cs_spread_bp_mean": 57.4,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 79042.8
+        },
+        "2016": {
+          "cs_spread_bp_mean": 55.1,
+          "ar_spread_bp": 95.9,
+          "median_dollar_vol_$k": 61038.0
+        }
+      },
+      "DBC": {
+        "2006": {
+          "cs_spread_bp_mean": 38.4,
+          "ar_spread_bp": 42.9,
+          "median_dollar_vol_$k": 6264.0
+        },
+        "2007": {
+          "cs_spread_bp_mean": 42.8,
+          "ar_spread_bp": 62.0,
+          "median_dollar_vol_$k": 6836.4
+        },
+        "2008": {
+          "cs_spread_bp_mean": 57.1,
+          "ar_spread_bp": 54.7,
+          "median_dollar_vol_$k": 30860.1
+        },
+        "2009": {
+          "cs_spread_bp_mean": 38.7,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 42465.2
+        },
+        "2010": {
+          "cs_spread_bp_mean": 26.4,
+          "ar_spread_bp": 15.1,
+          "median_dollar_vol_$k": 38424.2
+        },
+        "2011": {
+          "cs_spread_bp_mean": 26.6,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 63453.1
+        },
+        "2012": {
+          "cs_spread_bp_mean": 16.1,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 47622.4
+        },
+        "2013": {
+          "cs_spread_bp_mean": 13.1,
+          "ar_spread_bp": 13.8,
+          "median_dollar_vol_$k": 45635.7
+        },
+        "2014": {
+          "cs_spread_bp_mean": 18.3,
+          "ar_spread_bp": 32.4,
+          "median_dollar_vol_$k": 34677.8
+        },
+        "2015": {
+          "cs_spread_bp_mean": 25.2,
+          "ar_spread_bp": 33.1,
+          "median_dollar_vol_$k": 27615.5
+        },
+        "2016": {
+          "cs_spread_bp_mean": 25.4,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 26436.8
+        }
+      },
+      "GSG": {
+        "2006": {
+          "cs_spread_bp_mean": 29.1,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 4005.2
+        },
+        "2007": {
+          "cs_spread_bp_mean": 49.1,
+          "ar_spread_bp": 62.8,
+          "median_dollar_vol_$k": 4043.7
+        },
+        "2008": {
+          "cs_spread_bp_mean": 55.8,
+          "ar_spread_bp": 96.3,
+          "median_dollar_vol_$k": 12155.2
+        },
+        "2009": {
+          "cs_spread_bp_mean": 56.2,
+          "ar_spread_bp": 81.1,
+          "median_dollar_vol_$k": 12985.5
+        },
+        "2010": {
+          "cs_spread_bp_mean": 28.5,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 9266.3
+        },
+        "2011": {
+          "cs_spread_bp_mean": 31.2,
+          "ar_spread_bp": 6.9,
+          "median_dollar_vol_$k": 10506.4
+        },
+        "2012": {
+          "cs_spread_bp_mean": 22.5,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 5745.1
+        },
+        "2013": {
+          "cs_spread_bp_mean": 15.9,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 5139.4
+        },
+        "2014": {
+          "cs_spread_bp_mean": 20.3,
+          "ar_spread_bp": 47.4,
+          "median_dollar_vol_$k": 4698.6
+        },
+        "2015": {
+          "cs_spread_bp_mean": 28.7,
+          "ar_spread_bp": 46.2,
+          "median_dollar_vol_$k": 3348.7
+        },
+        "2016": {
+          "cs_spread_bp_mean": 27.8,
+          "ar_spread_bp": 0.0,
+          "median_dollar_vol_$k": 2954.8
+        }
+      }
+    }
+  },
+  "7_null": {
+    "daily_block_bootstrap_p": {
+      "1": 0.026194761047790442,
+      "5": 0.008998200359928014,
+      "10": 0.009198160367926415,
+      "21": 0.00639872025594881,
+      "63": 0.01759648070385923,
+      "126": 0.023795240951809637,
+      "252": 0.011197760447910418
+    },
+    "daily_stationary_bootstrap_p_mean21": 0.015984015984015984,
+    "monthly_block_bootstrap_p": {
+      "1": 0.004199160167966407,
+      "3": 0.01219756048790242,
+      "6": 0.023195360927814438,
+      "12": 0.008398320335932814
+    },
+    "iid_t_daily": 1.9267779018273254,
+    "nw_t_daily_by_lags": {
+      "0": 1.9267779018273257,
+      "5": 2.397803942067128,
+      "10": 2.459952398703976,
+      "21": 2.4439220292716235,
+      "63": 2.1835685803507614
+    },
+    "nw_t_monthly_lag4": 2.147241780101675,
+    "monthly_signflip_p": 0.004049797510124494,
+    "stress_daily_block21_p": 0.1217756448710258,
+    "stress_monthly_t": 1.326042135199917,
+    "placebo_all_ordered_pairs": {
+      "USL-USO": {
+        "sharpe": 0.471,
+        "ann_mean": 0.0667,
+        "first": "2007-12-07",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": true
+      },
+      "USL-UNL": {
+        "sharpe": 0.353,
+        "ann_mean": 0.1203,
+        "first": "2010-01-05",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": false
+      },
+      "USL-UNG": {
+        "sharpe": 0.51,
+        "ann_mean": 0.2327,
+        "first": "2007-12-07",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": true
+      },
+      "USL-DBC": {
+        "sharpe": -0.121,
+        "ann_mean": -0.0205,
+        "first": "2007-12-07",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": false
+      },
+      "USL-GSG": {
+        "sharpe": 0.2,
+        "ann_mean": 0.0291,
+        "first": "2007-12-07",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": true
+      },
+      "USO-USL": {
+        "sharpe": -0.636,
+        "ann_mean": -0.0901,
+        "first": "2007-12-07",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": false
+      },
+      "USO-UNL": {
+        "sharpe": 0.157,
+        "ann_mean": 0.0585,
+        "first": "2010-01-05",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": false
+      },
+      "USO-UNG": {
+        "sharpe": 0.442,
+        "ann_mean": 0.2109,
+        "first": "2007-04-19",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": true
+      },
+      "USO-DBC": {
+        "sharpe": -0.519,
+        "ann_mean": -0.1018,
+        "first": "2006-07-21",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": false
+      },
+      "USO-GSG": {
+        "sharpe": -0.275,
+        "ann_mean": -0.0425,
+        "first": "2006-07-24",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": true
+      },
+      "UNL-USL": {
+        "sharpe": -0.419,
+        "ann_mean": -0.1429,
+        "first": "2010-01-05",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": false
+      },
+      "UNL-USO": {
+        "sharpe": -0.219,
+        "ann_mean": -0.0813,
+        "first": "2010-01-05",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": true
+      },
+      "UNL-UNG": {
+        "sharpe": 0.258,
+        "ann_mean": 0.0451,
+        "first": "2010-01-05",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": true
+      },
+      "UNL-DBC": {
+        "sharpe": -0.581,
+        "ann_mean": -0.157,
+        "first": "2010-01-05",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": false
+      },
+      "UNL-GSG": {
+        "sharpe": -0.43,
+        "ann_mean": -0.1253,
+        "first": "2010-01-05",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": true
+      },
+      "UNG-USL": {
+        "sharpe": -0.562,
+        "ann_mean": -0.2564,
+        "first": "2007-12-07",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": false
+      },
+      "UNG-USO": {
+        "sharpe": -0.492,
+        "ann_mean": -0.2347,
+        "first": "2007-04-19",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": true
+      },
+      "UNG-UNL": {
+        "sharpe": -0.39,
+        "ann_mean": -0.0682,
+        "first": "2010-01-05",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": false
+      },
+      "UNG-DBC": {
+        "sharpe": -0.734,
+        "ann_mean": -0.2996,
+        "first": "2007-04-19",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": false
+      },
+      "UNG-GSG": {
+        "sharpe": -0.609,
+        "ann_mean": -0.2533,
+        "first": "2007-04-19",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": true
+      },
+      "DBC-USL": {
+        "sharpe": -0.013,
+        "ann_mean": -0.0023,
+        "first": "2007-12-07",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": false
+      },
+      "DBC-USO": {
+        "sharpe": 0.403,
+        "ann_mean": 0.0789,
+        "first": "2006-07-21",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": true
+      },
+      "DBC-UNL": {
+        "sharpe": 0.499,
+        "ann_mean": 0.1348,
+        "first": "2010-01-05",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": false
+      },
+      "DBC-UNG": {
+        "sharpe": 0.677,
+        "ann_mean": 0.2764,
+        "first": "2007-04-19",
+        "passes_gate": true,
+        "long_is_deferred": true,
+        "short_is_front": true
+      },
+      "DBC-GSG": {
+        "sharpe": 0.486,
+        "ann_mean": 0.0491,
+        "first": "2006-07-24",
+        "passes_gate": false,
+        "long_is_deferred": true,
+        "short_is_front": true
+      },
+      "GSG-USL": {
+        "sharpe": -0.358,
+        "ann_mean": -0.052,
+        "first": "2007-12-07",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": false
+      },
+      "GSG-USO": {
+        "sharpe": 0.126,
+        "ann_mean": 0.0194,
+        "first": "2006-07-24",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": true
+      },
+      "GSG-UNL": {
+        "sharpe": 0.353,
+        "ann_mean": 0.103,
+        "first": "2010-01-05",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": false
+      },
+      "GSG-UNG": {
+        "sharpe": 0.553,
+        "ann_mean": 0.2299,
+        "first": "2007-04-19",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": true
+      },
+      "GSG-DBC": {
+        "sharpe": -0.707,
+        "ann_mean": -0.0715,
+        "first": "2006-07-24",
+        "passes_gate": false,
+        "long_is_deferred": false,
+        "short_is_front": false
+      }
+    },
+    "placebo_groups": {
+      "registered (deferred-long vs same-commodity front-short)": {
+        "n": 3,
+        "n_pass_gate": 0,
+        "median_sharpe": 0.471
+      },
+      "front-long vs front-short, cross commodity": {
+        "n": 6,
+        "n_pass_gate": 0,
+        "median_sharpe": -0.07450000000000001
+      },
+      "deferred-long vs deferred-short, cross commodity": {
+        "n": 6,
+        "n_pass_gate": 0,
+        "median_sharpe": -0.067
+      },
+      "deferred-long vs front-short, cross commodity": {
+        "n": 6,
+        "n_pass_gate": 1,
+        "median_sharpe": 0.3015
+      },
+      "front-long vs deferred-short (reverse, any)": {
+        "n": 9,
+        "n_pass_gate": 0,
+        "median_sharpe": -0.519
+      }
+    },
+    "placebo_note": "cross-commodity spreads carry the difference in the two funds' roll drags plus cross-commodity spot; they are not zero-premium placebos",
+    "same_beta_short_spot": {
+      "sharpe": -0.19524970571059197,
+      "ann_mean": -0.010223476651671948,
+      "passes_sharpe_gate": false,
+      "block21_p": 0.7406518696260748
+    },
+    "short_front_matched_basket_beta-0.25": {
+      "sharpe": 0.450241681852742,
+      "ann_mean": 0.03117649782210153,
+      "passes_sharpe_gate": false
+    },
+    "short_front_matched_basket_beta-0.168": {
+      "sharpe": 0.45024168185274216,
+      "ann_mean": 0.020950606536452233,
+      "passes_sharpe_gate": false
+    },
+    "book_minus_beta_spot_daily": {
+      "sharpe": 0.7590057438498472,
+      "ann_mean": 0.07368365764998813,
+      "block21_p": 0.0001999600079984003
+    }
+  }
+}

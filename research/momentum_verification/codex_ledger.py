@@ -47,6 +47,10 @@ def ledger(opens,closes,targets,rates,start,capital=100000.,slip=.0005,order_fee
     f.iloc[-1,f.columns.get_loc('return')]=f.nav.iloc[-1]/prior-1
     f.iloc[-1,f.columns.get_loc('cost')]+=liquidation/capital/prior
     f.iloc[-1,f.columns.get_loc('cost_dollars')]+=liquidation
+    f.iloc[-1,f.columns.get_loc('turnover')]+=units.mul(previous_marks).abs().fillna(0).sum()/capital/prior
+    for symbol in units.index[units.ne(0)]:
+        notional=float(units[symbol]*previous_marks[symbol])
+        fills.append({'date':str(f.index[-1].date()),'symbol':symbol,'adjusted_units_delta':float(-units[symbol]),'adjusted_open':float(previous_marks[symbol]),'notional':-notional,'cost':abs(notional)*slip+order_fee,'execution':'final liquidation at close'})
     reconciliation=contributions.sum()+f.interest_dollars.sum()-f.cost_dollars.sum()-capital*(f.nav.iloc[-1]-1)
     return f,pd.DataFrame(fills),contributions,float(reconciliation)
 

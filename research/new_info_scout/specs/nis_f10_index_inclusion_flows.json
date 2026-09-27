@@ -1,0 +1,65 @@
+{
+ "name": "nis_f10_index_inclusion_flows",
+ "description": "S&P 500 additions/deletions, announcement next open -> effective-date close (~5 days), 1995-2026, fixed-dollar calendar-time book.",
+ "assumptions": [
+  "~45 changes/yr; adds and deletes announced together: clusters mean 2, cv 0.5, icc 0.05",
+  "car_sd 5%; post-2010 effect < 1% announcement-to-effective (Greenwood-Sammon 2025): base gross 30 bp; cost 10 bp",
+  "dev 1995-2010 (15.5y), val 2011-2026 (15.7y)",
+  "DATA NOT ASSEMBLABLE: removed/acquired names lack free prices (survivorship)"
+ ],
+ "design": "event_study",
+ "params": {
+  "events_per_year": 45,
+  "car_sd": 0.05,
+  "hold_days": 5,
+  "icc": 0.05,
+  "concurrency": {
+   "model": "clusters",
+   "mean_size": 2,
+   "cv": 0.5
+  },
+  "portfolio_autocorr": 0.0,
+  "mean_car": 0.003,
+  "cost_per_event": 0.001
+ },
+ "windows": {
+  "dev_years": 15.5,
+  "val_years": 15.7
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.1,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 2,
+   "floor": 0.3
+  }
+ },
+ "scenarios": [
+  {
+   "label": "gross 30 bp",
+   "params": {
+    "mean_car": 0.003
+   }
+  },
+  {
+   "label": "gross 100 bp",
+   "params": {
+    "mean_car": 0.01
+   }
+  },
+  {
+   "label": "gross 200 bp",
+   "params": {
+    "mean_car": 0.02
+   }
+  }
+ ]
+}

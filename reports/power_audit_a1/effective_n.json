@@ -1,0 +1,618 @@
+{
+ "breadth_semantics": {
+  "N": 2000,
+  "measured_avg_pairwise_resid_corr": 5.855472392329952e-05,
+  "sd_ic_mc": 0.15942769186337138,
+  "rows": [
+   {
+    "parametrisation": "truth (MC sd of covariance IC)",
+    "rho_bet": 0.024929653759761975,
+    "n_eff": 39.34345385875087,
+    "sharpe_overstatement_vs_truth": 1.0
+   },
+   {
+    "parametrisation": "formula, rho_resid = style factor share, rho_signal = 0.25 (correct semantics)",
+    "rho_bet": 0.025,
+    "n_eff": 39.2349190779794,
+    "sharpe_overstatement_vs_truth": 0.9986197229032394
+   },
+   {
+    "parametrisation": "formula, rho_resid = total factor share (sector+style), rho_signal = 0.25 (conservative)",
+    "rho_bet": 0.055,
+    "n_eff": 18.02695029068457,
+    "sharpe_overstatement_vs_truth": 0.6769005845927477
+   },
+   {
+    "parametrisation": "formula, rho_resid = MEASURED avg pairwise corr of market-neutral residuals, rho_signal=0.25",
+    "rho_bet": 1.463868098082488e-05,
+    "n_eff": 1943.1384764671218,
+    "sharpe_overstatement_vs_truth": 7.027739165557975
+   },
+   {
+    "parametrisation": "brief's literal N/(1+(N-1) rho_pair) (rho_signal = 1)",
+    "rho_bet": 5.855472392329952e-05,
+    "n_eff": 1790.428719329942,
+    "sharpe_overstatement_vs_truth": 6.745936927519206
+   }
+  ]
+ },
+ "spec_sensitivities": [
+  {
+   "spec": "retro_commodity_roll",
+   "change": "D=0.6",
+   "joint_current_0.7": 0.30415111780844917,
+   "joint_proposed_0.7": 0.6326806579921126,
+   "false_pass_current": 1.2845896156023687e-05,
+   "false_pass_proposed": 0.0005034187887586584,
+   "verdict_current": "MARGINAL",
+   "verdict_proposed": "DECISIVE",
+   "n_eff_total": 17310.681818181816,
+   "raw_total": 15233.4,
+   "val_proposed_threshold": 0.40887755129420206
+  },
+  {
+   "spec": "retro_commodity_roll",
+   "change": "D=0.8",
+   "joint_current_0.7": 0.3000693837304764,
+   "joint_proposed_0.7": 0.5451142254965942,
+   "false_pass_current": 9.913449346175517e-05,
+   "false_pass_proposed": 0.0011042836227110645,
+   "verdict_current": "MARGINAL",
+   "verdict_proposed": "DECISIVE",
+   "n_eff_total": 12983.01136363636,
+   "raw_total": 15233.4,
+   "val_proposed_threshold": 0.4721311286106052
+  },
+  {
+   "spec": "retro_commodity_roll",
+   "change": "D=1.0",
+   "joint_current_0.7": 0.27089311010864675,
+   "joint_proposed_0.7": 0.43384825229410307,
+   "false_pass_current": 0.00024294725304892172,
+   "false_pass_proposed": 0.0012499999999999985,
+   "verdict_current": "MARGINAL",
+   "verdict_proposed": "MARGINAL",
+   "n_eff_total": 10386.40909090909,
+   "raw_total": 15233.4,
+   "val_proposed_threshold": 0.5278586489335045
+  },
+  {
+   "spec": "retro_commodity_roll",
+   "change": "D=1.2",
+   "joint_current_0.7": 0.240327341971833,
+   "joint_proposed_0.7": 0.3433708907688823,
+   "false_pass_current": 0.0004111090050667267,
+   "false_pass_proposed": 0.0012499999999999985,
+   "verdict_current": "INCAPABLE",
+   "verdict_proposed": "MARGINAL",
+   "n_eff_total": 8655.340909090908,
+   "raw_total": 15233.4,
+   "val_proposed_threshold": 0.5782401783901614
+  },
+  {
+   "spec": "c4c_tsy_auction_surprise",
+   "change": "pav k_val=1",
+   "joint_current_0.7": 0.26508075717131724,
+   "joint_proposed_0.7": 0.49123334654637935,
+   "false_pass_current": 6.674951941566684e-05,
+   "false_pass_proposed": 0.000833333333333333,
+   "verdict_current": "MARGINAL",
+   "verdict_proposed": "MARGINAL",
+   "n_eff_total": 575.9747706422017,
+   "raw_total": 1004.5,
+   "val_proposed_threshold": 0.46523486147066967
+  },
+  {
+   "spec": "c4c_tsy_auction_surprise",
+   "change": "pav k_val=3",
+   "joint_current_0.7": 0.26508075717131724,
+   "joint_proposed_0.7": 0.3919253016764629,
+   "false_pass_current": 6.674951941566684e-05,
+   "false_pass_proposed": 0.0002777777777777778,
+   "verdict_current": "MARGINAL",
+   "verdict_proposed": "MARGINAL",
+   "n_eff_total": 575.9747706422017,
+   "raw_total": 1004.5,
+   "val_proposed_threshold": 0.6019020863055669
+  },
+  {
+   "spec": "c4c_tsy_auction_surprise",
+   "change": "pav k_val=3 floor=0.3",
+   "joint_current_0.7": 0.26508075717131724,
+   "joint_proposed_0.7": 0.3919253016764629,
+   "false_pass_current": 6.674951941566684e-05,
+   "false_pass_proposed": 0.0002777777777777778,
+   "verdict_current": "MARGINAL",
+   "verdict_proposed": "MARGINAL",
+   "n_eff_total": 575.9747706422017,
+   "raw_total": 1004.5,
+   "val_proposed_threshold": 0.6019020863055669
+  },
+  {
+   "spec": "c4_tsy_auction_demand",
+   "change": "pav k_val=1",
+   "joint_current_0.7": 0.3044537521201143,
+   "joint_proposed_0.7": 0.5901436299029506,
+   "false_pass_current": 6.943357539069856e-05,
+   "false_pass_proposed": 0.0012499999999999985,
+   "verdict_current": "MARGINAL",
+   "verdict_proposed": "DECISIVE",
+   "n_eff_total": 917.5458715596329,
+   "raw_total": 1600.2,
+   "val_proposed_threshold": 0.4448801203029604
+  },
+  {
+   "spec": "c4_tsy_auction_demand",
+   "change": "pav k_val=2",
+   "joint_current_0.7": 0.3044537521201143,
+   "joint_proposed_0.7": 0.5243856094473838,
+   "false_pass_current": 6.943357539069856e-05,
+   "false_pass_proposed": 0.000624999999999999,
+   "verdict_current": "MARGINAL",
+   "verdict_proposed": "DECISIVE",
+   "n_eff_total": 917.5458715596329,
+   "raw_total": 1600.2,
+   "val_proposed_threshold": 0.5301073596729065
+  },
+  {
+   "spec": "c4_tsy_auction_demand",
+   "change": "pav k_val=2 floor=0.3",
+   "joint_current_0.7": 0.3044537521201143,
+   "joint_proposed_0.7": 0.5243856094473838,
+   "false_pass_current": 6.943357539069856e-05,
+   "false_pass_proposed": 0.000624999999999999,
+   "verdict_current": "MARGINAL",
+   "verdict_proposed": "DECISIVE",
+   "n_eff_total": 917.5458715596329,
+   "raw_total": 1600.2,
+   "val_proposed_threshold": 0.5301073596729065
+  },
+  {
+   "spec": "c4a_binance_funding_ls_daily",
+   "change": "pav k_val=1",
+   "joint_current_0.7": 0.033077777585244425,
+   "joint_proposed_0.7": 0.05943714141353361,
+   "false_pass_current": 0.0002777777777777778,
+   "false_pass_proposed": 0.000833333333333333,
+   "verdict_current": "INCAPABLE",
+   "verdict_proposed": "INCAPABLE",
+   "n_eff_total": 26144.66581884979,
+   "raw_total": 243455.0,
+   "val_proposed_threshold": 0.9026659730082646
+  },
+  {
+   "spec": "c4a_binance_funding_ls_daily",
+   "change": "pav k_val=3",
+   "joint_current_0.7": 0.033077777585244425,
+   "joint_proposed_0.7": 0.033077777585244425,
+   "false_pass_current": 0.0002777777777777778,
+   "false_pass_proposed": 0.0002777777777777778,
+   "verdict_current": "INCAPABLE",
+   "verdict_proposed": "INCAPABLE",
+   "n_eff_total": 26144.66581884979,
+   "raw_total": 243455.0,
+   "val_proposed_threshold": 1.1678328031421004
+  },
+  {
+   "spec": "c4a_binance_funding_ls_daily",
+   "change": "pav k_val=3 floor=0.3",
+   "joint_current_0.7": 0.033077777585244425,
+   "joint_proposed_0.7": 0.033077777585244425,
+   "false_pass_current": 0.0002777777777777778,
+   "false_pass_proposed": 0.0002777777777777778,
+   "verdict_current": "INCAPABLE",
+   "verdict_proposed": "INCAPABLE",
+   "n_eff_total": 26144.66581884979,
+   "raw_total": 243455.0,
+   "val_proposed_threshold": 1.1678328031421004
+  },
+  {
+   "spec": "c4b_finra_svr_weekly",
+   "change": "pav k_val=1",
+   "joint_current_0.7": 0.055093759525605045,
+   "joint_proposed_0.7": 0.09109258282194835,
+   "false_pass_current": 0.0002777777777777778,
+   "false_pass_proposed": 0.000833333333333333,
+   "verdict_current": "INCAPABLE",
+   "verdict_proposed": "INCAPABLE",
+   "n_eff_total": 11089.68240908343,
+   "raw_total": 842400.0,
+   "val_proposed_threshold": 0.7587144017511177
+  },
+  {
+   "spec": "c4b_finra_svr_weekly",
+   "change": "pav k_val=3",
+   "joint_current_0.7": 0.055093759525605045,
+   "joint_proposed_0.7": 0.055093759525605045,
+   "false_pass_current": 0.0002777777777777778,
+   "false_pass_proposed": 0.0002777777777777778,
+   "verdict_current": "INCAPABLE",
+   "verdict_proposed": "INCAPABLE",
+   "n_eff_total": 11089.68240908343,
+   "raw_total": 842400.0,
+   "val_proposed_threshold": 0.9815940703163927
+  },
+  {
+   "spec": "c4b_finra_svr_weekly",
+   "change": "pav k_val=3 floor=0.3",
+   "joint_current_0.7": 0.055093759525605045,
+   "joint_proposed_0.7": 0.055093759525605045,
+   "false_pass_current": 0.0002777777777777778,
+   "false_pass_proposed": 0.0002777777777777778,
+   "verdict_current": "INCAPABLE",
+   "verdict_proposed": "INCAPABLE",
+   "n_eff_total": 11089.68240908343,
+   "raw_total": 842400.0,
+   "val_proposed_threshold": 0.9815940703163927
+  },
+  {
+   "spec": "retro_pead_2004_2014",
+   "change": "event deff",
+   "m_w": 70.4419642857143,
+   "deff": 2.388839285714286,
+   "events_per_year": 510,
+   "n_eff_per_year": 213.492805083162
+  },
+  {
+   "spec": "pro_events_8000",
+   "change": "event deff",
+   "m_w": 337.7346938775511,
+   "deff": 7.734693877551022,
+   "events_per_year": 8000,
+   "n_eff_per_year": 1034.300791556728
+  },
+  {
+   "spec": "retro_fx_hedge_rebal",
+   "change": "event deff",
+   "m_w": 5.0,
+   "deff": 2.6,
+   "events_per_year": 60,
+   "n_eff_per_year": 23.076923076923077
+  },
+  {
+   "spec": "c4c_tsy_auction_surprise",
+   "change": "event deff",
+   "m_w": 3.4800000000000004,
+   "deff": 1.7440000000000002,
+   "events_per_year": 41,
+   "n_eff_per_year": 23.509174311926603
+  }
+ ],
+ "floor_binding": [
+  {
+   "spec": "c4_tsy_auction_demand",
+   "val_years": 13.67,
+   "pav_threshold": 0.4448801203029604,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "c4a_binance_funding_ls_daily",
+   "val_years": 3.67,
+   "pav_threshold": 0.9026659730082646,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "c4a_binance_funding_ls_weekly",
+   "val_years": 3.67,
+   "pav_threshold": 0.8586066042393555,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "c4b_finra_svr_weekly",
+   "val_years": 4.7,
+   "pav_threshold": 0.7587144017511177,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "c4c_tsy_auction_surprise",
+   "val_years": 12.5,
+   "pav_threshold": 0.46523486147066967,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "c4d_eia_energy_carry",
+   "val_years": 10.0,
+   "pav_threshold": 0.5468397847537185,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "pro_commodity4_monthly",
+   "val_years": 17.5,
+   "pav_threshold": 0.413372022129837,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "pro_crypto200_daily",
+   "val_years": 2.5,
+   "pav_threshold": 1.093679569507437,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "pro_cs2000_weekly_ls",
+   "val_years": 7.5,
+   "pav_threshold": 0.600615623517006,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "pro_cs500_daily_ls",
+   "val_years": 5.0,
+   "pav_threshold": 0.7356009045801146,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "pro_events_8000",
+   "val_years": 5.0,
+   "pav_threshold": 0.7356009045801146,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "pro_panel30_monthly",
+   "val_years": 10.0,
+   "pav_threshold": 0.5468397847537185,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "retro_commodity_roll",
+   "val_years": 9.71,
+   "pav_threshold": 0.40887755129420206,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "retro_etf_hybrids",
+   "val_years": 11.7,
+   "pav_threshold": 0.5055535598444163,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "retro_fx_hedge_rebal",
+   "val_years": 5.67,
+   "pav_threshold": 0.6907735936533661,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "retro_ief_shy_duration",
+   "val_years": 11.7,
+   "pav_threshold": 0.4736092686557437,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "retro_insider",
+   "val_years": 10.5,
+   "pav_threshold": 0.5336609858323141,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  },
+  {
+   "spec": "retro_tsy_month_end",
+   "val_years": 11.63,
+   "pav_threshold": 0.5706915172732709,
+   "binding_leg": "p_lt_alpha",
+   "floor_0.30_binds": false
+  }
+ ],
+ "winners_curse": {
+  "dev_threshold": 0.519831884032117,
+  "conditional_MU_calibration": [
+   {
+    "true_S": 0.0,
+    "n_passers": 1500,
+    "P(cond_MU_est <= S | pass)": 0.5013333333333333,
+    "median_cond_MU_est": -0.0023642489179694064,
+    "mean_raw_S_hat_given_pass": 0.6698538507666274,
+    "mean_posterior_mean_given_pass": 0.4564512262008599,
+    "sd_cond_MU_est": 1.6524512362114987
+   },
+   {
+    "true_S": 0.3,
+    "n_passers": 1500,
+    "P(cond_MU_est <= S | pass)": 0.5033333333333333,
+    "median_cond_MU_est": 0.29528724489280833,
+    "mean_raw_S_hat_given_pass": 0.7280623730186863,
+    "mean_posterior_mean_given_pass": 0.49607848206761324,
+    "sd_cond_MU_est": 1.544037084226645
+   },
+   {
+    "true_S": 0.5,
+    "n_passers": 1500,
+    "P(cond_MU_est <= S | pass)": 0.5113333333333333,
+    "median_cond_MU_est": 0.48668347912942234,
+    "mean_raw_S_hat_given_pass": 0.7787677203525256,
+    "mean_posterior_mean_given_pass": 0.5305907348224469,
+    "sd_cond_MU_est": 1.3117374011427771
+   },
+   {
+    "true_S": 0.7,
+    "n_passers": 1500,
+    "P(cond_MU_est <= S | pass)": 0.5073333333333333,
+    "median_cond_MU_est": 0.6919060726233559,
+    "mean_raw_S_hat_given_pass": 0.8662300143235925,
+    "mean_posterior_mean_given_pass": 0.5901037171267749,
+    "sd_cond_MU_est": 1.2721665559682156
+   },
+   {
+    "true_S": 1.0,
+    "n_passers": 1500,
+    "P(cond_MU_est <= S | pass)": 0.52,
+    "median_cond_MU_est": 0.9853931602030394,
+    "mean_raw_S_hat_given_pass": 1.046060658836132,
+    "mean_posterior_mean_given_pass": 0.712418285517159,
+    "sd_cond_MU_est": 0.7825083066431209
+   }
+  ],
+  "spike_slab_tsy_0.664": [
+   {
+    "prior_mass_at_zero": 0.0,
+    "posterior_mean": 0.4524811464083124
+   },
+   {
+    "prior_mass_at_zero": 0.5,
+    "posterior_mean": 0.3038235685933392
+   },
+   {
+    "prior_mass_at_zero": 0.8,
+    "posterior_mean": 0.15301223546993417
+   },
+   {
+    "prior_mass_at_zero": 0.9,
+    "posterior_mean": 0.08373694281576115
+   }
+  ]
+ },
+ "turnover": [
+  {
+   "case": "c4b finra-like",
+   "tau_analytic": 0.6098253495487096,
+   "tau_mc": 0.6148867449664429,
+   "rel_err": 0.008299745855889551,
+   "net_sharpe_analytic": -0.29744016692065317,
+   "net_sharpe_overstatement_from_turnover": 0.008315537867866781
+  },
+  {
+   "case": "cs500-like",
+   "tau_analytic": 0.22079555736135204,
+   "tau_mc": 0.22407158836689037,
+   "rel_err": 0.014837395483355609,
+   "net_sharpe_analytic": 1.357298671306049,
+   "net_sharpe_overstatement_from_turnover": 0.009557182671113065
+  },
+  {
+   "case": "no tilt control",
+   "tau_analytic": 0.43757263255272094,
+   "tau_mc": 0.43980704697986583,
+   "rel_err": 0.005106385228229815,
+   "net_sharpe_analytic": 0.9535731084522899,
+   "net_sharpe_overstatement_from_turnover": 0.008057907530403878
+  },
+  {
+   "case": "strong tilt",
+   "tau_analytic": 0.43757263255272094,
+   "tau_mc": 0.4501845637583893,
+   "rel_err": 0.028822486296943506,
+   "net_sharpe_analytic": 0.229947082801527,
+   "net_sharpe_overstatement_from_turnover": 0.014136735822318919
+  }
+ ],
+ "kappa": [
+  {
+   "case": "monthly AR .3, 10y, S=1, crash innovations",
+   "marginal_skew": -1.3435875547605503,
+   "marginal_exkurt": 4.195664763502996,
+   "kappa_mc": 1.6621112131506615,
+   "kappa_formula": 1.60942031038619,
+   "kappa_formula_gaussian": 1.3809602753342627,
+   "mean_S_hat": 1.059240585243909,
+   "bias_S_hat": 0.05924058524390907
+  },
+  {
+   "case": "monthly AR .3, 10y, S=1, gaussian",
+   "marginal_skew": 0.0002540072045396606,
+   "marginal_exkurt": -0.003939056816240516,
+   "kappa_mc": 1.3910368362442138,
+   "kappa_formula": 1.380885086797164,
+   "kappa_formula_gaussian": 1.3809602753342627,
+   "mean_S_hat": 1.014203813917671,
+   "bias_S_hat": 0.014203813917671004
+  },
+  {
+   "case": "monthly AR .5, 5y, S=1, gaussian",
+   "marginal_skew": -0.0009705715354665511,
+   "marginal_exkurt": -0.0031414498519839462,
+   "kappa_mc": 1.814343578351911,
+   "kappa_formula": 1.7521306650922979,
+   "kappa_formula_gaussian": 1.7519830034690533,
+   "mean_S_hat": 1.0381296499090136,
+   "bias_S_hat": 0.038129649909013574
+  },
+  {
+   "case": "weekly AR .1, 3.4y, S=1, crash innovations",
+   "marginal_skew": -1.4814745682259203,
+   "marginal_exkurt": 4.920343078864284,
+   "kappa_mc": 1.2361335102371607,
+   "kappa_formula": 1.2188414071454363,
+   "kappa_formula_gaussian": 1.1099693045448857,
+   "mean_S_hat": 1.0537528573577293,
+   "bias_S_hat": 0.05375285735772928
+  }
+ ],
+ "two_stage_heterogeneity": [
+  {
+   "tau_sd_of_true_S": 0.0,
+   "corr_dev_val_true_S": 0.0,
+   "joint_mean": 0.42393777742204997,
+   "product_of_marginals": 0.4239377774220501,
+   "fixed_S_formula": 0.4239377774220499
+  },
+  {
+   "tau_sd_of_true_S": 0.0,
+   "corr_dev_val_true_S": 0.5,
+   "joint_mean": 0.42393777742204997,
+   "product_of_marginals": 0.4239377774220501,
+   "fixed_S_formula": 0.4239377774220499
+  },
+  {
+   "tau_sd_of_true_S": 0.0,
+   "corr_dev_val_true_S": 1.0,
+   "joint_mean": 0.42393777742204997,
+   "product_of_marginals": 0.4239377774220501,
+   "fixed_S_formula": 0.4239377774220499
+  },
+  {
+   "tau_sd_of_true_S": 0.2,
+   "corr_dev_val_true_S": 0.0,
+   "joint_mean": 0.39873186704199265,
+   "product_of_marginals": 0.39870660232588623,
+   "fixed_S_formula": 0.4239377774220499
+  },
+  {
+   "tau_sd_of_true_S": 0.2,
+   "corr_dev_val_true_S": 0.5,
+   "joint_mean": 0.4169421672299711,
+   "product_of_marginals": 0.3988441277286291,
+   "fixed_S_formula": 0.4239377774220499
+  },
+  {
+   "tau_sd_of_true_S": 0.2,
+   "corr_dev_val_true_S": 1.0,
+   "joint_mean": 0.4356813544956571,
+   "product_of_marginals": 0.3989921909421771,
+   "fixed_S_formula": 0.4239377774220499
+  },
+  {
+   "tau_sd_of_true_S": 0.4,
+   "corr_dev_val_true_S": 0.0,
+   "joint_mean": 0.3599358972132158,
+   "product_of_marginals": 0.3599802276409338,
+   "fixed_S_formula": 0.4239377774220499
+  },
+  {
+   "tau_sd_of_true_S": 0.4,
+   "corr_dev_val_true_S": 0.5,
+   "joint_mean": 0.4033352074961411,
+   "product_of_marginals": 0.35941205377602564,
+   "fixed_S_formula": 0.4239377774220499
+  },
+  {
+   "tau_sd_of_true_S": 0.4,
+   "corr_dev_val_true_S": 1.0,
+   "joint_mean": 0.4526953547973179,
+   "product_of_marginals": 0.3597894103384209,
+   "fixed_S_formula": 0.4239377774220499
+  }
+ ]
+}

@@ -1,0 +1,2761 @@
+{
+ "blocked_or_unreachable": {
+  "alfred_vintages": {
+   "reachable_data": false,
+   "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=IRLTLT01DEM156N"
+  },
+  "ecb_data_api": {
+   "reachable_data": true,
+   "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?lastNObservations=3&format=csvdata"
+  },
+  "fred_fredgraph": {
+   "reachable_data": false,
+   "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IRLTLT01DEM156N"
+  },
+  "notes": "FRED/ALFRED: TLS stream reset/timeout from this host (also outside sandbox). Stooq: JavaScript proof-of-work bot check, not bypassed. RBA: timeout. RBNZ: HTTP 403. ECB: timed out at first probe, answered later (data taken). MSCI: login-gated (ruled out earlier).",
+  "rba_f2": {
+   "reachable_data": false,
+   "url": "https://www.rba.gov.au/statistics/tables/csv/f2-data.csv"
+  },
+  "rbnz_b2": {
+   "reachable_data": false,
+   "url": "https://www.rbnz.govt.nz/-/media/project/sites/rbnz/files/statistics/series/b/b2/hb2-daily.xlsx"
+  },
+  "stooq_csv": {
+   "reachable_data": false,
+   "url": "https://stooq.com/q/d/l/?s=^dax&i=d"
+  }
+ },
+ "build_notes": [
+  "yields: dropped 0 exact duplicate (source,series,date) rows",
+  "oecd: 0 duplicate (area,measure,methodology,month) rows dropped"
+ ],
+ "conventions": {
+  "discontinued_kept": "US 20y CMT gap 1987-1993 (Treasury stopped 20y), BoE IUDVCDA (to 2018), Riksbank STIBOR (to 2020), H.10 VEB, SNB cube stale 2025-07",
+  "revisions": "OECD monthly averages revisable, no vintages; H.10/H.15 final, rarely revised; Yahoo adjusted close retro-rebased; no ALFRED",
+  "roll_adjustment": "No contract-level futures anywhere; Yahoo continuous futures are unadjusted front-month -> roll gaps; used only as overlap checks",
+  "timezones": "H.10 noon America/New_York; H.15 ~15:30 ET closing bid; BoE London close; Bundesbank Frankfurt EOD; MOF Tokyo close; ECB 14:15 CET; Yahoo exchange-local close",
+  "utc_day_flag": "LSE vault fx spot (legacy) are UTC calendar-day bars incl. extended hours; LSE index series likewise (not pulled)"
+ },
+ "endpoints": [
+  {
+   "attempts": 1,
+   "bytes": 67189,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "TSMOM_dataset_page",
+   "retrieved_at_utc": "2026-09-26T07:35:33.036319+00:00",
+   "source": "aqr",
+   "url": "https://www.aqr.com/Insights/Datasets/Time-Series-Momentum-Factors-Monthly"
+  },
+  {
+   "attempts": 1,
+   "bytes": 139830,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "TSMOM_factors_monthly",
+   "retrieved_at_utc": "2026-09-26T07:35:32.057543+00:00",
+   "source": "aqr",
+   "url": "https://www.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Time-Series-Momentum-Factors-Monthly.xlsx"
+  },
+  {
+   "attempts": 2,
+   "bytes": 0,
+   "errors": [
+    "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='alfred.stlouisfed.org', port=443): Read timed out. (read timeout=45)\"))"
+   ],
+   "failures_or_retries": 2,
+   "final_status": "failed",
+   "name": "alfred_vintages",
+   "retrieved_at_utc": null,
+   "source": "blocked_probe",
+   "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=IRLTLT01DEM156N"
+  },
+  {
+   "attempts": 1,
+   "bytes": 950,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "ecb_data_api",
+   "retrieved_at_utc": "2026-09-26T07:39:05.886037+00:00",
+   "source": "blocked_probe",
+   "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?lastNObservations=3&format=csvdata"
+  },
+  {
+   "attempts": 2,
+   "bytes": 0,
+   "errors": [
+    "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=45)\"))"
+   ],
+   "failures_or_retries": 2,
+   "final_status": "failed",
+   "name": "fred_fredgraph",
+   "retrieved_at_utc": null,
+   "source": "blocked_probe",
+   "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IRLTLT01DEM156N"
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "403"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "blocked_no_retry",
+   "name": "rba_f2",
+   "retrieved_at_utc": null,
+   "source": "blocked_probe",
+   "url": "https://www.rba.gov.au/statistics/tables/csv/f2-data.csv"
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "403"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "blocked_no_retry",
+   "name": "rbnz_b2",
+   "retrieved_at_utc": null,
+   "source": "blocked_probe",
+   "url": "https://www.rbnz.govt.nz/-/media/project/sites/rbnz/files/statistics/series/b/b2/hb2-daily.xlsx"
+  },
+  {
+   "attempts": 2,
+   "bytes": 0,
+   "errors": [
+    "validation failed: bot-check or HTML page (not bypassed)"
+   ],
+   "failures_or_retries": 2,
+   "final_status": "failed",
+   "name": "stooq_csv",
+   "retrieved_at_utc": null,
+   "source": "blocked_probe",
+   "url": "https://stooq.com/q/d/l/?s=^dax&i=d"
+  },
+  {
+   "attempts": 1,
+   "bytes": 837144,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BD.CDN.10YR.DQ.YLD",
+   "retrieved_at_utc": "2026-09-26T07:35:00.278703+00:00",
+   "source": "boc_valet",
+   "url": "https://www.bankofcanada.ca/valet/observations/BD.CDN.10YR.DQ.YLD/json?start_date=1900-01-01"
+  },
+  {
+   "attempts": 1,
+   "bytes": 830536,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BD.CDN.2YR.DQ.YLD",
+   "retrieved_at_utc": "2026-09-26T07:34:58.184347+00:00",
+   "source": "boc_valet",
+   "url": "https://www.bankofcanada.ca/valet/observations/BD.CDN.2YR.DQ.YLD/json?start_date=1900-01-01"
+  },
+  {
+   "attempts": 1,
+   "bytes": 830520,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BD.CDN.5YR.DQ.YLD",
+   "retrieved_at_utc": "2026-09-26T07:34:59.219046+00:00",
+   "source": "boc_valet",
+   "url": "https://www.bankofcanada.ca/valet/observations/BD.CDN.5YR.DQ.YLD/json?start_date=1900-01-01"
+  },
+  {
+   "attempts": 1,
+   "bytes": 837021,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BD.CDN.LONG.DQ.YLD",
+   "retrieved_at_utc": "2026-09-26T07:35:01.076527+00:00",
+   "source": "boc_valet",
+   "url": "https://www.bankofcanada.ca/valet/observations/BD.CDN.LONG.DQ.YLD/json?start_date=1900-01-01"
+  },
+  {
+   "attempts": 1,
+   "bytes": 86761,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "V80691303",
+   "retrieved_at_utc": "2026-09-26T07:35:01.959941+00:00",
+   "source": "boc_valet",
+   "url": "https://www.bankofcanada.ca/valet/observations/V80691303/json?start_date=1900-01-01"
+  },
+  {
+   "attempts": 1,
+   "bytes": 230961,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IUDBEDR",
+   "retrieved_at_utc": "2026-09-26T07:34:15.785527+00:00",
+   "source": "boe_iadb",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDBEDR&CSVF=TN&UsingCodes=Y"
+  },
+  {
+   "attempts": 1,
+   "bytes": 134313,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IUDLNPY",
+   "retrieved_at_utc": "2026-09-26T07:34:13.323888+00:00",
+   "source": "boe_iadb",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDLNPY&CSVF=TN&UsingCodes=Y"
+  },
+  {
+   "attempts": 1,
+   "bytes": 174057,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IUDLNZC",
+   "retrieved_at_utc": "2026-09-26T07:34:07.761745+00:00",
+   "source": "boe_iadb",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDLNZC&CSVF=TN&UsingCodes=Y"
+  },
+  {
+   "attempts": 1,
+   "bytes": 165285,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IUDMNPY",
+   "retrieved_at_utc": "2026-09-26T07:34:11.876966+00:00",
+   "source": "boe_iadb",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDMNPY&CSVF=TN&UsingCodes=Y"
+  },
+  {
+   "attempts": 1,
+   "bytes": 226424,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IUDMNZC",
+   "retrieved_at_utc": "2026-09-26T07:34:04.401542+00:00",
+   "source": "boe_iadb",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDMNZC&CSVF=TN&UsingCodes=Y"
+  },
+  {
+   "attempts": 1,
+   "bytes": 165010,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IUDSNPY",
+   "retrieved_at_utc": "2026-09-26T07:34:09.816175+00:00",
+   "source": "boe_iadb",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDSNPY&CSVF=TN&UsingCodes=Y"
+  },
+  {
+   "attempts": 1,
+   "bytes": 226823,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IUDSNZC",
+   "retrieved_at_utc": "2026-09-26T07:34:02.129046+00:00",
+   "source": "boe_iadb",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDSNZC&CSVF=TN&UsingCodes=Y"
+  },
+  {
+   "attempts": 1,
+   "bytes": 148817,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IUDSOIA",
+   "retrieved_at_utc": "2026-09-26T07:34:17.225309+00:00",
+   "source": "boe_iadb",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDSOIA&CSVF=TN&UsingCodes=Y"
+  },
+  {
+   "attempts": 1,
+   "bytes": 208748,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IUDVCDA",
+   "retrieved_at_utc": "2026-09-26T07:34:23.480004+00:00",
+   "source": "boe_iadb",
+   "url": "https://www.bankofengland.co.uk/boeapps/database/_iadb-fromshowcolumns.asp?csv.x=yes&Datefrom=01/Jan/1970&Dateto=now&SeriesCodes=IUDVCDA&CSVF=TN&UsingCodes=Y"
+  },
+  {
+   "attempts": 1,
+   "bytes": 235569,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BBSIS_ZAR_R01XX",
+   "retrieved_at_utc": "2026-09-26T07:34:30.769485+00:00",
+   "source": "bundesbank",
+   "url": "https://api.statistiken.bundesbank.de/rest/data/BBSIS/D.I.ZAR.ZI.EUR.S1311.B.A604.R01XX.R.A.A._Z._Z.A?format=csv"
+  },
+  {
+   "attempts": 1,
+   "bytes": 235499,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BBSIS_ZAR_R02XX",
+   "retrieved_at_utc": "2026-09-26T07:34:40.747746+00:00",
+   "source": "bundesbank",
+   "url": "https://api.statistiken.bundesbank.de/rest/data/BBSIS/D.I.ZAR.ZI.EUR.S1311.B.A604.R02XX.R.A.A._Z._Z.A?format=csv"
+  },
+  {
+   "attempts": 1,
+   "bytes": 235105,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BBSIS_ZAR_R05XX",
+   "retrieved_at_utc": "2026-09-26T07:34:43.902860+00:00",
+   "source": "bundesbank",
+   "url": "https://api.statistiken.bundesbank.de/rest/data/BBSIS/D.I.ZAR.ZI.EUR.S1311.B.A604.R05XX.R.A.A._Z._Z.A?format=csv"
+  },
+  {
+   "attempts": 1,
+   "bytes": 234224,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BBSIS_ZAR_R10XX",
+   "retrieved_at_utc": "2026-09-26T07:34:46.050310+00:00",
+   "source": "bundesbank",
+   "url": "https://api.statistiken.bundesbank.de/rest/data/BBSIS/D.I.ZAR.ZI.EUR.S1311.B.A604.R10XX.R.A.A._Z._Z.A?format=csv"
+  },
+  {
+   "attempts": 1,
+   "bytes": 233816,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BBSIS_ZAR_R20XX",
+   "retrieved_at_utc": "2026-09-26T07:34:48.393845+00:00",
+   "source": "bundesbank",
+   "url": "https://api.statistiken.bundesbank.de/rest/data/BBSIS/D.I.ZAR.ZI.EUR.S1311.B.A604.R20XX.R.A.A._Z._Z.A?format=csv"
+  },
+  {
+   "attempts": 1,
+   "bytes": 209538,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BBSIS_ZAR_R30XX",
+   "retrieved_at_utc": "2026-09-26T07:34:50.632324+00:00",
+   "source": "bundesbank",
+   "url": "https://api.statistiken.bundesbank.de/rest/data/BBSIS/D.I.ZAR.ZI.EUR.S1311.B.A604.R30XX.R.A.A._Z._Z.A?format=csv"
+  },
+  {
+   "attempts": 1,
+   "bytes": 1484205,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EXR_USD_EUR_D",
+   "retrieved_at_utc": "2026-09-26T07:39:37.282118+00:00",
+   "source": "ecb",
+   "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD.EUR.SP00.A?format=csvdata"
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "404"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "blocked_no_retry",
+   "name": "FM_EURIBOR3M_D",
+   "retrieved_at_utc": null,
+   "source": "ecb",
+   "url": "https://data-api.ecb.europa.eu/service/data/FM/D.U2.EUR.RT.MM.EURIBOR3MD_.HSTA?format=csvdata"
+  },
+  {
+   "attempts": 1,
+   "bytes": 3163736,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "YC_AAA_SR_10Y",
+   "retrieved_at_utc": "2026-09-26T07:40:49.820742+00:00",
+   "source": "ecb",
+   "url": "https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_10Y?format=csvdata"
+  },
+  {
+   "attempts": 1,
+   "bytes": 3143045,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "YC_AAA_SR_2Y",
+   "retrieved_at_utc": "2026-09-26T07:40:14.868280+00:00",
+   "source": "ecb",
+   "url": "https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_2Y?format=csvdata"
+  },
+  {
+   "attempts": 1,
+   "bytes": 3155045,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "YC_AAA_SR_3M",
+   "retrieved_at_utc": "2026-09-26T07:39:55.419004+00:00",
+   "source": "ecb",
+   "url": "https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_3M?format=csvdata"
+  },
+  {
+   "attempts": 1,
+   "bytes": 276669,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "h10_daily_1971_1980",
+   "retrieved_at_utc": "2026-09-26T07:33:46.226928+00:00",
+   "source": "fed_h10",
+   "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=60f32914ab61dfab590e0e470153e3ae&lastobs=&from=01/01/1971&to=12/31/1980&filetype=csv&label=include&layout=seriescolumn&type=package"
+  },
+  {
+   "attempts": 1,
+   "bytes": 395759,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "h10_daily_1981_1990",
+   "retrieved_at_utc": "2026-09-26T07:33:47.336037+00:00",
+   "source": "fed_h10",
+   "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=60f32914ab61dfab590e0e470153e3ae&lastobs=&from=01/01/1981&to=12/31/1990&filetype=csv&label=include&layout=seriescolumn&type=package"
+  },
+  {
+   "attempts": 1,
+   "bytes": 428761,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "h10_daily_1991_2000",
+   "retrieved_at_utc": "2026-09-26T07:33:49.218564+00:00",
+   "source": "fed_h10",
+   "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=60f32914ab61dfab590e0e470153e3ae&lastobs=&from=01/01/1991&to=12/31/2000&filetype=csv&label=include&layout=seriescolumn&type=package"
+  },
+  {
+   "attempts": 1,
+   "bytes": 470232,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "h10_daily_2001_2010",
+   "retrieved_at_utc": "2026-09-26T07:33:50.763514+00:00",
+   "source": "fed_h10",
+   "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=60f32914ab61dfab590e0e470153e3ae&lastobs=&from=01/01/2001&to=12/31/2010&filetype=csv&label=include&layout=seriescolumn&type=package"
+  },
+  {
+   "attempts": 1,
+   "bytes": 474768,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "h10_daily_2011_2020",
+   "retrieved_at_utc": "2026-09-26T07:33:52.156013+00:00",
+   "source": "fed_h10",
+   "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=60f32914ab61dfab590e0e470153e3ae&lastobs=&from=01/01/2011&to=12/31/2020&filetype=csv&label=include&layout=seriescolumn&type=package"
+  },
+  {
+   "attempts": 1,
+   "bytes": 275084,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "h10_daily_2021_2026",
+   "retrieved_at_utc": "2026-09-26T07:33:54.337290+00:00",
+   "source": "fed_h10",
+   "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=60f32914ab61dfab590e0e470153e3ae&lastobs=&from=01/01/2021&to=12/31/2026&filetype=csv&label=include&layout=seriescolumn&type=package"
+  },
+  {
+   "attempts": 1,
+   "bytes": 1007493,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "h15_cmt_daily_all",
+   "retrieved_at_utc": "2026-09-26T07:33:57.148637+00:00",
+   "source": "fed_h15",
+   "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=bf17364827e38702b42a58cf8eaa3f78&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package"
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "AUDUSD_SW_FWD_2015-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "AUDUSD_SW_FWD_2019-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "AUDUSD_SW_FWD_2023-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "EURUSD_SW_FWD_2015-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "EURUSD_SW_FWD_2019-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "EURUSD_SW_FWD_2023-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "GBPUSD_SW_FWD_2015-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "GBPUSD_SW_FWD_2019-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "GBPUSD_SW_FWD_2023-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "JGB_FUT_2010-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "JGB_FUT_2013-07-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "JGB_FUT_2017-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "JGB_FUT_2020-07-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "JGB_FUT_2024-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "NZDUSD_SW_FWD_2015-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "NZDUSD_SW_FWD_2019-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "NZDUSD_SW_FWD_2023-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDCAD_SW_FWD_2015-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDCAD_SW_FWD_2019-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDCAD_SW_FWD_2023-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDCHF_SW_FWD_2015-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDCHF_SW_FWD_2019-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDCHF_SW_FWD_2023-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDJPY_SW_FWD_2015-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDJPY_SW_FWD_2019-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDJPY_SW_FWD_2023-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDNOK_SW_FWD_2015-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDNOK_SW_FWD_2019-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDNOK_SW_FWD_2023-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDSEK_SW_FWD_2015-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDSEK_SW_FWD_2019-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "USDSEK_SW_FWD_2023-01-01",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "eurex_1d_FESX",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "eurex_1d_FGBL",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_AU200/AUD",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_CH20/CHF",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_CN50/USD",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_DE30/EUR",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_ES35/EUR",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_EU50/EUR",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_FR40/EUR",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_HK33/HKD",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_IT40/EUR",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_JP225/USD",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_NAS100/USD",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_NASCOMP/USD",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_NL30/EUR",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_SOX/USD",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_SPX500/USD",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_UK100/GBP",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_UK250/GBP",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_US2000/USD",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 0,
+   "errors": [
+    "None"
+   ],
+   "failures_or_retries": 1,
+   "final_status": "error",
+   "name": "index_1d_US30/USD",
+   "retrieved_at_utc": null,
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 85,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "terminal_status",
+   "retrieved_at_utc": "2026-09-26T07:35:20.153232+00:00",
+   "source": "lse_mcp",
+   "url": null
+  },
+  {
+   "attempts": 1,
+   "bytes": 1193668,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "jgbcme_all",
+   "retrieved_at_utc": "2026-09-26T07:34:54.560147+00:00",
+   "source": "mof_japan",
+   "url": "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/historical/jgbcme_all.csv"
+  },
+  {
+   "attempts": 1,
+   "bytes": 1728,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "jgbcme_current_month",
+   "retrieved_at_utc": "2026-09-26T07:34:55.465222+00:00",
+   "source": "mof_japan",
+   "url": "https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/jgbcme.csv"
+  },
+  {
+   "attempts": 1,
+   "bytes": 137545,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "GOVT_GENERIC_RATES_B_10Y_GBON",
+   "retrieved_at_utc": "2026-09-26T07:35:20.477182+00:00",
+   "source": "norges_bank",
+   "url": "https://data.norges-bank.no/api/data/GOVT_GENERIC_RATES/B.10Y.GBON?format=csv&startPeriod=1980-01-01"
+  },
+  {
+   "attempts": 1,
+   "bytes": 135636,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "GOVT_GENERIC_RATES_B_12M_TBIL",
+   "retrieved_at_utc": "2026-09-26T07:35:19.159345+00:00",
+   "source": "norges_bank",
+   "url": "https://data.norges-bank.no/api/data/GOVT_GENERIC_RATES/B.12M.TBIL?format=csv&startPeriod=1980-01-01"
+  },
+  {
+   "attempts": 1,
+   "bytes": 131728,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "GOVT_GENERIC_RATES_B_3M_TBIL",
+   "retrieved_at_utc": "2026-09-26T07:35:18.326895+00:00",
+   "source": "norges_bank",
+   "url": "https://data.norges-bank.no/api/data/GOVT_GENERIC_RATES/B.3M.TBIL?format=csv&startPeriod=1980-01-01"
+  },
+  {
+   "attempts": 1,
+   "bytes": 133705,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "GOVT_GENERIC_RATES_B_3Y_GBON",
+   "retrieved_at_utc": "2026-09-26T07:35:19.697760+00:00",
+   "source": "norges_bank",
+   "url": "https://data.norges-bank.no/api/data/GOVT_GENERIC_RATES/B.3Y.GBON?format=csv&startPeriod=1980-01-01"
+  },
+  {
+   "attempts": 1,
+   "bytes": 133679,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "GOVT_GENERIC_RATES_B_5Y_GBON",
+   "retrieved_at_utc": "2026-09-26T07:35:20.071334+00:00",
+   "source": "norges_bank",
+   "url": "https://data.norges-bank.no/api/data/GOVT_GENERIC_RATES/B.5Y.GBON?format=csv&startPeriod=1980-01-01"
+  },
+  {
+   "attempts": 1,
+   "bytes": 5826477,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "DF_FINMARK_IR3TIB",
+   "retrieved_at_utc": "2026-09-26T07:35:26.811416+00:00",
+   "source": "oecd_sdmx",
+   "url": "https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_FINMARK,4.0/.M.IR3TIB.PA.....?startPeriod=1950-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+  },
+  {
+   "attempts": 1,
+   "bytes": 5815456,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "DF_FINMARK_IRLT",
+   "retrieved_at_utc": "2026-09-26T07:35:24.358688+00:00",
+   "source": "oecd_sdmx",
+   "url": "https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_FINMARK,4.0/.M.IRLT.PA.....?startPeriod=1950-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+  },
+  {
+   "attempts": 1,
+   "bytes": 6738381,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "DF_FINMARK_IRSTCI",
+   "retrieved_at_utc": "2026-09-26T07:35:30.423907+00:00",
+   "source": "oecd_sdmx",
+   "url": "https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_FINMARK,4.0/.M.IRSTCI.PA.....?startPeriod=1950-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+  },
+  {
+   "attempts": 1,
+   "bytes": 298533,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "SEDP3MSTIBORDELAYC",
+   "retrieved_at_utc": "2026-09-26T07:35:17.357508+00:00",
+   "source": "riksbank",
+   "url": "https://api.riksbank.se/swea/v1/Observations/SEDP3MSTIBORDELAYC/1980-01-01/2026-09-26"
+  },
+  {
+   "attempts": 1,
+   "bytes": 356129,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "SEGVB10YC",
+   "retrieved_at_utc": "2026-09-26T07:35:12.471002+00:00",
+   "source": "riksbank",
+   "url": "https://api.riksbank.se/swea/v1/Observations/SEGVB10YC/1980-01-01/2026-09-26"
+  },
+  {
+   "attempts": 1,
+   "bytes": 357333,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "SEGVB2YC",
+   "retrieved_at_utc": "2026-09-26T07:35:06.373942+00:00",
+   "source": "riksbank",
+   "url": "https://api.riksbank.se/swea/v1/Observations/SEGVB2YC/1980-01-01/2026-09-26"
+  },
+  {
+   "attempts": 1,
+   "bytes": 374675,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "SEGVB5YC",
+   "retrieved_at_utc": "2026-09-26T07:35:09.959953+00:00",
+   "source": "riksbank",
+   "url": "https://api.riksbank.se/swea/v1/Observations/SEGVB5YC/1980-01-01/2026-09-26"
+  },
+  {
+   "attempts": 1,
+   "bytes": 387999,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "SETB3MBENCH",
+   "retrieved_at_utc": "2026-09-26T07:35:15.407614+00:00",
+   "source": "riksbank",
+   "url": "https://api.riksbank.se/swea/v1/Observations/SETB3MBENCH/1980-01-01/2026-09-26"
+  },
+  {
+   "attempts": 1,
+   "bytes": 142138,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "rendoblim",
+   "retrieved_at_utc": "2026-09-26T07:35:21.854906+00:00",
+   "source": "snb",
+   "url": "https://data.snb.ch/api/cube/rendoblim/data/csv/en"
+  },
+  {
+   "attempts": 1,
+   "bytes": 737590,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "000001_SS",
+   "retrieved_at_utc": "2026-09-26T07:34:53.070729+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/000001.SS?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 169010,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "2510_T",
+   "retrieved_at_utc": "2026-09-26T07:36:18.415101+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/2510.T?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 100581,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "2561_T",
+   "retrieved_at_utc": "2026-09-26T07:36:19.157638+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/2561.T?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 719119,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "6A_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:54.137187+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/6A%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 717520,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "6B_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:52.518736+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/6B%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 730421,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "6C_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:55.633422+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/6C%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 727507,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "6E_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:49.260612+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/6E%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 788663,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "6J_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:50.587481+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/6J%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 728051,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "6M_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:59.888939+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/6M%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 724147,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "6N_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:58.615510+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/6N%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 720158,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "6S_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:57.428698+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/6S%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 527496,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "BWX",
+   "retrieved_at_utc": "2026-09-26T07:36:11.204170+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/BWX?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 494862,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "CSBGC0_SW",
+   "retrieved_at_utc": "2026-09-26T07:36:24.588931+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/CSBGC0.SW?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 771302,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "DIA",
+   "retrieved_at_utc": "2026-09-26T07:35:20.803148+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/DIA?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 392313,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EDEN",
+   "retrieved_at_utc": "2026-09-26T07:36:00.487894+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EDEN?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 651495,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EEM",
+   "retrieved_at_utc": "2026-09-26T07:35:24.709392+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EEM?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 685297,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EFA",
+   "retrieved_at_utc": "2026-09-26T07:35:23.353121+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EFA?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 492705,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EIS",
+   "retrieved_at_utc": "2026-09-26T07:35:56.669694+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EIS?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 397597,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "ENOR",
+   "retrieved_at_utc": "2026-09-26T07:36:01.695340+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/ENOR?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 430457,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "ENZL",
+   "retrieved_at_utc": "2026-09-26T07:35:59.290909+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/ENZL?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 448274,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EPOL",
+   "retrieved_at_utc": "2026-09-26T07:36:02.914285+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EPOL?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 369039,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "ES_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:36.227485+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/ES%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 779340,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWA",
+   "retrieved_at_utc": "2026-09-26T07:35:31.781158+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWA?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 776620,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWC",
+   "retrieved_at_utc": "2026-09-26T07:35:30.598311+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWC?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 770751,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWD",
+   "retrieved_at_utc": "2026-09-26T07:35:40.492383+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWD?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 782923,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWG",
+   "retrieved_at_utc": "2026-09-26T07:35:27.627697+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWG?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 782634,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWH",
+   "retrieved_at_utc": "2026-09-26T07:35:41.777748+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWH?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 768090,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWI",
+   "retrieved_at_utc": "2026-09-26T07:35:34.068280+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 769808,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWJ",
+   "retrieved_at_utc": "2026-09-26T07:35:26.203910+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWJ?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 769104,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWK",
+   "retrieved_at_utc": "2026-09-26T07:35:43.671254+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWK?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 773224,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWL",
+   "retrieved_at_utc": "2026-09-26T07:35:37.833386+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWL?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 765341,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWM",
+   "retrieved_at_utc": "2026-09-26T07:35:55.858521+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWM?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 772519,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWN",
+   "retrieved_at_utc": "2026-09-26T07:35:39.207151+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWN?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 765442,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWO",
+   "retrieved_at_utc": "2026-09-26T07:35:44.493966+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWO?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 772511,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWP",
+   "retrieved_at_utc": "2026-09-26T07:35:35.780252+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWP?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 776949,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWQ",
+   "retrieved_at_utc": "2026-09-26T07:35:32.883895+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWQ?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 777300,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWS",
+   "retrieved_at_utc": "2026-09-26T07:35:42.786773+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWS?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 710868,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWT",
+   "retrieved_at_utc": "2026-09-26T07:35:49.935498+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWT?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 773767,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWU",
+   "retrieved_at_utc": "2026-09-26T07:35:28.994839+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWU?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 770501,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWW",
+   "retrieved_at_utc": "2026-09-26T07:35:45.760079+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWW?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 703830,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWY",
+   "retrieved_at_utc": "2026-09-26T07:35:48.566687+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWY?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 710632,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EWZ",
+   "retrieved_at_utc": "2026-09-26T07:35:47.046739+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EWZ?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 497939,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EXHB_DE",
+   "retrieved_at_utc": "2026-09-26T07:36:17.425654+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EXHB.DE?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 514316,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EXHD_DE",
+   "retrieved_at_utc": "2026-09-26T07:36:16.510105+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EXHD.DE?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 632791,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "EZA",
+   "retrieved_at_utc": "2026-09-26T07:35:50.929224+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/EZA?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 442068,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "FTSEMIB_MI",
+   "retrieved_at_utc": "2026-09-26T07:34:33.784709+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/FTSEMIB.MI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 541905,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "FXA",
+   "retrieved_at_utc": "2026-09-26T07:36:30.098014+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/FXA?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 555085,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "FXB",
+   "retrieved_at_utc": "2026-09-26T07:36:28.154381+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/FXB?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 539360,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "FXC",
+   "retrieved_at_utc": "2026-09-26T07:36:32.024161+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/FXC?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 575120,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "FXE",
+   "retrieved_at_utc": "2026-09-26T07:36:25.773529+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/FXE?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 539223,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "FXF",
+   "retrieved_at_utc": "2026-09-26T07:36:33.345935+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/FXF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 609315,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "FXI",
+   "retrieved_at_utc": "2026-09-26T07:35:52.307086+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/FXI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 521789,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "FXY",
+   "retrieved_at_utc": "2026-09-26T07:36:26.853073+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/FXY?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 411703,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "GOVT",
+   "retrieved_at_utc": "2026-09-26T07:36:10.283881+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/GOVT?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 510054,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IBGM_AS",
+   "retrieved_at_utc": "2026-09-26T07:36:15.201497+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/IBGM.AS?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 922140,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_AEX",
+   "retrieved_at_utc": "2026-09-26T07:34:37.335579+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EAEX?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 997769,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_AORD",
+   "retrieved_at_utc": "2026-09-26T07:34:44.582483+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EAORD?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 866732,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_ATX",
+   "retrieved_at_utc": "2026-09-26T07:35:07.192278+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EATX?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 767519,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_AXJO",
+   "retrieved_at_utc": "2026-09-26T07:34:43.587596+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EAXJO?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 913662,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_BFX",
+   "retrieved_at_utc": "2026-09-26T07:35:04.598085+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EBFX?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 661598,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_BSESN",
+   "retrieved_at_utc": "2026-09-26T07:34:50.793213+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EBSESN?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 516482,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_BVSP",
+   "retrieved_at_utc": "2026-09-26T07:34:48.126401+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EBVSP?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 849195,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_DJI",
+   "retrieved_at_utc": "2026-09-26T07:34:16.309955+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EDJI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 898334,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_FCHI",
+   "retrieved_at_utc": "2026-09-26T07:34:32.504277+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EFCHI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 932857,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_FTMC",
+   "retrieved_at_utc": "2026-09-26T07:34:30.425099+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EFTMC?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 1008908,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_FTSE",
+   "retrieved_at_utc": "2026-09-26T07:34:28.027801+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EFTSE?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 973665,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_GDAXI",
+   "retrieved_at_utc": "2026-09-26T07:35:17.271383+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EGDAXI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 2652725,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_GSPC",
+   "retrieved_at_utc": "2026-09-26T07:34:12.848664+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EGSPC?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 1115856,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_GSPTSE",
+   "retrieved_at_utc": "2026-09-26T07:34:24.466755+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EGSPTSE?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 909034,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_HSI",
+   "retrieved_at_utc": "2026-09-26T07:34:42.444402+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EHSI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 773310,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_IBEX",
+   "retrieved_at_utc": "2026-09-26T07:34:35.947158+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EIBEX?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 1714372,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_IRX",
+   "retrieved_at_utc": "2026-09-26T07:37:01.587984+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EIRX?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 933380,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_JKSE",
+   "retrieved_at_utc": "2026-09-26T07:34:58.576221+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EJKSE?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 872987,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_KLSE",
+   "retrieved_at_utc": "2026-09-26T07:35:01.104976+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EKLSE?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 769688,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_KS11",
+   "retrieved_at_utc": "2026-09-26T07:34:46.039204+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EKS11?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 372300,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_MERV",
+   "retrieved_at_utc": "2026-09-26T07:35:12.286860+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EMERV?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 814229,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_MXX",
+   "retrieved_at_utc": "2026-09-26T07:34:49.439352+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EMXX?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 1435295,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_N225",
+   "retrieved_at_utc": "2026-09-26T07:34:41.015599+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EN225?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 1098184,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_NDX",
+   "retrieved_at_utc": "2026-09-26T07:34:14.613164+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ENDX?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 419056,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_NSEI",
+   "retrieved_at_utc": "2026-09-26T07:34:51.509538+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ENSEI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 592367,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_NZ50",
+   "retrieved_at_utc": "2026-09-26T07:35:08.725733+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ENZ50?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 466127,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_OMX",
+   "retrieved_at_utc": "2026-09-26T07:35:03.044961+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5EOMX?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 1075624,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_RUT",
+   "retrieved_at_utc": "2026-09-26T07:34:19.907609+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ERUT?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 947941,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_SP500TR",
+   "retrieved_at_utc": "2026-09-26T07:35:15.845498+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ESP500TR?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 849689,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_SSMI",
+   "retrieved_at_utc": "2026-09-26T07:34:38.632314+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ESSMI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 985601,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_STI",
+   "retrieved_at_utc": "2026-09-26T07:34:55.196776+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ESTI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 491856,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_STOXX50E",
+   "retrieved_at_utc": "2026-09-26T07:34:39.559371+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 853661,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_TA125_TA",
+   "retrieved_at_utc": "2026-09-26T07:35:13.831277+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ETA125.TA?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 688402,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IDX_TWII",
+   "retrieved_at_utc": "2026-09-26T07:34:47.096664+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/%5ETWII?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 667364,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IEF",
+   "retrieved_at_utc": "2026-09-26T07:36:06.927316+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/IEF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 554430,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IEI",
+   "retrieved_at_utc": "2026-09-26T07:36:05.287259+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/IEI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 386973,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IGB_AX",
+   "retrieved_at_utc": "2026-09-26T07:36:23.182013+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/IGB.AX?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 517354,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IGLT_L",
+   "retrieved_at_utc": "2026-09-26T07:36:14.161131+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/IGLT.L?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 479197,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IGOV",
+   "retrieved_at_utc": "2026-09-26T07:36:12.733483+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/IGOV?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 401716,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "INDA",
+   "retrieved_at_utc": "2026-09-26T07:35:54.932610+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/INDA?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 718871,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "IWM",
+   "retrieved_at_utc": "2026-09-26T07:35:22.078246+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/IWM?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 420368,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "MCHI",
+   "retrieved_at_utc": "2026-09-26T07:35:53.445194+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/MCHI?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 319155,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "NKD_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:43.065108+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/NKD%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 370962,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "NQ_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:39.985372+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/NQ%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 743100,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "QQQ",
+   "retrieved_at_utc": "2026-09-26T07:35:19.784529+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/QQQ?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 225973,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "RTY_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:42.085855+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/RTY%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 656408,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "SHY",
+   "retrieved_at_utc": "2026-09-26T07:36:04.101323+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/SHY?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 856782,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "SPY",
+   "retrieved_at_utc": "2026-09-26T07:35:18.529435+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/SPY?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 547910,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "TLH",
+   "retrieved_at_utc": "2026-09-26T07:36:07.931564+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/TLH?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 672370,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "TLT",
+   "retrieved_at_utc": "2026-09-26T07:36:09.259508+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/TLT?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 501008,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "TUR",
+   "retrieved_at_utc": "2026-09-26T07:35:57.773006+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/TUR?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 540274,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "UUP",
+   "retrieved_at_utc": "2026-09-26T07:36:34.620013+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/UUP?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 710391,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "XBB_TO",
+   "retrieved_at_utc": "2026-09-26T07:36:22.245007+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/XBB.TO?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 547775,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "XGB_TO",
+   "retrieved_at_utc": "2026-09-26T07:36:20.157467+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/XGB.TO?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 808883,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "XU100_IS",
+   "retrieved_at_utc": "2026-09-26T07:35:10.882177+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/XU100.IS?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 355640,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "YM_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:40.999528+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/YM%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 450311,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "ZB_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:45.717860+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/ZB%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 450739,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "ZFL_TO",
+   "retrieved_at_utc": "2026-09-26T07:36:21.125405+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/ZFL.TO?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 505739,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "ZF_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:47.031770+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/ZF%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 485407,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "ZN_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:44.809713+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/ZN%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  },
+  {
+   "attempts": 1,
+   "bytes": 523361,
+   "errors": [],
+   "failures_or_retries": 0,
+   "final_status": "ok",
+   "name": "ZT_EQ_F",
+   "retrieved_at_utc": "2026-09-26T07:36:47.962550+00:00",
+   "source": "yahoo_chart",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/ZT%3DF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true"
+  }
+ ],
+ "expected_vs_received": {
+  "boc_valet": {
+   "expected_instruments": 5,
+   "notes": "benchmark yields from 2001; 3M T-bill weekly",
+   "received_instruments": 5
+  },
+  "boe_iadb": {
+   "expected_instruments": 9,
+   "received_instruments": 9
+  },
+  "bundesbank": {
+   "expected_instruments": 6,
+   "notes": "daily par curve starts 1997-08 (earlier only monthly, not pulled)",
+   "received_instruments": 6
+  },
+  "ecb": {
+   "expected_instruments": 5,
+   "notes": "EURIBOR 3M key returned no data; API intermittently unreachable",
+   "received_instruments": 4
+  },
+  "fed_h10": {
+   "expected_instruments": 23,
+   "notes": "H.10 package carries 23 currencies incl. discontinued VEB; pre-1999 euro-legacy currencies (DEM, FRF, ITL, NLG, BEF, ESP...) are NOT in the DDP package and FRED (which has them) is unreachable -> missing",
+   "range": [
+    "1971-01-04",
+    "2026-09-18"
+   ],
+   "received_instruments": 23
+  },
+  "fed_h15": {
+   "expected_instruments": 11,
+   "received_instruments": 11
+  },
+  "lse_mcp": {
+   "calls_made": 54,
+   "calls_with_data": 0,
+   "expected_calls": 55,
+   "notes": "LSE Terminal app not running; every call returned 'not running/cannot be opened'. The script lacked an abort-on-status guard at run time (added afterwards); 54 of the 60-call budget were consumed with zero data. No retry was made."
+  },
+  "lse_vault_legacy": {
+   "notes": "pre-existing local pulls imported read-only: data/bond_yields (29 series), data/multiasset/yields (12), data/lse/fx_carry/raw.pkl (9 pairs spot+SW_FWD 2015+). Vendor retrieval timestamps are not in an ingestion record."
+  },
+  "mof_japan": {
+   "expected_instruments": 15,
+   "received_instruments": 15
+  },
+  "norges_bank": {
+   "expected_instruments": 5,
+   "notes": "generic rates API history starts 2019-01",
+   "received_instruments": 5
+  },
+  "oecd_sdmx": {
+   "areas_IR3TIB": 46,
+   "areas_IRLT": 47,
+   "expected_measures": 3,
+   "notes": "monthly AVERAGES (not end-of-month); latest vintage only, revisable; no ALFRED vintages (unreachable)",
+   "received_measures": 3
+  },
+  "riksbank": {
+   "expected_instruments": 5,
+   "notes": "STIBOR 3M closed 2020-07 (kept)",
+   "received_instruments": 5
+  },
+  "snb": {
+   "expected_instruments": 13,
+   "notes": "monthly only; cube last obs 2025-07 (stale), publishing date 2025-09-01",
+   "received_instruments": 13
+  },
+  "yahoo_chart": {
+   "expected_instruments": 116,
+   "received_instruments": 116
+  }
+ },
+ "generated_at_utc": "2026-09-26T07:54:14.650601+00:00",
+ "lse_mcp_call_log": {
+  "calls_made": 54,
+  "errors": 53
+ },
+ "processed_tables": {
+  "aqr_tsmom_dates": {
+   "first": "1985-01-31",
+   "last": "2026-05-29",
+   "rows": 497
+  },
+  "dividends": {
+   "first": "1993-03-19",
+   "last": "2026-09-24",
+   "rows": 5396
+  },
+  "fx_fwd_points_daily": {
+   "first": "2015-01-01",
+   "last": "2026-09-11",
+   "rows": 27398
+  },
+  "fx_spot_daily": {
+   "first": "1971-01-04",
+   "last": "2026-09-25",
+   "rows": 316321
+  },
+  "market_daily": {
+   "first": "1927-12-30",
+   "last": "2026-09-25",
+   "rows": 806540
+  },
+  "oecd_monthly": {
+   "first": "1953-04-30",
+   "last": "2026-08-31",
+   "rows": 64535
+  },
+  "yields_daily": {
+   "first": "1962-01-02",
+   "last": "2026-09-25",
+   "rows": 747342
+  }
+ }
+}

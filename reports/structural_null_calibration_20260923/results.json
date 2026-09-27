@@ -1,0 +1,87 @@
+{
+  "seed": 741953,
+  "periods": 2016,
+  "block": 21,
+  "bootstrap_draws": 3000,
+  "note": "Zero-mean after-cost archetypes; family result uses three independent siblings per world. The structural plan used 5000 bootstrap draws.",
+  "rows": [
+    {
+      "archetype": "carry_crash",
+      "worlds": 3000,
+      "gate_sharpe": 0.6363961030678927,
+      "p_sharpe_only": 0.04533333333333334,
+      "p_full_single_alpha_0_05": 0.04533333333333334,
+      "p_full_batch3_alpha_0_0167": 0.025,
+      "mc_se_batch3": 0.002850438562747845,
+      "p_any_of_three_independent_null_siblings": 0.07933333333333334,
+      "mc_se_any_three": 0.004934219139693587,
+      "median_null_sharpe": 0.011246587232481939,
+      "null_sharpe_p95": 0.6202947880928787
+    },
+    {
+      "archetype": "long_only_active",
+      "worlds": 3000,
+      "gate_sharpe": 0.6363961030678927,
+      "p_sharpe_only": 0.038,
+      "p_full_single_alpha_0_05": 0.038,
+      "p_full_batch3_alpha_0_0167": 0.017666666666666667,
+      "mc_se_batch3": 0.0024051718965287807,
+      "p_any_of_three_independent_null_siblings": 0.042666666666666665,
+      "mc_se_any_three": 0.0036899061515717996,
+      "median_null_sharpe": 0.0002056298479359043,
+      "null_sharpe_p95": 0.5981656906270403
+    },
+    {
+      "archetype": "long_short",
+      "worlds": 3000,
+      "gate_sharpe": 0.6363961030678927,
+      "p_sharpe_only": 0.04133333333333333,
+      "p_full_single_alpha_0_05": 0.04133333333333333,
+      "p_full_batch3_alpha_0_0167": 0.022333333333333334,
+      "mc_se_batch3": 0.0026978111841241196,
+      "p_any_of_three_independent_null_siblings": 0.05366666666666667,
+      "mc_se_any_three": 0.004114468598962915,
+      "median_null_sharpe": -0.001369233325969168,
+      "null_sharpe_p95": 0.6064736178086299
+    },
+    {
+      "archetype": "relative_value",
+      "worlds": 3000,
+      "gate_sharpe": 0.6363961030678927,
+      "p_sharpe_only": 0.0,
+      "p_full_single_alpha_0_05": 0.0,
+      "p_full_batch3_alpha_0_0167": 0.0,
+      "mc_se_batch3": 0.0,
+      "p_any_of_three_independent_null_siblings": 0.0,
+      "mc_se_any_three": 0.0,
+      "median_null_sharpe": 0.00037415733553473277,
+      "null_sharpe_p95": 0.19984643229468907
+    },
+    {
+      "archetype": "timing",
+      "worlds": 3000,
+      "gate_sharpe": 0.6363961030678927,
+      "p_sharpe_only": 0.10333333333333333,
+      "p_full_single_alpha_0_05": 0.053,
+      "p_full_batch3_alpha_0_0167": 0.017333333333333333,
+      "mc_se_batch3": 0.0023827777130126155,
+      "p_any_of_three_independent_null_siblings": 0.059,
+      "mc_se_any_three": 0.004301898805566366,
+      "median_null_sharpe": 0.004087042441881509,
+      "null_sharpe_p95": 0.8170329185904708
+    },
+    {
+      "archetype": "event",
+      "worlds": 3000,
+      "gate_sharpe": 0.6363961030678927,
+      "p_sharpe_only": 0.034333333333333334,
+      "p_full_single_alpha_0_05": 0.034333333333333334,
+      "p_full_batch3_alpha_0_0167": 0.015,
+      "mc_se_batch3": 0.002219234102117215,
+      "p_any_of_three_independent_null_siblings": 0.041666666666666664,
+      "mc_se_any_three": 0.0036483126490454714,
+      "median_null_sharpe": -0.006233153325246267,
+      "null_sharpe_p95": 0.5603053707769885
+    }
+  ]
+}

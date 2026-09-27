@@ -23,3 +23,34 @@ data/cot_etf_prices.parquet
 
 # SEC DERA insider transactions data sets and derived price panel (research/insider); large, re-downloadable.
 data/sec_insider/
+
+# Local agent state / worktrees
+.claude/
+
+# Cycle 4-6 research data: large (≈6 GB) and partly LSE-licensed; local only. Snapshot manifests pin bytes (see HANDOFF.md).
+data/bond_yields/
+data/c4/
+data/collect/
+data/commodity_roll/
+data/core_premia/
+data/credit_indices/
+data/crypto_archive_scout/
+data/cycle6/
+data/edgar_scout/
+data/eia_futures_QUARANTINE/
+data/event_scout/
+data/forward_crypto/
+data/futures_archive_scout/
+data/fx_1m/
+data/macro_surprise/
+data/new_info_scout/
+data/policy_trend/
+data/public_scout/
+data/scout_A/
+data/scout_B/
+data/sol_beyond_menu/
+data/survivor_equity_pilot/
+
+# LSE-derived bar dumps and pickle caches inside reports
+reports/**/*lse_*
+reports/**/*.pkl

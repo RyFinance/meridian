@@ -1,0 +1,35 @@
+{
+  "candidates": {
+    "sector_reversal": "Bottom3 prior5day returns in nine original Select Sector ETFs; five overlapping equal-weight target sleeves.",
+    "stock_residual_reversal": "Bottom 20 trailing-five-day beta-residual returns among trailing63day top200 dollar-volume stocks with ADV>=20m and252 observations; five overlapping equal-weight target sleeves.",
+    "stock_shock_rebound": "Same liquidity universe; daily residual below minus2 trailing63day residual standard deviations, stock close above trailing200day mean; most extreme20; unfilled slots cash; five overlapping target sleeves."
+  },
+  "controls": [
+    "same-universe equal stocks monthly",
+    "equal nine sectors monthly"
+  ],
+  "costs": "5bps each side; stress15bps each side; final liquidation; adjusted fund/stock prices; cash prior-observed IRX",
+  "execution": "close signal, next-open trade; daily rebalanced average of last5 sleeve targets; not a fixed-unit five-day holding simulation",
+  "hypothesis": "Temporary liquidity shocks may reverse over the next week. Market-relative returns separate stock-specific moves from market moves.",
+  "limits": "Stock cache is current-survivor biased: stock results are screening diagnostics, never deployment evidence. Nine-sector universe fixed and known before all test periods. No gold, leverage or shorting.",
+  "periods": {
+    "early": [
+      "2008-01-01",
+      "2016-12-31"
+    ],
+    "full": [
+      "2008-01-01",
+      "2026-09-17"
+    ],
+    "pre_recent": [
+      "2017-01-01",
+      "2023-12-31"
+    ],
+    "recent": [
+      "2024-01-01",
+      "2026-09-17"
+    ]
+  },
+  "selection": "No optimization. Report every candidate and control in every period. No designation as untouched holdout.",
+  "source": "https://www.nber.org/papers/w17653"
+}

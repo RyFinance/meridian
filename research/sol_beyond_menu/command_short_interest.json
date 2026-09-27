@@ -1,0 +1,1 @@
+["python", "-m", "research.sol_beyond_menu.evaluate", "--experiment", "aggregate_short_interest", "--snapshot-root", "{snapshot_root}", "--membership", "{membership_path}"]

@@ -1,0 +1,23 @@
+{
+ "name": "retro_multiasset_17_sleeves",
+ "description": "17 candidate sleeves, inclusion if dev Sharpe >= 0.30 (no null, no multiplicity), hold-out book HAC t >= 2.",
+ "assumptions": [
+  "ASSUMPTION 5 of 17 sleeves real, pairwise sleeve correlation 0.15",
+  "alpha-vs-SPY HAC t leg treated as identical to the mean HAC t leg (low-beta book)"
+ ],
+ "design": "sleeve_screen",
+ "params": {
+  "k": 17,
+  "m_real": 5,
+  "rho": 0.15,
+  "incl_sharpe": 0.3,
+  "periods_per_year": 252,
+  "autocorr": 0.1,
+  "hold_t": 2.0
+ },
+ "windows": {
+  "dev_years": 10.0,
+  "val_years": 8.71
+ },
+ "gates": {}
+}

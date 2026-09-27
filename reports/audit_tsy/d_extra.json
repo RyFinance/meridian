@@ -1,0 +1,102 @@
+{
+ "dev": {
+  "sign_test_active_months": {
+   "pos": 87,
+   "n": 144,
+   "p_one_sided": 0.007685257474956876
+  },
+  "sign_test_window_excess": {
+   "pos": 90,
+   "n": 144,
+   "p_one_sided": 0.001696942031786604
+  },
+  "trimmed5_mean_active_bp": 27.157473436846182,
+  "median_active_bp": 28.5206060790115,
+  "wilcoxon_active_p_one_sided": 0.00446747515706098,
+  "refunding_months_FebMayAugNov_window_ex_bp": [
+   47.81945371184016,
+   48
+  ],
+  "other_months_window_ex_bp": [
+   33.21434843650401,
+   96
+  ],
+  "december_window_ex_bp": [
+   54.349277043760836,
+   12
+  ]
+ },
+ "val": {
+  "sign_test_active_months": {
+   "pos": 83,
+   "n": 140,
+   "p_one_sided": 0.017117830936597675
+  },
+  "sign_test_window_excess": {
+   "pos": 85,
+   "n": 140,
+   "p_one_sided": 0.006978667062421206
+  },
+  "trimmed5_mean_active_bp": 25.357927409962226,
+  "median_active_bp": 30.6904928134335,
+  "wilcoxon_active_p_one_sided": 0.006656426788668958,
+  "refunding_months_FebMayAugNov_window_ex_bp": [
+   35.67765225035476,
+   47
+  ],
+  "other_months_window_ex_bp": [
+   24.644425182186836,
+   93
+  ],
+  "december_window_ex_bp": [
+   -4.147962442172453,
+   11
+  ]
+ },
+ "good_friday_month_ends": [
+  {
+   "month": "2013-03",
+   "window_ret_pct": 0.46
+  },
+  {
+   "month": "2018-03",
+   "window_ret_pct": 1.83
+  },
+  {
+   "month": "2024-03",
+   "window_ret_pct": 1.19
+  }
+ ],
+ "subperiod": {
+  "2003-2008": {
+   "M_excess_sharpe_base": 0.6954290869841452,
+   "M_ann_excess": 0.03051837682623628,
+   "active_sharpe_base": 0.4677831898410593,
+   "TLT_ann_excess": 0.08098852669977298
+  },
+  "2009-2014": {
+   "M_excess_sharpe_base": 0.9070957502904156,
+   "M_ann_excess": 0.05143840772814398,
+   "active_sharpe_base": 0.8132054450025169,
+   "TLT_ann_excess": 0.05846131160375858
+  },
+  "2015-2020": {
+   "M_excess_sharpe_base": 0.9230272581192311,
+   "M_ann_excess": 0.041629667274331705,
+   "active_sharpe_base": 0.7678888330111859,
+   "TLT_ann_excess": 0.05959099850197419
+  },
+  "2021-2026": {
+   "M_excess_sharpe_base": 0.31258089575485426,
+   "M_ann_excess": 0.016672017542245385,
+   "active_sharpe_base": 0.6270486662238384,
+   "TLT_ann_excess": -0.10306316989969405
+  }
+ },
+ "last_36_months": {
+  "window_ex_mean_bp": 7.879612371406609,
+  "t": 0.3818821181487092,
+  "active_mean_bp": 9.357804033818736
+ },
+ "2026_ytd_window_sum_pct": -3.41893295269717
+}

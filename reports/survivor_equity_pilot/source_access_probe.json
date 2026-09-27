@@ -1,0 +1,177 @@
+{
+ "sec_submissions_dead_cik": {
+  "url": "https://data.sec.gov/submissions/CIK0000806085.json",
+  "status": 200,
+  "bytes": 165318,
+  "tag": null,
+  "snippet": "{\"cik\":\"0000806085\",\"entityType\":\"operating\",\"sic\":\"6211\",\"sicDescription\":\"Security Brokers, Dealers & Flotation Companies\",\"ownerOrg\":\"02 Finance\",\"insiderTransactionForOwnerExists\":1,\"insiderTransa"
+ },
+ "sec_company_tickers_json": {
+  "url": "https://www.sec.gov/files/company_tickers.json",
+  "status": 403,
+  "bytes": 1925,
+  "tag": "SEC_403_UA_POLICY",
+  "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T"
+ },
+ "sec_company_tickers_exchange": {
+  "url": "https://www.sec.gov/files/company_tickers_exchange.json",
+  "status": 403,
+  "bytes": 1925,
+  "tag": "SEC_403_UA_POLICY",
+  "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T"
+ },
+ "sec_full_index_form_idx_2010Q1": {
+  "url": "https://www.sec.gov/Archives/edgar/full-index/2010/QTR1/form.idx",
+  "status": 403,
+  "bytes": 4819,
+  "tag": null,
+  "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T"
+ },
+ "sec_archives_form25_doc_SVB": {
+  "url": "https://www.sec.gov/Archives/edgar/data/719739/000135445723000327/primary_doc.xml",
+  "status": 403,
+  "bytes": 4819,
+  "tag": null,
+  "snippet": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T"
+ },
+ "sec_efts_form25_2023": {
+  "url": "https://efts.sec.gov/LATEST/search-index?forms=25-NSE&dateRange=custom&startdt=2023-01-01&enddt=2023-12-31",
+  "status": 200,
+  "bytes": 74250,
+  "tag": null,
+  "snippet": "{\"took\":119,\"timed_out\":false,\"_shards\":{\"total\":50,\"successful\":50,\"skipped\":0,\"failed\":0},\"hits\":{\"total\":{\"value\":1154,\"relation\":\"eq\"},\"max_score\":null,\"hits\":[{\"_index\":\"edgar_file\",\"_id\":\"000135"
+ },
+ "nasdaqtrader_nasdaqlisted": {
+  "url": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+  "status": 200,
+  "bytes": 349814,
+  "tag": null,
+  "snippet": "Symbol|Security Name|Market Category|Test Issue|Financial Status|Round Lot Size|ETF|NextShares\r\nAAAP|Pacer Barings CLO Market Flex ETF|G|N|N|100|Y|N\r\nAACG|ATA Creativity Global - American Depositary S"
+ },
+ "nasdaqtrader_otherlisted": {
+  "url": "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt",
+  "status": 200,
+  "bytes": 542958,
+  "tag": null,
+  "snippet": "ACT Symbol|Security Name|Exchange|CQS Symbol|ETF|Round Lot Size|Test Issue|NASDAQ Symbol\r\nA|Agilent Technologies, Inc. Common Stock|N|A|N|100|N|A\r\nAA|Alcoa Corporation Common Stock |N|AA|N|100|N|AA\r\nA"
+ },
+ "nasdaqtrader_dailylist_archive": {
+  "url": "https://www.nasdaqtrader.com/dynamic/dailylist/dailylist20230313.txt",
+  "status": 200,
+  "bytes": 42995,
+  "tag": null,
+  "snippet": "\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\" >\r\n\r\n<head id=\"Head1\">\r\n<title"
+ },
+ "finra_cnms_regsho_2023": {
+  "url": "https://cdn.finra.org/equity/regsho/daily/CNMSshvol20230313.txt",
+  "status": 200,
+  "bytes": 335513,
+  "tag": null,
+  "snippet": "Date|Symbol|ShortVolume|ShortExemptVolume|TotalVolume|Market\r\n20230313|A|236158|83|358600|B,Q,N\r\n20230313|AA|1363832|7385|2449640|B,Q,N\r\n20230313|AAAU|1221011|17800|2116650|B,Q,N\r\n20230313|AAC|3014|0|"
+ },
+ "finra_orf_otc_regsho_2023": {
+  "url": "https://cdn.finra.org/equity/regsho/daily/FORFshvol20230313.txt",
+  "status": 200,
+  "bytes": 100650,
+  "tag": null,
+  "snippet": "Date|Symbol|ShortVolume|ShortExemptVolume|TotalVolume|Market\r\n20230313|AABB|1665146|0|4438060|O\r\n20230313|AAGC|1000000|0|2014957|O\r\n20230313|AAGFF|84457|0|105523|O\r\n20230313|AAGIY|138522|0|331394|O\r\n2"
+ },
+ "finra_orf_otc_regsho_2018": {
+  "url": "https://cdn.finra.org/equity/regsho/daily/FORFshvol20181015.txt",
+  "status": 200,
+  "bytes": 91612,
+  "tag": null,
+  "snippet": "Date|Symbol|ShortVolume|ShortExemptVolume|TotalVolume|Market\r\n20181015|AACAF|18700|0|19700|O\r\n20181015|AACAY|180630|0|380771|O\r\n20181015|AACTF|500|0|500|O\r\n20181015|AAGH|11000|0|11000|O\r\n20181015|AAGI"
+ },
+ "yahoo_v8_query1_delisted_TWTR": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/TWTR?period1=1577836800&period2=1680000000&interval=1d",
+  "status": 404,
+  "bytes": 108,
+  "tag": "NO_DATA_FOR_SYMBOL",
+  "snippet": "{\"chart\":{\"result\":null,\"error\":{\"code\":\"Not Found\",\"description\":\"No data found, symbol may be delisted\"}}}"
+ },
+ "yahoo_v8_query2_delisted_TWTR": {
+  "url": "https://query2.finance.yahoo.com/v8/finance/chart/TWTR?period1=1577836800&period2=1680000000&interval=1d",
+  "status": 404,
+  "bytes": 108,
+  "tag": "NO_DATA_FOR_SYMBOL",
+  "snippet": "{\"chart\":{\"result\":null,\"error\":{\"code\":\"Not Found\",\"description\":\"No data found, symbol may be delisted\"}}}"
+ },
+ "yahoo_v8_range_max_TWTR": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/TWTR?range=max&interval=1d",
+  "status": 404,
+  "bytes": 108,
+  "tag": "NO_DATA_FOR_SYMBOL",
+  "snippet": "{\"chart\":{\"result\":null,\"error\":{\"code\":\"Not Found\",\"description\":\"No data found, symbol may be delisted\"}}}"
+ },
+ "yahoo_v8_live_control_AAPL": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=5d&interval=1d",
+  "status": 200,
+  "bytes": 1696,
+  "tag": null,
+  "snippet": "{\"chart\":{\"result\":[{\"meta\":{\"currency\":\"USD\",\"symbol\":\"AAPL\",\"exchangeName\":\"NMS\",\"fullExchangeName\":\"NasdaqGS\",\"instrumentType\":\"EQUITY\",\"firstTradeDate\":345479400,\"regularMarketTime\":1790366401,\"ha"
+ },
+ "yahoo_v7_download_csv": {
+  "url": "https://query1.finance.yahoo.com/v7/finance/download/AAPL?period1=1690000000&period2=1700000000&interval=1d",
+  "status": 401,
+  "bytes": 97,
+  "tag": "KEY_OR_ACCOUNT_REQUIRED",
+  "snippet": "{\"finance\":{\"result\":null,\"error\":{\"code\":\"unauthorized\",\"description\":\"User is not logged in\"}}}"
+ },
+ "stooq_csv": {
+  "url": "https://stooq.com/q/d/l/?s=aapl.us&i=d",
+  "status": 200,
+  "bytes": 796,
+  "tag": "JS_BOT_CHALLENGE (not bypassed)",
+  "snippet": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"robots\" content=\"noindex,nofollow\"></head><body><noscript>This site requires JavaScript to verify your browser. Please enable JavaScript an"
+ },
+ "nasdaq_api_historical_delisted_TWTR": {
+  "url": "https://api.nasdaq.com/api/quote/TWTR/historical?assetclass=stocks&fromdate=2020-01-01&todate=2022-12-31&limit=10",
+  "status": 200,
+  "bytes": 142,
+  "tag": "NO_DATA_FOR_SYMBOL",
+  "snippet": "{\"data\":null,\"message\":null,\"status\":{\"rCode\":400,\"bCodeMessage\":[{\"code\":1001,\"errorMessage\":\"Symbol not exists.\"}],\"developerMessage\":null}}"
+ },
+ "nasdaq_api_historical_live_AAPL": {
+  "url": "https://api.nasdaq.com/api/quote/AAPL/historical?assetclass=stocks&fromdate=2024-01-01&todate=2024-01-31&limit=10",
+  "status": 200,
+  "bytes": 180,
+  "tag": null,
+  "snippet": "{\"data\":{\"symbol\":\"AAPL\",\"totalRecords\":0,\"tradesTable\":{\"asOf\":null,\"headers\":null,\"rows\":null}},\"message\":null,\"status\":{\"rCode\":200,\"bCodeMessage\":null,\"developerMessage\":null}}"
+ },
+ "tiingo_supported_tickers_public": {
+  "url": "https://apimedia.tiingo.com/docs/tiingo/daily/supported_tickers.zip",
+  "status": 200,
+  "bytes": 795842,
+  "tag": null,
+  "snippet": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000\u00a209]m\t\u007fj6$\f\u0000\u00b6\u00cdL\u0000\u0015\u0000\u0000\u0000supported_tickers.csv\u0094\u009d\u00dd\u00cet\u00b9q\u009d\u00cf\u00e7Zf\u0080&\u00b9\u00f9\u00e73I#Y\u00b2l\u00c7\u00c9x\u0012;'\u0081\u00a1\f\u0092 \u0080\u0013\u00c8\n\u0090\u00dc}\u00b8\u00c9\u00ddow\u00b3\u009e\u00ea^_\u0010 \u00e3|\u00cb|w\u00d7\u00e2O\u00ad*\u00b2\u00ea/\u00ff\u00e3O\u00ff\u00f3\u0097?\u007f\u00ff\u00cb\u00ff\u00fd\u00d3\u007f\u00ff\u0097\u007f\u00fdo\u00bf|\u00ff/\u00ff\u00f6o\u00bf\u00fc\u00e5\u001f\u00ff\u00df\u00ff\u00fe\u00e5\u00fb\u00ff\u00fd\u00e7\u00ff\u00f1\u00a7_~\u00f3\u007f\u00fe\u00fc\u00e7_\u00fe\u00f5O\u00ff\u00ef\u00fb\u007f\u00fb\u00cb\u00bf\u00fc\u00f9/?\u00fe\u00cb_~\u00f9\u00fe\u0097\u007f\u00fd\u00af\u00e7\u00ff\u00fb\u00dd\u000f\u00ff\u00f0\u00c3\u00ef"
+ },
+ "tiingo_prices_no_key": {
+  "url": "https://api.tiingo.com/tiingo/daily/sivbq/prices?startDate=2023-01-01",
+  "status": 403,
+  "bytes": 34,
+  "tag": "KEY_OR_ACCOUNT_REQUIRED",
+  "snippet": "{\"detail\":\"Please supply a token\"}"
+ },
+ "alphavantage_no_key": {
+  "url": "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TWTR",
+  "status": 200,
+  "bytes": 189,
+  "tag": "KEY_OR_ACCOUNT_REQUIRED",
+  "snippet": "{\n    \"Error Message\": \"the parameter apikey is invalid or missing. Please claim your free API key on (https://www.alphavantage.co/support/#api-key). It should take less than 20 seconds.\"\n}"
+ },
+ "eodhd_no_key": {
+  "url": "https://eodhd.com/api/eod/TWTR.US?fmt=json",
+  "status": 401,
+  "bytes": 15,
+  "tag": "KEY_OR_ACCOUNT_REQUIRED",
+  "snippet": "Unauthenticated"
+ },
+ "kaggle_dataset_download_no_login": {
+  "url": "https://www.kaggle.com/api/v1/datasets/download/borismarjanovic/price-volume-data-for-all-us-stocks-etfs",
+  "status": 200,
+  "bytes": 515591518,
+  "tag": "SERVED_WITHOUT_LOGIN (full 515MB zip; deleted after membership check; licence unverified; frozen 2017-11-10 snapshot)",
+  "snippet": "PK\u0003\u0004-\u0000\u0000\u0000\b\u0000\u00e0\u009d5O\u0083(\u00dd\u00e5\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u00ff\u0015\u0000\u0014\u0000Data/ETFs/aadr.us.txt\u0001\u0000\u0010\u0000\u001a\u001b\u0001\u0000\u0000\u0000\u0000\u0000GO\u0000\u0000\u0000\u0000\u0000\u0000\u0095}\u00cd\u00ae-;\u00afU\u001f\u00897\u00d9{+\u00ce\u007f\u00da\u00d0\u0000\t\u0089\u001e}\u001aW\u0080t\u00b9\u0017\t\u0010\u00afO\u0086\u0087S\u00b1k\u00ceu\u00f4\u001d\u00e9\u009c\u001a\u00db\u00ab<S)\u00c7q\u001c\u00c7I\u00fd\u00fb\u00ff\u00fa\u007f\u00fe\u00e9\u00d7\u007f\u00fe_\u00ff\u00f4/\u00bf\u00fe\u00c3\u00ff\u00f8o\u00ff\u00fd\u00d7\u007f\u00fa\u00d7\u00ff\u00f7\u00eb\u00df\u00fd\u00f3\u00bf\u00fe\u00ef\u007f\u00fa\u00f5_\u00fe\u00f5\u009f\u00ff\u00ef\u00ff\u00e4\u00ad\u00ff\u00f8/\u00ff\u00e7\u00df\u00fe\u009b\u009c$\u00fdN\u00e3w\u0096_\u00b9\u00fe)\u00a5<P\u00fe\u00ac\u00da\u000f\u00d4"
+ }
+}

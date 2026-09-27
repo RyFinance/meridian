@@ -1,0 +1,375 @@
+{
+ "dataset_version": "cycle6_eval_v1",
+ "intermediate_artifacts": [
+  "eval/eval_build_record.json",
+  "eval/membership_monthly.parquet",
+  "eval/panels/daily_excess_CM.parquet",
+  "eval/panels/daily_excess_EQ.parquet",
+  "eval/panels/daily_excess_FI10.parquet",
+  "eval/panels/daily_excess_FI_UST.parquet",
+  "eval/panels/daily_excess_FX.parquet",
+  "eval/series/aqr_century_monthly.parquet",
+  "eval/series/aqr_tsmom_monthly.parquet",
+  "eval/series/aqr_vme_monthly.parquet",
+  "eval/series/bab_benchmarks_daily.parquet",
+  "eval/series/core_etf_excess_daily.parquet",
+  "eval/series/core_etf_total_return_daily.parquet",
+  "eval/series/cpi_us_pit_monthly.parquet",
+  "eval/series/kf_us_mkt_rf_monthly.parquet",
+  "eval/series/tbill_3m_daily.parquet",
+  "eval/series/usd_rate_3m_monthly.parquet",
+  "eval/signals/fi10_carry_monthly.parquet",
+  "eval/signals/fi10_yield_monthly.parquet",
+  "eval/signals/fx_cpi_pit_monthly.parquet",
+  "eval/signals/fx_foreign_rate_monthly.parquet",
+  "eval/signals/fx_spot_monthly.parquet"
+ ],
+ "metadata": {
+  "eval/candidate_list.csv": {
+   "first_timestamp": null,
+   "last_timestamp": null,
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 96,
+   "source": "union of cycle6 rates+equity candidates.csv, PASS only (ADDENDUM-1 i.4)",
+   "source_identifier": "data/cycle6/rates/candidates.csv; data/cycle6/equity/candidates.csv",
+   "symbol": "cycle6_candidate_list",
+   "temporal": false
+  },
+  "eval/eval_build_record.json": {
+   "first_timestamp": null,
+   "last_timestamp": null,
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 22,
+   "source": "cycle6 FREEZE+SPEC agent build record (research/cycle6/build_eval.py)",
+   "source_identifier": "research/cycle6/build_eval.py sha256 9f119bb14461398c3e71e0c34971d882c27767fe0285fdc3974ddcf4de547b1f",
+   "symbol": "eval_build_record",
+   "temporal": false
+  },
+  "eval/membership_monthly.parquet": {
+   "first_timestamp": "1965-05-31T00:00:00+00:00",
+   "last_timestamp": "2026-09-30T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 25002,
+   "source": "derived: candidate windows x daily panels",
+   "source_identifier": "candidate_list.csv; panels/*",
+   "symbol": "cycle6_membership_monthly",
+   "temporal": true
+  },
+  "eval/panels/daily_excess_CM.parquet": {
+   "first_timestamp": "1983-04-05T00:00:00+00:00",
+   "last_timestamp": "2026-09-25T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 61988,
+   "source": "cycle6 rates data pass (commodity_excess_daily)",
+   "source_identifier": "data/cycle6/rates/commodity_excess_daily.parquet; EIA + yfinance ETFs",
+   "symbol": "CM_BRENT,CM_COPPER,CM_CORN,CM_GASOLINE,CM_GOLD,CM_NATGAS,CM_PALLADIUM,CM_PLATINUM,CM_SILVER,CM_SOYBEANS,CM_WHEAT,CM_WTI",
+   "temporal": true
+  },
+  "eval/panels/daily_excess_EQ.parquet": {
+   "first_timestamp": "1988-01-04T00:00:00+00:00",
+   "last_timestamp": "2026-09-25T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:53:02.304063+00:00",
+   "row_count": 205691,
+   "source": "cycle6 equity data pass (equity_excess_daily)",
+   "source_identifier": "data/cycle6/equity/equity_excess_daily.parquet; completeness.json endpoints",
+   "symbol": "EQ_AT,EQ_AU,EQ_BE,EQ_BR,EQ_CA,EQ_CH,EQ_CL,EQ_DE,EQ_DK,EQ_ES,EQ_FI,EQ_FR,EQ_HK,EQ_ID,EQ_IE,EQ_IL,EQ_IN,EQ_IT,EQ_JP,EQ_KR,EQ_MX,EQ_MY,EQ_NL,EQ_NO,EQ_NZ,EQ_PL,EQ_SE,EQ_SG,EQ_TH,EQ_TR,EQ_TW,EQ_UK,EQ_US,EQ_ZA",
+   "temporal": true
+  },
+  "eval/panels/daily_excess_FI10.parquet": {
+   "first_timestamp": "1965-06-15T00:00:00+00:00",
+   "last_timestamp": "2026-09-25T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 88251,
+   "source": "cycle6 rates data pass (bond_excess_daily), 10y rows",
+   "source_identifier": "data/cycle6/rates/bond_excess_daily.parquet; completeness.json endpoints",
+   "symbol": "FI_CA_10Y,FI_CH_10Y,FI_DE_10Y,FI_ES_10Y,FI_FR_10Y,FI_IT_10Y,FI_JP_10Y,FI_NO_10Y,FI_NZ_10Y,FI_SE_10Y,FI_UK_10Y,FI_US_10Y",
+   "temporal": true
+  },
+  "eval/panels/daily_excess_FI_UST.parquet": {
+   "first_timestamp": "1965-05-05T00:00:00+00:00",
+   "last_timestamp": "2026-09-24T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 55616,
+   "source": "cycle6 rates data pass (bond_excess_daily), US 2/5/10/30y",
+   "source_identifier": "data/cycle6/rates/bond_excess_daily.parquet; fed_h15 CMT",
+   "symbol": "FI_US_10Y,FI_US_2Y,FI_US_30Y,FI_US_5Y",
+   "temporal": true
+  },
+  "eval/panels/daily_excess_FX.parquet": {
+   "first_timestamp": "1971-01-05T00:00:00+00:00",
+   "last_timestamp": "2026-09-18T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 109938,
+   "source": "cycle6 rates data pass (fx_excess_daily)",
+   "source_identifier": "data/cycle6/rates/fx_excess_daily.parquet; fed_h10 + short rates",
+   "symbol": "FX_AUD,FX_CAD,FX_CHF,FX_EUR,FX_GBP,FX_JPY,FX_NOK,FX_NZD,FX_SEK",
+   "temporal": true
+  },
+  "eval/series/aqr_century_monthly.parquet": {
+   "first_timestamp": "1926-07-30T00:00:00+00:00",
+   "last_timestamp": "2026-02-27T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T07:23:43.161518+00:00",
+   "row_count": 5336,
+   "source": "AQR",
+   "source_identifier": "https://www.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Century-of-Factor-Premia-Monthly.xlsx",
+   "symbol": "Commodities Carry,Currencies Carry,Equity indices Carry,Equity indices Defensive,Fixed income Carry",
+   "temporal": true
+  },
+  "eval/series/aqr_tsmom_monthly.parquet": {
+   "first_timestamp": "1985-01-31T00:00:00+00:00",
+   "last_timestamp": "2026-05-29T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T07:23:41.944178+00:00",
+   "row_count": 2485,
+   "source": "AQR",
+   "source_identifier": "https://www.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Time-Series-Momentum-Factors-Monthly.xlsx",
+   "symbol": "TSMOM,TSMOM^CM,TSMOM^EQ,TSMOM^FI,TSMOM^FX",
+   "temporal": true
+  },
+  "eval/series/aqr_vme_monthly.parquet": {
+   "first_timestamp": "1972-01-31T00:00:00+00:00",
+   "last_timestamp": "2025-01-31T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T07:23:46.107496+00:00",
+   "row_count": 4540,
+   "source": "AQR",
+   "source_identifier": "https://www.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Value-and-Momentum-Everywhere-Factors-Monthly.xlsx",
+   "symbol": "MOMLS_VME_COM,MOMLS_VME_EQ,MOMLS_VME_FI,MOMLS_VME_FX,VALLS_VME_COM,VALLS_VME_EQ,VALLS_VME_FI,VALLS_VME_FX",
+   "temporal": true
+  },
+  "eval/series/bab_benchmarks_daily.parquet": {
+   "first_timestamp": "1965-05-05T00:00:00+00:00",
+   "last_timestamp": "2026-09-25T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 25404,
+   "source": "equal-weight average of PASS in-window instruments (ADDENDUM-1 i.10)",
+   "source_identifier": "derived from panels/daily_excess_EQ and daily_excess_FI_UST",
+   "symbol": "BAB_BENCH_EQ_EW,BAB_BENCH_FI_UST_EW",
+   "temporal": true
+  },
+  "eval/series/core_etf_excess_daily.parquet": {
+   "first_timestamp": "1993-02-01T00:00:00+00:00",
+   "last_timestamp": "2026-09-25T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 14549,
+   "source": "yahoo_chart adjclose minus USD 3m (cycle6 short_rates_daily)",
+   "source_identifier": "https://query2.finance.yahoo.com/v8/finance/chart/SPY?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true; https://query2.finance.yahoo.com/v8/finance/chart/IEF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true",
+   "symbol": "IEF,SPY",
+   "temporal": true
+  },
+  "eval/series/core_etf_total_return_daily.parquet": {
+   "first_timestamp": "1993-02-01T00:00:00+00:00",
+   "last_timestamp": "2026-09-25T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T07:36:05.693398+00:00",
+   "row_count": 14549,
+   "source": "yahoo_chart adjclose (core_premia acq v1 snapshot)",
+   "source_identifier": "https://query2.finance.yahoo.com/v8/finance/chart/SPY?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true; https://query2.finance.yahoo.com/v8/finance/chart/IEF?period1=-2208988800&period2=1790408049&interval=1d&events=div%7Csplit&includeAdjustedClose=true",
+   "symbol": "IEF,SPY",
+   "temporal": true
+  },
+  "eval/series/cpi_us_pit_monthly.parquet": {
+   "first_timestamp": "1955-03-31T00:00:00+00:00",
+   "last_timestamp": "2026-09-30T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:53:02.304063+00:00",
+   "row_count": 859,
+   "source": "cycle6 equity data pass (cpi_monthly_pit) US, PIT by available_date",
+   "source_identifier": "data/cycle6/equity/cpi_monthly_pit.parquet (OECD SDMX)",
+   "symbol": "US_CPI",
+   "temporal": true
+  },
+  "eval/series/kf_us_mkt_rf_monthly.parquet": {
+   "first_timestamp": "1926-07-31T00:00:00+00:00",
+   "last_timestamp": "2026-08-31T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T07:23:47.939072+00:00",
+   "row_count": 1202,
+   "source": "Kenneth French data library",
+   "source_identifier": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_Factors_CSV.zip",
+   "symbol": "KF_US_MKT_RF",
+   "temporal": true
+  },
+  "eval/series/tbill_3m_daily.parquet": {
+   "first_timestamp": "1981-09-01T00:00:00+00:00",
+   "last_timestamp": "2026-09-24T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T07:33:54.338693Z",
+   "row_count": 11266,
+   "source": "fed_h15 3-month CMT RIFLGFCM03_N.B (core_premia acq v1 processed)",
+   "source_identifier": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H15&series=bf17364827e38702b42a58cf8eaa3f78&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package",
+   "symbol": "TB3M",
+   "temporal": true
+  },
+  "eval/series/usd_rate_3m_monthly.parquet": {
+   "first_timestamp": "1971-01-29T00:00:00+00:00",
+   "last_timestamp": "2026-09-18T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 669,
+   "source": "cycle6 rates data pass (fx_carry_inputs_monthly.rf_usd_pct)",
+   "source_identifier": "data/cycle6/rates/fx_carry_inputs_monthly.parquet",
+   "symbol": "USD_RF_3M",
+   "temporal": true
+  },
+  "eval/signals/fi10_carry_monthly.parquet": {
+   "first_timestamp": "1965-06-30T00:00:00+00:00",
+   "last_timestamp": "2026-09-25T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 4204,
+   "source": "cycle6 rates data pass (bond_carry_inputs_monthly.carry_pct_pa)",
+   "source_identifier": "data/cycle6/rates/bond_carry_inputs_monthly.parquet",
+   "symbol": "FI_CA_10Y,FI_CH_10Y,FI_DE_10Y,FI_ES_10Y,FI_FR_10Y,FI_IT_10Y,FI_JP_10Y,FI_NO_10Y,FI_NZ_10Y,FI_SE_10Y,FI_UK_10Y,FI_US_10Y",
+   "temporal": true
+  },
+  "eval/signals/fi10_yield_monthly.parquet": {
+   "first_timestamp": "1965-06-30T00:00:00+00:00",
+   "last_timestamp": "2026-09-25T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 4204,
+   "source": "cycle6 rates data pass (bond_excess_daily.y) month-end",
+   "source_identifier": "data/cycle6/rates/bond_excess_daily.parquet",
+   "symbol": "FI_CA_10Y,FI_CH_10Y,FI_DE_10Y,FI_ES_10Y,FI_FR_10Y,FI_IT_10Y,FI_JP_10Y,FI_NO_10Y,FI_NZ_10Y,FI_SE_10Y,FI_UK_10Y,FI_US_10Y",
+   "temporal": true
+  },
+  "eval/signals/fx_cpi_pit_monthly.parquet": {
+   "first_timestamp": "1971-01-31T00:00:00+00:00",
+   "last_timestamp": "2026-09-30T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:53:02.304063+00:00",
+   "row_count": 5265,
+   "source": "cycle6 equity data pass (cpi_monthly_pit), PIT by available_date",
+   "source_identifier": "data/cycle6/equity/cpi_monthly_pit.parquet (OECD SDMX/LSE)",
+   "symbol": "FX_AUD,FX_CAD,FX_CHF,FX_EUR,FX_GBP,FX_JPY,FX_NOK,FX_NZD,FX_SEK",
+   "temporal": true
+  },
+  "eval/signals/fx_foreign_rate_monthly.parquet": {
+   "first_timestamp": "1971-01-29T00:00:00+00:00",
+   "last_timestamp": "2026-09-18T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 5265,
+   "source": "cycle6 rates data pass (fx_carry_inputs_monthly.rf_ccy_pct)",
+   "source_identifier": "data/cycle6/rates/fx_carry_inputs_monthly.parquet",
+   "symbol": "FX_AUD,FX_CAD,FX_CHF,FX_EUR,FX_GBP,FX_JPY,FX_NOK,FX_NZD,FX_SEK",
+   "temporal": true
+  },
+  "eval/signals/fx_spot_monthly.parquet": {
+   "first_timestamp": "1971-01-29T00:00:00+00:00",
+   "last_timestamp": "2026-09-18T00:00:00+00:00",
+   "logical_as_of": "2026-09-26",
+   "retrieved_at": "2026-09-26T19:55:18.120507+00:00",
+   "row_count": 5265,
+   "source": "cycle6 rates data pass (fx_carry_inputs_monthly.spot_usd_per_ccy)",
+   "source_identifier": "data/cycle6/rates/fx_carry_inputs_monthly.parquet; fed_h10",
+   "symbol": "FX_AUD,FX_CAD,FX_CHF,FX_EUR,FX_GBP,FX_JPY,FX_NOK,FX_NZD,FX_SEK",
+   "temporal": true
+  }
+ },
+ "scopes": [
+  {
+   "include": [
+    "**/*"
+   ],
+   "name": "eval",
+   "root": "/Users/rytty/CCP/quant_v7/data/cycle6/eval"
+  }
+ ],
+ "universe": {
+  "delisting_note": "no candidate stopped trading within the sample except via its recorded last_date; EIA C1 futures (discontinued 2024-04-05) are spliced into USO/UNG by the data pass",
+  "delistings": [],
+  "exclusions": [
+   {
+    "class": "FI",
+    "market_id": "FI_AU_10Y",
+    "qa_status": "FAIL",
+    "reason": "(a) TE/sigma_proxy 0.64 > 0.60 vs IGB.AX (165 months)",
+    "source": "data/cycle6/rates/candidates.csv"
+   },
+   {
+    "class": "FI",
+    "market_id": "FI_DE_2Y",
+    "qa_status": "FAIL",
+    "reason": "(a) TE/sigma_proxy 0.84 > 0.60 vs EXHB.DE (225 months)",
+    "source": "data/cycle6/rates/candidates.csv"
+   },
+   {
+    "class": "FI",
+    "market_id": "FI_NL_10Y",
+    "qa_status": "FAIL",
+    "reason": "no free daily yield >= 2y with history (LSE: NL2Y from 2025-07 only, no 5y/10y)",
+    "source": "data/cycle6/rates/candidates.csv"
+   },
+   {
+    "class": "FI",
+    "market_id": "FI_BE_10Y",
+    "qa_status": "FAIL",
+    "reason": "no free daily yield >= 2y with history (LSE: BE2Y from 2025-07 only)",
+    "source": "data/cycle6/rates/candidates.csv"
+   },
+   {
+    "class": "FI",
+    "market_id": "FI_AT_10Y",
+    "qa_status": "FAIL",
+    "reason": "no free daily yield >= 2y with history (LSE: AT1Y only)",
+    "source": "data/cycle6/rates/candidates.csv"
+   },
+   {
+    "class": "FI",
+    "market_id": "FI_DK_10Y",
+    "qa_status": "FAIL",
+    "reason": "no free daily yield >= 2y with history (LSE: DK2Y from 2025-07 only)",
+    "source": "data/cycle6/rates/candidates.csv"
+   },
+   {
+    "class": "EQ",
+    "market_id": "EQ_PT",
+    "qa_status": "FAIL",
+    "reason": "no feasible construction (no TR index, no dividend estimate, no country ETF)",
+    "source": "data/cycle6/equity/candidates.csv"
+   },
+   {
+    "class": "EQ",
+    "market_id": "EQ_CN",
+    "qa_status": "FAIL",
+    "reason": "(a) TE/sigma vs FXI = 0.84 > 0.6 on 250 months",
+    "source": "data/cycle6/equity/candidates.csv"
+   },
+   {
+    "component": "CARRY-CM",
+    "reason": "energy-only universe has 2 instruments < 4 (ADDENDUM-1 item 6); not a candidate-list exclusion"
+   }
+  ],
+  "membership_artifact": "eval/candidate_list.csv",
+  "monthly_membership_artifact": "eval/membership_monthly.parquet",
+  "symbol_mappings": {
+   "FI_OTHER": "PASS non-10y non-US buckets, unused by any component (ADDENDUM-1 item 5)",
+   "FI_US_10Y": "listed twice in candidate_list.csv: class FI (10y per country) and class FI_UST (BAB-FI bucket); same market, different component universes",
+   "FX_EUR_cpi_country": "DE (no euro-area CPI in the data pass)",
+   "FX_cpi_country": {
+    "FX_AUD": "AU",
+    "FX_CAD": "CA",
+    "FX_CHF": "CH",
+    "FX_EUR": "DE",
+    "FX_GBP": "UK",
+    "FX_JPY": "JP",
+    "FX_NOK": "NO",
+    "FX_NZD": "NZ",
+    "FX_SEK": "SE"
+   }
+  }
+ }
+}

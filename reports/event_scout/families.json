@@ -1,0 +1,387 @@
+{
+  "generated_by": "event-data scout, workload D, research cycle 4",
+  "generated_at": "2026-09-24",
+  "scope_note": "Event-family design and feasibility only. No event-to-return relationship was computed on real data (NO RETURN LOOKING). Ranking is from mechanism, literature and data properties only, per the mandate's hard constraint.",
+  "ranking_criteria_order": [
+    "1. statistical power (effective, clustering-adjusted, not raw headline count)",
+    "2. economic mechanism",
+    "3. point-in-time integrity",
+    "4. survivorship resistance",
+    "5. independent observations",
+    "6. implementation realism",
+    "7. independence from prior quant_v7 research"
+  ],
+  "probe_manifest": "reports/event_scout/probe_log.json (7 polite HTTP probes, all 200 OK, User-Agent quant_v7-research/1.0, no email; raw samples under data/event_scout/, each capped at 20KB)",
+  "families": [
+    {
+      "rank": 1,
+      "id": "8k_item_events",
+      "name": "8-K item-level events: 5.02 officer/director departures, 4.01 auditor changes, 4.02 non-reliance restatements, 3.01 delisting notices",
+      "mechanism": {
+        "class": "behavioural underreaction to material news, amplified when filed after the close",
+        "literature": [
+          "Denis & Denis (1995), Huson, Malatesta & Parrino (2004): CEO/officer turnover CAR approx -1% to -5%, larger for forced departures",
+          "Palmrose, Richardson & Scholz (2004): non-reliance restatements, mean 3-day CAR approx -9%",
+          "DeFond & Zhang (2014, survey): auditor-dismissal reactions -2% to -3% for problem-related changes, small/insignificant for administrative ones",
+          "Files, Swanson & Tse (2009): evidence of strategic timing/gaming of restatement filing dates"
+        ]
+      },
+      "source": {
+        "primary": "SEC EDGAR submissions API, data.sec.gov/submissions/CIK##########.json",
+        "alternates": ["EDGAR full-text search (efts.sec.gov)", "EDGAR daily/full index files", "Sharadar EVENTS table (paid, $499/yr bundle, 8-K events from 1993, survivorship-free)"],
+        "is_free": true,
+        "verified_in_session": true,
+        "probe_evidence": "data/event_scout/sec_edgar_submissions_aapl.json - AAPL 8-Ks show acceptanceDateTime to the second (e.g. 2026-04-20T21:29:51.000Z, items=5.02) and full item tags in every record"
+      },
+      "timing": {
+        "exact_field": "acceptanceDateTime",
+        "timezone": "UTC, ISO8601 with Z suffix; convert to America/New_York for market-open alignment",
+        "next_tradable_execution": "next regular session open (T+1 09:30 ET) for acceptances at/after 16:00 ET; same-day close-to-close otherwise"
+      },
+      "counts": {
+        "events_per_year": "5.02 approx 1500-3000/yr; 4.01 approx 300-600/yr; 4.02 approx 100-300/yr (spiked >500 in 2021 SPAC-restatement wave), all across Russell-3000-sized filer universe",
+        "history_available": "EDGAR acceptance timestamps cover the full EDGAR era (1994+); universal full-text search from ~2001; Sharadar EVENTS from 1993"
+      },
+      "clustering": {
+        "profile": "near-zero - idiosyncratic firm-specific dates",
+        "effective_independent_trials_per_year": "~full raw count, negligible clustering discount"
+      },
+      "survivorship": {
+        "event_side": "unbiased - EDGAR captures every filer including later-delisted names",
+        "price_side": "needs a delisted-inclusive feed (Sharadar) for a full historical backtest; forward/recent work is fine on free feeds since target names are still listed at signal time"
+      },
+      "quant_v7_contamination": "GENUINELY NEW - no 8-K item-level event study exists anywhere in research/ or reports/; the only adjacent touch is the unrelated fundamentals family's use of financial-statement accepted_date for monthly accounting ratios (a different SEC data set and construction)",
+      "implementation_realism": "HIGH - single free JSON API, confirmed reachable this session with the mandated no-email User-Agent",
+      "scores": {"power": "H", "mechanism": "H", "pit_integrity": "H", "survivorship_resistance": "M", "independence": "H", "implementation": "H", "novelty": "H"},
+      "recommended": true
+    },
+    {
+      "rank": 2,
+      "id": "overnight_offerings",
+      "name": "Overnight / marketed follow-on equity offerings (424B2/424B5 bought-deal pricing discount)",
+      "mechanism": {
+        "class": "compensated liquidity provision - underwriters/investors are paid a discount for bearing overnight placement risk",
+        "literature": [
+          "Corwin (2003): SEO offer-price discount",
+          "Altinkilic & Hansen (2003): underwriting spreads and issue costs",
+          "Gao & Ritter (2010): accelerated vs. fully-marketed offerings, discount magnitude by deal type",
+          "Autore, Kovacs & Sisli (2009): shelf-registration discount dynamics"
+        ]
+      },
+      "source": {
+        "primary": "SEC EDGAR 424B2/424B5 filings, cross-referenced with the same filer's 8-K Item 3.02/8.01",
+        "is_free": true,
+        "verified_in_session": "indirectly, via the same confirmed EDGAR submissions API plumbing as family 1",
+        "caveat": "ATM continuous-program draws are NOT individually timestamped in real time (only disclosed quarterly in the 10-Q); only discrete bought-deal 424B5 filings and ATM-program-LAUNCH filings are usable as sharp-timestamp events"
+      },
+      "timing": {
+        "exact_field": "acceptanceDateTime of the 424B filing, cross-checked against the pricing 8-K",
+        "timezone": "UTC, ISO8601 Z",
+        "next_tradable_execution": "next session open following an after-close pricing"
+      },
+      "counts": {
+        "events_per_year": "several hundred true overnight/marketed corporate equity follow-ons per year among Russell-3000-sized names; total 424B2/424B5 volume across all issuers (incl. debt) runs into the thousands/yr but most are not same-day-priced discrete equity events",
+        "history_available": "EDGAR era (1994+)"
+      },
+      "clustering": {
+        "profile": "low-moderate - issuance clusters somewhat in risk-on windows, but dates are issuer-specific",
+        "effective_independent_trials_per_year": "most of the raw count survives"
+      },
+      "survivorship": {
+        "event_side": "unbiased",
+        "price_side": "moderate risk - many issuers raise capital precisely because they are constrained, so some fail later; delisted-inclusive history wanted for a full multi-year backtest"
+      },
+      "quant_v7_contamination": "GENUINELY NEW - no ATM/424B/overnight-offering work anywhere in research/; share_class.py tested dual-share-class ETF arbitrage, which is unrelated",
+      "implementation_realism": "MEDIUM - needs same-day filing-to-pricing linkage (8-K + 424B cross-reference), more engineering than family 1 but the same free EDGAR plumbing",
+      "scores": {"power": "H", "mechanism": "H", "pit_integrity": "H", "survivorship_resistance": "M", "independence": "H", "implementation": "M", "novelty": "H"},
+      "recommended": true
+    },
+    {
+      "rank": 3,
+      "id": "buyback_dividend_declarations",
+      "name": "Buyback authorizations (first-time / re-up) and dividend initiations, cuts, omissions and specials (declaration date)",
+      "mechanism": {
+        "class": "managerial signalling - payout decisions convey private information not yet in price",
+        "literature": [
+          "Vermaelen (1981); Ikenberry, Lakonishok & Vermaelen (1995): buyback announcement CAR approx +2% to +3%, plus a long-run drift finding that is now 30 years old and well known",
+          "Michaely, Thaler & Womack (1995): dividend initiations +3.4%, omissions -7%",
+          "Bernartzi, Michaely & Thaler (1997): dividend-change signalling"
+        ]
+      },
+      "source": {
+        "primary": "SEC EDGAR 8-K Item 8.01/7.01 + press release",
+        "alternates": ["Sharadar EVENTS table (paid)"],
+        "is_free": true
+      },
+      "timing": {
+        "exact_field": "acceptanceDateTime",
+        "timezone": "UTC, ISO8601 Z",
+        "next_tradable_execution": "next session open/close depending on before/after-hours filing"
+      },
+      "counts": {
+        "events_per_year": "buyback authorizations approx 800-1200/yr among Russell 3000; dividend initiations approx 50-150/yr; cuts/omissions approx 100-300/yr (counter-cyclical); specials approx 200-400/yr; routine increases approx 1500-2000/yr but low information content since largely anticipated",
+        "history_available": "EDGAR era (1994+); Sharadar EVENTS from 1993"
+      },
+      "clustering": {
+        "profile": "low - idiosyncratic corporate dates",
+        "effective_independent_trials_per_year": "most of the informative subset survives"
+      },
+      "survivorship": {
+        "event_side": "unbiased",
+        "price_side": "moderate - issuers/payers skew healthier and larger (less severe bias) but the cut/omission leg specifically skews toward firms that go on to underperform or delist"
+      },
+      "quant_v7_contamination": "PARTIALLY USED - the fundamentals family (RESEARCH_LEDGER row 19) already tested a monthly net-share-issuance-ratio signal on the same underlying issuance data (all negative). OSAP's ShareIss1Y/ShareIss5Y and DivOmit predictors remain 2015+ survivors in the project's own edge-graveyard study (2015+ Sharpe 0.82-0.88 and 0.82 respectively) - an encouraging but not fully independent prior. A discrete declaration-date event study is a genuinely different construction from the monthly ratio already tested, but shares the same underlying economic story, which is why this ranks 3rd rather than 1st despite strong power and mechanism.",
+      "implementation_realism": "HIGH - same EDGAR plumbing as family 1",
+      "scores": {"power": "H", "mechanism": "H", "pit_integrity": "H", "survivorship_resistance": "M", "independence": "H", "implementation": "H", "novelty": "M"},
+      "recommended": true,
+      "caveat": "if the director weights criterion 7 (independence from prior research) more heavily than its listed lowest-priority position, IPO lockups (rank 4) would be the cleaner #3 pick"
+    },
+    {
+      "rank": 4,
+      "id": "ipo_lockup_expirations",
+      "name": "IPO lockup expirations (~180 days after pricing, sometimes staged 25/50/75% releases)",
+      "mechanism": {
+        "class": "pre-scheduled supply shock as insiders become free to sell",
+        "literature": [
+          "Field & Hanka (2001): 3-day CAR approx -1.5% and a permanent approx 40% volume increase at expiry",
+          "Bradley, Jordan, Roten & Yi (2001); Ofek & Richardson (2000, dot-com vintage): effect well known to the Street since the late 1990s, likely partially arbitraged since"
+        ]
+      },
+      "source": {
+        "primary": "IPO prospectus (S-1/424B4) lockup language on SEC EDGAR - the date is fixed and public at pricing",
+        "is_free": true
+      },
+      "timing": {
+        "exact_field": "lockup date stated in the prospectus",
+        "timezone": "n/a - date known in advance, no intraday precision needed",
+        "next_tradable_execution": "the trading session the lockup lifts (typically 12:01am after N days)"
+      },
+      "counts": {
+        "events_per_year": "approx 150-400 at current US IPO volume (roughly 150-300 IPOs/yr, some staged) - the smallest count among the top group, at the low end of the hundreds target",
+        "history_available": "EDGAR era (1994+); modern IPO volume is well below the 1999-2021 peaks"
+      },
+      "clustering": {
+        "profile": "low-moderate - echoes the IPO calendar's own seasonal clustering (spring/fall windows)",
+        "effective_independent_trials_per_year": "most of the raw count survives"
+      },
+      "survivorship": {
+        "event_side": "unbiased - dates are public at pricing",
+        "price_side": "BEST IN CLASS - newly IPO'd names are almost tautologically present in current free price feeds at event time; multi-year post-IPO studies still want delisted-inclusive coverage since some IPOs fail within 1-2 years"
+      },
+      "quant_v7_contamination": "GENUINELY NEW - zero hits anywhere in research/ or reports/",
+      "implementation_realism": "HIGH - pure EDGAR text/date extraction, no real-time feed needed since dates are known in advance",
+      "scores": {"power": "M", "mechanism": "M", "pit_integrity": "H", "survivorship_resistance": "H", "independence": "H", "implementation": "H", "novelty": "H"},
+      "recommended": false,
+      "note": "strongest survivorship/PIT/novelty profile of any family; held back only by a raw count at the low end of the hundreds target"
+    },
+    {
+      "rank": 5,
+      "id": "options_oi_pinning",
+      "name": "Monthly options-expiration cross-section: single-stock OI-based pinning / unwinding",
+      "mechanism": {
+        "class": "dealer gamma-hedging pins the underlying near high-open-interest strikes into expiration; unwinds as dealers roll hedges after",
+        "literature": ["Ni, Pearson & Poteshman (2005): statistically significant pinning documented"]
+      },
+      "source": {
+        "primary": "OCC Daily/series Open Interest",
+        "is_free": "yes for the OCC-wide aggregate report (confirmed); per-symbol access plausible via a query tool at marketdata.theocc.com but UNCONFIRMED beyond a structured HTTP 400 (endpoint exists, parameters not yet solved)",
+        "probe_evidence": "data/event_scout/occ_daily_open_interest.txt - free CSV, e.g. 09/24/2026 equity calls 345,176,512 / puts 254,102,209 (OCC-wide totals only, not per-underlying)"
+      },
+      "timing": {
+        "exact_field": "OI computed once daily after the close, available at the start of the next session; expiration = 3rd Friday of the month at the close",
+        "timezone": "US market close, ET",
+        "next_tradable_execution": "same/next session, concentrated in the final session(s) before expiration"
+      },
+      "counts": {
+        "events_per_year": "12 monthly expirations/yr x hundreds of optionable underlyings with meaningful OI = thousands of underlying-expiration cells/yr, though many names have negligible OI and should be filtered, shrinking the effective universe",
+        "history_available": "OCC aggregate history exists; this session only pulled September 2026; deeper per-symbol history depth is unconfirmed"
+      },
+      "clustering": {
+        "profile": "high within a given expiration Friday (market-wide gamma effects move together); moderate across the 12 dates/yr",
+        "effective_independent_trials_per_year": "~12 largely independent calendar dates/yr, each with a rich but correlated cross-section"
+      },
+      "survivorship": {
+        "event_side": "unbiased",
+        "price_side": "moderate - optionable names skew larger/still-listed so less severe than broad equity, but not delisted-inclusive"
+      },
+      "quant_v7_contamination": "PARTIALLY explored at the INDEX level only - index_option_breadth (SPY/QQQ/IWM volume breadth) FAILED and is locked/SPENT, but that used trade-print volume breadth on 3 names, not per-name OI-based pinning across hundreds of stocks. The explicit avoid-list item is 'OpEx SPY put writing', a different index-level options-selling structure. Single-name OI-based pinning is GENUINELY NEW.",
+      "implementation_realism": "MEDIUM - aggregate OI confirmed free; per-symbol OI needs a follow-up feasibility check before committing",
+      "scores": {"power": "M", "mechanism": "H", "pit_integrity": "H", "survivorship_resistance": "M", "independence": "H", "implementation": "M", "novelty": "H"},
+      "recommended": false,
+      "note": "directly answers the mandate's instruction to check CBOE/OCC free data since the LSE has no open interest; gated on confirming per-symbol OCC access"
+    },
+    {
+      "rank": 6,
+      "id": "crypto_funding_settlements",
+      "name": "Crypto perpetual-future funding-rate settlements (8-hourly, cross-sectional)",
+      "mechanism": {
+        "class": "positioning-crowding - extreme funding reflects one-sided leveraged demand that tends to mean-revert",
+        "literature": ["Schmeling, Schrimpf & Todorov (2022): crypto basis/funding predictability - evidence base thinner and newer than equity-event literature"]
+      },
+      "source": {
+        "primary": "Binance public REST API (also OKX, Bybit, dYdX)",
+        "is_free": true,
+        "verified_in_session": true,
+        "probe_evidence": "data/event_scout/binance_funding_btcusdt.json - 5 consecutive BTCUSDT settlements exactly 28800s (8h) apart; data/event_scout/binance_exchangeinfo.json - 570 TRADING USDT-margined perpetuals live on Binance alone"
+      },
+      "timing": {
+        "exact_field": "fundingTime (epoch milliseconds)",
+        "timezone": "UTC",
+        "next_tradable_execution": "continuous - perpetuals trade every second; the funding print itself is a payment, not a trade"
+      },
+      "counts": {
+        "events_per_year": "570 perpetuals x 3 settlements/day x 365 = approx 624,000 coin-settlements/yr on Binance alone; approx 55,000-110,000/yr restricted to the liquid top 50-100 coins - the largest raw count of any candidate",
+        "history_available": "Binance USDM perpetuals launched 2019-2020; per-symbol depth varies"
+      },
+      "clustering": {
+        "profile": "VERY HIGH - every coin settles at the same 3 clock-times/day, so daily cross-sections are not independent draws of the calendar",
+        "effective_independent_trials_per_year": "~3 independent clock-times/day (~1095/yr) is the real time-series unit; cross-sectional independence WITHIN a settlement is good since each coin's funding is largely idiosyncratic"
+      },
+      "survivorship": {
+        "event_side": "unbiased for currently-listed perpetuals",
+        "price_side": "SEVERE - exchanges delist failed/illiquid perpetuals routinely; no free delisted-inclusive crypto history exists comparable to Sharadar's equity coverage"
+      },
+      "quant_v7_contamination": "GENUINELY NEW mechanism (funding-rate crowding) and universe (500+ coins), though the BTC/ETH trend family (SPENT) already touched the crypto asset class broadly. Likely overlaps the parallel Binance-crypto data workload assigned to another agent - route data-pull ownership before duplicating effort.",
+      "implementation_realism": "HIGH - trivial, well-documented free API, confirmed working this session",
+      "scores": {"power": "H", "mechanism": "M", "pit_integrity": "H", "survivorship_resistance": "L", "independence": "L", "implementation": "H", "novelty": "M"},
+      "recommended": false,
+      "note": "huge headline count but severe clustering and crypto survivorship problems keep it out of the top 3"
+    },
+    {
+      "rank": 7,
+      "id": "index_reconstitution",
+      "name": "Index reconstitution effective dates: Russell 1000/2000/3000 (semi-annual from Dec 2026), S&P 400/500/600 (quarterly + ad hoc), MSCI (quarterly)",
+      "mechanism": {
+        "class": "forced, non-informational passive-fund trading at a publicly pre-announced instant",
+        "literature": [
+          "Chen, Noronha & Singal (2004); Petajisto (2011, 'The Index Premium and Its Hidden Cost for Index Funds'): a real but shrinking index-premium/hidden-cost effect",
+          "quant_v7's OWN edge-graveyard catalogue (reports/edge_graveyard/REPORT.md) independently lists the classic 'S&P inclusion pop' as a DEAD published effect, consistent with heavy front-running by index-arb desks since the late 1990s"
+        ]
+      },
+      "source": {
+        "primary": "FTSE Russell press releases/PDFs; S&P DJI press releases; MSCI quarterly index review results",
+        "is_free": true,
+        "verified_in_session": "via web search - confirmed the official June 26 2026 Russell effective-date PDF and the new Dec-2026 semi-annual reconstitution date (first ever December Russell reconstitution)"
+      },
+      "timing": {
+        "exact_field": "announced effective session close",
+        "precision": "date-level; no published intraday time",
+        "next_tradable_execution": "passive funds execute at/near the announced close, so any edge is in the announcement-to-effective run-up or post-effective reversal, not intraday timing"
+      },
+      "counts": {
+        "events_per_year": "Russell June alone moves 300-600+ constituent changes on ONE day; the new Dec 2026 date roughly doubles this; S&P 400/500/600 combined approx 150-250 changes/yr on ~4 dates each; MSCI adds more on its own quarterly dates - combined hundreds to over a thousand NAME-changes/yr",
+        "history_available": "Russell since 1979 (annual, now transitioning to semi-annual); S&P and MSCI for decades"
+      },
+      "clustering": {
+        "profile": "EXTREME - the overwhelming majority of a year's changes land on approx 6-10 distinct calendar dates total across all three families, even though the stock-count per date is large",
+        "effective_independent_trials_per_year": "approx 6-10 independent trial DATES per year - too few to compute a meaningful annualized Sharpe under quant_v7's own sqrt(T)-scaled dev gate, since T counts calendar years of trial time, not event count"
+      },
+      "survivorship": {
+        "event_side": "unbiased - membership lists are public and known in advance",
+        "price_side": "moderate - adds are usually large/liquid; deletes are often small/illiquid and sometimes later delisted"
+      },
+      "quant_v7_contamination": "GENUINELY NEW as an executed trial (flagged in research/EDGE_GRAVEYARD_PLAN.md Phase 3-A3 but never run), though the headline announcement-pop mechanism is literature-dead per the project's own prior work - partial, literature-level contamination rather than project-level",
+      "implementation_realism": "MEDIUM - official sources are free but require manual PDF/press-release parsing rather than a structured bulk API; no free historical membership-change feed was confirmed",
+      "scores": {"power": "L", "mechanism": "M", "pit_integrity": "H", "survivorship_resistance": "M", "independence": "L", "implementation": "M", "novelty": "M"},
+      "recommended": false,
+      "note": "the mandate explicitly warns to mind clustering and post-publication decay for this family; both concerns are confirmed serious here. The one genuinely fresh sub-opportunity is the brand-new Dec-2026 Russell date, unstudied because it has never happened before."
+    },
+    {
+      "rank": 8,
+      "id": "regsho_threshold_additions",
+      "name": "Reg SHO threshold-securities-list additions (persistent settlement fails forcing a Rule 203(b)(3) buy-in)",
+      "mechanism": {
+        "class": "forced close-out buying after 13 consecutive settlement days of fails-to-deliver",
+        "literature": ["Boulton & Braga-Alves (2010); Fotak, Raman & Yadav (Reg SHO pilot studies)"]
+      },
+      "source": {
+        "primary": "Nasdaq/NYSE/Cboe daily threshold-securities lists",
+        "is_free": true,
+        "verified_in_session": true,
+        "probe_evidence": "data/event_scout/nasdaq_regsho_threshold_today.txt - 200 OK, pipe-delimited, ~20+ names on 2026-09-24, mostly small-cap (S) and leveraged/inverse ETPs (G)"
+      },
+      "timing": {
+        "exact_field": "daily list date; the ADDITION (a symbol newly appearing vs. the prior day's list) is the tradable event",
+        "timezone": "trading-day granularity; list published before the next session's open",
+        "next_tradable_execution": "same/next session open"
+      },
+      "counts": {
+        "events_per_year": "the list is short each day; unique ADDITION events likely number in the low-to-mid hundreds/yr, smaller than hoped and concentrated in illiquid names",
+        "history_available": "Nasdaq/NYSE lists published daily for years; FINRA/SEC fails-to-deliver data back to 2004 (complete from 2008-09-16)"
+      },
+      "clustering": {
+        "profile": "low (idiosyncratic per name) but the affected universe is itself a bad-liquidity pool",
+        "effective_independent_trials_per_year": "most of the count survives as independent trials but the pool is small"
+      },
+      "survivorship": {
+        "event_side": "unbiased",
+        "price_side": "HIGH RISK - threshold names are disproportionately distressed/small/hard-to-borrow; many later delist or go to zero, the worst survivorship profile among the SEC/exchange-filing-based candidates"
+      },
+      "quant_v7_contamination": "GENUINELY NEW as a discrete ADDITION-event design (data_scout catalogued raw FTD levels as a data source, never as a threshold-list event). Overlaps the parallel public-market-data agent's FINRA short-volume/short-interest territory at the data-source level - event DESIGN only was evaluated here.",
+      "implementation_realism": "HIGH - confirmed free and simple to poll daily",
+      "scores": {"power": "L", "mechanism": "M", "pit_integrity": "H", "survivorship_resistance": "L", "independence": "H", "implementation": "H", "novelty": "H"},
+      "recommended": false
+    },
+    {
+      "rank": 9,
+      "id": "stock_splits",
+      "name": "Stock splits (forward) and reverse splits (announcement date)",
+      "mechanism": {
+        "class": "forward-split signalling (managerial confidence / lower tick size) vs. reverse-split going-concern/compliance signal",
+        "literature": ["Ikenberry, Rankine & Stice (1996): forward-split announcement drift approx +7-9% over the following year, a 1990s-vintage finding likely heavily arbitraged/decayed since; reverse-split literature is thinner and more recent (post-2022 Nasdaq $1 minimum-bid-price compliance wave)"]
+      },
+      "source": {"primary": "SEC EDGAR 8-K Item 3.03/5.03 + press release; Sharadar ACTIONS table", "is_free": true},
+      "timing": {"exact_field": "acceptanceDateTime", "timezone": "UTC, ISO8601 Z", "next_tradable_execution": "next session open/close depending on filing time"},
+      "counts": {
+        "events_per_year": "forward splits among liquid names are now rare (approx 20-50/yr); reverse splits have surged since 2022 to plausibly several hundred/yr but concentrated almost entirely in distressed micro/small-cap and OTC names",
+        "history_available": "EDGAR era (1994+)"
+      },
+      "clustering": {"profile": "low", "effective_independent_trials_per_year": "most of the count survives"},
+      "survivorship": {
+        "event_side": "unbiased",
+        "price_side": "SEVERE for the reverse-split leg specifically - reverse splits are disproportionately a precursor to delisting, i.e. the event-side population overlaps almost exactly with the population free price feeds are worst at covering going forward"
+      },
+      "quant_v7_contamination": "GENUINELY NEW as an event study in this project",
+      "implementation_realism": "HIGH - same EDGAR plumbing as family 1",
+      "scores": {"power": "L", "mechanism": "L", "pit_integrity": "H", "survivorship_resistance": "L", "independence": "H", "implementation": "H", "novelty": "H"},
+      "recommended": false
+    },
+    {
+      "rank": 10,
+      "id": "token_unlocks",
+      "name": "Crypto token-unlock vesting cliffs",
+      "mechanism": {
+        "class": "pre-scheduled supply shock as vested tokens become liquid (same logic as IPO lockups but for tokens)",
+        "literature": ["mirrors the IPO-lockup logic; rigorous academic literature is thin-to-nonexistent for crypto unlocks specifically"]
+      },
+      "source": {
+        "primary": "tokenomist.ai / CryptoRank / DropsTab web calendars",
+        "is_free": "NO confirmed free structured/bulk API (web calendars only; API tiers appear paid); ground truth is on-chain vesting-contract data, free but requires per-project engineering to parse"
+      },
+      "timing": {"exact_field": "scheduled unlock date, often to the UTC day or specific block", "timezone": "UTC (project-dependent)", "next_tradable_execution": "the session/block the unlock vests"},
+      "counts": {
+        "events_per_year": "hundreds of tokens have periodic (often monthly) unlock cliffs - plausibly hundreds to low-thousands of unlock events/yr in aggregate",
+        "history_available": "vesting schedules set at token generation; historical depth varies enormously by project and is largely undocumented centrally"
+      },
+      "clustering": {"profile": "low-moderate (idiosyncratic per project, but many small tokens unlock on similar monthly cadences)", "effective_independent_trials_per_year": "most of the raw count IF the data were reliably free"},
+      "survivorship": {
+        "event_side": "unconfirmed / partial",
+        "price_side": "SEVERE - token failure/delisting rates are high and there is no free delisted-inclusive crypto price history at all; worse than the funding-rate family since the affected long tail is smaller and less liquid"
+      },
+      "quant_v7_contamination": "GENUINELY NEW - no crypto work beyond BTC/ETH trend (SPENT) exists in the project",
+      "implementation_realism": "LOW - no confirmed free structured source; would require custom on-chain parsing per project and most affected names are illiquid at $100k scale",
+      "scores": {"power": "M", "mechanism": "M", "pit_integrity": "M", "survivorship_resistance": "L", "independence": "H", "implementation": "L", "novelty": "H"},
+      "recommended": false,
+      "note": "not recommended without a confirmed free data source"
+    }
+  ],
+  "contamination_summary": {
+    "spent_families_confirmed_absent_from_top_picks": [
+      "macro-surprise releases", "FX news continuation", "PEAD / earnings announcements", "policy trend",
+      "Treasury month-end / sector month-end index extension", "FX month-end hedge flows", "LETF close rebalancing",
+      "OpEx SPY put writing (index-level structure; distinct from single-name OI pinning, family rank 5)",
+      "the auction calendar cycle (research/auction_cycle)", "COT hedging pressure via commodity ETFs"
+    ],
+    "method": "grepped research/ and reports/ for each avoid-list term plus every candidate family's key nouns (8-K, shelf, buyback, lockup, reconstitution, Russell, MSCI, funding rate, token unlock, threshold list, Reg SHO, short interest, creation/redemption, pinning, spin-off, SPAC, stock split); cross-checked against research/RESEARCH_LEDGER_2026-09-23.md rows 1-42 and research/EDGE_GRAVEYARD_PLAN.md Phase 3 candidate list"
+  }
+}

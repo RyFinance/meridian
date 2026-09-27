@@ -1,0 +1,45 @@
+{
+ "name": "retro_tsy_month_end",
+ "description": "TLT last-3-sessions month-end window, active vs C_EXP; shift-null gate (registered).",
+ "assumptions": [
+  "one window per month on one asset => m_w = 1, icc irrelevant",
+  "D = 1.40 from the family's own shift-null sd (0.342 x sqrt(11.99))^2"
+ ],
+ "design": "event_study",
+ "params": {
+  "events_per_year": 12,
+  "car_sd": 0.0133,
+  "hold_days": 3,
+  "icc": 0.0,
+  "concurrency": {
+   "model": "clusters",
+   "mean_size": 1
+  },
+  "portfolio_autocorr": {
+   "model": "lrv",
+   "D": 1.4
+  },
+  "mean_car": 0.003,
+  "cost_per_event": 0.0004
+ },
+ "windows": {
+  "dev_years": 11.99,
+  "val_years": 11.63
+ },
+ "gates": {
+  "batch_k": 1,
+  "stress_drag_sr": 0.2,
+  "dev": {
+   "kind": "amendment2",
+   "null_center_sr": -0.098
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  }
+ },
+ "power": {
+  "dev_estimate": 0.664
+ }
+}

@@ -1,0 +1,12 @@
+{
+  "base": "5bps per side",
+  "bias_note": "previously researched history, not an untouched holdout; follow-up testing contributes to project-wide multiple testing",
+  "control": "50% SPY,50% GLD with identical execution",
+  "hypothesis": "Diversify the documented momentum-stock return stream with gold; remove the losing timing/bond overlays rather than fitting new parameters. This is a separately recorded follow-up trial after those results.",
+  "later_evaluation": "2020-2026-09-17",
+  "leverage": false,
+  "primary": "50% SPMO,50% GLD,rebalance first trading session monthly at next open",
+  "selection_period": "2017-2019 descriptive; no model choice since there is only one new candidate",
+  "stress": "15bps per side",
+  "weights": "equal fixed capital,no fitting"
+}

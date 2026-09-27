@@ -1,0 +1,5 @@
+case,tau_analytic,tau_mc,rel_err,net_sharpe_analytic,net_sharpe_overstatement_from_turnover
+c4b finra-like,0.609825,0.614887,0.0083,-0.29744,0.008316
+cs500-like,0.220796,0.224072,0.014837,1.357299,0.009557
+no tilt control,0.437573,0.439807,0.005106,0.953573,0.008058
+strong tilt,0.437573,0.450185,0.028822,0.229947,0.014137

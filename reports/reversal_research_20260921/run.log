@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/rytty/CCP/quant_v7/research/momentum_verification/codex_reversal_research.py", line 57, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/rytty/CCP/quant_v7/research/momentum_verification/codex_reversal_research.py", line 42, in main
+    if family=='etf':p={k:v[SECTORS] for k,v in p.items()}
+                          ~^^^^^^^^^
+  File "/Users/rytty/miniforge3/lib/python3.12/site-packages/pandas/core/frame.py", line 4119, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rytty/miniforge3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/Users/rytty/miniforge3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6261, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['XLB', 'XLE', 'XLF', 'XLI', 'XLK', 'XLP', 'XLU', 'XLV', 'XLY'], dtype='object')] are in the [columns]"

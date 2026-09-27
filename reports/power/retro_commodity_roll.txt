@@ -1,0 +1,19 @@
+retro_commodity_roll  [carry]  dev 10.44y + val 9.71y
+  raw obs (total) 15233 asset-periods;  D_time 0.600  deff_cross 1.467  ->  effective obs 17310.7
+  SE(Sharpe) dev 0.240, val 0.249;  SE(mean, per-asset net Sharpe) total 0.1207
+  dev gate threshold 0.557 (binding: sharpe_c_over_sqrtT);  val threshold 0.750 (binding: sharpe_abs);  proposed val threshold 0.409
+  MDE Sharpe (80%): single test 0.48, dev gate 0.76, joint current 0.99, joint proposed 0.81
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.000   0.000   0.000   0.000   | 0.002  0.000
+  zero_net_null             0.00  0.025   0.010   0.001   0.000   | 0.050  0.001
+  structural_leak           0.05  0.048   0.017   0.002   0.000   | 0.075  0.001
+  S=0.3                     0.30  0.413   0.143   0.036   0.005   | 0.331  0.047
+  S=0.5                     0.50  0.824   0.407   0.159   0.065   | 0.642  0.261
+  S=0.7                     0.70  0.981   0.722   0.421   0.304   | 0.876  0.633
+  S=1.0                     1.00  1.000   0.965   0.838   0.808   | 0.990  0.955
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   52.46       inf             inf              inf
+                     0.50   18.93     24.15             inf            58.28
+                     0.70    9.68     12.35             inf            26.77
+                     1.00    4.77      6.08           19.49            13.19
+  VERDICT (current gates): MARGINAL   [joint@0.7 = 0.304, false-pass = 0.0000];  with proposed val gate: DECISIVE

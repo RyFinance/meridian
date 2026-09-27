@@ -1,0 +1,41 @@
+{
+ "scores": {
+  "logged_candidates": 4903,
+  "rescored_scorable_events": 4903,
+  "missing": 0,
+  "max_abs_diff": 3.214095656289828e-14,
+  "exact_equal": false
+ },
+ "engine_seconds": 0.024,
+ "ledger": {
+  "n_engine": 625,
+  "n_recorded": 625,
+  "open_at_end": 0,
+  "identity_match": true,
+  "max_abs_diff_fill_price": 0.0,
+  "max_abs_diff_exit_price": 0.0,
+  "max_abs_diff_notional": 0.0,
+  "max_abs_diff_realized_pnl": 0.0,
+  "max_abs_diff_size": 0.0,
+  "final_cash_nav_engine": 135411.00191372054,
+  "final_cash_nav_recorded": 135411.00191372054
+ },
+ "decisions": {
+  "n_engine": 4903,
+  "n_recorded": 4903,
+  "unmatched": 0,
+  "reason_mismatch": 0
+ },
+ "marking": {
+  "fast_vs_mtm_book_max_abs_ret_diff": 0.0,
+  "engine_ledger_vs_audit_ledger_max_abs_ret_diff": 1.0408340855860843e-17,
+  "mtm_final_nav": 146042.06641122646,
+  "excess_sharpe_reproduced": 0.6998806027785588,
+  "excess_sharpe_published": 0.6998806027785588,
+  "alpha_reproduced": 0.041826524615772936,
+  "beta_reproduced": 0.35216617767906017,
+  "alpha_t_reproduced": 1.148858690663348,
+  "alpha_t_published": 1.148858690663348
+ },
+ "gate_passed": true
+}

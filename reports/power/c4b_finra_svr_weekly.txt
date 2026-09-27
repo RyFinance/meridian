@@ -1,0 +1,49 @@
+c4b_finra_svr_weekly  [long_short]  dev 3.40y + val 4.70y
+  raw obs (total) 842400 asset-periods;  D_time 1.000  deff_cross 75.962  ->  effective obs 11089.7
+  SE(Sharpe) dev 0.542, val 0.461;  SE(mean, mean IC per period (net of costs via offset)) total 0.007354
+  dev gate threshold 1.154 (binding: p_lt_alpha);  val threshold 0.982 (binding: p_lt_alpha);  proposed val threshold 0.759
+  MDE Sharpe (80%): single test 1.05, dev gate 1.62, joint current 1.73, joint proposed 1.67
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.001   0.004   0.003   0.000   | 0.011  0.000
+  zero_net_null             0.00  0.017   0.017   0.017   0.000   | 0.050  0.001
+  structural_leak           0.05  0.024   0.021   0.022   0.000   | 0.062  0.001
+  S=0.3                     0.30  0.102   0.058   0.070   0.004   | 0.160  0.009
+  S=0.5                     0.50  0.241   0.115   0.149   0.017   | 0.288  0.033
+  S=0.7                     0.70  0.446   0.203   0.272   0.055   | 0.450  0.091
+  S=1.0                     1.00  0.761   0.389   0.516   0.201   | 0.697  0.272
+  implied_by_primitives    -0.30  0.001   0.004   0.003   0.000   | 0.011  0.000
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   98.05     98.05             inf           251.14
+                     0.50   35.34     35.34             inf            88.78
+                     0.70   18.06     18.06             inf            45.39
+                     1.00    8.88      8.88           31.87            22.33
+  VERDICT (current gates): INCAPABLE   [joint@0.7 = 0.055, false-pass = 0.0003];  with proposed val gate: INCAPABLE
+  scenarios: label | n_eff | implied net S | joint(cur) | joint(prop) | yrs80 single | yrs80 joint(prop) | MDE natural (joint prop)
+   N=1500 IC=0.01 rho=0.1                       39 | -0.651 | 9.9e-08 | 5.45e-07 | inf | inf | 0.0504
+   N=1500 IC=0.01 rho=0.2                       19.7 | -0.469 | 1.21e-06 | 5.62e-06 | inf | inf | 0.0617
+   N=1500 IC=0.015 rho=0.1                      39 | -0.364 | 4.66e-06 | 1.96e-05 | inf | inf | 0.0504
+   N=1500 IC=0.015 rho=0.2                      19.7 | -0.262 | 1.6e-05 | 6.13e-05 | inf | inf | 0.0617
+   N=1500 IC=0.02 rho=0.1                       39 | -0.0766 | 0.000127 | 0.000408 | inf | inf | 0.0504
+   N=1500 IC=0.02 rho=0.2                       19.7 | -0.0552 | 0.000158 | 0.0005 | inf | inf | 0.0617
+   N=3000 IC=0.01 rho=0.1                       39.5 | -0.663 | 8.39e-08 | 4.67e-07 | inf | inf | 0.0499
+   N=3000 IC=0.01 rho=0.2                       19.9 | -0.473 | 1.15e-06 | 5.35e-06 | inf | inf | 0.0614
+   N=3000 IC=0.015 rho=0.1                      39.5 | -0.37 | 4.3e-06 | 1.82e-05 | inf | inf | 0.0499
+   N=3000 IC=0.015 rho=0.2                      19.9 | -0.264 | 1.56e-05 | 5.98e-05 | inf | inf | 0.0614
+   N=3000 IC=0.02 rho=0.1                       39.5 | -0.078 | 0.000125 | 0.000403 | inf | inf | 0.0499
+   N=3000 IC=0.02 rho=0.2                       19.9 | -0.0557 | 0.000158 | 0.000498 | inf | inf | 0.0614
+   N=2000 IC=0.01 rho=0.15 sig_ac=0.85 cost=5bp 26.3 | 0.266 | 0.00308 | 0.00727 | 125 | 333 | 0.0394
+   N=2000 IC=0.01 rho=0.15 sig_ac=0.85 cost=10b 26.3 | 0.0542 | 0.000472 | 0.00135 | 3.01e+03 | inf | 0.0439
+   N=2000 IC=0.01 rho=0.15 sig_ac=0.95 cost=5bp 26.3 | 0.355 | 0.00617 | 0.0135 | 70.1 | 176 | 0.0376
+   N=2000 IC=0.01 rho=0.15 sig_ac=0.95 cost=10b 26.3 | 0.232 | 0.00232 | 0.00565 | 164 | 478 | 0.0402
+   N=2000 IC=0.015 rho=0.15 sig_ac=0.85 cost=5b 26.3 | 0.505 | 0.0176 | 0.0339 | 34.7 | 87.1 | 0.0394
+   N=2000 IC=0.015 rho=0.15 sig_ac=0.85 cost=10 26.3 | 0.293 | 0.00383 | 0.00883 | 103 | 265 | 0.0439
+   N=2000 IC=0.015 rho=0.15 sig_ac=0.95 cost=5b 26.3 | 0.594 | 0.0305 | 0.0547 | 25.1 | 63 | 0.0376
+   N=2000 IC=0.015 rho=0.15 sig_ac=0.95 cost=10 26.3 | 0.471 | 0.0141 | 0.0278 | 39.9 | 100 | 0.0402
+   N=2000 IC=0.02 rho=0.15 sig_ac=0.85 cost=5bp 26.3 | 0.744 | 0.0688 | 0.11 | 16 | 40.2 | 0.0394
+   N=2000 IC=0.02 rho=0.15 sig_ac=0.85 cost=10b 26.3 | 0.532 | 0.0209 | 0.0395 | 31.2 | 78.5 | 0.0439
+   N=2000 IC=0.02 rho=0.15 sig_ac=0.95 cost=5bp 26.3 | 0.833 | 0.104 | 0.157 | 12.8 | 32.1 | 0.0376
+   N=2000 IC=0.02 rho=0.15 sig_ac=0.95 cost=10b 26.3 | 0.71 | 0.0579 | 0.095 | 17.6 | 44.2 | 0.0402
+   N=2000 IC=0.01 rho=0.1 LITERAL               9.96 | -0.429 | 2.03e-06 | 9.09e-06 | inf | inf | 0.0631
+   N=2000 IC=0.01 rho=0.2 LITERAL               4.99 | -0.305 | 9.54e-06 | 3.8e-05 | inf | inf | 0.0802
+   N=2000 IC=0.02 rho=0.1 LITERAL               9.96 | -0.0336 | 0.000198 | 0.000612 | inf | inf | 0.0631
+   N=2000 IC=0.02 rho=0.2 LITERAL               4.99 | -0.0239 | 0.000218 | 0.00067 | inf | inf | 0.0802

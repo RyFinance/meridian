@@ -1,0 +1,27 @@
+nis_f6_cross_venue_basis_dispersion  [timeseries]  dev 3.30y + val 3.30y
+  raw obs (total) 2409 periods;  D_time 1.300  deff_cross 1.000  ->  effective obs 1853.1
+  SE(Sharpe) dev 0.628, val 0.628;  SE(mean, annualised mean return) total 0.04438
+  dev gate threshold 1.230 (binding: p_lt_alpha);  val threshold 1.230 (binding: p_lt_alpha);  proposed val threshold 1.230
+  MDE Sharpe (80%): single test 1.26, dev gate 1.79, joint current 2.07, joint proposed 2.07
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.004   0.007   0.007   0.000   | 0.007  0.000
+  zero_net_null             0.00  0.025   0.025   0.025   0.001   | 0.025  0.001
+  structural_leak           0.05  0.033   0.030   0.030   0.001   | 0.030  0.001
+  S=0.3                     0.30  0.101   0.071   0.071   0.005   | 0.071  0.005
+  S=0.5                     0.50  0.206   0.126   0.126   0.016   | 0.126  0.016
+  S=0.7                     0.70  0.354   0.204   0.204   0.042   | 0.204  0.042
+  S=1.0                     1.00  0.612   0.361   0.361   0.130   | 0.361  0.130
+  implied_by_primitives     0.80  0.439   0.252   0.252   0.063   | 0.252  0.063
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30  113.94       inf             inf              inf
+                     0.50   41.17     41.17          108.40           108.40
+                     0.70   21.09     21.09           55.58            55.58
+                     1.00   10.40     10.40           27.46            27.46
+                     0.80   16.18     16.18           42.67            42.67
+  VERDICT (current gates): INCAPABLE   [joint@0.7 = 0.042, false-pass = 0.0006];  with proposed val gate: INCAPABLE
+  scenarios: label | n_eff | implied net S | joint(cur) | joint(prop) | yrs80 single | yrs80 joint(prop) | MDE natural (joint prop)
+   implied net S=0.5                            1 | 0.5 | 0.0158 | 0.0158 | 41.2 | 108 | 0.207
+   implied net S=0.8                            1 | 0.8 | 0.0634 | 0.0634 | 16.2 | 42.7 | 0.207
+   implied net S=1.2                            1 | 1.2 | 0.232 | 0.232 | 7.25 | 19.2 | 0.207
+   implied net S=1.6                            1 | 1.6 | 0.507 | 0.507 | 4.12 | 10.9 | 0.207
+   implied net S=2.0                            1 | 2 | 0.763 | 0.763 | 2.66 | 7.09 | 0.207

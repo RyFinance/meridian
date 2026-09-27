@@ -1,0 +1,8 @@
+retro_multiasset_17_sleeves [sleeve_screen] k=17 m_real=5
+  ideal-book S  per-sleeve s  P(incl|real)  P(incl|null)  E[#null incl]  JOINT
+          0.00         0.000         0.195         0.195           3.32  0.022
+          0.30         0.170         0.355         0.195           2.34  0.049
+          0.50         0.283         0.480         0.195           2.34  0.098
+          0.70         0.396         0.608         0.195           2.34  0.191
+          1.00         0.566         0.776         0.195           2.34  0.421
+  VERDICT: INCAPABLE  [joint@0.7 = 0.191, false-pass = 0.0222]

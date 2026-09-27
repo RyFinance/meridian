@@ -1,0 +1,48 @@
+{
+  "input_sha256": {
+    "IEF": "684a4a7a017f8494dd56d376ed780a9486026edcdcc4301208cf161c4e7171f7",
+    "SHY": "5590f99c4db64b628765a7f87a3281d7c498a462439314a4b635b18dbb3d52bf",
+    "TLT": "8a2e20d6556457168e8397afbbb86683401f0dd126e0833abb2cbe6c2965c0c9",
+    "SPY": "c927a8371ad9d9552e5a1cd0d96bfcd005ae62f72d4f590c51681a81c6e4fc0c"
+  },
+  "observations": 3020,
+  "annual_active_mean": 0.03306025665366689,
+  "active_sharpe": 0.5693181201090496,
+  "gate": 0.5197338352751221,
+  "stress_annual_active_mean": 0.03296012420333576,
+  "bootstrap_p_independent": 0.02299540091981604,
+  "batch_alpha": 0.016666666666666666,
+  "equity_active_correlation": -0.3881861831817691,
+  "annual_active_sum": {
+    "2003": 0.03601466709890085,
+    "2004": 0.037159062995236636,
+    "2005": 0.00938150383748948,
+    "2006": -0.007647003967292787,
+    "2007": 0.025033544857960832,
+    "2008": 0.10840233058011173,
+    "2009": -0.06901858160450092,
+    "2010": 0.06242289859272632,
+    "2011": 0.13386354847724624,
+    "2012": 0.036726978522592546,
+    "2013": -0.057491712968133046,
+    "2014": 0.08135107744303513
+  },
+  "annual_vs_duration_barbell": 0.014122094817064924,
+  "alternate_futures": {
+    "3": {
+      "loss_probability": 0.1896,
+      "negative_sharpe_probability": 0.1604,
+      "worst_decile_total_return": -0.031097417602857114,
+      "median_max_drawdown": -0.07286959426470019,
+      "worst_decile_max_drawdown": -0.11439855754375197
+    },
+    "5": {
+      "loss_probability": 0.1117,
+      "negative_sharpe_probability": 0.1025,
+      "worst_decile_total_return": -0.010660864276693096,
+      "median_max_drawdown": -0.09053285316258197,
+      "worst_decile_max_drawdown": -0.14274865423390304
+    }
+  },
+  "validation_read": false
+}

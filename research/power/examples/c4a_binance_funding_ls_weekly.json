@@ -1,0 +1,140 @@
+{
+ "name": "c4a_binance_funding_ls_weekly",
+ "description": "Binance funding long-short, weekly rebalance.",
+ "assumptions": [
+  "ASSUMPTION weekly residual cs sd 10%",
+  "ASSUMPTION weekly signal autocorr 0.6"
+ ],
+ "design": "long_short",
+ "params": {
+  "n_assets": 100,
+  "periods_per_year": 52,
+  "ic": 0.03,
+  "cs_dispersion": 0.1,
+  "quantile": 0.2,
+  "rho_resid": 0.3,
+  "rho_signal": 0.25,
+  "signal_autocorr": 0.6,
+  "cost_bps_one_way": 8,
+  "spread_autocorr": 0.0,
+  "skew": -0.3,
+  "exkurt": 5.0
+ },
+ "windows": {
+  "dev_years": 3.0,
+  "val_years": 3.67
+ },
+ "gates": {
+  "batch_k": 3,
+  "stress_drag_sr": 0.15,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  },
+  "pav": {
+   "k_val": 1
+  }
+ },
+ "scenarios": [
+  {
+   "label": "N=50 IC=0.02 rho=0.2",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.02,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=50 IC=0.02 rho=0.4",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.02,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=50 IC=0.03 rho=0.2",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.03,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=50 IC=0.03 rho=0.4",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.03,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=50 IC=0.05 rho=0.2",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.05,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=50 IC=0.05 rho=0.4",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.05,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=150 IC=0.02 rho=0.2",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.02,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=150 IC=0.02 rho=0.4",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.02,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=150 IC=0.03 rho=0.2",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.03,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=150 IC=0.03 rho=0.4",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.03,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=150 IC=0.05 rho=0.2",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.05,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=150 IC=0.05 rho=0.4",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.05,
+    "rho_resid": 0.4
+   }
+  }
+ ]
+}

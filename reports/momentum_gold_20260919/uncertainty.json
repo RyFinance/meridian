@@ -1,0 +1,29 @@
+{
+  "earlier": {
+    "excess_sharpe_ci95": [
+      0.2880321235731699,
+      2.4225700733828597
+    ],
+    "block_sessions": 20,
+    "draws": 4000,
+    "note": "no adjustment for project-wide repeated testing"
+  },
+  "later": {
+    "excess_sharpe_ci95": [
+      0.35101809769674835,
+      1.747250985636568
+    ],
+    "block_sessions": 20,
+    "draws": 4000,
+    "note": "no adjustment for project-wide repeated testing"
+  },
+  "full": {
+    "excess_sharpe_ci95": [
+      0.488938459011554,
+      1.658846011583588
+    ],
+    "block_sessions": 20,
+    "draws": 4000,
+    "note": "no adjustment for project-wide repeated testing"
+  }
+}

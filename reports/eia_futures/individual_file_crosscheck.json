@@ -1,0 +1,122 @@
+[
+  {
+    "filename": "RCLC1d.xls",
+    "sheet": "Data 1",
+    "sourcekey": "RCLC1",
+    "column_description": "Cushing, OK Crude Oil Future Contract 1 (Dollars per Barrel)",
+    "dtype": "object",
+    "n_rows_total": 10183,
+    "n_obs_non_null": 10183,
+    "first_date": "1983-04-04",
+    "last_date": "2024-04-05",
+    "n_duplicate_dates_in_sheet": 0
+  },
+  {
+    "filename": "RCLC2d.xls",
+    "sheet": "Data 1",
+    "sourcekey": "RCLC2",
+    "column_description": "Cushing, OK Crude Oil Future Contract 2 (Dollars per Barrel)",
+    "dtype": "object",
+    "n_rows_total": 9594,
+    "n_obs_non_null": 9594,
+    "first_date": "1985-01-02",
+    "last_date": "2024-04-05",
+    "n_duplicate_dates_in_sheet": 0
+  },
+  {
+    "filename": "RCLC3d.xls",
+    "sheet": "Data 1",
+    "sourcekey": "RCLC3",
+    "column_description": "Cushing, OK Crude Oil Future Contract 3 (Dollars per Barrel)",
+    "dtype": "object",
+    "n_rows_total": 10219,
+    "n_obs_non_null": 10219,
+    "first_date": "1983-03-30",
+    "last_date": "2024-04-05",
+    "n_duplicate_dates_in_sheet": 0
+  },
+  {
+    "filename": "RCLC4d.xls",
+    "sheet": "Data 1",
+    "sourcekey": "RCLC4",
+    "column_description": "Cushing, OK Crude Oil Future Contract 4 (Dollars per Barrel)",
+    "dtype": "object",
+    "n_rows_total": 9551,
+    "n_obs_non_null": 9551,
+    "first_date": "1985-01-02",
+    "last_date": "2024-04-05",
+    "n_duplicate_dates_in_sheet": 0
+  },
+  {
+    "filename": "RNGC1d.xls",
+    "sheet": "Data 1",
+    "sourcekey": "RNGC1",
+    "column_description": "Natural Gas Futures Contract 1 (Dollars per Million Btu)",
+    "dtype": "object",
+    "n_rows_total": 7496,
+    "n_obs_non_null": 7496,
+    "first_date": "1994-01-13",
+    "last_date": "2024-04-05",
+    "n_duplicate_dates_in_sheet": 0
+  },
+  {
+    "filename": "RNGC2d.xls",
+    "sheet": "Data 1",
+    "sourcekey": "RNGC2",
+    "column_description": "Natural Gas Futures Contract 2 (Dollars per Million Btu)",
+    "dtype": "object",
+    "n_rows_total": 7500,
+    "n_obs_non_null": 7500,
+    "first_date": "1994-01-12",
+    "last_date": "2024-04-05",
+    "n_duplicate_dates_in_sheet": 0
+  },
+  {
+    "filename": "RNGC3d.xls",
+    "sheet": "Data 1",
+    "sourcekey": "RNGC3",
+    "column_description": "Natural Gas Futures Contract 3 (Dollars per Million Btu)",
+    "dtype": "object",
+    "n_rows_total": 7452,
+    "n_obs_non_null": 7452,
+    "first_date": "1994-01-19",
+    "last_date": "2024-04-05",
+    "n_duplicate_dates_in_sheet": 0
+  },
+  {
+    "filename": "RNGC4d.xls",
+    "sheet": "Data 1",
+    "sourcekey": "RNGC4",
+    "column_description": "Natural Gas Futures Contract 4 (Dollars per Million Btu)",
+    "dtype": "object",
+    "n_rows_total": 7453,
+    "n_obs_non_null": 7453,
+    "first_date": "1993-12-20",
+    "last_date": "2024-04-05",
+    "n_duplicate_dates_in_sheet": 0
+  },
+  {
+    "filename": "RBOB_C1.xls",
+    "sheet": "Data 1",
+    "sourcekey": "EER_EPMRR_PE1_Y35NY_DPG",
+    "column_description": "New York Harbor Reformulated RBOB Regular Gasoline Future Contract 1 (Dollars per Gallon)",
+    "dtype": "object",
+    "n_rows_total": 4609,
+    "n_obs_non_null": 4609,
+    "first_date": "2005-10-03",
+    "last_date": "2024-04-05",
+    "n_duplicate_dates_in_sheet": 0
+  },
+  {
+    "filename": "PROPANE_C1.xls",
+    "sheet": "Data 1",
+    "sourcekey": "EER_EPLLPA_PE1_Y44MB_DPG",
+    "column_description": "Mont Belvieu, Tx Propane Future Contract 1 (Dollars per Gallon)",
+    "dtype": "object",
+    "n_rows_total": 3361,
+    "n_obs_non_null": 3361,
+    "first_date": "1993-12-21",
+    "last_date": "2009-09-18",
+    "n_duplicate_dates_in_sheet": 0
+  }
+]

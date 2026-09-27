@@ -1,0 +1,105 @@
+{
+  "family": "TLT monthly put insurance C",
+  "status": "FAIL_DEVELOPMENT",
+  "validation": "LOCKED; no 2023+ option, spot or rate return loaded",
+  "plan_sha256": "ee99196aa672009171c999d4aba36028fb2238ae23feabca6dbacd12c9aab186",
+  "inputs_sha256": {
+    "TLT_spot_raw_2014_2022.parquet": "da2527803f8065f3104e9cbe590fc27dea3dafd4d18e11c88c257da8b3284eb9",
+    "TLT_options_2014_2022.parquet": "801a571a8b4504e0034c4732915bdf8800469bda789c94924c974d6669d32437",
+    "US3M_2014_2022.parquet": "7fe28981ff20b7964b8540f4fb97d0937a941c111a359e021c91158580ecacd1"
+  },
+  "window": [
+    "2014-06-23",
+    "2022-12-16"
+  ],
+  "years": 8.48186173853525,
+  "cycles": 102,
+  "active_sharpe_gate": 0.6180546961950071,
+  "candidate_base": {
+    "annual_mean": 0.026553515585670682,
+    "sharpe": 0.34283384840179104,
+    "total_return": 0.22079181048275576,
+    "max_drawdown": -0.22367621749918454
+  },
+  "candidate_stress": {
+    "annual_mean": 0.012046703058095874,
+    "sharpe": 0.1539471707397634,
+    "total_return": 0.07873363489120999,
+    "max_drawdown": -0.24689740132326032
+  },
+  "c0_half_tlt": {
+    "annual_mean": 0.023560818446102375,
+    "sharpe": 0.3601366923664006,
+    "total_return": 0.19970365436070048,
+    "max_drawdown": -0.20192792534241344
+  },
+  "c1_bills": {
+    "annual_mean": 0.008073114661818991,
+    "sharpe": 3.045850403365133,
+    "total_return": 0.07097440570292757,
+    "max_drawdown": 0.0
+  },
+  "c2_full_tlt": {
+    "annual_mean": 0.039048522230385754,
+    "sharpe": 0.2988906504045611,
+    "total_return": 0.29616776758705643,
+    "max_drawdown": -0.3788028380148899
+  },
+  "active_vs_c0": {
+    "annual_mean": 0.002992697139568303,
+    "sharpe": 0.0722580724077916,
+    "total_return": 0.018311299787524327,
+    "max_drawdown": -0.0720032559941377
+  },
+  "active_stress_vs_c0": {
+    "annual_mean": -0.011514115388006502,
+    "sharpe": -0.27797415496893724,
+    "total_return": -0.09987865961866671,
+    "max_drawdown": -0.10177794524461026
+  },
+  "premium_vs_cash": {
+    "annual_mean": 0.01848040092385169,
+    "sharpe": 0.23810786865218844,
+    "total_return": 0.1397893676053823,
+    "max_drawdown": -0.23274114707286742
+  },
+  "null": {
+    "worlds": 5000,
+    "block": 3,
+    "seed": 20260923,
+    "null_method": "paired mean-centered circular block bootstrap",
+    "p_observed_one_sided": 0.4273145370925815,
+    "p_full_development_pass_null": 0.016,
+    "pass_probability_mc_se": 0.0017744858410255067,
+    "annual_mean_95pct_block_ci": [
+      -0.023881006979093657,
+      0.029424413015593724
+    ],
+    "null_active_sharpe_quantiles": {
+      "0.05": -0.49611777922408157,
+      "0.5": 0.01361348715061986,
+      "0.95": 0.6113996045443933,
+      "0.99": 0.8925343449285718
+    }
+  },
+  "assigned_share": 0.5196078431372549,
+  "median_premium_per_share": 1.995,
+  "median_payoff_per_share": 0.19499969482421875,
+  "worst_cycle": {
+    "entry": "2022-09-19",
+    "candidate_return": -0.10487163988608031,
+    "active_return": -0.04148714539859308
+  },
+  "annual_active_sum": {
+    "2014": -0.035880046005767746,
+    "2015": 0.0070719429526539725,
+    "2016": 0.0015094380098205906,
+    "2017": 0.03899908765610177,
+    "2018": 0.01777212665375648,
+    "2019": -0.00425244212854292,
+    "2020": 0.05254388436885775,
+    "2021": 0.014179242520287273,
+    "2022": -0.06650530834083658
+  },
+  "execution_caveat": "LSE option close is a trade print; no historical bid/ask or precise print time"
+}

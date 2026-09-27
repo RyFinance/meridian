@@ -1,0 +1,31 @@
+{
+ "name": "retro_etf_hybrids",
+ "description": "etf_hybrids E1-E5, pre-amendment flat-0.5 dev gate.",
+ "assumptions": [
+  "vol 13% / phi 0.05 / stress drag 0.8%/yr from null_lab2 sim_params"
+ ],
+ "design": "timeseries",
+ "params": {
+  "periods_per_year": 252,
+  "autocorr": 0.05
+ },
+ "windows": {
+  "dev_years": 12.0,
+  "val_years": 11.7
+ },
+ "gates": {
+  "batch_k": 5,
+  "stress_drag_sr": 0.062,
+  "dev": {
+   "kind": "custom",
+   "sharpe_abs": 0.5,
+   "stress": false,
+   "name": "flat 0.5, no null"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  }
+ }
+}

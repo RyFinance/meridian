@@ -1,0 +1,13 @@
+{
+  "source": "https://api.spdrgoldshares.com/api/v1/historical-archive?exchange=NYSE&lang=en&product=gld",
+  "count": 2440,
+  "start": "2017-01-03",
+  "end": "2026-09-17",
+  "median_abs_price_difference_bps": 0.0001957980799716097,
+  "max_abs_price_difference_bps": 0.000571891836109728,
+  "annual_returns": {
+    "2024": 0.26656902233614077,
+    "2025": 0.6367653739726593,
+    "2026": 0.005172718326562631
+  }
+}

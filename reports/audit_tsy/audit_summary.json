@@ -1,0 +1,16 @@
+{
+ "audited": "tsy_month_end book M (TLT, last 3 sessions of each month, active vs exposure-matched constant TLT)",
+ "verdict": "WEAKENED",
+ "mcp_calls_total": 43,
+ "mcp_tools_used": ["terminal_status", "get_history", "macro_series"],
+ "key_numbers": {
+  "reproduction_active_sharpe_base": {"project": [0.664, 0.692], "yf_raw_plus_div": [0.664, 0.692], "lse_last_trade_closes": {"dev_2007_2014": 0.837, "val": 0.713}},
+  "yield_window_excess_change_bp_lse_us10y": {"dev": [-1.73, -2.25], "val": [-2.89, -4.17], "post_pub": [-3.09, -3.08]},
+  "post_publication_2019_10_2026_08": {"active_sharpe": 0.56, "shift_p": 0.059, "window_excess_bp": 19.6, "t": 1.32, "M_excess_sharpe": 0.36},
+  "last_36_months": {"active_sharpe": 0.25, "shift_p": 0.28, "window_excess_bp": 7.9},
+  "execution_val_window_bp": {"close_close": 30.6, "open_close": 23.1, "close_open": 24.8, "open_open": 17.0},
+  "top5pct_months_share_active": {"dev": 0.59, "val": 0.54},
+  "sign_test_p": {"dev": 0.0077, "val": 0.017},
+  "fisher_p": 0.000342, "bonferroni_breakeven_trials": 146
+ }
+}

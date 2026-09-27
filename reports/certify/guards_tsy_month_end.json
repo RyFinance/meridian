@@ -1,0 +1,186 @@
+{
+  "candidate": "tsy_month_end",
+  "inputs": {
+    "returns_series": "active (dev_daily.csv + validation_daily.csv, concatenated, 2003-01-02..2026-08-31)",
+    "G2_returns_series": "M (raw book return, same files)",
+    "benchmarks": "TLT excess, SPY excess (data/multiasset/etf/{TLT,SPY}.parquet, cash_rates from research.return_search.run)",
+    "exposure": "research.tsy_month_end.core.weights(sess, 'last')",
+    "asset_pnl": "single column TLT = active (single-instrument strategy)",
+    "null_pass_rate": "0.017 (validation_results.json shift_null.P_pass_given_null); dev 0.02 reported separately",
+    "publication_date": "2019-08-15 (Hartley & Schwarz SSRN)",
+    "lagged_returns": "active.shift(1) (one session later)"
+  },
+  "guards": {
+    "G1_beta": {
+      "pass": true,
+      "reason": "alpha t=3.44 (>= 2.0); alpha_ann=0.0315 vs 50% of mean_ann=0.0318 (meets the share test)",
+      "threshold": {
+        "alpha_t_min": 2.0,
+        "alpha_share_min": 0.5
+      },
+      "value": {
+        "alpha_t": 3.4383810478813266,
+        "alpha_ann": 0.03153458715161289,
+        "mean_return_ann": 0.03179841492479568,
+        "alpha_share_of_mean": 0.991703115585895,
+        "betas": {
+          "TLT_excess": -0.017986117181454618,
+          "SPY_excess": 0.006621141803309568
+        },
+        "hac_lag": 10,
+        "periods_per_year": 252,
+        "n_obs": 5953
+      }
+    },
+    "G2_reduced_exposure": {
+      "pass": true,
+      "reason": "vs exposure-matched control (0.143 x TLT_excess): IR=0.68, t=3.29; vs vol-matched control (0.350 x TLT_excess): IR=0.47, t=2.26",
+      "threshold": {
+        "t_min": 2.0,
+        "ir_min": 0.0
+      },
+      "value": {
+        "benchmark_used": "TLT_excess",
+        "avg_abs_exposure": 0.143121115403998,
+        "exposure_matched": {
+          "ir": 0.6762531488322913,
+          "t": 3.2868279485277148
+        },
+        "vol_match_scale": 0.34979266468539444,
+        "vol_matched": {
+          "ir": 0.4651470417039966,
+          "t": 2.2607780821244425
+        },
+        "periods_per_year": 252,
+        "n_obs": 5953
+      }
+    },
+    "G3_concentration": {
+      "pass": false,
+      "reason": "top5%-months share=60.08% (<50%: False); max-year share=13.58% in 2010 (<35%: True); LOYO min Sharpe=0.62 vs full 0.68 ratio=0.91 (>=50%: True); sign-test p=0.0016 (<0.05: True)",
+      "threshold": {
+        "top5pct_months_share_max": 0.5,
+        "max_year_share_max": 0.35,
+        "loyo_sharpe_ratio_min": 0.5,
+        "sign_test_p_max": 0.05
+      },
+      "value": {
+        "top5pct_months_share": 0.6007886059461592,
+        "max_year_share": 0.13576469825714246,
+        "max_year": "2010",
+        "full_sharpe": 0.6778123740538025,
+        "loyo_min_sharpe": 0.6174599300264381,
+        "loyo_sharpe_ratio": 0.9109599553835029,
+        "loyo_by_year": {
+          "2003": 0.7040122513265837,
+          "2004": 0.7147461626692141,
+          "2005": 0.6660521228737647,
+          "2006": 0.6920101567406911,
+          "2007": 0.6467008827999777,
+          "2008": 0.693473409289183,
+          "2009": 0.6835426302668569,
+          "2010": 0.6174599300264381,
+          "2011": 0.7129092106103039,
+          "2012": 0.66335688871608,
+          "2013": 0.6711226075570471,
+          "2014": 0.6771702175193892,
+          "2015": 0.6910388363165868,
+          "2016": 0.6564072554400522,
+          "2017": 0.688109075185114,
+          "2018": 0.6417780351383947,
+          "2019": 0.651113733212332,
+          "2020": 0.7184012655801376,
+          "2021": 0.6757673213726433,
+          "2022": 0.652803938603852,
+          "2023": 0.699023181383713,
+          "2024": 0.6528901549756213,
+          "2025": 0.6757608762817392,
+          "2026": 0.7234726543136942
+        },
+        "sign_test_p": 0.001614470871969152,
+        "n_months": 284,
+        "n_years": 24,
+        "periods_per_year": 252
+      }
+    },
+    "G4_one_asset": {
+      "pass": "flag",
+      "reason": "single-asset strategy (TLT): flagged, not evaluated as n/a",
+      "threshold": {
+        "max_asset_share_max": 0.5
+      },
+      "value": {
+        "n_assets": 1,
+        "max_asset_share": "n/a",
+        "loo_sharpes": "n/a"
+      }
+    },
+    "G5_null_calibration": {
+      "pass": true,
+      "reason": "P(pass|null)=0.0170 (<= 0.05)",
+      "threshold": {
+        "null_pass_rate_max": 0.05,
+        "null_mean_abs_flag": 0.3
+      },
+      "value": {
+        "null_pass_rate": 0.017,
+        "null_mean": -0.10412117990083598,
+        "flag": null
+      }
+    },
+    "G6_post_publication": {
+      "pass": false,
+      "reason": "post-pub (n=1769) Sharpe=0.59, t=1.55 (>=1.65: False)",
+      "threshold": {
+        "t_min": 1.65,
+        "min_obs": 60
+      },
+      "value": {
+        "n_obs": 1769,
+        "publication_date": "2019-08-15",
+        "post_pub_sharpe": 0.586013884095163,
+        "post_pub_t": 1.552642792798343,
+        "periods_per_year": 252
+      }
+    },
+    "G7_execution_lag": {
+      "pass": true,
+      "reason": "lagged Sharpe=0.68 / original Sharpe=0.68 = 100.57% (>=60%: True)",
+      "threshold": {
+        "lag_sharpe_ratio_min": 0.6
+      },
+      "value": {
+        "original_sharpe": 0.6778694058138199,
+        "lagged_sharpe": 0.6817667715647509,
+        "ratio": 1.00574943450391,
+        "periods_per_year": 252
+      }
+    },
+    "G5_null_calibration_dev": {
+      "pass": true,
+      "reason": "P(pass|null)=0.0200 (<= 0.05)",
+      "threshold": {
+        "null_pass_rate_max": 0.05,
+        "null_mean_abs_flag": 0.3
+      },
+      "value": {
+        "null_pass_rate": 0.02,
+        "null_mean": -0.11394007913597042,
+        "flag": null
+      }
+    },
+    "G5_null_calibration_val": {
+      "pass": true,
+      "reason": "P(pass|null)=0.0170 (<= 0.05)",
+      "threshold": {
+        "null_pass_rate_max": 0.05,
+        "null_mean_abs_flag": 0.3
+      },
+      "value": {
+        "null_pass_rate": 0.017,
+        "null_mean": -0.10412117990083598,
+        "flag": null
+      }
+    }
+  }
+}

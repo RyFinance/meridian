@@ -1,0 +1,411 @@
+{
+  "reproduction": {
+    "project_adj": {
+      "gross": {
+        "sharpe_mine": 0.7038990529674298,
+        "ann_mean_mine": 0.074917966294492,
+        "sharpe_director": 0.7038990529674275,
+        "n_mine": 2630,
+        "n_director": 2630,
+        "corr": 1.0000000000000007,
+        "max_abs_diff": 9.974659986866641e-17,
+        "date_max_diff": "2008-03-07",
+        "n_days_diff_gt_1bp": 0
+      },
+      "base": {
+        "sharpe_mine": 0.5964225468053841,
+        "ann_mean_mine": 0.0634601809983162,
+        "sharpe_director": 0.5964225468053806,
+        "n_mine": 2630,
+        "n_director": 2630,
+        "corr": 0.9999999999999997,
+        "max_abs_diff": 9.974659986866641e-17,
+        "date_max_diff": "2009-06-18",
+        "n_days_diff_gt_1bp": 0
+      },
+      "per_pair_sharpe": {
+        "crude": 0.47112085112051033,
+        "natgas": 0.2581478622391366,
+        "broad": 0.48589065407578025
+      },
+      "per_pair_first": {
+        "crude": "2007-12-07",
+        "natgas": "2010-01-05",
+        "broad": "2006-07-24"
+      },
+      "stress": {
+        "sharpe_mine": 0.2878146190449439,
+        "ann_mean_mine": 0.03060637219144966,
+        "sharpe_director": 0.28781461904494177,
+        "n_mine": 2630,
+        "n_director": 2630,
+        "corr": 1.0000000000000002,
+        "max_abs_diff": 9.977370492297855e-17,
+        "date_max_diff": "2014-02-25",
+        "n_days_diff_gt_1bp": 0
+      }
+    },
+    "yf_close_plus_div": {
+      "gross": {
+        "sharpe_mine": 0.7044919311807823,
+        "ann_mean_mine": 0.07498550678319349,
+        "sharpe_director": 0.7038990529674275,
+        "n_mine": 2630,
+        "n_director": 2630,
+        "corr": 0.9999990344677969,
+        "max_abs_diff": 0.0004181104868495047,
+        "date_max_diff": "2006-12-18",
+        "n_days_diff_gt_1bp": 2
+      },
+      "base": {
+        "sharpe_mine": 0.597022143159187,
+        "ann_mean_mine": 0.06352773182817906,
+        "sharpe_director": 0.5964225468053806,
+        "n_mine": 2630,
+        "n_director": 2630,
+        "corr": 0.9999990339512183,
+        "max_abs_diff": 0.00041811048684944094,
+        "date_max_diff": "2006-12-18",
+        "n_days_diff_gt_1bp": 2
+      },
+      "stress": {
+        "sharpe_mine": 0.2884331396138144,
+        "ann_mean_mine": 0.03067394370363522,
+        "sharpe_director": 0.28781461904494177,
+        "n_mine": 2630,
+        "n_director": 2630,
+        "corr": 0.999999032935512,
+        "max_abs_diff": 0.00041811048684945004,
+        "date_max_diff": "2006-12-18",
+        "n_days_diff_gt_1bp": 2
+      }
+    }
+  },
+  "integrity": {
+    "USL": {
+      "first": "2007-12-06",
+      "rows_dev": 2284,
+      "zero_return_days": 32,
+      "longest_zero_run": 2,
+      "zero_volume_days": 11,
+      "abs_ret_gt_15pct": {},
+      "splits_in_dev": {},
+      "dividends_in_dev": {},
+      "median_daily_dollar_volume_by_year_$m": {
+        "2007": 0.439,
+        "2008": 0.111,
+        "2009": 3.029,
+        "2010": 1.553,
+        "2011": 2.441,
+        "2012": 0.735,
+        "2013": 0.448,
+        "2014": 0.307,
+        "2015": 1.372,
+        "2016": 1.319
+      },
+      "median_daily_share_volume_by_year": {
+        "2007": 8400,
+        "2008": 1800,
+        "2009": 83200,
+        "2010": 39850,
+        "2011": 54550,
+        "2012": 18000,
+        "2013": 10900,
+        "2014": 7050,
+        "2015": 62500,
+        "2016": 72200
+      },
+      "zero_volume_days_by_year": {
+        "2007": 0,
+        "2008": 10,
+        "2009": 0,
+        "2010": 0,
+        "2011": 0,
+        "2012": 0,
+        "2013": 0,
+        "2014": 1,
+        "2015": 0,
+        "2016": 0
+      },
+      "rebalance_days_zero_volume": 0,
+      "rebalance_days_volume_lt_1000sh": 5
+    },
+    "USO": {
+      "first": "2006-04-10",
+      "rows_dev": 2702,
+      "zero_return_days": 12,
+      "longest_zero_run": 1,
+      "zero_volume_days": 0,
+      "abs_ret_gt_15pct": {},
+      "splits_in_dev": {},
+      "dividends_in_dev": {},
+      "median_daily_dollar_volume_by_year_$m": {
+        "2006": 62.705,
+        "2007": 168.885,
+        "2008": 807.022,
+        "2009": 512.932,
+        "2010": 346.988,
+        "2011": 432.164,
+        "2012": 261.923,
+        "2013": 176.834,
+        "2014": 133.434,
+        "2015": 414.706,
+        "2016": 370.287
+      },
+      "median_daily_share_volume_by_year": {
+        "2006": 127450,
+        "2007": 363675,
+        "2008": 1348750,
+        "2009": 1758587,
+        "2010": 1202094,
+        "2011": 1490213,
+        "2012": 930719,
+        "2013": 616006,
+        "2014": 475925,
+        "2015": 3263412,
+        "2016": 4374069
+      },
+      "zero_volume_days_by_year": {
+        "2006": 0,
+        "2007": 0,
+        "2008": 0,
+        "2009": 0,
+        "2010": 0,
+        "2011": 0,
+        "2012": 0,
+        "2013": 0,
+        "2014": 0,
+        "2015": 0,
+        "2016": 0
+      },
+      "rebalance_days_zero_volume": 0,
+      "rebalance_days_volume_lt_1000sh": 0
+    },
+    "UNL": {
+      "first": "2010-01-04",
+      "rows_dev": 1762,
+      "zero_return_days": 37,
+      "longest_zero_run": 2,
+      "zero_volume_days": 3,
+      "abs_ret_gt_15pct": {},
+      "splits_in_dev": {},
+      "dividends_in_dev": {},
+      "median_daily_dollar_volume_by_year_$m": {
+        "2010": 0.655,
+        "2011": 0.376,
+        "2012": 0.619,
+        "2013": 0.275,
+        "2014": 0.152,
+        "2015": 0.113,
+        "2016": 0.091
+      },
+      "median_daily_share_volume_by_year": {
+        "2010": 16400,
+        "2011": 12300,
+        "2012": 34300,
+        "2013": 15550,
+        "2014": 8200,
+        "2015": 9250,
+        "2016": 9300
+      },
+      "zero_volume_days_by_year": {
+        "2010": 0,
+        "2011": 0,
+        "2012": 0,
+        "2013": 0,
+        "2014": 0,
+        "2015": 0,
+        "2016": 3
+      },
+      "rebalance_days_zero_volume": 2,
+      "rebalance_days_volume_lt_1000sh": 2
+    },
+    "UNG": {
+      "first": "2007-04-18",
+      "rows_dev": 2446,
+      "zero_return_days": 29,
+      "longest_zero_run": 2,
+      "zero_volume_days": 0,
+      "abs_ret_gt_15pct": {},
+      "splits_in_dev": {
+        "2011-03-09": {
+          "ratio": 0.5,
+          "split_adj_close_returns_around": [
+            -0.0153,
+            0.0145,
+            -0.0239,
+            0.0176
+          ]
+        },
+        "2012-02-22": {
+          "ratio": 0.25,
+          "split_adj_close_returns_around": [
+            -0.016,
+            0.0036,
+            -0.014,
+            -0.0233
+          ]
+        }
+      },
+      "dividends_in_dev": {},
+      "median_daily_dollar_volume_by_year_$m": {
+        "2007": 33.142,
+        "2008": 89.223,
+        "2009": 270.61,
+        "2010": 170.098,
+        "2011": 110.804,
+        "2012": 179.063,
+        "2013": 91.504,
+        "2014": 163.727,
+        "2015": 79.043,
+        "2016": 61.038
+      },
+      "median_daily_share_volume_by_year": {
+        "2007": 6366,
+        "2008": 17582,
+        "2009": 183436,
+        "2010": 184040,
+        "2011": 169647,
+        "2012": 572031,
+        "2013": 291172,
+        "2014": 453369,
+        "2015": 412925,
+        "2016": 505369
+      },
+      "zero_volume_days_by_year": {
+        "2007": 0,
+        "2008": 0,
+        "2009": 0,
+        "2010": 0,
+        "2011": 0,
+        "2012": 0,
+        "2013": 0,
+        "2014": 0,
+        "2015": 0,
+        "2016": 0
+      },
+      "rebalance_days_zero_volume": 0,
+      "rebalance_days_volume_lt_1000sh": 1
+    },
+    "DBC": {
+      "first": "2006-02-06",
+      "rows_dev": 2746,
+      "zero_return_days": 34,
+      "longest_zero_run": 2,
+      "zero_volume_days": 0,
+      "abs_ret_gt_15pct": {},
+      "splits_in_dev": {},
+      "dividends_in_dev": {
+        "2006-12-18": 0.61,
+        "2007-12-17": 0.76,
+        "2008-12-15": 0.34
+      },
+      "median_daily_dollar_volume_by_year_$m": {
+        "2006": 7.808,
+        "2007": 6.836,
+        "2008": 30.86,
+        "2009": 42.465,
+        "2010": 38.424,
+        "2011": 63.453,
+        "2012": 47.622,
+        "2013": 45.636,
+        "2014": 34.678,
+        "2015": 27.615,
+        "2016": 26.437
+      },
+      "median_daily_share_volume_by_year": {
+        "2006": 323400,
+        "2007": 264700,
+        "2008": 919800,
+        "2009": 1842050,
+        "2010": 1613250,
+        "2011": 2158550,
+        "2012": 1694150,
+        "2013": 1726000,
+        "2014": 1420350,
+        "2015": 1683250,
+        "2016": 1900050
+      },
+      "zero_volume_days_by_year": {
+        "2006": 0,
+        "2007": 0,
+        "2008": 0,
+        "2009": 0,
+        "2010": 0,
+        "2011": 0,
+        "2012": 0,
+        "2013": 0,
+        "2014": 0,
+        "2015": 0,
+        "2016": 0
+      },
+      "rebalance_days_zero_volume": 0,
+      "rebalance_days_volume_lt_1000sh": 0
+    },
+    "GSG": {
+      "first": "2006-07-21",
+      "rows_dev": 2631,
+      "zero_return_days": 31,
+      "longest_zero_run": 1,
+      "zero_volume_days": 0,
+      "abs_ret_gt_15pct": {},
+      "splits_in_dev": {},
+      "dividends_in_dev": {},
+      "median_daily_dollar_volume_by_year_$m": {
+        "2006": 4.005,
+        "2007": 4.044,
+        "2008": 12.155,
+        "2009": 12.985,
+        "2010": 9.266,
+        "2011": 10.506,
+        "2012": 5.745,
+        "2013": 5.139,
+        "2014": 4.699,
+        "2015": 3.349,
+        "2016": 2.955
+      },
+      "median_daily_share_volume_by_year": {
+        "2006": 91000,
+        "2007": 93700,
+        "2008": 229100,
+        "2009": 452600,
+        "2010": 300100,
+        "2011": 301550,
+        "2012": 169450,
+        "2013": 156900,
+        "2014": 147750,
+        "2015": 183200,
+        "2016": 202300
+      },
+      "zero_volume_days_by_year": {
+        "2006": 0,
+        "2007": 0,
+        "2008": 0,
+        "2009": 0,
+        "2010": 0,
+        "2011": 0,
+        "2012": 0,
+        "2013": 0,
+        "2014": 0,
+        "2015": 0,
+        "2016": 0
+      },
+      "rebalance_days_zero_volume": 0,
+      "rebalance_days_volume_lt_1000sh": 0
+    }
+  },
+  "calendar_mismatch": {
+    "crude": {
+      "dates_only_in_long": 0,
+      "dates_only_in_short": 0
+    },
+    "natgas": {
+      "dates_only_in_long": 0,
+      "dates_only_in_short": 0
+    },
+    "broad": {
+      "dates_only_in_long": 0,
+      "dates_only_in_short": 0
+    }
+  }
+}

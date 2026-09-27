@@ -1,0 +1,20 @@
+{
+ "program": "cycle5 C2 crypto replication design",
+ "data_read": "none (power model only)",
+ "binance_dev_inputs_already_reported": {
+  "sharpe": 1.65,
+  "bootstrap_p": 0.038,
+  "years": 2.17,
+  "implied_se": 0.9299012745678992
+ },
+ "files": [
+  "power_summary.csv",
+  "dependence_weight_cosine.csv",
+  "arbitrage_bound.csv",
+  "conditional_false_pass.csv",
+  "bayes_criteria_oc.csv",
+  "forward_group_sequential.csv",
+  "crep_*.json (one plan_check report per spec)"
+ ],
+ "n_specs": 56
+}

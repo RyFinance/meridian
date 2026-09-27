@@ -1,0 +1,62 @@
+{
+ "name": "retro_fx_hedge_rebal",
+ "description": "5 USD pairs x 72 month-end London 08:00-16:00 windows, equity-flow-signed.",
+ "assumptions": [
+  "ASSUMPTION signed cross-pair correlation 0.4 (USD common factor, mostly same-signed flows)",
+  "per-event sd 32 bp backed out from the reported book Sharpe"
+ ],
+ "design": "event_study",
+ "params": {
+  "events_per_year": 60,
+  "car_sd": 0.0032,
+  "hold_days": 1,
+  "icc": 0.4,
+  "concurrency": {
+   "model": "clusters",
+   "mean_size": 5
+  },
+  "portfolio_autocorr": 0.0,
+  "mean_car": 0.0002583,
+  "cost_per_event": 0.0002
+ },
+ "windows": {
+  "dev_years": 6.0,
+  "val_years": 5.67
+ },
+ "gates": {
+  "batch_k": 1,
+  "stress_drag_sr": 0.61,
+  "dev": {
+   "kind": "amendment2",
+   "null_center_sr": -0.27
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  }
+ },
+ "power": {
+  "dev_estimate": 0.09
+ },
+ "scenarios": [
+  {
+   "label": "icc=0.2",
+   "params": {
+    "icc": 0.2
+   }
+  },
+  {
+   "label": "icc=0.4",
+   "params": {
+    "icc": 0.4
+   }
+  },
+  {
+   "label": "icc=0.6",
+   "params": {
+    "icc": 0.6
+   }
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+E7 sec7
+E7 tsy_month_end
+E7 commodity_roll
+E7 fx_hedge_rebal
+E7 IEF_SHY
+E7 insider
+E7 etf_hybrids
+E6 done
+E2 1 0.0
+E2 2 0.0
+E2 2 0.5
+E2 2 0.9
+E2 4 0.0
+E2 4 0.5
+E2 4 0.9
+E1 iid_daily
+E1 iid_monthly
+E1 ar1_0.1_daily
+E1 ar1_0.3_daily
+E1 ar1_0.1_monthly
+E1 ar1_0.3_monthly
+E1 t4_daily
+E1 t4_monthly
+E1 carry_crash_monthly
+E1 carry_crash_weekly
+E1 stoch_vol_daily
+E1 long_short_weekly
+E1 timing raw
+E1 timing active
+E1 events
+E3 iid_monthly
+E3 ar1_0.3_monthly
+E3 iid_daily
+E5 done
+E4 0.0 0.0 0.002
+E4 0.0 0.01 0.504
+E4 0.0 0.02 1.008
+E4 0.0 0.03 1.514
+E4 0.3 0.0 0.004
+E4 0.3 0.01 0.305
+E4 0.3 0.02 0.61
+E4 0.3 0.03 0.915
+E4 0.6 0.0 -0.004
+E4 0.6 0.01 0.179
+E4 0.6 0.02 0.363
+E4 0.6 0.03 0.54
+done {'W_MAIN': 20000, 'W_GRID': 10000, 'B': 999, 'block': 'round(n^(1/3)), circular, mean-centred', 'stress': 'net minus extra drag (default 0.10 Sharpe units)', 'fast': False, 'runtime_min': 14.6}

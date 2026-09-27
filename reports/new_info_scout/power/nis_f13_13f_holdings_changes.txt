@@ -1,0 +1,21 @@
+nis_f13_13f_holdings_changes  [long_short]  dev 6.40y + val 6.60y
+  raw obs (total) 52000 asset-periods;  D_time 1.000  deff_cross 75.925  ->  effective obs 684.9
+  SE(Sharpe) dev 0.395, val 0.389;  SE(mean, mean IC per period (net of costs via offset)) total 0.03297
+  dev gate threshold 0.775 (binding: p_lt_alpha);  val threshold 0.763 (binding: p_lt_alpha);  proposed val threshold 0.763
+  MDE Sharpe (80%): single test 0.79, dev gate 1.16, joint current 1.36, joint proposed 1.36
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.001   0.004   0.003   0.000   | 0.003  0.000
+  zero_net_null             0.00  0.025   0.025   0.025   0.001   | 0.025  0.001
+  structural_leak           0.05  0.038   0.033   0.034   0.001   | 0.034  0.001
+  S=0.3                     0.30  0.193   0.117   0.120   0.014   | 0.120  0.014
+  S=0.5                     0.50  0.439   0.250   0.256   0.064   | 0.256  0.064
+  S=0.7                     0.70  0.703   0.429   0.439   0.189   | 0.439  0.189
+  S=1.0                     1.00  0.929   0.695   0.707   0.491   | 0.707  0.491
+  implied_by_primitives     0.12  0.062   0.048   0.049   0.002   | 0.049  0.002
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   87.80     87.80             inf              inf
+                     0.50   31.98     31.98           84.63            84.63
+                     0.70   16.60     16.60           44.05            44.05
+                     1.00    8.42      8.42           22.56            22.56
+                     0.12  572.71    572.71             inf              inf
+  VERDICT (current gates): INCAPABLE   [joint@0.7 = 0.189, false-pass = 0.0006];  with proposed val gate: INCAPABLE

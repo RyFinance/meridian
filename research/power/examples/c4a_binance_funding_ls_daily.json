@@ -1,0 +1,319 @@
+{
+ "name": "c4a_binance_funding_ls_daily",
+ "description": "Binance USD-M perps, funding-rate cross-sectional quintile long-short, daily (365 d/yr); dev 2020-01..2022-12, validation 2023-01..2026-08.",
+ "assumptions": [
+  "universe grows ~50 -> ~150: scenarios at N = 50/100/150 (dev-average ~70, val-average ~130)",
+  "ASSUMPTION daily residual cs sd 4%",
+  "ASSUMPTION funding signal daily autocorr 0.9",
+  "ASSUMPTION 8 bp one-way (taker + slippage, alts)",
+  "funding carry P&L itself not modelled",
+  "ASSUMPTION batch k = 3 (the three cycle-4 designs registered together)",
+  "rho_resid 0.2-0.4 after market-neutral; signal tilt R^2 0.25 on that residual factor"
+ ],
+ "design": "long_short",
+ "params": {
+  "n_assets": 100,
+  "periods_per_year": 365,
+  "ic": 0.02,
+  "cs_dispersion": 0.04,
+  "quantile": 0.2,
+  "rho_resid": 0.3,
+  "rho_signal": 0.25,
+  "signal_autocorr": 0.9,
+  "cost_bps_one_way": 8,
+  "spread_autocorr": 0.05,
+  "skew": -0.3,
+  "exkurt": 10.0
+ },
+ "windows": {
+  "dev_years": 3.0,
+  "val_years": 3.67
+ },
+ "gates": {
+  "batch_k": 3,
+  "stress_drag_sr": 0.15,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  },
+  "pav": {
+   "k_val": 1
+  }
+ },
+ "scenarios": [
+  {
+   "label": "N=50 IC=0.01 rho=0.2",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.01,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=50 IC=0.01 rho=0.3",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.01,
+    "rho_resid": 0.3
+   }
+  },
+  {
+   "label": "N=50 IC=0.01 rho=0.4",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.01,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=50 IC=0.02 rho=0.2",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.02,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=50 IC=0.02 rho=0.3",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.02,
+    "rho_resid": 0.3
+   }
+  },
+  {
+   "label": "N=50 IC=0.02 rho=0.4",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.02,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=50 IC=0.03 rho=0.2",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.03,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=50 IC=0.03 rho=0.3",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.03,
+    "rho_resid": 0.3
+   }
+  },
+  {
+   "label": "N=50 IC=0.03 rho=0.4",
+   "params": {
+    "n_assets": 50,
+    "ic": 0.03,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=100 IC=0.01 rho=0.2",
+   "params": {
+    "n_assets": 100,
+    "ic": 0.01,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=100 IC=0.01 rho=0.3",
+   "params": {
+    "n_assets": 100,
+    "ic": 0.01,
+    "rho_resid": 0.3
+   }
+  },
+  {
+   "label": "N=100 IC=0.01 rho=0.4",
+   "params": {
+    "n_assets": 100,
+    "ic": 0.01,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=100 IC=0.02 rho=0.2",
+   "params": {
+    "n_assets": 100,
+    "ic": 0.02,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=100 IC=0.02 rho=0.3",
+   "params": {
+    "n_assets": 100,
+    "ic": 0.02,
+    "rho_resid": 0.3
+   }
+  },
+  {
+   "label": "N=100 IC=0.02 rho=0.4",
+   "params": {
+    "n_assets": 100,
+    "ic": 0.02,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=100 IC=0.03 rho=0.2",
+   "params": {
+    "n_assets": 100,
+    "ic": 0.03,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=100 IC=0.03 rho=0.3",
+   "params": {
+    "n_assets": 100,
+    "ic": 0.03,
+    "rho_resid": 0.3
+   }
+  },
+  {
+   "label": "N=100 IC=0.03 rho=0.4",
+   "params": {
+    "n_assets": 100,
+    "ic": 0.03,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=150 IC=0.01 rho=0.2",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.01,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=150 IC=0.01 rho=0.3",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.01,
+    "rho_resid": 0.3
+   }
+  },
+  {
+   "label": "N=150 IC=0.01 rho=0.4",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.01,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=150 IC=0.02 rho=0.2",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.02,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=150 IC=0.02 rho=0.3",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.02,
+    "rho_resid": 0.3
+   }
+  },
+  {
+   "label": "N=150 IC=0.02 rho=0.4",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.02,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=150 IC=0.03 rho=0.2",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.03,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=150 IC=0.03 rho=0.3",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.03,
+    "rho_resid": 0.3
+   }
+  },
+  {
+   "label": "N=150 IC=0.03 rho=0.4",
+   "params": {
+    "n_assets": 150,
+    "ic": 0.03,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "N=100 IC=0.01 rho=0.2 LITERAL",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.2,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "N=100 IC=0.01 rho=0.4 LITERAL",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.4,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "N=100 IC=0.02 rho=0.2 LITERAL",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.2,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "N=100 IC=0.02 rho=0.4 LITERAL",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.4,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "N=100 IC=0.03 rho=0.2 LITERAL",
+   "params": {
+    "ic": 0.03,
+    "rho_resid": 0.2,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "N=100 IC=0.03 rho=0.4 LITERAL",
+   "params": {
+    "ic": 0.03,
+    "rho_resid": 0.4,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  }
+ ]
+}

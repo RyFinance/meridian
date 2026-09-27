@@ -1,0 +1,14 @@
+{
+  "M1": {
+    "selected": false,
+    "sharpe_base": -0.5025936631924918,
+    "stress_mean": -0.1432795166259735,
+    "alpha_on_cmom": -0.04657435820005313
+  },
+  "M2": {
+    "selected": false,
+    "sharpe_base": 0.3106490438009149,
+    "cew_sharpe_base": 0.25287029536669936
+  },
+  "selected": []
+}

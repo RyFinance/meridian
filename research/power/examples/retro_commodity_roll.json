@@ -1,0 +1,48 @@
+{
+ "name": "retro_commodity_roll",
+ "description": "Same-commodity deferred-minus-front ETF spreads (USL-USO, UNL-UNG, DBC-GSG), daily book.",
+ "assumptions": [
+  "ASSUMPTION pair correlation: crude & broad 0.5, natgas 0.1",
+  "ASSUMPTION daily skew -0.3 / excess kurtosis 8 (contango blow-ups)",
+  "D = 0.60 implied by the registered bootstrap p=0.0064 at Sharpe 0.596"
+ ],
+ "design": "carry",
+ "params": {
+  "n_assets": 3,
+  "periods_per_year": 252,
+  "rho": null,
+  "blocks": {
+   "sizes": [
+    2,
+    1
+   ],
+   "rho_within": 0.5,
+   "rho_between": 0.1
+  },
+  "autocorr": {
+   "model": "lrv",
+   "D": 0.6
+  },
+  "skew": -0.3,
+  "exkurt": 8.0
+ },
+ "windows": {
+  "dev_years": 10.44,
+  "val_years": 9.71
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.31,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  }
+ },
+ "power": {
+  "dev_estimate": 0.596
+ }
+}

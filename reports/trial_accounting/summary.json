@@ -1,0 +1,1211 @@
+{
+  "built_at_utc": "2026-09-25T05:22:52.835276+00:00",
+  "headline": {
+    "n_families": 52,
+    "tier1_registered_gate_evaluable": 98,
+    "tier2_registered_non_standard": 51,
+    "tier3_unregistered_low": 73,
+    "tier3_unregistered_high": 109,
+    "grand_total_low": 222,
+    "grand_total_high": 258,
+    "grand_total_point_estimate": 240
+  },
+  "reconciliation": {
+    "null_lab2_grand_total_low": 182,
+    "null_lab2_grand_total_high": 215,
+    "null_lab2_point_estimate": 198,
+    "research_ledger_stale_estimate": 111,
+    "this_workstream_new_clusters_not_in_null_lab2": {
+      "etf_convergence_share_class_liquidity": [
+        14,
+        14
+      ],
+      "fx_session_screen": [
+        3,
+        3
+      ],
+      "pead_production_history": [
+        13,
+        13
+      ]
+    },
+    "this_workstream_new_clusters_added_low": 30,
+    "this_workstream_new_clusters_added_high": 30,
+    "note": "etf_convergence/share_class/liquidity_pressure (14) and fx_session_screen (3) carry self-declared 'written before any result' spec JSONs dated 2026-09-18 but do not appear in research/preregistrations.jsonl (grep-confirmed) and are not itemized in null_lab2's tier-3 detail list; pead_production_history (13, dated 2026-08-18, pre-dates the registration system by a month) is also outside null_lab2's tier-3 narrative, which starts from research/return_search onward. Treated here as additive to null_lab2's 182-215 range, not already included in it -- this workstream's own range is reported separately above and is NOT meant to replace null_lab2's number, only to extend its documented coverage."
+  },
+  "information_family_budget": {
+    "earnings events": {
+      "n_families": 8,
+      "n_registered_candidates": 18,
+      "n_informal_low": 18,
+      "n_informal_high": 24,
+      "dev_passes": 0,
+      "validation_passes": 0,
+      "forward_observations": 3,
+      "classifications": [
+        "PARTIALLY USED",
+        "SPENT"
+      ],
+      "status": "ACTIVE / HAS FORWARD-STAGE EVIDENCE"
+    },
+    "options prints": {
+      "n_families": 6,
+      "n_registered_candidates": 13,
+      "n_informal_low": 0,
+      "n_informal_high": 0,
+      "dev_passes": 0,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "PARTIALLY USED",
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "positioning": {
+      "n_families": 2,
+      "n_registered_candidates": 3,
+      "n_informal_low": 5,
+      "n_informal_high": 15,
+      "dev_passes": 0,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "calendar/flow": {
+      "n_families": 5,
+      "n_registered_candidates": 11,
+      "n_informal_low": 0,
+      "n_informal_high": 0,
+      "dev_passes": 4,
+      "validation_passes": 0,
+      "forward_observations": 1,
+      "classifications": [
+        "FORWARD OBSERVATION",
+        "SPENT"
+      ],
+      "status": "ACTIVE / HAS FORWARD-STAGE EVIDENCE"
+    },
+    "FX intraday": {
+      "n_families": 4,
+      "n_registered_candidates": 4,
+      "n_informal_low": 3,
+      "n_informal_high": 3,
+      "dev_passes": 0,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "insider transactions": {
+      "n_families": 1,
+      "n_registered_candidates": 4,
+      "n_informal_low": 0,
+      "n_informal_high": 0,
+      "dev_passes": 2,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "rates/duration": {
+      "n_families": 3,
+      "n_registered_candidates": 6,
+      "n_informal_low": 0,
+      "n_informal_high": 0,
+      "dev_passes": 0,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "academic-anomaly replication": {
+      "n_families": 2,
+      "n_registered_candidates": 4,
+      "n_informal_low": 1,
+      "n_informal_high": 1,
+      "dev_passes": 0,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "INFRASTRUCTURE/META",
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "price momentum": {
+      "n_families": 11,
+      "n_registered_candidates": 73,
+      "n_informal_low": 32,
+      "n_informal_high": 52,
+      "dev_passes": 7,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "BENCHMARK",
+        "INCOMPLETE",
+        "INFRASTRUCTURE/META",
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "macro releases": {
+      "n_families": 3,
+      "n_registered_candidates": 5,
+      "n_informal_low": 0,
+      "n_informal_high": 0,
+      "dev_passes": 0,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "crypto trend": {
+      "n_families": 1,
+      "n_registered_candidates": 2,
+      "n_informal_low": 0,
+      "n_informal_high": 0,
+      "dev_passes": 2,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "credit spreads": {
+      "n_families": 4,
+      "n_registered_candidates": 4,
+      "n_informal_low": 0,
+      "n_informal_high": 0,
+      "dev_passes": 0,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "commodity roll": {
+      "n_families": 1,
+      "n_registered_candidates": 2,
+      "n_informal_low": 0,
+      "n_informal_high": 0,
+      "dev_passes": 1,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    },
+    "ETF structure/basis": {
+      "n_families": 1,
+      "n_registered_candidates": 0,
+      "n_informal_low": 14,
+      "n_informal_high": 14,
+      "dev_passes": 0,
+      "validation_passes": 0,
+      "forward_observations": 0,
+      "classifications": [
+        "SPENT"
+      ],
+      "status": "EXHAUSTED (no clean pass survives)"
+    }
+  },
+  "families_with_return_series_for_meff": [
+    "auction_cycle(A1-A3)",
+    "commodity_roll",
+    "cot(C1-C3)",
+    "credit_gate(G)",
+    "crowding_downside_rotation",
+    "edge_probe_scripts",
+    "etf_basis(B)",
+    "etf_convergence_share_class_liquidity",
+    "etf_hybrids(E1-E5)",
+    "fundamentals(F1-F3)",
+    "fx_carry_vol(F2,F3 vs F1)",
+    "fx_session_screen",
+    "insider(N1-N4)",
+    "intraday(I1-I4)",
+    "iv_changes(V1-V3)",
+    "letf_rebalancing(L1-L2)",
+    "macro_surprise(M1,M2)",
+    "mbs_convexity",
+    "momentum_construction",
+    "momentum_verification_lab",
+    "multiasset(17-sleeve inclusion + 5-sleeve holdout)",
+    "options_signals(H1-H4)",
+    "overlay_control",
+    "pead_attack",
+    "pead_portfolio(B1-B5)",
+    "policy_trend(P1)",
+    "putwrite(P1-P3)",
+    "rebalancing(R1-R3)",
+    "residual_momentum",
+    "return_search",
+    "sector_month_end",
+    "structural_frontier(C: TLT put insurance)",
+    "survivor_hybrid(H1-H4)",
+    "tsy_month_end(M)",
+    "vol_managed_momentum",
+    "vrp_putwrite(PW)"
+  ],
+  "families_without_return_series": [
+    "credit_lead",
+    "edge_graveyard_osap_meta",
+    "fx_hedge_rebal",
+    "fx_news(F1,F2)",
+    "index_option_breadth",
+    "japan_us_flow(J1)",
+    "momentum_gold_fund_designs",
+    "multiasset/crypto(2 candidates)",
+    "pead_2004_2014",
+    "pead_production_bot_live",
+    "pead_production_history",
+    "pead_streak(S1-S2)",
+    "reversal_research_20260921",
+    "sleeve_blend_higher_sharpe",
+    "structural_frontier(A: Treasury term premium)",
+    "structural_frontier(B: HY credit carry)"
+  ],
+  "meff_within_family": [
+    {
+      "m": 3,
+      "cheverud": 2.4,
+      "nyholt": 2.0,
+      "li_ji": 3.0,
+      "family_id": "auction_cycle(A1-A3)",
+      "series": [
+        "auction_cycle/A1_dev",
+        "auction_cycle/A2_dev",
+        "auction_cycle/A3_dev"
+      ],
+      "diagnostics": {
+        "n_series": 3,
+        "n_pairs": 3,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 2,
+      "cheverud": 2.0,
+      "nyholt": 2.0,
+      "li_ji": 2.0,
+      "family_id": "commodity_roll",
+      "series": [
+        "commodity_roll/dev",
+        "commodity_roll/validation"
+      ],
+      "diagnostics": {
+        "n_series": 2,
+        "n_pairs": 1,
+        "n_low_overlap_pairs": 1,
+        "low_overlap_pairs_sample": [
+          [
+            "commodity_roll/dev",
+            "commodity_roll/validation",
+            0
+          ]
+        ],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 3,
+      "cheverud": 2.53,
+      "nyholt": 2.12,
+      "li_ji": 3.0,
+      "family_id": "cot(C1-C3)",
+      "series": [
+        "cot/C1",
+        "cot/C2",
+        "cot/C3"
+      ],
+      "diagnostics": {
+        "n_series": 3,
+        "n_pairs": 3,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 4,
+      "cheverud": 3.46,
+      "nyholt": 2.55,
+      "li_ji": 4.0,
+      "family_id": "crowding_downside_rotation",
+      "series": [
+        "crowding_unwind/base",
+        "crowding_unwind/positioning_only",
+        "downside_rotation/primary",
+        "downside_rotation/equal_weight"
+      ],
+      "diagnostics": {
+        "n_series": 4,
+        "n_pairs": 6,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 3,
+      "cheverud": 2.99,
+      "nyholt": 2.89,
+      "li_ji": 3.0,
+      "family_id": "etf_convergence_share_class_liquidity",
+      "series": [
+        "etf_convergence/SPY_QQQ",
+        "etf_convergence/GLD_SLV",
+        "etf_convergence/LQD_IEF"
+      ],
+      "diagnostics": {
+        "n_series": 3,
+        "n_pairs": 3,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 9,
+      "cheverud": 5.93,
+      "nyholt": 2.84,
+      "li_ji": 4.0,
+      "family_id": "etf_hybrids(E1-E5)",
+      "series": [
+        "etf_hybrids/dev/E1",
+        "etf_hybrids/dev/E2",
+        "etf_hybrids/dev/E3",
+        "etf_hybrids/dev/E4",
+        "etf_hybrids/dev/E5",
+        "etf_hybrids/dev/B",
+        "etf_hybrids/val/E1",
+        "etf_hybrids/val/E2",
+        "etf_hybrids/val/B"
+      ],
+      "diagnostics": {
+        "n_series": 9,
+        "n_pairs": 36,
+        "n_low_overlap_pairs": 18,
+        "low_overlap_pairs_sample": [
+          [
+            "etf_hybrids/dev/E1",
+            "etf_hybrids/val/E1",
+            0
+          ],
+          [
+            "etf_hybrids/dev/E1",
+            "etf_hybrids/val/E2",
+            0
+          ],
+          [
+            "etf_hybrids/dev/E1",
+            "etf_hybrids/val/B",
+            0
+          ],
+          [
+            "etf_hybrids/dev/E2",
+            "etf_hybrids/val/E1",
+            0
+          ],
+          [
+            "etf_hybrids/dev/E2",
+            "etf_hybrids/val/E2",
+            0
+          ],
+          [
+            "etf_hybrids/dev/E2",
+            "etf_hybrids/val/B",
+            0
+          ],
+          [
+            "etf_hybrids/dev/E3",
+            "etf_hybrids/val/E1",
+            0
+          ],
+          [
+            "etf_hybrids/dev/E3",
+            "etf_hybrids/val/E2",
+            0
+          ],
+          [
+            "etf_hybrids/dev/E3",
+            "etf_hybrids/val/B",
+            0
+          ],
+          [
+            "etf_hybrids/dev/E4",
+            "etf_hybrids/val/E1",
+            0
+          ]
+        ],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 3,
+      "cheverud": 2.34,
+      "nyholt": 1.91,
+      "li_ji": 2.0,
+      "family_id": "fundamentals(F1-F3)",
+      "series": [
+        "fundamentals/F1",
+        "fundamentals/F2",
+        "fundamentals/F3"
+      ],
+      "diagnostics": {
+        "n_series": 3,
+        "n_pairs": 3,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 3,
+      "cheverud": 1.22,
+      "nyholt": 1.11,
+      "li_ji": 2.0,
+      "family_id": "fx_carry_vol(F2,F3 vs F1)",
+      "series": [
+        "fx_carry_vol/F1",
+        "fx_carry_vol/F2",
+        "fx_carry_vol/F3"
+      ],
+      "diagnostics": {
+        "n_series": 3,
+        "n_pairs": 3,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 3,
+      "cheverud": 3.0,
+      "nyholt": 2.9,
+      "li_ji": 3.0,
+      "family_id": "fx_session_screen",
+      "series": [
+        "fx_session/london_fix_reversal",
+        "fx_session/london_reversal",
+        "fx_session/new_york_continuation"
+      ],
+      "diagnostics": {
+        "n_series": 3,
+        "n_pairs": 3,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 6,
+      "cheverud": 3.81,
+      "nyholt": 2.12,
+      "li_ji": 4.0,
+      "family_id": "insider(N1-N4)",
+      "series": [
+        "insider/N1_dev",
+        "insider/N2_dev",
+        "insider/N3_dev",
+        "insider/N4_dev",
+        "insider/N3_val",
+        "insider/N4_val"
+      ],
+      "diagnostics": {
+        "n_series": 6,
+        "n_pairs": 15,
+        "n_low_overlap_pairs": 8,
+        "low_overlap_pairs_sample": [
+          [
+            "insider/N1_dev",
+            "insider/N3_val",
+            0
+          ],
+          [
+            "insider/N1_dev",
+            "insider/N4_val",
+            0
+          ],
+          [
+            "insider/N2_dev",
+            "insider/N3_val",
+            0
+          ],
+          [
+            "insider/N2_dev",
+            "insider/N4_val",
+            0
+          ],
+          [
+            "insider/N3_dev",
+            "insider/N3_val",
+            0
+          ],
+          [
+            "insider/N3_dev",
+            "insider/N4_val",
+            0
+          ],
+          [
+            "insider/N4_dev",
+            "insider/N3_val",
+            0
+          ],
+          [
+            "insider/N4_dev",
+            "insider/N4_val",
+            0
+          ]
+        ],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 5,
+      "cheverud": 4.11,
+      "nyholt": 3.24,
+      "li_ji": 4.0,
+      "family_id": "intraday(I1-I4)",
+      "series": [
+        "intraday/I1_dev",
+        "intraday/I2_dev",
+        "intraday/I3_dev",
+        "intraday/I4_dev",
+        "intraday/I4_val"
+      ],
+      "diagnostics": {
+        "n_series": 5,
+        "n_pairs": 10,
+        "n_low_overlap_pairs": 4,
+        "low_overlap_pairs_sample": [
+          [
+            "intraday/I1_dev",
+            "intraday/I4_val",
+            0
+          ],
+          [
+            "intraday/I2_dev",
+            "intraday/I4_val",
+            0
+          ],
+          [
+            "intraday/I3_dev",
+            "intraday/I4_val",
+            0
+          ],
+          [
+            "intraday/I4_dev",
+            "intraday/I4_val",
+            0
+          ]
+        ],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 3,
+      "cheverud": 2.51,
+      "nyholt": 2.1,
+      "li_ji": 3.0,
+      "family_id": "iv_changes(V1-V3)",
+      "series": [
+        "iv_changes/V1",
+        "iv_changes/V2",
+        "iv_changes/V3"
+      ],
+      "diagnostics": {
+        "n_series": 3,
+        "n_pairs": 3,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 2,
+      "cheverud": 1.05,
+      "nyholt": 1.02,
+      "li_ji": 2.0,
+      "family_id": "letf_rebalancing(L1-L2)",
+      "series": [
+        "letf_rebalancing/L1_dev",
+        "letf_rebalancing/L2_dev"
+      ],
+      "diagnostics": {
+        "n_series": 2,
+        "n_pairs": 1,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 4,
+      "cheverud": 3.46,
+      "nyholt": 2.83,
+      "li_ji": 3.0,
+      "family_id": "macro_surprise(M1,M2)",
+      "series": [
+        "macro_surprise/M1_dev",
+        "macro_surprise/M2_dev",
+        "macro_surprise/C_EW_dev",
+        "macro_surprise/C_MOM_dev"
+      ],
+      "diagnostics": {
+        "n_series": 4,
+        "n_pairs": 6,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 4,
+      "cheverud": 2.0,
+      "nyholt": 1.56,
+      "li_ji": 2.0,
+      "family_id": "momentum_construction",
+      "series": [
+        "momentum_construction/C1",
+        "momentum_construction/C4",
+        "momentum_construction/C7",
+        "momentum_construction/C9"
+      ],
+      "diagnostics": {
+        "n_series": 4,
+        "n_pairs": 6,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 4,
+      "cheverud": 3.76,
+      "nyholt": 3.08,
+      "li_ji": 4.0,
+      "family_id": "multiasset(17-sleeve inclusion + 5-sleeve holdout)",
+      "series": [
+        "multiasset/tsmom",
+        "multiasset/fx_carry",
+        "multiasset/xs_momentum",
+        "multiasset/bond_carry"
+      ],
+      "diagnostics": {
+        "n_series": 4,
+        "n_pairs": 6,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 4,
+      "cheverud": 3.31,
+      "nyholt": 2.56,
+      "li_ji": 3.0,
+      "family_id": "options_signals(H1-H4)",
+      "series": [
+        "options_signals/H1",
+        "options_signals/H2",
+        "options_signals/H3",
+        "options_signals/H4"
+      ],
+      "diagnostics": {
+        "n_series": 4,
+        "n_pairs": 6,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 3,
+      "cheverud": 1.88,
+      "nyholt": 1.51,
+      "li_ji": 2.0,
+      "family_id": "overlay_control",
+      "series": [
+        "overlay_control/SPY_O0_buyhold",
+        "overlay_control/SPY_O1_owntrend",
+        "overlay_control/SPMO_O0_buyhold"
+      ],
+      "diagnostics": {
+        "n_series": 3,
+        "n_pairs": 3,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 4,
+      "cheverud": 2.81,
+      "nyholt": 2.16,
+      "li_ji": 3.0,
+      "family_id": "pead_portfolio(B1-B5)",
+      "series": [
+        "pead_portfolio/PEAD",
+        "pead_portfolio/B1",
+        "pead_portfolio/B2",
+        "pead_portfolio/B3"
+      ],
+      "diagnostics": {
+        "n_series": 4,
+        "n_pairs": 6,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 2,
+      "cheverud": 2.0,
+      "nyholt": 1.98,
+      "li_ji": 2.0,
+      "family_id": "policy_trend(P1)",
+      "series": [
+        "policy_trend/P1",
+        "policy_trend/C_MOM"
+      ],
+      "diagnostics": {
+        "n_series": 2,
+        "n_pairs": 1,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 3,
+      "cheverud": 1.52,
+      "nyholt": 1.28,
+      "li_ji": 2.0,
+      "family_id": "putwrite(P1-P3)",
+      "series": [
+        "putwrite/P1_dev",
+        "putwrite/P2_dev",
+        "putwrite/P3_dev"
+      ],
+      "diagnostics": {
+        "n_series": 3,
+        "n_pairs": 3,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 5,
+      "cheverud": 4.16,
+      "nyholt": 2.86,
+      "li_ji": 4.0,
+      "family_id": "rebalancing(R1-R3)",
+      "series": [
+        "rebalancing/R1_dev",
+        "rebalancing/R2_dev",
+        "rebalancing/R3_dev",
+        "rebalancing/R2_val",
+        "rebalancing/R3_val"
+      ],
+      "diagnostics": {
+        "n_series": 5,
+        "n_pairs": 10,
+        "n_low_overlap_pairs": 6,
+        "low_overlap_pairs_sample": [
+          [
+            "rebalancing/R1_dev",
+            "rebalancing/R2_val",
+            0
+          ],
+          [
+            "rebalancing/R1_dev",
+            "rebalancing/R3_val",
+            0
+          ],
+          [
+            "rebalancing/R2_dev",
+            "rebalancing/R2_val",
+            0
+          ],
+          [
+            "rebalancing/R2_dev",
+            "rebalancing/R3_val",
+            0
+          ],
+          [
+            "rebalancing/R3_dev",
+            "rebalancing/R2_val",
+            0
+          ],
+          [
+            "rebalancing/R3_dev",
+            "rebalancing/R3_val",
+            0
+          ]
+        ],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 3,
+      "cheverud": 1.32,
+      "nyholt": 1.17,
+      "li_ji": 2.0,
+      "family_id": "residual_momentum",
+      "series": [
+        "residual_momentum/R1",
+        "residual_momentum/R2",
+        "residual_momentum/R4"
+      ],
+      "diagnostics": {
+        "n_series": 3,
+        "n_pairs": 3,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 7,
+      "cheverud": 5.55,
+      "nyholt": 4.15,
+      "li_ji": 5.0,
+      "family_id": "return_search",
+      "series": [
+        "return_search/stocks_momentum",
+        "return_search/stocks_trend",
+        "return_search/stocks_breakout",
+        "return_search/etf_momentum",
+        "return_search/etf_trend",
+        "return_search/crypto_trend",
+        "return_search/vol_contango"
+      ],
+      "diagnostics": {
+        "n_series": 7,
+        "n_pairs": 21,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 4,
+      "cheverud": 2.17,
+      "nyholt": 1.66,
+      "li_ji": 2.0,
+      "family_id": "survivor_hybrid(H1-H4)",
+      "series": [
+        "survivor_hybrid/H1",
+        "survivor_hybrid/H2",
+        "survivor_hybrid/H3",
+        "survivor_hybrid/H4"
+      ],
+      "diagnostics": {
+        "n_series": 4,
+        "n_pairs": 6,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 2,
+      "cheverud": 2.0,
+      "nyholt": 2.0,
+      "li_ji": 2.0,
+      "family_id": "tsy_month_end(M)",
+      "series": [
+        "tsy_month_end/dev",
+        "tsy_month_end/validation"
+      ],
+      "diagnostics": {
+        "n_series": 2,
+        "n_pairs": 1,
+        "n_low_overlap_pairs": 1,
+        "low_overlap_pairs_sample": [
+          [
+            "tsy_month_end/dev",
+            "tsy_month_end/validation",
+            0
+          ]
+        ],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    },
+    {
+      "m": 4,
+      "cheverud": 1.63,
+      "nyholt": 1.34,
+      "li_ji": 2.0,
+      "family_id": "vol_managed_momentum",
+      "series": [
+        "vol_managed_momentum/V1",
+        "vol_managed_momentum/V2",
+        "vol_managed_momentum/V5",
+        "vol_managed_momentum/baseline"
+      ],
+      "diagnostics": {
+        "n_series": 4,
+        "n_pairs": 6,
+        "n_low_overlap_pairs": 0,
+        "low_overlap_pairs_sample": [],
+        "n_negative_eigenvalues_clipped": 0,
+        "clipped_eigenvalue_magnitude": 0.0
+      }
+    }
+  ],
+  "meff_project_wide": {
+    "m": 36,
+    "cheverud": 33.9,
+    "nyholt": 19.12,
+    "li_ji": 25.0,
+    "diagnostics": {
+      "n_series": 36,
+      "n_pairs": 630,
+      "n_low_overlap_pairs": 110,
+      "low_overlap_pairs_sample": [
+        [
+          "auction_cycle/A1_dev",
+          "pead_attack/real_book",
+          0
+        ],
+        [
+          "auction_cycle/A1_dev",
+          "pead_portfolio/PEAD",
+          0
+        ],
+        [
+          "auction_cycle/A1_dev",
+          "rebalancing/R1_dev",
+          0
+        ],
+        [
+          "auction_cycle/A1_dev",
+          "sector_month_end/dev",
+          0
+        ],
+        [
+          "auction_cycle/A1_dev",
+          "tsy_month_end/dev",
+          0
+        ],
+        [
+          "auction_cycle/A1_dev",
+          "fundamentals/F1",
+          0
+        ],
+        [
+          "auction_cycle/A1_dev",
+          "etf_hybrids/dev/E1",
+          0
+        ],
+        [
+          "commodity_roll/dev",
+          "pead_attack/real_book",
+          0
+        ],
+        [
+          "commodity_roll/dev",
+          "pead_portfolio/PEAD",
+          0
+        ],
+        [
+          "commodity_roll/dev",
+          "return_search/stocks_momentum",
+          0
+        ]
+      ],
+      "n_negative_eigenvalues_clipped": 8,
+      "clipped_eigenvalue_magnitude": 3.5475135876972224
+    },
+    "families_represented": [
+      "auction_cycle(A1-A3)",
+      "commodity_roll",
+      "cot(C1-C3)",
+      "credit_gate(G)",
+      "crowding_downside_rotation",
+      "edge_probe_scripts",
+      "etf_basis(B)",
+      "etf_convergence_share_class_liquidity",
+      "etf_hybrids(E1-E5)",
+      "fundamentals(F1-F3)",
+      "fx_carry_vol(F2,F3 vs F1)",
+      "fx_session_screen",
+      "insider(N1-N4)",
+      "intraday(I1-I4)",
+      "iv_changes(V1-V3)",
+      "letf_rebalancing(L1-L2)",
+      "macro_surprise(M1,M2)",
+      "mbs_convexity",
+      "momentum_construction",
+      "momentum_verification_lab",
+      "multiasset(17-sleeve inclusion + 5-sleeve holdout)",
+      "options_signals(H1-H4)",
+      "overlay_control",
+      "pead_attack",
+      "pead_portfolio(B1-B5)",
+      "policy_trend(P1)",
+      "putwrite(P1-P3)",
+      "rebalancing(R1-R3)",
+      "residual_momentum",
+      "return_search",
+      "sector_month_end",
+      "structural_frontier(C: TLT put insurance)",
+      "survivor_hybrid(H1-H4)",
+      "tsy_month_end(M)",
+      "vol_managed_momentum",
+      "vrp_putwrite(PW)"
+    ],
+    "n_families_with_series": 36
+  },
+  "series_load_failures": [],
+  "shots_before_result": [
+    {
+      "key": "tsy_month_end",
+      "family_id": "tsy_month_end(M)",
+      "information_family": "calendar/flow",
+      "registered_at": "2026-09-23T22:31:39-0700",
+      "headline_p": 0.006,
+      "p_description": "dev shift-null p (0.006); validation missed (0.69 vs 0.75 gate; shift p=0.005, bootstrap p=0.004)",
+      "n_info_family_trials_before": 9,
+      "n_info_family_families_before": 3,
+      "n_project_trials_before": 260,
+      "n_project_families_before": 45,
+      "adjustments": {
+        "bonferroni_info_family_n_candidates": 0.06,
+        "sidak_info_family_n_candidates": 0.058405649789787795,
+        "bonferroni_project_n_candidates": 1.0,
+        "sidak_project_n_candidates": 0.7921039069975887,
+        "holm_first_step_info_family": 0.06,
+        "holm_first_step_project": 1.0,
+        "sidak_using_project_M_eff": 0.1396808106088715
+      }
+    },
+    {
+      "key": "commodity_roll",
+      "family_id": "commodity_roll",
+      "information_family": "commodity roll",
+      "registered_at": "2026-09-23T23:16:05-0700",
+      "headline_p": 0.0064,
+      "p_description": "dev bootstrap p (0.0064); validation FAILED (0.21 vs 0.75, p=0.24)",
+      "n_info_family_trials_before": 0,
+      "n_info_family_families_before": 0,
+      "n_project_trials_before": 261,
+      "n_project_families_before": 46,
+      "adjustments": {
+        "bonferroni_info_family_n_candidates": 0.0128,
+        "sidak_info_family_n_candidates": 0.012759039999999944,
+        "bonferroni_project_n_candidates": 1.0,
+        "sidak_project_n_candidates": 0.8152236921315876,
+        "holm_first_step_info_family": 0.0064,
+        "holm_first_step_project": 1.0,
+        "sidak_using_project_M_eff": 0.14829426653897715
+      }
+    },
+    {
+      "key": "multiasset_sleeves",
+      "family_id": "multiasset(17-sleeve inclusion + 5-sleeve holdout)",
+      "information_family": "price momentum",
+      "registered_at": "2026-09-18T11:52:15-0700",
+      "headline_p": null,
+      "p_description": "no null/p-value in the registered gate (flat Sharpe>=0.30 inclusion bar, HAC-t>=2.0 at holdout); 5/17 dev-passed, holdout FAILED",
+      "n_info_family_trials_before": 47,
+      "n_info_family_families_before": 1,
+      "n_project_trials_before": 68,
+      "n_project_families_before": 4,
+      "adjustments": {}
+    },
+    {
+      "key": "insider_N3_N4",
+      "family_id": "insider(N1-N4)",
+      "information_family": "insider transactions",
+      "registered_at": "2026-09-19T01:43:31-0700",
+      "headline_p": null,
+      "p_description": "no dev null in the pre-amendment OLD_ABS_NO_NULL gate; N3/N4 dev Sharpe 0.77/0.51, both FAILED validation (0.49/0.51 vs 0.75)",
+      "n_info_family_trials_before": 0,
+      "n_info_family_families_before": 0,
+      "n_project_trials_before": 126,
+      "n_project_families_before": 14,
+      "adjustments": {}
+    },
+    {
+      "key": "rebalancing_R2_R3",
+      "family_id": "rebalancing(R1-R3)",
+      "information_family": "calendar/flow",
+      "registered_at": "2026-09-19T03:17:37-0700",
+      "headline_p": null,
+      "p_description": "no dev null (pre-amendment gate); R2/R3 dev Sharpe 0.74/0.82, both FAILED validation (0.63/0.45 vs 0.75)",
+      "n_info_family_trials_before": 4,
+      "n_info_family_families_before": 1,
+      "n_project_trials_before": 136,
+      "n_project_families_before": 16,
+      "adjustments": {}
+    },
+    {
+      "key": "pead",
+      "family_id": "pead_attack",
+      "information_family": "earnings events",
+      "registered_at": "2026-09-23T05:06:57-0700",
+      "headline_p": 0.113,
+      "p_description": "pead_attack P1 primary: real production book vs 10,000 within-date permutations of calibrated probabilities (Kelly size, SUE-sign direction kept), one-sided p on marked excess Sharpe. The registered pead_2004_2014 HAC-t replication (2026-09-17) is the family's earlier, separate registration and is also reported in the family table.",
+      "n_info_family_trials_before": 31,
+      "n_info_family_families_before": 6,
+      "n_project_trials_before": 241,
+      "n_project_families_before": 33,
+      "adjustments": {
+        "bonferroni_info_family_n_candidates": 1.0,
+        "sidak_info_family_n_candidates": 0.9895022179089777,
+        "bonferroni_project_n_candidates": 1.0,
+        "sidak_project_n_candidates": 0.9999999999998783,
+        "holm_first_step_info_family": 1.0,
+        "holm_first_step_project": 1.0,
+        "sidak_using_project_M_eff": 0.9501011547020445
+      }
+    }
+  ]
+}

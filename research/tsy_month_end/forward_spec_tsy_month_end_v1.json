@@ -1,0 +1,11 @@
+{
+  "strategy_id": "tsy_month_end_v1",
+  "status": "forward observation only; failed validation Sharpe gate (0.69 vs 0.75) with shift-null p 0.005; no capital",
+  "rule": "Hold TLT from the close of the 4th-to-last NYSE session of each month to the close of the last session; T-bills otherwise.",
+  "decision_time": "any time before the close of the 4th-to-last session of the month (calendar is known in advance)",
+  "execution": "TLT official closing price",
+  "costs_bps_per_side": {"base": 2, "stress": 6},
+  "control": "constant TLT weight equal to realised average exposure",
+  "frozen_code": {"core": "research/tsy_month_end/core.py", "evaluate": "research/tsy_month_end/evaluate.py"},
+  "evaluation": {"instrument": "TLT", "benchmark": "exposure-matched TLT"}
+}

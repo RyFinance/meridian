@@ -1,0 +1,60 @@
+{
+  "title": "Unified gate proposal (Workstream C1, null-world calibration) -- NOT REGISTERED",
+  "status": "proposal only; has no force until a director registers it as a protocol amendment",
+  "written": "2026-09-24",
+  "why": "reports/null_lab2/gate_table.csv and calibration.csv show the registry currently runs at least four different dev-gate designs (flat 0.5 absolute Sharpe with no null; 1.8-2.4/sqrt(T) active Sharpe gated on a bootstrap p; the same gated on a shift-null; the same gated on a permutation-null; and two families -- credit_lead, index_option_breadth -- that compute P(pass|null) but do not gate on it at all). Their calibrated false-pass rates under a true-zero-net world range from under 1% to over 30% depending on family size and null type (see reports/null_lab2/calibration.csv). A single, explicitly mean-zero-calibrated gate removes that variation.",
+  "principles": [
+    {
+      "id": "P1_null_must_be_mean_zero_under_H0",
+      "statement": "The reference null distribution used to form the development and validation p-value must have mean zero under the hypothesis actually being tested ('this book has no net edge'), not merely a distribution the observed result happens to beat.",
+      "rationale": "sector_month_end's shift-null has its own mean at active Sharpe ~ -0.96 because any random 3-day window in that book pays similar turnover cost; a p<0.05 there mostly shows 'beats a bad random benchmark', not 'is profitable'. fx_hedge_rebal's permutation null (~ -0.27) and fx_news F1's (~ -4.08 bp) show the same pattern to varying degrees. A mean-centred bootstrap (mean removed from the SAME data before resampling) is mean-zero by construction and does not have this problem; a shift or permutation null must be explicitly re-centred to zero (e.g. by comparing the observed statistic to shift-null-quantile MINUS shift-null-mean, or by reporting and correcting for the reference mean) before its p-value is used as a gate.",
+      "implementation": "For any shift/permutation null, report and publish the null's own empirical mean and sd alongside its p-value. If |null mean| exceeds 0.10 annualised Sharpe, the family must either re-centre the test or use mean-centred bootstrap instead before the p-value can gate anything."
+    },
+    {
+      "id": "P2_bonferroni_within_workstream",
+      "statement": "The p-value threshold is alpha = 0.05 / k, where k is the number of candidates registered together in the SAME workstream/batch -- not just within one family's own PLAN.md. A workstream that registers several economically distinct families in one sitting (as structural_frontier's A/B/C already does) treats them as one batch for the purpose of this correction.",
+      "rationale": "The registry already does this correctly within a single multi-candidate family (options_signals k=4, alpha=0.0125; structural_frontier k=3, alpha=0.01667) but not always across sibling families registered on the same day under the same workstream (credit_lead and index_option_breadth, registered minutes apart, gate development on a raw Sharpe threshold with NO p-value requirement at all, while japan_us_flow, registered the same day, does gate on p<0.05). This proposal makes the unit of correction the workstream's batch, decided and written down BEFORE any return is computed, exactly as structural_frontier already does for its own three candidates."
+    },
+    {
+      "id": "P3_sharpe_gate_1p8_over_sqrt_T",
+      "statement": "Development gate: net-of-base-cost active (or, for a genuinely market-neutral spread with no natural control, absolute) Sharpe >= 1.8/sqrt(T) per candidate registered alone, or 2.4/sqrt(T) per member of a family of k>=4 registered together, T in development-window years. Stress-cost mean > 0 is required in addition, not instead.",
+      "rationale": "This is already the project's own post-2026-09-23 standard (research/PROTOCOL_AMENDMENT_2026-09-23.md item A1), and reports/null_lab2/calibration.csv confirms it holds the zero-net-mean false-dev-pass rate to single digits for most T in this registry's actual range (4.5-12 years), versus 10-19%+ for the old flat-0.5 gate. This proposal keeps it as-is rather than re-deriving it."
+    },
+    {
+      "id": "P4_validation_power_target",
+      "statement": "A family's registered dev+validation window pair should have at least 50% joint power (P(pass dev AND pass validation)) to detect a true net Sharpe of 0.7, the level the registry itself already uses as its informal 'PEAD benchmark' bar for a result worth acting on. Any family whose windows cannot reach that power should say so at registration time and treat a validation FAIL as inconclusive, not as evidence of no edge, unless power is reported.",
+      "rationale": "reports/null_lab2/calibration.csv shows every family in this registry with a simulated joint dev+validation stage has under 35% power at true Sharpe 0.7 (range ~16%-33% across 12 families with both windows simulated), i.e. a real, tradable 0.7-Sharpe edge is MORE LIKELY to be missed than caught by the registry's current window lengths. This is a structural property of using two independent short windows in series, not a one-off. Options where windows cannot be lengthened (data availability) should register the resulting low power up front rather than let the eventual FAIL be read as strong evidence of no edge.",
+      "implementation": "Compute power at true Sharpe 0.7 using research.null_lab2.calibrate (or research.null_lab.api for engines it already covers) BEFORE registering the plan, using the same window lengths, k, and cost model the plan will use. Publish it in the PLAN.md next to the gate."
+    },
+    {
+      "id": "P5_report_P_pass_null_from_same_null_as_p_value",
+      "statement": "Every result reports P(pass | null) using the EXACT SAME null construction (same null type, same reference mean, same block length / permutation scheme, same seed convention) that produced its gating p-value -- not a different, more favourable null computed only for reporting.",
+      "rationale": "credit_lead and index_option_breadth already compute and report P(pass|null) via a 5,000-world shift null, but their registered PASS/FAIL criterion does not use that null's p-value at all (Sharpe + stress + beat-two-controls only). This creates two different pictures of the same result: the number that gates it, and the number that calibrates it, and they can disagree. This proposal requires them to be the same computation, reported together."
+    }
+  ],
+  "concrete_gate_spec_for_future_registrations": {
+    "development": {
+      "sharpe_threshold": "1.8/sqrt(T_dev_years) per candidate; 2.4/sqrt(T_dev_years) per member of a k>=4 family",
+      "sharpe_kind": "active vs an exposure-matched control/benchmark for any long- or short-biased book; absolute only for a book that is dollar- and beta-neutral by construction (e.g. a fixed long/short spread)",
+      "stress_leg": "stress-cost annualised mean > 0, required",
+      "null_leg": "REQUIRED for every family, no exceptions: one-sided p < 0.05/k against a null built per principle P1 (mean-zero under H0)",
+      "reporting": "P(pass | null) with Monte-Carlo SE, computed from the SAME null as the p-value (principle P5)"
+    },
+    "validation": {
+      "sharpe_threshold": "net Sharpe >= 0.75, same kind (active/absolute) as development",
+      "stress_leg": "stress-cost annualised mean > 0, required",
+      "null_leg": "one-sided p < 0.05/k against the same null family as development (may re-estimate the null's own dispersion on the validation window, but not its type or centring convention)",
+      "power_requirement": "principle P4: >=50% joint dev+validation power at true Sharpe 0.7, reported at registration"
+    },
+    "not_covered_by_this_proposal": [
+      "sleeve-inclusion / best-of-N screens for a combined book (e.g. multiasset's 17-sleeve, 0.30-Sharpe, no-null inclusion rule). These need a SEPARATE, explicit multiple-testing correction (this workstream's calibration shows a 0.30 flat bar with no null clears ~87% of pure-noise candidates on these parameters) before this proposal's machinery is meaningful for them.",
+      "t-statistic-based gates (HAC t >= 2.0) used by the multi-asset hold-out and the original PEAD 2004-2014 replication -- these are a different but reasonable convention and are out of scope here."
+    ]
+  },
+  "evidence": {
+    "gate_table": "reports/null_lab2/gate_table.csv",
+    "calibration": "reports/null_lab2/calibration.csv",
+    "flags": "reports/null_lab2/flags.csv",
+    "multiple_testing": "reports/null_lab2/multiple_testing.json"
+  }
+}

@@ -1,0 +1,6 @@
+parametrisation,rho_bet,n_eff,sharpe_overstatement_vs_truth
+truth (MC sd of covariance IC),0.02493,39.343454,1.0
+"formula, rho_resid = style factor share, rho_signal = 0.25 (correct semantics)",0.025,39.234919,0.99862
+"formula, rho_resid = total factor share (sector+style), rho_signal = 0.25 (conservative)",0.055,18.02695,0.676901
+"formula, rho_resid = MEASURED avg pairwise corr of market-neutral residuals, rho_signal=0.25",1.5e-05,1943.138476,7.027739
+brief's literal N/(1+(N-1) rho_pair) (rho_signal = 1),5.9e-05,1790.428719,6.745937

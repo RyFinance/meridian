@@ -1,0 +1,10 @@
+{
+ "dataset_version": "core_premia_rates_fx_eq_acq_v1",
+ "frozen_at_utc": "2026-09-26T07:53:29.989287+00:00",
+ "manifest_sha256": "8b5e6205cf5fe8084914913e7d278103c302887d0bf3a44aa6c063452ff67e28",
+ "n_files": 297,
+ "returncode": 0,
+ "spec": "data/core_premia/rates_fx_eq/snapshot_spec_core_premia_rates_fx_eq_acq_v1.json",
+ "stderr": "",
+ "store": "/Users/rytty/CCP/quant_v7/data/core_premia/snapshot_store_rates_fx_eq"
+}

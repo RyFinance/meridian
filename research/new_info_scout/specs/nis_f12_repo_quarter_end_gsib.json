@@ -1,0 +1,58 @@
+{
+ "name": "nis_f12_repo_quarter_end_gsib",
+ "description": "Quarter-end G-SIB window dressing: repo/SOFR spikes and the bill/2y reaction around the 4 quarter-ends a year, event study on one instrument.",
+ "assumptions": [
+  "4 events/yr, one instrument, clusters of 1 (icc irrelevant)",
+  "SOFR/TGCR 2018-04+ (8.4y); GCF repo 2005+ (21y) as the long scenario",
+  "car_sd 0.4% (2y note, 5 days), gross 5 bp, cost 1 bp"
+ ],
+ "design": "event_study",
+ "params": {
+  "events_per_year": 4,
+  "car_sd": 0.004,
+  "hold_days": 5,
+  "icc": 0.0,
+  "concurrency": {
+   "model": "clusters",
+   "mean_size": 1
+  },
+  "portfolio_autocorr": 0.0,
+  "mean_car": 0.0005,
+  "cost_per_event": 0.0001
+ },
+ "windows": {
+  "dev_years": 4.2,
+  "val_years": 4.2
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.05,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 2,
+   "floor": 0.3
+  }
+ },
+ "scenarios": [
+  {
+   "label": "GCF 2005+ (10.5+10.5y)",
+   "windows": {
+    "dev_years": 10.5,
+    "val_years": 10.5
+   }
+  },
+  {
+   "label": "gross 20 bp",
+   "params": {
+    "mean_car": 0.002
+   }
+  }
+ ]
+}

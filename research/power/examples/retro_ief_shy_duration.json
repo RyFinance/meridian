@@ -1,0 +1,34 @@
+{
+ "name": "retro_ief_shy_duration",
+ "description": "structural_frontier A: IEF minus SHY, fully funded, daily active spread (k=3 batch).",
+ "assumptions": [
+  "D = 0.97 from the family's own block-bootstrap null q95 0.468"
+ ],
+ "design": "timeseries",
+ "params": {
+  "periods_per_year": 252,
+  "autocorr": {
+   "model": "lrv",
+   "D": 0.97
+  }
+ },
+ "windows": {
+  "dev_years": 12.0,
+  "val_years": 11.7
+ },
+ "gates": {
+  "batch_k": 3,
+  "stress_drag_sr": 0.002,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  }
+ },
+ "power": {
+  "dev_estimate": 0.569
+ }
+}

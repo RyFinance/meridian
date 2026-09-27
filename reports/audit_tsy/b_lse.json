@@ -1,0 +1,107 @@
+{
+ "lse_sessions": 4948,
+ "lse_first": "2007-01-03",
+ "lse_last": "2026-09-02",
+ "close_diff_lse_lasttrade_vs_yf_official_bp": {
+  "all": {
+   "n": 4948,
+   "mean": 0.06822706676790888,
+   "median": 0.0,
+   "mad": 1.1263337577516186,
+   "p99_abs": 13.371693366196778,
+   "n_gt_25bp": 8
+  },
+  "last_session_of_month": {
+   "mean": 0.33878095311400375,
+   "mad": 1.6474647518244234
+  },
+  "fourth_to_last_session": {
+   "mean": -0.059541981476151855,
+   "mad": 1.0777656904953359
+  },
+  "other_sessions": {
+   "mean": 0.060698643668695276
+  },
+  "largest_abs": {
+   "2007-11-26": 33.5,
+   "2020-03-20": 28.2,
+   "2009-03-05": 27.6,
+   "2009-02-12": 27.6,
+   "2014-12-18": 26.6,
+   "2020-03-12": 26.0,
+   "2007-08-15": 25.5,
+   "2007-11-01": 25.3
+  }
+ },
+ "first_after_hours_bar_open_vs_yf_close_bp": {
+  "n": 128,
+  "mean": -0.010289613893320046,
+  "mad": 1.185190050929097
+ },
+ "dev_2007_2014": {
+  "missing_lse_sessions_filled_with_official": 0,
+  "official_gross": {
+   "active_sharpe": 0.923355200679371,
+   "active_ann": 0.04845204304119047
+  },
+  "official_base": {
+   "active_sharpe": 0.8327665044756388,
+   "active_ann": 0.04364727640762542
+  },
+  "official_window_bp": 51.15820440577717,
+  "lse_last_trade_gross": {
+   "active_sharpe": 0.9279832529472243,
+   "active_ann": 0.04867850360970435
+  },
+  "lse_last_trade_base": {
+   "active_sharpe": 0.8374175206327178,
+   "active_ann": 0.043873736976139305
+  },
+  "lse_last_trade_window_bp": 51.35434718128204,
+  "execution_window_mean_bp": {
+   "close_close": 51.15251059126641,
+   "open_close": 47.31541133031064,
+   "open_open": 42.93717927529348,
+   "close_open": 46.40475541851645
+  },
+  "execution_window_monthly_tstat": {
+   "close_close": 3.23430909934149,
+   "open_close": 3.2464296566825,
+   "open_open": 2.595445507433604,
+   "close_open": 2.609250676876041
+  }
+ },
+ "val_2015_2026": {
+  "missing_lse_sessions_filled_with_official": 0,
+  "official_gross": {
+   "active_sharpe": 0.7949793367666308,
+   "active_ann": 0.03711784356549873
+  },
+  "official_base": {
+   "active_sharpe": 0.6921969077912599,
+   "active_ann": 0.03230474670328864
+  },
+  "official_window_bp": 30.556556814502034,
+  "lse_last_trade_gross": {
+   "active_sharpe": 0.8162271625269499,
+   "active_ann": 0.037768520066911435
+  },
+  "lse_last_trade_base": {
+   "active_sharpe": 0.7125623287355477,
+   "active_ann": 0.032955423204701344
+  },
+  "lse_last_trade_window_bp": 31.097175686088356,
+  "execution_window_mean_bp": {
+   "close_close": 30.556556814502112,
+   "open_close": 23.066859819723998,
+   "open_open": 17.02574911264163,
+   "close_open": 24.752970598392658
+  },
+  "execution_window_monthly_tstat": {
+   "close_close": 2.899731052829305,
+   "open_close": 2.3273502811203888,
+   "open_open": 1.5403656818152596,
+   "close_open": 2.021162781019052
+  }
+ }
+}

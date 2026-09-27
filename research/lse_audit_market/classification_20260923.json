@@ -1,0 +1,62 @@
+{
+  "audit_date": "2026-09-23",
+  "method": "Cross-referenced research/RESEARCH_LEDGER_2026-09-23.md sections 1-5, plus grep -rl over research/ and reports/ for each family's dataset names, symbols and known signal families, plus today's own MCP probes (see reports/lse_audit_market/probe_results_20260923.json).",
+  "families": [
+    {
+      "family": "stocks",
+      "classification": "PARTIALLY USED",
+      "reason": "The current-S&P-500 subset (~500 of the vault's 3,982 symbols) has been exhaustively mined: momentum variants (rows 22-28), insider N1-N4 (18), fundamentals F1-F3 (19), PEAD (1-3), reversal (30), residual/vol-managed momentum (24-26) -- all SPENT or FAIL per the ledger, and survivorship-biased throughout since the vault holds current listings only. The vault's ~3,500 non-S&P names (mid/small caps like the CIEN test symbol used today), and the intraday extended-hours structure this audit newly confirmed (bar-start, extended-hours-inclusive even at 1m/30m, not just 1d), are essentially untouched.",
+      "best_untested_hypothesis": "Cross-sectional predictor built from the vault's own extended-hours-inclusive 1d/1m bars: the gap between a stock's official 9:30-16:00 ET session return and its full extended-session (vault) return on the same day, computed across the full non-S&P breadth, as a next-day continuation/reversal signal. This follows directly from the data mechanic this audit and data/lse_vault.py both document (the ORCL 2025-06-11 example: official close $176.38 vs vault close $189.75) and has not been tested as a cross-sectional signal in any ledger row.",
+      "evidence": ["research/RESEARCH_LEDGER_2026-09-23.md sections 2-3", "grep hits: research/momentum_*, research/insider, research/fundamentals, research/pead_2004_2014.py"]
+    },
+    {
+      "family": "options",
+      "classification": "PARTIALLY USED (further per-name work leans UNSUITABLE without new data)",
+      "reason": "7 signals (H1-H4 options_signals, V1-V3 iv_changes) on ~100 names using OPRA trade prints are SPENT and net-negative; the structural cause (no bid/ask, no open interest, prints only) is a known ceiling, not a sample-size problem, so scaling the same per-name features (O/S, IV spread, skew) to the other ~3,086 underlyings would not add new information. This session additionally confirmed that within the read-only MCP tool surface used here (get_history/api_get/search_instruments), option OHLCV cannot be pulled at all -- no per-contract OSI symbol is discoverable through those tools, and get_history has no dataset parameter to select the options family over the same-named stock/ETF. The direct vault REST API (data/lse_vault.py, used by reports/data_scout/REPORT.md) can reach it only via /export.",
+      "best_untested_hypothesis": "An aggregate (not per-name) breadth signal: the fraction of the full 3,186-underlying universe showing a same-day options-volume surge (e.g. volume > 3x its 20-day average), as a market-wide risk-on/off timing signal for a broad index, rather than for stock selection. This differs in kind from the already-SPENT per-name signals, uses only trade counts/volume (available without bid/ask or OI), and has literature support (aggregate option-volume/put-call measures predicting market-wide returns) that the ledger has not tested.",
+      "evidence": ["research/RESEARCH_LEDGER_2026-09-23.md row 6-7", "reports/data_scout/REPORT.md section 2", "this audit's api_get /api/options/underlyings and get_history probes"]
+    },
+    {
+      "family": "futures",
+      "classification": "PARTIALLY USED",
+      "reason": "ES/NQ 30-minute intraday timing (ledger row 11, intraday I1-I4) is SPENT. GC/SI (10.4-10.5 years of history from 2016) are flagged 'unused, low prior' in the ledger and remain genuinely untested. The other ~62 futures (mostly European rates/index contracts: FGBL, FESX, FDAX, FMEU, etc.) were confirmed today to mostly have under 1.5 years of history (several literally only since June 2026), making them UNSUITABLE for historical backtesting today -- they are forward-only candidates at best.",
+      "best_untested_hypothesis": "Metals session-handoff dynamics in GC/SI: whether the Asian-session (Shanghai/Tokyo) portion of the nearly-continuous Globex session (confirmed continuous by this audit's ES.F Sunday-reopen probe) leads or lags the US-session portion on the same trading day, using only the futures' own 1-minute bars -- a genuinely untested, data-feasible microstructure question distinct from the SPENT ES/NQ 30m timing work and from the ETF-based SPMO/GLD and multiasset/crypto families.",
+      "evidence": ["research/RESEARCH_LEDGER_2026-09-23.md row 11, section 3 ('GC/SI 30-minute futures | unused')", "this audit's ES.F/FMEU.F probes"]
+    },
+    {
+      "family": "fx",
+      "classification": "PARTIALLY USED",
+      "reason": "Hourly FX session rules (ledger row 16, fx_session_20260918) and forward-points/1-month-IV carry (row 15, fx_carry_vol) are SPENT, both apparently on the more liquid pairs. This audit confirmed FX bars carry volume=0 at every timeframe and era tested (2008-2020) -- they are quote-derived, not trade prints, a mechanic that matters for any microstructure claim. The full 62-pair set, including EM crosses (USD/ZAR, USD/TRY, EUR/TRY, GBP/ZAR, etc.), is not clearly covered by the SPENT rows, which read as G10-focused.",
+      "best_untested_hypothesis": "EM-cross carry and volatility risk premium using the full 62-pair set (not just G10), quote-based, with proper realistic transaction-cost assumptions for the wider EM spreads -- literature-supported (FX carry risk premium concentrated in high-yielders) and distinct from the already-SPENT G10 carry/IV work.",
+      "evidence": ["research/RESEARCH_LEDGER_2026-09-23.md rows 15-16", "this audit's EUR/USD probes (volume=0 confirmed on every bar)"]
+    },
+    {
+      "family": "crypto",
+      "classification": "PARTIALLY USED",
+      "reason": "BTC/ETH time-series trend-following is SPENT and FAIL on hold-out (ledger row 5, crypto_trend_long_only and crypto_tsmom_multi). The other ~56 altcoins in the 58-symbol catalog (median ~7 years of history from ~2019) are untested for any strategy, time-series or cross-sectional.",
+      "best_untested_hypothesis": "Cross-sectional momentum/reversal across the 58-coin universe (not time-series trend on BTC/ETH alone) -- well documented in the academic literature (e.g. cross-sectional crypto momentum) and structurally different from what was tested and failed.",
+      "evidence": ["research/RESEARCH_LEDGER_2026-09-23.md row 5", "data/lse_catalog_20260917.json crypto entries (58 symbols)"]
+    },
+    {
+      "family": "credit_indices",
+      "classification": "GENUINELY UNTESTED",
+      "reason": "No file in research/ or reports/ references this dataset (grep for credit_indices, itraxx, cdx, EUR_CORP-style symbols, or 'credit index' returns nothing outside today's own probe outputs and the unrelated data_scout/return_search vendor scans). This audit clarified the content: all 79 symbols are total-return or price-level bond indices (unit='index', levels in the 100-500 range, e.g. EUR_CORP 159.1 in Jan 2010 to 239.4 in Sep 2026) across USD/EUR/GBP/CNH, split by rating (AAA..BBB) and maturity bucket, daily from 2010-01-04 (2019-12-02 for the CNH sub-family). There are no credit SPREADS in bps in this family, and no yields -- only index levels, which changes what can be measured (total-return performance and correlations, not spread dynamics).",
+      "best_untested_hypothesis": "IG-vs-HY relative total-return spread (e.g. daily return of USD_LIQ_IG minus USD_LIQ_HY, or their ratio) as a market-wide risk-on/off regime signal for equity timing, in the tradition of the credit-spread-leads-equity literature (e.g. Gilchrist & Zakrajsek's excess bond premium) -- entirely untested in this project and directly measurable from levels alone.",
+      "evidence": ["grep -rli 'credit_indices|credit index|itraxx|cdx' research/ reports/ -> only reports/return_search_20260919/api_get.json and reports/lse_mcp_edge_search_20260918/api_get.json (both raw API dumps, not a strategy)"]
+    },
+    {
+      "family": "sovereign_yields and bonds",
+      "classification": "PARTIALLY USED",
+      "reason": "A US yield-curve-slope (2s10s) macro overlay was tested in research/overlay_control (reports/lse_mcp_edge_search_20260918/read_workspace_file_curve_regime_overlay.json) and belongs to the SPENT 'overlay_control' row 27 ('overlays do not help'); it used a bundled 'USYIELDS under MY DATA' proxy series, not the LSE vault's own bonds/sovereign_yields catalog entries directly. This audit found the vault actually carries two distinct, non-overlapping datasets: bonds (202 symbols, ~20+ countries, US10Y back to 1990-01-08) and sovereign_yields (88 symbols, benchmark-bond detail, only from 2010-01-04). Neither the multi-country breadth nor the sovereign_yields benchmark-bond detail has been used as a data source anywhere in research/ or reports/ (grep for sovereign_yield* and the country-code yield symbols only hits today's probe and unrelated vendor-scan dumps).",
+      "best_untested_hypothesis": "Cross-country government-bond trend/momentum (time-series momentum on 10Y yield changes, or equivalently price-proxy returns, across the ~20+ countries in the 'bonds' dataset back to 1990 for majors) -- an Asness-Moskowitz-Pedersen-style global TSMOM application that is structurally different from the single-country curve-slope overlay already tested and failed, and long enough in the majors to support genuine out-of-sample validation.",
+      "evidence": ["research/RESEARCH_LEDGER_2026-09-23.md row 27", "reports/lse_mcp_edge_search_20260918/read_workspace_file_curve_regime_overlay.json", "grep -rli 'sovereign_yield' research/ reports/"]
+    },
+    {
+      "family": "economics",
+      "classification": "PARTIALLY USED",
+      "reason": "US payroll/CPI-style calendar-surprise vs. country-equity continuation (ledger row 32, macro_surprise M1-M2) is SPENT: 'contemporaneous IC +0.12 but forward IC -0.02: priced on release'. The ledger separately flags 'Economic calendar, surprises: PARTIALLY USED -- FX and rates untested'. Of the 14,911 series in this family, only a handful of US indicators feeding that one study have been touched; nearly everything else (other countries, other indicator categories) is untested. This audit adds a critical data-quality finding: macro_series (the LSE vault's live series access) returns continuously revised/final values, not point-in-time vintages (Dec-2014 Non Farm Payrolls reads 274K via macro_series vs. the documented 252K first print) -- any future SUE-style strategy must be built from data/lse/econ_calendar_us.parquet's 'actual' field (confirmed point-in-time-correct in the one case checked), never from macro_series directly.",
+      "best_untested_hypothesis": "FX intraday reaction to US macro surprises (actual-minus-consensus from the calendar) at the exact release minute, using the fx family's 1-minute bars around the release timestamp -- this is the specific untested angle the ledger names ('FX and rates untested') and combines two under-used LSE vault families that have not been tested together.",
+      "evidence": ["research/RESEARCH_LEDGER_2026-09-23.md row 32 and section 3", "this audit's macro_series probes for nfp_tch and unitedstaconpriindcp vs data/lse/econ_calendar_us.parquet"]
+    }
+  ]
+}

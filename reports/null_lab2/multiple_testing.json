@@ -1,0 +1,473 @@
+{
+  "tier1_registered_gate_evaluable": {
+    "n_candidates": 91,
+    "n_family_rows": 35,
+    "actual_dev_passes": 16,
+    "expected_false_dev_passes_under_null_b_zero_net": 11.11,
+    "expected_false_dev_passes_under_null_a_cost_drag": 4.23,
+    "actual_full_dev_and_val_passes": 0,
+    "expected_false_full_passes_under_null_b_zero_net": 0.084,
+    "rows": [
+      {
+        "family": "pead_2004_2014",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.029,
+        "P_pass_dev_given_null_cost_drag": 0.0025,
+        "expected_false_dev_passes_zero_net": 0.029,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "options_signals(H1-H4)",
+        "n_candidates": 4,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.141,
+        "P_pass_dev_given_null_cost_drag": 0.034,
+        "expected_false_dev_passes_zero_net": 0.564,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0019,
+        "expected_false_full_passes_zero_net": 0.008
+      },
+      {
+        "family": "putwrite(P1-P3)",
+        "n_candidates": 3,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.1455,
+        "P_pass_dev_given_null_cost_drag": 0.0465,
+        "expected_false_dev_passes_zero_net": 0.436,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0022,
+        "expected_false_full_passes_zero_net": 0.007
+      },
+      {
+        "family": "cot(C1-C3)",
+        "n_candidates": 3,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.1475,
+        "P_pass_dev_given_null_cost_drag": 0.0545,
+        "expected_false_dev_passes_zero_net": 0.443,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0017,
+        "expected_false_full_passes_zero_net": 0.005
+      },
+      {
+        "family": "intraday(I1-I4)",
+        "n_candidates": 4,
+        "actual_dev_passes": 1,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.167,
+        "P_pass_dev_given_null_cost_drag": 0.046,
+        "expected_false_dev_passes_zero_net": 0.668,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0024,
+        "expected_false_full_passes_zero_net": 0.01
+      },
+      {
+        "family": "fx_carry_vol(F2,F3 vs F1)",
+        "n_candidates": 2,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.174,
+        "P_pass_dev_given_null_cost_drag": 0.0565,
+        "expected_false_dev_passes_zero_net": 0.348,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0049,
+        "expected_false_full_passes_zero_net": 0.01
+      },
+      {
+        "family": "pead_portfolio(B1-B5)",
+        "n_candidates": 5,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0105,
+        "P_pass_dev_given_null_cost_drag": 0.001,
+        "expected_false_dev_passes_zero_net": 0.053,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "insider(N1-N4)",
+        "n_candidates": 4,
+        "actual_dev_passes": 2,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.056,
+        "P_pass_dev_given_null_cost_drag": 0.0095,
+        "expected_false_dev_passes_zero_net": 0.224,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0006,
+        "expected_false_full_passes_zero_net": 0.002
+      },
+      {
+        "family": "rebalancing(R1-R3)",
+        "n_candidates": 3,
+        "actual_dev_passes": 2,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0535,
+        "P_pass_dev_given_null_cost_drag": 0.006,
+        "expected_false_dev_passes_zero_net": 0.161,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0002,
+        "expected_false_full_passes_zero_net": 0.001
+      },
+      {
+        "family": "letf_rebalancing(L1-L2)",
+        "n_candidates": 2,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.164,
+        "P_pass_dev_given_null_cost_drag": 0.0435,
+        "expected_false_dev_passes_zero_net": 0.328,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0052,
+        "expected_false_full_passes_zero_net": 0.01
+      },
+      {
+        "family": "iv_changes(V1-V3)",
+        "n_candidates": 3,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.1505,
+        "P_pass_dev_given_null_cost_drag": 0.0385,
+        "expected_false_dev_passes_zero_net": 0.452,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0026,
+        "expected_false_full_passes_zero_net": 0.008
+      },
+      {
+        "family": "pead_streak(S1-S2)",
+        "n_candidates": 2,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.1185,
+        "P_pass_dev_given_null_cost_drag": 0.026,
+        "expected_false_dev_passes_zero_net": 0.237,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0027,
+        "expected_false_full_passes_zero_net": 0.005
+      },
+      {
+        "family": "auction_cycle(A1-A3)",
+        "n_candidates": 3,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.144,
+        "P_pass_dev_given_null_cost_drag": 0.0435,
+        "expected_false_dev_passes_zero_net": 0.432,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0017,
+        "expected_false_full_passes_zero_net": 0.005
+      },
+      {
+        "family": "fundamentals(F1-F3)",
+        "n_candidates": 3,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.075,
+        "P_pass_dev_given_null_cost_drag": 0.01,
+        "expected_false_dev_passes_zero_net": 0.225,
+        "P_pass_dev_and_val_given_null_zero_net": 0.001,
+        "expected_false_full_passes_zero_net": 0.003
+      },
+      {
+        "family": "survivor_hybrid(H1-H4)",
+        "n_candidates": 4,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0,
+        "P_pass_dev_given_null_cost_drag": 0.0,
+        "expected_false_dev_passes_zero_net": 0.0,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "etf_hybrids(E1-E5)",
+        "n_candidates": 5,
+        "actual_dev_passes": 2,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0585,
+        "P_pass_dev_given_null_cost_drag": 0.004,
+        "expected_false_dev_passes_zero_net": 0.293,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0005,
+        "expected_false_full_passes_zero_net": 0.003
+      },
+      {
+        "family": "macro_surprise(M1,M2)",
+        "n_candidates": 2,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.1235,
+        "P_pass_dev_given_null_cost_drag": 0.0325,
+        "expected_false_dev_passes_zero_net": 0.247,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0036,
+        "expected_false_full_passes_zero_net": 0.007
+      },
+      {
+        "family": "multiasset(17-sleeve inclusion + 5-sleeve holdout)",
+        "n_candidates": 17,
+        "actual_dev_passes": 5,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.1935,
+        "P_pass_dev_given_null_cost_drag": 0.048,
+        "expected_false_dev_passes_zero_net": 3.29,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "multiasset/crypto(2 candidates)",
+        "n_candidates": 2,
+        "actual_dev_passes": 2,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 1.0,
+        "P_pass_dev_given_null_cost_drag": 1.0,
+        "expected_false_dev_passes_zero_net": 2.0,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "japan_us_flow(J1)",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0335,
+        "P_pass_dev_given_null_cost_drag": 0.004,
+        "expected_false_dev_passes_zero_net": 0.034,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "credit_lead",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0405,
+        "P_pass_dev_given_null_cost_drag": 0.0055,
+        "expected_false_dev_passes_zero_net": 0.041,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "index_option_breadth",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0515,
+        "P_pass_dev_given_null_cost_drag": 0.0105,
+        "expected_false_dev_passes_zero_net": 0.051,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "policy_trend(P1)",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0605,
+        "P_pass_dev_given_null_cost_drag": 0.0115,
+        "expected_false_dev_passes_zero_net": 0.06,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "fx_news(F1,F2)",
+        "n_candidates": 2,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.041,
+        "P_pass_dev_given_null_cost_drag": 0.004,
+        "expected_false_dev_passes_zero_net": 0.082,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "credit_gate(G)",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0395,
+        "P_pass_dev_given_null_cost_drag": 0.005,
+        "expected_false_dev_passes_zero_net": 0.04,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "structural_frontier(A: Treasury term premium)",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.017,
+        "P_pass_dev_given_null_cost_drag": 0.001,
+        "expected_false_dev_passes_zero_net": 0.017,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "structural_frontier(B: HY credit carry)",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0155,
+        "P_pass_dev_given_null_cost_drag": 0.003,
+        "expected_false_dev_passes_zero_net": 0.015,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "structural_frontier(C: TLT put insurance)",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.022,
+        "P_pass_dev_given_null_cost_drag": 0.001,
+        "expected_false_dev_passes_zero_net": 0.022,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "vrp_putwrite(PW)",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.05,
+        "P_pass_dev_given_null_cost_drag": 0.017,
+        "expected_false_dev_passes_zero_net": 0.05,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "etf_basis(B)",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0645,
+        "P_pass_dev_given_null_cost_drag": 0.0145,
+        "expected_false_dev_passes_zero_net": 0.065,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "tsy_month_end(M)",
+        "n_candidates": 1,
+        "actual_dev_passes": 1,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.054,
+        "P_pass_dev_given_null_cost_drag": 0.008,
+        "expected_false_dev_passes_zero_net": 0.054,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0007,
+        "expected_false_full_passes_zero_net": 0.001
+      },
+      {
+        "family": "commodity_roll",
+        "n_candidates": 2,
+        "actual_dev_passes": 1,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.024,
+        "P_pass_dev_given_null_cost_drag": 0.0015,
+        "expected_false_dev_passes_zero_net": 0.048,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "mbs_convexity",
+        "n_candidates": 2,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.0205,
+        "P_pass_dev_given_null_cost_drag": 0.0025,
+        "expected_false_dev_passes_zero_net": 0.041,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "sector_month_end",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.015,
+        "P_pass_dev_given_null_cost_drag": 0.0015,
+        "expected_false_dev_passes_zero_net": 0.015,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      },
+      {
+        "family": "fx_hedge_rebal",
+        "n_candidates": 1,
+        "actual_dev_passes": 0,
+        "actual_full_passes": 0,
+        "P_pass_dev_given_null_zero_net": 0.044,
+        "P_pass_dev_given_null_cost_drag": 0.013,
+        "expected_false_dev_passes_zero_net": 0.044,
+        "P_pass_dev_and_val_given_null_zero_net": 0.0,
+        "expected_false_full_passes_zero_net": 0.0
+      }
+    ]
+  },
+  "tier2_registered_non_standard_gate": {
+    "n_trials": 51,
+    "detail": [
+      {
+        "family": "momentum_construction",
+        "n_trials": 10,
+        "source": "research/momentum_construction/PLAN.md 'Variants -- exactly these ten, no others'"
+      },
+      {
+        "family": "vol_managed_momentum",
+        "n_trials": 5,
+        "source": "research/vol_managed_momentum/PLAN.md 'Variants to run -- exactly these five'"
+      },
+      {
+        "family": "residual_momentum",
+        "n_trials": 4,
+        "source": "research/residual_momentum/PLAN.md 'Variants -- exactly these four, and no others'"
+      },
+      {
+        "family": "overlay_control",
+        "n_trials": 30,
+        "source": "research/overlay_control/PLAN.md '5 overlays x each underlying = 30 variants, no others' (a registered CONTROL study, not a search for a pass -- see notes)"
+      },
+      {
+        "family": "momentum_verification / momentum_lab",
+        "n_trials": 2,
+        "source": "research/momentum_verification/PLAN.md, research/momentum_lab/DECISION_RULE.md (infrastructure / decision-rule registrations, not Sharpe-gated candidates)"
+      }
+    ]
+  },
+  "tier3_unregistered_exploratory_estimate": {
+    "n_trials_low": 40,
+    "n_trials_high": 73,
+    "detail": [
+      {
+        "source": "research/return_search (20 candidates)",
+        "low": 20,
+        "high": 20,
+        "note": "Explicitly counted in RESEARCH_LEDGER row 22 ('Return search, 20 candidates'); no PLAN.md hash for research/return_search appears in preregistrations.jsonl."
+      },
+      {
+        "source": "research/higher_sharpe.py, research/blend_sleeves.py, research/strategy_research, research/sleeve_blend",
+        "low": 8,
+        "high": 20,
+        "note": "reports/higher_sharpe/, reports/strategy_research/, reports/sleeve_blend/ all exist with results.json but no matching preregistration; RESEARCH_LEDGER row 31 lists them jointly as 'assorted sleeves 2021-25', without a per-script trial count."
+      },
+      {
+        "source": "research/edge_executable_probe.py, edge_first_backtest.py, edge_timing_probe.py, edge_sue_placebo.py",
+        "low": 4,
+        "high": 10,
+        "note": "Each is a single unregistered probe script; edge_sue_placebo.py alone reports several placebo families (s2, s3, long-short, large-SUE) per research/pead_attack/PLAN.md sec.2."
+      },
+      {
+        "source": "research/crowding_unwind_20260919 (14 markets), research/downside_rotation_20260919",
+        "low": 5,
+        "high": 15,
+        "note": "RESEARCH_LEDGER row 10 cites '14 commodity-ETF markets' for crowding_unwind; treated as a single screened family rather than 14 independent trials, but the screen itself was never preregistered."
+      },
+      {
+        "source": "momentum_gold / momentum fund design follow-ups (Codex sessions)",
+        "low": 3,
+        "high": 8,
+        "note": "RESEARCH_LEDGER row 28 'momentum fund designs (Codex): vol-scaled, trend, defensive rotation' cites 3 named configs plus several audit/finalize follow-up scripts under research/momentum_verification/codex_*.py."
+      }
+    ]
+  },
+  "grand_total": {
+    "low": 182,
+    "high": 215,
+    "point_estimate": 198
+  },
+  "comparison_to_prior_ledger_estimate": {
+    "RESEARCH_LEDGER_2026-09-23_approx_trial_count": 111,
+    "note": "The ledger's ~111 was current as of this session's start and predates the 17 new post-amendment candidates registered in the last 24h (japan_us_flow..fx_hedge_rebal). This workstream's own count uses a different methodology (explicit tiering by registration/gate status) and should not be expected to match to the trial -- both are estimates, and the gap itself (mostly Tier 3) is the point: a large share of exploratory work in this project was never preregistered and so was never gated at all."
+  }
+}

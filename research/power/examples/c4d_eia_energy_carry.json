@@ -1,0 +1,54 @@
+{
+ "name": "c4d_eia_energy_carry",
+ "description": "EIA energy futures (crude, heating oil, gasoline, natgas) time-series carry, monthly, 1986-2005 untouched sample",
+ "assumptions": [
+  "ASSUMPTION common crash: 3%/month chance of a -4 sd jump -> book skew/kurt via one-factor cumulants",
+  "dev 1986-1995, val 1996-2005; energy-only rho 0.5; only 2-4 contracts live early"
+ ],
+ "design": "carry",
+ "params": {
+  "n_assets": 4,
+  "periods_per_year": 12,
+  "rho": 0.5,
+  "autocorr": 0.05,
+  "skew": -0.7121,
+  "exkurt": 2.0956,
+  "sharpe_per_asset": 0.4
+ },
+ "windows": {
+  "dev_years": 10.0,
+  "val_years": 10.0
+ },
+ "gates": {
+  "batch_k": 3,
+  "stress_drag_sr": 0.1,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  }
+ },
+ "scenarios": [
+  {
+   "label": "s_asset=0.3",
+   "params": {
+    "sharpe_per_asset": 0.3
+   }
+  },
+  {
+   "label": "s_asset=0.4",
+   "params": {
+    "sharpe_per_asset": 0.4
+   }
+  },
+  {
+   "label": "s_asset=0.5",
+   "params": {
+    "sharpe_per_asset": 0.5
+   }
+  }
+ ]
+}

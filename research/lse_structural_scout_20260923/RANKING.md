@@ -1,0 +1,20 @@
+# Structural frontiers ranked by ex-ante mechanism and accessible data
+
+This ranking uses mechanism, persistence, timestamp quality, sample, tradability, cost, novelty, and diversification. It does **not** use the development results concurrently appearing in other research folders. Status records which families are already registered or spent, to prevent duplicate tests. The earlier [structural ranking](../structural_frontier/RANKING_2026-09-23.md) covered eight candidates before that batch's returns; this is a new data-availability map, not a re-ranking of its outcomes.
+
+| Rank | Family | Payer and persistence | Accessible data / quality | Decision now |
+|---:|---|---|---|---|
+| 1 | Deferred-versus-front commodity exposure | Front-index investors and hedgers pay roll/insurance costs; index mandates persist | LSE continuous `GC.F` etc. lack contract curves; ETF proxy USL−USO etc. now registered by Claude | **Active independent study; do not duplicate** |
+| 2 | Agency MBS prepayment/convexity | Homeowners buy refinancing optionality; MBS holders bear turnover/rate hedging | MBB/IEF/SHY adjusted ETFs 2007+, no TBA dollar-roll fields | **Active independent study; do not duplicate** |
+| 3 | Treasury month-end index extension | Benchmark managers face price-insensitive month-end duration demand | TLT adjusted ETF 2003+, calendar exact; LSE 30m can check sessions | **Already tested; forward observation only** |
+| 4 | Cross-currency funding basis | Dollar hedgers pay balance-sheet constrained intermediaries | LSE G10 spot/forwards, but no matched dated OIS or executable swap basis/financing | Research priority if dated basis quotes become available; not testable now |
+| 5 | On/off-the-run sovereign liquidity | Liquidity demand and repo specialness segmented by security | LSE date-level yield curves only; no issue ID, coupon, maturity, repo special, executable price pair | High-prior missing-data frontier |
+| 6 | TIPS liquidity/inflation insurance | Nominal inflation risk vs TIPS liquidity/deflation insurance | TIP/IEF/SHY adjusted ETFs 2003+, LSE nominal/real yields are revised date-level data | Feasible proxy, but sign and duration hedge need an independently justified frozen specification |
+| 7 | EM FX carry and crash risk | Yield seekers insure against funding/crash episodes | LSE spot 2009+, no EM forward-point history or basis; policy rates are an unreliable executable carry proxy | Defer |
+| 8 | Commodity hedging pressure | Producers transfer inventory/price risk | COT publication timestamps exist, but no auditable contract-level return/roll chronology; ETF proxy COT already spent | Defer contract test |
+| 9 | Index/ETF liquidity provision | Forced rebalancers pay immediacy | LSE intraday trade bars; no auction imbalance, queue depth or historical spread | Defer fill-sensitive test |
+| 10 | Variance/crash insurance | Hedgers buy convexity | LSE OPRA trade OHLCV 2014+ lacks quotes and trade time; SPY/TLT put variants spent | Spent with present data |
+| 11 | Leveraged low-beta equity | Leverage-constrained investors bid up high beta | Current stock universe survivor-biased; low-beta spread already tried | Spent in current universe |
+| 12 | Global sovereign carry | Investors bear rate/inflation risk | LSE sovereign yield series are date-level, revised; return indices/futures contracts incomplete | Prior multiasset/G10 bond carry already spent |
+
+Mechanism priors, not a promise of local returns: [commodity futures risk insurance](https://www.nber.org/papers/w10595), [MBS prepayment risk](https://www.nber.org/papers/w22096), [cross-currency basis and balance-sheet constraints](https://www.bis.org/publications/qr-201609/covered-interest-parity-lost-understanding-cross-currency-basis), [TIPS compensation decomposition](https://www.federalreserve.gov/econres/notes/feds-notes/tips-from-tips-update-and-discussions-20190521.html), [leverage-constrained low beta](https://www.nber.org/papers/w16601). The [commodity hedging-pressure literature](https://www.nber.org/papers/w13249.pdf) also reports weak predictive evidence for lagged COT positions, a useful prior against a superficial COT retest.

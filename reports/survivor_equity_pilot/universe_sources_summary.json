@@ -1,0 +1,114 @@
+{
+ "company_tickers_snapshots": [
+  "20171227",
+  "20180712",
+  "20181226",
+  "20200628",
+  "20221229",
+  "20231230",
+  "20250111",
+  "20250704"
+ ],
+ "company_tickers_rows_per_snapshot": {
+  "20171227": 6254,
+  "20180712": 6258,
+  "20181226": 6259,
+  "20200628": 8223,
+  "20221229": 11523,
+  "20231230": 10662,
+  "20250111": 10015,
+  "20250704": 10058
+ },
+ "company_tickers_distinct_cik": 13749,
+ "symdir_snapshots": [
+  [
+   "nasdaqlisted",
+   "20080105",
+   3367
+  ],
+  [
+   "nasdaqlisted",
+   "20080924",
+   3293
+  ],
+  [
+   "nasdaqlisted",
+   "20110101",
+   2891
+  ],
+  [
+   "nasdaqlisted",
+   "20111010",
+   2820
+  ],
+  [
+   "nasdaqlisted",
+   "20131031",
+   2753
+  ],
+  [
+   "nasdaqlisted",
+   "20140711",
+   2877
+  ],
+  [
+   "nasdaqlisted",
+   "20170912",
+   3249
+  ],
+  [
+   "nasdaqlisted",
+   "20190614",
+   3444
+  ],
+  [
+   "nasdaqlisted",
+   "20200623",
+   3565
+  ],
+  [
+   "nasdaqlisted",
+   "20230928",
+   5116
+  ],
+  [
+   "nasdaqlisted",
+   "20250821",
+   5045
+  ],
+  [
+   "otherlisted",
+   "20080921",
+   5293
+  ],
+  [
+   "otherlisted",
+   "20100915",
+   4922
+  ],
+  [
+   "otherlisted",
+   "20111225",
+   5131
+  ],
+  [
+   "otherlisted",
+   "20131023",
+   5141
+  ],
+  [
+   "otherlisted",
+   "20260916",
+   7629
+  ]
+ ],
+ "tiingo_rows": 108834,
+ "tiingo_columns": [
+  "ticker",
+  "exchange",
+  "assetType",
+  "priceCurrency",
+  "startDate",
+  "endDate"
+ ]
+}

@@ -1,0 +1,133 @@
+{
+  "candidate": "commodity_roll",
+  "window": [
+    "2006-07-21",
+    "2016-12-30"
+  ],
+  "hard_constraint_note": "USL/USO/UNL/UNG/DBC/GSG prices were loaded via research.struct_common.etf() and truncated with .loc[:2016-12-30] immediately after each load, before any pct_change or pair_returns computation. pair_returns() was called only on pre-truncated series; core.book() (which truncates after computing on the full untruncated series) was not used. No validation-window (post-2016-12-30) commodity_roll price data was loaded or computed on.",
+  "reconciliation_vs_dev_daily_base_max_abs_diff": 0.004074960270096205,
+  "inputs": {
+    "returns_series": "reports/commodity_roll/dev_daily.csv 'base' column (2006-07-21..2016-12-30)",
+    "benchmarks": "equal-weight USO/UNG/GSG front basket (struct_common.etf, truncated at 2016-12-30); SPY excess (cash_rates)",
+    "exposure": "n/a: dollar-neutral pair book, no single-asset exposure weight",
+    "asset_pnl": "per-pair series (crude/natgas/broad) from research.commodity_roll.core.pair_returns on pre-truncated USL/USO, UNL/UNG, DBC/GSG prices, base cost tier",
+    "null_pass_rate": "0.006 (reports/commodity_roll/dev_results.json P_pass_given_null)",
+    "publication_date": "n/a: not a published anomaly",
+    "lagged_returns": "returns.shift(1) (one session later)"
+  },
+  "guards": {
+    "G1_beta": {
+      "pass": false,
+      "reason": "alpha t=1.04 (< 2.0); alpha_ann=0.0200 vs 50% of mean_ann=0.0635 (misses the share test)",
+      "threshold": {
+        "alpha_t_min": 2.0,
+        "alpha_share_min": 0.5
+      },
+      "value": {
+        "alpha_t": 1.0398618966127169,
+        "alpha_ann": 0.019978255938261635,
+        "mean_return_ann": 0.06346018099831552,
+        "alpha_share_of_mean": 0.3148156154611651,
+        "betas": {
+          "front_basket": -0.24803771864421997,
+          "SPY_excess": 0.03560031129090823
+        },
+        "hac_lag": 10,
+        "periods_per_year": 252,
+        "n_obs": 2630
+      }
+    },
+    "G2_reduced_exposure": {
+      "pass": null,
+      "reason": "NOT-RUN: returns, exposure or benchmarks not supplied",
+      "threshold": null,
+      "value": null
+    },
+    "G3_concentration": {
+      "pass": false,
+      "reason": "top5%-months share=65.90% (<50%: False); max-year share=27.71% in 2008 (<35%: True); LOYO min Sharpe=0.46 vs full 0.60 ratio=0.76 (>=50%: True); sign-test p=0.1812 (<0.05: False)",
+      "threshold": {
+        "top5pct_months_share_max": 0.5,
+        "max_year_share_max": 0.35,
+        "loyo_sharpe_ratio_min": 0.5,
+        "sign_test_p_max": 0.05
+      },
+      "value": {
+        "top5pct_months_share": 0.6590059810688284,
+        "max_year_share": 0.2770646029369543,
+        "max_year": "2008",
+        "full_sharpe": 0.5964225468053806,
+        "loyo_min_sharpe": 0.4558970644936068,
+        "loyo_sharpe_ratio": 0.7643860329149681,
+        "loyo_by_year": {
+          "2006": 0.4558970644936068,
+          "2007": 0.6952316985128196,
+          "2008": 0.5425206471534046,
+          "2009": 0.6405605164719025,
+          "2010": 0.5992167062582177,
+          "2011": 0.6074942856823767,
+          "2012": 0.6156786452553159,
+          "2013": 0.6744703793361123,
+          "2014": 0.6121961687844695,
+          "2015": 0.5326291048669785,
+          "2016": 0.5943489556895356
+        },
+        "sign_test_p": 0.18122406088142368,
+        "n_months": 126,
+        "n_years": 11,
+        "periods_per_year": 252
+      }
+    },
+    "G4_one_asset": {
+      "pass": true,
+      "reason": "max single-asset share=42.24% (crude, <50%); leave-one-asset-out Sharpes all > 0: True ({'crude': 0.44494610933987233, 'natgas': 0.569835687976453, 'broad': 0.44122013394372783})",
+      "threshold": {
+        "max_asset_share_max": 0.5,
+        "loo_sharpe_min": 0.0
+      },
+      "value": {
+        "n_assets": 3,
+        "max_asset_share": 0.42244933690335223,
+        "max_asset": "crude",
+        "loo_sharpes": {
+          "crude": 0.44494610933987233,
+          "natgas": 0.569835687976453,
+          "broad": 0.44122013394372783
+        },
+        "periods_per_year": 252
+      }
+    },
+    "G5_null_calibration": {
+      "pass": true,
+      "reason": "P(pass|null)=0.0060 (<= 0.05)",
+      "threshold": {
+        "null_pass_rate_max": 0.05,
+        "null_mean_abs_flag": 0.3
+      },
+      "value": {
+        "null_pass_rate": 0.006,
+        "null_mean": null,
+        "flag": null
+      }
+    },
+    "G6_post_publication": {
+      "pass": null,
+      "reason": "NOT-RUN: returns or publication_date not supplied",
+      "threshold": null,
+      "value": null
+    },
+    "G7_execution_lag": {
+      "pass": true,
+      "reason": "lagged Sharpe=0.59 / original Sharpe=0.60 = 98.90% (>=60%: True)",
+      "threshold": {
+        "lag_sharpe_ratio_min": 0.6
+      },
+      "value": {
+        "original_sharpe": 0.6010205239345455,
+        "lagged_sharpe": 0.5943922494856195,
+        "ratio": 0.9889716337712823,
+        "periods_per_year": 252
+      }
+    }
+  }
+}

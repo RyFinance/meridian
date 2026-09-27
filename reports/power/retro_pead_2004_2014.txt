@@ -1,0 +1,24 @@
+retro_pead_2004_2014  [event_study]  dev 10.96y (single stage)
+  raw obs (total) 5590 events;  D_time 1.105  deff_cross 2.389  ->  effective obs 2117.0
+  SE(Sharpe) dev 0.318;  SE(mean, mean net CAR per event (return units)) total 0.001521
+  dev gate threshold 0.635 (binding: hac_t)
+  MDE Sharpe (80%): single test 0.79, dev gate 0.91, joint current 0.91, joint proposed inf
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.005   0.002      -     0.002   |    -       -  
+  zero_net_null             0.00  0.050   0.022      -     0.022   |    -       -  
+  structural_leak           0.05  0.068   0.032      -     0.032   |    -       -  
+  S=0.3                     0.30  0.242   0.143      -     0.143   |    -       -  
+  S=0.5                     0.50  0.472   0.330      -     0.330   |    -       -  
+  S=0.7                     0.70  0.712   0.574      -     0.574   |    -       -  
+  S=1.0                     1.00  0.934   0.870      -     0.870   |    -       -  
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   75.93    100.60          100.60              inf
+                     0.50   27.34     36.22           36.22              inf
+                     0.70   13.95     18.48           18.48              inf
+                     1.00    6.84      9.06            9.06              inf
+  VERDICT (current gates): DECISIVE   [joint@0.7 = 0.574, false-pass = 0.0222]
+  scenarios: label | n_eff | implied net S | joint(cur) | joint(prop) | yrs80 single | yrs80 joint(prop) | MDE natural (joint prop)
+   icc=0.005                                    379 | inf | inf | inf | inf | inf | 0.00327
+   icc=0.02                                     213 | inf | inf | inf | inf | inf | 0.00436
+   icc=0.05                                     114 | inf | inf | inf | inf | inf | 0.00596
+   icc=0.1                                      64.2 | inf | inf | inf | inf | inf | 0.00794

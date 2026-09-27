@@ -1,0 +1,33 @@
+{
+ "seed": 20260924,
+ "fast": false,
+ "n_paths_tsy": 10000,
+ "n_paths_gold": 4000,
+ "horizon_months": 120,
+ "checkpoints_months": [
+  12,
+  24,
+  36,
+  60,
+  120
+ ],
+ "runtime_seconds": 8.2,
+ "code_sha256": {
+  "research/future_lab2/__init__.py": "0f6b12236428f416098ea9d1cd514dcf854ef0f8e22dbb40d70d06f472cf0287",
+  "research/future_lab2/gold_world.py": "0c0eacd48a51ae9f99093e922e0f47d1d4c7fb6084560547bd2437c0b32faecc",
+  "research/future_lab2/rule.py": "35ff22364e42c36921eb945de6492c676f6164216477d65de15f033d1e3636e7",
+  "research/future_lab2/run.py": "93dfc9fc9e7ef0f809ae6e70e8d76f37b13f686769f08bc0d12b95e601d2c2f1",
+  "research/future_lab2/tsy_world.py": "e50be6f7dbbc735255db03d11ae3b114a7110da0353ec6492c8d49d96b85edac"
+ },
+ "input_sha256": {
+  "reports/audit_tsy/c_months_dev.csv": "77b7d22a1644c283b6c8d64baa80ef48fb81f931bed8264f1572f09c77ab267d",
+  "reports/audit_tsy/c_months_val.csv": "543901956b53a9c5e356bb06fe7d5ee0802f643816db837554deb11471bd37a5",
+  "reports/audit_tsy/e_postpub.json": "9bdf4bc37616a2d6cdf88764a51167cb83410d4c0440ea8a739d5bb044a8b0b5",
+  "research/forward_audit/tsy_month_end_v1_spec.json": "b8fc2bb80efd579189cae211a76cb0c95f4693a7ebc7e9f34590f73679fc4f5f",
+  "reports/momentum_gold_20260919/momentum_gold_full_base.csv": "039073937554057f2651c25d53d7b575c6a7d453dd669773b7d65a0ceced1cc0",
+  "reports/momentum_gold_20260919/market_gold_full_base.csv": "8ff3b9eb918ae4bb917c5fe78555efca19cff12c4a67fc98a0f57b61af56caa6",
+  "reports/momentum_gold_20260919/forward_paper_spec.json": "459daa7a69a57445607def61b9bc8fd4afb7a501d71fada0485e5e2987dda9c8",
+  "reports/future_lab/monitoring_rule_spec.json": "da7d49c1a3d177c90797d9ae02d9cde398e2db02767d12a48c5a73af831ad0f7"
+ },
+ "proposed_rule_sha256": "824f64a5d7f80e5f56466cc3045497fc754a9a0492b4fb8bb8956f9813c11432"
+}

@@ -1,0 +1,263 @@
+{
+ "name": "c4_tsy_auction_demand",
+ "description": "Nominal Treasury note/bond auctions 2000-2026; position -z(bid-to-cover surprise) in tenor yield, 5-day hold, fixed 7-duration unit; dev 2000-2012, val 2013-2026-08; batch k=2",
+ "assumptions": [
+  "~41 auctions/yr; refunding / 2-5-7 weeks cluster ~3 auctions whose windows overlap on ONE asset",
+  "icc = correlation of SIGNED positions' returns within a cluster = sign agreement x 1 (same instrument); ASSUMPTION 0.3, scenarios 0.1-0.6",
+  "ASSUMPTION dev/val split 2002-2013 / 2014-2026",
+  "ASSUMPTION 2 bp round trip per event",
+  "events/yr: ~44 in dev (2000-2012), ~78 in val (2013-2026) incl. reopenings; modelled at 60"
+ ],
+ "design": "event_study",
+ "params": {
+  "events_per_year": 60,
+  "car_sd": 0.01,
+  "hold_days": 5,
+  "icc": 0.3,
+  "concurrency": {
+   "model": "clusters",
+   "mean_size": 3,
+   "cv": 0.4
+  },
+  "portfolio_autocorr": 0.0,
+  "mean_car": 0.0015,
+  "cost_per_event": 0.0002
+ },
+ "windows": {
+  "dev_years": 13.0,
+  "val_years": 13.67
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.15,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  },
+  "pav": {
+   "k_val": 1
+  }
+ },
+ "scenarios": [
+  {
+   "label": "sd=0.7% icc=0.1 gross=10bp",
+   "params": {
+    "car_sd": 0.007,
+    "icc": 0.1,
+    "mean_car": 0.001
+   }
+  },
+  {
+   "label": "sd=0.7% icc=0.1 gross=20bp",
+   "params": {
+    "car_sd": 0.007,
+    "icc": 0.1,
+    "mean_car": 0.002
+   }
+  },
+  {
+   "label": "sd=0.7% icc=0.1 gross=40bp",
+   "params": {
+    "car_sd": 0.007,
+    "icc": 0.1,
+    "mean_car": 0.004
+   }
+  },
+  {
+   "label": "sd=0.7% icc=0.3 gross=10bp",
+   "params": {
+    "car_sd": 0.007,
+    "icc": 0.3,
+    "mean_car": 0.001
+   }
+  },
+  {
+   "label": "sd=0.7% icc=0.3 gross=20bp",
+   "params": {
+    "car_sd": 0.007,
+    "icc": 0.3,
+    "mean_car": 0.002
+   }
+  },
+  {
+   "label": "sd=0.7% icc=0.3 gross=40bp",
+   "params": {
+    "car_sd": 0.007,
+    "icc": 0.3,
+    "mean_car": 0.004
+   }
+  },
+  {
+   "label": "sd=0.7% icc=0.6 gross=10bp",
+   "params": {
+    "car_sd": 0.007,
+    "icc": 0.6,
+    "mean_car": 0.001
+   }
+  },
+  {
+   "label": "sd=0.7% icc=0.6 gross=20bp",
+   "params": {
+    "car_sd": 0.007,
+    "icc": 0.6,
+    "mean_car": 0.002
+   }
+  },
+  {
+   "label": "sd=0.7% icc=0.6 gross=40bp",
+   "params": {
+    "car_sd": 0.007,
+    "icc": 0.6,
+    "mean_car": 0.004
+   }
+  },
+  {
+   "label": "sd=1.0% icc=0.1 gross=10bp",
+   "params": {
+    "car_sd": 0.01,
+    "icc": 0.1,
+    "mean_car": 0.001
+   }
+  },
+  {
+   "label": "sd=1.0% icc=0.1 gross=20bp",
+   "params": {
+    "car_sd": 0.01,
+    "icc": 0.1,
+    "mean_car": 0.002
+   }
+  },
+  {
+   "label": "sd=1.0% icc=0.1 gross=40bp",
+   "params": {
+    "car_sd": 0.01,
+    "icc": 0.1,
+    "mean_car": 0.004
+   }
+  },
+  {
+   "label": "sd=1.0% icc=0.3 gross=10bp",
+   "params": {
+    "car_sd": 0.01,
+    "icc": 0.3,
+    "mean_car": 0.001
+   }
+  },
+  {
+   "label": "sd=1.0% icc=0.3 gross=20bp",
+   "params": {
+    "car_sd": 0.01,
+    "icc": 0.3,
+    "mean_car": 0.002
+   }
+  },
+  {
+   "label": "sd=1.0% icc=0.3 gross=40bp",
+   "params": {
+    "car_sd": 0.01,
+    "icc": 0.3,
+    "mean_car": 0.004
+   }
+  },
+  {
+   "label": "sd=1.0% icc=0.6 gross=10bp",
+   "params": {
+    "car_sd": 0.01,
+    "icc": 0.6,
+    "mean_car": 0.001
+   }
+  },
+  {
+   "label": "sd=1.0% icc=0.6 gross=20bp",
+   "params": {
+    "car_sd": 0.01,
+    "icc": 0.6,
+    "mean_car": 0.002
+   }
+  },
+  {
+   "label": "sd=1.0% icc=0.6 gross=40bp",
+   "params": {
+    "car_sd": 0.01,
+    "icc": 0.6,
+    "mean_car": 0.004
+   }
+  },
+  {
+   "label": "sd=1.2% icc=0.1 gross=10bp",
+   "params": {
+    "car_sd": 0.012,
+    "icc": 0.1,
+    "mean_car": 0.001
+   }
+  },
+  {
+   "label": "sd=1.2% icc=0.1 gross=20bp",
+   "params": {
+    "car_sd": 0.012,
+    "icc": 0.1,
+    "mean_car": 0.002
+   }
+  },
+  {
+   "label": "sd=1.2% icc=0.1 gross=40bp",
+   "params": {
+    "car_sd": 0.012,
+    "icc": 0.1,
+    "mean_car": 0.004
+   }
+  },
+  {
+   "label": "sd=1.2% icc=0.3 gross=10bp",
+   "params": {
+    "car_sd": 0.012,
+    "icc": 0.3,
+    "mean_car": 0.001
+   }
+  },
+  {
+   "label": "sd=1.2% icc=0.3 gross=20bp",
+   "params": {
+    "car_sd": 0.012,
+    "icc": 0.3,
+    "mean_car": 0.002
+   }
+  },
+  {
+   "label": "sd=1.2% icc=0.3 gross=40bp",
+   "params": {
+    "car_sd": 0.012,
+    "icc": 0.3,
+    "mean_car": 0.004
+   }
+  },
+  {
+   "label": "sd=1.2% icc=0.6 gross=10bp",
+   "params": {
+    "car_sd": 0.012,
+    "icc": 0.6,
+    "mean_car": 0.001
+   }
+  },
+  {
+   "label": "sd=1.2% icc=0.6 gross=20bp",
+   "params": {
+    "car_sd": 0.012,
+    "icc": 0.6,
+    "mean_car": 0.002
+   }
+  },
+  {
+   "label": "sd=1.2% icc=0.6 gross=40bp",
+   "params": {
+    "car_sd": 0.012,
+    "icc": 0.6,
+    "mean_car": 0.004
+   }
+  }
+ ]
+}

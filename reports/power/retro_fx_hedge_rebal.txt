@@ -1,0 +1,25 @@
+retro_fx_hedge_rebal  [event_study]  dev 6.00y + val 5.67y
+  raw obs (total) 700 events;  D_time 1.000  deff_cross 2.600  ->  effective obs 269.3
+  SE(Sharpe) dev 0.408, val 0.420;  SE(mean, mean net CAR per event (return units)) total 0.000195
+  dev gate threshold 0.735 (binding: sharpe_c_over_sqrtT);  val threshold 0.750 (binding: sharpe_abs);  proposed val threshold 0.691
+  MDE Sharpe (80%): single test 0.73, dev gate 1.08, joint current 1.26, joint proposed 1.23
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.004   0.006   0.006   0.000   | 0.009  0.000
+  zero_net_null             0.00  0.050   0.036   0.037   0.001   | 0.050  0.002
+  structural_leak           0.05  0.070   0.047   0.048   0.002   | 0.064  0.003
+  S=0.3                     0.30  0.268   0.143   0.142   0.020   | 0.176  0.025
+  S=0.5                     0.50  0.525   0.283   0.276   0.078   | 0.325  0.092
+  S=0.7                     0.70  0.772   0.466   0.453   0.211   | 0.509  0.237
+  S=1.0                     1.00  0.962   0.742   0.724   0.537   | 0.769  0.570
+  implied_by_primitives     0.09  0.089   0.056   0.057   0.003   | 0.075  0.004
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   68.70       inf             inf              inf
+                     0.50   24.73       inf             inf              inf
+                     0.70   12.62     87.53             inf           386.66
+                     1.00    6.19      6.98           33.76            20.61
+                     0.09  807.15       inf             inf              inf
+  VERDICT (current gates): INCAPABLE   [joint@0.7 = 0.211, false-pass = 0.0013];  with proposed val gate: INCAPABLE
+  scenarios: label | n_eff | implied net S | joint(cur) | joint(prop) | yrs80 single | yrs80 joint(prop) | MDE natural (joint prop)
+   icc=0.2                                      33.3 | 0.105 | 0.00383 | 0.00502 | 559 | inf | 0.000883
+   icc=0.4                                      23.1 | 0.0875 | 0.00323 | 0.00426 | 807 | inf | 0.00102
+   icc=0.6                                      17.6 | 0.0765 | 0.00291 | 0.00384 | 1.06e+03 | inf | 0.00114

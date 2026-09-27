@@ -1,0 +1,32 @@
+{
+  "base_cost": "5bps per side",
+  "candidate_count": 3,
+  "candidates": {
+    "defensive_rotation": "100% SPMO while close above trailing200-session mean; otherwise hold the stronger trailing63-session positive-return asset among GLD and IEF; if neither positive, cash; monthly close decision,next-open fill",
+    "diversified_trend": "fixed 60% SPMO,20% GLD,20% IEF; each slot invested only if asset close exceeds its trailing200-session mean; monthly first-session close, next-open fill",
+    "vol_scaled": "SPMO target exposure min(1,15% / trailing63-session annual volatility), weekly first-session close, next-open fill"
+  },
+  "cash": "previous observed IRX pro rata elapsed days",
+  "controls": [
+    "SPMO passive",
+    "SPY passive"
+  ],
+  "date": "2026-09-19",
+  "development": [
+    "2017-01-01",
+    "2019-12-31"
+  ],
+  "evaluation": [
+    "2020-01-01",
+    "2026-09-17"
+  ],
+  "instruments": [
+    "SPMO",
+    "GLD",
+    "IEF"
+  ],
+  "leverage": false,
+  "limitations": "new fixed designs on previously researched history; not a pristine holdout; no parameters changed after evaluation; actual fund prices include fund expenses",
+  "selection": "highest development net CAGR among candidates with drawdown no deeper than30% and positive stress excess mean",
+  "stress_cost": "15bps per side"
+}

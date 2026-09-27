@@ -1,0 +1,502 @@
+{
+  "window": [
+    "2020-01-01",
+    "2022-12-31"
+  ],
+  "symbols_with_dev_klines": 160,
+  "symbols_with_dev_funding": 158,
+  "days_total": 1096,
+  "days_dropped": 227,
+  "days_live": 869,
+  "first_live": "2020-08-15",
+  "universe_size": {
+    "min_live": 25,
+    "max_live": 100,
+    "mean_live": 87.6409666283084
+  },
+  "books": {
+    "gross": {
+      "sharpe": 2.4660219339970064,
+      "ann_mean": 0.5960827068054964,
+      "max_dd": -0.1797371389256197
+    },
+    "base": {
+      "sharpe": 2.175916166469955,
+      "ann_mean": 0.5258545137976599,
+      "max_dd": -0.2067685033402462
+    },
+    "stress": {
+      "sharpe": 1.2969412751015186,
+      "ann_mean": 0.3261269293147521,
+      "max_dd": -0.39284168247139906
+    }
+  },
+  "decomposition_ann": {
+    "price": 0.3722897744425074,
+    "funding": 0.22379293236298908,
+    "base_cost": 0.07022819300783648,
+    "stress_cost": 0.20065198002238996,
+    "stress_delist_drag": 0.06930379746835445
+  },
+  "mean_turnover": 0.2748657260580684,
+  "selected_with_15_to_29_volume_days": 2106,
+  "selected_total_asset_days": 76160,
+  "timestamps": {
+    "funding_hour_utc_counts": {
+      "0": 104223,
+      "2": 12,
+      "4": 18,
+      "6": 13,
+      "8": 104324,
+      "10": 12,
+      "12": 16,
+      "14": 13,
+      "16": 104358,
+      "18": 13,
+      "20": 19,
+      "22": 13
+    },
+    "kline_non_midnight_count": 0
+  },
+  "bootstrap_p_21": 0.004999000199960008,
+  "bootstrap_p_by_block": {
+    "7": 0.0013997200559888023,
+    "14": 0.003799240151969606,
+    "21": 0.004999000199960008,
+    "42": 0.009598080383923215,
+    "63": 0.013797240551889621,
+    "90": 0.02519496100779844
+  },
+  "bootstrap_null_mean_sd": [
+    -7.861229112265013e-06,
+    0.000511017202770783
+  ],
+  "held_missing_position_days": 33,
+  "held_temporary_gap_position_days": 26,
+  "held_terminal_gap_position_days": 7,
+  "held_gap_by_date": {
+    "2021-12-20": {
+      "temporary": 0,
+      "terminal": 1,
+      "stress_drag": 0.005000000000000001
+    },
+    "2022-01-27": {
+      "temporary": 0,
+      "terminal": 1,
+      "stress_drag": 0.005000000000000001
+    },
+    "2022-02-16": {
+      "temporary": 0,
+      "terminal": 1,
+      "stress_drag": 0.005000000000000001
+    },
+    "2022-02-26": {
+      "temporary": 10,
+      "terminal": 0,
+      "stress_drag": 0.05
+    },
+    "2022-04-01": {
+      "temporary": 16,
+      "terminal": 0,
+      "stress_drag": 0.08
+    },
+    "2022-05-14": {
+      "temporary": 0,
+      "terminal": 2,
+      "stress_drag": 0.010000000000000002
+    },
+    "2022-05-28": {
+      "temporary": 0,
+      "terminal": 2,
+      "stress_drag": 0.010000000000000002
+    }
+  },
+  "held_missing_dates": [
+    "2021-12-20",
+    "2022-01-27",
+    "2022-02-16",
+    "2022-02-26",
+    "2022-04-01",
+    "2022-05-14",
+    "2022-05-28"
+  ],
+  "held_missing_by_symbol": {
+    "AKROUSDT": 1,
+    "ANCUSDT": 1,
+    "BTTUSDT": 1,
+    "BZRXUSDT": 1,
+    "DODOUSDT": 1,
+    "GTCUSDT": 1,
+    "HBARUSDT": 1,
+    "KEEPUSDT": 1,
+    "KNCUSDT": 1,
+    "LINAUSDT": 1,
+    "LITUSDT": 1,
+    "LRCUSDT": 1,
+    "LUNAUSDT": 2,
+    "MANAUSDT": 2,
+    "MASKUSDT": 1,
+    "MKRUSDT": 1,
+    "OCEANUSDT": 1,
+    "OGNUSDT": 1,
+    "ONEUSDT": 1,
+    "PEOPLEUSDT": 1,
+    "ROSEUSDT": 1,
+    "RSRUSDT": 1,
+    "SKLUSDT": 1,
+    "TRXUSDT": 1,
+    "UNFIUSDT": 1,
+    "VETUSDT": 1,
+    "WAVESUSDT": 2,
+    "XLMUSDT": 1,
+    "YFIUSDT": 1,
+    "ZILUSDT": 1
+  },
+  "dollar_neutral_max_error": 5.551115123125783e-17,
+  "gross_exposure_min_max": [
+    0.9999999999999998,
+    1.0000000000000002
+  ],
+  "exposures": {
+    "btc_only": {
+      "n": 869,
+      "alpha_ann": 0.5258774329571715,
+      "betas": {
+        "BTC": -5.799712465927656e-05
+      },
+      "t_hac21": {
+        "BTC": -0.0029414158560899075
+      },
+      "r2": 2.9000762014064208e-08
+    },
+    "eth_only": {
+      "n": 869,
+      "alpha_ann": 0.5293128323001679,
+      "betas": {
+        "ETH": -0.0039105694394311425
+      },
+      "t_hac21": {
+        "ETH": -0.28522806893691244
+      },
+      "r2": 0.00024180192952361068
+    },
+    "equal_weight_top100_only": {
+      "n": 869,
+      "alpha_ann": 0.5252065942938948,
+      "betas": {
+        "EW_top100": 0.0009031044778544772
+      },
+      "t_hac21": {
+        "EW_top100": 0.06031329034688362
+      },
+      "r2": 1.4736334609910529e-05
+    },
+    "joint_markets": {
+      "n": 869,
+      "alpha_ann": 0.5313248269593552,
+      "betas": {
+        "BTC": 0.0055601629203047166,
+        "ETH": -0.019823935367296836,
+        "EW_top100": 0.01374863779313365
+      },
+      "t_hac21": {
+        "BTC": 0.19043016827885767,
+        "ETH": -0.6496181318519223,
+        "EW_top100": 0.44610906734622546
+      },
+      "r2": 0.0014473338188532026
+    },
+    "full_diagnostics": {
+      "n": 869,
+      "alpha_ann": 0.5883966873125226,
+      "betas": {
+        "BTC": 0.025871453256552424,
+        "ETH": -0.0017285214648458884,
+        "EW_top100": -0.046633523733617434,
+        "liquidity_HML": 0.0272422561834585,
+        "volatility_HML": 0.12455392117620516,
+        "momentum_HML": -0.02378263609602992
+      },
+      "t_hac21": {
+        "BTC": 0.7686497729538562,
+        "ETH": -0.06050712083614012,
+        "EW_top100": -1.4411239107240013,
+        "liquidity_HML": 0.8443237617773358,
+        "volatility_HML": 2.432375407448868,
+        "momentum_HML": -1.018270680498636
+      },
+      "r2": 0.0933152695466275
+    },
+    "reported_held_ew_plus_btc": {
+      "n": 869,
+      "alpha_ann": 0.5263152695995328,
+      "betas": {
+        "EW_held": 0.029366272512600166,
+        "BTC": -0.0342206850997936
+      },
+      "t_hac21": {
+        "EW_held": 1.0046405502308808,
+        "BTC": -1.2250896921737904
+      },
+      "r2": 0.005800047339901804
+    }
+  },
+  "position_characteristics": {
+    "log_quote_volume": {
+      "long_mean": 18.055285846728733,
+      "short_mean": 17.90313868607784,
+      "long_minus_short": 0.15214716065089412
+    },
+    "prior_30d_volatility": {
+      "long_mean": 0.07226079342349281,
+      "short_mean": 0.07265591306183605,
+      "long_minus_short": -0.0003951196383432413
+    },
+    "prior_30d_momentum": {
+      "long_mean": 0.15896438289095563,
+      "short_mean": 0.13099047764665173,
+      "long_minus_short": 0.027973905244303914
+    }
+  },
+  "annual": [
+    {
+      "year": 2020,
+      "days": 139,
+      "base_sum": 0.3713340220823727,
+      "base_compound": 0.4312683931599437,
+      "stress_sum": 0.3204534268442775
+    },
+    {
+      "year": 2021,
+      "days": 365,
+      "base_sum": 0.9017241486551223,
+      "base_compound": 1.362622265155728,
+      "stress_sum": 0.7634556243418883
+    },
+    {
+      "year": 2022,
+      "days": 365,
+      "base_sum": -0.02109221870964172,
+      "base_compound": -0.03466620771792006,
+      "stress_sum": -0.3074589098861123
+    }
+  ],
+  "top_assets": [
+    {
+      "symbol": "THETAUSDT",
+      "base_sum": 0.1802467669509701,
+      "avg_abs_weight": 0.018236711586399255,
+      "held_days": 424,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "CRVUSDT",
+      "base_sum": 0.13907929615358833,
+      "avg_abs_weight": 0.017240879249518018,
+      "held_days": 524,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "SOLUSDT",
+      "base_sum": 0.1044693546844108,
+      "avg_abs_weight": 0.010796414958880698,
+      "held_days": 322,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "ZILUSDT",
+      "base_sum": 0.09914568493229352,
+      "avg_abs_weight": 0.008940022503172957,
+      "held_days": 217,
+      "missing_held_days": 1
+    },
+    {
+      "symbol": "SRMUSDT",
+      "base_sum": 0.08598651446264712,
+      "avg_abs_weight": 0.012671337562920644,
+      "held_days": 402,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "BELUSDT",
+      "base_sum": 0.08055634820471115,
+      "avg_abs_weight": 0.006845728318178077,
+      "held_days": 226,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "BNBUSDT",
+      "base_sum": 0.07936841917817605,
+      "avg_abs_weight": 0.018780960529398406,
+      "held_days": 496,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "base_sum": 0.0741130994591938,
+      "avg_abs_weight": 0.009995235398130851,
+      "held_days": 267,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "RSRUSDT",
+      "base_sum": 0.07349131208051922,
+      "avg_abs_weight": 0.011090649856472727,
+      "held_days": 354,
+      "missing_held_days": 1
+    },
+    {
+      "symbol": "IOSTUSDT",
+      "base_sum": 0.07239285362922722,
+      "avg_abs_weight": 0.006056911084998434,
+      "held_days": 139,
+      "missing_held_days": 0
+    }
+  ],
+  "bottom_assets": [
+    {
+      "symbol": "XRPUSDT",
+      "base_sum": -0.03938354654530726,
+      "avg_abs_weight": 0.007493202036590253,
+      "held_days": 198,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "MATICUSDT",
+      "base_sum": -0.04081538547934829,
+      "avg_abs_weight": 0.006549270678331711,
+      "held_days": 218,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "FTMUSDT",
+      "base_sum": -0.044412104952449266,
+      "avg_abs_weight": 0.008389593870708116,
+      "held_days": 251,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "DOTUSDT",
+      "base_sum": -0.04525844573215503,
+      "avg_abs_weight": 0.011306148186574686,
+      "held_days": 383,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "LINKUSDT",
+      "base_sum": -0.05092511366267042,
+      "avg_abs_weight": 0.010069702079596623,
+      "held_days": 274,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "FLMUSDT",
+      "base_sum": -0.05397850539870036,
+      "avg_abs_weight": 0.005809980250504763,
+      "held_days": 173,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "ANCUSDT",
+      "base_sum": -0.06327801235545619,
+      "avg_abs_weight": 0.00023014959723820482,
+      "held_days": 8,
+      "missing_held_days": 1
+    },
+    {
+      "symbol": "1INCHUSDT",
+      "base_sum": -0.07129518206730796,
+      "avg_abs_weight": 0.010414195052377508,
+      "held_days": 354,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "IOTAUSDT",
+      "base_sum": -0.0831697585649528,
+      "avg_abs_weight": 0.013617150933761708,
+      "held_days": 394,
+      "missing_held_days": 0
+    },
+    {
+      "symbol": "LUNAUSDT",
+      "base_sum": -0.08463344486593756,
+      "avg_abs_weight": 0.006915678218878068,
+      "held_days": 234,
+      "missing_held_days": 2
+    }
+  ],
+  "best_months": [
+    {
+      "month": "2021-01",
+      "days": 31,
+      "base_sum": 0.2574735945726791,
+      "base_compound": 0.27167876867103624,
+      "stress_sum": 0.24716645171553625
+    },
+    {
+      "month": "2021-04",
+      "days": 30,
+      "base_sum": 0.22364847926525225,
+      "base_compound": 0.245967436844573,
+      "stress_sum": 0.21188156750054638
+    },
+    {
+      "month": "2020-12",
+      "days": 31,
+      "base_sum": 0.18695166766053473,
+      "base_compound": 0.2025145010218692,
+      "stress_sum": 0.17586303129689837
+    },
+    {
+      "month": "2021-07",
+      "days": 31,
+      "base_sum": 0.14042355101636958,
+      "base_compound": 0.14856562077684043,
+      "stress_sum": 0.1314535510163696
+    },
+    {
+      "month": "2021-02",
+      "days": 28,
+      "base_sum": 0.14008214370904795,
+      "base_compound": 0.14262164903155106,
+      "stress_sum": 0.1305302389471432
+    }
+  ],
+  "worst_months": [
+    {
+      "month": "2022-07",
+      "days": 31,
+      "base_sum": -0.07451235796274788,
+      "base_compound": -0.07271826697681072,
+      "stress_sum": -0.08595235796274789
+    },
+    {
+      "month": "2022-10",
+      "days": 31,
+      "base_sum": -0.07214378270534551,
+      "base_compound": -0.07015318891254874,
+      "stress_sum": -0.0822837827053455
+    },
+    {
+      "month": "2021-12",
+      "days": 31,
+      "base_sum": -0.04812678428355653,
+      "base_compound": -0.04783928021488115,
+      "stress_sum": -0.06573678428355653
+    },
+    {
+      "month": "2022-05",
+      "days": 31,
+      "base_sum": -0.046717031351178134,
+      "base_compound": -0.04970198896372402,
+      "stress_sum": -0.07536203135117814
+    },
+    {
+      "month": "2021-10",
+      "days": 31,
+      "base_sum": -0.0402683462292306,
+      "base_compound": -0.041033903912425895,
+      "stress_sum": -0.05066834622923061
+    }
+  ]
+}

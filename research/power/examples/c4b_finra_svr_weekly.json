@@ -1,0 +1,273 @@
+{
+ "name": "c4b_finra_svr_weekly",
+ "description": "FINRA daily short-volume ratio, 1,500-3,000 US stocks, weekly decile long-short; dev 2018-08..2021-12, validation 2022-01..2026-09.",
+ "assumptions": [
+  "ASSUMPTION weekly residual cs sd 5%",
+  "ASSUMPTION weekly signal autocorr 0.6",
+  "ASSUMPTION 15 bp one-way (small/mid caps)",
+  "ASSUMPTION batch k = 3"
+ ],
+ "design": "long_short",
+ "params": {
+  "n_assets": 2000,
+  "periods_per_year": 52,
+  "ic": 0.015,
+  "cs_dispersion": 0.05,
+  "quantile": 0.1,
+  "rho_resid": 0.15,
+  "rho_signal": 0.25,
+  "signal_autocorr": 0.6,
+  "cost_bps_one_way": 15,
+  "spread_autocorr": 0.0,
+  "exkurt": 3.0
+ },
+ "windows": {
+  "dev_years": 3.4,
+  "val_years": 4.7
+ },
+ "gates": {
+  "batch_k": 3,
+  "stress_drag_sr": 0.15,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "sharpe",
+   "value": 0.75,
+   "alpha": "auto"
+  },
+  "pav": {
+   "k_val": 1
+  }
+ },
+ "scenarios": [
+  {
+   "label": "N=1500 IC=0.01 rho=0.1",
+   "params": {
+    "n_assets": 1500,
+    "ic": 0.01,
+    "rho_resid": 0.1
+   }
+  },
+  {
+   "label": "N=1500 IC=0.01 rho=0.2",
+   "params": {
+    "n_assets": 1500,
+    "ic": 0.01,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=1500 IC=0.015 rho=0.1",
+   "params": {
+    "n_assets": 1500,
+    "ic": 0.015,
+    "rho_resid": 0.1
+   }
+  },
+  {
+   "label": "N=1500 IC=0.015 rho=0.2",
+   "params": {
+    "n_assets": 1500,
+    "ic": 0.015,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=1500 IC=0.02 rho=0.1",
+   "params": {
+    "n_assets": 1500,
+    "ic": 0.02,
+    "rho_resid": 0.1
+   }
+  },
+  {
+   "label": "N=1500 IC=0.02 rho=0.2",
+   "params": {
+    "n_assets": 1500,
+    "ic": 0.02,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=3000 IC=0.01 rho=0.1",
+   "params": {
+    "n_assets": 3000,
+    "ic": 0.01,
+    "rho_resid": 0.1
+   }
+  },
+  {
+   "label": "N=3000 IC=0.01 rho=0.2",
+   "params": {
+    "n_assets": 3000,
+    "ic": 0.01,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=3000 IC=0.015 rho=0.1",
+   "params": {
+    "n_assets": 3000,
+    "ic": 0.015,
+    "rho_resid": 0.1
+   }
+  },
+  {
+   "label": "N=3000 IC=0.015 rho=0.2",
+   "params": {
+    "n_assets": 3000,
+    "ic": 0.015,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=3000 IC=0.02 rho=0.1",
+   "params": {
+    "n_assets": 3000,
+    "ic": 0.02,
+    "rho_resid": 0.1
+   }
+  },
+  {
+   "label": "N=3000 IC=0.02 rho=0.2",
+   "params": {
+    "n_assets": 3000,
+    "ic": 0.02,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "N=2000 IC=0.01 rho=0.15 sig_ac=0.85 cost=5bp",
+   "params": {
+    "ic": 0.01,
+    "signal_autocorr": 0.85,
+    "cost_bps_one_way": 5
+   }
+  },
+  {
+   "label": "N=2000 IC=0.01 rho=0.15 sig_ac=0.85 cost=10bp",
+   "params": {
+    "ic": 0.01,
+    "signal_autocorr": 0.85,
+    "cost_bps_one_way": 10
+   }
+  },
+  {
+   "label": "N=2000 IC=0.01 rho=0.15 sig_ac=0.95 cost=5bp",
+   "params": {
+    "ic": 0.01,
+    "signal_autocorr": 0.95,
+    "cost_bps_one_way": 5
+   }
+  },
+  {
+   "label": "N=2000 IC=0.01 rho=0.15 sig_ac=0.95 cost=10bp",
+   "params": {
+    "ic": 0.01,
+    "signal_autocorr": 0.95,
+    "cost_bps_one_way": 10
+   }
+  },
+  {
+   "label": "N=2000 IC=0.015 rho=0.15 sig_ac=0.85 cost=5bp",
+   "params": {
+    "ic": 0.015,
+    "signal_autocorr": 0.85,
+    "cost_bps_one_way": 5
+   }
+  },
+  {
+   "label": "N=2000 IC=0.015 rho=0.15 sig_ac=0.85 cost=10bp",
+   "params": {
+    "ic": 0.015,
+    "signal_autocorr": 0.85,
+    "cost_bps_one_way": 10
+   }
+  },
+  {
+   "label": "N=2000 IC=0.015 rho=0.15 sig_ac=0.95 cost=5bp",
+   "params": {
+    "ic": 0.015,
+    "signal_autocorr": 0.95,
+    "cost_bps_one_way": 5
+   }
+  },
+  {
+   "label": "N=2000 IC=0.015 rho=0.15 sig_ac=0.95 cost=10bp",
+   "params": {
+    "ic": 0.015,
+    "signal_autocorr": 0.95,
+    "cost_bps_one_way": 10
+   }
+  },
+  {
+   "label": "N=2000 IC=0.02 rho=0.15 sig_ac=0.85 cost=5bp",
+   "params": {
+    "ic": 0.02,
+    "signal_autocorr": 0.85,
+    "cost_bps_one_way": 5
+   }
+  },
+  {
+   "label": "N=2000 IC=0.02 rho=0.15 sig_ac=0.85 cost=10bp",
+   "params": {
+    "ic": 0.02,
+    "signal_autocorr": 0.85,
+    "cost_bps_one_way": 10
+   }
+  },
+  {
+   "label": "N=2000 IC=0.02 rho=0.15 sig_ac=0.95 cost=5bp",
+   "params": {
+    "ic": 0.02,
+    "signal_autocorr": 0.95,
+    "cost_bps_one_way": 5
+   }
+  },
+  {
+   "label": "N=2000 IC=0.02 rho=0.15 sig_ac=0.95 cost=10bp",
+   "params": {
+    "ic": 0.02,
+    "signal_autocorr": 0.95,
+    "cost_bps_one_way": 10
+   }
+  },
+  {
+   "label": "N=2000 IC=0.01 rho=0.1 LITERAL",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.1,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "N=2000 IC=0.01 rho=0.2 LITERAL",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.2,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "N=2000 IC=0.02 rho=0.1 LITERAL",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.1,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  },
+  {
+   "label": "N=2000 IC=0.02 rho=0.2 LITERAL",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.2,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  }
+ ]
+}

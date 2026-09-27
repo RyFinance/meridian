@@ -1,0 +1,218 @@
+{
+ "full": {
+  "cagr": 0.022029567119723925,
+  "ci": {
+   "B": 499,
+   "L": 62,
+   "level": 0.9,
+   "mean_ann": {
+    "est": 0.022578193913475736,
+    "hi": 0.03217284581433778,
+    "lo": 0.012881689186999832
+   },
+   "n": 613,
+   "sharpe_ann": {
+    "est": 0.5764960164708501,
+    "hi": 0.8261058849717595,
+    "lo": 0.3338802226422219
+   }
+  },
+  "first": "1975-09",
+  "hit_rate": 0.6052202283849919,
+  "last": "2026-09",
+  "max_drawdown": -0.11533564570563759,
+  "mean_ann": 0.02257819391347574,
+  "n": 613,
+  "sharpe_ann": 0.5764960164708504,
+  "vol_ann": 0.03916452719256104
+ },
+ "id": "BOOK",
+ "leverage_for_12pct": {
+  "conservative_mean_ann": 0.012624013136628566,
+  "lcb75_ann": 0.012624013136628566,
+  "leverage": null,
+  "mean_ann": 0.017464827101709164,
+  "status": "not attainable (leverage > cap)",
+  "target_total_ann": 0.12,
+  "tbill_ann": 0.028579347826086957
+ },
+ "max_gross": 2.0,
+ "mdd_simulation": {
+  "horizon_months": 120,
+  "mdd_median": -0.07184209151992865,
+  "mdd_p05": -0.130852030908278,
+  "mdd_p95": -0.04009986896158679,
+  "mean_block": 12,
+  "n_paths": 10000,
+  "seed": 20260925
+ },
+ "mean_gross": 1.996981697898679,
+ "method_counts": {
+  "erc": 322,
+  "inv_vol": 291
+ },
+ "positive": true,
+ "positive_rule": "post-pub net Sharpe calibrated 90% CI excludes zero (FRAMEWORK \u00a76)",
+ "post": {
+  "cagr": 0.017176346551588617,
+  "ci": {
+   "B": 499,
+   "L": 10,
+   "level": 0.9,
+   "mean_ann": {
+    "est": 0.017464827101709164,
+    "hi": 0.0322968034779164,
+    "lo": 0.0006221397116322044
+   },
+   "n": 92,
+   "sharpe_ann": {
+    "est": 0.5983038184034709,
+    "hi": 1.099754331486121,
+    "lo": 0.05295889396490049
+   }
+  },
+  "first": "2019-02",
+  "hit_rate": 0.6739130434782609,
+  "last": "2026-09",
+  "max_drawdown": -0.033326614636393415,
+  "mean_ann": 0.017464827101709164,
+  "n": 92,
+  "sharpe_ann": 0.598303818403471,
+  "vol_ann": 0.029190566004263094
+ },
+ "post_pub_cutoff": "2019-02",
+ "run": {
+  "bugfix_entry": "",
+  "engine_sha256": "e9cec9f0f81d15cc13968456abcbeb24fb84d85d1a29df29bc1e1eff95469422",
+  "id": "BOOK",
+  "kind": "book",
+  "snapshot_manifest_sha256": "ba67379be094135e32557468710a078ea9ac6f0d87516fef331e7788b22d29be",
+  "spec": "research/cycle6/specs/BOOK.md",
+  "spec_sha256": "8843f97fe7eb6137f338f458eb9d09f406daea082d19e186cc37a577601a706b"
+ },
+ "sleeves": {
+  "BAB-EQ": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "BAB-FI": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "CARRY-FI": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "CARRY-FX": {
+   "first_defined_month": "1974-09",
+   "included": true,
+   "net_csv_sha256": "a119348c0ca5cbdfa8415ccc76318b8928948b4dfe44678514536f5ef4632da1",
+   "post_pub_cutoff": "2013-09"
+  },
+  "CORE": {
+   "first_defined_month": "2002-08",
+   "included": true
+  },
+  "SEAS-CM": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "SEAS-EQ": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "SEAS-FI": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "SEAS-FX": {
+   "first_defined_month": "1976-08",
+   "included": true,
+   "net_csv_sha256": "63320b9763ace319d8e633dd452899ff272d8f2e7690d2aa002836a1871529c0",
+   "post_pub_cutoff": "2019-02"
+  },
+  "TSMOM-CM": {
+   "first_defined_month": "2007-12",
+   "included": true,
+   "net_csv_sha256": "82435f584e389369f2e1f88d38ec443343ed6a60a422900a5bc6d3a3988b8551",
+   "post_pub_cutoff": "2011-01"
+  },
+  "TSMOM-EQ": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "TSMOM-FI": {
+   "first_defined_month": "1993-04",
+   "included": true,
+   "net_csv_sha256": "5db90b907248cb6e1778f9bdfe2fdec959977a6c1c0e0aa5f961a5a52e62de40",
+   "post_pub_cutoff": "2011-01"
+  },
+  "TSMOM-FX": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "VAL-CM": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "VAL-EQ": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "VAL-FI": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "VAL-FX": {
+   "first_defined_month": "1980-03",
+   "included": true,
+   "net_csv_sha256": "1cd89bf6b60da94c8e2a7d2b955c9ad7536444cfee15b0b169ac292da02c3239",
+   "post_pub_cutoff": "2009-04"
+  },
+  "XSMOM-CM": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "XSMOM-EQ": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "XSMOM-FI": {
+   "included": false,
+   "reason": "fidelity FAIL"
+  },
+  "XSMOM-FX": {
+   "first_defined_month": "1975-08",
+   "included": true,
+   "net_csv_sha256": "567d0c892618173df2b967d2b51ea64f0a564ebaca2978b51c9b71c9a1fef363",
+   "post_pub_cutoff": "2009-04"
+  }
+ },
+ "total_return_full": {
+  "cagr": 0.05884063656499561,
+  "first": "1981-10",
+  "hit_rate": 0.7277777777777777,
+  "last": "2026-09",
+  "max_drawdown": -0.07560476144187955,
+  "mean_ann": 0.058037187697312906,
+  "n": 540,
+  "sharpe_ann": 1.5214967850820693,
+  "vol_ann": 0.038144798113511874
+ },
+ "years_post": {
+  "best_year": 2019,
+  "best_year_ret": 0.04549881729986427,
+  "by_year": {
+   "2019": 0.04549881729986427,
+   "2020": -0.00021308211819737188,
+   "2021": 0.006364340953020076,
+   "2022": 0.03155522339689276,
+   "2023": -0.001920043512787739,
+   "2024": 0.002869479610251302,
+   "2025": 0.012697636728714157,
+   "2026": 0.03594414347001562
+  },
+  "worst_year": 2023,
+  "worst_year_ret": -0.001920043512787739
+ }
+}

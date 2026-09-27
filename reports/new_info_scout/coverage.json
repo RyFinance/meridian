@@ -1,0 +1,240 @@
+{
+ "nyfed_primary_dealer": {
+  "n_series": 2290,
+  "first_date": "1998-01-28",
+  "last_date": "2026-09-16",
+  "series_starting_before_2001": 79,
+  "treasury_coupon_long_duration_chain": {
+   "1998-01..2001-06 (coupons >5y, net outright)": {
+    "PDPUSGCS5MNOP": [
+     "1998-01-28",
+     "2001-06-27",
+     179
+    ]
+   },
+   "2001-07..2013-03 (coupons 6-11y, >11y, net outright)": {
+    "PDPUSGCS611NOP": [
+     "2001-07-04",
+     "2013-03-27",
+     613
+    ],
+    "PDPUSGCSM11NOP": [
+     "2001-07-04",
+     "2013-03-27",
+     613
+    ]
+   },
+   "2013-04..now (coupons 6-7, 7-11, 11-21, >21y)": {
+    "PDPOSGSC-G6L7": [
+     "2013-04-03",
+     "2026-09-16",
+     703
+    ],
+    "PDPOSGSC-G7L11": [
+     "2013-04-03",
+     "2026-09-16",
+     703
+    ],
+    "PDPOSGSC-G11L21": [
+     "2022-01-05",
+     "2026-09-16",
+     246
+    ],
+    "PDPOSGSC-G21": [
+     "2022-01-05",
+     "2026-09-16",
+     246
+    ]
+   }
+  },
+  "weeks_1998_to_now": null,
+  "notes": [
+   "as-of dates are Wednesdays; data released the following Thursday ~16:15 ET (8-day lag)",
+   "API serves latest values only: no vintages, so revisions cannot be audited",
+   "bucket definitions change at the 2001-07, 2013-04, 2015, 2022, 2024 series breaks"
+  ]
+ },
+ "finra_margin_error": "BadZipFile: File is not a zip file",
+ "binance_archive": {
+  "um_daily_types": [
+   "aggTrades",
+   "bookDepth",
+   "bookTicker",
+   "indexPriceKlines",
+   "klines",
+   "markPriceKlines",
+   "metrics",
+   "premiumIndexKlines",
+   "trades"
+  ],
+  "cm_daily_types": [
+   "aggTrades",
+   "bookDepth",
+   "bookTicker",
+   "indexPriceKlines",
+   "klines",
+   "liquidationSnapshot",
+   "markPriceKlines",
+   "metrics",
+   "premiumIndexKlines",
+   "trades"
+  ],
+  "um/metrics/BTCUSDT": {
+   "n_files_first_page": 0,
+   "first": null,
+   "last_on_first_page": null
+  },
+  "um/liquidationSnapshot/BTCUSDT": {
+   "n_files_first_page": 0,
+   "first": null,
+   "last_on_first_page": null
+  },
+  "cm/metrics/BTCUSD_PERP": {
+   "n_files_first_page": 1000,
+   "first": "2021-07-08",
+   "last_on_first_page": "2022-11-24"
+  },
+  "cm/liquidationSnapshot/BTCUSD_PERP": {
+   "n_files_first_page": 0,
+   "first": null,
+   "last_on_first_page": null
+  },
+  "um_liquidationSnapshot_symbols_first_page": 0
+ },
+ "defillama_stablecoins": {
+  "usdt_points": 3223,
+  "usdt_first": "2017-11-29",
+  "usdt_last": "2026-09-25",
+  "notes": [
+   "DefiLlama backfills and re-derives history (no vintages): not point-in-time",
+   "useful only from ~2019 at scale"
+  ]
+ },
+ "reachability": {
+  "fred_custody_WMTSECL1": {
+   "status": 200,
+   "bytes": 1343,
+   "error": null
+  },
+  "fred_margin_BOGZ1": {
+   "status": 200,
+   "bytes": 5457,
+   "error": null
+  },
+  "fiscaldata_mspd": {
+   "status": 200,
+   "bytes": 2109,
+   "error": null
+  },
+  "fed_h41_page": {
+   "status": null,
+   "bytes": null,
+   "error": "IncompleteRead: IncompleteRead(67750 bytes read)"
+  },
+  "cftc_tff_2006": {
+   "status": 404,
+   "bytes": null,
+   "error": null
+  },
+  "deribit_settlements": {
+   "status": 200,
+   "bytes": 1282,
+   "error": null
+  },
+  "bitmex_settled": {
+   "status": 200,
+   "bytes": 1289,
+   "error": null
+  },
+  "okx_delivery_history": {
+   "status": null,
+   "bytes": null,
+   "error": "IncompleteRead: IncompleteRead(0 bytes read)"
+  }
+ },
+ "binance_archive_v2": {
+  "um/metrics/BTCUSDT": {
+   "n_daily_files": 1000,
+   "first": "2020-09-01",
+   "last": "2022-01-13"
+  },
+  "um/metrics/ETHUSDT": {
+   "n_daily_files": 1000,
+   "first": "2021-12-01",
+   "last": "2023-04-14"
+  },
+  "cm/liquidationSnapshot/BTCUSD_PERP": {
+   "n_daily_files": 944,
+   "first": "2023-06-25",
+   "last": "2024-10-14"
+  },
+  "cm/metrics/BTCUSD_PERP": {
+   "n_daily_files": 3597,
+   "first": "2021-07-08",
+   "last": "2026-09-24"
+  },
+  "um_metrics_symbols": 0,
+  "cm_liquidationSnapshot_symbols": 0,
+  "cm_dated_contract_folders": {
+   "n": 0,
+   "first": [],
+   "last": []
+  },
+  "um_dated_contract_folders": {
+   "n": 50,
+   "first": [
+    "BTCBUSD_210129",
+    "BTCBUSD_210226",
+    "BTCUSDT_210326"
+   ],
+   "last": [
+    "ETHUSDT_260626",
+    "ETHUSDT_260925",
+    "ETHUSDT_261225"
+   ]
+  }
+ },
+ "fred": {
+  "WMTSECL1": {
+   "header": "observation_date,WMTSECL1",
+   "n_obs": 850,
+   "first": "2002-12-18",
+   "last": "2019-03-27"
+  },
+  "WFASECL1": {
+   "header": "observation_date,WFASECL1",
+   "n_obs": 1241,
+   "first": "2002-12-18",
+   "last": "2026-09-23"
+  },
+  "BOGZ1FL663067003Q": {
+   "header": "observation_date,BOGZ1FL663067003Q",
+   "n_obs": 305,
+   "first": "1945-10-01",
+   "last": "2026-04-01"
+  },
+  "WTREGEN": {
+   "header": "observation_date,WTREGEN",
+   "n_obs": 1241,
+   "first": "2002-12-18",
+   "last": "2026-09-23"
+  },
+  "WSHOMCB": {
+   "header": "observation_date,WSHOMCB",
+   "n_obs": 1241,
+   "first": "2002-12-18",
+   "last": "2026-09-23"
+  },
+  "RRPONTSYD": {
+   "header": "observation_date,RRPONTSYD",
+   "n_obs": 3334,
+   "first": "2003-02-07",
+   "last": "2026-09-25"
+  }
+ },
+ "fiscaldata_mspd": {
+  "first": "2001-01-31",
+  "last": "2026-08-31"
+ },
+ "crypto_dated_futures": {}
+}

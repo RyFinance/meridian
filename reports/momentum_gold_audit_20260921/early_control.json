@@ -1,0 +1,87 @@
+{
+  "limitation": "SPY/GLD actual-fund proxy only. SPMO did not exist in these earlier years. These periods were not untouched research holdouts.",
+  "results": {
+    "market_gold": {
+      "2005_2016": {
+        "cagr": 0.08537406146287707,
+        "total_return": 1.6701133437839433,
+        "excess_sharpe": 0.5707819030060577,
+        "ann_excess_mean": 0.07977689127268454,
+        "vol": 0.13975968278489243,
+        "max_dd": -0.33044282526543256,
+        "annual_cost": 0.0002458329721863638,
+        "annual_turnover": 0.4916659443727274,
+        "average_exposure": 1.0,
+        "days": 3021,
+        "years": 11.988095238095237
+      },
+      "2012_2015": {
+        "cagr": 0.02048722146685722,
+        "total_return": 0.08432727493272107,
+        "excess_sharpe": 0.23922944210380906,
+        "ann_excess_mean": 0.025507610112606258,
+        "vol": 0.10662340431165436,
+        "max_dd": -0.13001480510479102,
+        "annual_cost": 0.0003864436214069366,
+        "annual_turnover": 0.772887242813873,
+        "average_exposure": 1.0,
+        "days": 1006,
+        "years": 3.992063492063492
+      },
+      "2005_2023": {
+        "cagr": 0.09565184517237069,
+        "total_return": 4.658181817094304,
+        "excess_sharpe": 0.6487272184544468,
+        "ann_excess_mean": 0.08622163704487024,
+        "vol": 0.13289317781477789,
+        "max_dd": -0.33044282526543256,
+        "annual_cost": 0.00020651284244112148,
+        "annual_turnover": 0.41302568488224284,
+        "average_exposure": 1.0,
+        "days": 4781,
+        "years": 18.97222222222222
+      }
+    },
+    "market": {
+      "2005_2016": {
+        "cagr": 0.07367757854412593,
+        "total_return": 1.3448715665488087,
+        "excess_sharpe": 0.4010277666470619,
+        "ann_excess_mean": 0.0781049825148618,
+        "vol": 0.194739049219952,
+        "max_dd": -0.5518943319267766,
+        "annual_cost": 8.324279560667118e-05,
+        "annual_turnover": 0.16648559121334233,
+        "average_exposure": 1.0,
+        "days": 3021,
+        "years": 11.988095238095237
+      },
+      "2012_2015": {
+        "cagr": 0.1471494487485776,
+        "total_return": 0.7298435574036444,
+        "excess_sharpe": 1.1397801419672926,
+        "ann_excess_mean": 0.14492979856344534,
+        "vol": 0.12715556075104156,
+        "max_dd": -0.1191022754498442,
+        "annual_cost": 0.0002491814849872225,
+        "annual_turnover": 0.4983629699744451,
+        "average_exposure": 1.0,
+        "days": 1006,
+        "years": 3.992063492063492
+      },
+      "2005_2023": {
+        "cagr": 0.09526507671056161,
+        "total_return": 4.6204075096571255,
+        "excess_sharpe": 0.4954231326880934,
+        "ann_excess_mean": 0.09570375458292056,
+        "vol": 0.19315592316772934,
+        "max_dd": -0.5518943319267766,
+        "annual_cost": 5.2619174130717155e-05,
+        "annual_turnover": 0.10523834826143429,
+        "average_exposure": 1.0,
+        "days": 4781,
+        "years": 18.97222222222222
+      }
+    }
+  }
+}

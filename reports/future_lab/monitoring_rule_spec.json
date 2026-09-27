@@ -1,0 +1,1206 @@
+{
+ "spec_version": "future_lab.monitoring.v1",
+ "frozen_on": "2026-09-23",
+ "status": "PROPOSED. It becomes pre-specified only once its sha256 is registered in research/preregistrations.jsonl before each candidate's forward_start. Parameters must not be re-estimated on forward data.",
+ "not_evidence": "Priors, SE inflation and drawdown boundaries are estimated from already-observed history. The rule tests whether forward data is consistent with that history; it cannot anticipate regimes absent from it.",
+ "evaluator": "research.future_lab.forward.evaluate_from_spec('reports/future_lab/monitoring_rule_spec.json', name, daily_df) (verifies this sha256, then applies the rule mechanically)",
+ "inputs": {
+  "daily_df_columns": {
+   "ret": "candidate daily net total return",
+   "rf": "daily T-bill return",
+   "control_ret": "control daily net total return (omit for spy)"
+  }
+ },
+ "rule": {
+  "look_every_trading_days": 21,
+  "max_months": 60,
+  "kill_sharpe": {
+   "threshold": 0.3,
+   "prob_below": 0.1,
+   "min_months": 6
+  },
+  "kill_drawdown": {
+   "percentile": 0.99
+  },
+  "revert_to_control": {
+   "threshold": 0.0,
+   "prob_below": 0.1,
+   "min_months": 24
+  },
+  "promote": {
+   "min_months": 24,
+   "p_sharpe_gt_0": 0.95,
+   "p_ir_gt_0": 0.9
+  }
+ },
+ "rule_text": [
+  "Looks: at each calendar month-end close, once >= 21 forward trading days exist. months_elapsed = round(trading_days / 21).",
+  "Statistics: annualised Sharpe of daily excess returns (ret - rf) since forward_start; annualised IR of daily active returns (ret - control_ret); running max drawdown of the candidate NAV since forward_start.",
+  "Posterior: Normal prior N(m, s^2) on the true annualised Sharpe (or IR); the forward estimate is treated as N(true, k^2 / years). posterior precision = 1/s^2 + years/k^2; posterior mean = (m/s^2 + estimate*years/k^2) / precision.",
+  "Futility prior (kill / revert): m = prior_sharpe_mean (= 0.5 x backtest Sharpe), s = prior_sharpe_sd (= resampled SE of the backtest Sharpe); likewise prior_ir_mean / prior_ir_sd for the IR.",
+  "Promotion prior (sceptical): m = 0, s = skeptical_sharpe_sd (= backtest Sharpe / 1.645) and skeptical_ir_sd; only forward data can carry a promotion.",
+  "KILL_DRAWDOWN (checked first, any look): running max drawdown deeper than dd_boundary[months_elapsed-1].",
+  "KILL_SHARPE (months_elapsed >= 6): futility-prior posterior P(Sharpe > 0.30) < 0.10.",
+  "REVERT_TO_CONTROL (months_elapsed >= 24): futility-prior posterior P(IR vs control > 0) < 0.10 -> hold the control instead.",
+  "PROMOTE (months_elapsed >= 24): sceptical-prior posterior P(Sharpe > 0) >= 0.95 AND sceptical-prior posterior P(IR > 0) >= 0.90 AND no open implementation REVIEW. Promotion means eligibility for sizing beyond paper/small size, not certainty.",
+  "Decisions are terminal. At 60 months with no decision: END_NO_DECISION (the candidate stays a benchmark)."
+ ],
+ "candidates": {
+  "pead_2x": {
+   "candidate": "pead_2x",
+   "role": "candidate",
+   "series": "Daily net total return of the PEAD bot's marked NAV at 2x sizing (5% positions), accounted as in research/pead_audit/mtm_audit.py: every open position marked to the close daily, 10 bps round trip, idle cash earning T-bills. Only genuinely forward events count (no backfilled ledger events).",
+   "control": "pead_2x_univ_ctl",
+   "control_definition": "Same forward trades (dates, direction, notional) placed in the equal-weight average of the trading universe (research/pead_audit/mtm_audit.mtm_book with substitute=universe index); the SPY-substitute control is reported alongside but not used for decisions.",
+   "risk_free": "Fama-French daily risk-free rate (as in mtm_audit)",
+   "forward_start": "2026-09-24",
+   "parameters": {
+    "prior_sharpe_mean": 0.3501202458168655,
+    "prior_sharpe_sd": 0.4446371856506584,
+    "k_sharpe": 0.8736991844069927,
+    "prior_ir_mean": 0.15208468649749596,
+    "prior_ir_sd": 0.5181263708444188,
+    "k_ir": 1.0181033036273974,
+    "skeptical_sharpe_sd": 0.42571599086998285,
+    "skeptical_ir_sd": 0.18492184837062453,
+    "dd_boundary": [
+     -0.08230285631219392,
+     -0.09371565292383233,
+     -0.09909059955137914,
+     -0.11499656654820722,
+     -0.1275509400043403,
+     -0.1335112006018862,
+     -0.14004218415463243,
+     -0.1446236607635523,
+     -0.150755190766062,
+     -0.1552950856518725,
+     -0.15979821900139177,
+     -0.1659627201738748,
+     -0.16954469668530184,
+     -0.17384505501879352,
+     -0.17773541122615397,
+     -0.1809489395139321,
+     -0.18355381232265866,
+     -0.1865144043736073,
+     -0.18839246063120102,
+     -0.19070177910326222,
+     -0.19425633886674237,
+     -0.19596294668827008,
+     -0.19808608132498265,
+     -0.20000480056041955,
+     -0.20163048393400618,
+     -0.20364914669090448,
+     -0.20476838450797655,
+     -0.20679316814623586,
+     -0.20802572484742227,
+     -0.20854022154661397,
+     -0.20971688690708093,
+     -0.21152589884645623,
+     -0.21322907023631515,
+     -0.214245884470435,
+     -0.21490021907136161,
+     -0.21623441770025853,
+     -0.21715782547047757,
+     -0.21777969667856392,
+     -0.21837600331642823,
+     -0.21922669851711185,
+     -0.22024255225936748,
+     -0.22131606692591033,
+     -0.22182149200591633,
+     -0.2229573546718654,
+     -0.22354080744534122,
+     -0.22402814416502942,
+     -0.22620800339034033,
+     -0.22705657585026923,
+     -0.22791758400734627,
+     -0.2289937167351987,
+     -0.2300704754233493,
+     -0.23071472058254236,
+     -0.23199078339052936,
+     -0.23240276425119327,
+     -0.23328049028531153,
+     -0.234063068033939,
+     -0.23478402945262009,
+     -0.23568186634909108,
+     -0.2362215565047483,
+     -0.23655035177827397
+    ]
+   },
+   "backtest_reference": {
+    "sharpe_hat": 0.700240491633731,
+    "ir_hat": 0.3041693729949919,
+    "years": 3.861111111111111,
+    "window": [
+     "2021-08-12",
+     "2025-06-27"
+    ],
+    "annual_turnover": 11.385398163710757
+   },
+   "operating_characteristics_stationary_bootstrap": {
+    "as_backtested": {
+     "true_sharpe_hist_scale": 0.700240491633731,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.045,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.045,
+      "undecided": 0.955
+     },
+     "24m": {
+      "kill_sharpe": 0.00275,
+      "kill_drawdown": 0.0555,
+      "revert_to_control": 0.00175,
+      "promote": 0.0,
+      "kill_any": 0.05825,
+      "undecided": 0.94
+     },
+     "36m": {
+      "kill_sharpe": 0.00425,
+      "kill_drawdown": 0.0605,
+      "revert_to_control": 0.00825,
+      "promote": 0.0,
+      "kill_any": 0.06475,
+      "undecided": 0.927
+     },
+     "60m": {
+      "kill_sharpe": 0.005,
+      "kill_drawdown": 0.06575,
+      "revert_to_control": 0.017,
+      "promote": 0.0,
+      "kill_any": 0.07075000000000001,
+      "undecided": 0.91225
+     }
+    },
+    "half_sharpe": {
+     "true_sharpe_hist_scale": 0.3501202458168655,
+     "12m": {
+      "kill_sharpe": 0.00225,
+      "kill_drawdown": 0.07175,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.074,
+      "undecided": 0.926
+     },
+     "24m": {
+      "kill_sharpe": 0.00825,
+      "kill_drawdown": 0.09575,
+      "revert_to_control": 0.035,
+      "promote": 0.0,
+      "kill_any": 0.10400000000000001,
+      "undecided": 0.861
+     },
+     "36m": {
+      "kill_sharpe": 0.0115,
+      "kill_drawdown": 0.107,
+      "revert_to_control": 0.1135,
+      "promote": 0.0,
+      "kill_any": 0.1185,
+      "undecided": 0.768
+     },
+     "60m": {
+      "kill_sharpe": 0.01725,
+      "kill_drawdown": 0.12,
+      "revert_to_control": 0.2525,
+      "promote": 0.0,
+      "kill_any": 0.13724999999999998,
+      "undecided": 0.61025
+     }
+    },
+    "zero_sharpe": {
+     "true_sharpe_hist_scale": 0.0,
+     "12m": {
+      "kill_sharpe": 0.0115,
+      "kill_drawdown": 0.116,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.1275,
+      "undecided": 0.8725
+     },
+     "24m": {
+      "kill_sharpe": 0.03175,
+      "kill_drawdown": 0.16225,
+      "revert_to_control": 0.19025,
+      "promote": 0.0,
+      "kill_any": 0.194,
+      "undecided": 0.61575
+     },
+     "36m": {
+      "kill_sharpe": 0.03875,
+      "kill_drawdown": 0.17775,
+      "revert_to_control": 0.43425,
+      "promote": 0.0,
+      "kill_any": 0.2165,
+      "undecided": 0.34924999999999995
+     },
+     "60m": {
+      "kill_sharpe": 0.04575,
+      "kill_drawdown": 0.1875,
+      "revert_to_control": 0.67975,
+      "promote": 0.0,
+      "kill_any": 0.23325,
+      "undecided": 0.08699999999999997
+     }
+    },
+    "no_edge_vs_control": {
+     "true_sharpe_hist_scale": 0.573525882867942,
+     "12m": {
+      "kill_sharpe": 0.00075,
+      "kill_drawdown": 0.0575,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.05825,
+      "undecided": 0.94175
+     },
+     "24m": {
+      "kill_sharpe": 0.0045,
+      "kill_drawdown": 0.073,
+      "revert_to_control": 0.00625,
+      "promote": 0.0,
+      "kill_any": 0.0775,
+      "undecided": 0.91625
+     },
+     "36m": {
+      "kill_sharpe": 0.006,
+      "kill_drawdown": 0.0795,
+      "revert_to_control": 0.02325,
+      "promote": 0.0,
+      "kill_any": 0.0855,
+      "undecided": 0.89125
+     },
+     "60m": {
+      "kill_sharpe": 0.00875,
+      "kill_drawdown": 0.0875,
+      "revert_to_control": 0.0555,
+      "promote": 0.0,
+      "kill_any": 0.09625,
+      "undecided": 0.84825
+     }
+    }
+   },
+   "implementation_checks": [
+    "REVIEW if trailing 3-month realised cost per side exceeds the backtest assumption by more than 25 bps (the largest cost shock simulated in reports/future_lab).",
+    "REVIEW if annualised forward turnover is outside 0.5x-1.5x of backtest_reference.annual_turnover after 6 months.",
+    "REVIEW if any signal-day fill is missing or a position is carried at cost instead of marked."
+   ]
+  },
+  "pead_2p5": {
+   "candidate": "pead_2p5",
+   "role": "candidate",
+   "series": "As pead_2x but at the live 2.5% position size.",
+   "control": "pead_2p5_univ_ctl",
+   "control_definition": "As pead_2x control, for the 2.5% book.",
+   "risk_free": "Fama-French daily risk-free rate",
+   "forward_start": "2026-09-24",
+   "parameters": {
+    "prior_sharpe_mean": 0.3646757535823011,
+    "prior_sharpe_sd": 0.45001540013224434,
+    "k_sharpe": 0.8842672200049405,
+    "prior_ir_mean": 0.22042011665009525,
+    "prior_ir_sd": 0.49303002840641075,
+    "k_ir": 0.9687897180180428,
+    "skeptical_sharpe_sd": 0.4434142316458656,
+    "skeptical_ir_sd": 0.26801183161642905,
+    "dd_boundary": [
+     -0.05182556905938496,
+     -0.059024055891830574,
+     -0.06020061122866839,
+     -0.076908430256562,
+     -0.07945534286587774,
+     -0.08419204186361284,
+     -0.08489988940639076,
+     -0.08804462687142443,
+     -0.09099535274571174,
+     -0.09379217063378369,
+     -0.09677974879502006,
+     -0.09983569907247394,
+     -0.10119077454990658,
+     -0.10324156676998944,
+     -0.10469964115619908,
+     -0.1064736876675429,
+     -0.10882095783260658,
+     -0.1097641285763456,
+     -0.1111148412150309,
+     -0.11288662431273774,
+     -0.11419952294900587,
+     -0.11543226780887367,
+     -0.11604849122208527,
+     -0.11640064963152291,
+     -0.11753553208152849,
+     -0.1187681118713412,
+     -0.11939290334452878,
+     -0.12035311578260306,
+     -0.12097419651201796,
+     -0.12171471744839613,
+     -0.1224147357063119,
+     -0.12336778383986106,
+     -0.12400147488628416,
+     -0.12491282838662576,
+     -0.12598389653970188,
+     -0.12685033893432301,
+     -0.1272203277698783,
+     -0.128078153688158,
+     -0.128682385531295,
+     -0.12896108958401298,
+     -0.12952809060706275,
+     -0.1301025599426422,
+     -0.13106930866754937,
+     -0.1313144894741005,
+     -0.131983827487141,
+     -0.1325589625942411,
+     -0.1331511469897987,
+     -0.13360675434365377,
+     -0.13429465392207776,
+     -0.13480480983208118,
+     -0.13497155173672143,
+     -0.13517016821838787,
+     -0.13576174818910627,
+     -0.13622652355565582,
+     -0.13626294740232534,
+     -0.136922371505426,
+     -0.13748466703953202,
+     -0.1379908775419523,
+     -0.13816232570190948,
+     -0.13824430273548333
+    ]
+   },
+   "backtest_reference": {
+    "sharpe_hat": 0.7293515071646022,
+    "ir_hat": 0.4408402333001905,
+    "years": 3.861111111111111,
+    "window": [
+     "2021-08-12",
+     "2025-06-27"
+    ],
+    "annual_turnover": 6.932965703725932
+   },
+   "operating_characteristics_stationary_bootstrap": {
+    "as_backtested": {
+     "true_sharpe_hist_scale": 0.7293515071646022,
+     "12m": {
+      "kill_sharpe": 0.00025,
+      "kill_drawdown": 0.037,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.03725,
+      "undecided": 0.96275
+     },
+     "24m": {
+      "kill_sharpe": 0.00175,
+      "kill_drawdown": 0.0465,
+      "revert_to_control": 0.00175,
+      "promote": 0.0,
+      "kill_any": 0.04825,
+      "undecided": 0.95
+     },
+     "36m": {
+      "kill_sharpe": 0.003,
+      "kill_drawdown": 0.04925,
+      "revert_to_control": 0.0035,
+      "promote": 0.00475,
+      "kill_any": 0.052250000000000005,
+      "undecided": 0.9395
+     },
+     "60m": {
+      "kill_sharpe": 0.00375,
+      "kill_drawdown": 0.05575,
+      "revert_to_control": 0.0075,
+      "promote": 0.0655,
+      "kill_any": 0.0595,
+      "undecided": 0.8674999999999999
+     }
+    },
+    "half_sharpe": {
+     "true_sharpe_hist_scale": 0.3646757535823011,
+     "12m": {
+      "kill_sharpe": 0.0025,
+      "kill_drawdown": 0.06825,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.07075000000000001,
+      "undecided": 0.92925
+     },
+     "24m": {
+      "kill_sharpe": 0.00875,
+      "kill_drawdown": 0.0905,
+      "revert_to_control": 0.02525,
+      "promote": 0.0,
+      "kill_any": 0.09925,
+      "undecided": 0.8755
+     },
+     "36m": {
+      "kill_sharpe": 0.0135,
+      "kill_drawdown": 0.09775,
+      "revert_to_control": 0.08675,
+      "promote": 0.0,
+      "kill_any": 0.11125,
+      "undecided": 0.802
+     },
+     "60m": {
+      "kill_sharpe": 0.02,
+      "kill_drawdown": 0.11025,
+      "revert_to_control": 0.20875,
+      "promote": 0.0,
+      "kill_any": 0.13025,
+      "undecided": 0.661
+     }
+    },
+    "zero_sharpe": {
+     "true_sharpe_hist_scale": 0.0,
+     "12m": {
+      "kill_sharpe": 0.014,
+      "kill_drawdown": 0.09375,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.10775,
+      "undecided": 0.89225
+     },
+     "24m": {
+      "kill_sharpe": 0.03725,
+      "kill_drawdown": 0.13175,
+      "revert_to_control": 0.19025,
+      "promote": 0.0,
+      "kill_any": 0.169,
+      "undecided": 0.6407499999999999
+     },
+     "36m": {
+      "kill_sharpe": 0.04325,
+      "kill_drawdown": 0.1495,
+      "revert_to_control": 0.4665,
+      "promote": 0.0,
+      "kill_any": 0.19274999999999998,
+      "undecided": 0.34075
+     },
+     "60m": {
+      "kill_sharpe": 0.047,
+      "kill_drawdown": 0.15825,
+      "revert_to_control": 0.722,
+      "promote": 0.0,
+      "kill_any": 0.20525,
+      "undecided": 0.07274999999999998
+     }
+    },
+    "no_edge_vs_control": {
+     "true_sharpe_hist_scale": 0.5573656760030463,
+     "12m": {
+      "kill_sharpe": 0.00075,
+      "kill_drawdown": 0.051,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.05175,
+      "undecided": 0.94825
+     },
+     "24m": {
+      "kill_sharpe": 0.00475,
+      "kill_drawdown": 0.0665,
+      "revert_to_control": 0.0045,
+      "promote": 0.0,
+      "kill_any": 0.07125000000000001,
+      "undecided": 0.92425
+     },
+     "36m": {
+      "kill_sharpe": 0.00775,
+      "kill_drawdown": 0.07225,
+      "revert_to_control": 0.019,
+      "promote": 0.0,
+      "kill_any": 0.07999999999999999,
+      "undecided": 0.901
+     },
+     "60m": {
+      "kill_sharpe": 0.0125,
+      "kill_drawdown": 0.0825,
+      "revert_to_control": 0.04625,
+      "promote": 0.0055,
+      "kill_any": 0.095,
+      "undecided": 0.8532500000000001
+     }
+    }
+   },
+   "implementation_checks": [
+    "REVIEW if trailing 3-month realised cost per side exceeds the backtest assumption by more than 25 bps (the largest cost shock simulated in reports/future_lab).",
+    "REVIEW if annualised forward turnover is outside 0.5x-1.5x of backtest_reference.annual_turnover after 6 months.",
+    "REVIEW if any signal-day fill is missing or a position is carried at cost instead of marked."
+   ]
+  },
+  "spmo_gld": {
+   "candidate": "spmo_gld",
+   "role": "candidate",
+   "series": "Daily net total return of momentum_gold_v1 (reports/momentum_gold_20260919/forward_paper_spec.json): 50% SPMO / 50% GLD, first-session-close decision, next-open fills, 5 bps per side.",
+   "control": "spy_gld",
+   "control_definition": "50% SPY / 50% GLD, same decision, fill and cost rules (the frozen benchmark in the paper spec).",
+   "risk_free": "research.return_search.run.cash_rates (13-week T-bill, IRX, lagged one day)",
+   "forward_start": "2026-10-02",
+   "parameters": {
+    "prior_sharpe_mean": 0.5220587026843276,
+    "prior_sharpe_sd": 0.2596494389332424,
+    "k_sharpe": 0.8076142415509512,
+    "prior_ir_mean": 0.24132271111798595,
+    "prior_ir_sd": 0.2774815430870552,
+    "k_ir": 0.8630792613507505,
+    "skeptical_sharpe_sd": 0.6347783099118641,
+    "skeptical_ir_sd": 0.2934275818392997,
+    "dd_boundary": [
+     -0.11214174760899731,
+     -0.18054290655932556,
+     -0.18743627989312706,
+     -0.18743627989312717,
+     -0.18743627989312728,
+     -0.1874362798931274,
+     -0.18778647652870167,
+     -0.19294510920582225,
+     -0.1964820380308153,
+     -0.20179600134940553,
+     -0.20625096222404427,
+     -0.21134230442165663,
+     -0.21511526976640546,
+     -0.2197427637220327,
+     -0.22194512345704598,
+     -0.22443673751341423,
+     -0.22734928898328458,
+     -0.23072433326661243,
+     -0.23304498368245205,
+     -0.23645820451613278,
+     -0.23717771597164614,
+     -0.23867356392449302,
+     -0.24008310222854876,
+     -0.24265722933396494,
+     -0.2447786297535796,
+     -0.24609900768510098,
+     -0.24907826328485902,
+     -0.24988448280142897,
+     -0.2514052128617239,
+     -0.253631538897003,
+     -0.2548137199126946,
+     -0.25600627612117,
+     -0.2569931148391124,
+     -0.2583658528440654,
+     -0.25876423740032484,
+     -0.2590449041729244,
+     -0.25967530731628685,
+     -0.2607705572361835,
+     -0.26289895915864214,
+     -0.2644511202053285,
+     -0.26563929572471917,
+     -0.2667472217469561,
+     -0.2672616405817636,
+     -0.26777506161212666,
+     -0.26859734810854324,
+     -0.26949644007348805,
+     -0.2703013273120682,
+     -0.270843415495576,
+     -0.2723297660357732,
+     -0.27255594274406564,
+     -0.27337128273348393,
+     -0.2741196099835647,
+     -0.27457663478449,
+     -0.2759723407845585,
+     -0.2777086264697995,
+     -0.27848737222814207,
+     -0.2787124007563313,
+     -0.2787867327568791,
+     -0.27924505068194627,
+     -0.27992028054041607
+    ]
+   },
+   "backtest_reference": {
+    "sharpe_hat": 1.0441174053686553,
+    "ir_hat": 0.4826454222359719,
+    "years": 9.674603174603174,
+    "window": [
+     "2017-01-04",
+     "2026-09-16"
+    ],
+    "annual_turnover": 0.312937269363471
+   },
+   "operating_characteristics_stationary_bootstrap": {
+    "as_backtested": {
+     "true_sharpe_hist_scale": 1.0441174053686553,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.03975,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.03975,
+      "undecided": 0.96025
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.04875,
+      "revert_to_control": 0.0,
+      "promote": 0.021,
+      "kill_any": 0.04875,
+      "undecided": 0.93025
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.05325,
+      "revert_to_control": 0.0,
+      "promote": 0.0835,
+      "kill_any": 0.05325,
+      "undecided": 0.86325
+     },
+     "60m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.061,
+      "revert_to_control": 0.0,
+      "promote": 0.25025,
+      "kill_any": 0.061,
+      "undecided": 0.68875
+     }
+    },
+    "half_sharpe": {
+     "true_sharpe_hist_scale": 0.5220587026843276,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.09275,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.09275,
+      "undecided": 0.90725
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.1325,
+      "revert_to_control": 0.00125,
+      "promote": 0.0,
+      "kill_any": 0.1325,
+      "undecided": 0.86625
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.159,
+      "revert_to_control": 0.02225,
+      "promote": 0.0,
+      "kill_any": 0.159,
+      "undecided": 0.81875
+     },
+     "60m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.195,
+      "revert_to_control": 0.23,
+      "promote": 0.0,
+      "kill_any": 0.195,
+      "undecided": 0.575
+     }
+    },
+    "zero_sharpe": {
+     "true_sharpe_hist_scale": 0.0,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.14825,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.14825,
+      "undecided": 0.85175
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.28,
+      "revert_to_control": 0.196,
+      "promote": 0.0,
+      "kill_any": 0.28,
+      "undecided": 0.524
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.3065,
+      "revert_to_control": 0.55125,
+      "promote": 0.0,
+      "kill_any": 0.3065,
+      "undecided": 0.14225
+     },
+     "60m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.313,
+      "revert_to_control": 0.68525,
+      "promote": 0.0,
+      "kill_any": 0.313,
+      "undecided": 0.0017500000000000293
+     }
+    },
+    "no_edge_vs_control": {
+     "true_sharpe_hist_scale": 0.8710101379350196,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.071,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.071,
+      "undecided": 0.929
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.0865,
+      "revert_to_control": 0.0,
+      "promote": 0.00275,
+      "kill_any": 0.0865,
+      "undecided": 0.91075
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.09525,
+      "revert_to_control": 0.0,
+      "promote": 0.01075,
+      "kill_any": 0.09525,
+      "undecided": 0.894
+     },
+     "60m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.1085,
+      "revert_to_control": 0.00025,
+      "promote": 0.0345,
+      "kill_any": 0.1085,
+      "undecided": 0.85675
+     }
+    }
+   },
+   "implementation_checks": [
+    "REVIEW if trailing 3-month realised cost per side exceeds the backtest assumption by more than 25 bps (the largest cost shock simulated in reports/future_lab).",
+    "REVIEW if annualised forward turnover is outside 0.5x-1.5x of backtest_reference.annual_turnover after 6 months.",
+    "REVIEW if any signal-day fill is missing or a position is carried at cost instead of marked."
+   ]
+  },
+  "spy_gld": {
+   "candidate": "spy_gld",
+   "role": "reference",
+   "series": "Reference only: 50% SPY / 50% GLD with the same rebalancing and cost rules as spmo_gld.",
+   "control": "spy",
+   "control_definition": "SPY adjusted total return.",
+   "risk_free": "research.return_search.run.cash_rates",
+   "forward_start": "2026-10-02",
+   "parameters": {
+    "prior_sharpe_mean": 0.48406293527654076,
+    "prior_sharpe_sd": 0.26575941220801097,
+    "k_sharpe": 0.8266187171718961,
+    "prior_ir_mean": -0.034230083150553925,
+    "prior_ir_sd": 0.2556189045491975,
+    "k_ir": 0.7950776576746719,
+    "skeptical_sharpe_sd": 0.588578737153275,
+    "skeptical_ir_sd": 0.04162082581657439,
+    "dd_boundary": [
+     -0.11145566229881076,
+     -0.18418583320291215,
+     -0.20393846410458527,
+     -0.20393846410458538,
+     -0.2039384641045855,
+     -0.2039384641045855,
+     -0.2039384641045856,
+     -0.20838499880385708,
+     -0.2108735607709894,
+     -0.2153646618387593,
+     -0.21864428222622662,
+     -0.22178826163608403,
+     -0.22580816454860045,
+     -0.2298310047453458,
+     -0.2335991852966873,
+     -0.2372506846076334,
+     -0.24061419872601728,
+     -0.24282344250532314,
+     -0.2453839941198723,
+     -0.2483813906016515,
+     -0.2500516763983367,
+     -0.25161479508453277,
+     -0.25525453766043926,
+     -0.2570334563490718,
+     -0.2593990014763148,
+     -0.26133713190225755,
+     -0.265199257453644,
+     -0.2667830582522766,
+     -0.26794357481968106,
+     -0.2699618512350231,
+     -0.2715416720413463,
+     -0.2733498783298611,
+     -0.27426732247161223,
+     -0.27467892396461846,
+     -0.2754844393348533,
+     -0.2772063192038311,
+     -0.2794337855041943,
+     -0.2801187980402827,
+     -0.2806967294072099,
+     -0.2815923817497176,
+     -0.28184940754150406,
+     -0.28220507166712894,
+     -0.28363337349623485,
+     -0.28423481765475644,
+     -0.28478212678096954,
+     -0.2857737469598287,
+     -0.28641520185944613,
+     -0.28774397689408343,
+     -0.28847576310589484,
+     -0.2890002532161342,
+     -0.2896653613154186,
+     -0.2916211012402911,
+     -0.2921194041145561,
+     -0.2926306310049749,
+     -0.29312270322165407,
+     -0.29407314504985155,
+     -0.2945299114354898,
+     -0.2957352566471134,
+     -0.2970249212729516,
+     -0.297905863717298
+    ]
+   },
+   "backtest_reference": {
+    "sharpe_hat": 0.9681258705530815,
+    "ir_hat": -0.06846016630110785,
+    "years": 9.674603174603174,
+    "window": [
+     "2017-01-04",
+     "2026-09-16"
+    ],
+    "annual_turnover": 0.2810291301502081
+   },
+   "operating_characteristics_stationary_bootstrap": {
+    "as_backtested": {
+     "true_sharpe_hist_scale": 0.9681258705530815,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.03675,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.03675,
+      "undecided": 0.96325
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.0455,
+      "revert_to_control": 0.0085,
+      "promote": 0.0,
+      "kill_any": 0.0455,
+      "undecided": 0.946
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.05,
+      "revert_to_control": 0.04275,
+      "promote": 0.0,
+      "kill_any": 0.05,
+      "undecided": 0.90725
+     },
+     "60m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.05675,
+      "revert_to_control": 0.09125,
+      "promote": 0.0,
+      "kill_any": 0.05675,
+      "undecided": 0.852
+     }
+    },
+    "half_sharpe": {
+     "true_sharpe_hist_scale": 0.48406293527654076,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.07325,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.07325,
+      "undecided": 0.92675
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.102,
+      "revert_to_control": 0.08175,
+      "promote": 0.0,
+      "kill_any": 0.102,
+      "undecided": 0.81625
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.12025,
+      "revert_to_control": 0.23975,
+      "promote": 0.0,
+      "kill_any": 0.12025,
+      "undecided": 0.64
+     },
+     "60m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.137,
+      "revert_to_control": 0.4635,
+      "promote": 0.0,
+      "kill_any": 0.137,
+      "undecided": 0.39949999999999997
+     }
+    },
+    "zero_sharpe": {
+     "true_sharpe_hist_scale": 0.0,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.11425,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.11425,
+      "undecided": 0.88575
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.2015,
+      "revert_to_control": 0.27925,
+      "promote": 0.0,
+      "kill_any": 0.2015,
+      "undecided": 0.51925
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.23375,
+      "revert_to_control": 0.52425,
+      "promote": 0.0,
+      "kill_any": 0.23375,
+      "undecided": 0.242
+     },
+     "60m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.25175,
+      "revert_to_control": 0.6995,
+      "promote": 0.0,
+      "kill_any": 0.25175,
+      "undecided": 0.04874999999999996
+     }
+    },
+    "no_edge_vs_control": {
+     "true_sharpe_hist_scale": 1.030861931981241,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.02975,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.02975,
+      "undecided": 0.9702500000000001
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.03675,
+      "revert_to_control": 0.00625,
+      "promote": 0.0,
+      "kill_any": 0.03675,
+      "undecided": 0.957
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.0405,
+      "revert_to_control": 0.03175,
+      "promote": 0.0,
+      "kill_any": 0.0405,
+      "undecided": 0.92775
+     },
+     "60m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.04675,
+      "revert_to_control": 0.06775,
+      "promote": 0.0,
+      "kill_any": 0.04675,
+      "undecided": 0.8855
+     }
+    }
+   },
+   "implementation_checks": [
+    "REVIEW if trailing 3-month realised cost per side exceeds the backtest assumption by more than 25 bps (the largest cost shock simulated in reports/future_lab).",
+    "REVIEW if annualised forward turnover is outside 0.5x-1.5x of backtest_reference.annual_turnover after 6 months.",
+    "REVIEW if any signal-day fill is missing or a position is carried at cost instead of marked."
+   ]
+  },
+  "spy": {
+   "candidate": "spy",
+   "role": "reference",
+   "series": "Reference only: SPY adjusted total return, buy and hold.",
+   "control": null,
+   "control_definition": "T-bills (no active comparison).",
+   "risk_free": "research.return_search.run.cash_rates",
+   "forward_start": "2026-10-02",
+   "parameters": {
+    "prior_sharpe_mean": 0.3642561011771201,
+    "prior_sharpe_sd": 0.27157910410944136,
+    "k_sharpe": 0.8447203009085832,
+    "prior_ir_mean": 0.3642561011771201,
+    "prior_ir_sd": 0.27157910410944136,
+    "k_ir": 0.8447203009085832,
+    "skeptical_sharpe_sd": 0.4429039705523496,
+    "skeptical_ir_sd": 0.4429039705523496,
+    "dd_boundary": [
+     -0.1673067733501472,
+     -0.29109766377857904,
+     -0.33717251235755297,
+     -0.3371725123575531,
+     -0.3371725123575532,
+     -0.3371725123575533,
+     -0.3371725123575533,
+     -0.3371725123575534,
+     -0.34225563478308196,
+     -0.34938110969374303,
+     -0.35996028244072065,
+     -0.365757328553427,
+     -0.369294208946009,
+     -0.37657150476104745,
+     -0.38190375719954767,
+     -0.3860701203362134,
+     -0.3896210339985118,
+     -0.39330941047943596,
+     -0.39634291074033706,
+     -0.3984753935426367,
+     -0.40338626407463074,
+     -0.40935091191266393,
+     -0.41184378262864446,
+     -0.41455866699926563,
+     -0.41633424789709,
+     -0.4191072082906811,
+     -0.4215981566099451,
+     -0.4238645137224157,
+     -0.4251723475026829,
+     -0.4282601876049291,
+     -0.4304772701649752,
+     -0.4318881023410841,
+     -0.43225964616226525,
+     -0.4340447135541313,
+     -0.4353752189842344,
+     -0.4368729749156332,
+     -0.4380315827097855,
+     -0.4396566676849835,
+     -0.44209361242533907,
+     -0.4439877647962982,
+     -0.4451764106124943,
+     -0.44629121397132343,
+     -0.44889060345704984,
+     -0.45068426996088695,
+     -0.45258008862203397,
+     -0.45377230132361585,
+     -0.4544701671401662,
+     -0.45564400915522113,
+     -0.45648999572421034,
+     -0.4591510674722973,
+     -0.46060821068764024,
+     -0.46099115216825426,
+     -0.4624070349978261,
+     -0.46289779333551145,
+     -0.4644021729028576,
+     -0.46523916679085364,
+     -0.4664827494323658,
+     -0.46859164755497845,
+     -0.46985766143647734,
+     -0.4707629261139479
+    ]
+   },
+   "backtest_reference": {
+    "sharpe_hat": 0.7285122023542402,
+    "ir_hat": 0.7285122023542402,
+    "years": 9.674603174603174,
+    "window": [
+     "2017-01-04",
+     "2026-09-16"
+    ],
+    "annual_turnover": 0.0
+   },
+   "operating_characteristics_stationary_bootstrap": {
+    "as_backtested": {
+     "true_sharpe_hist_scale": 0.7285122023542402,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.033,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.033,
+      "undecided": 0.967
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.04,
+      "revert_to_control": 0.0,
+      "promote": 0.1015,
+      "kill_any": 0.04,
+      "undecided": 0.8585
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.04375,
+      "revert_to_control": 0.0,
+      "promote": 0.2855,
+      "kill_any": 0.04375,
+      "undecided": 0.67075
+     },
+     "60m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.0485,
+      "revert_to_control": 0.0,
+      "promote": 0.55775,
+      "kill_any": 0.0485,
+      "undecided": 0.39375000000000004
+     }
+    },
+    "half_sharpe": {
+     "true_sharpe_hist_scale": 0.3642561011771201,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.06025,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.06025,
+      "undecided": 0.93975
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.0765,
+      "revert_to_control": 0.0,
+      "promote": 0.01875,
+      "kill_any": 0.0765,
+      "undecided": 0.9047499999999999
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.08775,
+      "revert_to_control": 0.0,
+      "promote": 0.07775,
+      "kill_any": 0.08775,
+      "undecided": 0.8345
+     },
+     "60m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.10725,
+      "revert_to_control": 0.0,
+      "promote": 0.18125,
+      "kill_any": 0.10725,
+      "undecided": 0.7115
+     }
+    },
+    "zero_sharpe": {
+     "true_sharpe_hist_scale": 0.0,
+     "12m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.0695,
+      "revert_to_control": 0.0,
+      "promote": 0.0,
+      "kill_any": 0.0695,
+      "undecided": 0.9305
+     },
+     "24m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.1035,
+      "revert_to_control": 0.0,
+      "promote": 0.00125,
+      "kill_any": 0.1035,
+      "undecided": 0.89525
+     },
+     "36m": {
+      "kill_sharpe": 0.0,
+      "kill_drawdown": 0.13325,
+      "revert_to_control": 0.0,
+      "promote": 0.008,
+      "kill_any": 0.13325,
+      "undecided": 0.85875
+     },
+     "60m": {
+      "kill_sharpe": 0.003,
+      "kill_drawdown": 0.1955,
+      "revert_to_control": 0.0,
+      "promote": 0.0245,
+      "kill_any": 0.1985,
+      "undecided": 0.777
+     }
+    }
+   },
+   "implementation_checks": [
+    "REVIEW if trailing 3-month realised cost per side exceeds the backtest assumption by more than 25 bps (the largest cost shock simulated in reports/future_lab).",
+    "REVIEW if annualised forward turnover is outside 0.5x-1.5x of backtest_reference.annual_turnover after 6 months.",
+    "REVIEW if any signal-day fill is missing or a position is carried at cost instead of marked."
+   ]
+  }
+ },
+ "sha256": "0cf8986f26e7ad89cecf6f594f85b55d7c47ef87b1b4d73ea8a4f128d01ebf79"
+}

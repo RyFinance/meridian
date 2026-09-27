@@ -1,0 +1,35 @@
+{
+  "stress": {
+    "paths": 20000,
+    "inner_B": 159,
+    "seconds": 84.3
+  },
+  "effn": {
+    "paths": 20000,
+    "seconds": 14.6
+  },
+  "active": {
+    "paths": 20000,
+    "inner_B": 159,
+    "seconds": 123.3
+  },
+  "power": {
+    "mc_paths": 20000,
+    "inner_B": 159,
+    "seconds": 89.9
+  },
+  "ci": {
+    "paths": 20000,
+    "inner_B": 499,
+    "seconds": 80.3
+  },
+  "size": {
+    "outer_paths": 40000,
+    "inner_B": 159,
+    "ar_bias_R": 50,
+    "seconds": 161.8
+  },
+  "figures": {
+    "seconds": 0.7
+  }
+}

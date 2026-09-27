@@ -1,0 +1,340 @@
+{
+  "generated_utc": "2026-09-26T07:23:41.944171+00:00",
+  "entries": [
+    {
+      "filename": "aqr_tsmom_factors_monthly.xlsx",
+      "url": "https://www.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Time-Series-Momentum-Factors-Monthly.xlsx",
+      "series": "AQR Time Series Momentum Factors (Monthly)",
+      "fetch_time_utc": "2026-09-26T07:23:41.944178+00:00",
+      "http_status": 200,
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "byte_size": 139830,
+      "sha256": "33470930e2269c0d97be4732ec2d9c27ddbc69ac8133b059a263e27400263eeb",
+      "ok": true,
+      "terms_of_use": "https://www.aqr.com/Terms-of-Use",
+      "path": "data/core_premia/commod_bench/benchmarks/aqr_tsmom_factors_monthly.xlsx",
+      "coverage": {
+        "sheets": {
+          "TSMOM Factors": {
+            "n_preview_rows_scanned": 40,
+            "header_row_index": 17,
+            "columns": [
+              "Unnamed: 0",
+              "TSMOM",
+              "TSMOM^CM",
+              "TSMOM^EQ",
+              "TSMOM^FI",
+              "TSMOM^FX"
+            ],
+            "n_rows": 497,
+            "first_date": "1985-01-31",
+            "last_date": "2026-05-29"
+          },
+          "Definitions": {
+            "n_preview_rows_scanned": 4,
+            "note": "no obvious 'Date' header found in first 30 rows (preview only)"
+          },
+          "Data Sources": {
+            "n_preview_rows_scanned": 3,
+            "note": "no obvious 'Date' header found in first 30 rows (preview only)"
+          },
+          "Disclosures": {
+            "n_preview_rows_scanned": 2,
+            "note": "no obvious 'Date' header found in first 30 rows (preview only)"
+          }
+        }
+      }
+    },
+    {
+      "filename": "aqr_century_factor_premia_monthly.xlsx",
+      "url": "https://www.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Century-of-Factor-Premia-Monthly.xlsx",
+      "series": "AQR Century of Factor Premia (Monthly)",
+      "fetch_time_utc": "2026-09-26T07:23:43.161518+00:00",
+      "http_status": 200,
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "byte_size": 1784414,
+      "sha256": "0bf8ba978e64964282ead98a6a25691218d4517d07c98c89e2716706f6f0a127",
+      "ok": true,
+      "terms_of_use": "https://www.aqr.com/Terms-of-Use",
+      "path": "data/core_premia/commod_bench/benchmarks/aqr_century_factor_premia_monthly.xlsx",
+      "coverage": {
+        "sheets": {
+          "Century of Factor Premia": {
+            "n_preview_rows_scanned": 40,
+            "header_row_index": 18,
+            "columns": [
+              "Date",
+              "US Stock Selection Value",
+              "US Stock Selection Momentum",
+              "US Stock Selection Defensive",
+              "US Stock Selection Multi-style",
+              "Intl Stock Selection Value",
+              "Intl Stock Selection Momentum",
+              "Intl Stock Selection Defensive",
+              "Intl Stock Selection Multi-style",
+              "Equity indices Value",
+              "Equity indices Momentum",
+              "Equity indices Carry",
+              "Equity indices Defensive",
+              "Equity indices Multi-style",
+              "Fixed income Value",
+              "Fixed income Momentum",
+              "Fixed income Carry",
+              "Fixed income Defensive",
+              "Fixed income Multi-style",
+              "Currencies Value",
+              "Currencies Momentum",
+              "Currencies Carry",
+              "Currencies Multi-style",
+              "Commodities Value",
+              "Commodities Momentum",
+              "Commodities Carry",
+              "Commodities Multi-style",
+              "All Stock Selection Value",
+              "All Stock Selection Momentum",
+              "All Stock Selection Defensive",
+              "All Stock Selection Multi-style",
+              "All Macro Value",
+              "All Macro Momentum",
+              "All Macro Carry",
+              "All Macro Defensive",
+              "All Macro Multi-style",
+              "All asset classes Value",
+              "All asset classes Momentum",
+              "All asset classes Carry",
+              "All asset classes Defensive",
+              "All asset classes Multi-style",
+              "Equity indices Market",
+              "Fixed income Market",
+              "Commodities Market",
+              "All Macro Market"
+            ],
+            "n_rows": 1196,
+            "first_date": "1926-07-30",
+            "last_date": "2026-02-27"
+          },
+          "Definition": {
+            "n_preview_rows_scanned": 3,
+            "note": "no obvious 'Date' header found in first 30 rows (preview only)"
+          },
+          "Data Sources": {
+            "n_preview_rows_scanned": 3,
+            "note": "no obvious 'Date' header found in first 30 rows (preview only)"
+          },
+          "Disclosures": {
+            "n_preview_rows_scanned": 2,
+            "note": "no obvious 'Date' header found in first 30 rows (preview only)"
+          }
+        }
+      }
+    },
+    {
+      "filename": "aqr_value_momentum_everywhere_monthly.xlsx",
+      "url": "https://www.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Value-and-Momentum-Everywhere-Factors-Monthly.xlsx",
+      "series": "AQR Value and Momentum Everywhere (factors/portfolios, Monthly)",
+      "fetch_time_utc": "2026-09-26T07:23:46.107496+00:00",
+      "http_status": 200,
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "byte_size": 254974,
+      "sha256": "ed9ddbdee42affe481035b88af6d0c32365bc6aa3dc0c780806e066ba4f4386e",
+      "ok": true,
+      "terms_of_use": "https://www.aqr.com/Terms-of-Use",
+      "path": "data/core_premia/commod_bench/benchmarks/aqr_value_momentum_everywhere_monthly.xlsx",
+      "coverage": {
+        "sheets": {
+          "VME Factors": {
+            "n_preview_rows_scanned": 40,
+            "header_row_index": 21,
+            "columns": [
+              "DATE",
+              "VAL",
+              "MOM",
+              "VAL^SS",
+              "MOM^SS",
+              "VAL^AA",
+              "MOM^AA",
+              "VALLS_VME_US90",
+              "MOMLS_VME_US90",
+              "VALLS_VME_UK90",
+              "MOMLS_VME_UK90",
+              "VALLS_VME_ROE90",
+              "MOMLS_VME_ROE90",
+              "VALLS_VME_JP90",
+              "MOMLS_VME_JP90",
+              "VALLS_VME_EQ",
+              "MOMLS_VME_EQ",
+              "VALLS_VME_FX",
+              "MOMLS_VME_FX",
+              "VALLS_VME_FI",
+              "MOMLS_VME_FI",
+              "VALLS_VME_COM",
+              "MOMLS_VME_COM"
+            ],
+            "n_rows": 655,
+            "first_date": "1972-01-31",
+            "last_date": "2026-07-31"
+          },
+          "Definitions": {
+            "n_preview_rows_scanned": 4,
+            "note": "no obvious 'Date' header found in first 30 rows (preview only)"
+          },
+          "Data Sources": {
+            "n_preview_rows_scanned": 31,
+            "note": "no obvious 'Date' header found in first 30 rows (preview only)"
+          },
+          "Disclosures": {
+            "n_preview_rows_scanned": 2,
+            "note": "no obvious 'Date' header found in first 30 rows (preview only)"
+          }
+        }
+      }
+    },
+    {
+      "filename": "ff_research_data_factors.zip",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_Factors_CSV.zip",
+      "series": "Fama/French 3 Factors (US, Monthly) -- includes RF (3-month T-bill)",
+      "fetch_time_utc": "2026-09-26T07:23:47.939072+00:00",
+      "http_status": 200,
+      "content_type": "application/x-zip-compressed",
+      "byte_size": 13065,
+      "sha256": "593f4fbef03181bc0b22ff6292f217689dd1fb79355049ca905d95b262040a66",
+      "ok": true,
+      "terms_of_use": "Ken French data library, Dartmouth Tuck School of Business: 'The data below are provided as an unpaid public service... you may use them for any research purpose, but please acknowledge the source and, if you use the data in published research, cite the relevant paper(s).' (paraphrase-free excerpt taken from the library's public 'Data Library' page and README/Details text bundled inside each ZIP.)",
+      "path": "data/core_premia/commod_bench/benchmarks/ff_research_data_factors.zip",
+      "coverage": {
+        "csv_members": {
+          "F-F_Research_Data_Factors.csv": {
+            "columns": [
+              "Date",
+              "Mkt-RF",
+              "SMB",
+              "HML",
+              "RF"
+            ],
+            "n_monthly_rows_first_block": 1202,
+            "first_period": "192607",
+            "last_period": "202608"
+          }
+        }
+      }
+    },
+    {
+      "filename": "ff_research_data_5_factors_2x3.zip",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_5_Factors_2x3_CSV.zip",
+      "series": "Fama/French 5 Factors (US, 2x3, Monthly) -- includes RF",
+      "fetch_time_utc": "2026-09-26T07:23:49.592938+00:00",
+      "http_status": 200,
+      "content_type": "application/x-zip-compressed",
+      "byte_size": 11964,
+      "sha256": "36756c5c2559648519ac4b22913d860c6afd865cfebce920e3e8927f8e2d10b7",
+      "ok": true,
+      "terms_of_use": "Ken French data library, Dartmouth Tuck School of Business: 'The data below are provided as an unpaid public service... you may use them for any research purpose, but please acknowledge the source and, if you use the data in published research, cite the relevant paper(s).' (paraphrase-free excerpt taken from the library's public 'Data Library' page and README/Details text bundled inside each ZIP.)",
+      "path": "data/core_premia/commod_bench/benchmarks/ff_research_data_5_factors_2x3.zip",
+      "coverage": {
+        "csv_members": {
+          "F-F_Research_Data_5_Factors_2x3.csv": {
+            "columns": [
+              "Date",
+              "Mkt-RF",
+              "SMB",
+              "HML",
+              "RMW",
+              "CMA",
+              "RF"
+            ],
+            "n_monthly_rows_first_block": 758,
+            "first_period": "196307",
+            "last_period": "202608"
+          }
+        }
+      }
+    },
+    {
+      "filename": "developed_3_factors.zip",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/Developed_3_Factors_CSV.zip",
+      "series": "Developed Markets 3 Factors (Monthly)",
+      "fetch_time_utc": "2026-09-26T07:23:50.043352+00:00",
+      "http_status": 200,
+      "content_type": "application/x-zip-compressed",
+      "byte_size": 4962,
+      "sha256": "b6bdca31293c96af8117690707a9346d1174c5cd3f8ab662db6b616c46b73dfc",
+      "ok": true,
+      "terms_of_use": "Ken French data library, Dartmouth Tuck School of Business: 'The data below are provided as an unpaid public service... you may use them for any research purpose, but please acknowledge the source and, if you use the data in published research, cite the relevant paper(s).' (paraphrase-free excerpt taken from the library's public 'Data Library' page and README/Details text bundled inside each ZIP.)",
+      "path": "data/core_premia/commod_bench/benchmarks/developed_3_factors.zip",
+      "coverage": {
+        "csv_members": {
+          "Developed_3_Factors.csv": {
+            "columns": [
+              "Date",
+              "Mkt-RF",
+              "SMB",
+              "HML",
+              "RF"
+            ],
+            "n_monthly_rows_first_block": 434,
+            "first_period": "199007",
+            "last_period": "202608"
+          }
+        }
+      }
+    },
+    {
+      "filename": "developed_ex_us_3_factors.zip",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/Developed_ex_US_3_Factors_CSV.zip",
+      "series": "Developed ex-US 3 Factors (Monthly)",
+      "fetch_time_utc": "2026-09-26T07:23:50.532113+00:00",
+      "http_status": 200,
+      "content_type": "application/x-zip-compressed",
+      "byte_size": 4986,
+      "sha256": "83eda24f53a17c1612af370a9d48e53557dd9de029622b22ff350139d15731d5",
+      "ok": true,
+      "terms_of_use": "Ken French data library, Dartmouth Tuck School of Business: 'The data below are provided as an unpaid public service... you may use them for any research purpose, but please acknowledge the source and, if you use the data in published research, cite the relevant paper(s).' (paraphrase-free excerpt taken from the library's public 'Data Library' page and README/Details text bundled inside each ZIP.)",
+      "path": "data/core_premia/commod_bench/benchmarks/developed_ex_us_3_factors.zip",
+      "coverage": {
+        "csv_members": {
+          "Developed_ex_US_3_Factors.csv": {
+            "columns": [
+              "Date",
+              "Mkt-RF",
+              "SMB",
+              "HML",
+              "RF"
+            ],
+            "n_monthly_rows_first_block": 434,
+            "first_period": "199007",
+            "last_period": "202608"
+          }
+        }
+      }
+    },
+    {
+      "filename": "global_ex_us_3_factors.zip",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/Global_ex_US_3_Factors_CSV.zip",
+      "series": "Global ex-US 3 Factors (Monthly)",
+      "fetch_time_utc": "2026-09-26T07:23:51.040410+00:00",
+      "http_status": 200,
+      "content_type": "application/x-zip-compressed",
+      "byte_size": 4083,
+      "sha256": "92e4a628052cc9331e79e5d584fed5cc202fd057e0854dde7848e68ca167933a",
+      "ok": true,
+      "terms_of_use": "Ken French data library, Dartmouth Tuck School of Business: 'The data below are provided as an unpaid public service... you may use them for any research purpose, but please acknowledge the source and, if you use the data in published research, cite the relevant paper(s).' (paraphrase-free excerpt taken from the library's public 'Data Library' page and README/Details text bundled inside each ZIP.)",
+      "path": "data/core_premia/commod_bench/benchmarks/global_ex_us_3_factors.zip",
+      "coverage": {
+        "csv_members": {
+          "Global_ex_US_3_Factors.csv": {
+            "columns": [
+              "Date",
+              "Mkt-RF",
+              "SMB",
+              "HML",
+              "RF"
+            ],
+            "n_monthly_rows_first_block": 348,
+            "first_period": "199007",
+            "last_period": "201906"
+          }
+        }
+      }
+    }
+  ]
+}

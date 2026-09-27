@@ -1,0 +1,31 @@
+{
+  "strategy_id": "tsy_month_end_v1",
+  "status": "forward observation only; failed validation Sharpe gate (0.69 vs 0.75) with shift-null p 0.005; no capital",
+  "rule": "Hold TLT from the close of the 4th-to-last NYSE session of each month to the close of the last session; T-bills otherwise.",
+  "decision_time": "any time before the close of the 4th-to-last session of the month for the entry, and any time before the close of the last session of the month for the exit (the calendar is known in advance; the rule uses no market data to decide)",
+  "execution": "TLT official closing price, on the same session as each decision",
+  "hold_sessions": 3,
+  "costs_bps_per_side": {"base": 2, "stress": 6},
+  "control": "constant TLT weight equal to realised average exposure (approx. 0.14 = 3 held sessions / ~21 sessions per month); implemented here as a fixed benchmark_targets weight re-applied at the same two decision times, which approximates but does not exactly reproduce the daily-rebalanced C_EXP control used in research/tsy_month_end/evaluate.py",
+  "frozen_code": {
+    "core": "research/tsy_month_end/core.py",
+    "core_sha256": "481cb112517a416a98c1799cc4e8a14114ee1a67181c343d28e21dd5a4ac00f1",
+    "evaluate": "research/tsy_month_end/evaluate.py",
+    "evaluate_sha256": "397a81e0707b727356f5fd7696bc3add9026529d49ccd4ce2da142139009e547"
+  },
+  "report": "reports/tsy_month_end/REPORT.md",
+  "source_spec": "research/tsy_month_end/forward_spec_tsy_month_end_v1.json",
+  "decision_schedule_note": "Two targets decisions per month: entry (targets={'TLT':1.0}) recorded before the close of the 4th-to-last NYSE session, executed at that session's close; exit (targets={'TLT':0.0}) recorded before the close of the last NYSE session of the month, executed at that session's close. adapters.register_generic's decision_rule only supports 'any_session' (no date check) or 'first_session_of_month'; neither validates 'Nth-to-last session of month', so the operator (not the adapter) is responsible for computing and using the correct dates. See reports/forward_audit/proposed_adapter_diff_month_end_window.txt for a minimal, unapplied code addition that would let the adapter validate this schedule the way it already validates first_session_of_month.",
+  "evaluation": {
+    "type": "targets",
+    "instruments": ["TLT"],
+    "execution": "close",
+    "decision_rule": "any_session",
+    "capital_usd": 100000,
+    "cost_per_side_bps": 2,
+    "stress_cost_per_side_bps": 6,
+    "fee_per_order_usd": 0,
+    "benchmark_targets": {"TLT": 0.14},
+    "marks": "official TLT session closes; dividends credited in cash on the ex-date"
+  }
+}

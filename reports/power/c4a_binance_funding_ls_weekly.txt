@@ -1,0 +1,34 @@
+c4a_binance_funding_ls_weekly  [long_short]  dev 3.00y + val 3.67y
+  raw obs (total) 34684 asset-periods;  D_time 1.000  deff_cross 8.425  ->  effective obs 4116.8
+  SE(Sharpe) dev 0.577, val 0.522;  SE(mean, mean IC per period (net of costs via offset)) total 0.0139
+  dev gate threshold 1.229 (binding: p_lt_alpha);  val threshold 1.111 (binding: p_lt_alpha);  proposed val threshold 0.859
+  MDE Sharpe (80%): single test 1.16, dev gate 1.76, joint current 1.93, joint proposed 1.84
+  world                     S     1-test   P(dev)  P(val)  JOINT   | val*   JOINT*
+  cost_drag_null           -0.30  0.002   0.004   0.003   0.000   | 0.013  0.000
+  zero_net_null             0.00  0.017   0.017   0.017   0.000   | 0.050  0.001
+  structural_leak           0.05  0.023   0.021   0.021   0.000   | 0.061  0.001
+  S=0.3                     0.30  0.090   0.055   0.062   0.003   | 0.144  0.008
+  S=0.5                     0.50  0.205   0.107   0.124   0.013   | 0.249  0.027
+  S=0.7                     0.70  0.377   0.185   0.221   0.041   | 0.383  0.071
+  S=1.0                     1.00  0.669   0.351   0.419   0.147   | 0.603  0.212
+  implied_by_primitives     0.67  0.351   0.173   0.206   0.036   | 0.364  0.063
+  years for 80% power:  S   single  dev-only  joint(current)  joint(proposed)
+                     0.30   98.42     98.42             inf           239.83
+                     0.50   35.57     35.57             inf            85.76
+                     0.70   18.23     18.23             inf            44.01
+                     1.00    9.00      9.00           32.17            21.79
+                     0.67   19.70     19.70             inf            47.56
+  VERDICT (current gates): INCAPABLE   [joint@0.7 = 0.041, false-pass = 0.0003];  with proposed val gate: INCAPABLE
+  scenarios: label | n_eff | implied net S | joint(cur) | joint(prop) | yrs80 single | yrs80 joint(prop) | MDE natural (joint prop)
+   N=50 IC=0.02 rho=0.2                         14.5 | 0.413 | 0.00756 | 0.0162 | 52.1 | 126 | 0.0691
+   N=50 IC=0.02 rho=0.4                         8.47 | 0.329 | 0.00422 | 0.00963 | 81.8 | 197 | 0.0851
+   N=50 IC=0.03 rho=0.2                         14.5 | 0.704 | 0.0418 | 0.0724 | 18 | 43.5 | 0.0691
+   N=50 IC=0.03 rho=0.4                         8.47 | 0.562 | 0.0193 | 0.0369 | 28.2 | 68.1 | 0.0851
+   N=50 IC=0.05 rho=0.2                         14.5 | 1.29 | 0.337 | 0.422 | 5.48 | 13.3 | 0.069
+   N=50 IC=0.05 rho=0.4                         8.47 | 1.03 | 0.162 | 0.229 | 8.54 | 20.7 | 0.0851
+   N=150 IC=0.02 rho=0.2                        17.8 | 0.481 | 0.0118 | 0.024 | 38.3 | 92.4 | 0.06
+   N=150 IC=0.02 rho=0.4                        9.43 | 0.358 | 0.00519 | 0.0116 | 69.1 | 166 | 0.0787
+   N=150 IC=0.03 rho=0.2                        17.8 | 0.821 | 0.0726 | 0.116 | 13.3 | 32.1 | 0.06
+   N=150 IC=0.03 rho=0.4                        9.43 | 0.611 | 0.0255 | 0.0472 | 23.9 | 57.6 | 0.0787
+   N=150 IC=0.05 rho=0.2                        17.8 | 1.5 | 0.509 | 0.588 | 4.06 | 9.87 | 0.06
+   N=150 IC=0.05 rho=0.4                        9.43 | 1.12 | 0.216 | 0.292 | 7.23 | 17.5 | 0.0786

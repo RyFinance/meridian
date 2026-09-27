@@ -1,0 +1,854 @@
+{
+ "stock_shift_mom": {
+  "variant_sr_dev_mean": 0.023286630109430145,
+  "variant_sr_dev_sd": 0.4197121425507633,
+  "mean_pairwise_corr_dev_sr_across_variants": 0.8794894773871492,
+  "k1": {
+   "best_dev_sr_mean": 0.02040490116842933,
+   "best_dev_sr_q50": 0.04823290635724442,
+   "best_dev_sr_q95": 0.6402218542893966,
+   "inflation_vs_k1": 0.0,
+   "p_best_passes_dev": 0.102,
+   "p_best_passes_dev_se": 0.009570579919733181,
+   "best_val_sr_mean": -0.17209214011957952,
+   "best_val_sr_mean_given_dev_pass": -0.07322707208141559,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "k4": {
+   "best_dev_sr_mean": 0.16795815021186808,
+   "best_dev_sr_q50": 0.22333628770413938,
+   "best_dev_sr_q95": 0.7559592367988051,
+   "inflation_vs_k1": 0.14755324904343875,
+   "p_best_passes_dev": 0.206,
+   "p_best_passes_dev_se": 0.0127892142057282,
+   "best_val_sr_mean": -0.17672137598379412,
+   "best_val_sr_mean_given_dev_pass": -0.04812274549200633,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "k10": {
+   "best_dev_sr_mean": 0.2397601667080969,
+   "best_dev_sr_q50": 0.2979246148735929,
+   "best_dev_sr_q95": 0.8195931182281426,
+   "inflation_vs_k1": 0.21935526553966758,
+   "p_best_passes_dev": 0.28,
+   "p_best_passes_dev_se": 0.014198591479439079,
+   "best_val_sr_mean": -0.16627116830447547,
+   "best_val_sr_mean_given_dev_pass": -0.04700496683413109,
+   "p_pass_both_alpha_0125": 0.001,
+   "p_pass_both_alpha_05": 0.001,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0035714285714285713,
+   "n_worlds": 1000
+  },
+  "k25": {
+   "best_dev_sr_mean": 0.300690776401087,
+   "best_dev_sr_q50": 0.3378854925711072,
+   "best_dev_sr_q95": 0.854629892344709,
+   "inflation_vs_k1": 0.2802858752326577,
+   "p_best_passes_dev": 0.335,
+   "p_best_passes_dev_se": 0.014925649064613574,
+   "best_val_sr_mean": -0.17007992233850502,
+   "best_val_sr_mean_given_dev_pass": -0.05617199726237498,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "variants": [
+   [
+    "3",
+    "1",
+    "equal",
+    "1"
+   ],
+   [
+    "3",
+    "1",
+    "equal",
+    "4"
+   ],
+   [
+    "3",
+    "1",
+    "rank",
+    "1"
+   ],
+   [
+    "3",
+    "1",
+    "rank",
+    "4"
+   ],
+   [
+    "3",
+    "4",
+    "equal",
+    "1"
+   ],
+   [
+    "3",
+    "4",
+    "equal",
+    "4"
+   ],
+   [
+    "3",
+    "4",
+    "rank",
+    "1"
+   ],
+   [
+    "3",
+    "4",
+    "rank",
+    "4"
+   ],
+   [
+    "3",
+    "13",
+    "equal",
+    "1"
+   ],
+   [
+    "3",
+    "13",
+    "equal",
+    "4"
+   ],
+   [
+    "3",
+    "13",
+    "rank",
+    "1"
+   ],
+   [
+    "3",
+    "13",
+    "rank",
+    "4"
+   ],
+   [
+    "5",
+    "1",
+    "equal",
+    "1"
+   ],
+   [
+    "5",
+    "1",
+    "equal",
+    "4"
+   ],
+   [
+    "5",
+    "1",
+    "rank",
+    "1"
+   ],
+   [
+    "5",
+    "1",
+    "rank",
+    "4"
+   ],
+   [
+    "5",
+    "4",
+    "equal",
+    "1"
+   ],
+   [
+    "5",
+    "4",
+    "equal",
+    "4"
+   ],
+   [
+    "5",
+    "4",
+    "rank",
+    "1"
+   ],
+   [
+    "5",
+    "4",
+    "rank",
+    "4"
+   ],
+   [
+    "5",
+    "13",
+    "equal",
+    "1"
+   ],
+   [
+    "5",
+    "13",
+    "equal",
+    "4"
+   ],
+   [
+    "5",
+    "13",
+    "rank",
+    "1"
+   ],
+   [
+    "5",
+    "13",
+    "rank",
+    "4"
+   ],
+   [
+    "10",
+    "1",
+    "equal",
+    "1"
+   ],
+   [
+    "10",
+    "1",
+    "equal",
+    "4"
+   ],
+   [
+    "10",
+    "1",
+    "rank",
+    "1"
+   ],
+   [
+    "10",
+    "1",
+    "rank",
+    "4"
+   ],
+   [
+    "10",
+    "4",
+    "equal",
+    "1"
+   ],
+   [
+    "10",
+    "4",
+    "equal",
+    "4"
+   ],
+   [
+    "10",
+    "4",
+    "rank",
+    "1"
+   ],
+   [
+    "10",
+    "4",
+    "rank",
+    "4"
+   ],
+   [
+    "10",
+    "13",
+    "equal",
+    "1"
+   ],
+   [
+    "10",
+    "13",
+    "equal",
+    "4"
+   ],
+   [
+    "10",
+    "13",
+    "rank",
+    "1"
+   ],
+   [
+    "10",
+    "13",
+    "rank",
+    "4"
+   ]
+  ],
+  "seconds": 159.8
+ },
+ "stock_ar1_phi0.8_fe0.2": {
+  "variant_sr_dev_mean": -0.2761958466476764,
+  "variant_sr_dev_sd": 0.4488413040445313,
+  "mean_pairwise_corr_dev_sr_across_variants": 0.6440109413652206,
+  "k1": {
+   "best_dev_sr_mean": -0.2784527151397465,
+   "best_dev_sr_q50": -0.2775650998851106,
+   "best_dev_sr_q95": 0.4343278068921983,
+   "inflation_vs_k1": 0.0,
+   "p_best_passes_dev": 0.013,
+   "p_best_passes_dev_se": 0.003582038525755969,
+   "best_val_sr_mean": -0.2228774226679217,
+   "best_val_sr_mean_given_dev_pass": -0.19143451009855947,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "k4": {
+   "best_dev_sr_mean": 0.0037733578207768863,
+   "best_dev_sr_q50": -0.007042036201494968,
+   "best_dev_sr_q95": 0.6306446815032244,
+   "inflation_vs_k1": 0.2822260729605234,
+   "p_best_passes_dev": 0.038,
+   "p_best_passes_dev_se": 0.006046155803483731,
+   "best_val_sr_mean": -0.18989964892185446,
+   "best_val_sr_mean_given_dev_pass": -0.18051776336785152,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "k10": {
+   "best_dev_sr_mean": 0.137980655964757,
+   "best_dev_sr_q50": 0.1262138917979409,
+   "best_dev_sr_q95": 0.7413557235419578,
+   "inflation_vs_k1": 0.4164333711045035,
+   "p_best_passes_dev": 0.075,
+   "p_best_passes_dev_se": 0.008329165624478841,
+   "best_val_sr_mean": -0.18292126962140526,
+   "best_val_sr_mean_given_dev_pass": -0.1461092697714378,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "k25": {
+   "best_dev_sr_mean": 0.23058896024035508,
+   "best_dev_sr_q50": 0.2129842641912771,
+   "best_dev_sr_q95": 0.8201543572208968,
+   "inflation_vs_k1": 0.5090416753801016,
+   "p_best_passes_dev": 0.111,
+   "p_best_passes_dev_se": 0.00993373041711924,
+   "best_val_sr_mean": -0.18329645107525364,
+   "best_val_sr_mean_given_dev_pass": -0.1702215339744885,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "variants": [
+   [
+    "3",
+    "1",
+    "equal",
+    "1"
+   ],
+   [
+    "3",
+    "1",
+    "equal",
+    "4"
+   ],
+   [
+    "3",
+    "1",
+    "rank",
+    "1"
+   ],
+   [
+    "3",
+    "1",
+    "rank",
+    "4"
+   ],
+   [
+    "3",
+    "4",
+    "equal",
+    "1"
+   ],
+   [
+    "3",
+    "4",
+    "equal",
+    "4"
+   ],
+   [
+    "3",
+    "4",
+    "rank",
+    "1"
+   ],
+   [
+    "3",
+    "4",
+    "rank",
+    "4"
+   ],
+   [
+    "3",
+    "13",
+    "equal",
+    "1"
+   ],
+   [
+    "3",
+    "13",
+    "equal",
+    "4"
+   ],
+   [
+    "3",
+    "13",
+    "rank",
+    "1"
+   ],
+   [
+    "3",
+    "13",
+    "rank",
+    "4"
+   ],
+   [
+    "5",
+    "1",
+    "equal",
+    "1"
+   ],
+   [
+    "5",
+    "1",
+    "equal",
+    "4"
+   ],
+   [
+    "5",
+    "1",
+    "rank",
+    "1"
+   ],
+   [
+    "5",
+    "1",
+    "rank",
+    "4"
+   ],
+   [
+    "5",
+    "4",
+    "equal",
+    "1"
+   ],
+   [
+    "5",
+    "4",
+    "equal",
+    "4"
+   ],
+   [
+    "5",
+    "4",
+    "rank",
+    "1"
+   ],
+   [
+    "5",
+    "4",
+    "rank",
+    "4"
+   ],
+   [
+    "5",
+    "13",
+    "equal",
+    "1"
+   ],
+   [
+    "5",
+    "13",
+    "equal",
+    "4"
+   ],
+   [
+    "5",
+    "13",
+    "rank",
+    "1"
+   ],
+   [
+    "5",
+    "13",
+    "rank",
+    "4"
+   ],
+   [
+    "10",
+    "1",
+    "equal",
+    "1"
+   ],
+   [
+    "10",
+    "1",
+    "equal",
+    "4"
+   ],
+   [
+    "10",
+    "1",
+    "rank",
+    "1"
+   ],
+   [
+    "10",
+    "1",
+    "rank",
+    "4"
+   ],
+   [
+    "10",
+    "4",
+    "equal",
+    "1"
+   ],
+   [
+    "10",
+    "4",
+    "equal",
+    "4"
+   ],
+   [
+    "10",
+    "4",
+    "rank",
+    "1"
+   ],
+   [
+    "10",
+    "4",
+    "rank",
+    "4"
+   ],
+   [
+    "10",
+    "13",
+    "equal",
+    "1"
+   ],
+   [
+    "10",
+    "13",
+    "equal",
+    "4"
+   ],
+   [
+    "10",
+    "13",
+    "rank",
+    "1"
+   ],
+   [
+    "10",
+    "13",
+    "rank",
+    "4"
+   ]
+  ],
+  "seconds": 137.1
+ },
+ "country_shift": {
+  "variant_sr_dev_mean": -0.2529452372585788,
+  "variant_sr_dev_sd": 0.367557037153996,
+  "mean_pairwise_corr_dev_sr_across_variants": 0.6334048324047684,
+  "k1": {
+   "best_dev_sr_mean": -0.25975102456145693,
+   "best_dev_sr_q50": -0.2480896129145978,
+   "best_dev_sr_q95": 0.344170835051487,
+   "inflation_vs_k1": 0.0,
+   "p_best_passes_dev": 0.004,
+   "p_best_passes_dev_se": 0.001995995991979944,
+   "best_val_sr_mean": -0.1819670184446441,
+   "best_val_sr_mean_given_dev_pass": 0.19948278160562677,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "k4": {
+   "best_dev_sr_mean": -0.02378037447301705,
+   "best_dev_sr_q50": -0.02444353873955117,
+   "best_dev_sr_q95": 0.5245423250098987,
+   "inflation_vs_k1": 0.23597065008843987,
+   "p_best_passes_dev": 0.014,
+   "p_best_passes_dev_se": 0.003715373467095872,
+   "best_val_sr_mean": -0.17673937381920915,
+   "best_val_sr_mean_given_dev_pass": 0.10071492248258666,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "k10": {
+   "best_dev_sr_mean": 0.0755354089563464,
+   "best_dev_sr_q50": 0.06822954197371864,
+   "best_dev_sr_q95": 0.6058336917368207,
+   "inflation_vs_k1": 0.33528643351780335,
+   "p_best_passes_dev": 0.026,
+   "p_best_passes_dev_se": 0.0050322956987840055,
+   "best_val_sr_mean": -0.17860352769944832,
+   "best_val_sr_mean_given_dev_pass": 0.05745980947745913,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "k25": {
+   "best_dev_sr_mean": 0.15347506877499598,
+   "best_dev_sr_q50": 0.1558535906773809,
+   "best_dev_sr_q95": 0.63122824985419,
+   "inflation_vs_k1": 0.4132260933364529,
+   "p_best_passes_dev": 0.041,
+   "p_best_passes_dev_se": 0.006270486424512854,
+   "best_val_sr_mean": -0.16691527792084232,
+   "best_val_sr_mean_given_dev_pass": 0.0422604575220727,
+   "p_pass_both_alpha_0125": 0.0,
+   "p_pass_both_alpha_05": 0.0,
+   "p_val_gate_given_dev_pass_alpha_05": 0.0,
+   "n_worlds": 1000
+  },
+  "variants": [
+   [
+    "1",
+    "n4",
+    "invvol",
+    "1"
+   ],
+   [
+    "1",
+    "n4",
+    "invvol",
+    "2"
+   ],
+   [
+    "1",
+    "n4",
+    "equal",
+    "1"
+   ],
+   [
+    "1",
+    "n4",
+    "equal",
+    "2"
+   ],
+   [
+    "1",
+    "n3",
+    "invvol",
+    "1"
+   ],
+   [
+    "1",
+    "n3",
+    "invvol",
+    "2"
+   ],
+   [
+    "1",
+    "n3",
+    "equal",
+    "1"
+   ],
+   [
+    "1",
+    "n3",
+    "equal",
+    "2"
+   ],
+   [
+    "1",
+    "n2",
+    "invvol",
+    "1"
+   ],
+   [
+    "1",
+    "n2",
+    "invvol",
+    "2"
+   ],
+   [
+    "1",
+    "n2",
+    "equal",
+    "1"
+   ],
+   [
+    "1",
+    "n2",
+    "equal",
+    "2"
+   ],
+   [
+    "2",
+    "n4",
+    "invvol",
+    "1"
+   ],
+   [
+    "2",
+    "n4",
+    "invvol",
+    "2"
+   ],
+   [
+    "2",
+    "n4",
+    "equal",
+    "1"
+   ],
+   [
+    "2",
+    "n4",
+    "equal",
+    "2"
+   ],
+   [
+    "2",
+    "n3",
+    "invvol",
+    "1"
+   ],
+   [
+    "2",
+    "n3",
+    "invvol",
+    "2"
+   ],
+   [
+    "2",
+    "n3",
+    "equal",
+    "1"
+   ],
+   [
+    "2",
+    "n3",
+    "equal",
+    "2"
+   ],
+   [
+    "2",
+    "n2",
+    "invvol",
+    "1"
+   ],
+   [
+    "2",
+    "n2",
+    "invvol",
+    "2"
+   ],
+   [
+    "2",
+    "n2",
+    "equal",
+    "1"
+   ],
+   [
+    "2",
+    "n2",
+    "equal",
+    "2"
+   ],
+   [
+    "3",
+    "n4",
+    "invvol",
+    "1"
+   ],
+   [
+    "3",
+    "n4",
+    "invvol",
+    "2"
+   ],
+   [
+    "3",
+    "n4",
+    "equal",
+    "1"
+   ],
+   [
+    "3",
+    "n4",
+    "equal",
+    "2"
+   ],
+   [
+    "3",
+    "n3",
+    "invvol",
+    "1"
+   ],
+   [
+    "3",
+    "n3",
+    "invvol",
+    "2"
+   ],
+   [
+    "3",
+    "n3",
+    "equal",
+    "1"
+   ],
+   [
+    "3",
+    "n3",
+    "equal",
+    "2"
+   ],
+   [
+    "3",
+    "n2",
+    "invvol",
+    "1"
+   ],
+   [
+    "3",
+    "n2",
+    "invvol",
+    "2"
+   ],
+   [
+    "3",
+    "n2",
+    "equal",
+    "1"
+   ],
+   [
+    "3",
+    "n2",
+    "equal",
+    "2"
+   ]
+  ],
+  "seconds": 21.5
+ },
+ "meta": {
+  "worlds": 1000,
+  "seed": 555,
+  "ks": [
+   1,
+   4,
+   10,
+   25
+  ],
+  "val_gate": "Sharpe >= 0.75, stress mean > 0, bootstrap p < alpha (0.05/4 and 0.05 shown)",
+  "dev_gate": "Sharpe >= 0.5, stress mean > 0"
+ }
+}

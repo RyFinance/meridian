@@ -1,0 +1,31 @@
+candidate,world,label,ground_truth_has_edge,p_confirm_by_cap,p_kill_by_cap,p_undecided_at_cap,median_months_to_decision,p05_months_to_decision,p95_months_to_decision,checkpoint,p_confirm_by,p_kill_by,p_undecided_by
+tsy_month_end_v1,W0,null (gross edge exactly zero),False,0.0075,0.5873,0.4052,61.0,21.0,113.0,12m,0.0,0.005,0.995
+tsy_month_end_v1,W0,null (gross edge exactly zero),False,0.0075,0.5873,0.4052,61.0,21.0,113.0,24m,0.0,0.0456,0.9544
+tsy_month_end_v1,W0,null (gross edge exactly zero),False,0.0075,0.5873,0.4052,61.0,21.0,113.0,36m,0.0,0.1212,0.8788
+tsy_month_end_v1,W0,null (gross edge exactly zero),False,0.0075,0.5873,0.4052,61.0,21.0,113.0,60m,0.001,0.292,0.7070000000000001
+tsy_month_end_v1,W0,null (gross edge exactly zero),False,0.0075,0.5873,0.4052,61.0,21.0,113.0,120m,0.0075,0.5873,0.4052
+tsy_month_end_v1,W1,pre-publication strength continues,True,0.8352,0.0057,0.1591,72.0,40.0,112.0,12m,0.0,0.0003,0.9997
+tsy_month_end_v1,W1,pre-publication strength continues,True,0.8352,0.0057,0.1591,72.0,40.0,112.0,24m,0.0009,0.0019,0.9972
+tsy_month_end_v1,W1,pre-publication strength continues,True,0.8352,0.0057,0.1591,72.0,40.0,112.0,36m,0.0212,0.0032,0.9756
+tsy_month_end_v1,W1,pre-publication strength continues,True,0.8352,0.0057,0.1591,72.0,40.0,112.0,60m,0.254,0.0043,0.7417
+tsy_month_end_v1,W1,pre-publication strength continues,True,0.8352,0.0057,0.1591,72.0,40.0,112.0,120m,0.8352,0.0057,0.15910000000000002
+tsy_month_end_v1,W2,post-publication strength continues,True,0.267,0.1143,0.6187,79.0,30.0,116.0,12m,0.0,0.0005,0.9995
+tsy_month_end_v1,W2,post-publication strength continues,True,0.267,0.1143,0.6187,79.0,30.0,116.0,24m,0.0003,0.0091,0.9906
+tsy_month_end_v1,W2,post-publication strength continues,True,0.267,0.1143,0.6187,79.0,30.0,116.0,36m,0.0081,0.025,0.9669
+tsy_month_end_v1,W2,post-publication strength continues,True,0.267,0.1143,0.6187,79.0,30.0,116.0,60m,0.0526,0.0574,0.89
+tsy_month_end_v1,W2,post-publication strength continues,True,0.267,0.1143,0.6187,79.0,30.0,116.0,120m,0.267,0.1143,0.6187
+tsy_month_end_v1,W3,continuing decay to zero over 5 years,decaying,0.0497,0.4175,0.5328,74.0,28.0,115.0,12m,0.0,0.0007,0.9993
+tsy_month_end_v1,W3,continuing decay to zero over 5 years,decaying,0.0497,0.4175,0.5328,74.0,28.0,115.0,24m,0.0003,0.0149,0.9848
+tsy_month_end_v1,W3,continuing decay to zero over 5 years,decaying,0.0497,0.4175,0.5328,74.0,28.0,115.0,36m,0.0034,0.047,0.9496
+tsy_month_end_v1,W3,continuing decay to zero over 5 years,decaying,0.0497,0.4175,0.5328,74.0,28.0,115.0,60m,0.0171,0.1446,0.8383
+tsy_month_end_v1,W3,continuing decay to zero over 5 years,decaying,0.0497,0.4175,0.5328,74.0,28.0,115.0,120m,0.0497,0.4175,0.5327999999999999
+tsy_month_end_v1,W4,"regime shift: window-return vol x1.5, mean unchanged",True,0.6621,0.1259,0.212,60.0,20.0,110.0,12m,0.0006,0.0147,0.9847
+tsy_month_end_v1,W4,"regime shift: window-return vol x1.5, mean unchanged",True,0.6621,0.1259,0.212,60.0,20.0,110.0,24m,0.0229,0.0436,0.9335
+tsy_month_end_v1,W4,"regime shift: window-return vol x1.5, mean unchanged",True,0.6621,0.1259,0.212,60.0,20.0,110.0,36m,0.0945,0.0632,0.8423
+tsy_month_end_v1,W4,"regime shift: window-return vol x1.5, mean unchanged",True,0.6621,0.1259,0.212,60.0,20.0,110.0,60m,0.3068,0.0944,0.5988
+tsy_month_end_v1,W4,"regime shift: window-return vol x1.5, mean unchanged",True,0.6621,0.1259,0.212,60.0,20.0,110.0,120m,0.6621,0.1259,0.21199999999999997
+tsy_month_end_v1,W5,cost shock: +5 bp/side on top of the post-publication world,True,0.0808,0.3262,0.593,67.5,23.0,115.0,12m,0.0,0.0015,0.9985
+tsy_month_end_v1,W5,cost shock: +5 bp/side on top of the post-publication world,True,0.0808,0.3262,0.593,67.5,23.0,115.0,24m,0.0,0.0267,0.9733
+tsy_month_end_v1,W5,cost shock: +5 bp/side on top of the post-publication world,True,0.0808,0.3262,0.593,67.5,23.0,115.0,36m,0.0018,0.0701,0.9281
+tsy_month_end_v1,W5,cost shock: +5 bp/side on top of the post-publication world,True,0.0808,0.3262,0.593,67.5,23.0,115.0,60m,0.0145,0.16,0.8255
+tsy_month_end_v1,W5,cost shock: +5 bp/side on top of the post-publication world,True,0.0808,0.3262,0.593,67.5,23.0,115.0,120m,0.0808,0.3262,0.593

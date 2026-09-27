@@ -1,0 +1,98 @@
+{
+ "name": "nis_f7_binance_oi_positioning_xs",
+ "description": "Binance USD-M metrics (open interest, top-trader and taker long/short ratios, 2020-09+), cross-sectional quintile long-short on OI-growth/positioning, daily.",
+ "assumptions": [
+  "dev 2020-09..2023-08 (3.0y), val 2023-09..2026-08 (3.0y)",
+  "N ~100 liquid perps",
+  "rho_resid 0.3 is the variance share of the factor the signal tilts to (ASSUMPTION; Q4 calibration from pre-dev IC dispersion impossible: no pre-dev data)",
+  "rho_signal 0.25",
+  "signal_autocorr 0.8, cost 8 bp one-way, IC 0.015 base"
+ ],
+ "design": "long_short",
+ "params": {
+  "n_assets": 100,
+  "periods_per_year": 365,
+  "ic": 0.015,
+  "cs_dispersion": 0.04,
+  "quantile": 0.2,
+  "rho_resid": 0.3,
+  "rho_signal": 0.25,
+  "signal_autocorr": 0.8,
+  "cost_bps_one_way": 8,
+  "spread_autocorr": 0.05,
+  "skew": -0.3,
+  "exkurt": 10.0
+ },
+ "windows": {
+  "dev_years": 3.0,
+  "val_years": 3.0
+ },
+ "gates": {
+  "batch_k": 2,
+  "stress_drag_sr": 0.15,
+  "dev": {
+   "kind": "amendment2"
+  },
+  "val": {
+   "kind": "tstat",
+   "alpha": "auto",
+   "floor": 0.3
+  },
+  "pav": {
+   "k_val": 2,
+   "floor": 0.3
+  }
+ },
+ "scenarios": [
+  {
+   "label": "IC=0.01 rho=0.2",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "IC=0.01 rho=0.4",
+   "params": {
+    "ic": 0.01,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "IC=0.02 rho=0.2",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "IC=0.02 rho=0.4",
+   "params": {
+    "ic": 0.02,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "IC=0.03 rho=0.2",
+   "params": {
+    "ic": 0.03,
+    "rho_resid": 0.2
+   }
+  },
+  {
+   "label": "IC=0.03 rho=0.4",
+   "params": {
+    "ic": 0.03,
+    "rho_resid": 0.4
+   }
+  },
+  {
+   "label": "IC=0.02 rho=0.3 LITERAL",
+   "params": {
+    "ic": 0.02,
+    "rho_signal": 1.0,
+    "correlation_mode": "equicorrelated_bets"
+   }
+  }
+ ]
+}

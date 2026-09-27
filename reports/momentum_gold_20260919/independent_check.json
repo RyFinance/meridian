@@ -1,0 +1,40 @@
+{
+  "0.0": {
+    "max_nav_difference_vs_baseline": 2.6645352591003757e-15,
+    "metrics": {
+      "cagr": 0.19910008352029762,
+      "total_return": 2.369615897846075,
+      "excess_sharpe": 1.0342494303304053,
+      "ann_excess_mean": 0.16619860586361865,
+      "vol": 0.16073474436841323,
+      "max_dd": -0.18743627989312717,
+      "annual_cost": 0.00032374026346351694,
+      "annual_turnover": 0.6474805269270337,
+      "average_exposure": 1.0,
+      "days": 1686,
+      "years": 6.690476190476191
+    },
+    "fills": 166,
+    "total_cost_dollars": 432.7817467921352,
+    "pnl_reconciliation_dollars": 5.820766091346741e-11
+  },
+  "1.0": {
+    "max_nav_difference_vs_baseline": 0.0037385121533470844,
+    "metrics": {
+      "cagr": 0.19890701958857804,
+      "total_return": 2.3659877565387064,
+      "excess_sharpe": 1.0332539973675536,
+      "ann_excess_mean": 0.1660372633785419,
+      "vol": 0.16073342963602466,
+      "max_dd": -0.1874521756231885,
+      "annual_cost": 0.0004847717017343561,
+      "annual_turnover": 0.6474775393433101,
+      "average_exposure": 1.0,
+      "days": 1686,
+      "years": 6.690476190476191
+    },
+    "fills": 166,
+    "total_cost_dollars": 598.4363880926021,
+    "pnl_reconciliation_dollars": 2.9103830456733704e-11
+  }
+}

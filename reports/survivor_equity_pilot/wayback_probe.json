@@ -1,0 +1,1234 @@
+{
+ "directories": {
+  "nasdaqlisted": {
+   "n_captures_200": 84,
+   "by_year": {
+    "2008": 4,
+    "2009": 1,
+    "2011": 4,
+    "2012": 1,
+    "2013": 2,
+    "2014": 2,
+    "2015": 5,
+    "2016": 8,
+    "2017": 5,
+    "2018": 10,
+    "2019": 6,
+    "2020": 10,
+    "2021": 5,
+    "2022": 3,
+    "2023": 1,
+    "2024": 4,
+    "2025": 7,
+    "2026": 6
+   },
+   "first": "20080105054058",
+   "last": "20260916174142"
+  },
+  "otherlisted": {
+   "n_captures_200": 44,
+   "by_year": {
+    "2008": 1,
+    "2009": 2,
+    "2010": 1,
+    "2011": 3,
+    "2013": 1,
+    "2017": 5,
+    "2018": 13,
+    "2019": 8,
+    "2020": 1,
+    "2022": 2,
+    "2024": 3,
+    "2025": 1,
+    "2026": 3
+   },
+   "first": "20080921234036",
+   "last": "20260916174142"
+  },
+  "sec_company_tickers": {
+   "n_captures_200": 669,
+   "by_year": {
+    "2017": 6,
+    "2018": 25,
+    "2019": 74,
+    "2020": 87,
+    "2021": 127,
+    "2022": 126,
+    "2023": 142,
+    "2024": 59,
+    "2025": 11,
+    "2026": 12
+   },
+   "first": "20170828201525",
+   "last": "20260910080825"
+  },
+  "sec_ticker_txt": {
+   "n_captures_200": 38,
+   "by_year": {
+    "2019": 2,
+    "2020": 3,
+    "2021": 5,
+    "2022": 8,
+    "2023": 8,
+    "2024": 6,
+    "2025": 3,
+    "2026": 3
+   },
+   "first": "20190820203904",
+   "last": "20260910073437"
+  }
+ },
+ "price_pages": [
+  {
+   "key": "ENRON",
+   "ticker": "ENE",
+   "event_date": "2001-12-02",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   }
+  },
+  {
+   "key": "LEHMAN",
+   "ticker": "LEH",
+   "event_date": "2008-09-15",
+   "yahoo_hp": {
+    "n_captures": 14,
+    "n_pre_event": 14,
+    "pre_event_months": 13,
+    "error": null,
+    "sample_capture": "20080306060207",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 1,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   }
+  },
+  {
+   "key": "WAMU",
+   "ticker": "WM",
+   "event_date": "2008-09-26",
+   "yahoo_hp": {
+    "n_captures": 27,
+    "n_pre_event": 17,
+    "pre_event_months": 13,
+    "error": null,
+    "sample_capture": "20080123140915",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 4,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   }
+  },
+  {
+   "key": "CIRCUITCITY",
+   "ticker": "CC",
+   "event_date": "2008-11-10",
+   "yahoo_hp": {
+    "n_captures": 10,
+    "n_pre_event": 9,
+    "pre_event_months": 9,
+    "error": null,
+    "sample_capture": "20080122222118",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   }
+  },
+  {
+   "key": "GM_OLD",
+   "ticker": "GM",
+   "event_date": "2009-06-01",
+   "yahoo_hp": {
+    "n_captures": 45,
+    "n_pre_event": 29,
+    "pre_event_months": 23,
+    "error": null,
+    "sample_capture": "20090106225120",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 22,
+    "n_pre_event": 13,
+    "pre_event_months": 4,
+    "error": null
+   }
+  },
+  {
+   "key": "BLOCKBUSTER",
+   "ticker": "BBI",
+   "event_date": "2010-09-23",
+   "yahoo_hp": {
+    "n_captures": 16,
+    "n_pre_event": 16,
+    "pre_event_months": 16,
+    "error": null,
+    "sample_capture": "20090320215308",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 10,
+    "n_pre_event": 10,
+    "pre_event_months": 4,
+    "error": null
+   }
+  },
+  {
+   "key": "AMR",
+   "ticker": "AMR",
+   "event_date": "2011-11-29",
+   "yahoo_hp": {
+    "n_captures": 15,
+    "n_pre_event": 14,
+    "pre_event_months": 13,
+    "error": null,
+    "sample_capture": "20090304202602",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 17,
+    "n_pre_event": 14,
+    "pre_event_months": 6,
+    "error": null
+   }
+  },
+  {
+   "key": "KODAK",
+   "ticker": "EK",
+   "event_date": "2012-01-19",
+   "yahoo_hp": {
+    "n_captures": 17,
+    "n_pre_event": 17,
+    "pre_event_months": 15,
+    "error": null,
+    "sample_capture": "20111230090633",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 15,
+    "n_pre_event": 13,
+    "pre_event_months": 7,
+    "error": null
+   }
+  },
+  {
+   "key": "A123",
+   "ticker": "AONE",
+   "event_date": "2012-10-16",
+   "yahoo_hp": {
+    "n_captures": 6,
+    "n_pre_event": 5,
+    "pre_event_months": 5,
+    "error": null,
+    "sample_capture": "20120615135804",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 11,
+    "n_pre_event": 11,
+    "pre_event_months": 9,
+    "error": null
+   }
+  },
+  {
+   "key": "RADIOSHACK",
+   "ticker": "RSH",
+   "event_date": "2015-02-05",
+   "yahoo_hp": {
+    "n_captures": 21,
+    "n_pre_event": 20,
+    "pre_event_months": 18,
+    "error": null,
+    "sample_capture": "20141011160947",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 16,
+    "n_pre_event": 16,
+    "pre_event_months": 12,
+    "error": null
+   }
+  },
+  {
+   "key": "SUNEDISON",
+   "ticker": "SUNE",
+   "event_date": "2016-04-21",
+   "yahoo_hp": {
+    "n_captures": 7,
+    "n_pre_event": 6,
+    "pre_event_months": 6,
+    "error": null,
+    "sample_capture": "20160121195939",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   }
+  },
+  {
+   "key": "SEARS",
+   "ticker": "SHLD",
+   "event_date": "2018-10-15",
+   "yahoo_hp": {
+    "n_captures": 24,
+    "n_pre_event": 24,
+    "pre_event_months": 20,
+    "error": null,
+    "sample_capture": "20160123174226",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 30,
+    "n_pre_event": 30,
+    "pre_event_months": 8,
+    "error": null
+   }
+  },
+  {
+   "key": "PIER1",
+   "ticker": "PIR",
+   "event_date": "2020-02-17",
+   "yahoo_hp": {
+    "n_captures": 19,
+    "n_pre_event": 19,
+    "pre_event_months": 18,
+    "error": null,
+    "sample_capture": "20150405014744",
+    "sample_rows": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 7,
+    "n_pre_event": 7,
+    "pre_event_months": 5,
+    "error": null
+   }
+  },
+  {
+   "key": "FRONTIER",
+   "ticker": "FTR",
+   "event_date": "2020-04-14",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "JCPENNEY",
+   "ticker": "JCP",
+   "event_date": "2020-05-15",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "HERTZ",
+   "ticker": "HTZ",
+   "event_date": "2020-05-22",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "CHESAPEAKE",
+   "ticker": "CHK",
+   "event_date": "2020-06-28",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "PARTYCITY",
+   "ticker": "PRTY",
+   "event_date": "2023-01-17",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "SVB",
+   "ticker": "SIVB",
+   "event_date": "2023-03-10",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   }
+  },
+  {
+   "key": "SIGNATURE",
+   "ticker": "SBNY",
+   "event_date": "2023-03-12",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "BBBY",
+   "ticker": "BBBY",
+   "event_date": "2023-04-23",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "FIRSTREPUBLIC",
+   "ticker": "FRC",
+   "event_date": "2023-05-01",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "RITEAID",
+   "ticker": "RAD",
+   "event_date": "2023-10-15",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "WEWORK",
+   "ticker": "WE",
+   "event_date": "2023-11-06",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "BEARSTEARNS",
+   "ticker": "BSC",
+   "event_date": "2008-05-30",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "COUNTRYWIDE",
+   "ticker": "CFC",
+   "event_date": "2008-07-01",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   }
+  },
+  {
+   "key": "ANHEUSER",
+   "ticker": "BUD",
+   "event_date": "2008-11-18",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "WACHOVIA",
+   "ticker": "WB",
+   "event_date": "2008-12-31",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   }
+  },
+  {
+   "key": "MERRILL",
+   "ticker": "MER",
+   "event_date": "2009-01-01",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   }
+  },
+  {
+   "key": "GENENTECH",
+   "ticker": "DNA",
+   "event_date": "2009-03-26",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "WYETH",
+   "ticker": "WYE",
+   "event_date": "2009-10-15",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "SUNMICRO",
+   "ticker": "JAVA",
+   "event_date": "2010-01-26",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "BNSF",
+   "ticker": "BNI",
+   "event_date": "2010-02-12",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": 502
+   }
+  },
+  {
+   "key": "MOTOMOBILITY",
+   "ticker": "MMI",
+   "event_date": "2012-05-22",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "HEINZ",
+   "ticker": "HNZ",
+   "event_date": "2013-06-07",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 13,
+    "n_pre_event": 13,
+    "pre_event_months": 6,
+    "error": null
+   }
+  },
+  {
+   "key": "DELL_OLD",
+   "ticker": "DELL",
+   "event_date": "2013-10-29",
+   "yahoo_hp": {
+    "n_captures": 44,
+    "n_pre_event": 41,
+    "pre_event_months": 30,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 36,
+    "n_pre_event": 36,
+    "pre_event_months": 15,
+    "error": null
+   }
+  },
+  {
+   "key": "EMC",
+   "ticker": "EMC",
+   "event_date": "2016-09-07",
+   "yahoo_hp": {
+    "n_captures": 36,
+    "n_pre_event": 36,
+    "pre_event_months": 29,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 29,
+    "n_pre_event": 29,
+    "pre_event_months": 15,
+    "error": null
+   }
+  },
+  {
+   "key": "LINKEDIN",
+   "ticker": "LNKD",
+   "event_date": "2016-12-08",
+   "yahoo_hp": {
+    "n_captures": 19,
+    "n_pre_event": 19,
+    "pre_event_months": 18,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 17,
+    "n_pre_event": 17,
+    "pre_event_months": 10,
+    "error": null
+   }
+  },
+  {
+   "key": "WHOLEFOODS",
+   "ticker": "WFM",
+   "event_date": "2017-08-28",
+   "yahoo_hp": {
+    "n_captures": 7,
+    "n_pre_event": 7,
+    "pre_event_months": 7,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "MONSANTO",
+   "ticker": "MON",
+   "event_date": "2018-06-07",
+   "yahoo_hp": {
+    "n_captures": 31,
+    "n_pre_event": 31,
+    "pre_event_months": 28,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "TIMEWARNER",
+   "ticker": "TWX",
+   "event_date": "2018-06-14",
+   "yahoo_hp": {
+    "n_captures": 31,
+    "n_pre_event": 31,
+    "pre_event_months": 29,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 15,
+    "n_pre_event": 15,
+    "pre_event_months": 7,
+    "error": null
+   }
+  },
+  {
+   "key": "REDHAT",
+   "ticker": "RHT",
+   "event_date": "2019-07-09",
+   "yahoo_hp": {
+    "n_captures": 16,
+    "n_pre_event": 16,
+    "pre_event_months": 13,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 21,
+    "n_pre_event": 21,
+    "pre_event_months": 12,
+    "error": null
+   }
+  },
+  {
+   "key": "ALTABA",
+   "ticker": "AABA",
+   "event_date": "2019-10-02",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   }
+  },
+  {
+   "key": "CELGENE",
+   "ticker": "CELG",
+   "event_date": "2019-11-20",
+   "yahoo_hp": {
+    "n_captures": 18,
+    "n_pre_event": 18,
+    "pre_event_months": 18,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 12,
+    "n_pre_event": 12,
+    "pre_event_months": 7,
+    "error": null
+   }
+  },
+  {
+   "key": "TIFFANY",
+   "ticker": "TIF",
+   "event_date": "2021-01-07",
+   "yahoo_hp": {
+    "n_captures": 21,
+    "n_pre_event": 21,
+    "pre_event_months": 19,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   }
+  },
+  {
+   "key": "SLACK",
+   "ticker": "WORK",
+   "event_date": "2021-07-21",
+   "yahoo_hp": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   }
+  },
+  {
+   "key": "XILINX",
+   "ticker": "XLNX",
+   "event_date": "2022-02-14",
+   "yahoo_hp": {
+    "n_captures": 15,
+    "n_pre_event": 15,
+    "pre_event_months": 15,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 9,
+    "n_pre_event": 9,
+    "pre_event_months": 5,
+    "error": null
+   }
+  },
+  {
+   "key": "TWITTER",
+   "ticker": "TWTR",
+   "event_date": "2022-10-27",
+   "yahoo_hp": {
+    "n_captures": 15,
+    "n_pre_event": 15,
+    "pre_event_months": 13,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": null
+   },
+   "google_hist": {
+    "n_captures": 1,
+    "n_pre_event": 1,
+    "pre_event_months": 1,
+    "error": null
+   }
+  },
+  {
+   "key": "ACTIVISION",
+   "ticker": "ATVI",
+   "event_date": "2023-10-13",
+   "yahoo_hp": {
+    "n_captures": 90,
+    "n_pre_event": 90,
+    "pre_event_months": 32,
+    "error": null
+   },
+   "yahoo_ichart_csv": {
+    "n_captures": 0,
+    "n_pre_event": 0,
+    "pre_event_months": 0,
+    "error": -1
+   },
+   "google_hist": {
+    "n_captures": 27,
+    "n_pre_event": 27,
+    "pre_event_months": 15,
+    "error": null
+   }
+  }
+ ]
+}

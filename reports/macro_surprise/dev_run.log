@@ -1,0 +1,5 @@
+M1 {'cagr': -0.0449, 'excess_sharpe': -0.5026, 'max_dd': -0.2966, 'annual_turnover': 20.4511, 'annual_cost_drag': 0.0309} gross -0.196 stress -1.392
+M2 {'cagr': 0.0532, 'excess_sharpe': 0.3106, 'max_dd': -0.394, 'annual_turnover': 9.7703, 'annual_cost_drag': 0.0099} gross 0.36 stress 0.212
+C_EW {'cagr': 0.0416, 'excess_sharpe': 0.2529, 'max_dd': -0.4362, 'annual_turnover': 0.5804, 'annual_cost_drag': 0.0008} gross 0.256 stress 0.246
+C_MOM {'cagr': -0.1399, 'excess_sharpe': -1.0485, 'max_dd': -0.6132, 'annual_turnover': 23.4769, 'annual_cost_drag': 0.034} gross -0.813 stress -1.714
+selected: []

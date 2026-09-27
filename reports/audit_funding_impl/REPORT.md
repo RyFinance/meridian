@@ -1,0 +1,39 @@
+# Hostile audit 1: implementation and data (crypto_funding_xs, corrected development)
+
+**Verdict: SURVIVES (implementation).** My own code, written independently, reproduces the corrected result exactly, and I found no look-ahead. The data defects I found are small, and the only one that matters much makes the stress book look worse, not better. The result is fragile in other ways, though (points 13–16 below): that is for the statistical/economic auditor, but I've put numbers on it.
+
+*Hostile implementation/data audit of the corrected crypto_funding_xs dev result (cycle 5). Saved by the director session.*
+
+I wrote a separate loader, parser and backtest from the PLAN.md text and never imported `core.py`. Only monthly files up to 2022-12 were opened (34,144 later files skipped), and rows were cut at 2022-12-31.
+
+| # | Check | Result |
+|---|---|---|
+| 1 | **Reproduction** | Weights match on all days. Daily base, gross and stress series match to 1e-9 on 888 of 889 days. Base Sharpe 2.4353 vs 2.4356; stress 1.5225 vs 1.5228; 207 dropped days and first live day 2020-07-26 both match; by-year 2020/21 identical, 2022 −6.3% vs −6.3%. The one different day is 2022-12-31: I excluded the 2023-01-01 00:00 settlement to respect the lock (−1.6 bp). |
+| 2 | **Look-ahead** | None found. The signal uses only settlements before 00:00 on day t, and volume and eligibility use only data up to day t−1. Day t's closing price is never used to select positions. Lagging the weights by one day gives Sharpe 1.98, and by two days 1.87: a gradual decay, not the collapse you would see if selection used same-day information. |
+| 3 | **Is the 00:00 open tradable?** | Yes. For held positions, the open is within 0.5% of the previous close in 30,575 of 30,582 cases; the largest gap is 0.68%. |
+| 4 | **Funding at day boundaries** | Nothing is counted twice or missed. The daily windows partition time (reconciliation error 1.7e-14). However, 42–67% of `calc_time` values sit 1–47 ms after the hour. For those, the 00:00 settlement of day t is charged to the new day-t portfolio, not the old one, which gives the usual "2 then 4 settlements" pattern on neighbouring days. Rounding `calc_time` to the hour changes Sharpe from 2.435 to 2.414 (funding leg 22.3% → 21.7% a year). Negligible. |
+| 5 | **File parsing** | Kline files mix header and no-header versions (1,665 with, 1,952 without); both are handled. No microsecond timestamps in the development files, no duplicate days, no zero or negative prices. Note that `core.py` reads the whole archive, including 2023+ files, and would crash rather than silently mis-parse if microsecond timestamps appeared. |
+| 6 | **Missing kline days in Binance's own files** | About 49 symbols (FIL through ZIL) lack 2022-02-26..28 and 2022-04-01..02; BNX and ICP have smaller gaps. On those days held names earn 0 in base, and the universe shrinks from 100 to 84–86. Base effect is negligible: Sharpe with those days removed is 2.443. The stress book is hit hard: of the 16pp total "delisting" penalty, about 13pp comes from these archive holes, not real delistings. Stress Sharpe is 1.52 with the penalty and 1.87 without it. |
+| 7 | **Dead, zero-volume contracts in the universe** | BTCST (zero volume for about 659 days), BTT, FTT and SRM after the FTX collapse, LUNA's last day: 53 held position-days with flat prices. Their P&L is about 0 (−1 bp). Requiring positive volume on day t−1 gives Sharpe 2.435. It's a design flaw with no effect on the result. |
+| 8 | **Delistings inside development (12)** | LUNA and ANC were held long through the collapse, costing −7.2% and −5.8% over their last five days. That is real and correctly booked. Last klines are either real trading days or a flat settlement print; I found no thin-final-day artefacts that add P&L. |
+| 9 | **Funding-interval changes** | FTT, SOL, OMG and HNT switched to 2h or 4h intervals. The sums handle this correctly (up to 13 settlements in a day). |
+| 10 | **Tie-breaking** | 9% of signals equal the default rate (0.0003/day), and 133 days have ties at the quintile boundary. Breaking ties at random across 20 seeds gives Sharpe 2.27–2.47 (mean 2.38); reverse-alphabetical gives 2.41. The alphabetical rule is slightly favourable. |
+| 11 | **Costs** | Turnover is 0.276/day, or 0.319/day if the rebalance back from each day's price drift is counted (Sharpe 2.39). Break-even cost is 63 bp per side. Sharpe is 1.74 at 20 bp and 1.24 at 30 bp. Charging 30 bp on names with 30-day median volume under $50m gives 1.78 (79% of 2020 turnover is in such names). 2022 is negative at every cost level. |
+| 12 | **Short squeezes and liquidation** | Of 15,292 short position-days, the intraday high was ≥+50% above the open on 35 and ≥+100% on 3 (the largest was KEEP, +184%). Stopping shorts out at +20/30/50% gives Sharpe 2.39/2.43/2.22. 21 holding spells saw a cumulative rise of ≥100%. Each short is only about 2.5% of capital, so at gross 1x with cross margin this does not kill the result. |
+| 13 | **Why 2020 went from +16% to +54%** | Two effects of about equal size. (a) With the extra symbols, the universe reaches 25 names on 2020-07-26 rather than 2020-10-31, adding 97 days worth +27.6%. (b) On the 62 days both runs share, 2020 goes from +15.6% to +26.8%. The new symbols contribute +25.7% directly in 2020: THETA +11.8% (long on all 117 days held), LINK +6.4%, ZIL +5.9%, WAVES +5.7%, XMR +4.2%. XRP, LTC, TRX and XTZ were net negative or near zero. |
+| 14 | **Concentration in 2020** | The universe was 25–69 names, so 5–8 names per leg in July–October. The top 5 symbols made 63% of 2020's gross P&L. 2020 alone has Sharpe 5.07 over 159 days. |
+| 15 | **Extreme days** | The top 10 days are 36% of total P&L, and the top 20 are 57%. Only one day exceeds 5%: 2021-01-28, +14.7%, of which the DOGE long made +13.0% (+390% that day). I checked this against the kline: open 0.00741, close 0.03632, $3.1bn traded. It's real, not a data error. Sharpe excluding that day is 2.38; excluding the top 10 days, 1.83. No day below −5%. |
+| 16 | **Robustness** | Removing the P&L of the top 1/3/5 symbols gives Sharpe 2.13/1.72/1.40. 2021–2022 alone: Sharpe 1.83, my own block-bootstrap p 0.030, which is above 0.025. From 2020-10-31 (the as-run span): Sharpe 2.19, p 0.009. Almost all the price edge comes from the long leg: +47.9% a year from long-leg prices vs −6.4% from short-leg prices, plus 22% from funding. |
+
+**Recommended corrections.** None change the gate decision.
+- **Stress book:** don't treat the Binance archive gaps (2022-02-26..28, 2022-04-01..02, the BNX and ICP holes) as delistings. Mark them as data holes, or fill them from daily files. Effect: stress Sharpe 1.52 → about 1.87; base unchanged.
+- **Eligibility:** require positive quote volume on day t−1. Effect on base Sharpe: 0.000.
+- **Funding timing:** round `calc_time` to the hour. Effect: −0.02 Sharpe.
+- **Turnover:** count the drift back to target weights. Effect: −0.05 Sharpe.
+- **Ties:** use a documented random tie-break. Effect: about −0.06 Sharpe on average.
+
+With all of these combined (and the hole days dropped): base Sharpe 2.38, stress 1.69, by year +54% / +88% / −8%, bootstrap p 0.002.
+
+For the other auditor: the implementation holds up, but the result leans on 2020 small-universe days, a handful of coins (THETA, CRV, SOL) and one DOGE day. 2022 is negative, and 2021–22 on their own do not clear α = 0.025.
+
+Everything is in `/Users/rytty/CCP/quant_v7/research/audit_funding_impl/`: `load.py` (loader with the lock cutoff), `replicate.py` (the independent backtest), `run_repro.py` (the reproduction check) and `attack.py`, `attack2.py`, `attack3.py`, `attack4.py` (the checks above). Results are in `/Users/rytty/CCP/quant_v7/reports/audit_funding_impl/`; start with `repro.json` and `attack.json`. No existing files were edited, and nothing was computed for 2023 or later.

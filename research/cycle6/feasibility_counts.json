@@ -1,0 +1,246 @@
+{
+ "BAB-EQ": {
+  "aqr_overlap_months": 321,
+  "defined_months": 329,
+  "defined_months_post_pub": 189,
+  "feasible": true,
+  "first_defined": "1999-05",
+  "last_defined": "2026-09",
+  "max_eligible": 33,
+  "threshold": 4
+ },
+ "BAB-FI": {
+  "defined_months": 561,
+  "defined_months_post_pub": 189,
+  "feasible": true,
+  "first_defined": "1980-01",
+  "fp_table6": {
+   "coverage": 0.534,
+   "held_months": 386,
+   "paper_months": 723,
+   "paper_sample": "1952-01..2012-03"
+  },
+  "last_defined": "2026-09",
+  "max_eligible": 4,
+  "threshold": 4
+ },
+ "CARRY-CM": {
+  "defined_months": 0,
+  "feasible": false,
+  "max_eligible": 2,
+  "note": "energy-only universe (CM_WTI, CM_NATGAS) < 4 assets; ADDENDUM-1 item 6",
+  "threshold": 4
+ },
+ "CARRY-FI": {
+  "century_overlap_months": 387,
+  "defined_months": 395,
+  "defined_months_post_pub": 157,
+  "feasible": true,
+  "first_defined": "1993-11",
+  "kmvp_table2": {
+   "coverage": 0.651,
+   "held_months": 226,
+   "paper_months": 347,
+   "paper_sample": "1983-11..2012-09"
+  },
+  "last_defined": "2026-09",
+  "max_eligible": 12,
+  "threshold": 4
+ },
+ "CARRY-FX": {
+  "century_overlap_months": 618,
+  "defined_months": 626,
+  "defined_months_post_pub": 157,
+  "feasible": true,
+  "first_defined": "1974-08",
+  "kmvp_table2": {
+   "coverage": 1.0,
+   "held_months": 347,
+   "paper_months": 347,
+   "paper_sample": "1983-11..2012-09"
+  },
+  "last_defined": "2026-09",
+  "max_eligible": 9,
+  "threshold": 4
+ },
+ "SEAS-CM": {
+  "bsv_table2": {
+   "coverage": 0.118,
+   "held_months": 44,
+   "paper_months": 372,
+   "paper_sample": "1981-01..2011-12"
+  },
+  "defined_months": 222,
+  "defined_months_post_pub": 141,
+  "feasible": true,
+  "first_defined": "2008-04",
+  "last_defined": "2026-09",
+  "max_eligible": 12,
+  "threshold": 4
+ },
+ "SEAS-EQ": {
+  "bsv_table2": {
+   "coverage": 0.446,
+   "held_months": 166,
+   "paper_months": 372,
+   "paper_sample": "1981-01..2011-12"
+  },
+  "defined_months": 344,
+  "defined_months_post_pub": 141,
+  "feasible": true,
+  "first_defined": "1998-02",
+  "last_defined": "2026-09",
+  "max_eligible": 34,
+  "threshold": 4
+ },
+ "SEAS-FI": {
+  "bsv_table2": {
+   "coverage": 0.522,
+   "held_months": 194,
+   "paper_months": 372,
+   "paper_sample": "1981-01..2011-12"
+  },
+  "defined_months": 372,
+  "defined_months_post_pub": 92,
+  "feasible": true,
+  "first_defined": "1995-10",
+  "last_defined": "2026-09",
+  "max_eligible": 12,
+  "threshold": 4
+ },
+ "SEAS-FX": {
+  "bsv_table2": {
+   "coverage": 1.0,
+   "held_months": 372,
+   "paper_months": 372,
+   "paper_sample": "1981-01..2011-12"
+  },
+  "defined_months": 603,
+  "defined_months_post_pub": 92,
+  "feasible": true,
+  "first_defined": "1976-07",
+  "last_defined": "2026-09",
+  "max_eligible": 9,
+  "threshold": 4
+ },
+ "TSMOM-CM": {
+  "aqr_overlap_months": 222,
+  "defined_months": 227,
+  "defined_months_post_pub": 189,
+  "feasible": true,
+  "first_defined": "2007-11",
+  "last_defined": "2026-09",
+  "max_eligible": 12,
+  "threshold": 3
+ },
+ "TSMOM-EQ": {
+  "aqr_overlap_months": 326,
+  "defined_months": 331,
+  "defined_months_post_pub": 189,
+  "feasible": true,
+  "first_defined": "1999-03",
+  "last_defined": "2026-09",
+  "max_eligible": 34,
+  "threshold": 3
+ },
+ "TSMOM-FI": {
+  "aqr_overlap_months": 398,
+  "defined_months": 403,
+  "defined_months_post_pub": 189,
+  "feasible": true,
+  "first_defined": "1993-03",
+  "last_defined": "2026-09",
+  "max_eligible": 12,
+  "threshold": 3
+ },
+ "TSMOM-FX": {
+  "aqr_overlap_months": 497,
+  "defined_months": 620,
+  "defined_months_post_pub": 189,
+  "feasible": true,
+  "first_defined": "1975-02",
+  "last_defined": "2026-09",
+  "max_eligible": 9,
+  "threshold": 3
+ },
+ "VAL-CM": {
+  "aqr_overlap_months": 158,
+  "defined_months": 179,
+  "defined_months_post_pub": 179,
+  "feasible": true,
+  "first_defined": "2011-11",
+  "last_defined": "2026-09",
+  "max_eligible": 12,
+  "threshold": 4
+ },
+ "VAL-EQ": {
+  "aqr_overlap_months": 280,
+  "defined_months": 301,
+  "defined_months_post_pub": 210,
+  "feasible": true,
+  "first_defined": "2001-09",
+  "last_defined": "2026-09",
+  "max_eligible": 34,
+  "threshold": 4
+ },
+ "VAL-FI": {
+  "aqr_overlap_months": 314,
+  "defined_months": 335,
+  "defined_months_post_pub": 210,
+  "feasible": true,
+  "first_defined": "1998-11",
+  "last_defined": "2026-09",
+  "max_eligible": 12,
+  "threshold": 4
+ },
+ "VAL-FX": {
+  "aqr_overlap_months": 539,
+  "defined_months": 560,
+  "defined_months_post_pub": 210,
+  "feasible": true,
+  "first_defined": "1980-02",
+  "last_defined": "2026-09",
+  "max_eligible": 9,
+  "threshold": 4
+ },
+ "XSMOM-CM": {
+  "aqr_overlap_months": 213,
+  "defined_months": 234,
+  "defined_months_post_pub": 210,
+  "feasible": true,
+  "first_defined": "2007-04",
+  "last_defined": "2026-09",
+  "max_eligible": 12,
+  "threshold": 4
+ },
+ "XSMOM-EQ": {
+  "aqr_overlap_months": 335,
+  "defined_months": 356,
+  "defined_months_post_pub": 210,
+  "feasible": true,
+  "first_defined": "1997-02",
+  "last_defined": "2026-09",
+  "max_eligible": 34,
+  "threshold": 4
+ },
+ "XSMOM-FI": {
+  "aqr_overlap_months": 363,
+  "defined_months": 384,
+  "defined_months_post_pub": 210,
+  "feasible": true,
+  "first_defined": "1994-10",
+  "last_defined": "2026-09",
+  "max_eligible": 12,
+  "threshold": 4
+ },
+ "XSMOM-FX": {
+  "aqr_overlap_months": 553,
+  "defined_months": 615,
+  "defined_months_post_pub": 210,
+  "feasible": true,
+  "first_defined": "1975-07",
+  "last_defined": "2026-09",
+  "max_eligible": 9,
+  "threshold": 4
+ }
+}
