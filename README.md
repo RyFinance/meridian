@@ -20,6 +20,10 @@ When a company beats or misses earnings, its stock tends to keep drifting the sa
 1. **Research.** It measures the effect on real data: earnings surprise built from analyst estimates, cost-aware backtests, and explicit audits for the biases that make backtests lie.
 2. **Trading.** A bot runs after every market close. It reads new earnings, scores the names that just surprised, sizes positions, opens and closes them on a 20-day holding rule, and keeps a ledger. No manual steps.
 
+## Your risk
+
+**You trade at your own risk.** Meridian is open-source research software, not a broker, adviser or managed service, and nothing here is financial advice. You can lose money, including all the capital you give it; shorts can lose more than they cost. Backtests and past results do not predict future returns (the strategy failed three of its own pre-registered tests). Software, data feeds and broker APIs fail, and orders can fill late, partly or at bad prices. You are responsible for your account, taxes and the rules where you live. The authors accept no liability for losses. Start on the simulator, then broker paper, and only risk money you can afford to lose.
+
 ## Setup (about two minutes)
 
 ```bash
@@ -45,7 +49,7 @@ A terminal-style desk with function keys (F1–F4, F9 refresh) and a command lin
 - **Desk:** account, system health (kill switch, circuit breaker, heartbeat, scheduler), execution mode, marked equity curve, open positions, scored signals, upcoming earnings, decision tape.
 - **Brokers:** link accounts and choose how the bot executes.
 - **Research:** the forward test on this account, the 2021–2025 replay, pre-registered tests and Monte Carlo.
-- **Setup:** a live readiness checklist (each missing step shows the command that fixes it), quick start, go-live steps, settings and where files live.
+- **Setup:** what it does, your risk, a live readiness checklist (each missing step shows its fix), quick start, how to use it properly, per-broker live setup steps and the current settings.
 
 ## Brokers and execution modes
 

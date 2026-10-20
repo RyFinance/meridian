@@ -74,7 +74,7 @@ def test_place_order_fills_at_real_price_and_writes_ledger(isolated_kill_switch,
         pytest.skip(f"network unavailable / yfinance unreachable: {e!r}")
 
     assert fill.fill_price > 0
-    assert fill.mode == "paper"
+    assert fill.mode == "sim"
     assert "AAPL" in client.positions
     assert client.positions["AAPL"].open is True
     assert client.positions["AAPL"].entry_price == fill.fill_price

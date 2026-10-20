@@ -230,3 +230,18 @@ td.wrap { white-space: normal; color: var(--white); }
 .acct-row { padding: 6px 0; border-bottom: 1px solid #17171a; }
 .acct-row .sub b { color: var(--white); font-weight: 500; }
 @media (max-width: 720px) { .notice { flex-wrap: wrap; } .notice-text { flex-basis: calc(100% - 60px); } }
+
+.modes.static { margin-top: 10px; }
+.modes.static .mode { cursor: default; }
+.risk-pane { border-color: var(--down); }
+.risk-pane > header { color: var(--down); }
+.live-setup { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 8px; }
+.live-setup .count { margin-left: auto; color: var(--grey); }
+.lstep { display: grid; grid-template-columns: 22px 1fr; gap: 2px 10px; padding: 6px 0; border-bottom: 1px solid #17171a; }
+.lstep .mark { font-weight: 700; color: var(--grey); }
+.lstep.done .mark { color: var(--up); }
+.lstep .txt { color: var(--white); }
+.lstep .how { grid-column: 2; color: var(--grey); font-size: 13px; }
+code.copy { cursor: copy; position: relative; }
+code.copy:hover::after { content: "copy"; position: absolute; right: 6px; color: var(--grey); font-size: 11px; }
+code.copy.copied::after { content: "copied"; color: var(--up); }

@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#000000">
 <title>Meridian · PEAD Desk</title>
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
 
@@ -91,71 +91,72 @@
 
     <!-- ══════════════ SETUP ══════════════ -->
     <section class="page" data-page="setup">
-      <article class="pane span-7"><header><span class="n">40)</span>READINESS<span class="meta" id="m-ready"></span></header>
+      <article class="pane span-8"><header><span class="n">40)</span>WHAT MERIDIAN DOES<span class="meta"><a href="https://github.com/RyFinance/meridian" target="_blank" rel="noopener noreferrer">GitHub ↗</a></span></header>
+        <div class="body prose">
+          <p>After every US market close Meridian reads which of 75 large stocks just reported earnings, scores how much each one beat or missed estimates, and buys (or shorts) the ones the model expects to keep drifting. Each position is sized by the risk gate and sold after 20 trading days. You pick where the orders go:</p>
+          <div class="modes static">
+            <div class="mode"><b>SIMULATOR</b><span>No keys. Real prices, simulated fills. Starts at $100,000.</span></div>
+            <div class="mode"><b>READ-ONLY</b><span>Your broker account shows next to the simulator. Nothing is sent.</span></div>
+            <div class="mode"><b>BROKER PAPER</b><span>Paper / sandbox keys. Real broker fills on fake money.</span></div>
+            <div class="mode" data-mode="live"><b>LIVE</b><span>Opt-in. Real market orders on your account, capped per order.</span></div>
+          </div>
+        </div>
+      </article>
+      <article class="pane span-4 risk-pane"><header><span class="n">41)</span>YOUR RISK</header>
+        <div class="body prose">
+          <p><b>You trade at your own risk.</b> Meridian is open-source research software, not a broker, adviser or managed service. Nothing here is financial advice.</p>
+          <ul>
+            <li>You can lose money, including all of the capital you give it. Shorts can lose more than they cost.</li>
+            <li>Past results, backtests and this desk's numbers do not predict future returns. The strategy failed three of its own pre-registered tests.</li>
+            <li>Software, data feeds and broker APIs fail. Orders can fill late, partly or at bad prices.</li>
+            <li>You are responsible for your account, its permissions, taxes and the rules where you live.</li>
+          </ul>
+          <p class="dim">The authors accept no liability for losses. Use paper first and only risk money you can afford to lose.</p>
+        </div>
+      </article>
+
+      <article class="pane span-7"><header><span class="n">42)</span>READINESS<span class="meta" id="m-ready"></span></header>
         <div class="body" id="p-ready"><div class="wait">checking…</div></div>
       </article>
-      <article class="pane span-5"><header><span class="n">41)</span>QUICK START</header>
+      <article class="pane span-5"><header><span class="n">43)</span>QUICK START<span class="meta">4 steps</span></header>
         <div class="body">
           <div class="steps">
-            <div><b>1</b><span>Get the code</span><code>git clone https://github.com/RyFinance/meridian.git &amp;&amp; cd meridian</code></div>
-            <div><b>2</b><span>Install (Python env, deps, .env)</span><code>scripts/setup.sh</code></div>
-            <div><b>3</b><span>Open this desk</span><code>scripts/desk.sh</code></div>
-            <div><b>4</b><span>Run one cycle now</span><code>scripts/cycle.sh</code></div>
-            <div><b>5</b><span>Run it after every close (macOS)</span><code>scripts/install_launchd.sh</code></div>
+            <div><b>1</b><span>Install, from the repo root</span><code class="copy">scripts/setup.sh</code></div>
+            <div><b>2</b><span>Open the desk at http://127.0.0.1:8420</span><code class="copy">scripts/desk.sh</code></div>
+            <div><b>3</b><span>Run one cycle (trades only after a completed session; first run downloads prices)</span><code class="copy">scripts/cycle.sh</code></div>
+            <div><b>4</b><span>Run it after every close, macOS (Linux: cron 20 16 * * 1-5, New York time)</span><code class="copy">scripts/install_launchd.sh</code></div>
           </div>
-          <p class="sub">Linux: cron <code>20 16 * * 1-5</code> in America/New_York running <code>scripts/cycle.sh</code>. Remove the macOS jobs with <code>scripts/install_launchd.sh --remove</code>.</p>
         </div>
       </article>
-      <article class="pane span-6"><header><span class="n">42)</span>GO LIVE<span class="meta" id="m-live"></span></header>
-        <div class="body" id="p-live"><div class="wait">checking…</div></div>
-      </article>
-      <article class="pane span-6"><header><span class="n">43)</span>SETTINGS (.env)</header>
-        <div class="body">
-          <table>
-            <thead><tr><th>VARIABLE</th><th>DEFAULT</th><th>WHAT IT DOES</th></tr></thead>
-            <tbody>
-              <tr><td class="t">MERIDIAN_PORT</td><td>8420</td><td class="wrap">desk port (127.0.0.1 only)</td></tr>
-              <tr><td class="t">MERIDIAN_ALLOW_LIVE</td><td>no</td><td class="wrap">yes allows arming live trading</td></tr>
-              <tr><td class="t">MERIDIAN_LIVE_MAX_ORDER_USD</td><td>500</td><td class="wrap">largest single live order</td></tr>
-              <tr><td class="t">MERIDIAN_&lt;BROKER&gt;_&lt;ENV&gt;_&lt;FIELD&gt;</td><td>--</td><td class="wrap">broker keys instead of linking in F2</td></tr>
-              <tr><td class="t">MERIDIAN_LAUNCHD_PREFIX</td><td>com.meridian</td><td class="wrap">launchd job names</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-      <article class="pane span-4"><header><span class="n">44)</span>HOW A TRADE HAPPENS</header>
+
+      <article class="pane span-6"><header><span class="n">44)</span>HOW TO USE IT PROPERLY</header>
         <div class="body prose">
           <ol>
-            <li>After the close, the cycle reads which of the 75 watched names just reported.</li>
-            <li>Each report gets a surprise score and a calibrated probability of drift.</li>
-            <li>The risk gate decides: kill switch, drawdown cap, circuit breaker, exposure, Kelly size. It is the only way to an order.</li>
-            <li>Approved orders fill in your mode: simulator, broker paper, or live.</li>
-            <li>Positions exit after 20 trading days. Exits are never blocked.</li>
+            <li><b>Start on the simulator</b> and let it run a few weeks. Watch fills, signals and the equity curve, not one day's P&amp;L.</li>
+            <li><b>Move to broker paper.</b> Same orders, real broker fills. Check that the FILLS pane matches your broker's paper account.</li>
+            <li><b>Go live small.</b> Set the capital that sizes orders to what you can lose, keep the per-order cap low, raise it slowly.</li>
+            <li><b>Check the desk after each close:</b> heartbeat fresh, errors none, kill switch clear, scheduler RUNNING.</li>
+            <li><b>Stop instantly</b> with <b>Engage kill switch</b> in SYSTEM (or switch to SIMULATOR in F2). Scheduled exits keep running so positions still close.</li>
+            <li><b>Don't trade the same account by hand</b> in the same names. The bot only knows its own ledger.</li>
           </ol>
         </div>
       </article>
-      <article class="pane span-4"><header><span class="n">45)</span>SAFETY</header>
-        <div class="body prose">
+      <article class="pane span-6"><header><span class="n">45)</span>HOW THE NUMBERS STAY HONEST</header>
+        <div class="body prose" id="p-honest">
           <ul>
-            <li><b>Simulator by default.</b> Nothing reaches a broker until you link one and pick a mode.</li>
-            <li><b>Live is opt-in three ways:</b> the .env flag, live keys, and the arm phrase. Disarming stops the next order.</li>
-            <li><b>Capped.</b> Live orders are clipped to the max order size.</li>
-            <li><b>Local only.</b> Credentials stay in bot/state (mode 600, git-ignored).</li>
+            <li><b>Real prices.</b> Simulated fills use the real last price; broker modes record the broker's own fill price and order id.</li>
+            <li><b>Real costs.</b> Every round trip is charged 10 bps, the same as every backtest in the repo.</li>
+            <li><b>Marked daily.</b> Sharpe and drawdown use positions at each day's close against T-bill returns, not cash-basis NAV.</li>
+            <li><b>Hard limits.</b> <span id="limits-text">5% per position, 100% total exposure, kill switch at a 20% drawdown, 20-day holds.</span></li>
+            <li><b>Gate first.</b> No order without a single-use approval from the risk gate, in every mode.</li>
           </ul>
-          <p class="dim">Research software. Nothing here is financial advice.</p>
         </div>
       </article>
-      <article class="pane span-4"><header><span class="n">46)</span>WHERE THINGS LIVE</header>
-        <div class="body">
-          <dl class="kv">
-            <dt>Ledgers &amp; logs</dt><dd>bot/state/</dd>
-            <dt>Broker keys</dt><dd>bot/state/brokers.local.json</dd>
-            <dt>Price cache</dt><dd>data/raw/</dd>
-            <dt>Model</dt><dd>models/</dd>
-            <dt>Scheduler logs</dt><dd>~/Library/Logs/meridian/</dd>
-            <dt>Kill switch</dt><dd>bot/kill_switch.py</dd>
-          </dl>
-        </div>
+
+      <div class="span-12" id="p-live-setup"></div>
+
+      <article class="pane span-12"><header><span class="n">47)</span>SETTINGS<span class="meta">.env · restart the desk after editing</span></header>
+        <div class="body scroll" id="p-settings"></div>
       </article>
     </section>
   </main>
@@ -185,6 +186,6 @@
   </div>
 </div>
 
-<script src="app.js?v=12"></script>
+<script src="app.js?v=13"></script>
 </body>
 </html>

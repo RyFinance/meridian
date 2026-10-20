@@ -179,8 +179,43 @@ def setup_status() -> Dict[str, Any]:
     ok_live, why = broker_config.live_allowed()
     check("live", "Live trading allowed", ok_live, "MERIDIAN_ALLOW_LIVE=yes" if ok_live else "off",
           "only if you want real orders: MERIDIAN_ALLOW_LIVE=yes in .env, then arm in F2", optional=True)
+    env_now = lambda name, default: __import__("os").getenv(name) or None  # noqa: E731
+    settings = [
+        ("MERIDIAN_PORT", "8420", "Desk port (always 127.0.0.1)."),
+        ("MERIDIAN_ALLOW_LIVE", "no", "yes allows arming live trading at all."),
+        ("MERIDIAN_LIVE_MAX_ORDER_USD", "500", "Largest single live order; bigger approved sizes are clipped."),
+        ("MERIDIAN_LAUNCHD_PREFIX", "com.meridian", "Names of the macOS scheduler jobs."),
+        ("RESEARCH_USER_AGENT", "", "Contact string sent to SEC EDGAR by research scripts."),
+    ]
+    settings_rows = [{"name": n, "now": env_now(n, d) or (f"{d} (default)" if d else "not set"), "default": d or "—",
+                      "what": w} for n, d, w in settings]
+    for bid, cls in REGISTRY.items():
+        for env_ in cls.envs:
+            settings_rows.append({"name": f"MERIDIAN_{bid.upper()}_{env_.upper()}_*", "default": "—",
+                                  "now": "linked" if broker_config.has_credentials(bid, env_) else "not set",
+                                  "what": f"{cls.name} {env_} keys ({', '.join(f.name for f in cls.fields)}); or link in F2."})
+    live_steps = []
+    for bid, cls in REGISTRY.items():
+        if "live" not in cls.can_trade:
+            continue
+        steps = [
+            {"text": f"Link {cls.name} live keys", "how": f"F2 Brokers → {cls.name} → LIVE → {', '.join(f.label for f in cls.fields)}",
+             "done": broker_config.has_credentials(bid, "live")},
+            {"text": "Opt in: MERIDIAN_ALLOW_LIVE=yes", "how": ".env → MERIDIAN_ALLOW_LIVE=yes, then restart the desk",
+             "done": ok_live},
+            {"text": "Arm LIVE", "how": f'F2 → Execution mode → LIVE → pick {cls.name} → type "{broker_config.arm_phrase(bid)}"',
+             "done": mode.get("mode") == "live" and mode.get("broker") == bid},
+        ]
+        if "paper" in cls.can_trade:
+            steps.insert(0, {"text": "Practise on paper first", "how": f"F2 → link {cls.name} PAPER keys → mode BROKER PAPER",
+                             "done": broker_config.has_credentials(bid, "paper")})
+        live_steps.append({"id": bid, "name": cls.name, "regions": list(cls.regions), "note": cls.note, "steps": steps})
     return {
         "checks": checks,
+        "settings": settings_rows,
+        "live_setup": live_steps,
+        "limits": {"max_position_pct": 0.05, "max_total_exposure_pct": 1.0, "max_drawdown_pct": 0.20,
+                   "holding_days": 20, "live_max_order_usd": broker_config.live_max_order_usd()},
         "ready": all(c["ok"] for c in checks if not c["optional"]),
         "mode": mode,
         "root": root.name,
@@ -237,3 +272,23 @@ def fills(limit: int = 50) -> Dict[str, Any]:
         pass
     rows.sort(key=lambda r: r["ts"] or 0, reverse=True)
     return {"ledger": path.name, "mode": sel.mode, "fills": rows[: max(1, min(limit, 500))]}
+
+
+@router.post("/kill/engage")
+def kill_engage(payload: Dict[str, Any] = Body(default={})) -> Dict[str, Any]:
+    """Stop all new entries now (scheduled exits still run)."""
+    from bot.kill_switch import engage_kill_switch, read_kill_switch_status
+
+    engage_kill_switch(str(payload.get("reason") or "engaged from the desk")[:200])
+    return {"engaged": read_kill_switch_status().engaged}
+
+
+@router.post("/kill/clear")
+def kill_clear(payload: Dict[str, Any] = Body(default={})) -> Dict[str, Any]:
+    """Resume new entries. Needs the typed word, like arming live."""
+    from bot.kill_switch import disengage_kill_switch, read_kill_switch_status
+
+    if str(payload.get("confirm", "")).strip().upper() != "RESUME":
+        raise HTTPException(400, 'type "RESUME" to clear the kill switch')
+    disengage_kill_switch()
+    return {"engaged": read_kill_switch_status().engaged}

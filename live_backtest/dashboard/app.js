@@ -146,6 +146,9 @@ function renderSystem(status, sched) {
       ...Object.values(jobs).map((job) => [`  ${job.key}`, job.loaded ? job.state || "loaded" : "not loaded", job.loaded ? "" : "dim"]),
     ]),
     el("div", { class: "row" },
+      status.kill_switch_engaged
+        ? el("button", { class: "btn", onclick: clearKill }, "Clear kill switch")
+        : el("button", { class: "btn danger", onclick: engageKill }, "Engage kill switch"),
       el("button", { class: "btn", disabled: !sched || sched.__error || running, onclick: () => schedule("start") }, "Start schedule"),
       el("button", { class: "btn", disabled: !sched || sched.__error || !running, onclick: () => schedule("stop") }, "Stop schedule")),
   );
@@ -488,20 +491,20 @@ async function loadSetup() {
       c.fix ? el("span", { class: "fix" }, `→ ${c.fix}`) : ""))));
   meta("m-ready", `${data.platform} · port ${data.port}`);
 
-  const mode = data.mode;
-  const live = data.checks.find((c) => c.id === "live");
-  const brokers = data.checks.find((c) => c.id === "broker");
-  const steps = [
-    ["Link the broker's live keys in F2 Brokers", brokers.ok && /live/.test(brokers.detail)],
-    ["Set MERIDIAN_ALLOW_LIVE=yes in .env, then restart the desk", live.ok],
-    [`Pick LIVE in F2 and type the arm phrase${mode.broker ? ` (${mode.arm_phrase})` : ""}`, mode.mode === "live"],
-  ];
-  put("p-live",
-    el("div", { class: "checks" }, steps.map(([text, ok], i) => el("div", { class: `check ${ok ? "ok" : "opt"}` },
-      el("span", { class: "mark" }, ok ? "✓" : String(i + 1)), el("span", { class: "lbl" }, text), el("span", { class: "det" }, "")))),
-    el("p", { class: "sub" }, `Each live order is clipped to ${money(mode.live_max_order_usd, 0)}. Try the broker's paper mode first: same code path, no real money.`),
-    el("div", { class: "row" }, el("button", { class: "btn primary", onclick: () => show("brokers") }, "Open brokers  F2")));
-  meta("m-live", mode.mode === "live" ? "ARMED" : "not armed");
+  const limits = data.limits || {};
+  $("limits-text").textContent = `${(limits.max_position_pct * 100).toFixed(0)}% per position, ${(limits.max_total_exposure_pct * 100).toFixed(0)}% total exposure, kill switch at a ${(limits.max_drawdown_pct * 100).toFixed(0)}% drawdown, ${limits.holding_days}-day holds, live orders capped at ${money(limits.live_max_order_usd, 0)}.`;
+
+  put("p-live-setup", el("div", { class: "live-setup" }, (data.live_setup || []).map((b) => {
+    const done = b.steps.filter((x) => x.done).length;
+    return el("article", { class: "pane" },
+      el("header", {}, `${b.name.toUpperCase()} LIVE SETUP`, el("span", { class: "count" }, `${done} / ${b.steps.length}`)),
+      el("div", { class: "body" }, b.steps.map((x, i) => el("div", { class: `lstep${x.done ? " done" : ""}` },
+        el("span", { class: "mark" }, x.done ? "✓" : String(i + 1)), el("span", { class: "txt" }, x.text), el("span", { class: "how" }, x.how))),
+        el("div", { class: "note", style: "margin-top:8px" }, b.note)));
+  })));
+
+  put("p-settings", table([["SETTING"], ["NOW"], ["DEFAULT"], ["WHAT IT DOES"]],
+    (data.settings || []).map((r) => [[r.name, "t"], [r.now, /not set|default/.test(r.now) ? "dim" : ""], [r.default, "dim"], [r.what, "wrap"]])));
 }
 
 // ------------------------------------------------------------ actions
@@ -519,6 +522,20 @@ function ask(title, text, phrase) {
     dialog.hidden = false;
     (input || dialog.querySelector(".btn")).focus();
   });
+}
+
+async function engageKill() {
+  if (!(await ask("Engage the kill switch?", "Blocks every new entry, in every mode, until you clear it. Scheduled exits keep running so open positions still close."))) return;
+  try { await api("/api/kill/engage", { method: "POST", body: { reason: "engaged from the desk" } }); log("kill switch ENGAGED"); }
+  catch (error) { log(error.message, "err"); }
+  refresh();
+}
+
+async function clearKill() {
+  if (!(await ask("Clear the kill switch?", 'New entries resume on the next cycle. Type RESUME to confirm.', "RESUME"))) return;
+  try { await api("/api/kill/clear", { method: "POST", body: { confirm: "RESUME" } }); log("kill switch cleared"); }
+  catch (error) { log(error.message, "err"); }
+  refresh();
 }
 
 async function schedule(action) {
@@ -611,6 +628,14 @@ async function refresh() {
     log(`refresh failed: ${error.message}`, "err");
   } finally { refreshing = false; }
 }
+
+document.addEventListener("click", (event) => {
+  const code = event.target.closest("code.copy");
+  if (!code) return;
+  navigator.clipboard.writeText(code.textContent).then(() => {
+    code.classList.add("copied"); setTimeout(() => code.classList.remove("copied"), 1200);
+  }).catch(() => {});
+});
 
 tick(); setInterval(tick, 1000);
 loadArt();
