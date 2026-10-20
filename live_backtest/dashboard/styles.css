@@ -45,7 +45,7 @@ body.no-art .backdrop { display: none; }
 
 .window {
   position: relative; z-index: 1; display: flex; flex-direction: column;
-  height: 100vh; max-width: 1680px; margin: 0 auto; border-left: 1px solid var(--line); border-right: 1px solid var(--line);
+  height: 100vh; width: 100%;
 }
 
 /* Windows-style title bar */
@@ -161,13 +161,6 @@ input.in:focus, select.in:focus, textarea.in:focus { outline: 1px solid var(--ye
 .prose p, .prose li { margin: 0 0 8px; }
 .prose ol, .prose ul { padding-left: 20px; margin: 0; }
 
-.art-body { overflow: auto; display: grid; place-items: center; padding: 12px 0; }
-.art {
-  margin: 0; font: 500 9px/9px var(--mono); white-space: pre;
-  color: transparent; background: url("art/fallen_angel.jpg") center / 100% 100% no-repeat;
-  -webkit-background-clip: text; background-clip: text;
-  filter: brightness(1.9) contrast(1.15) saturate(1.2);
-}
 
 /* console + prompt */
 .console { max-height: 120px; overflow: auto; padding: 4px 10px; background: #050506; border-top: 1px solid var(--line); font-size: 13px; }
@@ -203,7 +196,24 @@ input.in:focus, select.in:focus, textarea.in:focus { outline: 1px solid var(--ye
   .modes { grid-template-columns: 1fr; }
   .broker-grid { grid-template-columns: 1fr; }
   .backdrop { opacity: .22; }
-  .art { font-size: calc((100vw - 34px) / 132); line-height: calc((100vw - 34px) / 132); }
   .window { overflow-x: hidden; }
   .strip span { padding: 5px 10px; }
 }
+
+/* setup page */
+.checks { display: grid; gap: 2px; }
+.check { display: grid; grid-template-columns: 22px minmax(150px, 220px) 1fr; gap: 10px; align-items: baseline; padding: 5px 0; border-bottom: 1px solid #17171a; }
+.check .mark { font-weight: 700; }
+.check.ok .mark { color: var(--up); } .check.no .mark { color: var(--down); } .check.opt .mark { color: var(--grey); }
+.check .lbl { color: var(--white); }
+.check .det { color: var(--amber); min-width: 0; overflow-wrap: anywhere; }
+.check .fix { grid-column: 3; color: var(--yellow); font-size: 13px; }
+.ready-banner { padding: 8px 10px; margin-bottom: 10px; border: 1px solid currentColor; font-weight: 500; }
+.ready-banner.ok { color: var(--up); } .ready-banner.no { color: var(--amber); }
+.steps { display: grid; gap: 10px; }
+.steps > div { display: grid; grid-template-columns: 24px 1fr; gap: 2px 10px; }
+.steps b { grid-row: span 2; display: grid; place-items: center; width: 22px; height: 22px; background: var(--amber); color: #000; }
+.steps span { color: var(--white); }
+code { font-family: var(--mono); color: var(--yellow); background: #000; border: 1px solid var(--line); padding: 1px 6px; overflow-wrap: anywhere; }
+.steps code { display: block; padding: 4px 8px; }
+td.wrap { white-space: normal; color: var(--white); }

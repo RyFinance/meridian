@@ -409,6 +409,37 @@ async function loadResearch() {
   meta("m-mc", mc && mc.n_trades ? `${mc.n_trades} trades resampled` : "");
 }
 
+// ------------------------------------------------------------ setup
+async function loadSetup() {
+  const data = await api("/api/setup");
+  const required = data.checks.filter((c) => !c.optional);
+  const done = required.filter((c) => c.ok).length;
+  put("p-ready",
+    el("div", { class: `ready-banner ${data.ready ? "ok" : "no"}` },
+      data.ready ? "READY · the bot will trade on schedule in the mode you picked" : `${done}/${required.length} required steps done`),
+    el("div", { class: "checks" }, data.checks.map((c) => el("div", { class: `check ${c.ok ? "ok" : c.optional ? "opt" : "no"}` },
+      el("span", { class: "mark" }, c.ok ? "✓" : c.optional ? "–" : "✗"),
+      el("span", { class: "lbl" }, `${c.label}${c.optional ? " (optional)" : ""}`),
+      el("span", { class: "det" }, c.detail),
+      c.fix ? el("span", { class: "fix" }, `→ ${c.fix}`) : ""))));
+  meta("m-ready", `${data.platform} · port ${data.port}`);
+
+  const mode = data.mode;
+  const live = data.checks.find((c) => c.id === "live");
+  const brokers = data.checks.find((c) => c.id === "broker");
+  const steps = [
+    ["Link the broker's live keys in F2 Brokers", brokers.ok && /live/.test(brokers.detail)],
+    ["Set MERIDIAN_ALLOW_LIVE=yes in .env, then restart the desk", live.ok],
+    [`Pick LIVE in F2 and type the arm phrase${mode.broker ? ` (${mode.arm_phrase})` : ""}`, mode.mode === "live"],
+  ];
+  put("p-live",
+    el("div", { class: "checks" }, steps.map(([text, ok], i) => el("div", { class: `check ${ok ? "ok" : "opt"}` },
+      el("span", { class: "mark" }, ok ? "✓" : String(i + 1)), el("span", { class: "lbl" }, text), el("span", { class: "det" }, "")))),
+    el("p", { class: "sub" }, `Each live order is clipped to ${money(mode.live_max_order_usd, 0)}. Try the broker's paper mode first: same code path, no real money.`),
+    el("div", { class: "row" }, el("button", { class: "btn primary", onclick: () => show("brokers") }, "Open brokers  F2")));
+  meta("m-live", mode.mode === "live" ? "ARMED" : "not armed");
+}
+
 // ------------------------------------------------------------ actions
 function ask(title, text, phrase) {
   return new Promise((resolve) => {
@@ -438,9 +469,9 @@ async function schedule(action) {
 
 // ------------------------------------------------------------ commands
 const COMMANDS = {
-  help: () => log("desk | brokers | research | background | refresh | mode | positions | signals | nav | art | clear | date"),
-  desk: () => show("desk"), brokers: () => show("brokers"), research: () => show("research"), background: () => show("background"),
-  1: () => show("desk"), 2: () => show("brokers"), 3: () => show("research"), 4: () => show("background"),
+  help: () => log("desk | brokers | research | setup | refresh | mode | positions | signals | nav | art | clear | date"),
+  desk: () => show("desk"), brokers: () => show("brokers"), research: () => show("research"), setup: () => show("setup"),
+  1: () => show("desk"), 2: () => show("brokers"), 3: () => show("research"), 4: () => show("setup"),
   refresh: () => refresh(), r: () => refresh(),
   mode: async () => { const m = await api("/api/mode"); log(`mode ${modeLabel(m)} · ledger ${m.ledger} · live ${m.live_allowed ? "allowed" : "off"}`); },
   nav: async () => { const s = await api("/api/stats"); log(`nav ${money(s.current_nav)} · marked ${money(s.marked_nav)} · return ${pct(s.total_return_pct, 2, false)}`); },
@@ -476,7 +507,7 @@ $("btn-compact").addEventListener("click", () => document.body.classList.toggle(
 $("btn-full").addEventListener("click", () => (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()).catch(() => {}));
 $("btn-reset").addEventListener("click", () => { try { localStorage.removeItem("meridian-tab"); } catch (_) { /* ignore */ } document.body.classList.remove("no-art"); show("desk"); });
 document.addEventListener("keydown", (event) => {
-  const keys = { F1: "desk", F2: "brokers", F3: "research", F4: "background" };
+  const keys = { F1: "desk", F2: "brokers", F3: "research", F4: "setup" };
   if (keys[event.key]) { event.preventDefault(); show(keys[event.key]); }
   else if (event.key === "F9") { event.preventDefault(); refresh(); }
   else if (event.key === "/" && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA") { event.preventDefault(); $("cmd").focus(); }
@@ -489,7 +520,6 @@ function tick() {
 async function loadArt() {
   try {
     const [big, small] = await Promise.all([fetch("art/fallen_angel.txt").then((r) => r.text()), fetch("art/fallen_angel_small.txt").then((r) => r.text())]);
-    $("art").textContent = big;
     $("backdrop").textContent = window.innerWidth < 720 ? small : big;
   } catch (_) { /* art is decoration */ }
 }
@@ -501,10 +531,13 @@ async function refresh() {
   try {
     if (state.tab === "desk") await loadDesk();
     else {
-      const [status, stats, mode] = await Promise.all([api("/api/status"), safe(api("/api/stats")), safe(api("/api/mode"))]);
+      const [status, stats, mode, positions] = await Promise.all([api("/api/status"), safe(api("/api/stats")),
+        safe(api("/api/mode")), safe(api("/api/positions"))]);
       renderStrip(status, stats, mode);
+      $("s-open").textContent = Array.isArray(positions) ? String(positions.length) : "--";
       if (state.tab === "brokers") await loadBrokers();
       else if (state.tab === "research") await loadResearch();
+      else if (state.tab === "setup") await loadSetup();
     }
     $("sb-conn").textContent = "● ONLINE"; $("sb-conn").className = "sb-conn on";
     $("sb-updated").textContent = `updated ${new Date().toLocaleTimeString()}`;
@@ -517,6 +550,6 @@ async function refresh() {
 tick(); setInterval(tick, 1000);
 loadArt();
 let saved = "desk";
-try { saved = localStorage.getItem("meridian-tab") || "desk"; } catch (_) { /* ignore */ }
+try { saved = localStorage.getItem("meridian-tab") || "desk"; if (saved === "background") saved = "setup"; } catch (_) { /* ignore */ }
 show(saved);
 setInterval(refresh, REFRESH_MS);

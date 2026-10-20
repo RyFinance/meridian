@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#000000">
 <title>Meridian · PEAD Desk</title>
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
 
@@ -28,7 +28,7 @@
     <button class="fkey active" data-tab="desk"><b>F1</b>DESK</button>
     <button class="fkey" data-tab="brokers"><b>F2</b>BROKERS</button>
     <button class="fkey" data-tab="research"><b>F3</b>RESEARCH</button>
-    <button class="fkey" data-tab="background"><b>F4</b>BACKGROUND</button>
+    <button class="fkey" data-tab="setup"><b>F4</b>SETUP</button>
     <span class="fkeys-fill"></span>
     <button class="fkey" id="btn-refresh"><b>F9</b>REFRESH</button>
   </nav>
@@ -80,31 +80,72 @@
       <article class="pane span-4"><header><span class="n">24)</span>MONTE CARLO<span class="meta" id="m-mc"></span></header><div class="body" id="p-mc"></div></article>
     </section>
 
-    <!-- ══════════════ BACKGROUND ══════════════ -->
-    <section class="page" data-page="background">
-      <article class="pane span-12 art-pane"><header><span class="n">30)</span>L'ANGE DÉCHU · CABANEL, 1847<span class="meta">ASCII · 220×62</span></header>
-        <div class="body art-body"><pre class="art" id="art"></pre></div>
+    <!-- ══════════════ SETUP ══════════════ -->
+    <section class="page" data-page="setup">
+      <article class="pane span-7"><header><span class="n">40)</span>READINESS<span class="meta" id="m-ready"></span></header>
+        <div class="body" id="p-ready"><div class="wait">checking…</div></div>
       </article>
-      <article class="pane span-6"><header><span class="n">31)</span>HOW A TRADE HAPPENS</header>
+      <article class="pane span-5"><header><span class="n">41)</span>QUICK START</header>
+        <div class="body">
+          <div class="steps">
+            <div><b>1</b><span>Get the code</span><code>git clone https://github.com/RyFinance/meridian.git &amp;&amp; cd meridian</code></div>
+            <div><b>2</b><span>Install (Python env, deps, .env)</span><code>scripts/setup.sh</code></div>
+            <div><b>3</b><span>Open this desk</span><code>scripts/desk.sh</code></div>
+            <div><b>4</b><span>Run one cycle now</span><code>scripts/cycle.sh</code></div>
+            <div><b>5</b><span>Run it after every close (macOS)</span><code>scripts/install_launchd.sh</code></div>
+          </div>
+          <p class="sub">Linux: cron <code>20 16 * * 1-5</code> in America/New_York running <code>scripts/cycle.sh</code>. Remove the macOS jobs with <code>scripts/install_launchd.sh --remove</code>.</p>
+        </div>
+      </article>
+      <article class="pane span-6"><header><span class="n">42)</span>GO LIVE<span class="meta" id="m-live"></span></header>
+        <div class="body" id="p-live"><div class="wait">checking…</div></div>
+      </article>
+      <article class="pane span-6"><header><span class="n">43)</span>SETTINGS (.env)</header>
+        <div class="body">
+          <table>
+            <thead><tr><th>VARIABLE</th><th>DEFAULT</th><th>WHAT IT DOES</th></tr></thead>
+            <tbody>
+              <tr><td class="t">MERIDIAN_PORT</td><td>8420</td><td class="wrap">desk port (127.0.0.1 only)</td></tr>
+              <tr><td class="t">MERIDIAN_ALLOW_LIVE</td><td>no</td><td class="wrap">yes allows arming live trading</td></tr>
+              <tr><td class="t">MERIDIAN_LIVE_MAX_ORDER_USD</td><td>500</td><td class="wrap">largest single live order</td></tr>
+              <tr><td class="t">MERIDIAN_&lt;BROKER&gt;_&lt;ENV&gt;_&lt;FIELD&gt;</td><td>--</td><td class="wrap">broker keys instead of linking in F2</td></tr>
+              <tr><td class="t">MERIDIAN_LAUNCHD_PREFIX</td><td>com.meridian</td><td class="wrap">launchd job names</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+      <article class="pane span-4"><header><span class="n">44)</span>HOW A TRADE HAPPENS</header>
         <div class="body prose">
           <ol>
             <li>After the close, the cycle reads which of the 75 watched names just reported.</li>
             <li>Each report gets a surprise score and a calibrated probability of drift.</li>
-            <li>The risk gate decides: kill switch, drawdown cap, circuit breaker, exposure and Kelly size. It is the only way to an order.</li>
-            <li>Approved orders fill in the mode you chose: simulator, broker paper, or live.</li>
-            <li>Positions exit on schedule after 20 trading days. Exits are never blocked.</li>
+            <li>The risk gate decides: kill switch, drawdown cap, circuit breaker, exposure, Kelly size. It is the only way to an order.</li>
+            <li>Approved orders fill in your mode: simulator, broker paper, or live.</li>
+            <li>Positions exit after 20 trading days. Exits are never blocked.</li>
           </ol>
         </div>
       </article>
-      <article class="pane span-6"><header><span class="n">32)</span>SAFETY</header>
+      <article class="pane span-4"><header><span class="n">45)</span>SAFETY</header>
         <div class="body prose">
           <ul>
             <li><b>Simulator by default.</b> Nothing reaches a broker until you link one and pick a mode.</li>
-            <li><b>Live is opt-in three ways.</b> MERIDIAN_ALLOW_LIVE=yes in .env, live credentials, and the arm phrase typed here. Disarming takes effect before the next order.</li>
-            <li><b>Capped.</b> Each live order is clipped to MERIDIAN_LIVE_MAX_ORDER_USD.</li>
-            <li><b>Local only.</b> The desk binds to 127.0.0.1. Credentials stay in bot/state (mode 600, git-ignored).</li>
+            <li><b>Live is opt-in three ways:</b> the .env flag, live keys, and the arm phrase. Disarming stops the next order.</li>
+            <li><b>Capped.</b> Live orders are clipped to the max order size.</li>
+            <li><b>Local only.</b> Credentials stay in bot/state (mode 600, git-ignored).</li>
           </ul>
           <p class="dim">Research software. Nothing here is financial advice.</p>
+        </div>
+      </article>
+      <article class="pane span-4"><header><span class="n">46)</span>WHERE THINGS LIVE</header>
+        <div class="body">
+          <dl class="kv">
+            <dt>Ledgers &amp; logs</dt><dd>bot/state/</dd>
+            <dt>Broker keys</dt><dd>bot/state/brokers.local.json</dd>
+            <dt>Price cache</dt><dd>data/raw/</dd>
+            <dt>Model</dt><dd>models/</dd>
+            <dt>Scheduler logs</dt><dd>~/Library/Logs/meridian/</dd>
+            <dt>Kill switch</dt><dd>bot/kill_switch.py</dd>
+          </dl>
         </div>
       </article>
     </section>
@@ -135,6 +176,6 @@
   </div>
 </div>
 
-<script src="app.js?v=9"></script>
+<script src="app.js?v=11"></script>
 </body>
 </html>

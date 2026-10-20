@@ -124,3 +124,66 @@ def linked_account() -> Dict[str, Any]:
         return {"available": False, "mode": sel.mode, "error": str(exc)}
     except Exception as exc:  # network failures
         return {"available": False, "mode": sel.mode, "error": f"{type(exc).__name__}: {exc}"}
+
+
+@router.get("/setup")
+def setup_status() -> Dict[str, Any]:
+    """Readiness checklist for the Setup page: each item says whether it is
+    done and, if not, the one command or step that fixes it."""
+    import platform
+    import sys
+    from pathlib import Path
+
+    from bot.heartbeat import read_heartbeat_age_seconds
+    from data.ingestion import RAW_DATA_DIR
+
+    root = Path(__file__).resolve().parents[2]
+    checks = []
+
+    def check(key, label, ok, detail, fix=None, optional=False):
+        checks.append({"id": key, "label": label, "ok": bool(ok), "detail": detail, "fix": None if ok else fix,
+                       "optional": optional})
+
+    py = sys.version_info
+    check("python", "Python 3.11+", py >= (3, 11), f"{py.major}.{py.minor}.{py.micro}", "install Python 3.11 or newer")
+    model = root / "models" / "pead_model_expanded.joblib"
+    check("model", "Fitted model", model.exists(), "models/pead_model_expanded.joblib" if model.exists() else "missing",
+          "git pull (the model ships with the repo)")
+    env = root / ".env"
+    check("env", "Settings file (.env)", env.exists(), ".env" if env.exists() else "not created", "scripts/setup.sh")
+    bars = list(Path(RAW_DATA_DIR).glob("*.parquet"))
+    newest = max((p.stat().st_mtime for p in bars), default=None)
+    check("prices", "Price cache", len(bars) > 50,
+          f"{len(bars)} tickers, refreshed {time.strftime('%Y-%m-%d', time.localtime(newest))}" if newest else "empty",
+          "scripts/cycle.sh (first run downloads price history)")
+    age = read_heartbeat_age_seconds()
+    ran = age is not None and age != float("inf")
+    check("cycle", "A cycle has run recently", ran and age < 4 * 86400,
+          f"last heartbeat {age / 3600:.1f}h ago" if ran else "never", "scripts/cycle.sh")
+    mac = platform.system() == "Darwin"
+    if mac:
+        from bot.launchd_control import get_operation_status
+        try:
+            sched = get_operation_status().get("operation_state", "UNKNOWN")
+        except Exception as exc:  # launchctl unavailable
+            sched = f"unavailable ({type(exc).__name__})"
+        check("schedule", "Scheduled after each close", sched == "RUNNING", sched, "scripts/install_launchd.sh")
+    else:
+        check("schedule", "Scheduled after each close", False, platform.system(),
+              "cron: 20 16 * * 1-5 cd <repo> && scripts/cycle.sh   (America/New_York)")
+    linked = [f"{cls.name} ({env_})" for bid, cls in REGISTRY.items() for env_ in cls.envs
+              if broker_config.has_credentials(bid, env_)]
+    check("broker", "Broker linked", bool(linked), ", ".join(linked) or "none (simulator only)",
+          "F2 Brokers → link a paper account", optional=True)
+    mode = broker_config.describe_mode()
+    ok_live, why = broker_config.live_allowed()
+    check("live", "Live trading allowed", ok_live, "MERIDIAN_ALLOW_LIVE=yes" if ok_live else "off",
+          "only if you want real orders: MERIDIAN_ALLOW_LIVE=yes in .env, then arm in F2", optional=True)
+    return {
+        "checks": checks,
+        "ready": all(c["ok"] for c in checks if not c["optional"]),
+        "mode": mode,
+        "root": root.name,
+        "platform": platform.system(),
+        "port": int(__import__("os").getenv("MERIDIAN_PORT", "8420")),
+    }

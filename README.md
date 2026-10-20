@@ -45,7 +45,7 @@ A terminal-style desk with function keys (F1–F4, F9 refresh) and a command lin
 - **Desk:** account, system health (kill switch, circuit breaker, heartbeat, scheduler), execution mode, marked equity curve, open positions, scored signals, upcoming earnings, decision tape.
 - **Brokers:** link accounts and choose how the bot executes.
 - **Research:** the forward test on this account, the 2021–2025 replay, pre-registered tests and Monte Carlo.
-- **Background:** how a trade happens, and the safety rails.
+- **Setup:** a live readiness checklist (each missing step shows the command that fixes it), quick start, go-live steps, settings and where files live.
 
 ## Brokers and execution modes
 
