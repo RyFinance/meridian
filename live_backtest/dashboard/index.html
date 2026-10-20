@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>Meridian · PEAD Desk</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body>
+
+<pre class="backdrop" id="backdrop" aria-hidden="true"></pre>
+
+<div class="window" id="window">
+
+  <header class="titlebar">
+    <span class="app-icon" aria-hidden="true">M</span>
+    <span class="title">MERIDIAN — PEAD DESK</span>
+    <span class="title-mode" id="title-mode">SIM</span>
+    <span class="title-fill"></span>
+    <button class="winbtn" id="btn-compact" title="Hide the backdrop art" aria-label="Minimize art">_</button>
+    <button class="winbtn" id="btn-full" title="Fullscreen" aria-label="Fullscreen">□</button>
+    <button class="winbtn winbtn--close" id="btn-reset" title="Reset layout" aria-label="Reset layout">×</button>
+  </header>
+
+  <nav class="fkeys" id="fkeys">
+    <button class="fkey active" data-tab="desk"><b>F1</b>DESK</button>
+    <button class="fkey" data-tab="brokers"><b>F2</b>BROKERS</button>
+    <button class="fkey" data-tab="research"><b>F3</b>RESEARCH</button>
+    <button class="fkey" data-tab="background"><b>F4</b>BACKGROUND</button>
+    <span class="fkeys-fill"></span>
+    <button class="fkey" id="btn-refresh"><b>F9</b>REFRESH</button>
+  </nav>
+
+  <div class="strip" id="strip">
+    <span><i>NAV</i><b id="s-nav">--</b></span>
+    <span><i>MARKED</i><b id="s-marked">--</b></span>
+    <span><i>RETURN</i><b id="s-ret">--</b></span>
+    <span><i>OPEN</i><b id="s-open">--</b></span>
+    <span><i>EXEC</i><b id="s-exec">--</b></span>
+    <span><i>BREAKER</i><b id="s-breaker">--</b></span>
+    <span><i>KILL</i><b id="s-kill">--</b></span>
+    <span><i>HEARTBEAT</i><b id="s-hb">--</b></span>
+  </div>
+
+  <main class="screen">
+
+    <!-- ══════════════ DESK ══════════════ -->
+    <section class="page active" data-page="desk">
+      <article class="pane span-4"><header><span class="n">1)</span>ACCOUNT<span class="meta" id="m-account"></span></header><div class="body" id="p-account"><div class="wait">loading…</div></div></article>
+      <article class="pane span-4"><header><span class="n">2)</span>SYSTEM<span class="meta" id="m-system"></span></header><div class="body" id="p-system"><div class="wait">loading…</div></div></article>
+      <article class="pane span-4"><header><span class="n">3)</span>EXECUTION<span class="meta" id="m-exec"></span></header><div class="body" id="p-exec"><div class="wait">loading…</div></div></article>
+      <article class="pane span-8"><header><span class="n">4)</span>EQUITY · MARKED DAILY<span class="meta" id="m-equity"></span></header><div class="body chart" id="p-equity"></div></article>
+      <article class="pane span-4"><header><span class="n">5)</span>EARNINGS AHEAD<span class="meta" id="m-upcoming"></span></header><div class="body scroll" id="p-upcoming"></div></article>
+      <article class="pane span-7"><header><span class="n">6)</span>OPEN POSITIONS<span class="meta" id="m-positions"></span></header><div class="body scroll" id="p-positions"></div></article>
+      <article class="pane span-5"><header><span class="n">7)</span>SIGNALS<span class="meta" id="m-signals"></span></header><div class="body scroll" id="p-signals"></div></article>
+      <article class="pane span-12"><header><span class="n">8)</span>DECISION TAPE<span class="meta" id="m-tape"></span></header><div class="body scroll tape" id="p-tape"></div></article>
+    </section>
+
+    <!-- ══════════════ BROKERS ══════════════ -->
+    <section class="page" data-page="brokers">
+      <article class="pane span-12"><header><span class="n">10)</span>EXECUTION MODE<span class="meta" id="m-mode"></span></header>
+        <div class="body" id="p-mode"><div class="wait">loading…</div></div>
+      </article>
+      <div class="span-12 regions" id="p-regions"></div>
+    </section>
+
+    <!-- ══════════════ RESEARCH ══════════════ -->
+    <section class="page" data-page="research">
+      <article class="pane span-12"><header><span class="n">20)</span>TL;DR</header>
+        <div class="body prose">
+          <p><b>Post-earnings drift.</b> After a company beats or misses analyst estimates, its stock tends to keep moving the same way for weeks. Meridian scores each fresh report by standardized surprise (SUE), turns that into a calibrated probability of drift, sizes it with fractional Kelly, and holds for 20 trading days.</p>
+          <p><b>Honest numbers.</b> Early sweeps showed Sharpe ≈ 1.4 on a cash basis with a zero risk-free rate; marked daily against T-bills it is ≈ 0.7. Three pre-registered hold-outs did not confirm an edge, so the strategy now earns its place on a forward test that runs on data that did not exist when it was built.</p>
+        </div>
+      </article>
+      <article class="pane span-6"><header><span class="n">21)</span>FORWARD TEST · THIS ACCOUNT<span class="meta" id="m-forward"></span></header><div class="body" id="p-forward"></div></article>
+      <article class="pane span-6"><header><span class="n">22)</span>REPLAY · 2021–2025<span class="meta" id="m-replay"></span></header><div class="body" id="p-replay"></div></article>
+      <article class="pane span-8"><header><span class="n">23)</span>PRE-REGISTERED TESTS<span class="meta" id="m-tests"></span></header><div class="body scroll" id="p-tests"></div></article>
+      <article class="pane span-4"><header><span class="n">24)</span>MONTE CARLO<span class="meta" id="m-mc"></span></header><div class="body" id="p-mc"></div></article>
+    </section>
+
+    <!-- ══════════════ BACKGROUND ══════════════ -->
+    <section class="page" data-page="background">
+      <article class="pane span-12 art-pane"><header><span class="n">30)</span>L'ANGE DÉCHU · CABANEL, 1847<span class="meta">ASCII · 220×62</span></header>
+        <div class="body art-body"><pre class="art" id="art"></pre></div>
+      </article>
+      <article class="pane span-6"><header><span class="n">31)</span>HOW A TRADE HAPPENS</header>
+        <div class="body prose">
+          <ol>
+            <li>After the close, the cycle reads which of the 75 watched names just reported.</li>
+            <li>Each report gets a surprise score and a calibrated probability of drift.</li>
+            <li>The risk gate decides: kill switch, drawdown cap, circuit breaker, exposure and Kelly size. It is the only way to an order.</li>
+            <li>Approved orders fill in the mode you chose: simulator, broker paper, or live.</li>
+            <li>Positions exit on schedule after 20 trading days. Exits are never blocked.</li>
+          </ol>
+        </div>
+      </article>
+      <article class="pane span-6"><header><span class="n">32)</span>SAFETY</header>
+        <div class="body prose">
+          <ul>
+            <li><b>Simulator by default.</b> Nothing reaches a broker until you link one and pick a mode.</li>
+            <li><b>Live is opt-in three ways.</b> MERIDIAN_ALLOW_LIVE=yes in .env, live credentials, and the arm phrase typed here. Disarming takes effect before the next order.</li>
+            <li><b>Capped.</b> Each live order is clipped to MERIDIAN_LIVE_MAX_ORDER_USD.</li>
+            <li><b>Local only.</b> The desk binds to 127.0.0.1. Credentials stay in bot/state (mode 600, git-ignored).</li>
+          </ul>
+          <p class="dim">Research software. Nothing here is financial advice.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="console" id="console"><div id="console-lines"></div></div>
+  <form class="prompt" id="prompt" autocomplete="off">
+    <span class="ps">MERIDIAN&gt;</span>
+    <input id="cmd" type="text" spellcheck="false" autocapitalize="off" aria-label="command">
+    <span class="go">&lt;GO&gt;</span>
+    <span class="hint">help · ↑↓ history</span>
+  </form>
+
+  <footer class="statusbar">
+    <span id="sb-conn" class="sb-conn">● OFFLINE</span>
+    <span id="sb-mode">SIM</span>
+    <span id="sb-sched">SCHED --</span>
+    <span class="sb-fill"></span>
+    <span id="sb-updated">--</span>
+    <span id="sb-clock">--:--:-- ET</span>
+  </footer>
+</div>
+
+<div class="dialog" id="dialog" hidden>
+  <div class="dialog-box" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+    <header class="titlebar"><span class="title" id="dialog-title">CONFIRM</span><span class="title-fill"></span><button class="winbtn winbtn--close" id="dialog-close" aria-label="Close">×</button></header>
+    <div class="dialog-body" id="dialog-body"></div>
+  </div>
+</div>
+
+<script src="app.js?v=9"></script>
+</body>
+</html>

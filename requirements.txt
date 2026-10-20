@@ -1,0 +1,15 @@
+# Pinned to the versions the shipped model (models/pead_model_expanded.joblib) was fitted with.
+numpy==2.3.4
+pandas==2.3.3
+scipy==1.17.1
+scikit-learn==1.9.0
+lightgbm==4.7.0
+pyarrow==24.0.0
+joblib==1.5.3
+loguru==0.7.3
+yfinance==1.7.0
+requests==2.32.5
+httpx==0.28.1
+fastapi==0.139.0
+uvicorn==0.35.0
+pytest

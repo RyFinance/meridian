@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420" role="img" aria-label="MERIDIAN: earnings drift, researched honestly, traded autonomously on paper">
+  <defs>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop offset="0" stop-color="#96aaff"/>
+      <stop offset=".65" stop-color="#e9e9e9"/>
+      <stop offset="1" stop-color="#9be7c4"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#96aaff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#96aaff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .bg { fill: #0a0a0a; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .title { font-size: 78px; font-weight: 700; letter-spacing: 16px; fill: #e9e9e9; }
+    .sub { font-size: 19px; letter-spacing: 6px; fill: #8a8a8a; }
+    .tag { font-size: 15px; letter-spacing: 3px; fill: #96aaff; }
+    .glyph { font-size: 11px; fill: #96aaff; opacity: .14; }
+    .grid { stroke: #ffffff; stroke-opacity: .05; }
+    .curve { fill: none; stroke: url(#line); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
+             stroke-dasharray: 1700; stroke-dashoffset: 1700; animation: draw 4.5s ease-out forwards; }
+    .fill { fill: url(#area); opacity: 0; animation: fade 2s 2.4s ease forwards; }
+    .dot { fill: #9be7c4; animation: blink 1.6s ease-in-out infinite; }
+    .gate { fill: #0a0a0a; stroke: #2a2a2a; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fade { to { opacity: 1; } }
+    @keyframes blink { 50% { opacity: .25; } }
+    @media (prefers-reduced-motion: reduce) { .curve { stroke-dashoffset: 0; animation: none; } .fill { opacity: 1; animation: none; } .dot { animation: none; } }
+  </style>
+  <rect class="bg" width="1280" height="420"/>
+  <text class="mono glyph" x="24" y="34">SUE 2.41 · DRIFT +63D · Q3 BEAT · EPS REV +4% · KELLY 0.05 · BREAKER ARMED · KILL SWITCH CLEAR · SUE 1.87</text>
+
+  <g class="grid">
+    <line x1="80" x2="1200" y1="300" y2="300"/><line x1="80" x2="1200" y1="250" y2="250"/>
+    <line x1="80" x2="1200" y1="200" y2="200"/><line x1="80" x2="1200" y1="150" y2="150"/>
+  </g>
+  <path class="fill" d="M80 300 L150 292 L210 296 L270 280 L330 285 L390 262 L450 270 L510 248 L570 254 L630 230 L690 238 L750 214 L810 222 L870 196 L930 204 L990 176 L1050 186 L1120 154 L1200 140 L1200 330 L80 330 Z"/>
+  <path class="curve" d="M80 300 L150 292 L210 296 L270 280 L330 285 L390 262 L450 270 L510 248 L570 254 L630 230 L690 238 L750 214 L810 222 L870 196 L930 204 L990 176 L1050 186 L1120 154 L1200 140"/>
+  <circle class="dot" cx="1200" cy="140" r="6"/>
+
+  <rect class="gate" x="370" y="64" width="540" height="112" rx="2"/>
+  <text class="mono title" x="648" y="146" text-anchor="middle">MERIDIAN</text>
+
+  <text class="mono tag" x="80" y="362">EARNINGS ▸ SIGNAL ▸ RISK GATE ▸ PAPER FILL ▸ LEDGER</text>
+  <text class="mono sub" x="1200" y="362" text-anchor="end">PEAD · RESEARCHED HONESTLY</text>
+  <text class="mono sub" x="1200" y="392" text-anchor="end">TRADED AUTONOMOUSLY · ON PAPER</text>
+</svg>
