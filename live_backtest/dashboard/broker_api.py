@@ -187,3 +187,53 @@ def setup_status() -> Dict[str, Any]:
         "platform": platform.system(),
         "port": int(__import__("os").getenv("MERIDIAN_PORT", "8420")),
     }
+
+
+@router.get("/linked_accounts")
+def linked_accounts() -> Dict[str, Any]:
+    """Every linked broker environment (paper and live), read-only."""
+    rows = []
+    for broker_id, cls in REGISTRY.items():
+        for env in cls.envs:
+            if not broker_config.has_credentials(broker_id, env):
+                continue
+            try:
+                rows.append({"available": True, "name": cls.name, **_fetch(broker_id, env)})
+            except Exception as exc:  # one bad link must not hide the others
+                rows.append({"available": False, "name": cls.name, "broker": broker_id, "env": env,
+                             "error": f"{type(exc).__name__}: {exc}"[:200]})
+    return {"accounts": rows}
+
+
+@router.get("/fills")
+def fills(limit: int = 50) -> Dict[str, Any]:
+    """Fills of the active ledger, newest first: where each one executed
+    (simulator, broker paper or broker live), the broker order id and size."""
+    import json
+
+    sel = broker_config.load_selection()
+    path = broker_config.ledger_path(sel)
+    rows = []
+    try:
+        with open(path, encoding="utf-8") as handle:
+            for line in handle:
+                try:
+                    r = json.loads(line)
+                except ValueError:
+                    continue
+                opening = r.get("event") == "open"
+                mode = r.get("mode") or "sim"
+                rows.append({
+                    "ts": r.get("ts"), "ticker": r.get("ticker"),
+                    "side": ("BUY" if r.get("direction") == "long" else "SHORT") if opening
+                    else ("SELL" if r.get("direction") == "long" else "COVER"),
+                    "price": r.get("fill_price") if opening else r.get("exit_price"),
+                    "qty": r.get("qty"), "notional": r.get("notional"),
+                    "pnl": None if opening else r.get("realized_pnl"),
+                    "venue": "sim" if mode in ("sim", "paper") and not r.get("broker") else f"{r.get('broker')} {mode}",
+                    "live": mode == "live", "order_id": r.get("order_id"), "backfill": bool(r.get("backfill")),
+                })
+    except OSError:
+        pass
+    rows.sort(key=lambda r: r["ts"] or 0, reverse=True)
+    return {"ledger": path.name, "mode": sel.mode, "fills": rows[: max(1, min(limit, 500))]}

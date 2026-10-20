@@ -101,7 +101,7 @@ function modeLabel(mode) {
 
 function renderAccount(stats, linked, mode) {
   const nodes = [
-    el("div", { class: "sub" }, mode.mode === "sim" || mode.mode === "readonly" ? "simulator ledger · cash basis" : `${mode.mode} ledger · ${mode.broker_name}`),
+    el("div", { class: "sub" }, mode.mode === "sim" || mode.mode === "readonly" ? "simulator · cash basis" : `${mode.broker_name} ${mode.mode} · cash basis`),
     el("div", { class: "big" }, money(stats.current_nav)),
     kv([
       ["Marked NAV", money(stats.marked_nav)],
@@ -239,11 +239,72 @@ function renderTape(rows) {
   meta("m-tape", `${list.length} latest`);
 }
 
+function renderFills(data) {
+  const list = (data && data.fills) || [];
+  put("p-fills", table(
+    [["TIME"], ["TICKER"], ["SIDE"], ["QTY", 1], ["PRICE", 1], ["NOTIONAL", 1], ["P&L", 1], ["VENUE"], ["ORDER"]],
+    list.map((f) => [[f.ts ? new Date(f.ts * 1000).toLocaleString() : "--", "dim"], [f.ticker, "t"],
+      [f.side, /BUY|COVER/.test(f.side) ? "up" : "down"], [f.qty === null || f.qty === undefined ? "--" : String(f.qty), "r"],
+      [fixed(f.price), "r"], [money(f.notional, 0), "r"], [f.pnl === null ? "" : signed(f.pnl), `r ${cls(f.pnl)}`],
+      [String(f.venue).toUpperCase() + (f.backfill ? " · backfill" : ""), f.live ? "down" : f.venue === "sim" ? "dim" : ""],
+      [f.order_id ? String(f.order_id).slice(-10) : "--", "dim"]]),
+    "No fills yet. The first ones land after a cycle approves a trade."));
+  meta("m-fills", data && data.ledger ? `${list.length} latest · ${data.ledger}` : "");
+}
+
+function renderAccounts(data) {
+  const list = (data && data.accounts) || [];
+  if (!list.length) {
+    put("p-accounts", el("div", { class: "empty" }, "No broker linked. Link a paper or live account to see it here."),
+      el("div", { class: "row" }, el("button", { class: "btn primary", onclick: () => show("brokers") }, "Link a broker  F2")));
+    meta("m-accounts", "none");
+    return;
+  }
+  put("p-accounts", ...list.map((a) => el("div", { class: "acct-row" },
+    el("div", { class: "sub" }, el("b", {}, a.name), ` · ${String(a.env).toUpperCase()}`, a.account_id ? ` · ${a.account_id}` : ""),
+    a.available ? kv([["Equity", money(a.equity)], ["Cash", money(a.cash)], ["Buying power", money(a.buying_power)],
+      ["Positions", String((a.positions || []).length)]]) : el("div", { class: "msg err" }, a.error))));
+  const live = list.filter((a) => a.env === "live").length;
+  meta("m-accounts", `${list.length} linked · ${live} live`);
+}
+
+const NOTICE_KEY = "meridian-notice-dismissed";
+function renderNotice(brokers, mode) {
+  const box = $("notice");
+  if (!brokers || brokers.__error || !mode || mode.__error) { box.hidden = true; return; }
+  const all = Object.values(brokers.brokers || {});
+  const liveLinked = all.some((b) => b.linked.live);
+  const anyLinked = all.some((b) => Object.values(b.linked).some(Boolean));
+  let kind, text, button, tab = "brokers";
+  if (mode.mode === "live") {
+    kind = "live"; text = `LIVE TRADING on ${mode.broker_name}: real orders, each capped at ${money(mode.live_max_order_usd, 0)}.`; button = "Brokers  F2";
+  } else if (!liveLinked) {
+    kind = "keys"; text = anyLinked ? "Paper is linked. Add your broker's live API keys when you're ready to trade real money."
+      : `Running on the simulator ($100,000 starting balance). Add a broker's API keys to trade on its paper account or live.`;
+    button = "Add broker keys  F2";
+  } else if (!mode.live_allowed) {
+    kind = "allow"; text = "Live keys are linked. To trade them, set MERIDIAN_ALLOW_LIVE=yes in .env, restart the desk, then arm LIVE."; button = "Setup steps  F4"; tab = "setup";
+  } else {
+    kind = "arm"; text = `Live is allowed but not armed. Pick LIVE and type the arm phrase to start real orders.`; button = "Arm live  F2";
+  }
+  let dismissed = null;
+  try { dismissed = localStorage.getItem(NOTICE_KEY); } catch (_) { /* private mode */ }
+  if (kind !== "live" && dismissed === kind) { box.hidden = true; return; }
+  box.className = `notice${kind === "live" ? " live" : ""}`;
+  $("notice-text").textContent = text;
+  $("notice-go").textContent = button;
+  $("notice-go").onclick = () => show(tab);
+  $("notice-x").hidden = kind === "live";
+  $("notice-x").onclick = () => { try { localStorage.setItem(NOTICE_KEY, kind); } catch (_) { /* ignore */ } box.hidden = true; };
+  box.hidden = false;
+}
+
 async function loadDesk() {
-  const [status, stats, positions, signals, upcoming, tape, curve, mode, linked, sched] = await Promise.all([
+  const [status, stats, positions, signals, upcoming, tape, curve, mode, linked, sched, fillRows, accounts, brokers] = await Promise.all([
     safe(api("/api/status")), safe(api("/api/stats")), safe(api("/api/positions")), safe(api("/api/signals")),
     safe(api("/api/upcoming_earnings")), safe(api("/api/event_feed?limit=40")), safe(api("/api/equity_curve")),
     safe(api("/api/mode")), safe(api("/api/linked_account")), safe(api("/api/launchd_status")),
+    safe(api("/api/fills")), safe(api("/api/linked_accounts")), safe(api("/api/brokers")),
   ]);
   if (status.__error) throw new Error(status.__error);
   renderStrip(status, stats, mode);
@@ -255,6 +316,9 @@ async function loadDesk() {
   renderSignals(signals);
   renderUpcoming(upcoming);
   renderTape(tape);
+  renderFills(fillRows);
+  renderAccounts(accounts);
+  renderNotice(brokers, mode);
 }
 
 // ------------------------------------------------------------ brokers
@@ -534,6 +598,7 @@ async function refresh() {
       const [status, stats, mode, positions] = await Promise.all([api("/api/status"), safe(api("/api/stats")),
         safe(api("/api/mode")), safe(api("/api/positions"))]);
       renderStrip(status, stats, mode);
+      safe(api("/api/brokers")).then((b) => renderNotice(b, mode));
       $("s-open").textContent = Array.isArray(positions) ? String(positions.length) : "--";
       if (state.tab === "brokers") await loadBrokers();
       else if (state.tab === "research") await loadResearch();

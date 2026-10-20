@@ -104,7 +104,7 @@ class PaperFill:
     size_fraction: float
     notional: float
     ts: float
-    mode: str = "paper"
+    mode: str = "sim"
 
 
 class PaperExecutionClient:
@@ -283,7 +283,7 @@ class PaperExecutionClient:
         return self._record_open(ticker, direction, price, notional, decision.size_fraction, entry_date)
 
     def _record_open(self, ticker: str, direction: Direction, price: float, notional: float,
-                     size_fraction: float, entry_date: str, mode: str = "paper", **extra) -> PaperFill:
+                     size_fraction: float, entry_date: str, mode: str = "sim", **extra) -> PaperFill:
         """Book an entry fill: position, ledger line, alert. Shared by the
         simulator and bot/broker_execution.py so both keep one accounting path."""
         position = PaperPosition(
@@ -311,7 +311,7 @@ class PaperExecutionClient:
         return self._record_close(ticker, get_current_price(ticker), exit_date, reason)
 
     def _record_close(self, ticker: str, exit_price: float, exit_date: str, reason: str,
-                      mode: str = "paper", **extra) -> float:
+                      mode: str = "sim", **extra) -> float:
         """Book an exit at `exit_price` with the modeled round-trip cost.
         Shared by the simulator and the broker client (see _record_open)."""
         position = self.positions[ticker]

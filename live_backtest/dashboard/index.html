@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#000000">
 <title>Meridian · PEAD Desk</title>
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 
@@ -44,6 +44,13 @@
     <span><i>HEARTBEAT</i><b id="s-hb">--</b></span>
   </div>
 
+  <div class="notice" id="notice" hidden>
+    <span class="notice-icon">!</span>
+    <span class="notice-text" id="notice-text"></span>
+    <button class="btn primary" id="notice-go" type="button">Add broker keys  F2</button>
+    <button class="notice-x" id="notice-x" type="button" aria-label="Dismiss">×</button>
+  </div>
+
   <main class="screen">
 
     <!-- ══════════════ DESK ══════════════ -->
@@ -55,12 +62,14 @@
       <article class="pane span-4"><header><span class="n">5)</span>EARNINGS AHEAD<span class="meta" id="m-upcoming"></span></header><div class="body scroll" id="p-upcoming"></div></article>
       <article class="pane span-7"><header><span class="n">6)</span>OPEN POSITIONS<span class="meta" id="m-positions"></span></header><div class="body scroll" id="p-positions"></div></article>
       <article class="pane span-5"><header><span class="n">7)</span>SIGNALS<span class="meta" id="m-signals"></span></header><div class="body scroll" id="p-signals"></div></article>
-      <article class="pane span-12"><header><span class="n">8)</span>DECISION TAPE<span class="meta" id="m-tape"></span></header><div class="body scroll tape" id="p-tape"></div></article>
+      <article class="pane span-8"><header><span class="n">8)</span>FILLS<span class="meta" id="m-fills"></span></header><div class="body scroll" id="p-fills"></div></article>
+      <article class="pane span-4"><header><span class="n">9)</span>LINKED ACCOUNTS<span class="meta" id="m-accounts"></span></header><div class="body scroll" id="p-accounts"></div></article>
+      <article class="pane span-12"><header><span class="n">10)</span>DECISION TAPE<span class="meta" id="m-tape"></span></header><div class="body scroll tape" id="p-tape"></div></article>
     </section>
 
     <!-- ══════════════ BROKERS ══════════════ -->
     <section class="page" data-page="brokers">
-      <article class="pane span-12"><header><span class="n">10)</span>EXECUTION MODE<span class="meta" id="m-mode"></span></header>
+      <article class="pane span-12"><header><span class="n">15)</span>EXECUTION MODE<span class="meta" id="m-mode"></span></header>
         <div class="body" id="p-mode"><div class="wait">loading…</div></div>
       </article>
       <div class="span-12 regions" id="p-regions"></div>
@@ -176,6 +185,6 @@
   </div>
 </div>
 
-<script src="app.js?v=11"></script>
+<script src="app.js?v=12"></script>
 </body>
 </html>

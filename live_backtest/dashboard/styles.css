@@ -217,3 +217,16 @@ input.in:focus, select.in:focus, textarea.in:focus { outline: 1px solid var(--ye
 code { font-family: var(--mono); color: var(--yellow); background: #000; border: 1px solid var(--line); padding: 1px 6px; overflow-wrap: anywhere; }
 .steps code { display: block; padding: 4px 8px; }
 td.wrap { white-space: normal; color: var(--white); }
+
+/* live-keys reminder */
+.notice { display: flex; align-items: center; gap: 12px; padding: 7px 10px; background: #1a1205; border-bottom: 1px solid var(--amber-dim); color: var(--white); }
+.notice[hidden] { display: none; }
+.notice-icon { display: inline-grid; place-items: center; width: 20px; height: 20px; background: var(--amber); color: #000; font-weight: 700; flex: none; }
+.notice-text { flex: 1; min-width: 0; }
+.notice-x { border: 0; background: none; color: var(--grey); font-size: 18px; cursor: pointer; padding: 0 4px; }
+.notice-x:hover { color: var(--white); }
+.notice.live { background: #2a0805; border-bottom-color: var(--down); }
+.notice.live .notice-icon { background: var(--down); }
+.acct-row { padding: 6px 0; border-bottom: 1px solid #17171a; }
+.acct-row .sub b { color: var(--white); font-weight: 500; }
+@media (max-width: 720px) { .notice { flex-wrap: wrap; } .notice-text { flex-basis: calc(100% - 60px); } }

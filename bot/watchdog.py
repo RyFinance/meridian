@@ -50,7 +50,7 @@ def check_dead_mans_switch(
     last_seen = datetime.fromtimestamp(last_ts).isoformat() if last_ts is not None else "never"
     alerter.alert(
         ALERT_DEAD_MANS_SWITCH,
-        f"no successful paper-trading cycle in {age_hours:.1f}h (threshold {max_age_hours}h) -- "
+        f"no successful trading cycle in {age_hours:.1f}h (threshold {max_age_hours}h) -- "
         f"last heartbeat: {last_seen}",
         age_hours=round(age_hours, 2), last_heartbeat=last_seen,
     )

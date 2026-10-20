@@ -1,4 +1,4 @@
-"""The orchestration entry point: one full paper-trading cycle.
+"""The orchestration entry point: one full trading cycle.
 
 Wires together, in this order, every module bot/ already has (nothing new
 is reimplemented here -- this is glue, not logic):
@@ -205,7 +205,7 @@ def _write_upcoming_earnings(events: list[ScheduledEarnings], as_of: str) -> Non
 
 def run_cycle(as_of_date: str | None = None, ledger_path: Path = LEDGER_FILE) -> CycleReport:
     as_of = as_of_date or pd.Timestamp.now(tz=MARKET_TZ).strftime("%Y-%m-%d")
-    logger.info(f"=== paper-trading cycle, as_of={as_of} ===")
+    logger.info(f"=== trading cycle, as_of={as_of} ===")
     errors: list[str] = []
 
     if int(yf.__version__.split(".")[0]) < 1:

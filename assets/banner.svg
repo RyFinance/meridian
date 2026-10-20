@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420" role="img" aria-label="MERIDIAN: earnings drift, researched honestly, traded autonomously on paper">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420" role="img" aria-label="MERIDIAN: earnings drift, researched honestly, traded autonomously">
   <defs>
     <linearGradient id="line" x1="0" x2="1">
       <stop offset="0" stop-color="#96aaff"/>
@@ -42,7 +42,7 @@
   <rect class="gate" x="370" y="64" width="540" height="112" rx="2"/>
   <text class="mono title" x="648" y="146" text-anchor="middle">MERIDIAN</text>
 
-  <text class="mono tag" x="80" y="362">EARNINGS ▸ SIGNAL ▸ RISK GATE ▸ PAPER FILL ▸ LEDGER</text>
+  <text class="mono tag" x="80" y="362">EARNINGS ▸ SIGNAL ▸ RISK GATE ▸ BROKER FILL ▸ LEDGER</text>
   <text class="mono sub" x="1200" y="362" text-anchor="end">PEAD · RESEARCHED HONESTLY</text>
-  <text class="mono sub" x="1200" y="392" text-anchor="end">TRADED AUTONOMOUSLY · ON PAPER</text>
+  <text class="mono sub" x="1200" y="392" text-anchor="end">TRADED AUTONOMOUSLY · SIM · PAPER · LIVE</text>
 </svg>
