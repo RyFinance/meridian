@@ -60,3 +60,7 @@ bot/state/
 live_backtest/state/
 *.local.json
 data/raw/
+
+# Logs the bot and tests append to
+reports/circuit_breaker_alerts.jsonl
+reports/data_quality.jsonl
