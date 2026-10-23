@@ -77,10 +77,13 @@ function show(tab) {
 
 // ------------------------------------------------------------ desk
 function renderStrip(status, stats, mode) {
-  $("s-nav").textContent = money(stats.current_nav, 0);
-  $("s-marked").textContent = money(stats.marked_nav, 0);
-  $("s-ret").textContent = pct(stats.total_return_pct, 2, false);
-  $("s-ret").className = cls(stats.total_return_pct);
+  const value = n(stats.marked_nav) ?? n(stats.current_nav);
+  const ret = value === null || !n(stats.starting_capital) ? null : (value / stats.starting_capital - 1) * 100;
+  $("s-nav").textContent = money(value, 0);
+  $("s-ret").textContent = pct(ret, 2, false);
+  $("s-ret").className = cls(ret);
+  $("s-marked").textContent = stats.live_since ? `${pct(stats.live_return_pct, 2, false)} · ${stats.live_trading_days}d` : "--";
+  $("s-marked").className = cls(stats.live_return_pct);
   $("s-breaker").textContent = String(status.circuit_breaker_tier || "--").toUpperCase();
   $("s-kill").textContent = status.kill_switch_engaged ? "ENGAGED" : "CLEAR";
   $("s-kill").className = status.kill_switch_engaged ? "down" : "up";
@@ -99,26 +102,54 @@ function modeLabel(mode) {
   return `${mode.mode.toUpperCase()} · ${(mode.broker_name || mode.broker || "").toUpperCase()}`;
 }
 
-function renderAccount(stats, linked, mode) {
-  const nodes = [
-    el("div", { class: "sub" }, mode.mode === "sim" || mode.mode === "readonly" ? "simulator · cash basis" : `${mode.broker_name} ${mode.mode} · cash basis`),
-    el("div", { class: "big" }, money(stats.current_nav)),
+function renderAccount(stats, linked, mode, accounts) {
+  const start = n(stats.starting_capital);
+  const value = n(stats.marked_nav) ?? n(stats.current_nav);
+  const realized = n(stats.realized_pnl) ?? (n(stats.current_nav) !== null && start !== null ? stats.current_nav - start : null);
+  const ret = value === null || !start ? null : (value / start - 1) * 100;
+  const openCount = n($("s-open").textContent);
+  const liveWin = n(stats.win_rate_live);
+  const live = ((accounts && accounts.accounts) || []).filter((a) => a.env === "live");
+  const nodes = [];
+  live.forEach((a) => {
+    const unreal = (a.positions || []).reduce((sum, p) => sum + (n(p.unrealized_pnl) || 0), 0);
+    nodes.push(el("div", { class: "live-acct" },
+      el("div", { class: "sub" }, el("span", { class: "tag live" }, "LIVE"), ` ${a.name}${a.account_id ? ` · ${a.account_id}` : ""}${a.currency ? ` · ${a.currency}` : ""}`),
+      a.available ? [
+        el("div", { class: "big" }, money(a.equity)),
+        kv([["Cash", money(a.cash)], ["Buying power", money(a.buying_power)],
+          ["Open positions", String((a.positions || []).length)], ["Unrealized", signed(unreal), cls(unreal)],
+          ["Bot trades it", mode.mode === "live" && mode.broker === a.broker ? "yes · armed" : "no · not armed", mode.mode === "live" && mode.broker === a.broker ? "down" : "dim"]]),
+      ] : el("div", { class: "msg err" }, a.error || "could not read the account")));
+  });
+  const botLabel = mode.mode === "sim" || mode.mode === "readonly" ? "simulator" : `${mode.broker_name} ${mode.mode}`;
+  nodes.push(
+    el("div", { class: "sub", style: live.length ? "margin-top:12px" : "" }, `${live.length ? "BOT LEDGER · " : ""}${botLabel} · account value, open positions at the last close`),
+    el("div", { class: `big${live.length ? " big--sm" : ""}` }, money(value)),
     kv([
-      ["Marked NAV", money(stats.marked_nav)],
-      ["Unrealized", signed(stats.unrealized_pnl), cls(stats.unrealized_pnl)],
-      ["Total return", pct(stats.total_return_pct, 2, false), cls(stats.total_return_pct)],
-      ["Starting capital", money(stats.starting_capital, 0)],
-      ["Win rate", n(stats.win_rate) === null ? "--" : `${(stats.win_rate * 100).toFixed(1)}%`],
-      ["Sharpe (excess, daily)", stats.insufficient_data ? "n/a" : fixed(stats.sharpe_ratio)],
-      ["Max drawdown", pct(stats.max_drawdown), "down"],
-      ["Trades (closed)", `${stats.n_trades ?? "--"} (${stats.n_closed_trades ?? "--"})`],
-      ["Stale marks", String(stats.stale_marks ?? 0), n(stats.stale_marks) > 100 ? "down" : "dim"],
+      ["Starting capital", money(start, 0)],
+      [`+ Realized (${stats.n_closed_trades ?? 0} closed)`, signed(realized), cls(realized)],
+      [`+ Unrealized (${openCount ?? "--"} open)`, signed(stats.unrealized_pnl), cls(stats.unrealized_pnl)],
+      ["= Account value", money(value)],
+      ["Return since start", pct(ret, 2, false), cls(ret)],
     ]),
-  ];
-  if (n(stats.stale_marks) > 100) {
-    nodes.push(el("div", { class: "msg err" }, "Many marks use old prices, so Sharpe and drawdown are unreliable until the price cache refreshes (runs every cycle)."));
+    el("div", { class: "sub", style: "margin-top:10px" }, "TRACK RECORD"),
+    kv([
+      ["Real-time since", stats.live_since ? `${stats.live_since} · ${stats.live_trading_days} trading days` : "no real-time trades yet"],
+      ["Real-time return", pct(stats.live_return_pct, 2, false), cls(stats.live_return_pct)],
+      ["Real-time closed trades", stats.n_closed_live ? `${stats.n_closed_live} · ${(liveWin * 100).toFixed(0)}% won` : "0"],
+      ["Backfilled replay trades", stats.n_closed_backfilled ? `${stats.n_closed_backfilled} · not traded live` : "0", "dim"],
+      ["Sharpe", stats.sharpe_reliable ? fixed(stats.sharpe_ratio) : "not yet", stats.sharpe_reliable ? "" : "dim"],
+      ["Max drawdown", pct(stats.max_drawdown), "down"],
+    ]),
+  );
+  if (!stats.sharpe_reliable && stats.sharpe_note) {
+    nodes.push(el("div", { class: "note", style: "margin-top:6px" }, `Sharpe ${fixed(stats.sharpe_ratio)} over the whole ledger is not meaningful yet: ${stats.sharpe_note}. The research bar is about 0.7.`));
   }
-  if (linked && linked.available) {
+  if (n(stats.stale_marks_recent) > 0) {
+    nodes.push(el("div", { class: "msg err" }, `${stats.stale_marks_recent} recent marks used old prices; values catch up when the next cycle refreshes them.`));
+  }
+  if (linked && linked.available && !(linked.env === "live" && live.length)) {
     nodes.push(el("div", { class: "sub", style: "margin-top:10px" }, `${(linked.broker || "").toUpperCase()} ${linked.env} account · ${linked.currency}`),
       kv([["Equity", money(linked.equity)], ["Cash", money(linked.cash)], ["Buying power", money(linked.buying_power)],
         ["Positions", String((linked.positions || []).length)]]));
@@ -311,7 +342,7 @@ async function loadDesk() {
   ]);
   if (status.__error) throw new Error(status.__error);
   renderStrip(status, stats, mode);
-  renderAccount(stats, linked, mode);
+  renderAccount(stats, linked, mode, accounts);
   renderSystem(status, sched);
   renderExec(mode);
   renderEquity(curve);
@@ -450,12 +481,14 @@ async function loadResearch() {
   const [stats, replay, tests, mc] = await Promise.all([safe(api("/api/stats")), safe(api("/api/live_backtest_metrics")),
     safe(api("/api/research_tests")), safe(api("/api/monte_carlo"))]);
   put("p-forward", stats.__error ? el("div", { class: "empty" }, stats.__error) : kv([
-    ["Closed trades", String(stats.n_closed_trades ?? "--")], ["Win rate", n(stats.win_rate) === null ? "--" : `${(stats.win_rate * 100).toFixed(1)}%`],
-    ["Sharpe (excess)", stats.insufficient_data ? "n/a" : fixed(stats.sharpe_ratio)], ["Sortino", fixed(stats.sortino_ratio)],
-    ["Max drawdown", pct(stats.max_drawdown), "down"], ["Total return", pct(stats.total_return_pct, 2, false), cls(stats.total_return_pct)],
-    ["Risk-free", n(stats.risk_free_rate) === null ? "--" : `${(stats.risk_free_rate * 100).toFixed(2)}% (thru ${stats.risk_free_through})`],
-    ["Backfilled trades", String(stats.n_backfilled_trades ?? 0)]]));
-  meta("m-forward", "marked daily vs T-bills");
+    ["Real-time since", stats.live_since ? `${stats.live_since} (${stats.live_trading_days} trading days)` : "--"],
+    ["Real-time return", pct(stats.live_return_pct, 2, false), cls(stats.live_return_pct)],
+    ["Real-time closed trades", `${stats.n_closed_live ?? 0}${stats.n_closed_live ? ` · ${(stats.win_rate_live * 100).toFixed(0)}% won` : ""}`],
+    ["Backfilled replay trades", `${stats.n_closed_backfilled ?? 0} · ${n(stats.win_rate) === null ? "--" : `${(stats.win_rate * 100).toFixed(1)}% won (all closed)`}`, "dim"],
+    ["Sharpe (excess, all days)", `${fixed(stats.sharpe_ratio)}${stats.sharpe_reliable ? "" : " · not reliable yet"}`, stats.sharpe_reliable ? "" : "dim"],
+    ["Max drawdown", pct(stats.max_drawdown), "down"],
+    ["Risk-free", n(stats.risk_free_rate) === null ? "--" : `${(stats.risk_free_rate * 100).toFixed(2)}% (thru ${stats.risk_free_through})`]]));
+  meta("m-forward", stats.sharpe_reliable ? "marked daily vs T-bills" : "too short to judge");
   put("p-replay", replay.__error || replay.available === false ? el("div", { class: "empty" }, "No replay metrics in reports/.") : kv([
     ["Window", `${replay.start_date} → ${replay.end_date}`], ["Trades", String(replay.n_trades)],
     ["Annual return", pct(replay.annualized_return)], ["Annual vol", pct(replay.annualized_std)],

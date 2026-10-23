@@ -400,6 +400,54 @@ def _compute_equity_curve(ledger_path: Path) -> dict:
     return {"dates": list(nav_by_date), "nav": list(nav_by_date.values()), "marked": marked}
 
 
+# A Sharpe from fewer real trading days than this is shown as "not yet".
+MIN_SHARPE_DAYS = 126  # about six months
+
+
+def _track_record(records: list[dict], frame: pd.DataFrame) -> dict:
+    """Split the record into trades the bot made in real time and trades
+    backfilled into the ledger by a replay, and say how much real history the
+    Sharpe rests on. Additive context only: nothing above changes."""
+    opens = {}
+    for r in records:
+        if r.get("event") == "open":
+            opens.setdefault(r.get("ticker"), []).append(r)
+    live_opens = [r for r in records if r.get("event") == "open" and not r.get("backfill")]
+    first_live = min((str(r.get("entry_date")) for r in live_opens), default=None)
+    live_closes = []
+    for r in records:
+        if r.get("event") != "close" or r.get("backfill"):
+            continue
+        prior = [o for o in opens.get(r.get("ticker"), []) if str(o.get("entry_date")) <= str(r.get("exit_date"))]
+        if prior and not prior[-1].get("backfill"):
+            live_closes.append(float(r.get("realized_pnl") or 0.0))
+    live_days, live_return = 0, None
+    if first_live and len(frame):
+        since = frame[frame.index >= pd.Timestamp(first_live)]
+        before = frame[frame.index < pd.Timestamp(first_live)]
+        live_days = len(since)
+        base = float(before["marked_nav"].iloc[-1]) if len(before) else _capital()
+        if live_days:
+            live_return = round((float(since["marked_nav"].iloc[-1]) / base - 1) * 100.0, 4)
+    stale_recent = int(frame["stale_marks"].iloc[-5:].sum()) if len(frame) else 0
+    reliable = live_days >= MIN_SHARPE_DAYS
+    return {
+        "realized_pnl": round(sum(float(r.get("realized_pnl") or 0.0) for r in records if r.get("event") == "close"), 2),
+        "live_since": first_live,
+        "live_trading_days": live_days,
+        "live_return_pct": live_return,
+        "n_closed_live": len(live_closes),
+        "win_rate_live": round(sum(p > 0 for p in live_closes) / len(live_closes), 4) if live_closes else None,
+        # A position opened by the backfill replay counts as backfilled even when a
+        # real cycle closed it (those close records carry no backfill flag).
+        "n_closed_backfilled": sum(1 for r in records if r.get("event") == "close") - len(live_closes),
+        "sharpe_reliable": reliable,
+        "sharpe_note": None if reliable else
+            f"{live_days} real trading days; a Sharpe needs about {MIN_SHARPE_DAYS} (six months) and this one is mostly backfilled history",
+        "stale_marks_recent": stale_recent,
+    }
+
+
 def _compute_stats(ledger_path: Path) -> dict:
     """Stats from the REAL production ledger. Sharpe / Sortino / max drawdown
     come from backtest/metrics.py::compute_metrics (the function every report
@@ -438,6 +486,7 @@ def _compute_stats(ledger_path: Path) -> dict:
 
     if n_closed_trades < 2:
         return {
+            **_track_record(records, frame),
             "n_trades": n_trades,
             "n_closed_trades": n_closed_trades,
             "win_rate": None,
@@ -467,6 +516,7 @@ def _compute_stats(ledger_path: Path) -> dict:
         marking["risk_free_rate"] = round(float(rf.mean() * 252), 6)
 
     return {
+        **_track_record(records, frame),
         "n_trades": n_trades,
         "n_closed_trades": n_closed_trades,
         "win_rate": round(win_rate, 4),

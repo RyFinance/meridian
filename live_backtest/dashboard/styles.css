@@ -245,3 +245,7 @@ td.wrap { white-space: normal; color: var(--white); }
 code.copy { cursor: copy; position: relative; }
 code.copy:hover::after { content: "copy"; position: absolute; right: 6px; color: var(--grey); font-size: 11px; }
 code.copy.copied::after { content: "copied"; color: var(--up); }
+
+.live-acct { border: 1px solid var(--down); background: #140504; padding: 8px 10px; margin-bottom: 4px; }
+.live-acct .sub { display: flex; gap: 6px; align-items: center; }
+.big.big--sm { font-size: 22px; }

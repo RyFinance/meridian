@@ -151,6 +151,9 @@ def test_stats_endpoint_real_shape(client):
         "sortino_ratio", "max_drawdown", "current_nav", "total_return_pct",
         "unrealized_pnl", "n_backfilled_trades", "starting_capital", "insufficient_data",
         "marked_nav", "stale_marks", "risk_free_rate", "risk_free_through",
+        # track record: real-time vs backfilled, and whether Sharpe means anything yet
+        "realized_pnl", "live_since", "live_trading_days", "live_return_pct", "n_closed_live",
+        "win_rate_live", "n_closed_backfilled", "sharpe_reliable", "sharpe_note", "stale_marks_recent",
     }
     assert isinstance(body["n_trades"], int)
     assert isinstance(body["n_closed_trades"], int)
@@ -867,3 +870,25 @@ def test_open_pnl_ignores_a_close_from_before_the_position_was_opened(isolated_m
     stats = client.get("/api/stats").json()
     assert stats["unrealized_pnl"] is None
     assert stats["stale_marks"] == 1  # the entry day, carried at cost
+
+
+def test_track_record_splits_real_time_from_backfilled_trades():
+    """A position opened by the backfill replay stays backfilled even when a real
+    cycle closes it; Sharpe is flagged unreliable on a short real-time record."""
+    import pandas as pd
+    records = [
+        {"event": "open", "ticker": "A", "entry_date": "2026-07-01", "backfill": True},
+        {"event": "close", "ticker": "A", "exit_date": "2026-07-29", "realized_pnl": 50.0, "backfill": True},
+        {"event": "open", "ticker": "B", "entry_date": "2026-09-01", "backfill": True},
+        {"event": "close", "ticker": "B", "exit_date": "2026-09-30", "realized_pnl": -20.0},  # closed by a real cycle
+        {"event": "open", "ticker": "C", "entry_date": "2026-09-22"},
+        {"event": "close", "ticker": "C", "exit_date": "2026-10-20", "realized_pnl": 30.0},
+    ]
+    days = pd.bdate_range("2026-07-01", "2026-10-22")
+    frame = pd.DataFrame({"marked_nav": [100_000.0] * (len(days) - 1) + [101_000.0], "stale_marks": 0}, index=days)
+    out = backend._track_record(records, frame)
+    assert out["n_closed_live"] == 1 and out["win_rate_live"] == 1.0
+    assert out["n_closed_backfilled"] == 2
+    assert out["live_since"] == "2026-09-22" and out["live_trading_days"] == len(days[days >= "2026-09-22"])
+    assert out["live_return_pct"] == pytest.approx(1.0)
+    assert out["sharpe_reliable"] is False and "real trading days" in out["sharpe_note"]

@@ -47,6 +47,7 @@ def isolated_state(tmp_path, monkeypatch):
     # writes bot/state; keep both off real state. Tests that exercise the
     # session gate itself patch prepare_market_session explicitly.
     monkeypatch.setattr(rc, "prepare_market_session", lambda tickers, as_of: (True, "test session"))
+    monkeypatch.setattr(rc, "refresh_cached_history", lambda tickers: {})  # no network for held-position refresh
     monkeypatch.setattr(rc, "UPCOMING_EARNINGS_FILE", tmp_path / "upcoming_earnings.json")
     monkeypatch.setattr(rc, "BACKFILL_CYCLE_LOG_FILE", tmp_path / "backfill_cycle_log.jsonl")
     # Same class of bug for the heartbeat: run_cycle.py imports

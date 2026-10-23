@@ -315,6 +315,13 @@ def run_cycle(as_of_date: str | None = None, ledger_path: Path = LEDGER_FILE) ->
             logger.info(f"SKIP {scored.ticker}: {outcome.reason} -- {outcome.detail}")
 
     # -- 4. mark to market: read-only, after every decision of this cycle ----
+    # Open positions outside the breaker basket were never refreshed in the
+    # price cache, so the desk's daily curve carried them at stale closes for
+    # weeks (flattening volatility and inflating Sharpe). Refresh them too.
+    if session_open:
+        held = sorted({t for t, p in client.positions.items() if p.open} - set(load_breaker_universe()))
+        if held:
+            refresh_cached_history(held)
     marked = client.marked_nav() if session_open else None
     if marked is not None and marked.unmarked:
         errors.append(f"no price to mark {', '.join(marked.unmarked)}: carried at cost in marked_nav")
