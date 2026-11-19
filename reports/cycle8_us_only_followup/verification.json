@@ -1,0 +1,9 @@
+{
+  "correction_rows": 64,
+  "daily_rows": 24,
+  "probability_monotonicity": true,
+  "daily_dd_not_below_month_end_same_path": true,
+  "p3_1x_month_end_probabilities_reproduce_original_and_c2": true,
+  "original_crisis_rows_affected_by_end_coverage_bug": 0,
+  "frozen_receipt_files_unchanged": true
+}

@@ -1,0 +1,17 @@
+HTTP/1.1 200 Connection Established
+
+HTTP/1.1 200 OK
+Server: Apache
+Last-Modified: Tue, 26 May 2020 22:01:48 GMT
+ETag: "221000-5a6943def0b00"
+Accept-Ranges: bytes
+Content-Length: 2232320
+Content-Type: application/vnd.ms-excel
+Cache-Control: public, max-age=3600, s-maxage=3600
+Date: Sun, 27 Sep 2026 23:11:57 GMT
+Connection: keep-alive
+Content-Security-Policy: frame-ancestors 'self' https://web.mit.edu https://www.mit.edu http://web.mit.edu http://www.mit.edu
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=600
+Akamai-GRN: 0.74951eb8.1790550716.e793cf0f
+

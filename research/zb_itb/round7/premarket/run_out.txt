@@ -1,0 +1,353 @@
+=== Pre-market microstructure (09:00-09:29), shares per day ===
+                   src  days  med_vol_0900_0929  mean_vol_0900_0929  med_prints_bars  med_vol_0915_0929  days_no_print_0900  med_abs_gap_bp  mean_gap_bp  med_age_at_0925_min
+                   DHI   545              511.0             1957.43              6.0              302.0                0.12           22.48        -4.63                  2.0
+                   LEN   545              494.0             1933.40              6.0              316.0                0.12           23.19        -3.18                  2.0
+                   PHM   544              114.0              631.03              3.0               50.0                0.20           28.02        -2.96                  7.0
+                   TOL   532              179.5             1100.80              3.0               85.0                0.18           24.75         0.77                  5.5
+                   KBH   510                0.0                7.96              0.0                0.0                0.95           57.66       -16.19                 20.0
+                   ITB    57                0.0                0.00              0.0                0.0                1.00             NaN          NaN                  NaN
+                   XHB    57                0.0                0.00              0.0                0.0                1.00             NaN          NaN                  NaN
+                   SPY   546                0.0            32306.78              0.0                0.0                0.84            0.39         0.00                  0.0
+BUILDERS_pooled_trades  2676              130.0             1141.06              3.0               53.5                0.31           24.54        -2.75                  4.0
+
+=== Entry at pre-market price vs 09:30 MOO (gross incremental bp per trade, positive = better) ===
+                             mean_bp                   n                t            
+win                              all    chk    dev   all  chk   dev   all   chk   dev
+src                    entry                                                         
+BUILDERS_pooled_trades 0915    13.18   9.87  16.28  1992  963  1029  9.46  5.18  8.06
+                       0916    12.78   9.55  15.80  1992  963  1029  9.20  5.03  7.85
+                       0920    12.10  10.25  13.83  1992  963  1029  8.76  5.50  6.82
+                       0925    11.65   9.92  13.27  1994  964  1030  8.62  5.27  6.85
+DHI                    0915    14.02  10.06  17.58   492  233   259  4.64  2.54  3.91
+                       0916    13.25   8.66  17.38   492  233   259  4.35  2.12  3.89
+                       0920    12.50  10.01  14.74   492  233   259  4.12  2.52  3.26
+                       0925    13.12  10.57  15.43   492  233   259  4.56  2.64  3.75
+ITB                    0915      NaN    NaN    NaN     0    0     0   NaN   NaN   NaN
+                       0916      NaN    NaN    NaN     0    0     0   NaN   NaN   NaN
+                       0920      NaN    NaN    NaN     0    0     0   NaN   NaN   NaN
+                       0925      NaN    NaN    NaN     0    0     0   NaN   NaN   NaN
+KBH                    0915    27.49  27.49    NaN    34   34     0  1.58  1.58   NaN
+                       0916    27.49  27.49    NaN    34   34     0  1.58  1.58   NaN
+                       0920    24.22  24.22    NaN    34   34     0  1.42  1.42   NaN
+                       0925    21.94  21.94    NaN    34   34     0  1.31  1.31   NaN
+LEN                    0915    12.95   6.93  18.43   493  235   258  4.57  1.74  4.60
+                       0916    12.37   7.03  17.24   493  235   258  4.43  1.83  4.30
+                       0920    11.48   5.72  16.73   493  235   258  4.16  1.52  4.19
+                       0925    12.10   5.71  17.92   493  235   258  4.42  1.56  4.48
+PHM                    0915    13.28  11.10  15.25   489  232   257  4.95  3.06  3.89
+                       0916    13.18  11.04  15.11   489  232   257  4.92  3.09  3.83
+                       0920    13.08  14.36  11.93   489  232   257  4.84  4.12  2.93
+                       0925    12.03  13.49  10.71   491  233   258  4.56  3.67  2.84
+SPY                    0915    -1.40  -1.40    NaN    84   84     0 -1.88 -1.88   NaN
+                       0916    -1.42  -1.42    NaN    84   84     0 -1.93 -1.93   NaN
+                       0920    -1.40  -1.40    NaN    84   84     0 -2.09 -2.09   NaN
+                       0925    -1.06  -1.06    NaN    84   84     0 -1.71 -1.71   NaN
+TOL                    0915    11.46   8.81  13.85   484  229   255  4.56  2.63  3.74
+                       0916    11.28   8.88  13.44   484  229   255  4.53  2.66  3.68
+                       0920    10.49   8.92  11.89   484  229   255  4.25  2.65  3.32
+                       0925     8.57   8.16   8.94   484  229   255  3.45  2.37  2.51
+XHB                    0915      NaN    NaN    NaN     0    0     0   NaN   NaN   NaN
+                       0916      NaN    NaN    NaN     0    0     0   NaN   NaN   NaN
+                       0920      NaN    NaN    NaN     0    0     0   NaN   NaN   NaN
+                       0925      NaN    NaN    NaN     0    0     0   NaN   NaN   NaN
+
+=== Controls (all sample): flip (-d) and lagged-signal placebo, and SPY placebo (bp) ===
+                   src entry  flip_bp  lagged_signal_bp
+                   DHI  0915   -14.02            -11.18
+                   DHI  0925   -13.12            -10.92
+                   LEN  0915   -12.95             -5.24
+                   LEN  0925   -12.10             -4.85
+                   PHM  0915   -13.28             -9.28
+                   PHM  0925   -12.03             -9.70
+                   TOL  0915   -11.46             -7.18
+                   TOL  0925    -8.57             -6.52
+                   KBH  0915   -27.49              7.31
+                   KBH  0925   -21.94             11.70
+                   ITB  0915      NaN               NaN
+                   ITB  0925      NaN               NaN
+                   XHB  0915      NaN               NaN
+                   XHB  0925      NaN               NaN
+                   SPY  0915     1.40              0.94
+                   SPY  0925     1.06              0.83
+BUILDERS_pooled_trades  0915   -13.18             -7.95
+BUILDERS_pooled_trades  0925   -11.65             -7.66
+
+=== Break-even all-in pre-market entry cost per side (bp), where mean net improvement = 0 ===
+entry                    0915   0916   0920   0925
+src                                               
+BUILDERS_pooled_trades  15.18  14.78  14.10  13.65
+DHI                     16.02  15.25  14.50  15.12
+KBH                     29.49  29.49  26.22  23.94
+LEN                     14.95  14.37  13.48  14.10
+PHM                     15.28  15.18  15.08  14.03
+SPY                      0.60   0.58   0.60   0.94
+TOL                     13.46  13.28  12.49  10.57
+
+=== Limit rule (buy last print + 5 bp; MOO fallback). Net improvement vs MOO per trade (bp) ===
+                   src order  cost win    n  fill_rate  mean_net_bp     t  gross_per_fill_bp  fill_px_vs_open_bp
+                   DHI  0915     2 all  545       0.73         8.92  3.55              12.19               12.19
+                   DHI  0915     5 all  545       0.73         6.73  2.68              12.19               12.19
+                   DHI  0915    10 all  545       0.73         3.06  1.23              12.19               12.19
+                   DHI  0915    15 all  545       0.73        -0.60 -0.24              12.19               12.19
+                   DHI  0915    20 all  545       0.73        -4.26 -1.70              12.19               12.19
+                   DHI  0920     2 all  545       0.70        10.19  4.67              14.50               14.50
+                   DHI  0920     5 all  545       0.70         8.08  3.72              14.50               14.50
+                   DHI  0920    10 all  545       0.70         4.57  2.11              14.50               14.50
+                   DHI  0920    15 all  545       0.70         1.05  0.49              14.50               14.50
+                   DHI  0920    20 all  545       0.70        -2.46 -1.14              14.50               14.50
+                   DHI  0925     2 all  545       0.62         7.55  3.83              12.14               12.14
+                   DHI  0925     5 all  545       0.62         5.69  2.90              12.14               12.14
+                   DHI  0925    10 all  545       0.62         2.58  1.32              12.14               12.14
+                   DHI  0925    15 all  545       0.62        -0.53 -0.27              12.14               12.14
+                   DHI  0925    20 all  545       0.62        -3.64 -1.86              12.14               12.14
+                   LEN  0915     2 all  545       0.71         9.05  3.91              12.77               12.77
+                   LEN  0915     5 all  545       0.71         6.92  3.00              12.77               12.77
+                   LEN  0915    10 all  545       0.71         3.38  1.47              12.77               12.77
+                   LEN  0915    15 all  545       0.71        -0.16 -0.07              12.77               12.77
+                   LEN  0915    20 all  545       0.71        -3.70 -1.61              12.77               12.77
+                   LEN  0920     2 all  545       0.66         6.67  3.08              10.05               10.05
+                   LEN  0920     5 all  545       0.66         4.68  2.16              10.05               10.05
+                   LEN  0920    10 all  545       0.66         1.36  0.63              10.05               10.05
+                   LEN  0920    15 all  545       0.66        -1.96 -0.91              10.05               10.05
+                   LEN  0920    20 all  545       0.66        -5.28 -2.44              10.05               10.05
+                   LEN  0925     2 all  545       0.59         3.89  2.05               6.65                6.65
+                   LEN  0925     5 all  545       0.59         2.13  1.12               6.65                6.65
+                   LEN  0925    10 all  545       0.59        -0.79 -0.42               6.65                6.65
+                   LEN  0925    15 all  545       0.59        -3.72 -1.96               6.65                6.65
+                   LEN  0925    20 all  545       0.59        -6.65 -3.48               6.65                6.65
+                   PHM  0915     2 all  544       0.58         8.15  4.28              14.07               14.07
+                   PHM  0915     5 all  544       0.58         6.41  3.38              14.07               14.07
+                   PHM  0915    10 all  544       0.58         3.51  1.86              14.07               14.07
+                   PHM  0915    15 all  544       0.58         0.62  0.33              14.07               14.07
+                   PHM  0915    20 all  544       0.58        -2.28 -1.21              14.07               14.07
+                   PHM  0920     2 all  544       0.51         6.66  3.69              12.94               12.94
+                   PHM  0920     5 all  544       0.51         5.12  2.85              12.94               12.94
+                   PHM  0920    10 all  544       0.51         2.54  1.42              12.94               12.94
+                   PHM  0920    15 all  544       0.51        -0.03 -0.02              12.94               12.94
+                   PHM  0920    20 all  544       0.51        -2.60 -1.46              12.94               12.94
+                   PHM  0925     2 all  544       0.44         5.96  3.72              13.62               13.62
+                   PHM  0925     5 all  544       0.44         4.65  2.92              13.62               13.62
+                   PHM  0925    10 all  544       0.44         2.46  1.56              13.62               13.62
+                   PHM  0925    15 all  544       0.44         0.27  0.17              13.62               13.62
+                   PHM  0925    20 all  544       0.44        -1.92 -1.21              13.62               13.62
+                   TOL  0915     2 all  532       0.58         5.30  3.06               9.15                9.15
+                   TOL  0915     5 all  532       0.58         3.56  2.06               9.15                9.15
+                   TOL  0915    10 all  532       0.58         0.67  0.39               9.15                9.15
+                   TOL  0915    15 all  532       0.58        -2.23 -1.30               9.15                9.15
+                   TOL  0915    20 all  532       0.58        -5.12 -2.96               9.15                9.15
+                   TOL  0920     2 all  532       0.53         4.65  2.91               8.78                8.78
+                   TOL  0920     5 all  532       0.53         3.06  1.92               8.78                8.78
+                   TOL  0920    10 all  532       0.53         0.41  0.26               8.78                8.78
+                   TOL  0920    15 all  532       0.53        -2.24 -1.41               8.78                8.78
+                   TOL  0920    20 all  532       0.53        -4.89 -3.05               8.78                8.78
+                   TOL  0925     2 all  532       0.44         3.30  2.32               7.50                7.50
+                   TOL  0925     5 all  532       0.44         1.98  1.40               7.50                7.50
+                   TOL  0925    10 all  532       0.44        -0.22 -0.16               7.50                7.50
+                   TOL  0925    15 all  532       0.44        -2.42 -1.71               7.50                7.50
+                   TOL  0925    20 all  532       0.44        -4.62 -3.23               7.50                7.50
+                   KBH  0915     2 all  510       0.02         0.13  0.43               6.81                6.81
+                   KBH  0915     5 all  510       0.02         0.07  0.24               6.81                6.81
+                   KBH  0915    10 all  510       0.02        -0.02 -0.08               6.81                6.81
+                   KBH  0915    15 all  510       0.02        -0.12 -0.39               6.81                6.81
+                   KBH  0915    20 all  510       0.02        -0.22 -0.69               6.81                6.81
+                   KBH  0920     2 all  510       0.02         0.37  1.38              17.12               17.12
+                   KBH  0920     5 all  510       0.02         0.30  1.17              17.12               17.12
+                   KBH  0920    10 all  510       0.02         0.20  0.78              17.12               17.12
+                   KBH  0920    15 all  510       0.02         0.09  0.36              17.12               17.12
+                   KBH  0920    20 all  510       0.02        -0.02 -0.08              17.12               17.12
+                   KBH  0925     2 all  510       0.02         0.48  1.78              27.13               27.13
+                   KBH  0925     5 all  510       0.02         0.43  1.64              27.13               27.13
+                   KBH  0925    10 all  510       0.02         0.34  1.38              27.13               27.13
+                   KBH  0925    15 all  510       0.02         0.25  1.07              27.13               27.13
+                   KBH  0925    20 all  510       0.02         0.16  0.72              27.13               27.13
+                   ITB  0915     2 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0915     5 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0915    10 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0915    15 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0915    20 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0920     2 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0920     5 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0920    10 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0920    15 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0920    20 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0925     2 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0925     5 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0925    10 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0925    15 all   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0925    20 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0915     2 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0915     5 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0915    10 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0915    15 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0915    20 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0920     2 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0920     5 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0920    10 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0920    15 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0920    20 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0925     2 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0925     5 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0925    10 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0925    15 all   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0925    20 all   57       0.00          NaN   NaN                NaN                 NaN
+                   SPY  0915     2 all  546       0.15        -0.23 -2.03              -1.52               -1.52
+                   SPY  0915     5 all  546       0.15        -0.70 -5.24              -1.52               -1.52
+                   SPY  0915    10 all  546       0.15        -1.47 -7.90              -1.52               -1.52
+                   SPY  0915    15 all  546       0.15        -2.23 -8.89              -1.52               -1.52
+                   SPY  0915    20 all  546       0.15        -3.00 -9.32              -1.52               -1.52
+                   SPY  0920     2 all  546       0.15        -0.22 -2.08              -1.42               -1.42
+                   SPY  0920     5 all  546       0.15        -0.68 -5.51              -1.42               -1.42
+                   SPY  0920    10 all  546       0.15        -1.45 -8.14              -1.42               -1.42
+                   SPY  0920    15 all  546       0.15        -2.22 -9.04              -1.42               -1.42
+                   SPY  0920    20 all  546       0.15        -2.99 -9.42              -1.42               -1.42
+                   SPY  0925     2 all  546       0.15        -0.17 -1.77              -1.09               -1.09
+                   SPY  0925     5 all  546       0.15        -0.63 -5.58              -1.09               -1.09
+                   SPY  0925    10 all  546       0.15        -1.40 -8.29              -1.09               -1.09
+                   SPY  0925    15 all  546       0.15        -2.17 -9.15              -1.09               -1.09
+                   SPY  0925    20 all  546       0.15        -2.94 -9.49              -1.09               -1.09
+BUILDERS_pooled_trades  0915     2 all 2676       0.53         6.39  7.35              12.07               12.07
+BUILDERS_pooled_trades  0915     5 all 2676       0.53         4.80  5.54              12.07               12.07
+BUILDERS_pooled_trades  0915    10 all 2676       0.53         2.15  2.50              12.07               12.07
+BUILDERS_pooled_trades  0915    15 all 2676       0.53        -0.49 -0.57              12.07               12.07
+BUILDERS_pooled_trades  0915    20 all 2676       0.53        -3.14 -3.64              12.07               12.07
+BUILDERS_pooled_trades  0920     2 all 2676       0.49         5.78  7.27              11.74               11.74
+BUILDERS_pooled_trades  0920     5 all 2676       0.49         4.31  5.44              11.74               11.74
+BUILDERS_pooled_trades  0920    10 all 2676       0.49         1.84  2.34              11.74               11.74
+BUILDERS_pooled_trades  0920    15 all 2676       0.49        -0.62 -0.79              11.74               11.74
+BUILDERS_pooled_trades  0920    20 all 2676       0.49        -3.08 -3.90              11.74               11.74
+BUILDERS_pooled_trades  0925     2 all 2676       0.43         4.29  6.06              10.08               10.08
+BUILDERS_pooled_trades  0925     5 all 2676       0.43         3.01  4.28              10.08               10.08
+BUILDERS_pooled_trades  0925    10 all 2676       0.43         0.88  1.26              10.08               10.08
+BUILDERS_pooled_trades  0925    15 all 2676       0.43        -1.24 -1.77              10.08               10.08
+BUILDERS_pooled_trades  0925    20 all 2676       0.43        -3.37 -4.78              10.08               10.08
+
+--- dev / chk for cost 2 and 10 bp ---
+                   src order  cost win    n  fill_rate  mean_net_bp     t  gross_per_fill_bp  fill_px_vs_open_bp
+                   DHI  0915     2 dev  259       0.83        14.00  3.31              16.95               16.95
+                   DHI  0915     2 chk  286       0.65         4.32  1.52               6.68                6.68
+                   DHI  0915    10 dev  259       0.83         7.39  1.75              16.95               16.95
+                   DHI  0915    10 chk  286       0.65        -0.86 -0.30               6.68                6.68
+                   DHI  0920     2 dev  259       0.77        16.57  5.25              21.46               21.46
+                   DHI  0920     2 chk  286       0.64         4.41  1.48               6.89                6.89
+                   DHI  0920    10 dev  259       0.77        10.39  3.32              21.46               21.46
+                   DHI  0920    10 chk  286       0.64        -0.71 -0.24               6.89                6.89
+                   DHI  0925     2 dev  259       0.67        11.14  3.84              16.67               16.67
+                   DHI  0925     2 chk  286       0.58         4.30  1.61               7.42                7.42
+                   DHI  0925    10 dev  259       0.67         5.79  2.02              16.67               16.67
+                   DHI  0925    10 chk  286       0.58        -0.34 -0.13               7.42                7.42
+                   LEN  0915     2 dev  259       0.67        13.85  3.94              20.74               20.74
+                   LEN  0915     2 chk  286       0.74         4.69  1.55               6.30                6.30
+                   LEN  0915    10 dev  259       0.67         8.51  2.44              20.74               20.74
+                   LEN  0915    10 chk  286       0.74        -1.27 -0.42               6.30                6.30
+                   LEN  0920     2 dev  259       0.63        11.55  3.49              18.24               18.24
+                   LEN  0920     2 chk  286       0.69         2.26  0.80               3.27                3.27
+                   LEN  0920    10 dev  259       0.63         6.48  1.98              18.24               18.24
+                   LEN  0920    10 chk  286       0.69        -3.28 -1.16               3.27                3.27
+                   LEN  0925     2 dev  259       0.51         6.67  2.32              13.18               13.18
+                   LEN  0925     2 chk  286       0.66         1.38  0.55               2.09                2.09
+                   LEN  0925    10 dev  259       0.51         2.62  0.92              13.18               13.18
+                   LEN  0925    10 chk  286       0.66        -3.88 -1.54               2.09                2.09
+                   PHM  0915     2 dev  259       0.61        10.13  3.45              16.72               16.72
+                   PHM  0915     2 chk  285       0.55         6.34  2.57              11.43               11.43
+                   PHM  0915    10 dev  259       0.61         5.29  1.82              16.72               16.72
+                   PHM  0915    10 chk  285       0.55         1.90  0.78              11.43               11.43
+                   PHM  0920     2 dev  259       0.51         8.18  2.91              15.92               15.92
+                   PHM  0920     2 chk  285       0.52         5.29  2.28              10.25               10.25
+                   PHM  0920    10 dev  259       0.51         4.07  1.47              15.92               15.92
+                   PHM  0920    10 chk  285       0.52         1.16  0.50              10.25               10.25
+                   PHM  0925     2 dev  259       0.44         7.37  2.94              16.59               16.59
+                   PHM  0925     2 chk  285       0.43         4.68  2.29              10.84               10.84
+                   PHM  0925    10 dev  259       0.44         3.81  1.55              16.59               16.59
+                   PHM  0925    10 chk  285       0.43         1.23  0.61              10.84               10.84
+                   TOL  0915     2 dev  255       0.62         7.42  2.69              12.04               12.04
+                   TOL  0915     2 chk  277       0.55         3.35  1.56               6.14                6.14
+                   TOL  0915    10 dev  255       0.62         2.49  0.91              12.04               12.04
+                   TOL  0915    10 chk  277       0.55        -1.01 -0.47               6.14                6.14
+                   TOL  0920     2 dev  255       0.55         5.64  2.22              10.35               10.35
+                   TOL  0920     2 chk  277       0.52         3.74  1.88               7.25                7.25
+                   TOL  0920    10 dev  255       0.55         1.28  0.51              10.35               10.35
+                   TOL  0920    10 chk  277       0.52        -0.39 -0.19               7.25                7.25
+                   TOL  0925     2 dev  255       0.46         4.72  2.21              10.28               10.28
+                   TOL  0925     2 chk  277       0.42         1.99  1.05               4.72                4.72
+                   TOL  0925    10 dev  255       0.46         1.05  0.50              10.28               10.28
+                   TOL  0925    10 chk  277       0.42        -1.39 -0.73               4.72                4.72
+                   KBH  0915     2 dev  247       0.00          NaN   NaN                NaN                 NaN
+                   KBH  0915     2 chk  263       0.04         0.26  0.43               6.81                6.81
+                   KBH  0915    10 dev  247       0.00          NaN   NaN                NaN                 NaN
+                   KBH  0915    10 chk  263       0.04        -0.05 -0.08               6.81                6.81
+                   KBH  0920     2 dev  247       0.00          NaN   NaN                NaN                 NaN
+                   KBH  0920     2 chk  263       0.04         0.72  1.38              17.12               17.12
+                   KBH  0920    10 dev  247       0.00          NaN   NaN                NaN                 NaN
+                   KBH  0920    10 chk  263       0.04         0.38  0.78              17.12               17.12
+                   KBH  0925     2 dev  247       0.00          NaN   NaN                NaN                 NaN
+                   KBH  0925     2 chk  263       0.03         0.93  1.78              27.13               27.13
+                   KBH  0925    10 dev  247       0.00          NaN   NaN                NaN                 NaN
+                   KBH  0925    10 chk  263       0.03         0.65  1.38              27.13               27.13
+                   ITB  0915     2 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   ITB  0915     2 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0915    10 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   ITB  0915    10 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0920     2 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   ITB  0920     2 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0920    10 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   ITB  0920    10 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0925     2 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   ITB  0925     2 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   ITB  0925    10 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   ITB  0925    10 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0915     2 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   XHB  0915     2 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0915    10 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   XHB  0915    10 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0920     2 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   XHB  0920     2 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0920    10 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   XHB  0920    10 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0925     2 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   XHB  0925     2 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   XHB  0925    10 dev    0        NaN          NaN   NaN                NaN                 NaN
+                   XHB  0925    10 chk   57       0.00          NaN   NaN                NaN                 NaN
+                   SPY  0915     2 dev  259       0.00          NaN   NaN                NaN                 NaN
+                   SPY  0915     2 chk  287       0.29        -0.45 -2.04              -1.52               -1.52
+                   SPY  0915    10 dev  259       0.00          NaN   NaN                NaN                 NaN
+                   SPY  0915    10 chk  287       0.29        -2.79 -8.33              -1.52               -1.52
+                   SPY  0920     2 dev  259       0.00          NaN   NaN                NaN                 NaN
+                   SPY  0920     2 chk  287       0.29        -0.41 -2.08              -1.42               -1.42
+                   SPY  0920    10 dev  259       0.00          NaN   NaN                NaN                 NaN
+                   SPY  0920    10 chk  287       0.29        -2.76 -8.62              -1.42               -1.42
+                   SPY  0925     2 dev  259       0.00          NaN   NaN                NaN                 NaN
+                   SPY  0925     2 chk  287       0.29        -0.32 -1.77              -1.09               -1.09
+                   SPY  0925    10 dev  259       0.00          NaN   NaN                NaN                 NaN
+                   SPY  0925    10 chk  287       0.29        -2.66 -8.79              -1.09               -1.09
+BUILDERS_pooled_trades  0915     2 dev 1279       0.55         9.17  6.63              16.73               16.73
+BUILDERS_pooled_trades  0915     2 chk 1397       0.51         3.85  3.56               7.50                7.50
+BUILDERS_pooled_trades  0915    10 dev 1279       0.55         4.79  3.50              16.73               16.73
+BUILDERS_pooled_trades  0915    10 chk 1397       0.51        -0.26 -0.24               7.50                7.50
+BUILDERS_pooled_trades  0920     2 dev 1279       0.50         8.48  7.03              17.04               17.04
+BUILDERS_pooled_trades  0920     2 chk 1397       0.49         3.32  3.17               6.80                6.80
+BUILDERS_pooled_trades  0920    10 dev 1279       0.50         4.50  3.78              17.04               17.04
+BUILDERS_pooled_trades  0920    10 chk 1397       0.49        -0.58 -0.56               6.80                6.80
+BUILDERS_pooled_trades  0925     2 dev 1279       0.42         6.04  5.68              14.41               14.41
+BUILDERS_pooled_trades  0925     2 chk 1397       0.43         2.69  2.85               6.23                6.23
+BUILDERS_pooled_trades  0925    10 dev 1279       0.42         2.68  2.56              14.41               14.41
+BUILDERS_pooled_trades  0925    10 chk 1397       0.43        -0.77 -0.82               6.23                6.23
+
+=== Builders pooled, DAY level (equal-weight across the 5 names; t on days) ===
+entry  n_days  mean_bp    t
+ 0915     494    13.13 6.27
+ 0916     494    12.74 6.13
+ 0920     494    12.10 5.86
+ 0925     494    11.74 5.91
+order  cost  n_days  mean_net_bp     t
+ 0915     2     546         6.41  5.16
+ 0915     5     546         4.82  3.89
+ 0915    10     546         2.18  1.76
+ 0915    15     546        -0.47 -0.38
+ 0920     2     546         5.87  5.37
+ 0920     5     546         4.39  4.04
+ 0920    10     546         1.93  1.79
+ 0920    15     546        -0.53 -0.50
+ 0925     2     546         4.34  4.57
+ 0925     5     546         3.06  3.23
+ 0925    10     546         0.94  0.99
+ 0925    15     546        -1.19 -1.26

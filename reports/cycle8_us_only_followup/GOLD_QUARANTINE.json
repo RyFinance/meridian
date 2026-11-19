@@ -1,0 +1,14 @@
+{
+  "status": "QUARANTINED \u2014 do not use to select a portfolio",
+  "reason": [
+    "584 nonmissing PM observations fall on weekends, contrary to the stated fixing schedule",
+    "1983-02-05 Saturday price falls 31.31%, then rises 43.18% on next observation",
+    "Daily GLD overlap does not reconcile; calendar shift suspected, not independently established"
+  ],
+  "c3_files": [
+    "gold_corrected_results.csv",
+    "gold_corrected_risk.csv",
+    "gold_corrected_crises.csv"
+  ],
+  "treatment": "Preserve as failed diagnostic; no exclusion, relabeling or repaired series accepted without independent primary evidence. C2/daily results do not use this archive."
+}

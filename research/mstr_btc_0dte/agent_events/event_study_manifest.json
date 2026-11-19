@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-10-17",
+  "source": "SEC EDGAR primary 8-K documents and EDGAR acceptanceDateTime; source URLs recorded per event",
+  "price_source": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/mstr_daily_yf.parquet",
+  "btc_source": "/Users/rytty/CCP/BTC-Acum/data/btc_usd_1m_candles_polymarket_arb.parquet",
+  "frozen_rules": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/agent_events/FROZEN_RULES.md",
+  "costs": {
+    "per_side_slippage_bp": 3.0,
+    "per_share_each_side": 0.005
+  },
+  "development": "2020-2022",
+  "holdout": "2023-2026",
+  "btc_data_last_timestamp": "derived in input dataset; post-2026-08-11 marked unavailable",
+  "validated_event_count": 106
+}

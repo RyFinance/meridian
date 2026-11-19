@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-02T06:00:59.465988+00:00",
+  "client_date": "2026-10-01",
+  "type": "Post-result audit/correction before follow-up simulations",
+  "files": {
+    "research/cycle8_us_only_followup/PREREG.md": "0a9fd5981149fec9c43d8c0431eab9699ed0a6862158bef475a18e52f9d2f4bb",
+    "research/cycle8_us_only_followup/analyze.py": "6917c781989f9847cf80db8164639f55300026e5a0b4fe1db93ee0257216af70",
+    "research/cycle8_us_only/run.py": "9ad1eef14a3e3b6df845bfe99da4e9bc3d8bb54ac16b106841a1bccf214b84d8",
+    "research/cycle8_us_only/core.py": "9750f0b605ddc5ee8db6632e4b61b3852fdf2bb72a87855e7e60673926aa8126",
+    "research/cycle8_us_only/metrics.py": "34c706afb1b03c3a51ebe4b366d9d1f0a76dccdb35effae609deb749d34d4080",
+    "data/cycle8_us_only/snapshot/manifest.json": "0b2f26ed45985a18206423045d31d5e6597a849a0456a34dfd7eb8e61c108dd7",
+    "reports/cycle8_us_only/out/sleeves.parquet": "c670091a1a8061313eb5238c5cfae8aafdd48168477a226efbf22722d02caa29",
+    "reports/cycle8_us_only/out/results.csv": "b64bd5c276d2ebe82b3e67ba0d9d9b452eca3ad40e305b0dacf5a555952ac670"
+  }
+}

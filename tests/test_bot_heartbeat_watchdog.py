@@ -7,7 +7,7 @@ from __future__ import annotations
 import json
 import os
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import pytest
 
@@ -54,26 +54,33 @@ def test_read_heartbeat_timestamp_roundtrip(tmp_path):
     assert abs(ts - before) < 2.0
 
 
+def _beat_at(hb, when: datetime):
+    """Write the heartbeat and back-date its mtime to `when` (naive = local)."""
+    touch_heartbeat(hb)
+    ts = when.timestamp()
+    os.utime(hb, (ts, ts))
+
+
+def _check(hb, now, tmp_path, **kw):
+    alerts_path = tmp_path / "alerts.jsonl"
+    fired = check_dead_mans_switch(max_age_hours=kw.pop("max_age_hours", 26), now=now, heartbeat_path=hb,
+                                   alerter=BotAlerter(alerts_path=alerts_path))
+    return fired, alerts_path
+
+
 def test_watchdog_silent_when_heartbeat_fresh(tmp_path):
     hb = tmp_path / "heartbeat.txt"
-    touch_heartbeat(hb)
-    alerter = BotAlerter(alerts_path=tmp_path / "alerts.jsonl")
     monday = datetime(2026, 8, 17, 12, 0, 0)  # a real Monday
-    fired = check_dead_mans_switch(max_age_hours=26, now=monday, heartbeat_path=hb, alerter=alerter)
+    _beat_at(hb, monday - timedelta(minutes=5))
+    fired, _ = _check(hb, monday, tmp_path)
     assert fired is False
 
 
 def test_watchdog_fires_on_stale_heartbeat_on_weekday(tmp_path):
     hb = tmp_path / "heartbeat.txt"
-    touch_heartbeat(hb)
-    # back-date the file's mtime by 30 hours -- simulates a real crash gap
-    stale_time = time.time() - 30 * 3600
-    os.utime(hb, (stale_time, stale_time))
-
-    alerts_path = tmp_path / "alerts.jsonl"
-    alerter = BotAlerter(alerts_path=alerts_path)
-    monday = datetime(2026, 8, 17, 12, 0, 0)
-    fired = check_dead_mans_switch(max_age_hours=26, now=monday, heartbeat_path=hb, alerter=alerter)
+    wednesday = datetime(2026, 8, 19, 12, 0, 0)
+    _beat_at(hb, wednesday - timedelta(hours=30))  # simulates a real crash gap, all on session days
+    fired, alerts_path = _check(hb, wednesday, tmp_path)
 
     assert fired is True
     lines = alerts_path.read_text().strip().splitlines()
@@ -85,31 +92,61 @@ def test_watchdog_fires_on_stale_heartbeat_on_weekday(tmp_path):
 
 def test_watchdog_fires_on_missing_heartbeat_on_weekday(tmp_path):
     hb = tmp_path / "never_written.txt"
-    alerter = BotAlerter(alerts_path=tmp_path / "alerts.jsonl")
     monday = datetime(2026, 8, 17, 12, 0, 0)
-    fired = check_dead_mans_switch(max_age_hours=26, now=monday, heartbeat_path=hb, alerter=alerter)
+    fired, _ = _check(hb, monday, tmp_path)
     assert fired is True
 
 
 def test_watchdog_silent_on_weekend_even_if_stale(tmp_path):
     hb = tmp_path / "heartbeat.txt"
-    touch_heartbeat(hb)
-    stale_time = time.time() - 100 * 3600  # very stale
-    os.utime(hb, (stale_time, stale_time))
-
-    alerter = BotAlerter(alerts_path=tmp_path / "alerts.jsonl")
     saturday = datetime(2026, 8, 15, 12, 0, 0)  # a real Saturday
-    fired = check_dead_mans_switch(max_age_hours=26, now=saturday, heartbeat_path=hb, alerter=alerter)
+    _beat_at(hb, saturday - timedelta(hours=100))  # very stale
+    fired, _ = _check(hb, saturday, tmp_path)
     assert fired is False
 
 
 def test_watchdog_respects_custom_threshold(tmp_path):
     hb = tmp_path / "heartbeat.txt"
-    touch_heartbeat(hb)
-    stale_time = time.time() - 10  # 10 seconds old
-    os.utime(hb, (stale_time, stale_time))
-
-    alerter = BotAlerter(alerts_path=tmp_path / "alerts.jsonl")
     monday = datetime(2026, 8, 17, 12, 0, 0)
-    fired = check_dead_mans_switch(max_age_hours=0.001, now=monday, heartbeat_path=hb, alerter=alerter)  # ~3.6s threshold
+    _beat_at(hb, monday - timedelta(seconds=10))
+    fired, _ = _check(hb, monday, tmp_path, max_age_hours=0.001)  # ~3.6s threshold
+    assert fired is True
+
+
+# --- session-aware staleness: weekends / NYSE holidays don't count -----------
+# Cycle times below mirror the real schedule (launchd 15:42 local; the Fri
+# Oct 16 2026 heartbeat landed 19:12) and the watchdog's 4-hourly checks.
+
+def test_fri_to_mon_gap_does_not_alert(tmp_path):
+    """The exact false alarm in bot_alerts.jsonl: Fri Oct 16 heartbeat, Monday
+    Oct 19 checks before that day's cycle (53.4h .. 67.7h wall clock)."""
+    hb = tmp_path / "heartbeat.txt"
+    _beat_at(hb, datetime(2026, 10, 16, 19, 12, 48))
+    for hour, minute in [(0, 37), (4, 37), (8, 37), (14, 52)]:
+        fired, alerts_path = _check(hb, datetime(2026, 10, 19, hour, minute), tmp_path)
+        assert fired is False, (hour, minute)
+    assert not alerts_path.exists()
+
+
+def test_missed_tuesday_cycle_alerts(tmp_path):
+    """Mon cycle ran, Tue's never did: the first Wednesday check alerts."""
+    hb = tmp_path / "heartbeat.txt"
+    _beat_at(hb, datetime(2026, 10, 19, 15, 44))  # Monday's cycle
+    fired, _ = _check(hb, datetime(2026, 10, 20, 14, 0), tmp_path)  # Tue, before its cycle
+    assert fired is False
+    fired, alerts_path = _check(hb, datetime(2026, 10, 21, 0, 37), tmp_path)  # Wed, Tue's cycle missed
+    assert fired is True
+    assert json.loads(alerts_path.read_text().strip().splitlines()[-1])["age_hours"] > 26
+
+
+def test_holiday_monday_is_not_counted(tmp_path):
+    """Labor Day (Mon Sep 7 2026, NYSE closed): Fri heartbeat is still fine
+    through Tue's pre-cycle check; a missed Tue cycle then alerts on Wed."""
+    hb = tmp_path / "heartbeat.txt"
+    _beat_at(hb, datetime(2026, 9, 4, 15, 44))  # Friday's cycle
+    fired, _ = _check(hb, datetime(2026, 9, 7, 12, 0), tmp_path)  # the holiday itself
+    assert fired is False
+    fired, _ = _check(hb, datetime(2026, 9, 8, 14, 0), tmp_path)  # Tue, before its cycle (~94h wall clock)
+    assert fired is False
+    fired, _ = _check(hb, datetime(2026, 9, 9, 4, 0), tmp_path)  # Wed, Tue's cycle missed
     assert fired is True

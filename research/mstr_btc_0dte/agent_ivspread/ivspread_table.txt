@@ -1,0 +1,8 @@
+window 2025-02-18 00:00:00..2026-09-16 00:00:00 eval sessions 397 (full 456) stance long 56
+spread pts: mean 0.31 median 0.28 min 0.05 max 1.48
+RULE  base SR -0.636 tot -16.2% maxDD -19.6% time_long 0.14 | stress SR -0.653
+BENCH base SR -0.451 tot -61.5% maxDD -81.6%
+boot base: P 0.419 point -0.185 [-1.910,+1.706] | stress P 0.412
+gates {'G1_base_sr_gt_bench_and_p95': False, 'G2_stress_sr_gt_bench_and_p90': False, 'G3_rule_net_total_positive': False} -> PASS=False
+rule halves {'2025H1': -0.0954832449278944, '2025H2': 0.03402831862190969, '2026H1': -0.10415801425326754, '2026H2': 0.0}
+bench halves {'2025H1': 0.15541719794631614, '2025H2': -0.5991584843181472, '2026H1': -0.4482207113833946, '2026H2': 0.5076673199337656}

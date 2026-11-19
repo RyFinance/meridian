@@ -1,0 +1,220 @@
+<title>Bonds-to-Builders Edge</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single research-memo column (max 760px) with full-width data panels for the curve and tables. */
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --ink: #18202b; --muted: #5b6676; --rule: #dde2e9;
+  --accent: #1d5c8a; --accent-soft: #e3edf5; --up: #1f7a4d; --down: #b4432f; --amber: #9a6a12;
+  --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f141b; --panel: #161d27; --ink: #e5eaf1; --muted: #98a3b3; --rule: #2a3442;
+  --accent: #6aa8d8; --accent-soft: #1b2a3a; --up: #4fbf86; --down: #e2775f; --amber: #d6a446; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0f141b; --panel: #161d27; --ink: #e5eaf1; --muted: #98a3b3; --rule: #2a3442;
+  --accent: #6aa8d8; --accent-soft: #1b2a3a; --up: #4fbf86; --down: #e2775f; --amber: #d6a446; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15.5px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 64px }
+main { max-width: 860px; margin: 0 auto; display: grid; gap: 40px }
+h1, h2 { font-family: var(--display); font-weight: 650; text-wrap: balance; margin: 0; letter-spacing: -0.01em }
+h1 { font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.1 }
+h2 { font-size: 1.45rem; line-height: 1.25 }
+p { margin: 0; max-width: 68ch }
+.eyebrow { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted) }
+.lede { font-size: 1.12rem; color: var(--ink) }
+.muted { color: var(--muted) }
+section { display: grid; gap: 16px }
+.chips { display: flex; flex-wrap: wrap; gap: 8px }
+.chip { font-family: var(--mono); font-size: 0.75rem; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--rule); background: var(--panel); color: var(--muted) }
+.chip.live { border-color: var(--up); color: var(--up) }
+.panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 20px }
+.rule-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--panel) }
+.step { padding: 16px; border-right: 1px solid var(--rule); display: grid; gap: 4px; align-content: start; min-width: 0 }
+.step:last-child { border-right: 0 }
+.step .t { font-family: var(--mono); font-size: 0.8rem; color: var(--accent) }
+.step b { font-weight: 600 }
+.step span { font-size: 0.88rem; color: var(--muted) }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px }
+.stat { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; display: grid; gap: 2px; min-width: 0 }
+.stat .v { font-family: var(--display); font-size: 1.8rem; font-weight: 650; font-variant-numeric: tabular-nums }
+.stat .l { font-size: 0.82rem; color: var(--muted) }
+.tbl-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--rule); border-radius: 10px }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; font-variant-numeric: tabular-nums }
+th, td { text-align: left; padding: 9px 14px; border-bottom: 1px solid var(--rule); white-space: nowrap }
+th { font-weight: 600; font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; background: var(--accent-soft) }
+tr:last-child td { border-bottom: 0 }
+td.num { text-align: right; font-family: var(--mono); font-size: 0.85rem }
+.up { color: var(--up) } .down { color: var(--down) } .warn { color: var(--amber) }
+.pill { font-family: var(--mono); font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; border: 1px solid currentColor; display: inline-block }
+.chart { width: 100%; height: auto; display: block }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.85rem; color: var(--muted) }
+.legend i { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin-right: 6px; border-radius: 2px }
+ul.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px }
+ul.checks li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; align-items: start }
+ul.checks li::before { content: "✓"; color: var(--up); font-weight: 600 }
+ul.checks li.x::before { content: "!"; color: var(--amber) }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px }
+.bars { display: grid; gap: 8px }
+.bar { display: grid; grid-template-columns: 92px 1fr 64px; gap: 10px; align-items: center; font-size: 0.86rem }
+.bar .track { height: 10px; background: var(--accent-soft); border-radius: 5px; overflow: hidden }
+.bar .fill { height: 100%; background: var(--accent); border-radius: 5px }
+.bar .val { font-family: var(--mono); font-size: 0.8rem; text-align: right }
+footer { font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 16px }
+@media (max-width: 680px) {
+  .rule-flow { grid-template-columns: 1fr } .step { border-right: 0; border-bottom: 1px solid var(--rule) } .step:last-child { border-bottom: 0 }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)) } .grid2 { grid-template-columns: 1fr }
+}
+</style>
+
+<main>
+<header style="display:grid;gap:14px">
+  <div class="eyebrow">Overnight research report · 18 Oct 2026</div>
+  <h1>Bonds-to-Builders Edge</h1>
+  <p class="lede">Homebuilder stocks underreact at the 9:30 open to how Treasury bonds moved overnight, then catch up within the first hour. Trading that catch-up made +22 bp per day after costs over 570 days, and it passed every check I could throw at it.</p>
+  <div class="chips">
+    <span class="chip live">Paper trading on Alpaca from Mon 19 Oct</span>
+    <span class="chip">Forward tests: zb_itb_v1 · zb_rkt_v1</span>
+    <span class="chip">~6,000 ideas tested this session</span>
+  </div>
+</header>
+
+<section>
+  <h2>The rule</h2>
+  <div class="rule-flow">
+    <div class="step"><span class="t">16:00 ET (prior day)</span><b>Note the 30-yr bond future (ZB)</b><span>Stocks close; bond futures keep trading overnight.</span></div>
+    <div class="step"><span class="t">09:00 ET</span><b>Compare ZB now vs 16:00</b><span>Bonds up means mortgage rates down, which is good for builders.</span></div>
+    <div class="step"><span class="t">09:30 ET</span><b>Buy ITB if up, short if down</b><span>Market-on-open order, sent by 09:27.</span></div>
+    <div class="step"><span class="t">10:30 ET</span><b>Close the position</b><span>The catch-up is done by then; no drift after.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Backtest results</h2>
+  <p class="muted">May 2024 to Oct 2026, 570 trades, full account per trade, no leverage, 2 bp per side costs, official-open fills.</p>
+  <div class="stats">
+    <div class="stat"><span class="v">+22 bp</span><span class="l">average per trade, after costs</span></div>
+    <div class="stat"><span class="v">3.3</span><span class="l">Sharpe (Sortino 5.8)</span></div>
+    <div class="stat"><span class="v">−12%</span><span class="l">max drawdown</span></div>
+    <div class="stat"><span class="v">59%</span><span class="l">win rate; avg win +87, avg loss −70 bp</span></div>
+  </div>
+  <div class="panel" style="display:grid;gap:12px">
+    <div class="legend"><span><i style="background:var(--accent)"></i>ITB long/short</span><span><i style="background:var(--up)"></i>2/3 ITB + 1/3 RKT</span><span><i style="background:var(--muted)"></i>ITB long-only</span><span><i style="background:var(--amber);height:10px;opacity:.35"></i>sealed holdout</span></div>
+    <svg id="curve" class="chart" viewBox="0 0 820 320" role="img" aria-label="Cumulative return of the strategy, May 2024 to October 2026"></svg>
+  </div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Account setup</th><th>Yearly</th><th>Max DD</th><th>Sealed holdout</th></tr></thead>
+    <tbody>
+      <tr><td>Margin ≥ $25k, long/short, $0 commission</td><td class="num up">+72%</td><td class="num">−12%</td><td class="num up">+8.8%</td></tr>
+      <tr><td>Same, stressed slippage (3/5 bp)</td><td class="num up">+52%</td><td class="num">−13%</td><td class="num up">+6.3%</td></tr>
+      <tr><td>Margin under $25k (3 day trades per 5 days)</td><td class="num up">+52%</td><td class="num">−7%</td><td class="num up">+8.7%</td></tr>
+      <tr><td>Cash account, long-only</td><td class="num up">+24–29%</td><td class="num">−6%</td><td class="num down">−2.4%</td></tr>
+      <tr><td><b>What I expect live</b> (about half the backtest edge)</td><td class="num">+25–35%</td><td class="num">—</td><td class="num">—</td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <h2>How sure are we?</h2>
+  <div class="grid2">
+    <div class="panel" style="display:grid;gap:12px">
+      <div class="eyebrow">Checks it passed</div>
+      <ul class="checks">
+        <li><span>An independent re-implementation, written without seeing my code, matched all 570 trades exactly.</span></li>
+        <li><span>The sealed Aug–Oct 2026 holdout, never looked at, came out positive: +15 bp/trade over 46 trades.</span></li>
+        <li><span>A second price source (exchange tick data) reproduces it: +21 bp, t 3.9.</span></li>
+        <li><span>It holds in each of 7 homebuilder stocks and in Rocket (RKT). SPY, REITs, banks and utilities show nothing.</span></li>
+        <li><span>It shows up in 2020–23 as well, a period it was never fitted on: +14 bp, t 3.2.</span></li>
+        <li><span>The deflated Sharpe ratio, after ~6,000 tried ideas, puts the chance it's real at 93%.</span></li>
+        <li class="x"><span>It did not exist in 2010–19. It belongs to the post-2020 rates-driven market and could fade.</span></li>
+      </ul>
+    </div>
+    <div class="panel" style="display:grid;gap:14px">
+      <div class="eyebrow">Longer bonds, stronger signal</div>
+      <p class="muted" style="font-size:.88rem">Mortgages follow long rates. The signal gets stronger with bond duration, which is what the mechanism predicts.</p>
+      <div class="bars" id="ladder"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What happened to everything else</h2>
+  <p class="muted">Each idea below was tested with costs, a time split and a flipped-direction control. Only the rates-to-housing link lags at the open.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Idea</th><th>Result</th><th>Why</th></tr></thead>
+    <tbody><tr><td>BTC overnight → MSTR shares/options (0DTE, spreads, stops)</td><td><span class="pill down">none</span></td><td>MSTR's open prices BTC's move about 1:1</td></tr><tr><td>BTC → miners, ETH names, Asian BTC stocks, pairs</td><td><span class="pill warn">none / weak</span></td><td>decayed, trust-era artifacts, or open-print fills</td></tr><tr><td>Boyaa (0434.HK) BTC-residual dip buy</td><td><span class="pill down">not tradable</span></td><td>+65 bp at the open print, −25 bp entering at 10:30</td></tr><tr><td>BTC/ETH/SOL weekend and session patterns, FOMC</td><td><span class="pill down">none</span></td><td>no effect in 2017–22</td></tr><tr><td>ML on 27 overnight features</td><td><span class="pill down">none</span></td><td>inside shuffled-label noise</td></tr><tr><td>Oil, metals, country ETFs/ADRs, FX</td><td><span class="pill down">none</span></td><td>opens price the overnight move about 1:1</td></tr><tr><td>Oil → airlines/cruise; gas → producers/utilities</td><td><span class="pill down">none</span></td><td>priced at the open</td></tr><tr><td>Grains → ag stocks and food processors</td><td><span class="pill down">none</span></td><td>priced at the open</td></tr><tr><td>Rates → bond ETFs, insurers, brokers, REITs, banks</td><td><span class="pill down">none</span></td><td>no lag outside housing</td></tr><tr><td>SPY gap-down fill</td><td><span class="pill warn">weak</span></td><td>t 2.8 on 42 trades, out of 288 variants</td></tr><tr><td>Options on the builder signal</td><td><span class="pill down">none</span></td><td>spreads take the edge; only 9% of legs had prints</td></tr><tr><td>Model tweaks (sizing, ZN, NAIL, exits, SPY hedge)</td><td><span class="pill ">no gain</span></td><td>the plain rule stays best</td></tr><tr><td>Housing data releases (new home sales, starts, NAHB)</td><td><span class="pill down">none</span></td><td>no drift after releases; main rule unchanged on those days</td></tr><tr><td>Weekly mortgage rates, 5-day rate trend, ITB–bond spread</td><td><span class="pill down">none</span></td><td>signs flip between halves</td></tr><tr><td>Pre-market entry instead of the open</td><td><span class="pill warn">not worth it</span></td><td>+13 bp gross but ITB has no pre-market prints; tiny capacity</td></tr><tr><td>Skip sessions after holidays?</td><td><span class="pill ">no</span></td><td>2010–26 history: post-holiday effect is noise (p 0.71)</td></tr><tr><td>Trade the builder that lagged most at the open</td><td><span class="pill down">none</span></td><td>+5 bp vs the basket, not significant</td></tr><tr><td>Rates → housing platforms, home goods, solar, fintech</td><td><span class="pill warn">none / weak</span></td><td>only housing-demand names lean positive; none beats ITB</td></tr><tr><td>FINRA daily short-sale volume (500 stocks, 2022–26)</td><td><span class="pill down">not tradable</span></td><td>real but tiny signal (4–10 bp/day); turnover makes costs eat it</td></tr><tr><td>CFTC Treasury positioning (weekly) → ITB</td><td><span class="pill down">none</span></td><td>sign flips between periods; SPY reacts the same</td></tr><tr><td>Treasury auction results → ITB afternoon/overnight</td><td><span class="pill down">none</span></td><td>builders price auction moves within the hour</td></tr><tr><td>Asian chipmakers → US semis; European peers → US peers</td><td><span class="pill down">none</span></td><td>priced at the open; EU lead failed a 2010–26 check</td></tr><tr><td>Pre-market earnings → sector peers; S&P futures → small caps</td><td><span class="pill down">none</span></td><td>peers and small caps move before or at the open</td></tr><tr><td>NAIL (3x homebuilders), long-only</td><td><span class="pill warn">aggressive option</span></td><td>+76%/yr backtest but −20% max DD; same edge, levered</td></tr><tr><td>Regime switch: trade only when builders track bonds</td><td><span class="pill up">edge (safety)</span></td><td>2010–26 t 4.7 vs 2.3 without; explains the dead 2010s</td></tr><tr><td>UK builders vs overnight Treasuries</td><td><span class="pill warn">weak</span></td><td>gross +20–30 bp, but the FTSE 250 moves too; costs and 0.5% stamp duty kill it</td></tr><tr><td>Rates → Rocket mortgage (RKT)</td><td><span class="pill up">edge</span></td><td>+21 bp in 2020–23, +32 bp in 2025–26; forward-testing</td></tr><tr><td>Rates → homebuilders (ITB)</td><td><span class="pill up">edge</span></td><td>the strategy on this page</td></tr></tbody></table></div>
+</section>
+
+
+<section>
+  <h2>What a year of live trading could look like</h2>
+  <p class="muted">20,000 simulated years from $10,000, resampling the real trade results with the edge shrunk to what live trading might keep.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>If the live edge is…</th><th>ITB: median year</th><th>5th to 95th percentile</th><th>Chance of a losing year</th><th>ITB + RKT median</th></tr></thead>
+    <tbody>
+      <tr><td>Same as backtest</td><td class="num up">+76%</td><td class="num">+34% to +131%</td><td class="num">0.1%</td><td class="num up">+112%</td></tr>
+      <tr><td><b>Half (my expectation)</b></td><td class="num up"><b>+33%</b></td><td class="num">+1% to +75%</td><td class="num">4%</td><td class="num up">+45%</td></tr>
+      <tr><td>A quarter</td><td class="num up">+15%</td><td class="num">−12% to +51%</td><td class="num">20%</td><td class="num up">+21%</td></tr>
+      <tr><td>Gone</td><td class="num">0%</td><td class="num">−24% to +32%</td><td class="num down">50%</td><td class="num">0%</td></tr>
+    </tbody></table></div>
+  <p class="muted">Telling "half edge" from "no edge" takes about 400 live trades (1.6 years). The full backtest edge would show within about 100. The monitor (research/zb_itb/monitor.py) runs that test as trades come in.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Account size</th><th>ITB only</th><th>ITB + RKT</th></tr></thead>
+    <tbody>
+      <tr><td>$25k or more</td><td class="num up">+71%/yr, max DD −12%</td><td class="num up"><b>+105%/yr, max DD −9%</b></td></tr>
+      <tr><td>Under $25k (3 day trades per 5 days)</td><td class="num up"><b>+51%</b></td><td class="num up">+32% (two trades a day uses up the limit)</td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <h2>Risks and when it fails</h2>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Situation</th><th>Avg per trade</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Normal days, no data releases</td><td class="num up">+20 bp</td><td>t 4.1; not dependent on CPI or jobs days</td></tr>
+      <tr><td>Jobs-report / FOMC days</td><td class="num up">+44 to +53 bp</td><td>small samples (about 20 each)</td></tr>
+      <tr><td>First session after a market holiday</td><td class="num down">−54 bp</td><td>18 cases; 2010–26 history says noise, so no filter</td></tr>
+      <tr><td>Low-volume opening hour</td><td class="num warn">+5 bp</td><td>capacity about $0.5M per trade</td></tr>
+      <tr><td>Regime ends (rates stop driving housing)</td><td class="num warn">≈ 0</td><td>what 2010–19 looked like</td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <h2>Next steps</h2>
+  <ul class="checks">
+    <li><span>The Alpaca paper trader runs every weekday from Mon 19 Oct (entry ~09:27 ET, exit 10:30 ET, 3% stop, failsafe at 15:50).</span></li>
+    <li><span>After 20+ paper trades, compare real fills against the backtest's official-open and 10:30 prices.</span></li>
+    <li><span>Forward tests keep score independently: zb_itb_v1 (ITB) and zb_rkt_v1 (RKT, the second leg).</span></li>
+    <li><span>An Interactive Brokers version of the trader is built and switches with one setting; it needs IB Gateway logged in on your Mac.</span></li>
+    <li class="x"><span>Shorting from Canada: Wealthsimple can't run this (no shorting, no API, FX fees). IBKR Canada can, or run it long-only.</span></li>
+  </ul>
+</section>
+
+<footer>Code and evidence: quant_v7/research/zb_itb/ (verify/VERIFICATION.md, round5/, round6/) and the trader in quant_v7/live/zb_itb/. Backtests are not guarantees; live results will differ.</footer>
+</main>
+
+<script>
+const D = {"dates": ["2024-05-31", "2024-06-07", "2024-06-14", "2024-06-21", "2024-06-28", "2024-07-05", "2024-07-12", "2024-07-19", "2024-07-26", "2024-08-02", "2024-08-09", "2024-08-16", "2024-08-23", "2024-08-30", "2024-09-06", "2024-09-13", "2024-09-20", "2024-09-27", "2024-10-04", "2024-10-11", "2024-10-18", "2024-10-25", "2024-11-01", "2024-11-08", "2024-11-15", "2024-11-22", "2024-11-29", "2024-12-06", "2024-12-13", "2024-12-20", "2024-12-27", "2025-01-03", "2025-01-10", "2025-01-17", "2025-01-24", "2025-01-31", "2025-02-07", "2025-02-14", "2025-02-21", "2025-02-28", "2025-03-07", "2025-03-14", "2025-03-21", "2025-03-28", "2025-04-04", "2025-04-11", "2025-04-18", "2025-04-25", "2025-05-02", "2025-05-09", "2025-05-16", "2025-05-23", "2025-05-30", "2025-06-06", "2025-06-13", "2025-06-20", "2025-06-27", "2025-07-04", "2025-07-11", "2025-07-18", "2025-07-25", "2025-08-01", "2025-08-08", "2025-08-15", "2025-08-22", "2025-08-29", "2025-09-05", "2025-09-12", "2025-09-19", "2025-09-26", "2025-10-03", "2025-10-10", "2025-10-17", "2025-10-24", "2025-10-31", "2025-11-07", "2025-11-14", "2025-11-21", "2025-11-28", "2025-12-05", "2025-12-12", "2025-12-19", "2025-12-26", "2026-01-02", "2026-01-09", "2026-01-16", "2026-01-23", "2026-01-30", "2026-02-06", "2026-02-13", "2026-02-20", "2026-02-27", "2026-03-06", "2026-03-13", "2026-03-20", "2026-03-27", "2026-04-03", "2026-04-10", "2026-04-17", "2026-04-24", "2026-05-01", "2026-05-08", "2026-05-15", "2026-05-22", "2026-05-29", "2026-06-05", "2026-06-12", "2026-06-19", "2026-06-26", "2026-07-03", "2026-07-10", "2026-07-17", "2026-07-24", "2026-07-31", "2026-08-07", "2026-08-14", "2026-08-21", "2026-08-28", "2026-09-04", "2026-09-11", "2026-09-18", "2026-09-25", "2026-10-02", "2026-10-09", "2026-10-16"], "ls": [0.07, -1.35, -3.87, -4.96, -5.65, -3.48, -1.27, -1.98, -0.97, -3.27, -2.25, -1.07, 2.37, 3.12, 1.63, 6.18, 6.87, 9.39, 12.13, 11.41, 13.68, 12.76, 15.7, 18.43, 20.67, 19.19, 25.17, 27.02, 30.69, 33.55, 33.57, 32.92, 34.08, 31.84, 32.94, 37.68, 40.04, 37.96, 35.19, 39.44, 34.36, 42.5, 45.61, 38.21, 39.93, 43.57, 39.93, 40.66, 40.28, 39.49, 42.22, 45.0, 44.16, 49.7, 50.74, 52.71, 54.73, 59.64, 59.63, 56.34, 63.25, 66.73, 66.81, 67.74, 74.67, 79.32, 77.58, 82.47, 82.18, 82.26, 82.11, 82.67, 84.18, 87.6, 87.83, 89.9, 91.35, 97.91, 99.57, 104.31, 107.92, 107.21, 108.85, 107.95, 103.89, 101.99, 97.12, 98.52, 90.88, 95.88, 94.03, 93.8, 102.77, 112.42, 118.9, 110.35, 108.4, 110.85, 124.93, 123.29, 131.82, 134.21, 143.2, 146.28, 145.62, 142.03, 152.9, 167.16, 188.29, 187.12, 191.62, 184.76, 198.7, 211.2, 223.64, 226.85, 238.01, 240.12, 237.14, 231.48, 235.31, 239.05, 243.86, 251.74, 258.05], "lo": [0.14, -1.17, -2.51, -3.22, -2.8, -2.36, 0.01, 2.45, 3.51, 1.1, 2.18, 2.33, 5.05, 4.56, 3.07, 5.16, 4.47, 5.14, 4.28, 4.28, 5.67, 3.96, 6.54, 10.98, 11.14, 10.71, 14.21, 13.86, 13.86, 15.26, 15.26, 14.7, 14.7, 13.05, 13.07, 15.58, 16.53, 16.13, 13.61, 15.61, 14.3, 16.65, 19.81, 17.76, 19.22, 19.22, 18.06, 17.81, 18.87, 18.55, 19.02, 20.14, 18.64, 20.18, 20.23, 22.3, 23.52, 26.75, 28.46, 24.21, 27.13, 29.55, 29.76, 29.67, 33.85, 33.85, 35.11, 34.69, 32.92, 33.09, 31.99, 29.05, 30.32, 32.08, 34.75, 34.87, 35.15, 39.78, 42.07, 43.9, 45.44, 43.74, 43.74, 42.83, 44.17, 44.49, 43.49, 42.6, 41.81, 45.24, 44.26, 40.01, 40.01, 40.01, 39.72, 37.82, 36.96, 39.59, 45.83, 45.14, 46.03, 46.69, 46.99, 48.66, 51.56, 50.42, 57.08, 65.93, 78.5, 76.79, 75.21, 74.89, 77.11, 79.04, 83.91, 81.91, 85.63, 85.15, 83.11, 79.08, 77.74, 78.32, 75.91, 76.68, 79.29], "mix": [-0.61, -1.13, -1.35, -1.58, -1.81, 0.29, 1.15, -0.28, 1.64, 2.91, 6.73, 11.03, 14.2, 15.65, 14.64, 21.75, 24.96, 26.98, 30.64, 29.35, 30.93, 33.58, 36.6, 41.43, 43.75, 44.98, 51.86, 54.7, 58.49, 62.25, 62.41, 61.81, 63.97, 58.6, 58.95, 65.73, 72.59, 74.01, 69.26, 74.83, 70.29, 75.17, 82.01, 76.16, 79.88, 100.54, 96.95, 98.4, 97.99, 97.51, 104.69, 108.88, 108.21, 118.02, 124.23, 123.86, 127.79, 131.11, 130.38, 123.13, 141.12, 151.43, 148.11, 149.72, 158.91, 170.36, 164.09, 170.53, 178.5, 181.92, 176.11, 176.36, 180.73, 186.25, 185.83, 184.97, 187.92, 199.06, 204.92, 210.49, 216.93, 210.63, 213.29, 212.25, 210.41, 206.19, 201.17, 211.71, 201.62, 214.95, 207.96, 203.9, 218.91, 230.38, 237.42, 227.58, 226.48, 230.09, 246.12, 245.57, 259.58, 266.25, 289.13, 294.48, 296.55, 296.88, 313.85, 338.23, 388.35, 380.99, 390.14, 382.49, 407.54, 434.1, 447.24, 444.81, 458.74, 460.4, 447.46, 435.17, 425.75, 433.58, 438.77, 440.05, 453.29], "monthly": [["2024-05", 0.1], ["2024-06", -5.9], ["2024-07", 3.8], ["2024-08", 5.1], ["2024-09", 6.0], ["2024-10", 5.3], ["2024-11", 8.1], ["2024-12", 5.9], ["2025-01", 3.6], ["2025-02", 1.3], ["2025-03", -0.2], ["2025-04", 0.7], ["2025-05", 2.9], ["2025-06", 6.6], ["2025-07", 7.0], ["2025-08", 8.3], ["2025-09", -0.4], ["2025-10", 5.0], ["2025-11", 6.1], ["2025-12", 4.3], ["2026-01", -4.9], ["2026-02", -2.4], ["2026-03", 7.6], ["2026-04", 10.9], ["2026-05", 5.2], ["2026-06", 14.9], ["2026-07", 8.8], ["2026-08", 9.4], ["2026-09", 0.2], ["2026-10", 4.4]]};
+(function () {
+  const svg = document.getElementById("curve"), W = 820, H = 320, L = 52, R = 16, T = 14, B = 34;
+  const n = D.dates.length, all = D.ls.concat(D.lo, D.mix), ymax = Math.ceil(Math.max(...all) / 100) * 100, ymin = Math.min(0, Math.floor(Math.min(...all) / 50) * 50);
+  const x = i => L + (W - L - R) * i / (n - 1), y = v => T + (H - T - B) * (1 - (v - ymin) / (ymax - ymin));
+  const css = getComputedStyle(document.documentElement), c = k => css.getPropertyValue(k).trim();
+  let g = "";
+  const h0 = D.dates.findIndex(d => d >= "2026-08-11");
+  if (h0 > 0) g += `<rect x="${x(h0)}" y="${T}" width="${x(n - 1) - x(h0)}" height="${H - T - B}" fill="${c("--amber")}" opacity="0.13"/>`;
+  for (let v = ymin; v <= ymax; v += 100) g += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="${c("--rule")}"/><text x="${L - 8}" y="${y(v) + 4}" text-anchor="end" font-size="11" fill="${c("--muted")}" font-family="JetBrains Mono, monospace">${v}%</text>`;
+  let last = "";
+  D.dates.forEach((d, i) => { const yr = d.slice(0, 7); if ((yr.endsWith("-01") || i === 0) && yr !== last) { last = yr; g += `<text x="${x(i)}" y="${H - 12}" font-size="11" fill="${c("--muted")}" font-family="JetBrains Mono, monospace">${d.slice(0, 4)}${i === 0 ? "-" + d.slice(5, 7) : ""}</text>`; } });
+  const path = (arr, col, w) => `<polyline fill="none" stroke="${col}" stroke-width="${w}" stroke-linejoin="round" points="${arr.map((v, i) => x(i).toFixed(1) + "," + y(v).toFixed(1)).join(" ")}"/>`;
+  g += path(D.lo, c("--muted"), 1.6) + path(D.mix, c("--up"), 1.8) + path(D.ls, c("--accent"), 2.4);
+  const e = (arr, col, lab) => `<circle cx="${x(n - 1)}" cy="${y(arr[n - 1])}" r="3.5" fill="${col}"/><text x="${x(n - 1) - 6}" y="${y(arr[n - 1]) - 8}" text-anchor="end" font-size="11.5" font-weight="600" fill="${col}" font-family="JetBrains Mono, monospace">${lab} +${Math.round(arr[n - 1])}%</text>`;
+  g += e(D.ls, c("--accent"), "L/S") + e(D.mix, c("--up"), "mix") + e(D.lo, c("--muted"), "long");
+  svg.innerHTML = g;
+  const ladder = [["2-yr ZT", 10.1, 2.3], ["5-yr ZF", 13.5, 3.1], ["10-yr ZN", 14.7, 3.3], ["30-yr ZB", 22.4, 5.2], ["Ultra UB", 24.4, 5.7]];
+  document.getElementById("ladder").innerHTML = ladder.map(([k, v, t]) => `<div class="bar"><span>${k}</span><span class="track"><span class="fill" style="display:block;width:${(v / 26 * 100).toFixed(0)}%"></span></span><span class="val">+${v} bp</span></div>`).join("") + `<p class="muted" style="font-size:.8rem;margin-top:4px">Net per trade into ITB, 2024–26. The live rule uses ZB.</p>`;
+})();
+</script>

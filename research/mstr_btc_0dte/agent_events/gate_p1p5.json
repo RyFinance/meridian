@@ -1,0 +1,65 @@
+{
+  "seed": 20261017,
+  "draws": 10000,
+  "daily_file": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/mstr_daily_yf.parquet",
+  "P1": {
+    "rule": "P1",
+    "hold_sessions": 1,
+    "samples": {
+      "holdout_2023_2026": {
+        "n_events": 85,
+        "event_net_mean": -0.005777445674303326,
+        "event_net_boot_q025": -0.015770141376017035,
+        "control_mean_same_length": 0.003857662279713304,
+        "control_sessions": 950,
+        "excess_mean": -0.00963510795401663,
+        "excess_boot_q025": -0.01962780365573034
+      },
+      "development_2020_2022": {
+        "n_events": 21,
+        "event_net_mean": -0.01234798073839296,
+        "event_net_boot_q025": -0.03733495745852109,
+        "control_mean_same_length": 0.0015791351308711518,
+        "control_sessions": 777,
+        "excess_mean": -0.01392711586926411,
+        "excess_boot_q025": -0.03891409258939224
+      }
+    },
+    "primary_pass": null,
+    "holdout_under_daily_control": {
+      "control_daily_mean": 0.0038792310779420655,
+      "excess_boot_q025": -0.0196493724539591,
+      "excess_mean": -0.00965667675224539
+    }
+  },
+  "P5": {
+    "rule": "P5",
+    "hold_sessions": 5,
+    "samples": {
+      "holdout_2023_2026": {
+        "n_events": 85,
+        "event_net_mean": 0.012267410861003282,
+        "event_net_boot_q025": -0.014010517306819929,
+        "control_mean_same_length": 0.018830315951848378,
+        "control_sessions": 946,
+        "excess_mean": -0.006562905090845096,
+        "excess_boot_q025": -0.0328408332586683
+      },
+      "development_2020_2022": {
+        "n_events": 21,
+        "event_net_mean": 0.03848549489185524,
+        "event_net_boot_q025": -0.03996966736072116,
+        "control_mean_same_length": 0.00913801073507926,
+        "control_sessions": 777,
+        "excess_mean": 0.029347484156775978,
+        "excess_boot_q025": -0.049107678095800425
+      }
+    },
+    "primary_pass": false,
+    "holdout_under_daily_control": {
+      "control_daily_mean": 0.0038792310779420655,
+      "excess_boot_q025": -0.017889748384761994,
+      "excess_mean": 0.008388179783061216
+    }
+  }
+}

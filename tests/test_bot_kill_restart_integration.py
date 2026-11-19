@@ -161,14 +161,16 @@ def test_watchdog_detects_the_crash_via_stale_heartbeat(scenario_paths):
     crash's aftermath (heartbeat older than threshold) rather than re-racing
     the timing-sensitive subprocess kill a second time."""
     hb = scenario_paths["heartbeat"]
-    old_touch_time = datetime.now() - timedelta(hours=30)
+    # Fixed mid-week `now` so the 30h gap is all session time whatever day the suite runs.
+    now = datetime(2026, 10, 14, 12, 0, 0)  # Wednesday
+    old_touch_time = now - timedelta(hours=30)
     touch_heartbeat(hb)
     import os
     os.utime(hb, (old_touch_time.timestamp(), old_touch_time.timestamp()))
 
     alerts_path = hb.parent / "watchdog_alerts.jsonl"
     alerter = BotAlerter(alerts_path=alerts_path)
-    fired = check_dead_mans_switch(max_age_hours=26, now=datetime.now(), heartbeat_path=hb, alerter=alerter)
+    fired = check_dead_mans_switch(max_age_hours=26, now=now, heartbeat_path=hb, alerter=alerter)
 
     assert fired is True
     import json

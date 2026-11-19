@@ -1,0 +1,21 @@
+{
+  "fixed_rule": "P1: BTC off-hours >= +2%, MSTR open-to-close, 3 bp + $0.005/share per side",
+  "binance_coverage": [
+    "2026-01-31 19:00:00-05:00",
+    "2026-09-30 19:59:00-04:00"
+  ],
+  "overlap_sessions": 6,
+  "overlap_threshold_agreement": 1.0,
+  "overlap_max_abs_btc_off_difference_bp": 1.8868343561651013,
+  "forward": {
+    "eligible_sessions": 36,
+    "active_trades": 5,
+    "mean_active_net_bp": 285.37260423770425,
+    "active_trade_t": 1.1410530695909744,
+    "net_compound": 0.14455041913308841,
+    "max_drawdown": -0.012423705328307055,
+    "first_date": "2026-08-11",
+    "last_date": "2026-09-30"
+  },
+  "source_transition_caveat": "Binance BTCUSDT perpetual is a different source from the original BTC minute file; this is a forward audit only."
+}

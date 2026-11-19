@@ -1,0 +1,151 @@
+{
+  "strategy": "eth_cme_break_v1",
+  "summary": {
+    "n": 9,
+    "gross_mean_bp": 24.764327095692895,
+    "t": 3.099981223160177,
+    "hit": 0.7777777777777778,
+    "cum_net_2bp_pct": 2.0487894386123604,
+    "cum_net_5bp_pct": 1.7787894386123604,
+    "cum_net_10bp_pct": 1.3287894386123604,
+    "kill": false,
+    "gate": "pending"
+  },
+  "trades": [
+    {
+      "day": "2026-10-19",
+      "gross": 0.0006586846556188731,
+      "net_2bp": 0.0004586846556188731,
+      "net_5bp": 0.00015868465561887308,
+      "net_10bp": -0.00034131534438112694
+    },
+    {
+      "day": "2026-10-20",
+      "gross": 0.003526073717677377,
+      "net_2bp": 0.003326073717677377,
+      "net_5bp": 0.003026073717677377,
+      "net_10bp": 0.002526073717677377
+    },
+    {
+      "day": "2026-10-21",
+      "gross": 0.0027264032797765093,
+      "net_2bp": 0.0025264032797765092,
+      "net_5bp": 0.0022264032797765093,
+      "net_10bp": 0.0017264032797765093
+    },
+    {
+      "day": "2026-10-22",
+      "gross": 0.004364612950736442,
+      "net_2bp": 0.0041646129507364425,
+      "net_5bp": 0.003864612950736442,
+      "net_10bp": 0.003364612950736442
+    },
+    {
+      "day": "2026-10-23",
+      "gross": -0.0008883347228634117,
+      "net_2bp": -0.0010883347228634118,
+      "net_5bp": -0.0013883347228634117,
+      "net_10bp": -0.0018883347228634117
+    },
+    {
+      "day": "2026-10-27",
+      "gross": 0.002794042619207433,
+      "net_2bp": 0.002594042619207433,
+      "net_5bp": 0.002294042619207433,
+      "net_10bp": 0.0017940426192074332
+    },
+    {
+      "day": "2026-10-29",
+      "gross": 0.0066550545012464294,
+      "net_2bp": 0.00645505450124643,
+      "net_5bp": 0.00615505450124643,
+      "net_10bp": 0.005655054501246429
+    },
+    {
+      "day": "2026-10-30",
+      "gross": -0.0004922030660703584,
+      "net_2bp": -0.0006922030660703583,
+      "net_5bp": -0.0009922030660703585,
+      "net_10bp": -0.0014922030660703585
+    },
+    {
+      "day": "2026-11-02",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-03",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-04",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-05",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-06",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-09",
+      "gross": 0.00294356045079431,
+      "net_2bp": 0.00274356045079431,
+      "net_5bp": 0.00244356045079431,
+      "net_10bp": 0.0019435604507943099
+    },
+    {
+      "day": "2026-11-10",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-11",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-12",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-13",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-16",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-17",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    },
+    {
+      "day": "2026-11-18",
+      "excluded": [
+        "market_asof_not_final_when_recorded"
+      ]
+    }
+  ]
+}

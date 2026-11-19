@@ -1,0 +1,2011 @@
+
+=== PAGE 1 ===
+THE JOURNAL OF FINANCE •VOL. LXXI, NO. 3 •JUNE 2016
+Local Currency Sovereign Risk
+WENXIN DU and JESSE SCHREGER∗
+ABSTRACT
+We introduce a new measure of emerging market sovereign credit risk: the local cur-
+rency credit spread, deﬁned as the spread of local currency bonds over the synthetic
+local currency risk-free rate constructed using cross-currency swaps. We ﬁnd that lo-
+cal currency credit spreads are positive and sizable. Compared with credit spreads on
+foreign-currency-denominated debt, local currency credit spreads have lower means,
+lower cross-country correlations, and lower sensitivity to global risk factors. We dis-
+cuss several major sources of credit spread differentials, including positively corre-
+lated credit and currency risk, selective default, capital controls, and various ﬁnancial
+market frictions.
+WHEN A SOVEREIGN borrows in its own currency, the spread it pays over the
+U.S. Treasury risk-free benchmark might contain two major types of risk: cur-
+rency risk and credit risk. We introduce a new sovereign risk measure, the
+local currency (LC) credit spread , to measure the credit risk component of LC-
+denominated debt. We ﬁnd that the LC credit spread is positive and sizable for
+emerging market sovereigns, despite their ability to print their own currency to
+repay the debt. Furthermore, we document signiﬁcant differences between the
+LC credit spread and the conventional measure of emerging market sovereign
+∗Wenxin Du is with the Federal Reserve Board and Jesse Schreger is with Princeton University
+and Harvard Business School. We are especially grateful to John Campbell, Gita Gopinath, Robin
+Greenwood, Kenneth Rogoff, and Luis Viceira for their invaluable advice and guidance. We thank
+the Editor, Kenneth Singleton, an Associate Editor, two anonymous referees, Cristina Arellano,
+Javier Bianchi, Emmanuel Farhi, Donna Fletcher, Jeffrey Frankel, Jeffry Frieden, Jakub Jurek,
+Sebnem Kalemli-Ozcan, Guido Lorenzoni, Matteo Maggiori, Rui Mano, Michael Michaux, Michael
+Rashes, Helene Rey, Jeremy Stein, Lawrence Summers, Adrien Verdelhan, Vivian Yue, and seminar
+participants at AQR Capital Management, BIS, Cass Business School Federal Reserve Board,
+Harvard, IMF Institute, Maryland, Melbourne, NBER IFM, Stanford GSB, State Street, Tsinghua,
+UCLA Anderson, Wharton, UCSD, UVA Darden, Western Finance Association, and the World Bank
+for comments and suggestions. We are also indebted to numerous people at governments, central
+banks, investment banks, the Emerging Market Trading Association, and the Luxembourg Stock
+Exchange who helped us gather data on emerging market ﬁxed income securities. The authors
+gratefully acknowledge ﬁnancial support from the International Economics group at Harvard
+University. Schreger was a Dissertation Intern at the Federal Reserve Board during part of the
+time when this research was conducted. Both authors have no conﬂects of interest with respect
+toThe Journal of Finance’s disclosure policy. The views in this paper are solely the responsibility
+of the authors and should not be interpreted as reﬂecting the views of the Board of Governors of
+the Federal Reserve System or any other person associated with the Federal Reserve System. All
+errors are our own.
+DOI: 10.1111/joﬁ.12389
+1027
+=== PAGE 2 ===
+1028 The Journal of FinanceR/circlecopyrt
+risk based on foreign currency -denominated external debt, the foreign currency
+(FC) credit spread. LC credit spreads have lower means, lower cross-country
+correlations, and lower sensitivity to global risk factors. In addition, investors’
+expectation of LC depreciation upon sovereign default can lower the LC credit
+spread relative to the FC credit spread. Selective default, capital controls, and
+ﬁnancial market frictions can also contribute to the credit spread differentials.
+An understanding of the credit risk on LC sovereign debt is important be-
+cause LC debt has become the primary form of ﬁnancing for many emerging
+market governments, as well as a growing global asset class. While an impor-
+tant literature examines why emerging markets could not borrow in their own
+currency from foreigners in the past (Eichengreen and Hausmann ( 2005 )), the
+situation has changed dramatically over the last decade. As we show in Du and
+Schreger ( 2015 ), the mean share of LC debt in total external sovereign debt
+held by nonresidents increased from around 10% to nearly 60% over the past
+decade for a sample of 14 emerging markets. According to volume surveys con-
+ducted by the Emerging Market Trading Association (EMTA), the share of LC
+debt in total offshore emerging market debt trading volume has increased from
+35% in 2000 to 66% in 2013, reaching $3.5 trillion. The growing importance of
+LC debt markets stands in stark contrast to the declining role of FC sovereign
+ﬁnancing. The popular country-level JP Morgan Emerging Market Bond In-
+dex (EMBI), commonly used in academic research to measure sovereign risk,
+today tracks a dwindling number of outstanding FC eurobonds with declining
+liquidity and trading volume.1
+Taking a frictionless ﬁnancial market as a benchmark, we construct the
+LC risk-free rate by swapping the dollar cash ﬂows from a default-free U.S.
+Treasury bond into the LC using a cross-currency swap (CCS) with negligi-
+ble counterparty risk. We then deﬁne the LC credit spread as the difference
+between the nominal yield on an LC bond and this LC risk-free rate, or the
+deviation from covered interest parity (CIP) between government bond yields
+in emerging markets and the United States. In the absence of ﬁnancial market
+frictions, the LC credit spread can be positive only if there is explicit default
+risk associated with the LC debt. Formally speaking, the LC credit spread is
+exactly equal to the risk-neutral expected default loss of the LC bond under the
+LC risk-neutral measure.
+From a dollar investor’s perspective, the LC credit spread is equivalent to the
+synthetic dollar spread on a swapped LC bond over the U.S. Treasury yield. By
+swapping all the promised cash ﬂows of LC debt into the U.S. dollar, a dollar
+investor can lock in the LC credit spread even if the value of the currency
+plummets—as long as explicit default is avoided. If an LC default does occur,
+in addition to the default loss measured in dollars, the dollar investor will
+have overhedged currency risk, as the CCS notional exceeds the realized LC
+1Furthermore, according to the Credit Derivative Physical Settlement Matrix published by the
+International Swaps and Derivatives Association, defaults on LC bonds governed under domestic
+law do not constitute credit events that trigger credit default swap (CDS) contracts in emerging
+markets. As a result, sovereign CDS spreads cannot directly characterize LC sovereign credit risk.
+=== PAGE 3 ===
+Local Currency Sovereign Risk 1029
+bond cash ﬂows due to the loss caused by default. The valuation impact of this
+currency hedging error depends on the covariance between currency risk anddefault risk, which we refer to as the “quanto adjustment.” Formally speaking,
+under the dollar risk-neutral measure, the LC credit spread is equal to the risk-
+neutral expected default loss of the LC bond plus the quanto adjustment. In thecase of positively correlated credit and currency risk, the quanto adjustment
+is negative, and thus the LC credit spread will understate the risk-neutral
+expected default loss under the dollar measure.
+Using a new data set of daily zero-coupon LC and FC yield curves and swap
+rates for 10 major emerging market countries with sizable LC and FC sovereign
+debt markets from 2005 to 2014, we present the ﬁrst set of broad stylized factsabout LC sovereign risk and its relationship to FC sovereign risk. We ﬁnd
+that LC credit spreads are signiﬁcantly above zero. For ﬁve-year zero-coupon
+bonds, the mean LC credit spread is equal to 145 basis points, which accounts
+for more than one-quarter of the LC nominal spread over U.S. Treasuries. This
+LC credit spread is lower than the average credit spread of 201 basis points onFC sovereign debt during the same period.
+LC and FC credit spreads are different along three important dimensions.
+First, LC credit spreads are persistently lower than FC credit spreads in 9 outof 10 sample countries, with the exception of Brazil. The mean LC-over-FC
+credit spread differential is equal to negative 56 basis points. The gap between
+LC and FC credit spreads signiﬁcantly widened during the peak of the crisis fol-lowing the Lehman Brothers bankruptcy. Second, FC credit spreads are much
+more correlated across countries than LC credit spreads. The ﬁrst principal
+component (PC) can explain 77% of the variation in FC credit spreads, but only54% of the variation in LC credit spreads, pointing to the relative importance
+of country-speciﬁc factors in driving LC spreads. Third, FC credit spreads are
+much more correlated with global risk factors than LC credit spreads, in boththe ex-ante yield space and the ex-post return space. Despite the common per-
+ception that emerging market LC debt is very risky, we ﬁnd that, after the
+currency risk is hedged, swapped LC debt has lower loadings on global risk fac-
+tors than FC debt. After presenting the stylized facts, we discuss three potential
+sources of the credit spread differentials: (1) covariance between currency andcredit risk, or the quanto adjustment, (2) selective default and capital control
+risk, and (3) several important ﬁnancial market frictions.
+First, the covariance between currency and default risk can create a wedge
+between LC and FC credit spreads. Our simple calibration suggests that a 39%
+expected LC depreciation upon default relative to the counterfactual nondefault
+state would imply an equal expected default loss on the LC and FC debt underthe dollar risk-neutral measure. Our risk-neutral calibration of depreciation
+upon default based on CDS spreads denominated in different currencies gives
+an estimate of about 36%. In addition, we perform a historical calibration ofdepreciation upon default using ex-post realized exchange rates over a ﬁve-year
+horizon and historical default classiﬁcations by Reinhart and Rogoff ( 2009 )
+and Cruces and Trebesch ( 2013 ). We show that the value of the currency in
+defaulting countries is 27% to 34% lower than that in ex-ante similar countries
+=== PAGE 4 ===
+1030 The Journal of FinanceR/circlecopyrt
+without a default. Therefore, the magnitude of the covariance adjustment is
+broadly equal to the observed mean difference in credit spreads, suggesting
+that LC and FC bonds on average have similar risk-neutral expected default
+losses under the dollar measure.
+Second, selective default and capital controls can also contribute to credit
+spread differentials. Selective default is the risk that the sovereign may choose
+to default on one type of debt but not on the others. In our sample countries,
+the vast majority of LC debt is issued in domestic markets under domestic law,
+while FC debt is issued in international markets under foreign law. Default out-
+comes can be quite different for bonds governed under different jurisdictions,
+as illustrated by the Russian default in 1998 (Dufﬁe, Pedersen, and Single-
+ton ( 2003 )), and the recent Greek default experience (Chamon, Trebesch, and
+Schumacher ( 2014 )). It is a priori ambiguous whether LC or FC sovereign debt
+is associated with a higher probability or severity of default, as the recent
+historical incidence of domestic LC default and FC external default is quite
+comparable (Moody’s ( 2014 ), Standard & Poor’s ( 2014 )). In addition to outright
+default, foreign holders of LC debt also face several risks not present in FC
+debt, including currency convertibility risk as well as the risks of changing
+taxation and regulation. From an offshore investor’s perspective, we consider
+these additional risks as a general form of credit risk on LC debt even though
+the government may not explicitly break the bond covenants. We show that
+capital controls and jurisdiction risks are particularly helpful in explaining the
+Brazilian exception, where the LC credit spread is higher than the FC credit
+spread.
+Third, various ﬁnancial market frictions can also affect the relative pricing of
+swapped LC and FC bonds. We discuss the impacts of differential liquidity risk,
+market segmentation between domestic and external markets, short-selling
+constraints, and no-arbitrage violations in the currency markets. In particular,
+we show that, compared to FC debt, swapped LC debt is more liquid but more
+difﬁcult to short, and is more likely affected by market segmentation between
+domestic and external debt markets as well as frictions in the currency markets.
+We quantify the plausible magnitudes for these frictions. These estimates can
+be further reﬁned in future work by focusing on speciﬁc frictions.
+Our paper contributes to several strands of the literature. Our primary con-
+tribution is to present a set of new stylized facts about LC sovereign risk,
+contributing to work by Reinhart and Rogoff ( 2011 ) on domestic defaults
+and earlier work by Burger and Warnock ( 2007 ) and Burger, Warnock, and
+Warnock ( 2012 ) on pricing LC debt using bond return indices. By contrasting
+LC sovereign risk with FC sovereign risk, our work is also closely related to
+the large empirical literature on FC sovereign risk and currency risk, includ-
+ing Longstaff et al. ( 2011 ), Borri and Verdelhan ( 2012 ), Lustig and Verdel-
+han ( 2007 ), Lustig, Roussanov, and Verdelhan ( 2014 ), and Lettau, Maggiori,
+and Weber ( 2014 ). We further contribute to the literature using currency for-
+wards or swaps to study ex-ante yield differentials across currencies. Popper
+(1993 ) and Fletcher and Taylor ( 1996 ) document small and less persistent devi-
+ations from covered parity between Treasury yields in developed markets. Yield
+=== PAGE 5 ===
+Local Currency Sovereign Risk 1031
+differentials between euro- and dollar-denominated sovereign bonds are exam-
+ined for three emerging markets by Buraschi, Meguturk, and Sener ( 2014 )a n d
+for European sovereigns by Corradin and Rodriguez-Moreno ( 2014 ). CCS have
+also been used to study corporate credit spreads in different currencies and
+their relationship to corporate issuance decisions (McBrady and Schill ( 2007 )).
+In addition, our results shed further light on the joint dynamics between
+currency and default risk and thus are related to the literature on so-called
+“cousin risks” (Garcia and Lowenkron ( 2005 )). The role of correlation between
+foreign exchange (FX) and default risk in affecting currency-speciﬁc corporate
+credit spreads is also studied by Jankowitsch and Stefan ( 2005 ). Furthermore,
+we document various ﬁnancial market frictions in emerging market currency
+and ﬁxed income markets. The existing asset pricing literature helps us un-
+derstand credit spread differentials in the presence of ﬁnancial market fric-
+tions including illiquidity (i.e., Chen, Lesmond, and Wei ( 2007 ), Bao, Pan, and
+Wang ( 2011 )), short-selling constraints (i.e., Miller ( 1977 ), Dufﬁe, Garleanu,
+and Pedersen ( 2002 )), market segmentation (i.e., Gromb and Vayanos ( 2002 ),
+Greenwood and Vayanos ( 2014 )), and slow-moving capital (i.e., Shleifer and
+Vishny ( 1997 ), Dufﬁe ( 2010 )).
+The rest of the paper is structured as follows. Section Iformally introduces
+the LC credit spread measure. Section IIpresents new stylized facts on LC
+sovereign risk. Section IIIdiscusses major sources of credit spread differentials.
+Section IVconcludes.
+I. LC and FC Sovereign Credit Spreads
+A. Historical Defaults on LC Debt
+Although sovereigns have the ability to print the currency in which LC bonds
+are denominated, they may still choose to default on the debt for economic or
+political reasons. The government might ﬁnd it preferable to explicitly default
+rather than tolerate very high inﬂation,2or it might ﬁnd that the additional
+cost of defaulting on LC debt is small if the sovereign has already decided to
+default on its FC debt. Additionally, LC debt issued in domestic markets and
+governed under domestic law contains the risk that sovereigns can change the
+law. The sovereign can also suspend currency convertibility or impose capi-
+tal controls on the repatriation of foreign funds without explicitly breaking
+the bond covenants. Our model-free empirical measure, the LC credit spread,
+captures these credit risks embedded in LC debt.
+One famous example of domestic sovereign default is the Russian default in
+1998. Prior to the default, Russia had successfully brought down chronically
+high inﬂation from three digits to around 10% by early 1998. When the ﬁs-
+cal crisis began, rather than ﬁnancing the sovereign debt entirely by printing
+money and exposing the country to very high inﬂation once again, the gov-
+ernment instead chose to selectively default on three-month LC Treasury bills
+2In Du and Schreger ( 2015 ), we present a model in which private FC debt discourages the
+government from inﬂating away LC sovereign debt and generates equilibrium default risk.
+=== PAGE 6 ===
+1032 The Journal of FinanceR/circlecopyrt
+(GKO) and a dollar-denominated bond under domestic jurisdiction (MINFIN 3)
+before carrying out more comprehensive debt restructuring. Dufﬁe, Pedersen,
+and Singleton ( 2003 ) provide a detailed discussion of the yield differentials
+across different Russian sovereign bonds around the default, suggesting that
+the market expected different default scenarios for different types of bonds
+issued by the same sovereign. Another example of an LC sovereign default is
+given by Turkey in 1999, soon after the Asian and Russian crises and the Ko-
+caeli earthquake. While inﬂation in Turkey was around 70%, the government
+defaulted by retroactively imposing high withholding taxes on all outstanding
+LC government securities. Fixed rate LC bonds were taxed at 20%, while FC
+debt was untouched. Given the uncertainty in LC default and recovery, an
+empirical measure is needed to assess credit risk on LC debt.
+B. Deﬁnition of the LC Credit Spread
+In deﬁning and interpreting the LC credit spread under a frictionless ﬁnan-
+cial market, we maintain three key assumptions:
+ASSUMPTION 1:The ﬁnancial market does not allow risk-free arbitrage. In par-
+ticular, we assume that (1) all bonds have perfect liquidity, (2) all bonds can
+be accessed by unconstrained arbitrageurs, (3) there are no short-selling con-
+straints, and (4) there is a perfectly elastic supply of long-term capital denomi-
+nated in both the U.S. dollar and emerging market local currencies.3
+ASSUMPTION 2:FX forward and swap contracts are free from counterparty risk.
+ASSUMPTION 3:U.S. Treasuries denominated in dollars are default-free.
+Before proceeding to the deﬁnition of the LC credit spread, we ﬁrst explain
+how to derive the long-term FX forward premium implicit in the zero-coupon
+ﬁxed-for-ﬁxed CCS. A ﬁxed-for-ﬁxed LC/dollar CCS can be constructed in two
+steps. The investor ﬁrst swaps ﬁxed LC cash ﬂows into ﬂoating U.S. London
+Interbank Offer Rate (LIBOR) cash ﬂows,4and then swaps ﬂoating U.S. LIBOR
+cash ﬂows into ﬁxed dollar cash ﬂows. We show in the following lemma that
+the difference between the two swap rates, or the zero-coupon ﬁxed-for-ﬁxed
+LC/dollar CCS rate, must be equal to the long-term forward premium by no
+arbitrage.5All proofs can be found in the Appendix.
+3These assumptions for frictionless ﬁnancial markets follow Buraschi, Meguturk, and Sener
+(2014 ).
+4For Mexico, Hungary, Israel, and Poland in our sample, this step itself combines two interest
+rate swaps: a plain-vanilla LC ﬁxed for LC ﬂoating interest rate swap and a cross-currency LC
+ﬂoating for U.S. LIBOR basis swap. U.S. dollar tenor basis swaps are used when the interest
+rate swap and CCS are referenced to U.S. LIBOR cash ﬂows at different tenors (e.g., three-month
+versus six-month U.S. LIBOR).
+5In the case that long-dated forward contracts are directly traded, such as the euro/dollar pair,
+the difference between the CCS and long-term forward is indeed very small (Buraschi, Meguturk,
+and Sener ( 2014 )).
+=== PAGE 7 ===
+Local Currency Sovereign Risk 1033
+LEMMA 1:We let F t,t+n≡exp(ft,t+n)denote the outright forward exchange rate
+and Et≡exp(et)denote the spot exchange rate, measured as LC units per dollar.
+Given the log zero-coupon swap rate ˜rLC
+ntfrom the ﬁxed LC for U.S. LIBOR CCS
+and ˜r$
+ntfrom the ﬁxed dollar for U.S. LIBOR interest rate swap, the zero-coupon
+ﬁxed-for-ﬁxed LC/dollar CCS rate ( ρnt≡˜rLC
+nt−˜r$
+nt) is equal to the long-term
+forward premium:
+ρnt=1
+n(ft,t+n−et). (1)
+To measure credit risk on LC debt, we ﬁrst construct the LC risk-free rate.
+We demonstrate in the following proposition that we can construct a default-
+free LC instrument by swapping the U.S. Treasury bond into the LC using
+the CCS contract. Figure 1presents a cash ﬂow diagram of this synthetic LC
+default-free bond.
+PROPOSITION 1:Let y∗$
+ntdenote the log zero-coupon yield on the n-year U.S.
+Treasury bond, and ρntdenote the n-year ﬁxed-for-ﬁxed log zero-coupon CCS
+rate from the U.S. dollar to the LC. We can obtain the following log LC risk-free
+rate:
+y∗LC
+nt=y∗$
+nt+ρnt. (2)
+Once we have the LC risk-free rate, we can deﬁne the LC credit spread as
+follows.
+DEFINITION 1:The LC credit spread, sLCC S
+nt , is deﬁned as the difference between
+the LC nominal yield, yLC
+nt, and the LC risk-free rate, y∗LC
+nt,
+sLCC S
+nt≡yLC
+nt−y∗LC
+nt=yLC
+nt−/parenleftbig
+y∗$
+nt+ρnt/parenrightbig
+, (3)
+or the deviation in CIP between government bond yields in emerging markets
+and the United States.
+We provide a formal interpretation of the LC credit spread under the LC and
+dollar risk-neutral measure, respectively, in Proposition 2. For simplicity, we
+consider a one-period defaultable LC bond. Intuitively, the LC credit spread
+gives the expected default loss as a fraction of the face value of the debt in
+LC, regardless of the exchange rate dynamics. However, the dollar numeraire-
+based LC credit risk measures the expected default loss as a fraction of the
+face value of the LC debt in dollars, which would be higher than the LC credit
+spread if the LC is expected to be less valuable in the default state than in the
+repayment state.
+PROPOSITION 2:LetQLC
+tandQ$
+tdenote the risk-neutral measures for the LC
+and U.S. dollar, respectively, at time t, and LLC
+t+1denote the default loss on the
+LC bond at time t +1measured as a fraction of the face value in the LC. Then,
+the LC credit spread at time t is given by
+=== PAGE 8 ===
+1034 The Journal of FinanceR/circlecopyrt
+Figure 1. Cash ﬂow diagram for a synthetic LC risk-free bond. This diagram shows cash
+ﬂows for a synthetic LC risk-free bond by swapping the U.S. Treasury bond into pesos using
+an outright FX forward contract. At time t, a peso investor exchanges ( Et/Ft,t+n)P∗$
+ntpesos for
+P∗$
+nt/Ft,t+ndollars with a bank at the spot exchange rate Et,w h e r e P∗$
+ntis the price of the Treasury
+at time tandFt,t+nis the outright forward rate. She then invests all the dollar proceeds into zero-
+coupon U.S. Treasuries with face value 1 /Ft,t+n. Meanwhile, at time t, she enters into an outright
+forward contract to sell 1 /Ft,t+ndollars forward for one peso at time t+n.A tt i m e t+n,t h eU . S .
+government repays full principal, 1 /Ft,t+ndollars. The peso investor gives the dollar payment to
+the bank to fulﬁll the outright forward contract and receives one peso. The net cash ﬂows of this
+synthetic risk-free peso bond is that the peso investor invests in ( Et/Ft,t+n)P∗$
+ntpesos at time tand
+receives one peso with certainty at time t+n. Therefore, the synthetic peso risk-free rate is given
+byy∗LC
+nt=−1
+nlog[( Et/Ft,t+n)P∗$
+nt]=y∗$
+nt+ρnt.
+sLCC S
+t≈EQLC
+tLLC
+t+1 under QLC(4)
+≈EQ$
+tLLC
+t+1−qtunder Q$, (5)
+where q t=CovQ$
+t(1−LLC
+t+1,Et/Et+1)
+EQ$
+t(1−LLC
+t+1)EQ$
+t(Et/Et+1)measures the covariance between currency and
+credit risk under Q$, referred to as the quanto adjustment.
+=== PAGE 9 ===
+Local Currency Sovereign Risk 1035
+Throughout the paper, we refer to EQLC
+tLLC
+t+1as the credit risk of the LC debt
+measured using the LC numeraire and EQ$
+tLLC
+t+1as the credit risk of the LC debt
+measured using the dollar numeraire. For simplicity of exposition, we assume
+two future states: a repayment state in which LLC
+t+1=0 and a default state in
+which LLC
+t+1=δt+1.
+Depending on the choice of numeraire, the LC credit spread can be inter-
+preted in the following two ways. First, equation (4)shows that the LC credit
+spread captures the risk-neutral expected default loss of the LC debt measured
+in terms of the LC risk-free bond. At time t,by going long one unit of the LC
+sovereign bond at yLC
+t=y∗LC
+t+sLCC S
+t and going short one unit of the LC risk-
+free bond at y∗LC
+t, the LC investor receives the LC credit spread, sLCC S
+t , in units
+of LC. At time t+1, the investor receives zero net cash ﬂows if the sovereign
+repays and loses δt+1units of LC if the sovereign defaults.6By no arbitrage, at
+time t, the risk-neutral expected default loss of the LC debt at t+1m u s tb e
+equal to sLCC S
+t percent of one unit of the risk-free LC. This LC measure-based
+perspective captures the credit component of the LC debt, independent of the
+joint dynamics between currency and default risk.
+Second, equation (5)shows that the LC credit spread also captures the risk-
+neutral expected default loss of LC debt measured in terms of risk-free dollar
+bonds, plus an adjustment for the covariance between currency risk and default
+risk. To see this, in Figure 2, we consider a dollar investor who uses the CCS to
+hedge the promised cash ﬂows of the LC bond. We refer to the LC bond and CCS
+package as a swapped LC bond with promised yield equal to ySLC
+t=yLC
+t−ρt.
+The LC credit spread is also equal to the dollar spread on the swapped LC bond,
+sLCC S
+t=(yLC
+t−ρt)−y∗$
+t=sSLC
+t−y∗$
+t. To collect the LC credit spread from the
+dollar investor’s perspective, we consider the strategy going long one unit of
+the swapped LC bond at ySLC
+tand shorting one unit of the U.S. Treasury bond
+aty∗$
+t.7The dollar investor receives the LC credit spread, sLCC S
+t , in dollars at
+time t. If the sovereign repays, the strategy yields zero net cash ﬂows at time
+t+1. The dollar investor can lock in sLCC S
+t dollars even if the LC depreciates,
+provided that explicit default is avoided. However, if the sovereign defaults, the
+currency hedging becomes imperfect, and the dollar investor loses δt+1dollars
+and still needs to unwind the swap position with unmatched LC cash ﬂows. In
+the case of positively correlated credit and currency risk, the LC depreciates
+more upon default relative to the nondefault state. The dollar investor holding
+the swapped LC bond has a net long position in dollars in the event of an LC
+default, which corresponds to additional currency gains.8These proﬁts would
+be passed into an ex-ante negative spread adjustment. As shown in Section I
+6We illustrate the net cash ﬂows of going long in the LC sovereign and short in the LC risk-free
+bond in Figure IA.1, Panel A, in the Internet Appendix, which is available in the online version of
+the article on the Journal of Finance website.
+7We illustrate the net cash ﬂows of this strategy in Figure IA.1, Panel B, in the Internet
+Appendix.
+8To see this, we note that, in Figure 2, the hedging error upon default is given by δt+1(1−
+Ft,t+1/Et+1), where δt+1is the loss given default. If currency depreciates upon default relative
+=== PAGE 10 ===
+1036 The Journal of FinanceR/circlecopyrt
+Figure 2. Cash ﬂow diagram for a swapped LC sovereign bond. This diagram shows cash
+ﬂows for a synthetic dollar bond by swapping a peso bond into U.S. dollars using an outright FX
+forward contract. At time t, the dollar investor exchanges ( PLC
+t/Et)Ft,t+1dollars for PLC
+tFt,t+1pesos
+with a bank at the spot exchange rate Et,w h e r e PLC
+tis the price of a zero-coupon Mexican Treasury
+in pesos and Ft,t+1is the outright forward rate at time t. She then invests all the peso proceeds
+into Mexican Treasuries with face value Ft,t+1. Meanwhile, at time t, she enters into an outright
+forward contract to sell Ft,t+1pesos forward for one dollar at time t+1. At time t+1, if the Mexican
+government repays full principal, Ft,t+1, the dollar investor gives all the peso payments to the bank
+to fulﬁll the outright forward contract and receives one dollar. However, if the Mexican government
+defaults, the peso payment to the dollar investor becomes (1 −δt+1)Ft,t+1,w h e r e δt+1denotes the
+loss given default. However, the dollar investor still has to fulﬁll the outright forward, so the
+total cash ﬂow from the bond and swap package is equal to [(1 −δt+1)+δt+1(1−Ft,t+1/Et+1)] upon
+default, where the last term δt+1(1−Ft,t+1/Et+1) denotes the FX hedging error. As the swapped
+LC bond pays off one dollar in the nondefault state, the synthetic dollar yield on the swapped LC
+bond is equal to ySLC
+t=−[(PLC
+t/Et)Ft,t+1]=yLC
+t−ρt.
+of the Internet Appendix, the valuation impact of this hedging error is exactly
+equal to the quanto adjustment, qt.
+Therefore, in a frictionless ﬁnancial market, the LC credit spread is always
+equal to expected default losses under the LC risk-neutral measure. If the
+covariance between currency and credit risk is zero ( qt=0), then the LC credit
+spread will also equal the expected default losses under the dollar risk-neutral
+measure. However, if credit and currency risks are positively correlated ( qt>0),
+then the LC credit spread will understate expected default losses under the
+to the nondefault state, we have Et+1>Ft,t+1, and thus δt+1(1−Ft,t+1/Et+1)>0, which implies
+positive proﬁts.
+=== PAGE 11 ===
+Local Currency Sovereign Risk 1037
+dollar measure.9After presenting the stylized facts on LC credit spreads, we
+return to a theoretical and empirical calibration of the magnitude of qtin
+Section III.A.
+Finally, as additional evidence for the validity of the LC risk-free rate and the
+presence of credit risk on emerging market LC debt, we examine the yields paid
+by AAA-rated supranationals in various emerging market currencies. While the
+U.S. Treasury does not issue debt in emerging market local currencies, some
+supranationals, such as the World Bank and the European Investment Bank
+(EIB), have issued debt denominated in emerging market local currencies. We
+can deﬁne an alternative LC credit spread measure as the difference between
+LC emerging market sovereign yields and AAA-rated supranational yields in
+the same currency. We present the results for Brazil and Turkey using this
+alternative construction, which does not rely on U.S. Treasuries or CCS rates,
+in Section II.D. Due to the limited availability of supranational bond issuance
+in most emerging market currencies, this method cannot be generalized for all
+sample countries.
+C. LC and FC Credit Spread Benchmark Comparison
+In this subsection, we perform a theoretical comparison between LC and FC
+credit spreads in a frictionless ﬁnancial market. We start with the conventional
+deﬁnition of the FC credit spread.
+DEFINITION 2:Let yFC
+ntdenote the n-year zero-coupon yield on a U.S. dollar de-
+nominated debt and y∗$
+ntdenote the zero-coupon yield on an n-year U.S. Treasury
+bond. We deﬁne the FC credit spread as
+sFCCS
+nt≡yFC
+nt−y∗$
+nt. (6)
+As a corollary to Proposition 2, the difference between LC and FC credit
+spreads is given as follows.
+COROLLARY 1:LetQLC
+tandQ$
+tdenote the risk-neutral measure for the LC and
+U.S. dollar, respectively, at time t, and let LLC
+t+1and LFC
+t+1denote the default losses
+on the LC and FC bonds, respectively, at time t +1, measured in terms of the
+fraction of the face value in the respective currency. Then, the LC-over-FC credit
+spread differential, sLC/FCCS
+t ≡sLCC S
+t−sFCCS
+t, is given as follows:
+sLC/FCCS
+t =EQLC
+tLLC
+t+1−EQ$
+tLFC
+t+1 (7)
+=EQ$
+t/parenleftbig
+LLC
+t+1−LFC
+t+1/parenrightbig
+−qt, (8)
+9Similarly, if the currency depreciates upon the implementation of capital control measures
+targeting capital outﬂows, the hedge also becomes imperfect and the covariance adjustment needs
+to be made. We thank an anonymous referee for raising this point.
+=== PAGE 12 ===
+1038 The Journal of FinanceR/circlecopyrt
+where q t≡CovQ$
+t(1−LLC
+t+1,Et/Et+1)
+EQ$
+t(1−LLC
+t+1)EQ$
+t(Et/Et+1).
+Therefore, the LC-over-FC credit spread differential reﬂects the difference in
+expected default losses measured using the LC and dollar risk-free bond as the
+numeraire (equation (7)). Furthermore, if we also value LC credit risk using
+the dollar risk-free bond as the numeraire, we need to add a quanto adjust-
+ment due to the covariance between currency risk and default risk (equation
+(8)). We present evidence in Section III.A that the positive covariance between
+currency risk and default risk makes the LC credit risk measured under the LC
+numeraire signiﬁcantly lower than that measured under the dollar numeraire.
+D. Potential Financial Market Frictions
+Having presented interpretations of the LC credit spread under the fric-
+tionless benchmark, we now examine how ﬁnancial frictions could affect the
+measure. We ﬁrst discuss how counterparty risk and nondeliverability of CCS
+contracts affects the interpretation of our LC credit spread. We then provide a
+brief overview of potential ﬁnancial market frictions that may have differential
+impacts on LC and FC credit spreads. After presenting the stylized facts about
+LC and FC credit spreads, in Section III.C, we discuss how these frictions may
+lead our actual measures of the LC risk-free rate and LC credit spread to depart
+from their frictionless interpretation as given by Propositions 1 and 2.
+One potential concern in using CCS to construct the LC risk-free rate is that
+the CCS rate may reﬂect the risk of a counterparty default (Assumption 2).
+However, the impact of counterparty risk on the pricing of CCS is negligible
+due to a high degree of collateralization. Following the International Swaps and
+Derivatives Association Credit Support Annex, the common market practice
+among dealers is to post variation margins in cash with the amount equal to
+the mark-to-market value of the swap. The counterparty seizes collateral in
+the event of a default, so that counterparty risk exposure is hedged to the ﬁrst
+order. Consistent with high collateralization, Arora, Gandhi, and Longstaff
+(2011 ) offer direct evidence on counterparty risk in the CDS market. They ﬁnd
+that a 645 basis point increase in the seller’s CDS spreads translates only to a
+one basis point reduction in the quoted CDS premium.10
+Aside from counterparty risk, one distinct feature of emerging market CCS
+is that many countries do not allow the LC to be delivered offshore for FX
+derivative transactions. The CCS swap involving nondeliverable currencies is
+referred to as the nondeliverable swap (NDS).11The U.S. dollar is used to
+10Even under the assumption that there is no collateralization, the magnitude of the bilateral
+counterparty risk adjustment for CCS is quite small. As shown in the calibration by Dufﬁe and
+Huang ( 1996 ), for a ﬁve-year ﬁxed-for-ﬁxed currency swap and 100 basis point asymmetry in the
+counterparty’ s credit risk, the bilateral credit value adjustment is about 8.6 basis points for 15%
+FX volatility.
+11Among our 10 sample countries, Hungary, Mexico, and Poland have deliverable CCS, while
+the rest of our sample countries have nondeliverable CCS.
+=== PAGE 13 ===
+Local Currency Sovereign Risk 1039
+cash settle the NDS position, without exchanging the LC. The LC bond hedged
+with the NDS cannot protect the investor from capital control and currency
+convertibility risks. Therefore, in addition to outright default risk, the LC credit
+spread based on the NDS also includes these additional risks.
+Furthermore, several ﬁnancial market frictions could potentially affect the
+valuation of LC and FC credit spreads, which we abstracted from under As-
+sumption 1. First, swapped LC and FC debt might have different liquidity risk,
+so the credit spread differential partly reﬂects differential liquidity premia. In
+particular, we show that the swapped LC bond can earn a liquidity premium
+because it goes long in the more liquid bond and short in the more illiquid
+swap. Second, LC and FC debt pricing can be affected by slow-moving capital
+and market segmentation in domestic and external debt markets. LC debt is
+largely held by local institutional investors and FC debt is largely held by global
+investors, and thus arbitrage between the two markets can be incomplete due
+to arbitrageurs’ limited capital and risk aversion. Third, we show that it is
+easy to short the swap rate but more difﬁcult to short LC bonds than FC bonds.
+The swapped LC bond can also be traded at a premium over FC bonds due to
+more binding short-selling constraints. Fourth, no-arbitrage violations in the
+currency markets can also affect the LC credit spread but not directly affect
+the FC credit spread. A severe dollar shortage during the ﬁnancial crisis can
+make synthetic dollar borrowing more costly than direct dollar borrowing.
+II. New Stylized Facts on LC Sovereign Risk
+A. Data Sources
+The core of our data are daily zero-coupon swap curves and yield curves for
+LC and FC sovereign bonds issued by 10 emerging market governments from
+January 2005 to December 2014. We use a benchmark tenor of ﬁve years. The
+choice of countries is mainly constrained by the lack of sufﬁcient numbers of
+outstanding FC bonds. Furthermore, all 10 sample countries belong to the J.P .
+Morgan EM-GBI index, an investable index for emerging market LC bonds.
+The length of the sample period is constrained by the availability of long-
+term currency swap data. Details on the yield curve construction and speciﬁc
+Bloomberg tickers used in our analysis are given in Section II of the Internet
+Appendix.
+B. Summary Statistics of LC and FC Credit Spreads
+In Figure 3, we plot LC nominal yields, swap rates, and LC and FC credit
+spreads for our sample emerging markets. To summarize these ﬁgures, in col-
+umn (1) of Table I, we present summary statistics for ﬁve-year LC spreads
+from 2005 to 2014 at a daily frequency. LC credit spreads, sLCC S, have a cross-
+country mean of 145 basis points, calculated using the midrates on the swaps.
+Brazil records the highest mean LC spread at 339 basis points, while Israel,
+=== PAGE 14 ===
+1040 The Journal of FinanceR/circlecopyrt0 3 6 9 12 15Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015Brazil 5Y
+0 3 6 9 12 15Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015Colombia 5Y0 3 6 9 12 15Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015Hungary 5Y
+0 3 6 9 12 15Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015Indonesia 5Y0 3 6 9 12 15Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015Israel 5Y
+0 3 6 9 12 15Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015Mexico 5Y0 3 6 9 12 15Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015Peru 5Y
+0 3 6 9 12 15Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015Philippines 5Y0 3 6 9 12 15Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015Poland 5Y
+0 5 10 15 20 25Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015Turkey 5Y
+LC/US FCCS CCS LCCS
+Figure 3. Five-year nominal spreads, CCS, and credit spreads (percentage points). Each
+ﬁgure plots 10-day moving averages of zero-coupon LC and FC spreads over the U.S. Treasury
+at ﬁve years. LC/US denotes the LC nominal yield over the ﬁve-year U.S. Treasury bond. FCCS
+denotes the FC credit spread. CCS denotes the ﬁxed-for-ﬁxed LC/dollar cross-currency swap rate.
+LCCS denotes the LC credit spread.
+=== PAGE 15 ===
+Local Currency Sovereign Risk 1041
+Table I
+Mean LC and FC Credit Spread Comparison (Percentage Points),
+2005 to 2014
+This table reports the starting date, mean, and standard deviation of ﬁve-year log yield spreads
+at a daily frequency. The variables are (1) sLCCS, LC credit spread; (2) sFCCS, FC credit spread; (3)
+sLC/FCCS, LC over FC credit spread, or column (1/2) minus column (1); and (4) baCCS/2, half of
+the bid-ask spread of cross-currency swaps. In column (5), we report the correlation between daily
+credit spreads. Standard deviations of the variables are reported in parentheses.
+Sample (1) (2) (3) (4) (5)
+Country Start sLCCSsFCCSsLC/FCCSbaCCS/2Corr(LCCS,FCCS)
+Brazil July 2006 3.39 1.67 1.71 0.36 0.48
+(1.16) (0.84) (1.06) (0.14)
+Colombia June 2005 1.59 1.93 −0.34 0.15 0.42
+(0.70) (0.95) (0.91) (0.08)
+Hungary January 2005 2.34 3.46 −1.12 0.17 0.94
+(1.41) (2.11) (0.92) (0.08)
+Indonesia April 2005 1.02 2.25 −1.23 0.40 0.11
+(0.81) (1.64) (1.75) (0.34)
+Israel February 2006 0.68 1.13 −0.44 0.12 0.82
+(0.43) (0.46) (0.26) (0.03)
+Mexico January 2005 0.67 1.44 −0.77 0.06 0.42
+(0.33) (0.74) (0.67) (0.04)
+Peru July 2006 0.72 1.74 −1.02 0.18 0.36
+(0.77) (1.00) (1.02) (0.07)
+Philippines March 2005 1.42 2.11 −0.69 0.29 0.28
+(0.80) (1.08) (1.15) (0.12)
+Poland March 2005 1.28 1.71 −0.43 0.11 0.93
+(0.69) (0.86) (0.33) (0.05)
+Turkey May 2005 1.62 2.77 −1.15 0.10 0.75
+(1.56) (1.19) (1.02) (0.06)
+Total January 2005 1.45 2.01 −0.56 0.19 0.55
+(1.23) (1.31) (1.30) (0.18)
+Observations 17,809 17,809 17,809 17,809
+Mexico, and Peru have the lowest means at about 70 basis points.12Column
+(4) provides summary statistics for the liquidity of the CCS, baCCS/2, deﬁned
+as half of the bid-ask spread of CCS rates, with the sample average equal to
+19 basis points. The LC credit spread remains signiﬁcantly positive for every
+country after subtracting one-half of the bid-ask spread on the CCS in order to
+incorporate the transaction costs.
+To compare the sovereign’s dollar borrowing costs using FC debt with the
+synthetic dollar borrowing costs using LC debt, we perform an ex-ante credit
+spread comparison. FC credit spreads, sFCCS, reported in column (2) in Table
+Ihave a mean of 201 basis points, which is 56 basis points higher than LC
+12All mean LC credit spreads are positive and statistically signiﬁcantly different from zero us-
+ing Newey-West standard errors allowing for heteroskedasticity and serial correlation. Following
+Datta and Du ( 2012 ), missing data are treated as nonserially correlated for Newey-West imple-
+mentations throughout the paper.
+=== PAGE 16 ===
+1042 The Journal of FinanceR/circlecopyrt
+credit spreads based on the mid-rates for CCS. In column (3), we compute
+the difference between LC and FC credit spreads by country. The LC-over-
+FC credit spread differential, sLC/FCCS, is signiﬁcantly negative for all of our
+sample countries except Brazil. We discuss the Brazilian exception in detail
+in Section III.B. Although all of our sample countries have LC bond markets
+open to foreign investors, foreigners may still need to incur transaction costs
+to buy into LC markets. In addition to taxes on capital inﬂows, LC bonds are
+often subject to local taxation, whereas FC international bonds are exempt
+from interest withholding taxes. For 9 out of 10 countries with negative LC-
+over-FC credit spread differentials, the promised dollar spread on LC bonds
+is unambiguously lower than that on FC bonds, since swapped LC-over-FC
+spreads would become more negative after taking into account positive taxes
+on LC bonds.
+Despite the mean difference in credit spreads, one might expect LC and
+FC credit risk to be correlated within countries, as, in a downturn, a country
+might ﬁnd it more tempting to explicitly default on both types of debt. Column
+(5) conﬁrms this conjecture. The within-country correlation between LC and
+FC credit spreads is positive for every country with a mean of 55%. However,
+there is signiﬁcant cross-country heterogeneity. The correlation is highest for
+Hungary at 94% and lowest for Indonesia at 11%.
+Figure 4plots the difference in LC and FC credit spreads, sLC/FCCS, across
+10 countries over the sample period. While LC-over-FC credit spread differ-
+entials largely remain in negative territory (with the exception of Brazil),
+the spreads signiﬁcantly widened during the peak of the crisis following the
+Lehman bankruptcy. The largest difference between LC and FC credit spreads
+for any country during the crisis was Indonesia’s negative 10 percentage points.
+The divergent behavior of these credit spreads during the crisis peak highlights
+signiﬁcant differences between LC and FC bonds and offers a key stylized fact
+to be examined later.
+C. Correlation with Global Risk Factors
+C.1. Credit Spreads
+In Table II, we conduct PC analysis to determine the extent to which ﬂuctu-
+ations in LC and FC credit spreads are driven by common components or by
+idiosyncratic country shocks. In the ﬁrst column, we see that the ﬁrst PC ex-
+plains less than 54% of the variation in LC credit spreads across countries. By
+contrast, the ﬁrst PC explains over 77% of total variation in FC credit spreads
+(column (2)). The ﬁrst three PCs explain slightly less than 78% of the total
+variation for LC credit spreads, whereas, for FC credit spreads, they explain
+about 96%. In addition, we ﬁnd that the average pairwise correlation of LC
+credit spreads between countries is only 43%, in contrast to 73% for FC credit
+spreads. These ﬁndings suggest that country-speciﬁc idiosyncratic components
+are important drivers of LC credit spreads, whereas, in the FC market, global
+factors are far more important. The ﬁnding that an overwhelming amount
+=== PAGE 17 ===
+Local Currency Sovereign Risk 1043−10 −5 0 5Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015
+Brazil Colombia Hungary Indonesia Israel
+Mexico Peru Philippines Poland Turkey
+Figure 4. LC-over-FC credit spreads (percentage points). This ﬁgure plots 30-day moving
+averages of the ﬁve-year zero-coupon LC over FC credit spread differential for all 10 sample
+countries. Data sources and details on yield curve construction are given in Internet Appendix
+Table IA.V .
+Table II
+Cross-Country Correlation of Credit Spreads, 2005 to 2014
+This table reports summary statistics of the principal component analysis and the cross-country
+correlation matrices of monthly ﬁve-year LC and FC credit spreads and sovereign credit default
+swap spreads. The variables are (1) sLCC S, LC credit spreads; (2) sFCCS, FC credit spreads; and
+(3)5Y CDS , ﬁve-year sovereign CDS spreads. “First,” “Second,” and “Third” report percentage and
+cumulative percentage of the total variation explained by the ﬁrst, second, and third principal
+components, respectively. “Pairwise Corr.” reports the mean of all bilateral correlations for all
+country pairs. All variables are end-of-month observations.
+(1) (2) (3)
+sLCC SsFCCS5Y CDS
+Components
+Principal Percentage Total Percentage Total Percentage Total
+First 54.28 54.28 77.35 77.35 74.57 74.57
+Second 14.69 68.96 15.21 92.56 18.10 92.67
+Third 9.37 78.33 3.32 95.88 2.70 97.37
+Pairwise Corr. 0.43 0.73 0.71
+=== PAGE 18 ===
+1044 The Journal of FinanceR/circlecopyrt
+Table III
+Correlation among Credit Spreads and Global Risk Factors,
+2005 to 2014
+This table reports correlations among credit spreads and global risk factors. Panel A reports
+correlations between the ﬁrst principal component of credit spreads and global risk factors. Panel B
+reports average correlations between raw credit spreads of the 10 sample countries and global risk
+factors. The three credit spreads are (1) sLCCS, the ﬁve-year LC credit spread; (2) sFCCS, the ﬁve-year
+FC credit spread; and (3) CDS , the ﬁve-year sovereign credit default swap spread. The three global
+risk factors are (1) BBB/T , Merrill Lynch BBB over 10-year Treasury spread; (2) −CFNAI , minus
+the real-time Chicago Fed National Activity Index, or the ﬁrst principal component of 85 monthly
+economic indicators (positive CFNAI indicates improvement in macroeconomic fundamentals); and
+(3)VIX, implied volatility on the S&P index options. All variables use end-of-month observations.
+Panel A: First PC of Spreads Panel B: Raw Spreads
+sLCCSsFCCSCDS sLCCSsFCCSCDS
+sLCC S1.00 1.00
+sFCCS0.75 1.00 0.50 1.00
+5Y CDS 0.72 0.94 1.00 0.49 0.91 1.00
+BBB/T 0.68 0.93 0.93 0.35 0.63 0.58
+−CFNAI 0.52 0.76 0.75 0.28 0.50 0.45
+VIX 0.69 0.92 0.85 0.34 0.61 0.53
+of the variation in FC credit spreads is explained by the ﬁrst PC echoes the
+ﬁndings of Longstaff et al. ( 2011 ) on CDS spreads.
+Having identiﬁed an important global component in both LC and FC credit
+spreads, we now try to understand what exactly this ﬁrst PC is capturing.
+In Table III, we begin by examining the correlation of the ﬁrst PCs of credit
+spreads with each other and with global risk factors. The global risk factors
+include the Merrill Lynch U.S. BBB corporate bond spread over Treasuries,
+BBB/T , the implied volatility on S&P options, VIX, and the Chicago Fed Na-
+tional Activity Index, CFNAI , which is the ﬁrst PC of 85 monthly real economic
+indicators. Panel A indicates that the ﬁrst PC of FC credit spreads has very
+high correlations with these three global risk factors: 93% with VIX, 92% with
+BBB/T , and 76% with global macrofundamentals (or, more precisely, U.S. fun-
+damentals) as proxied by the CFNAI index. The correlations between the ﬁrst
+PC of LC credit spreads and the global risk factors are lower, but still sub-
+stantial, at 68% with VIX, 69% with BBB/T , and 52% with CFNAI . In terms
+of the correlations between raw spreads and global factors, Panel B shows
+that VIX has a mean correlation of 61% with FC credit spreads but only 34%
+with LC credit spreads. This leads us to conclude that the observed global fac-
+tors are more important in driving spreads on FC debt than on swapped LC
+debt. Unsurprisingly, the correlations between the global factors and the CDS
+spread are very similar to the correlations between these factors and the FC
+spread.
+=== PAGE 19 ===
+Local Currency Sovereign Risk 1045
+C.2. Excess Returns
+Having examined the ex-ante promised yields in Tables IIand III, we next
+turn to ex-post realized returns. The natural measures to study are the excess
+returns of LC and FC bonds over U.S. Treasury bonds. In particular, we run a
+series of contemporaneous beta regressions to examine how LC and FC excess
+returns vary with global and local equity markets. Since all yield spreads are
+for zero-coupon benchmarks, we can quickly compute various excess returns
+for the holding period /Delta1t.13The FC-over-U.S. Treasury excess holding-period
+return for an n-year FC bond is equal to
+rxFC/US
+n,t+/Delta1t=nsFCCS
+nt −(n−/Delta1t)sFCCS
+n−/Delta1t,t+/Delta1t, (9)
+which represents the change in the log price of the FC bond over a U.S. Treasury
+bond of the same maturity.
+Similarly, the currency-speciﬁc return differential of an LC bond over a U.S.
+Treasury bond is given by
+rxLC/US
+n,t+/Delta1t=nsLC/US
+nt −(n−/Delta1t)sLC/US
+n−/Delta1t,t+/Delta1t. (10)
+Depending on the speciﬁc FX hedging strategies, we can translate rxLC/US
+n,t+/Delta1tinto
+three types of dollar excess returns on LC bonds. The unhedged LC-over-U.S.
+excess return, uhrxLC/US
+n,t+/Delta1t, is equal to the currency-speciﬁc return differential
+minus the ex-post LC depreciation:
+uhrxLC/US
+n,t+/Delta1t=rxLC/US
+n,t+/Delta1t−(et+/Delta1t−et). (11)
+If the dollar investor would like to hedge LC risk, we consider two types of
+hedging strategies. First, the dollar investor only hedges currency risk of the
+holding period by rolling over three-month forward contracts. The holding-
+period hedged LC-over-U.S. excess return, hr xLC/US
+n,t+/Delta1t, is approximately equal
+to the currency-speciﬁc return differential minus the ex-ante holding-period
+forward premium:
+hr xLC/US
+n,t+/Delta1t≈rxLC/US
+n,t+/Delta1t−(ft,t+/Delta1t−et). (12)
+Second, the dollar investor hedges the currency risk of the entire duration
+of the bond with CCS. The swapped LC-over-U.S. excess return, srxLC/US
+n,t+/Delta1t,
+is approximately equal to the currency-speciﬁc return differential minus the
+return on the currency swap:14
+srxLC/US
+n,t+/Delta1t≈rxLC/US
+n,t+/Delta1t−[nρnt−(n−/Delta1t)ρn−/Delta1t,t+/Delta1t]. (13)
+13For quarterly returns, /Delta1tis a quarter and we approximate sn−/Delta1t,t+/Delta1twith sn,t+/Delta1t.
+14For both types of hedging, the forward/swap hedging notional is equal to the initial market
+value of the LC bond at the beginning of the quarter and is dynamically rebalanced every quarter.
+As the market value of the LC bond at time t+/Delta1tmay be under- or overhedging the notional,
+equations (11) and (12) only provide a ﬁrst-order approximation of actual hedged and swapped
+returns and thus do not hold exactly. We obtain very similar regression results with or without
+currency hedging errors.
+=== PAGE 20 ===
+1046 The Journal of FinanceR/circlecopyrt
+Table IV
+Regressions of Bond Excess Returns on Equity Returns, 2005 to 2014
+This table reports contemporaneous betas of bond quarterly excess returns on global and local
+equity excess returns. The dependent variables are (1) and (4) rxFC/US, FC-over-U.S. Treasury bond
+excess returns; (2) hr xLC/US, hedged LC-over-U.S. Treasury bond excess returns using three-month
+forward contracts; (3) and (6) uhrxLC/US, unhedged LC-over-U.S. Treasury bond excess returns;
+and (5) srxLC/US, swapped LC-over-U.S. Treasury bond excess returns. All excess returns are
+computed based on the quarterly holding-period returns on the ﬁve-year zero-coupon benchmark
+(annualized). The independent variables are: S&P $rx, the quarterly return on the S&P 500 index
+over three-month U.S. T-bills; LC equity hedged $rx, the quarterly return on the local MSCI index
+hedged using three-month FX forward over three-month U.S. T-bills; and LC equity swapped $rx,
+the quarterly return on the local MSCI index combined with a ﬁve-year CCS over three-month
+U.S. T-bills. All regressions are run at the monthly frequency with country ﬁxed effects using
+Newey-West standard errors with 24-month lags and clustering by month following Driscoll and
+Kraay ( 1998 ). Standard errors are shown in parentheses. Signiﬁcance levels are denoted by***p<
+0.01,**p<0.05, and*p<0.1.
+(1) (2) (3) (4) (5) (6)
+rxFC/UShr xLC/USuhrxLC/USrxFC/USsrxLC/USuhrxLC/US
+S&P $rx 0.139***−0.0335 0.212***0.227***−0.00396 0.422***
+(0.0471) (0.0631) (0.0583) (0.0518) (0.0287) (0.106)
+LC equity hedged $rx 0.140***0.232***0.405***
+(0.0455) (0.0369) (0.0471)
+LC equity swapped $rx 0.0463*0.108***0.192**
+(0.0254) (0.0220) (0.0782)
+Observations 1,032 1,032 1,032 1,034 1,034 1,034
+R20.357 0.273 0.433 0.273 0.127 0.300
+Table IVpresents panel regression results for excess bond returns over local
+and global equity excess returns. Global equity excess returns are deﬁned as the
+quarterly return on the S&P 500 index over three-month U.S. Treasury bills.
+We deﬁne two measures of LC equity excess returns (holding-period hedged
+and long-term swapped) so that a foreign investor hedging her currency risk in
+the local equity market has the same degree of hedging on her bond position.
+We ﬁnd that FC excess returns have signiﬁcantly positive betas on both global
+and hedged LC equity returns, with the loading on S&P being greater. Hedged
+and swapped LC excess returns do not load on the S&P , but they do have a
+signiﬁcantly positive beta on local equity returns. In contrast, FX unhedged LC
+excess returns have positive betas on both the S&P and local equity returns. We
+therefore conclude that, for foreign investors, the main systematic risk of LC
+bonds is that emerging market currencies depreciate when returns on global
+equities are low, as the global risk factor affects currency excess returns. Once
+currency risk is hedged, LC debt appears to be much less risky than FC debt in
+the sense that it has signiﬁcantly lower loadings on global equity returns than
+FC debt.
+=== PAGE 21 ===
+Local Currency Sovereign Risk 1047
+D. Alternative LC Credit Spread Measure
+In this section, we present results for an alternative LC credit spread mea-
+sure based on supranational bond yields denominated in emerging market
+local currencies. AAA-rated supranational organizations, such as the WorldBank, EIB, and Kreditanstalt f ¨ur Wiederaufbau (KfW), a German government-
+owned development bank, have issued debt in emerging market local cur-
+rencies at yields lower than those on emerging market sovereign debt. In-stead of measuring the LC risk-free rate as the sum of the U.S. Treasury
+yield and the CCS rate, we can instead use the AAA-rated supranational
+yield. We deﬁne an alternative LC credit spread as the difference betweenthe emerging market sovereign yield and the supranational yield denominated
+in the same currency. We ﬁnd a signiﬁcantly positive LC credit spread us-
+ing this alternative measure, which does not rely on U.S. Treasury bonds orCCS rates. However, the limitation of this approach is that we need a large
+and liquid bond market for supranational issuance in each emerging market
+currency.
+In our sample countries, using primary market issuance data in Thomson
+One, the Turkish lira and Brazilian real are the two most frequently chosenemerging market currencies among supranational debt issuers. Between De-
+cember 2004 and July 2014, 15 supranational organizations issued 1,429 bonds
+in our 10 sample emerging market currencies, with a total gross notional equalto $66.3 billion, of which 575 bonds were denominated in the Turkish lira
+with total notional equal to $38.4 billion, and 474 bonds were denominated in
+the Brazilian real with total notional of $21.1 billion. For the most frequentsingle-name issuers, the EIB issued 271 bonds in the Turkish lira and the KfW
+issued 122 bonds in the Brazilian real. We can construct a zero-coupon Turk-
+ish lira-denominated yield curve for bonds issued by the EIB and a Brazilianreal-denominated yield curve for bonds issued by the KfW.
+Figure 5, Panel A, plots EIB Turkish lira yield spreads over U.S. Treasuries,
+Turkish LC sovereign bond yield spreads over U.S. Treasuries, and lira/dollarCCS rates. All yield spreads and CCS rates are zero-coupon rates for the ﬁve-
+year maturity. We can see that Turkish sovereign yield spreads are generally
+higher than EIB yield spreads. EIB yield spreads track CCS rates very closely,
+suggesting very low levels of perceived default risk for the EIB. The only excep-
+tion is that, during the peak of the European debt crisis, the EIB spread wassigniﬁcantly above the CCS rate, but was still consistently below the Turkish
+sovereign spread. Figure 5, Panel B, plots Turkish sovereign LC credit spreads
+over U.S. Treasuries and the CCS rate, as deﬁned in equation (3),a n do u r
+alternative LC credit spread as the difference between Turkish sovereign bond
+yields and the EIB yields. LC credit spreads over U.S. Treasuries and the CCS
+rate are generally higher than LC credit spreads over the EIB, potentially re-ﬂecting better liquidity, credit quality, and convenience associated with U.S.
+Treasuries. However, the two credit spreads are highly correlated and signiﬁ-
+cantly above zero. Panels C and D of Figure 5display similar patterns for the
+Brazilian real. The KfW issues bonds at slightly higher yields than the sum of
+=== PAGE 22 ===
+1048 The Journal of FinanceR/circlecopyrt
+Panel A. Turkey and EIB TRY nominal spreads
+5 10 15 20 25Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015
+Turkey/US EIB/US CCSPanel B. Turkey LC credit spread over UST and EIB
+0 2 4 6 8 10Percentage Point
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015
+LCCS over UST LCCS over EIB
+Panel C. Brazil and KfW BRL nominal spreads
+0 5 10 15Percentage Point
+2006 2007 2008 2009 2010 2011 2012 2013 2014 2015
+Brazil/US KfW/US CCSPanel D. Brazil LC credit spread over UST and KfW
+0 2 4 6 8 10Percentage Point
+2006 2007 2008 2009 2010 2011 2012 2013 2014 2015
+LCCS over UST LCCS over KfW
+Figure 5. Emerging market sovereign and supranational yield spreads (percentage
+points). All yield spreads in the ﬁgures are zero-coupon rates for the ﬁve-year maturity. In Panel
+A, the solid line (Turkey/US) plots the Turkish Treasury yield spread over U.S. Treasury yield
+spread. The dashed line (EIB/US) plots the yield spread of Turkish lira-denominated bonds issued
+by the EIB. The dotted line (CCS) plots the ﬁxed-for-ﬁxed lira/dollar CCS rate. In Panel B, the solid
+line (LCCS over UST) plots the LC credit spread of the Turkish sovereign over the U.S. Treasury
+yield (Turkey/US minus CCS), and the dotted line (LCCS over EIB) plots the LC credit spread over
+EIB, which is deﬁned as the difference between the Turkish sovereign bond yield and the EIB yield
+in the Turkish lira. In Panel C, the solid line (Brazil/US) plots the Brazilian Treasury yield spread
+over U.S. Treasury yield spread. The dashed line (KfW/US) plots the yield spread of Brazilian
+real denominated bonds issued by KfW. The dotted line (CCS) plots the ﬁxed-for-ﬁxed real/dollar
+CCS rate. In Panel D, the solid line (LCCS over UST) plots the LC credit spread of the Brazilian
+sovereign over the U.S. Treasury yield (Brazil/US minus CCS), and the dotted line (LCCS over
+KfW) plots the LC credit spread over KfW, which is deﬁned as the difference between the Brazilian
+sovereign bond yield and the KfW yield in the Brazilian real. Zero-coupon bond yields for EIB and
+KfW are estimated using the Nelson-Siegel methodology based on coupon bond yields available in
+Bloomberg.
+the U.S. Treasury and real/dollar NDS rates, but at signiﬁcantly lower yields
+than those on Brazilian LC sovereign bonds. LC credit spreads over KfW yields
+are also signiﬁcantly above zero and highly correlated with LC credit spreads
+over U.S. Treasuries.
+=== PAGE 23 ===
+Local Currency Sovereign Risk 1049
+III. Sources of Credit Spread Differentials
+In this section, we examine three main sources of credit spread differentials.
+First, we discuss the impact of the covariance between currency and credit risk
+on the credit spread differentials. Second, we consider how selective defaults,
+capital controls, and domestic jurisdiction risks impact the LC and FC credit
+spreads. These latter two are particularly helpful in explaining the Brazilian
+anomaly. Third, we examine the impact of various ﬁnancial market frictions
+on the credit spread differential, including liquidity, short-selling constraints,
+slow-moving capital, and market segmentation in the debt and currency
+markets.
+A. Covariance between Currency and Credit Risk
+In this subsection, we calibrate the quanto adjustment term in Proposition
+2 and Corollary 1, which allows us to change the LC credit spread from a
+credit risk measure under the LC numeraire to a credit risk measure under the
+dollar measure. We show that once we take into account the positive covariance
+between currency and default risk, the mean credit risk across LC and FC debt
+is roughly equal under the common dollar risk-neutral measure. Although the
+covariance adjustment can explain the persistent level difference between the
+LC and FC credit spreads, it cannot explain all of the time variation in credit
+differentials.
+A.1. A Simple Theoretical Calibration
+We give a simple theoretical calibration of the size of the covariance between
+currency and default risk, or the quanto adjustment given in equation (5),f o r
+a one-period bond. Under the dollar risk-neutral measure, we let πtdenote
+the risk-neutral probability of default and δdenote the loss given default as
+a fraction of the face value in the LC. We let END
+t+1and ED
+t+1denote the spot
+exchange rate in the nondefault and default states. To capture depreciation
+upon default, we assume that the LC depreciate by a fraction α∈[0,1] in the
+default state relative to the nondefault state, or,1
+ED
+t+1=(1−α)1
+END
+t+1. Following
+Khuong-Huu ( 1999 ), we assume that αis nonstochastic for simplicity. It can be
+shown that the values of the exchange rates in the two states are given by15
+1
+END
+t+1=/parenleftbigg1
+1−απt/parenrightbigg1
+Ft,t+1,and1
+ED
+t+1=/parenleftbigg1−α
+1−απt/parenrightbigg1
+Ft,t+1.
+15Under these expressions, the outright forward exchange is equal to the risk-neutral expected
+spot rate: 1 /Ft,t+1=(1−πt)/ED
+t+1+πt/END
+t+1=EQ$
+t(1/Et+1).
+=== PAGE 24 ===
+1050 The Journal of FinanceR/circlecopyrt
+It then follows that the quanto adjustment in equations (5)and (8)is
+given by16
+qt=CovQ$
+t/parenleftbig
+1−LLC
+t+1,Et/Et+1/parenrightbig
+EQ$
+t/parenleftbig
+1−LLC
+t+1/parenrightbig
+EQ$
+t(Et/Et+1)≈απtδ=αEQ$
+tLLC
+t+1. (14)
+Therefore, under this simple calibration, we have
+sLCCS
+t=EQLC
+tLLC
+t+1=(1−α)EQ$
+tLLC
+t+1. (15)
+The LC credit spread is lower than the expected loss of the LC bond under the
+dollar risk-neutral measure by a fraction α. We can use equation (15) to convert
+the LC credit risk measure based on the LC risk-neutral measure to one based
+on the dollar risk-neutral measure,
+sQLCCS
+t ≡EQ$
+tLLC
+t+1=1
+1−αEQLC
+tLLC
+t+1=1
+1−αsLCCS
+t, (16)
+where we deﬁne the dollar-measure-based LC credit spread as the “quanto LC
+credit spread,” sQLLCS
+t .17
+Before formally calibrating αto data in the next subsection, we perform a
+thought experiment to see how large αwould need to be for the mean credit
+spreads we observe to correspond to equal credit risk between LC and FC debt
+under the dollar risk-neutral measure. Under the assumption that EQ$
+tLLC
+t+1=
+EQ$
+tLFC
+t+1,o rsQLCCS
+t =sFCCS
+t , by equation (16), we have that
+α=/parenleftbig
+sFCCS
+t−sLCCS
+t/parenrightbig
+/sFCCS
+t.
+In our sample countries excluding Brazil, the mean LC-over-FC credit spread
+differential is equal to negative 81 basis points and the mean FC credit spread
+is 205 basis points. Assuming equal credit risk across the two instruments
+under the common dollar risk-neutral measure, our data would imply 39%
+(0.81/2.05) expected depreciation upon default.
+A.2. Empirical Evidence on Depreciation upon Default
+We can calibrate the magnitude of depreciation upon default using two ap-
+proaches. First, following Mano ( 2013 ), we use CDS traded in different cur-
+rencies on FC sovereign debt to obtain an estimate of the ex-ante risk-neutral
+16To derive equation (14),w en o t et h a t qt=EQ$
+t[(1−LLC
+t+1)/Et+1]
+EQ$
+t(1−LLC
+t+1)EQ$
+t(1/Et+1)−1=
+(1−πt)(1
+1−απt)+πt(1−δ)(1−α
+1−απt)
+(1−πt)+πt(1−δ)−1=1−πδ−απ+απδ
+(1−πδ)(1−απ)−1≈απδ for small π.
+17In practice, a direct model-free empirical measure of sQLCCS
+t would require (1) a liquid market
+for the so-called “quanto currency swap,” for which the LC notional is always equal to the recovery
+value of speciﬁc LC bonds, or (2) CDS contracts denominated in dollars, but linked to the LC debt
+instrument. However, to our knowledge, both contracts are rarely traded in the current market.
+=== PAGE 25 ===
+Local Currency Sovereign Risk 1051
+Panel A. Turkey: Sovereign CDS Spreads0 100 200 300 400Basis Point
+2011 2012 2013 2014 2015CDS in $
+CDS in LCPanel B. Turkey: Depreciation upon Default 0 20 40 60 80 100Percent
+2011 2012 2013 2014 2015
+Panel C. Mexico: Sovereign CDS Spreads0 50 100 150 200Basis Point
+2013 2014 2015CDS in $
+CDS in LCPanel D. Mexico: Depreciation upon Default 0 20 40 60 80 100Percent
+2013 2014 2015
+Figure 6. Sovereign CDS spreads denominated in LC and the U.S. dollar. Panels A and
+C plot the CDS spreads in basis points for contracts denominated in U.S. dollars (dashed line)
+and contracts denominated in Turkish lira or Mexican pesos (solid line). Panels B and D plot risk-
+neutral expected percentage depreciation upon default calculated asCDS ($)−CDS (LC)
+CDS ($)×100. The
+CDS data are from Markit.
+expectation of depreciation upon default. We ﬁnd that, on average, this esti-
+mate is approximately 36%. This comparison is relevant for us if we assume
+that the depreciation rate is the same following LC and FC defaults or that
+the two types of debt default simultaneously. Second, we perform a historical
+calibration for realized currency depreciation upon default using the long his-
+tory of default dates identiﬁed by Reinhart and Rogoff ( 2009 ) and Cruces and
+Trebesch ( 2013 ). We obtain historical depreciation upon default of about 27%
+to 34% relative to the counterfactual nondefault state.
+First, CDS contracts linked to the same debt instrument but denominated
+in different currencies can offer a clean measure of the risk-neutral implied
+depreciation upon default perceived by market participants. However, the liq-
+uidity of LC-denominated quanto CDS contracts is generally very thin. For
+this reason, we limit ourselves to studying Mexico and Turkey using the most
+recent three or four years of data. Figure 6plots CDS spreads for Mexico and
+Turkey denominated in the U.S. dollar and local currencies (Mexican peso and
+=== PAGE 26 ===
+1052 The Journal of FinanceR/circlecopyrt
+Turkish lira, respectively). LC CDS spreads are consistently below dollar CDS
+spreads. Despite the level difference, the two CDS spreads have a correlation of
+99%. Given the observed mean difference between LC and dollar CDS spreads,
+we can compute αas
+αt=/parenleftbig
+cds$
+t−cdsLC
+t/parenrightbig
+/cds$
+t, (17)
+where cds$
+tdenotes the spread on the dollar CDS and cdsLC
+tdenotes the spread
+on the quanto LC CDS. The implied depreciation upon default is fairly stable
+over the entire sample, with a mean of 36% and a standard deviation of 1.9%
+for Mexico and a mean of 37% and a standard deviation of 2.9% for Turkey. The
+low volatility of depreciation upon default implied by the Turkish and Mexican
+CDS lends support to our simplifying assumption that αis time-invariant.
+Second, we perform a historical calibration for depreciation upon default
+using realized exchange rates. The difﬁculty is that, while we observe ex-post
+depreciation in the default state, we do not observe LC depreciation in the
+nondefault counterfactual state for the same country at the same time. The
+empirical strategy we use is to compare depreciation in defaulting countries
+with contemporaneous depreciation in ex-ante similar countries that do not
+default. The regression speciﬁcation is as follows:
+Dep t−/Delta1t,t=aGroup (i),t+βDe f i,t+/epsilon1i,t,
+where Dep t−/Delta1t,t=1−Et−/Delta1t/Etmeasures ﬁve-year backward-looking LC depre-
+ciation and De f i,tis an indicator variable denoting whether a sovereign default
+occurs in country iat time t. The ﬁxed effects, aGroup (i),t, are time ﬁxed effects
+that interact with country groups based on ex-ante characteristics, such as per
+capita income, debt to GDP ratios, and credit ratings. The coefﬁcient βidenti-
+ﬁes the difference between depreciation in the default state and our constructed
+counterfactual nondefault state. Therefore, the implied depreciation upon de-
+fault relative to the nondefault state is given by ˆ α=1−(1−¯a−ˆβ)/(1−¯a),
+where ¯ adenotes the average of the ﬁxed effects aGroup (i),t.18
+Table Vdisplays our estimation results. Results in columns (1) to (4) are
+based on the annual default time obtained from Reinhart and Rogoff ( 2009 )f o r
+the post-Bretton Woods period, 1971 to 2010. In column (1), we only include
+year ﬁxed effects and ﬁnd that defaulting countries, on average, depreciate
+31% more than nondefaulting countries, which implies an αequal to 34%. In
+column (2), we include year ﬁxed effects interacting with three income group
+ﬁxed effects. The income groups are determined by the 33rdand 67thpercentiles
+of per capita income at time t−5. The implied αdecreases to 29%. In column
+(3), we include more ﬁxed effects for three debt levels, as determined by the 33rd
+and 67thpercentiles of government debt to GDP ratios at time t−5, and obtain
+anαestimate of 27%. In column (4), we restrict ourselves to domestic default
+18The average ﬁxed effect ¯ ain the regression measures the mean depreciation in the nonde-
+fault countries, and ¯ a+ˆβcaptures the mean depreciation in the default countries. Given that
+α=1−END
+t+1/ED
+t+1, we obtain the estimate ˆ α=1−(1−¯a−ˆβ)/(1−¯a).
+=== PAGE 27 ===
+Local Currency Sovereign Risk 1053Table V
+Historical Estimates of Depreciation upon Default
+This table reports empirical estimates for the regression Dep t−/Delta1t,t=aGroup (i),t+βDe fi,t+/epsilon1i,t. In columns (1) to (4), we use annual default time from
+Reinhart and Rogoff ( 2009 ), denoted by “RR,” for the post-Bretton Woods era (1971 to 2010). In columns (5) and (6), we use monthly default time
+from Cruces and Trebesch ( 2013 ), denoted by “CT,” for 1980 to 2014. Different ﬁxed effects are used for each column. The dependent variable in
+all regressions is backward-looking ﬁve-year exchange rate depreciation. The independent variable De fi,tis a binary variable indicating whether
+a sovereign default/restructuring occurs in country iat time t,a n d De fdomestic
+i,tindicates whether a domestic default or restructuring occurs. The
+constant reports the average ﬁxed effect. The ﬁxed effect “Income” refers to one of three income groups: the top 33%, middle 34%, and bottom 33%
+based on per capita income at t−5 obtained from the Total Economy Database. The ﬁxed effect “Debt” refers to one of the three debt levels: the top
+33%, middle 34%, and bottom 33% based on government debt to GDP at t−5 obtained from Reinhart and Rogoff ( 2009 ). The ﬁxed effect S&P rating
+refers to a coarse measure of credit rating given by S&P (1 =AAA; 2 =AA+/AA/AA-; 3 =A+/A/A-; 4 =BBB-/BBB/BBB +;5=BB-/BB/BB +;6=B-/B/B +;
+7=all C ratings; 8 =D/SD; 9 =unrated). Only the ﬁrst year(month) of each default episode is used in the estimation. The row “implied α” reports LC
+depreciation in the default state relative to the counterfactual nondefault state: α=1−(1−¯a−ˆβ)/(1−¯a), where ¯ adenotes the average ﬁxed effect
+estimate (the constant). The standard errors are clustered at the country level and shown in the parestheses. Signiﬁcance levels are denoted by***p
+<0.01,**p<0.05, and*p<0.1.
+(1) (2) (3) (4) (5) (6)
+RR RR RR RR CT CT
+Benchmark Income Income/Debt Income/Debt Benchmark S&P Rating
+(1971 to 2010) (1971 to 2010) (1971 to 2010) (1971 to 2010) (1980 to 2014) (1980 to 2014)
+De fi,t 0.31***0.26***0.24***0.33***0.28***
+(0.055) (0.056) (0.060) (0.049) (0.052)
+De fDomestic
+i,t0.27***
+(0.089)
+Constant 0.088***0.094***0.100***0.096***0.17***0.17***
+(0.023) (0.020) (0.020) (0.019) (0.018) (0.015)
+Observations 1,951 1,792 1,599 1,566 43,315 43,315
+FE Year Year Year Year Month Month
+×Income ×Income ×Income ×Rating
+×Debt ×Debt
+Implied α 0.34 0.29 0.27 0.30 0.40 0.34
+=== PAGE 28 ===
+1054 The Journal of FinanceR/circlecopyrt
+episodes and obtain similar results of 30%. In columns (5) and (6), we use
+monthly default dates between 1980 and 2014 given by Cruces and Trebesch
+(2013 ). The estimate for αis 40% with only monthly ﬁxed effects in column
+(6), and it decreases to 34% after including S&P country credit ratings at time
+t−5.19Our preferred speciﬁcations are presented in columns (3), (4), and (6),
+where more controls for ex-ante characteristics of the countries are included.
+Based on the above, we estimate 36% to 37% risk-neutral depreciation upon
+default using quanto CDS spreads and 27% to 34% depreciation based on
+historical calibration. These empirical estimates are broadly in line with the
+39% depreciation over default that would equalize expected default losses for
+LC and FC debt under the dollar risk-neutral measure. Therefore, the positive
+covariance between currency and default risk offers a quantitatively plausible
+explanation for the negative mean LC-over-FC credit spread differentials, even
+if credit risk on LC and FC debt is the same under the dollar risk-neutral
+measure.
+In addition to explaining the average difference in credit spreads, the quanto
+adjustment can also help explain some of the time variation in credit spread
+differentials. Using our simple model that assumes a constant α, the quanto
+adjustment is proportional to the LC credit spread ( qt=α
+1−αsLCCS
+t ). During the
+peak of the Global Financial Crisis and the European sovereign debt crisis, the
+mean quanto adjustment accounted for 150 to 200 basis points of the credit
+spread differentials, under the assumption of 36% depreciation upon default.
+During the “normal” times when LC credit spreads were low, the mean quanto
+adjustment was below 100 basis points. We plot the time series of average
+credit spreads and quanto adjustment in Figure IA.2 in the Internet Appendix.
+A.3. Can the Quanto Adjustment Explain All of the Observed Variation?
+While the quanto adjustment can explain the large persistent level differ-
+ences between LC and FC credit spreads, by itself it cannot explain all of the
+variation in the credit spread differentials. If we were to assume that the credit
+risk on LC and FC debt were always the same under the dollar risk-neutral
+measure and that the LC debt and that on FC credit spreads only differed
+because of the quanto adjustment, then the expected depreciation upon default
+αwould need to be implausibly volatile. Table IA.I in the Internet Appendix
+summarizes the implied depreciation upon default under our thought experi-
+ment of equal default probabilities and recovery rates under the dollar measure
+(sQLCCS
+t =sFCCS
+t ) by country. The standard deviation of the expected deprecia-
+tion upon default over the full sample period (excluding Brazil) needs to be as
+high as 46%, compared with the 2% to 3% standard deviation implied from the
+Turkish and Mexican quanto CDS data.
+In addition, given the low volatility of implied depreciation upon default, the
+quanto adjustment alone cannot explain the low correlation between LC and
+19Our earliest S&P sovereign credit ratings start in 1975 for select countries. Countries without
+S&P ratings belong to the unrated category.
+=== PAGE 29 ===
+Local Currency Sovereign Risk 1055
+FC credit spreads in countries such as Indonesia, Peru, and the Philippines.
+It also cannot explain why the LC credit spreads are less correlated across
+countries and are less sensitive to global risk factors than FC credit spreads.
+The near perfect (99%) correlation between CDS spreads denominated in dif-
+ferent currencies suggests that the quanto LC credit spread under the dollar
+measure, sQLCCS
+t , and the LC credit spread under the LC measure, sLCCS
+t ,w o u l d
+also be highly correlated under perfect capital markets, if sQLCCS
+t were directly
+observed.20Moreover, although the quanto adjustment can explain the lower
+sensitivity of excess returns on swapped LC bonds to global risk factors, it can-
+not explain why these excess returns have close to zero loadings on the global
+equity excess returns but signiﬁcant positive loadings on the local equity excess
+returns. In summary, the covariance between currency and credit risk is a very
+important source of credit spread differentials, but it cannot be the only source.
+B. Selective Default, Capital Control, and Jurisdiction Risks
+In addition to the covariance between currency and default risk, selective
+default, capital controls, and differential jurisdiction risks can also have differ-
+ential impacts on LC and FC credit spreads. Looking back at sovereign defaults
+in recent history, it is ambiguous, a priori, whether we should expect higher
+default probabilities or haircuts on domestic LC or FC external debt. Moody’s
+(2014 ) and Standard & Poor’s (2014) document that, among countries not in
+currency unions, 21 sovereigns have defaulted since 1997, of which ﬁve have
+selectively defaulted on LC debt, eight have selectively defaulted on FC debt,
+and eight have defaulted simultaneously on LC and FC debt.21Among all the
+FC defaults, Nicaragua (in 2003 and 2008) and Jamaica (in 2010 and 2013)
+defaulted only on FC debt issued under domestic jurisdiction but exempted
+FC external debt under foreign laws. Therefore, the incidence of domestic LC
+defaults is comparable with the incidence of external FC defaults in the recent
+sample. In terms of the severity of default, taking the joint Argentine defaults
+in 2001 as an example, Moody’s ( 2014 ) gives a mean recovery of face value
+equal to 28.5% for the U.S. dollar debt and 17.5% for the peso debt.
+In addition to outright defaults, as LC debt is governed under the domestic
+jurisdiction, our LC credit spreads encompass a broader view of “credit” risk
+because there are more ways for a government to avoid payments to foreign
+creditors, such as imposing taxes on capital outﬂows or suspending currency
+convertibility. While a systematic analysis of time variations in capital controls
+20Using our simple model, in which sQLLCS
+t =1
+1−αsLCCS
+t andαis time-invariant, we have a
+perfect correlation between sQLCCS
+t and sLCCS
+t . In addition, sQLCCS
+t and sLCCS
+t have the same
+correlation with any other factor xt, Corrs tLCCS,xt)=Corrs tLCCS,xt).
+21Selective LC defaults: Mongolia (1997), Venezuela (1998), Suriname (1999), Turkey (1999),
+and Dominica (1999). Selective FC defaults: Indonesia (1999 to 2002), Pakistan (1999), Peru (2000),
+Moldova (2002), Nicaragua* (2003, 2008), Dominican Republic (2005), Belize (2006, 2012), and
+Seychelles (2008). LC and FC joint defaults: Russia (1998 to 1999), Ukraine (1998 to 2000), Ecuador
+(1999), Argentina (2001), Uruguay (2003), Paraguay (2004), Grenada (2004, 2013), and Jamaica*
+(2010, 2013). An asterisk indicates that the defaulted FC debt is under domestic jurisdiction.
+=== PAGE 30 ===
+1056 The Journal of FinanceR/circlecopyrt
+and jurisdiction risks for all sample countries is important, it is beyond the
+scope of the paper. Instead, we focus on Brazil as a speciﬁc case to illustrate
+how these risks may affect the LC credit spread.
+As a country offering one of the highest nominal interest rates in the world,
+Brazil has implemented several macroprudential and exchange rate policy
+measures to curb portfolio investment ﬂows and cross-border derivative trad-
+ing. The Imposto sobre Operac ¸˜oes Financieras (IOF), or tax on ﬁnancial trans-
+actions, was introduced in October 2009 and abandoned in the face of large
+capital outﬂows in June 2013. The IOF varied between 2% and 6% on foreign
+investment in ﬁxed income instruments while it was in effect.
+The difference between the onshore deliverable CCS and the offshore NDS
+rates captures currency convertibility and capital control risks. We construct
+the Brazilian onshore ﬁxed-for-ﬁxed deliverable CCS by subtracting the on-
+shore Cupom Cambial futures (which is the ﬁxed U.S. dollar against the ﬂoat-
+ing Brazilian interbank deposit rate DI) from the onshore plain-vanilla interest
+rate swap PRE/DI (which is the ﬁxed Brazilian real against the DI), with both
+legs settled in Brazilian reais.22The onshore deliverable CCS is higher than
+the offshore NDS because it is subject to cross-border taxation, capital control,
+and convertibility risks. These risks are also faced by holders of domestic LC
+sovereign bonds. Therefore, the LC credit spread based on the deliverable CCS
+provides the investor with a ﬁrst-order hedge of the capital control risk and
+thus should be lower than the LC credit spread based on the NDS.
+Panel A in Figure 7plots the ﬁve-year LC credit spreads based on the NDS
+and deliverable CCS compared to the FC credit spread. The four changes in the
+IOF tax rate are indicated by the vertical lines. The LC credit spread based on
+onshore deliverable CCS is lower than our conventional LC credit spread based
+on the NDS. The two LC credit spread measures diverged signiﬁcantly during
+the period when the IOF was in effect, with a mean spread differential of 1.3%,
+which accounts for about one-third of the LC credit spread based on the NDS
+and about one-half of the differential between the NDS-based LC credit spread
+and the FC credit spread. After the IOF was removed in June 2013, the two LC
+credit spread measures and the FC credit spread converged signiﬁcantly, with
+the LC credit spread based on deliverable CCS approximately equal to the FC
+credit spread.
+Furthermore, we note that, even if convertibility and capital control risks are
+hedged to the ﬁrst order by the onshore deliverable CCS, the LC credit spread
+measure based on the deliverable CCS is still higher than the FC credit spread.
+We attribute this difference to the additional credit risk from lending under
+domestic law. To see this, we examine Brazil’s four large offshore issuances of
+LC-denominated eurobonds, which are governed under international laws, set-
+tled in U.S. dollars, and free of capital control and convertibility risks. Figure 7,
+Panel B, shows the NDS-based offshore LC credit spread on a eurobond—
+22As the Cupom Cambial is traded on a futures exchange subject to margin calls and the PRE/DI
+does not involve the exchange of the principal, the counterparty risk in the deliverable CCS is even
+more negligible compared to the NDS.
+=== PAGE 31 ===
+Local Currency Sovereign Risk 1057
+Panel A. Onshore LC Credit Spreads Based on the NDS and Deliverable CCS
+2% 4% 6% Removal of IOF: 0%0 2 4 6Percentage Point
+2007 2008 2009 2010 2011 2012 2013 2014
+daerpS tiderC CF Y5 )SDN( daerpS tiderC CL Y5 erohsnO
+Onshore 5Y LC Credit Spread (Deliverable CCS)
+Panel B. Onshore and Oﬀshore LC Credit Spreads
+2% 4% 6% Removal of IOF: 0%0 2 4 6Percnetage Point
+2007 2008 2009 2010 2011 2012 2013 2014
+Onshore 10Y LC Credit Spread (NDS) 10Y FC Credit Spread
+Offshore BRL 2022−10Y NDS
+Figure 7. Brazil onshore and offshore credit spread comparison. In the top ﬁgure, the
+long-dashed line plots the Brazilian ﬁve-year LC credit spread of the domestic LC bond using the
+NDS. The short-dashed line plots the ﬁve-year LC credit spread of the domestic LC bond using
+the deliverable CCS implied by the Cupom Cambial future and the pre-DI swap. The solid lines
+plot the ﬁve-year FC credit spread. In the bottom ﬁgure, the long-dashed line plots the Brazilian
+10-year LC credit spread of the domestic LC bond using the NDS. The short-dashed line plots
+the yield spread on a eurobond issued by the Brazilian sovereign (denominated in BRL traded
+offshore and maturing in 2022) minus the 10-year NDS. The solid lines plot the 10-year FC credit
+spread. One-week moving averages are plotted for all series. The eurobond yield is obtained from
+the Luxembourg Stock Exchange and Bloomberg.
+=== PAGE 32 ===
+1058 The Journal of FinanceR/circlecopyrt
+denominated in reais and maturing in 2022—is much lower than the LC credit
+spread on an onshore bond based on the same NDS rate. The offshore LC credit
+spread is also generally lower than the FC credit spread. Therefore, the general
+pattern that the LC credit spread is lower than the FC credit spread also holds
+for Brazil once we remove capital control and domestic jurisdiction risks.23
+C. Financial Market Frictions
+While the benchmark of perfect capital markets provides a useful starting
+point, a number of important frictions affect the pricing of the assets we use
+to measure credit risk. The comparison between LC and FC credit spreads
+highlights not only the differential credit risk between the two types of debt,
+but also various ﬁnancial market frictions that have differential impacts on
+LC and FC credit spreads. We now discuss the impacts of the four types of
+frictions that we initially abstracted from under Assumption 1: (1) differential
+liquidity risk, (2) market segmentation between domestic and external debt
+markets, (3) short-selling constraints, and (4) no-arbitrage violations in the
+currency markets. We discuss how each of these frictions causes our measures
+of the LC risk-free rate and LC credit spread to differ from their frictionless
+interpretations offered by Propositions 1 and 2.
+C.1. Liquidity Risk
+In addition to differential credit risk, differential liquidity risk between
+swapped LC and FC debt can also create a wedge between the two credit
+spreads. We assess the liquidity of swapped LC debt and FC debt by comparing
+the bid-ask spread, market size, and trading volume of the two types of debt. A
+summary of liquidity and trading volume at the country level can be found in
+Internet Appendix Table IA.II. We obtain bid-ask spreads on LC and FC bonds
+by averaging yield bid-ask spreads across all sovereign bonds with remaining
+maturities between 2 and 10 years in Bloomberg for each sample country. The
+sample mean bid-ask spread is equal to 11.1 basis points for LC debt and 14.5
+basis points for FC debt. The mean bid-ask spread on the ﬁve-year currency
+swaps is equal to 38.2 basis points, greater than the bid-ask spread on the
+LC and FC bonds. In terms of market size and trading volume, we obtain
+data from the quarterly Debt Trading Volume Survey compiled by EMTA. The
+survey participants consist of around 60 offshore large ﬁnancial institutions,
+including most of the well-known investment banks and a few hedge funds.
+The mean reported quarterly trading volume reported in the EMTA surveys is
+23In addition to Brazil, Colombia has also issued several LC eurobonds payable in dollars
+and traded offshore. The offshore LC credit spread in Colombia is also lower than the FC credit
+spread. Furthermore, Chamon, Schumacher, and Trebesch ( 2014 ) also document signiﬁcantly lower
+spreads on foreign bonds than those on domestic bonds in Greece and Portugal during the peak of
+the European debt crisis, and in Russia (2000 to 2006) and Argentina (2005 to 2012).
+=== PAGE 33 ===
+Local Currency Sovereign Risk 1059
+equal to $49 billion for LC bonds and $25 billion for FC bonds.24We aggregate
+total CCS notional exchanged from the Depository Trust & Clearing Corpora-
+tion (DTCC) available on the Bloomberg Swap Depositary Reporting platform
+for 2013. The mean quarterly trading volume for CCS in our sample is about
+$9 billion, lower than the trading volume of LC and FC bonds.
+It follows from above that investors in the synthetic swapped LC bonds have
+long positions in the more liquid cash market and short positions in the less liq-
+uid swap market, and hence have better overall liquidity than if they held FC
+bonds. The potential liquidity premium would be translated into lower spreads
+for swapped LC bonds. To analyze the effect of the time-varying liquidity risk on
+the spread differential, we perform a contemporaneous regression of changes
+in LC and FC credit spreads and LC-over-FC credit spread differentials on
+changes in bid-ask spreads on bonds and swaps in Table VI. Conditional on
+VIX and our host of macroeconomic controls, we ﬁnd that a one basis point
+increase in the bid-ask spread of the FC bond and the currency swap signif-
+icantly reduces the LC-over-FC credit spread differential by 1.5 and 2 basis
+points, respectively. The impact of the LC bond bid-ask spread on the credit
+spread differential is also positive, although statistically insigniﬁcant.
+Furthermore, in Table VII, we show that liquidity factors signiﬁcantly fore-
+cast bond excess returns. The bid-ask spreads on FC bonds and offshore cur-
+rency swaps predict positive excess returns on the FC bonds. Although currency
+swaps are not used in constructing FC excess returns, the liquidity of currency
+swaps is indicative of the overall offshore liquidity condition. We show that
+illiquidity of LC bonds positively forecasts excess returns, while illiquidity of
+FC bonds and currency swaps negatively forecasts excess returns. Finally, the
+same set of liquidity factors are powerful predictors of the FC-over-swapped LC
+excess returns, which suggests time-varying differential liquidity risk premia
+between swapped LC and FC debt.
+C.2. Market Segmentation and Slow-Moving Capital
+In addition to differential cash ﬂow, liquidity risks, and short-selling con-
+straints, the strong correlation between FC credit spreads and VIX and the
+lack of a strong correlation between LC credit spreads and VIX motivate us to
+consider potential market segmentation between domestic and external debt
+markets. In particular, the marginal investors for LC and FC debt might be
+different in the presence of slow-moving capital and limits to arbitrage. For
+emerging market debt, FC bonds are issued offshore, mainly targeting global
+investors. Although there has been increasing foreign ownership in LC debt
+markets, the bulk of the LC debt is still held by local investors, such as local
+24Since the size of the LC bond market is about ﬁve times as large as the FC bond market,
+the turnover ratio (deﬁned as the trading volume decided by total outstanding debt) of offshore
+participants is lower for LC debt (28%) than for FC bonds (74%). However, since foreign holdings
+represent, on average, 15% of outstanding LC debt in the sample, a back-of-the-envelope calculation
+suggests that if local investors traded 28% as frequently as foreigners, the total turnover ratios for
+LC and FC debt would be the same.
+=== PAGE 34 ===
+1060 The Journal of FinanceR/circlecopyrt
+Table VI
+Regressions of Quarterly Changes in Yield Spreads, 2005 to 2014
+This table reports ﬁxed effect panel regression results for quarterly changes in yield spreads.
+The dependent variables are: (1) /Delta1sLCCS, change in the LC credit spread; (2) /Delta1sFCCS, change
+in the FC credit spread; (3) /Delta1sLC/FCCS, change in the LC- over- FC credit spread; (4) /Delta1sLC/US,
+change in the LC nominal spread; and (5) /Delta1CCS , change in the cross-currency swap rate. The
+independent variables are: /Delta1baLC,/Delta1baFC,a n d /Delta1baCCS, changes in the mean bid-ask spreads
+on all LC and FC bonds between 2 and 10 years in Bloomberg and on ﬁve-year par CCS in
+basis points, respectively; /Delta1VIX, change in the monthly standard deviation of implied volatility
+on S&P index options (conventional quote/√
+12);/Delta1CFNAI , change in the Chicago Fed National
+Activity Index; /Delta1FC(LC) Debt/GDP , change in the FC (LC) debt to GDP ratio from the BIS debt
+securities statistics; /Delta1Reser ve, log change in FX reserves; /Delta1IP, percentage change in the year-
+over-year (y.o.y.) industrial production index; /Delta1π, percentage change in y.o.y. inﬂation; /Delta1σπ, change
+in the 12-month rolling standard deviation of y.o.y. inﬂation; /Delta1ToT , log change in terms of trade;
+/Delta1σToT, change in the 12-month rolling standard deviation of /Delta1ToT ;a n d /Delta1σMSCI , change in the
+30-day rolling standard deviation of daily local MSCI equity returns. All regressions are run at
+the quarterly frequency with country ﬁxed effects using Newey-West standard errors with eight-
+quarter lags clustered by quarter following Driscoll and Kraay ( 1998 ). Standard errors are shown
+in the parentheses. Signiﬁcance levels are denoted by***p<0.01,**p<0.05, and*p<0.1.
+(1) (2) (3) (4) (5)
+/Delta1sLCCS/Delta1sFCCS/Delta1sLC/FCCS/Delta1sLC/US/Delta1ccs
+/Delta1baLC0.0062 0.0053**0.00090 0.0030 −0.0032
+(0.0062) (0.0022) (0.0056) (0.0071) (0.0041)
+/Delta1baFC0.0085 0.023**−0.015**0.022**0.014
+(0.0085) (0.011) (0.0074) (0.010) (0.011)
+/Delta1baCCS−0.0052**0.0042**−0.0094***−0.0022 0.0030
+(0.0025) (0.0020) (0.0034) (0.0032) (0.0031)
+/Delta1VIX 0.020 0.099***−0.079**0.0035 −0.017
+(0.033) (0.013) (0.034) (0.034) (0.027)
+/Delta1CFNA I −0.18**−0.14*-0.046 −0.17 0.010
+(0.093) (0.071) (0.059) (0.16) (0.20)
+Other Controls
+/Delta1FC Debt/GDP 0.18**0.25**−0.071 0.18*0.0042
+/Delta1LC Debt/GDP −0.053**−0.018 −0.035 −0.039*0.014
+/Delta1Reser ve 0.0043 0.0015 0.0029 −0.0047 −0.0090
+/Delta1IP −0.0063 −0.014**0.0079**−0.0058 0.00058
+/Delta1π 0.070**0.052***0.018 0.24***0.17**
+/Delta1σπ 0.056 0.057 −0.00060 −0.063 −0.12
+/Delta1ToT −0.0035 0.0016 −0.0051 −0.0015 0.0020
+/Delta1σToT 0.0039 0.029***−0.025**−0.0032 −0.0071
+/Delta1σMSCI 0.14**0.18***−0.046 0.39***0.25***
+Observations 347 347 347 347 347
+Within R2
+Full model 0.168 0.577 0.258 0.222 0.116
+Without VIX or Liquidity 0.143 0.393 0.083 0.211 0.091
+With VIX and Liquidity Only 0.077 0.450 0.228 0.086 0.048
+=== PAGE 35 ===
+Local Currency Sovereign Risk 1061
+Table VII
+Forecasting Quarterly Holding-Period Excess Returns, 2005 to 2014
+This table reports annualized quarterly return forecasting results for rxFC/US
+t+3, FC-over-US ex-
+cess returns, srxLC/US
+t+3, swapped LC over-U.S. excess returns, and srxFC/LC
+t+3, FC-over-swapped
+LC excess returns. The “local” controls refer to all other local macroeconomic controls used in
+Table VI, expressed in levels. Mark-to-market accounting is used to calculate returns for swapped
+LC bonds to take into account second-order currency hedging errors due to the covariance be-
+tween credit risk and currency risk. The LC swap and bond positions are rebalanced at the daily
+frequency so that the two positions have the same market value. All regressions are run at a
+monthly frequency with country ﬁxed effects using Newey-West standard errors with 24-month
+lags clustered by month, following Driscoll and Kraay ( 1998 ). Standand errors are shown in the
+parentheses. Signiﬁcance levels are denoted by***p<0.01,**p<0.05, and*p<0.1.
+baLCbaFCbaCCSVIX Other Controls R2
+rxFC/US
+t+3(1) 0.0220 0.24***0.15***1.59*CFNAI 0.205
+(0.042) (0.091) (0.034) (0.83)
+(2) 0.0470 0.17**0.17***1.62*CFNAI, local 0.275
+(0.067) (0.084) (0.032) (0.89)
+srxLC/US
+t+3(3) 0.25***−0.0240 −0.085**0.620 CFNAI 0.0320
+(0.068) (0.10) (0.034) (0.58)
+(4) 0.25***−0.140 −0.069**0.850 CFNAI, local 0.0900
+(0.084) (0.13) (0.034) (0.65)
+srxFC/LC
+t+3(5) −0.23***0.260 0.24***0.97***CFNAI 0.187
+(0.083) (0.16) (0.044) (0.33)
+(6) −0.20***0.30*0.23***0.77**CFNAI, local 0.221
+(0.070) (0.17) (0.037) (0.35)
+pension funds, insurance companies, commercial banks, and other government
+agencies. These domestic entities gives rise to a distinct local clientele demand
+that is absent from the external debt market.25
+To provide an example of the lack of distinct local clientele demand (e.g.,
+Italy) and the presence of an extreme form of local clientele demand (e.g., Rus-
+sia), Figure 8shows LC and FC credit spreads for Italy and Russia, respectively.
+In the case of Italy, euro-denominated and dollar-denominated sovereign debt
+markets are both easily accessible to global investors. Prior to 2008, the two
+Italian credit spreads were indistinguishable. The two credit spreads diverged
+slightly beginning in 2008, but are highly correlated with the sample correla-
+tion equal to 90%. On the other hand, Russia displays extreme local clientele
+demand for LC bonds during the 2008 to 2009 crisis, as the LC credit spread
+reached negative 10 percentage points during the crisis and the CDS spread
+on FC debt was above positive 10 percentage points. While the nominal yield
+on ruble debt was 10 percentage points above U.S. Treasuries, the ruble/dollar
+NDS rate increased to 20 percentage points as offshore investors were con-
+cerned that Russia would abandon the euro/dollar peg and devalue. The share
+25Kumara and Pfau ( 2011 ) document stringent caps faced by emerging market pension funds
+in investing in local equities and overseas assets.
+=== PAGE 36 ===
+1062 The Journal of FinanceR/circlecopyrt
+Panel A. Italy: Nominal Spread and CCS−2 0 2 4 6Percentage Point
+2000 2002 2004 2006 2008 2010 2012 2014
+LC/US CCSPanel B. Italy: LC and FC Credit Spreads0 2 4 6 8Percentage Point
+2000 2002 2004 2006 2008 2010 2012 2014
+LCCS FCCS
+Panel C. Russia: Nominal Spread and NDS 0 5 10 15 20Percentage Point
+2006 2007 2008 2009 2010 2011 2012 2013 2014 2015
+LC/US NDSPanel D. Russia: LC and FC Credit Spreads −15 −10 −5 0 5 10Percentage Point
+2006 2007 2008 2009 2010 2011 2012 2013 2014 2015
+LCCS CDS (dollar)
+Figure 8. Five-year sovereign credit spreads in Italy and Russia (percentage points).
+In Panel A, “LC/US” plots ﬁve-year nominal yield spreads of euro-denominated Italian sovereign
+bonds over U.S. Treasury bonds, and “CCS” plots ﬁve-year ﬁxed-for-ﬁxed euro/dollar CCS rates. In
+Panel B, “FCCS” plots ﬁve-year yield spreads of dollar-denominated Italian sovereign bonds over
+U.S. Treasury bonds, and “LCCS” plots ﬁve-year LC credit spreads for euro-denominated Italian
+sovereign bonds. In Panel C, “LC/US” plots ﬁve-year nominal yield spreads of Russian LC sovereign
+bonds over U.S. Treasury bonds, and “NDS” plots ﬁve-year ﬁxed-for-ﬁxed ruble/dollar NDS rates.
+In Panel D, “CDS” plots ﬁve-year Russian sovereign credit spread swaps spreads denominated
+in dollars (Russia does not have enough dollar bonds outstanding to construct yield curves), and
+“LCCS” plots ﬁve-year LC credit spreads for the ruble bond. All data are from Bloomberg.
+of nonresident holdings of Russian LC debt was close to zero around the time
+(Du and Schreger ( 2015 )).26Local investors, meanwhile, continued to hold LC
+debt despite extremely unattractive yields. Foreign participation of the ruble
+bond market increased steadily after the crisis and has surged in recent years
+after Russian LC bonds became Euroclearable in early 2013. During the recent
+ﬁnancial turbulence in Russia starting at the end of 2014, the LC credit spread
+26We note that, before Russian LC bonds became Euroclearable in 2013, offshore investors were
+allowed to participate in the LC market in Russia but had to have a broker and custody agreement
+with a local ﬁnancial institution in order to obtain market access. Investors were exposed to
+signiﬁcant settlement and custody risks, especially during the peak of the crisis.
+=== PAGE 37 ===
+Local Currency Sovereign Risk 1063
+increased signiﬁcantly and was strongly correlated with the CDS spread on FC
+debt.
+If LC and FC debt markets are completely integrated, global investors are
+the marginal investors for both types of debt. If LC and FC markets are com-
+pletely segmented, global investors price the FC debt and the local clientele
+price the LC debt. Our sample emerging markets stand in between perfect
+market integration in Italy and extreme market segmentation in Russia dur-
+ing the peak of the crisis, with the country credit spread correlation ranging
+from 11% for Indonesia to over 90% for Hungary and Poland. In countries where
+the LC debt market is imperfectly integrated into the global capital market,
+local clientele demand can still play a role in the presence of risky arbitrage
+by global investors. Furthermore, shocks to global risk aversion have perfect
+pass-through into the FC credit spread, but incomplete pass-through into the
+LC credit spread, which can be an important source of the credit spread differ-
+entials. More discussions can be found in Sections IIIand IV of the Internet
+Appendix.
+C.3. Short-Selling Constraints
+In this subsection, we discuss impacts of short-selling constraints on the
+valuation of LC and FC credit spreads. We show that it is generally more
+difﬁcult to borrow LC debt than FC debt from global securities lenders. Markit
+Securities Finance (formerly known as Data Explorer) provides security-level
+lending information covering more than 20,000 institutional funds. We use 12
+quarter-end reports from Markit Securities Finance between 2012 and 2014
+to document differences in inventories for lendable securities, actual lending
+amounts, and average lending fees across the two types of debt.
+We present the country-level summary statistics in Internet Appendix Table
+IA.IV . The average daily inventory for lendable FC sovereign bonds in our
+sample countries is equal to $40 billion, which accounts for about 11% of total
+outstanding FC sovereign debt securities. The total average daily inventory for
+LC bonds is $23 billion, which accounts for less than 1% of total outstanding
+LC sovereign debt securities. In addition to lower inventory levels, the actual
+inventory utilization rates are also signiﬁcantly lower for LC debt than for FC
+debt. On average, only 4% of lendable LC bonds are actually lent out, compared
+with 12% of FC bonds. There is signiﬁcant cross-country heterogeneity in the
+size of LC securities lending. We only observe negligible amounts (below $1
+million) of securities lending for LC bonds in Indonesia, Israel, Mexico, and
+Philippines. In contrast, Hungary and Poland have sizable LC bond lending,
+with the average balance over $300 million, which is comparable with lending
+of FC bonds. In terms of average lending fees on existing transactions, it costs
+21 basis points to short FC bonds and 31 basis points to short LC bonds.27
+27The empirical literature on borrowing and shorting defaultable bonds is quite limited. Re-
+cently, Asquith et al. ( 2013 ) present some stylized facts for borrowing corporate bonds using a
+=== PAGE 38 ===
+1064 The Journal of FinanceR/circlecopyrt
+Following the existing literature, we know that the existence of short-selling
+constraints can increase securities prices, either because more pessimistic in-
+vestors are kept away from participating in the market (i.e., Miller ( 1977 )) or
+because there are search and bargaining frictions associated with shorting se-
+curities (i.e., Dufﬁe, Garleanu, and Pedersen ( 2002 )). Therefore, short-selling
+constraints can potentially lower LC credit spreads, more so than FC credit
+spreads. To arbitrage the mispricing, an investor needs to pay the borrow-
+ing cost to short LC bonds. Therefore, short-selling constraints cannot explain
+away positive LC credit spreads, but can potentially explain temporarily nega-
+tive LC credit spreads. Short-selling constraints can also contribute to negative
+LC-over-FC credit spread differentials.
+C.4. No-Arbitrage Violations in the Currency Market
+In addition to segmentation between domestic and external debt markets,
+potential segmentation and slow-moving capital in the FX markets can also
+affect our LC credit spread measure. Assuming that the FX spot and forward
+markets are frictionless, the CIP condition should hold between risk-free rates
+across currencies. However, several papers have documented the failure of the
+short-term CIP condition between money market rates in developed markets
+during the ﬁnancial crisis (Baba ( 2009 ), Coffey, Hrung, and Sarkar ( 2009 ),
+and Griffoli and Ranaldo ( 2011 )). The CIP failures during the crisis share
+a common feature: The synthetic dollar borrowing cost was higher than the
+direct dollar borrowing cost. The authors attribute the breakdown of the no-
+arbitrage condition to a severe dollar shortage during the crisis.28Ivashina,
+Scharfstein, and Stein ( 2015 ) argue that the dollar shortage facing European
+banks during the European debt crisis prompted these banks to swap euro
+funding into dollar funding using FX swaps, which resulted in CIP violations
+when there was limited capital to take the other side of the trade.29
+If the dollar shortage affected our sample emerging market currencies, then
+the LC credit spread based on the synthetic LC risk-free rate constructed from
+U.S. Treasuries and CCS rates would overstate the credit risk component of the
+LC sovereign debt. However, the alternative LC credit spread based on supra-
+national yields presented in Section II.D. should not be directly affected, as no
+swaps are used in the construction. In Section V of the Internet Appendix,
+we measure no-arbitrage violations in the FX markets for emerging mar-
+kets using CIP deviations between supranational yields in emerging market
+proprietary data set from a major securities lender and show that the cost of borrowing is between
+10 and 20 basis points, comparable to the cost of shorting stocks.
+28We note that, at the peak of the crisis, CIP deviation was much smaller at medium to long
+tenors than at short tenors. While prior papers ﬁnd an approximately 300 basis point CIP deviation
+based on LIBOR for the euro/dollar pair at short tenors of up to one year, the most negative ﬁve-
+year cross-currency basis for the euro/dollar pair was around negative 50 basis points during the
+peak of the crisis.
+29More generally, Hau and Rey ( 2006 ) and Gabaix and Maggiori ( 2015 )e x a m i n et h er o l eo f
+capital ﬂows in determining exchange rates in imperfect ﬁnancial markets.
+=== PAGE 39 ===
+Local Currency Sovereign Risk 1065
+currencies and the dollar. We argue that, while long-term CIP deviations can
+be signiﬁcant during the crisis, they are much smaller in size on average than
+LC credit spreads.
+IV. Conclusion
+The last decade has seen a remarkable change in emerging market govern-
+ment ﬁnance, as major emerging market sovereigns are increasingly borrow-
+ing in their own currency. In this paper, we introduce a new measure of LC
+sovereign risk, the LC credit spread, deﬁned as the difference between the
+LC bond yield and the LC risk-free rate implied by the swap market. Using
+this new measure, we document several key ﬁndings. First, emerging market
+governments pay a signiﬁcant credit spread when they borrow in their own
+currency, despite the sovereign’s option to inﬂate the debt away. Second, LC
+bonds have lower credit spreads than FC bonds issued by the same sovereign.
+The LC-over-FC credit spread differential became even more negative during
+the peak of the global ﬁnancial crisis. Third, while FC credit spreads are very
+integrated across countries and responsive to global risk factors, LC credit
+spreads are much less so. After presenting the stylized facts, we discuss sev-
+eral sources of credit spread differentials: (1) covariance between currency and
+default risk; (2) selective default, jurisdiction, and capital control risks; and
+(3) ﬁnancial market frictions, including illiquidity, short-selling constraints,
+market segmentation, and slow-moving capital.
+Initial submission: December 10, 2013; Accepted: April 30, 2015
+Editors: Bruno Biais, Michael R. Roberts, and Kenneth J. Singleton
+REFERENCES
+Arora, Navneet, Priyank Gandhi, and Francis A. Longstaff, 2011, Counterparty credit risk and the
+credit default swap market, Journal of Financial Economics 103, 280–293.
+Asquith, Paul, Andrea Su, Thomas Covert, and Parag Pathak, 2013, The market for borrowing
+corporate bonds, Journal of Financial Economics 107, 155–182.
+Baba, Naohiko, 2009, Dynamic spillover of money market turmoil from FX swap to cross- currency
+swap markets: Evidence from the 2007–2008 turmoil, Journal of Fixed Income 18, 24–38.
+Bao, Jack, Jun Pan, and Jiang Wang, 2011, The illiquidity of corporate bonds, Journal of Finance
+86, 911–946.
+Borri, Nicola, and Adrien Verdelhan, 2012, Sovereign risk premia, Working paper, LUISS Guido
+Carli University and Massachusetts Institute of Technology.
+Buraschi, Andrea, Murat Meguturk, and Emrah Sener, 2014, The geography of risk capital, Review
+of Financial Studies 21, 1103–1152.
+Burger, John D., and Francis E. Warnock, 2007, Foreign participation in local currency bond
+markets, Review of Financial Economics 16, 291–304.
+Burger, John D., Francis E. Warnock, and Veronica Cacdac Warnock, 2012, Emerging local currency
+bond markets, Financial Analysts Journal 68, 73–93.
+Chamon, Marcos, Julian Schumacher, and Christoph Trebesch, 2014, Foreign law bonds: Can they
+reduce sovereign borrowing costs?, Working paper, International Monetary Fund, University
+of Munich, and Johannes Gutenberg University Mainz.
+=== PAGE 40 ===
+1066 The Journal of FinanceR/circlecopyrt
+Chen, Long, David Lesmond, and Jason Wei, 2007, Corporate yield spreads and bond liquidity,
+Journal of Finance 62, 119–149.
+Coffey, Niall, Warren B. Hrung, and Asani Sarkar, 2009, Capital constraints, counterparty risk,
+and deviations from covered interest rate parity, Federal Reserve Bank of New York Staff
+Reports, No. 393.
+Corradin, Stefano, and Maria Rodriguez-Moreno, 2014, Limits to arbitrage: Empirical evidence
+from euro area sovereign bond markets, Working paper, European Central Bank and Univer-
+sity of Navarra.
+Cruces, Juan, and Christoph Trebesch, 2013, Sovereign defaults: The price of haircuts, American
+Economic Journal: Macroeconomics 5, 85–117.
+Datta, Deepa Dhume, and Wenxin Du, 2012, Nonparametric HAC estimation for time series data
+with missing observations, International Finance Discussion Paper No.1060, Board of Gover-
+nors of the Federal Reserve System.
+Driscoll, John, and Aart Kraay, 1998, Consistent covariance matrix estimation with spatially
+dependent data. Review of Economics and Statistics 80, 549–560.
+Du, Wenxin, and Jesse Schreger, 2015, Sovereign risk, currency risk, and corporate balance sheets,
+Working paper, Harvard University and Federal Reserve Board.
+Dufﬁe, Darrell, 2010, Asset pricing dynamics with slow-moving capital, Journal of Finance 65,
+1237–1267.
+Dufﬁe, Darrell, Nicolae Garleanu, and Lasse Heje Pedersen, 2002, Securities lending, shorting,
+and pricing, Journal of Financial Economics 66, 307–339.
+Dufﬁe, Darrell, and Ming Huang, 1996, Swap rates and credit quality, Journal of Finance 51,
+921–949.
+Dufﬁe, Darrell, Lasse H. Pedersen, and Kenneth J. Singleton, 2003, Modeling sovereign yield
+spreads: A case study of Russian debt, Journal of Finance 58, 119–160.
+Eichengreen, Barry, and Ricardo Hausmann, eds., 2005, Other People’s Money: Debt Denomination
+and Financial Instability in Emerging Market Economies (University of Chicago Press, Chicago
+and London).
+Fletcher, Donna J., and Larry W. Taylor, 1996, Swap covered interest parity in long-date capital
+markets, Review of Economics and Statistics 78, 530–538.
+Gabaix, Xavier, and Matteo Maggiori, 2015, International liquidity and exchange rate dynamics,
+Quarterly Journal of Economics 130, 1369–1420.
+Garcia, Marcio, and Alexandre Lowenkron, 2005, Cousin risks: The extent and the causes of
+positive correlation between country and currency risks, Working paper, PUC-Rio.
+Greenwood, Robin, and Dimitri Vayanos, 2014, Bond supply and excess bond returns, Review of
+Financial Studies 27, 663–713.
+Griffoli, Tommaso Mancini, and Angelo Ranaldo, 2011, Limits to arbitrage during the crisis: Fund-
+ing liquidity constraints and covered interest parity, Working paper, Swiss National Bank and
+University of St. Gallen.
+Gromb, Denis, and Dimitri Vayanos, 2002, Equilibrium and welfare in markets with ﬁnancially
+constrained arbitrageurs, Journal of Financial Economics 66, 361–407.
+Hau, Harald, and H ´el`ene Rey, 2006, Exchange rates, equity prices, and capital ﬂows, Review of
+Financial Studies 19, 273–317.
+Ivashina, Victoria, David Scharfstein, and Jeremy Stein, 2015, Dollar funding and the lending
+behavior of global banks, Quarterly Journal of Economics 130, 1241–1281.
+Jankowitsch, Rainer, and Pichler Stefan, 2005, Currency dependence of corporate credit spreads,
+Journal of Risk 8, 1–24.
+Khuong-Huu, Philippe, The price of credit, Risk Magazine , December 1999, 68–71.
+Kumara, Ajantha S., and Wade D. Pfau, 2011, Would emerging market pension funds beneﬁt from
+international diversiﬁcation, Annals of Finance 9, 1–17.
+Lettau, Martin, Matteo Maggiori, and Michael Weber, 2014, Conditional risk premia in currency
+markets and other asset classes, Journal of Financial Economics 14, 197–225.
+Longstaff, Francis A., Jun Pan, Lasse H. Pedersen, and Kenneth J. Singleton, 2011, How sovereign
+is sovereign credit risk? American Economic Journal: Macroeconomics 3, 75–103.
+=== PAGE 41 ===
+Local Currency Sovereign Risk 1067
+Lustig, Hanno, Nikolai Roussanov, and Adrien Verdelhan, 2014, Countercyclical currency risk
+premia, Journal of Financial Economics 111, 527–553.
+Lustig, Hanno, and Adrien Verdelhan, 2007, The cross section of foreign currency risk premia and
+consumption growth risk, American Economic Review 97, 89–117.
+Mano, Rui, 2013, Exchange rates upon sovereign defaults, Working paper, International Monetary
+Fund.
+McBrady, Matthew R., and Michael J. Schill, 2007, Foreign currency-denominated borrowing in
+the absence of operating incentives, Journal of Financial Economics 86, 145–177.
+Miller, Edward, 1977, Risk, uncertainty, and divergence of opinion, Journal of Finance 32, 1151–
+1168.
+Moody’s, 2014, Sovereign default and recovery rates, 1983-2013, Moody’s Investors Service Credit
+Policy.
+Popper, Helen, 1993, Long-term covered interest parity: Evidence from currency swaps, Journal
+of International Money and Finance 12, 439–448.
+Reinhart, Carmen M., and Kenneth S. Rogoff, 2009, This Time Is Different: Eight Centuries of
+Financial Folly (Princeton University Press, Princeton, NJ).
+Reinhart, Carmen M., and Kenneth S. Rogoff, 2011, The forgotten history of domestic debt, Eco-
+nomic Journal 121, 319–350.
+Shleifer, Andrei, and Robert Vishny, 1997, The limits of arbitrage, Journal of Finance 52, 35–55.
+Standard & Poor’s, 2014, Sovereign defaults and rating transition data, 2013 update, Standard
+Poor’s Ratings Direct.
+Appendix
+Proof of Lemma 1: The net cash ﬂows of a ﬁxed-for-ﬁxed LC/dollar CCS are
+as follows. Party A gives one dollar to Party B and receives Etunits of LC at
+the inception of the swap at time t. At the maturity of the swap, Party A pays
+exp(n˜rLC
+nt)Etunits of LC to Party B and receives exp( n˜r$
+nt) dollars. There are no
+net exchanges of ﬂoating payments, as both parties are paying and receiving
+the same LIBOR cash ﬂow at each coupon period. At time t, since the LC can
+be exchanged forward at time t+nat the outright forward rate Ft,t+nand both
+parties must be ex-ante indifferent between receiving exp( n˜rLC
+nt)Etunits of LC
+and exp( n˜r$
+nt) dollars at time t+n, we must have
+exp/parenleftbig
+n˜r$
+nt/parenrightbig
+=exp/parenleftbig
+n˜rLC
+nt/parenrightbig
+Et/Ft,t+n,
+or in logs, ρnt≡˜rLC
+nt−˜r$
+nt=1
+n(ft,t+n−et). /square
+Proof of Proposition 1: Given the U.S. Treasury yield y∗$
+nt, the price of the U.S.
+Treasury bond at time tis equal to P∗$
+nt=exp(−ny∗$
+nt).Suppose an LC investor
+has ( Et/Ft,t+n)P∗$
+ntunits of the LC at time t. She can lock in a default-free LC
+return by exchanging the LC in ( P∗$
+nt/Ft,t+n) in U.S. dollars and investing the
+dollar proceeds into 1 /Ft,t+nunits of U.S. Treasury bonds at time t. Meanwhile,
+the investor can sell 1 /Ft,t+ndollars forward for one unit of the LC. At time
+t+n, the U.S. Treasury bond pays off 1 /Ft,t+ndollars with certainty. In the
+absence of counterparty risk in the forward contract, the investor gives 1 /Ft,t+n
+dollars to the bank, exactly offsetting the U.S. Treasury bond payment, and
+=== PAGE 42 ===
+1068 The Journal of FinanceR/circlecopyrt
+receives on net one unit of the LC at time t+nwith certainty. By Lemma 1,
+Ft,t+n=exp(nρ∗
+nt)Et. Therefore, the annualized log LC risk-free rate is equal to
+y∗LC
+nt=−1
+nlog/bracketleftbig
+(Et/Ft,t+n)P∗$
+nt/bracketrightbig
+=y∗$
+nt+ρnt.
+/square
+Proof of Proposition 2: Under the LC risk-neutral measure, QLC, we know that
+the price of an LC bond is equal to the discounted expected value of future
+LC cash ﬂows, with cash ﬂows discounted at the LC risk-free rate and the
+expectation taken under the LC risk-neutral measure:
+PLC
+t=exp(−y∗LC
+t)EQLC
+t/parenleftbig
+1−LLC
+t+1/parenrightbig
+,
+which gives
+sLCCS
+t=yLC
+t−y∗LC
+t=− lnEQLC
+t/parenleftbig
+1−LLC
+t+1/parenrightbig
+≈EQLC
+tLLC
+t+1.
+Under the dollar risk-neutral measure Q$, we know that the price of an LC
+bond in dollars is equal to the expected discounted value of future dollar cash
+ﬂows, with cash ﬂows discounted at the dollar risk-free rate and the expectation
+taken under the dollar risk-neutral measure:
+PLC
+t/Et=exp/parenleftbig
+−y∗,$
+t/parenrightbig
+EQ$
+t/bracketleftbig/parenleftbig
+1−LLC
+t+1/parenrightbig
+/Et+1/bracketrightbig
+.
+Using the no-arbitrage condition between LC and the dollar,
+exp/parenleftbig
+−y∗,$
+t/parenrightbig
+EQ$
+t(Et/Et+1)=exp/parenleftbig
+−y∗LC
+t/parenrightbig
+,
+we can rewrite the pricing equation as
+PLC
+t=exp/parenleftbig
+−y∗LC
+t/parenrightbig
+EQ$
+t/parenleftbig
+1−LLC
+t+1/parenrightbig⎡
+⎣1+CovQ$
+t/parenleftbig
+1−LLC
+t+1,Et/Et+1/parenrightbig
+EQ$
+t/parenleftbig
+1−LLC
+t+1/parenrightbig
+EQ$
+t(Et/Et+1)⎤
+⎦.
+Therefore, we have
+sLCCS
+t=yLC
+t−y∗LC
+t≈EQ$
+tLLC
+t+1−CovQ$
+t/parenleftbig
+1−LLC
+t+1,Et/Et+1/parenrightbig
+EQ$
+t/parenleftbig
+1−LLC
+t+1/parenrightbig
+EQ$
+t(Et/Et+1)=EQ$
+tLLC
+t+1−qt,
+where qt≡CovQ$
+t(1−LLC
+t+1,Et/Et+1)
+EQ$
+t(1−LLC
+t+1)EQ$
+t(Et/Et+1).
+Proof of Corollary 1: Under the dollar risk-neutral measure Q∗, we know that
+PFC
+t=exp/parenleftbig
+−y∗$
+t/parenrightbig
+EQ∗
+t/parenleftbig
+1−LFC
+t+1/parenrightbig
+sFCCS
+t=yFC
+t−y∗$
+t=− lnEQ$
+t/parenleftbig
+1−LFC
+t+1/parenrightbig
+≈EQ$
+tLFC
+t+1. (A1)
+We obtain the corollary by subtracting equation (1)from equations (4)
+and (5). /square
+=== PAGE 43 ===
+Local Currency Sovereign Risk 1069
+Supporting Information
+Additional Supporting Information may be found in the online version of this
+article at the publisher’s website:
+Appendix S1: Internet Appendix.
+=== PAGE 44 ===
+1070 The Journal of FinanceR/circlecopyrt

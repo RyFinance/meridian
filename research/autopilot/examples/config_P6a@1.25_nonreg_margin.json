@@ -1,0 +1,7 @@
+{
+ "account_type": "nonreg_margin",
+ "config_id": "P6a@1.25",
+ "label": "HYPOTHETICAL HOLDINGS — research sample, not a recommendation",
+ "owner_tolerance_pct": 50,
+ "portfolio_id": "sample|P6a@1.25|nonreg_margin"
+}

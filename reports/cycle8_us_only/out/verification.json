@@ -1,0 +1,8 @@
+{
+  "rows": 56,
+  "all_finite_cagr_forward": true,
+  "probability_monotonicity": true,
+  "baseline_hurdle_identity": true,
+  "full_crisis_rows": 28,
+  "no_new_menu_rows": true
+}

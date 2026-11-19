@@ -1,0 +1,62 @@
+[
+  {
+    "id": "P1_MSTR_off2_oc",
+    "basket": "MSTR",
+    "threshold": 0.02,
+    "side": "long",
+    "development_cutoff": "2022-12-30",
+    "signal": "On an eligible US equity session, at 09:29 America/New_York, BTC's last fully completed 1-minute close at or before 09:28 ET is at least 2.00% above BTC's last 1-minute close at or before 15:59 ET on MSTR's preceding eligible US session. Both BTC observations must be no more than five minutes stale; otherwise do not trade.",
+    "execution": {
+      "entry": "Buy MSTR at that session's regular-hours opening auction (09:30 ET).",
+      "exit": "Sell the whole position at that same session's regular-hours closing auction (16:00 ET).",
+      "position_sizing": "One independent long-only position; no leverage, no shorting, no overlapping holding periods because holding period is same-day.",
+      "availability": "The signal uses no equity opening price and is complete before the entry auction."
+    },
+    "costs": {
+      "per_share_fee": 0.005,
+      "auction_bp_per_side": 3.0,
+      "formula": "net=(close*(1-bp)-0.005)/(open*(1+bp)+0.005)-1, bp=auction_bp_per_side/10000"
+    },
+    "selection_note": "Development-only selection: 2020-08-13 to 2022-12-30; chosen from the stable 1.5%/2.0% neighborhood with positive calendar-year development results and 138 trade days at 2.0%."
+  },
+  {
+    "id": "P2_CLSK_off2_oc",
+    "basket": "CLSK",
+    "threshold": 0.02,
+    "side": "long",
+    "development_cutoff": "2022-12-30",
+    "signal": "On an eligible US equity session, at 09:29 America/New_York, BTC's last fully completed 1-minute close at or before 09:28 ET is at least 2.00% above BTC's last 1-minute close at or before 15:59 ET on CLSK's preceding eligible US session. Both BTC observations must be no more than five minutes stale; otherwise do not trade.",
+    "execution": {
+      "entry": "Buy CLSK at that session's regular-hours opening auction (09:30 ET).",
+      "exit": "Sell the whole position at that same session's regular-hours closing auction (16:00 ET).",
+      "position_sizing": "One independent long-only position; no leverage, no shorting, no overlapping holding periods because holding period is same-day.",
+      "availability": "The signal uses no equity opening price and is complete before the entry auction."
+    },
+    "costs": {
+      "per_share_fee": 0.005,
+      "auction_bp_per_side": 3.0,
+      "formula": "net=(close*(1-bp)-0.005)/(open*(1+bp)+0.005)-1, bp=auction_bp_per_side/10000"
+    },
+    "selection_note": "Development-only selection: 2021-01-05 to 2022-12-30; CLSK had a relatively low positive-open-response slope (0.44 versus BTC off-hours return) and positive development results in both calendar years at the 2.0% rule."
+  },
+  {
+    "id": "P3_COIN_off2_oc",
+    "basket": "COIN",
+    "threshold": 0.02,
+    "side": "long",
+    "development_cutoff": "2022-12-30",
+    "signal": "On an eligible US equity session, at 09:29 America/New_York, BTC's last fully completed 1-minute close at or before 09:28 ET is at least 2.00% above BTC's last 1-minute close at or before 15:59 ET on COIN's preceding eligible US session. Both BTC observations must be no more than five minutes stale; otherwise do not trade.",
+    "execution": {
+      "entry": "Buy COIN at that session's regular-hours opening auction (09:30 ET).",
+      "exit": "Sell the whole position at that same session's regular-hours closing auction (16:00 ET).",
+      "position_sizing": "One independent long-only position; no leverage, no shorting, no overlapping holding periods because holding period is same-day.",
+      "availability": "The signal uses no equity opening price and is complete before the entry auction."
+    },
+    "costs": {
+      "per_share_fee": 0.005,
+      "auction_bp_per_side": 3.0,
+      "formula": "net=(close*(1-bp)-0.005)/(open*(1+bp)+0.005)-1, bp=auction_bp_per_side/10000"
+    },
+    "selection_note": "Development-only selection: 2021-04-15 to 2022-12-30; COIN had a relatively low positive-open-response slope (0.51) and positive development results in both calendar years at the 2.0% rule."
+  }
+]

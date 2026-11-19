@@ -1,0 +1,24 @@
+{
+  "frozen_rule_file": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/agent_mnav/FROZEN_RULES.json",
+  "frozen_rule_sha256": "24a76236dcf954e8a2d89ed5b505291a89bac9ea28625acf453f841829ca88ba",
+  "frozen_amendment_file": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/agent_mnav/FROZEN_RULES_AMENDMENT_01.json",
+  "frozen_amendment_sha256": "6dafec5824ae7ea66cb35f471bd826a5e14b20fd7f8a0a28ecd51fc17285d1f8",
+  "validation_end": "2026-08-10",
+  "panel_start": "2020-11-02",
+  "panel_end": "2026-08-10",
+  "panel_sessions": 1448,
+  "btc_missing_4pm_sessions": 43,
+  "code_sha256": "a6d7f40ecd53f1b9b108ff1e78b1d8431d11bcc589806173258b887466a7b743",
+  "runner_sha256": "29c72b2f0e8c571687009f73d2694e83435552e0134fbd19da5879490008287a",
+  "outputs": [
+    "DEV_VS_SEALED_SUMMARY.csv",
+    "SUBPERIOD_RESULTS.csv",
+    "SEALED_COST_SENSITIVITY.csv",
+    "SEALED_ADJACENT_PARAMETER_DIAGNOSTIC.csv",
+    "GAP_POLICY_SENSITIVITY.csv",
+    "SHARE_CLASS_SENSITIVITY.csv",
+    "BTC_SOURCE_GAPS.csv",
+    "SPLIT_SANITY_CHECK.csv",
+    "VALIDATION_EXECUTION_AUDIT.json"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "hw_paper": 100129.8,
+  "virtual_equity_paper": 2016.6,
+  "last_qty": 22,
+  "accounts": {
+    "ITB": {
+      "hw_paper": 2222.85,
+      "last_qty": 23.0,
+      "last_px": 91.667391
+    },
+    "NAIL": {
+      "hw_paper": 2401.3,
+      "last_qty": 73.0,
+      "last_px": 30.576575
+    }
+  }
+}

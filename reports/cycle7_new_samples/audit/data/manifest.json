@@ -1,0 +1,532 @@
+{
+ "lrv_currency_factors": {
+  "url": "https://web.mit.edu/adrienv/www/CurrencyPortfolios.xls",
+  "raw_file": "raw/verdelhan_CurrencyPortfolios.xls",
+  "retrieved_utc": "2026-09-27T23:13:00Z",
+  "http": "200",
+  "err": "",
+  "sha256": "e08676e399a3c80714e55bd980350892785e8091f483af0784197fd815612d74",
+  "bytes": 536064,
+  "rows": 451,
+  "first": "1983-11-30",
+  "last": "2021-05-31",
+  "parsed": [
+   "lrv_currency_factors.parquet",
+   "lrv_currency_factors.csv"
+  ],
+  "file_last_modified": [
+   "Fri, 18 Jun 2021 17:58:34 GMT"
+  ],
+  "notes": "LRV (RFS 2011) portfolios, simple (level) excess returns; gross and net-of-bid-ask; all = 6 portfolios (HML=P6-P1), developed = 5 (HML=P5-P1). Page says 'Updated monthly' but file stops 2021-05."
+ },
+ "verdelhan_share_systematic_country_factors": {
+  "url": "https://web.mit.edu/adrienv/www/Data_for_AugmentedUIP_allcountries.xls",
+  "raw_file": "raw/verdelhan_Data_for_AugmentedUIP_allcountries.xls",
+  "retrieved_utc": "2026-09-27T23:13:01Z",
+  "http": "200",
+  "err": "",
+  "sha256": "f939969335608c8b06b6287a5430d3e8a9b8c729c0645b2b84422388c18dd42e",
+  "bytes": 2232320,
+  "rows": 438,
+  "first": "1983-11-30",
+  "last": "2020-04-30",
+  "parsed": [
+   "verdelhan_2018_country_factors.parquet"
+  ],
+  "notes": "Verdelhan (JF 2018) country-specific carry & dollar factors (excl. own currency); file last-modified 2020-05-26, ends 2020-04"
+ },
+ "fed_h10_dollar_index_daily": {
+  "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=122e3bcb627e8e53f1bf72a1a09cfb81&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package",
+  "raw_file": "raw/fed_h10_dollar_index_daily.csv",
+  "retrieved_utc": "2026-09-27T23:13:02Z",
+  "http": "200",
+  "err": "",
+  "sha256": "3fd42006e36eddff899339fe91cec153ddb8d42135afa67787775d20ea18668c",
+  "bytes": 201255,
+  "rows": 5193,
+  "first": "2006-01-02",
+  "last": "2026-09-18",
+  "parsed": [
+   "fed_h10_dollar_index_daily.parquet",
+   "fed_h10_dollar_index_daily.csv"
+  ]
+ },
+ "fed_h10_dollar_index_monthly_from_daily": {
+  "derived_from": "fed_h10_dollar_index_daily",
+  "method": "last available daily obs in calendar month",
+  "rows": 249,
+  "first": "2006-01-31",
+  "last": "2026-09-30",
+  "parsed": [
+   "fed_h10_dollar_index_monthly_eom.parquet",
+   "fed_h10_dollar_index_monthly_eom.csv"
+  ]
+ },
+ "fed_h10_dollar_index_monthly_avg": {
+  "url": "https://www.federalreserve.gov/datadownload/Output.aspx?rel=H10&series=847be2166a425bda9b4d92465f797544&lastobs=&from=&to=&filetype=csv&label=include&layout=seriescolumn&type=package",
+  "raw_file": "raw/fed_h10_dollar_index_monthly.csv",
+  "retrieved_utc": "2026-09-27T23:13:02Z",
+  "http": "200",
+  "err": "",
+  "sha256": "8f13472497c4e74bc5ffd786ce00816d02842c2f0009e24be4d67e201e7ccb16",
+  "bytes": 9063,
+  "rows": 248,
+  "first": "2006-01-31",
+  "last": "2026-08-31",
+  "parsed": [
+   "fed_h10_dollar_index_monthly_avg.parquet",
+   "fed_h10_dollar_index_monthly_avg.csv"
+  ],
+  "notes": "Fed official monthly averages"
+ },
+ "yahoo_dxy": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?period1=0&period2=9999999999&interval=1d&events=div%2Csplit&includeAdjustedClose=true",
+  "raw_file": "raw/yahoo_DX-Y.NYB_daily.json",
+  "retrieved_utc": "2026-09-27T23:13:06Z",
+  "http": "200",
+  "err": "",
+  "sha256": "8513468840ad54ae0195b368fde9754fbd285583937c4fd2c032c2b2597fa0e1",
+  "bytes": 1553935,
+  "rows": 669,
+  "first": "1971-01-31",
+  "last": "2026-09-30",
+  "parsed": [
+   "yahoo_DX-Y.NYB_monthly.parquet",
+   "yahoo_DX-Y.NYB_monthly.csv"
+  ],
+  "daily_rows": 14151,
+  "daily_first": "1971-01-04",
+  "daily_last": "2026-09-25",
+  "first_trade_date": "1971-01-04",
+  "n_distributions": 0,
+  "distributions_ttm": null,
+  "notes": "Yahoo v8 chart; monthly = last daily obs in month; adjclose = Yahoo split+dividend adjusted (total-return proxy)"
+ },
+ "yahoo_eem": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/EEM?period1=0&period2=9999999999&interval=1d&events=div%2Csplit&includeAdjustedClose=true",
+  "raw_file": "raw/yahoo_EEM_daily.json",
+  "retrieved_utc": "2026-09-27T23:13:07Z",
+  "http": "200",
+  "err": "",
+  "sha256": "80ebd4b3983aa40e47074738dd06b87c056e68f42184f1964dd1fb750f87052e",
+  "bytes": 651446,
+  "rows": 282,
+  "first": "2003-04-30",
+  "last": "2026-09-30",
+  "parsed": [
+   "yahoo_EEM_monthly.parquet",
+   "yahoo_EEM_monthly.csv"
+  ],
+  "daily_rows": 5901,
+  "daily_first": "2003-04-14",
+  "daily_last": "2026-09-25",
+  "first_trade_date": "2003-04-14",
+  "n_distributions": 47,
+  "distributions_ttm": 1.1139999999999999,
+  "notes": "Yahoo v8 chart; monthly = last daily obs in month; adjclose = Yahoo split+dividend adjusted (total-return proxy)"
+ },
+ "yahoo_vix": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/^VIX?period1=0&period2=9999999999&interval=1d&events=div%2Csplit&includeAdjustedClose=true",
+  "raw_file": "raw/yahoo_VIX_daily.json",
+  "retrieved_utc": "2026-09-27T23:13:09Z",
+  "http": "200",
+  "err": "",
+  "sha256": "8f6376d80561c9c4fd0e3968cb2871653e6455f927a9f17756b291bcd0a73f05",
+  "bytes": 970488,
+  "rows": 441,
+  "first": "1990-01-31",
+  "last": "2026-09-30",
+  "parsed": [
+   "yahoo_VIX_monthly.parquet",
+   "yahoo_VIX_monthly.csv"
+  ],
+  "daily_rows": 9253,
+  "daily_first": "1990-01-02",
+  "daily_last": "2026-09-25",
+  "first_trade_date": "1990-01-02",
+  "n_distributions": 0,
+  "distributions_ttm": null,
+  "notes": "Yahoo v8 chart; monthly = last daily obs in month; adjclose = Yahoo split+dividend adjusted (total-return proxy)"
+ },
+ "yahoo_hyg": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/HYG?period1=0&period2=9999999999&interval=1d&events=div%2Csplit&includeAdjustedClose=true",
+  "raw_file": "raw/yahoo_HYG_daily.json",
+  "retrieved_utc": "2026-09-27T23:13:09Z",
+  "http": "200",
+  "err": "",
+  "sha256": "05437c231e398a32fc5638d97d41842a21d8152922168924893c9923d597a04d",
+  "bytes": 529666,
+  "rows": 234,
+  "first": "2007-04-30",
+  "last": "2026-09-30",
+  "parsed": [
+   "yahoo_HYG_monthly.parquet",
+   "yahoo_HYG_monthly.csv"
+  ],
+  "daily_rows": 4897,
+  "daily_first": "2007-04-11",
+  "daily_last": "2026-09-25",
+  "first_trade_date": "2007-04-11",
+  "n_distributions": 232,
+  "distributions_ttm": 4.739999999999999,
+  "notes": "Yahoo v8 chart; monthly = last daily obs in month; adjclose = Yahoo split+dividend adjusted (total-return proxy)"
+ },
+ "yahoo_cew": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/CEW?period1=0&period2=9999999999&interval=1d&events=div%2Csplit&includeAdjustedClose=true",
+  "raw_file": "raw/yahoo_CEW_daily.json",
+  "retrieved_utc": "2026-09-27T23:13:10Z",
+  "http": "200",
+  "err": "",
+  "sha256": "9584cae1ae873d335e27ff7bf6fca0753562c854b1bf6e4346a01cc40ea4defd",
+  "bytes": 468985,
+  "rows": 208,
+  "first": "2009-06-30",
+  "last": "2026-09-30",
+  "parsed": [
+   "yahoo_CEW_monthly.parquet",
+   "yahoo_CEW_monthly.csv"
+  ],
+  "daily_rows": 4357,
+  "daily_first": "2009-06-02",
+  "daily_last": "2026-09-25",
+  "first_trade_date": "2009-06-02",
+  "n_distributions": 10,
+  "distributions_ttm": 0.467,
+  "notes": "Yahoo v8 chart; monthly = last daily obs in month; adjclose = Yahoo split+dividend adjusted (total-return proxy)"
+ },
+ "yahoo_emlc": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/EMLC?period1=0&period2=9999999999&interval=1d&events=div%2Csplit&includeAdjustedClose=true",
+  "raw_file": "raw/yahoo_EMLC_daily.json",
+  "retrieved_utc": "2026-09-27T23:13:10Z",
+  "http": "200",
+  "err": "",
+  "sha256": "69079ed6d46f378b579ff1810b69a68c10d36aba31f1db25d4f558a62bde4ff4",
+  "bytes": 452376,
+  "rows": 195,
+  "first": "2010-07-31",
+  "last": "2026-09-30",
+  "parsed": [
+   "yahoo_EMLC_monthly.parquet",
+   "yahoo_EMLC_monthly.csv"
+  ],
+  "daily_rows": 4069,
+  "daily_first": "2010-07-23",
+  "daily_last": "2026-09-25",
+  "first_trade_date": "2010-07-23",
+  "n_distributions": 193,
+  "distributions_ttm": 1.5839999999999996,
+  "notes": "Yahoo v8 chart; monthly = last daily obs in month; adjclose = Yahoo split+dividend adjusted (total-return proxy)"
+ },
+ "yahoo_lemb": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/LEMB?period1=0&period2=9999999999&interval=1d&events=div%2Csplit&includeAdjustedClose=true",
+  "raw_file": "raw/yahoo_LEMB_daily.json",
+  "retrieved_utc": "2026-09-27T23:13:11Z",
+  "http": "200",
+  "err": "",
+  "sha256": "87a6e5934f12819514186d920442c8165581de8ac2242fcb1f0c6d9e6225234a",
+  "bytes": 402041,
+  "rows": 180,
+  "first": "2011-10-31",
+  "last": "2026-09-30",
+  "parsed": [
+   "yahoo_LEMB_monthly.parquet",
+   "yahoo_LEMB_monthly.csv"
+  ],
+  "daily_rows": 3754,
+  "daily_first": "2011-10-20",
+  "daily_last": "2026-09-25",
+  "first_trade_date": "2011-10-20",
+  "n_distributions": 49,
+  "distributions_ttm": 1.015,
+  "notes": "Yahoo v8 chart; monthly = last daily obs in month; adjclose = Yahoo split+dividend adjusted (total-return proxy)"
+ },
+ "yahoo_ebnd": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/EBND?period1=0&period2=9999999999&interval=1d&events=div%2Csplit&includeAdjustedClose=true",
+  "raw_file": "raw/yahoo_EBND_daily.json",
+  "retrieved_utc": "2026-09-27T23:13:12Z",
+  "http": "200",
+  "err": "",
+  "sha256": "91e995630e98950878948fd8092b2eb8a164f723e48d5f0c0747ef679505842c",
+  "bytes": 432425,
+  "rows": 188,
+  "first": "2011-02-28",
+  "last": "2026-09-30",
+  "parsed": [
+   "yahoo_EBND_monthly.parquet",
+   "yahoo_EBND_monthly.csv"
+  ],
+  "daily_rows": 3920,
+  "daily_first": "2011-02-24",
+  "daily_last": "2026-09-25",
+  "first_trade_date": "2011-02-24",
+  "n_distributions": 130,
+  "distributions_ttm": 1.2340000000000002,
+  "notes": "Yahoo v8 chart; monthly = last daily obs in month; adjclose = Yahoo split+dividend adjusted (total-return proxy)"
+ },
+ "yahoo_jnk": {
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/JNK?period1=0&period2=9999999999&interval=1d&events=div%2Csplit&includeAdjustedClose=true",
+  "raw_file": "raw/yahoo_JNK_daily.json",
+  "retrieved_utc": "2026-09-27T23:13:13Z",
+  "http": "200",
+  "err": "",
+  "sha256": "d6dba40756fe5b458583733d6a1021525263314041640362cb2983a376459932",
+  "bytes": 525014,
+  "rows": 226,
+  "first": "2007-12-31",
+  "last": "2026-09-30",
+  "parsed": [
+   "yahoo_JNK_monthly.parquet",
+   "yahoo_JNK_monthly.csv"
+  ],
+  "daily_rows": 4732,
+  "daily_first": "2007-12-04",
+  "daily_last": "2026-09-25",
+  "first_trade_date": "2007-12-04",
+  "n_distributions": 225,
+  "distributions_ttm": 6.34,
+  "notes": "Yahoo v8 chart; monthly = last daily obs in month; adjclose = Yahoo split+dividend adjusted (total-return proxy)"
+ },
+ "cboe_vix": {
+  "url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+  "raw_file": "raw/cboe_VIX_History.csv",
+  "retrieved_utc": "2026-09-27T23:13:15Z",
+  "http": "200",
+  "err": "",
+  "sha256": "4bca3f49062d5196f00cf6e62d04f77304608884ca4d791d2e7210e274d52796",
+  "bytes": 473074,
+  "rows": 441,
+  "first": "1990-01-31",
+  "last": "2026-09-30",
+  "parsed": [
+   "cboe_vix_monthly_eom.parquet",
+   "cboe_vix_monthly_eom.csv"
+  ],
+  "daily_rows": 9281,
+  "daily_first": "1990-01-02",
+  "daily_last": "2026-09-25"
+ },
+ "msci_em_gross": {
+  "url": "https://app2.msci.com/products/service/index/indexmaster/getLevelDataForGraph?currency_symbol=USD&index_variant=GRTR&start_date=19970101&end_date=20260926&data_frequency=END_OF_MONTH&index_codes=891800",
+  "raw_file": "raw/msci_em_891800_GRTR_usd_monthly.json",
+  "retrieved_utc": "2026-09-27T23:15:00Z",
+  "http": "200",
+  "err": "",
+  "sha256": "094ef5fc72e597790b61d2c16af0aa97743b650c777b6e5cf5f50597d15c36ec",
+  "bytes": 16646,
+  "rows": 309,
+  "first": "2000-12-31",
+  "last": "2026-08-31",
+  "parsed": [
+   "msci_em_gross_usd_monthly.parquet",
+   "msci_em_gross_usd_monthly.csv"
+  ],
+  "notes": "MSCI Emerging Markets (code 891800) GRTR USD end-of-month levels from MSCI public graph endpoint"
+ },
+ "msci_em_net": {
+  "url": "https://app2.msci.com/products/service/index/indexmaster/getLevelDataForGraph?currency_symbol=USD&index_variant=NETR&start_date=19970101&end_date=20260926&data_frequency=END_OF_MONTH&index_codes=891800",
+  "raw_file": "raw/msci_em_891800_NETR_usd_monthly.json",
+  "retrieved_utc": "2026-09-27T23:15:01Z",
+  "http": "200",
+  "err": "",
+  "sha256": "3690ee19a36d817c50b6d1640926baaab84d4d325e17f0582e67216936460708",
+  "bytes": 16576,
+  "rows": 309,
+  "first": "2000-12-31",
+  "last": "2026-08-31",
+  "parsed": [
+   "msci_em_net_usd_monthly.parquet",
+   "msci_em_net_usd_monthly.csv"
+  ],
+  "notes": "MSCI Emerging Markets (code 891800) NETR USD end-of-month levels from MSCI public graph endpoint"
+ },
+ "msci_em_price": {
+  "url": "https://app2.msci.com/products/service/index/indexmaster/getLevelDataForGraph?currency_symbol=USD&index_variant=STRD&start_date=19970101&end_date=20260926&data_frequency=END_OF_MONTH&index_codes=891800",
+  "raw_file": "raw/msci_em_891800_STRD_usd_monthly.json",
+  "retrieved_utc": "2026-09-27T23:15:01Z",
+  "http": "200",
+  "err": "",
+  "sha256": "e7bf8421e0db6e77992b8775b797da2d3e4e36fa2dca4e7e165c51d1adfbc3ad",
+  "bytes": 19101,
+  "rows": 356,
+  "first": "1997-01-31",
+  "last": "2026-08-31",
+  "parsed": [
+   "msci_em_price_usd_monthly.parquet",
+   "msci_em_price_usd_monthly.csv"
+  ],
+  "notes": "MSCI Emerging Markets (code 891800) STRD USD end-of-month levels from MSCI public graph endpoint"
+ },
+ "page_ishares_EEM": {
+  "url": "https://www.ishares.com/us/products/239637/ishares-msci-emerging-markets-etf",
+  "raw_file": "raw/page_ishares_EEM.html",
+  "retrieved_utc": "2026-09-27T23:15:02Z",
+  "http": "200",
+  "err": "",
+  "sha256": "10b1363397edb30de8eef891d49c2690977edee212b4cac4bdcc3afcf79832e1",
+  "bytes": 1715896
+ },
+ "page_ishares_LEMB": {
+  "url": "https://www.ishares.com/us/products/239528/ishares-emerging-markets-local-currency-bond-etf",
+  "raw_file": "raw/page_ishares_LEMB.html",
+  "retrieved_utc": "2026-09-27T23:15:03Z",
+  "http": "200",
+  "err": "",
+  "sha256": "386902de229ad16ebe06dc71e20fb20ad87c07657bba9564a1a4003f9fccaf86",
+  "bytes": 1729512
+ },
+ "page_ssga_EBND": {
+  "url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-bloomberg-emerging-markets-local-bond-etf-ebnd",
+  "raw_file": "raw/page_ssga_EBND.html",
+  "retrieved_utc": "2026-09-27T23:15:04Z",
+  "http": "200",
+  "err": "",
+  "sha256": "1df338d1b5f1e9b8d5d603a31d96c546b8e763f234a405a12a2c760036c4c2b1",
+  "bytes": 271084
+ },
+ "page_vaneck_EMLC": {
+  "url": "https://www.vaneck.com/us/en/investments/em-local-currency-bond-etf-emlc/overview/",
+  "raw_file": "raw/page_vaneck_EMLC.html",
+  "retrieved_utc": "2026-09-27T23:14:53Z",
+  "http": "302",
+  "err": "curl: (47) Maximum (50) redirects followed"
+ },
+ "page_stockanalysis_CEW": {
+  "url": "https://stockanalysis.com/etf/cew/",
+  "raw_file": "raw/page_stockanalysis_CEW.html",
+  "retrieved_utc": "2026-09-27T23:15:04Z",
+  "http": "200",
+  "err": "",
+  "sha256": "58ee3e7e633ee3234d8ac32b77d79933debae6be3e8a4a59cb9d74c5a705bda3",
+  "bytes": 90683
+ },
+ "page_stockanalysis_EMLC": {
+  "url": "https://stockanalysis.com/etf/emlc/",
+  "raw_file": "raw/page_stockanalysis_EMLC.html",
+  "retrieved_utc": "2026-09-27T23:15:04Z",
+  "http": "200",
+  "err": "",
+  "sha256": "747de753f06cd4b8b02c991b021621955850a9b3e2c74c22038313bbfd3f8142",
+  "bytes": 103397
+ },
+ "page_stockanalysis_HYG": {
+  "url": "https://stockanalysis.com/etf/hyg/",
+  "raw_file": "raw/page_stockanalysis_HYG.html",
+  "retrieved_utc": "2026-09-27T23:15:04Z",
+  "http": "200",
+  "err": "",
+  "sha256": "9a9fc28df7c2cee8b2291af567d490bc4a5688f294915b04e36e995815e21b2b",
+  "bytes": 155284
+ },
+ "page_wisdomtree_CEW": {
+  "url": "https://www.wisdomtree.com/investments/etfs/currency/cew",
+  "raw_file": "raw/page_wisdomtree_CEW.html",
+  "retrieved_utc": "2026-09-27T23:15:04Z",
+  "http": "403",
+  "err": "",
+  "sha256": "2384719d69f592161b20228a3ebb29ae2453d296896989a751dd7c50375b8127",
+  "bytes": 5512
+ },
+ "_all_raw_files_sha256": {
+  "raw/broker_pages/ibkr_ca_commissions_spot_currencies.html": "3138568f9fd59e8d9a9fb70707e67b46a75d767137269c8d9e60918a2bd6856c",
+  "raw/broker_pages/ibkr_ca_interest_rates.html": "4963ee7c735adee49c1cb2c83a7d4ff30dee2c0b8abec5fd815aa4a9218ac38b",
+  "raw/broker_pages/ibkr_ca_margin_rates.html": "88ebd8c428a91c1dab5d023d1418ffafcad23fd98eaef32af1719b0d310c559c",
+  "raw/broker_pages/ibkr_ca_products_spot_currencies.html": "d1914a5e3eef1d0481867bcc61ca488b7bb5d9dc2c0629cd57ee49c1697276c0",
+  "raw/broker_pages/oanda_ca_financing_costs.html": "9f6f035d7d58cf4f6b55c3853019923761d57a28078c83298b050806c38dcad2",
+  "raw/broker_pages/oanda_ca_margin_rates.html": "02e6b197e6bf172f10ff771b03d5362d6b33b4dc0fbda583a872fc7ecb144371",
+  "raw/broker_pages/oanda_ca_spreads_margin.html": "704c0777c8f0f96a93c075a5bbda56efa9eaf8590c610751f31b9fce11e90bd2",
+  "raw/broker_pages/questrade_forex_cfd.html": "4a97cc6ab2cbb7e8e4409f29b022acfc31c9ad047c5be18277440579b6aa3aff",
+  "raw/broker_pages/questrade_pricing_fees.html": "054ab051c1e77cb31ab7e4206a0f2d41169703be627341b1f099917abde69efd",
+  "raw/cboe_VIX_History.csv": "4bca3f49062d5196f00cf6e62d04f77304608884ca4d791d2e7210e274d52796",
+  "raw/fed_h10_dollar_index_daily.csv": "3fd42006e36eddff899339fe91cec153ddb8d42135afa67787775d20ea18668c",
+  "raw/fed_h10_dollar_index_monthly.csv": "8f13472497c4e74bc5ffd786ce00816d02842c2f0009e24be4d67e201e7ccb16",
+  "raw/literature/Du_Schreger_JF.pdf": "8a9d867e531b7bc9a9f3bdc5b4df5da5f41f79a0b98ce0f999380c443a4605ab",
+  "raw/literature/Du_Schreger_JF.txt": "dad1ac30558129787aa7cf1f1d6dbf71bcf0e4896e390a66a6b4f94e5ee09313",
+  "raw/literature/KRS.txt": "e2c552f03b84503db39f84370ff054af2deca9ddd52697f6f061af89ef460f38",
+  "raw/literature/KRS_understanding_fx_liquidity.pdf": "ab5c664f97fcaa564b086e5d9f85b9b95d0a59ed40e88e4c22356e66dbe7c376",
+  "raw/literature/bis_markets-non-deliverable-forwards-asian-currencies_1.pdf": "41b9f55d01950640dd7edf8fa68f7a514f24929cb701678d4e824e09a907d7d0",
+  "raw/literature/bis_markets-non-deliverable-forwards-asian-currencies_1.txt": "4189ef3cf883003490387fcf1fc9d65d5eb019bf59f3f68f12a7f90ee8cde1a0",
+  "raw/literature/bis_non-deliverable-forwards-2013-and-beyond_1.pdf": "6ecb20763ef429908ee0aa5ae4ef96e474bc65371e150e91cdc98b01d8b16657",
+  "raw/literature/bis_non-deliverable-forwards-2013-and-beyond_1.txt": "abc2d76fa7199bab9b7f4adcb251f0d0e6599f56b4e4efda5ca5c7eaa8973c1e",
+  "raw/literature/bis_non-deliverable-forwards-impact-currency-internationalisation-and-derivatives-reform_1.pdf": "0eaddeb2ae71cdc2c62a0e593c07d5c32a43c1c8c9bbfd8b66ed5e7f299633cb",
+  "raw/literature/bis_non-deliverable-forwards-impact-currency-internationalisation-and-derivatives-reform_1.txt": "42b5e0016507bc2f2e08efa7b5f96e9dc31915df9fa1e13d011759100641505b",
+  "raw/literature/bis_offshore-markets-drive-trading-emerging-market-currencies_1.pdf": "5737ee6f2f8515572a61f9836057e02e677a5eabd3276f097ea00f6e8bf529cb",
+  "raw/literature/bis_offshore-markets-drive-trading-emerging-market-currencies_1.txt": "58f934963a7e8c1ecb171e4c77a136a70a04bb06cf197f1495591b9396e3156d",
+  "raw/literature/bis_r_qt0406g.html": "cef1eef5241b9155e490cce46c81db5a3ca97a3b4401b2658078613492e6b681",
+  "raw/literature/bis_r_qt0406g.txt": "baf0300aab7d89acdff443917d88b6cea0942aedd631bb18d93b555b3135bcf8",
+  "raw/literature/bis_r_qt1112f.html": "90a811221311c994c8cace5f4cfe9dd66bf7472e23d10f4fe23fc0a649ea1108",
+  "raw/literature/bis_r_qt1112f.txt": "a11494d6fb4a00d927021c927ec14e677b1c55b55a3a6443a36cac2558bedf16",
+  "raw/literature/bis_r_qt1403h.html": "e045dfd9ee9f5299b505321670e8e86da89884002c1b38a39f082040b1e6a889",
+  "raw/literature/bis_r_qt1403h.txt": "52bd30cb64cfb6d8318455b873065294afd1488a664cd82506e693a7df162175",
+  "raw/literature/bis_r_qt1612h.html": "c5d3d35addba8a809de9e0e2bf9dbe89a8875bd861d6f257f4da6b7d731a9aec",
+  "raw/literature/bis_r_qt1612h.txt": "f9b6d34ede90c3ab2389afc32e19f974e3f9752e622ccba0cd67cb5f45d24f3c",
+  "raw/literature/bis_r_qt1912h.html": "b623c318802dd912cbb3667ebba90422d0ed632c738fb7ff38de2f92e5a16a61",
+  "raw/literature/bis_r_qt1912h.txt": "a471e1a881a2a41100b134fb58a31ddc8c40b1c2cb6359f678d98f026403751f",
+  "raw/literature/commonriskfactors.pdf": "297b4ebeb540e41445e5f285f07ee5066b4d1fc7bba07e2d941dd6cc60761a98",
+  "raw/literature/commonriskfactors.txt": "d49b2e86dae9e6b88a26337c5939e86b281f84be95046ac2fc6d92976d9e8f57",
+  "raw/literature/commonriskfactors_appendix.pdf": "8c794557051247c7bd43313379c10d07e3c11e050aa40042d0d79f80933d8335",
+  "raw/literature/commonriskfactors_appendix.txt": "92fe423d4fcd6c775bd134e756d49fa0c252ee532a12c4f80381d0ce21ca0518",
+  "raw/literature/imf_wp20179_ndf_asia.pdf": "b14f9eb85c3885aecc8a06fd1bf3e7502e2efdc8fa88aa5c7dd5627a8c2c134d",
+  "raw/literature/imf_wp20179_ndf_asia.txt": "fb73195054fbb6027b4c44fb18e4062b81d899fb9ca5c867664848fb5b472728",
+  "raw/literature/w12489.pdf": "d32bbaaed1264b094daeb2e9f4f17a1f65a1810a36bd24070b5600ed204777bf",
+  "raw/literature/w12489.txt": "f52f0901c088f0b4d5165b03a1b2a591953037e8bde5c56a08ab153acc5cc041",
+  "raw/literature/w12916.pdf": "f83d7e95a16ae953f5b36f4a8553535312e0f7056a89e5d35a646e9f560b3bf6",
+  "raw/literature/w12916.txt": "7c9ec6281433812cba60f1e44f93b690c54c1e604bd3f23389e043106816cc13",
+  "raw/msci_em_891800_GRTR_usd_monthly.json": "094ef5fc72e597790b61d2c16af0aa97743b650c777b6e5cf5f50597d15c36ec",
+  "raw/msci_em_891800_NETR_usd_monthly.json": "3690ee19a36d817c50b6d1640926baaab84d4d325e17f0582e67216936460708",
+  "raw/msci_em_891800_STRD_usd_monthly.json": "e7bf8421e0db6e77992b8775b797da2d3e4e36fa2dca4e7e165c51d1adfbc3ad",
+  "raw/page_ishares_EEM.html": "10b1363397edb30de8eef891d49c2690977edee212b4cac4bdcc3afcf79832e1",
+  "raw/page_ishares_LEMB.html": "386902de229ad16ebe06dc71e20fb20ad87c07657bba9564a1a4003f9fccaf86",
+  "raw/page_ssga_EBND.html": "1df338d1b5f1e9b8d5d603a31d96c546b8e763f234a405a12a2c760036c4c2b1",
+  "raw/page_stockanalysis_CEW.html": "58ee3e7e633ee3234d8ac32b77d79933debae6be3e8a4a59cb9d74c5a705bda3",
+  "raw/page_stockanalysis_EMLC.html": "747de753f06cd4b8b02c991b021621955850a9b3e2c74c22038313bbfd3f8142",
+  "raw/page_stockanalysis_HYG.html": "9a9fc28df7c2cee8b2291af567d490bc4a5688f294915b04e36e995815e21b2b",
+  "raw/page_vaneck_EMLC.html": "c5e05b50e44d4c4803c7b249d0fccd2017d105b002a903a2283949f2a5851467",
+  "raw/page_wisdomtree_CEW.html": "2384719d69f592161b20228a3ebb29ae2453d296896989a751dd7c50375b8127",
+  "raw/verdelhan_CurrencyPortfolios.headers": "3368ca5623fc1b5920d96565b04b2b1e3b7a047758553412d8d74f7fdcdd637b",
+  "raw/verdelhan_CurrencyPortfolios.xls": "e08676e399a3c80714e55bd980350892785e8091f483af0784197fd815612d74",
+  "raw/verdelhan_Currency_Baskets.xlsx": "528c87b74ba1a83a21cb56f4e8de92ef0edd387d95f4b235585eaf2809e3665d",
+  "raw/verdelhan_Currency_Baskets.xlsx.headers": "2141fc57ca329a3ec2ce580b2bd271198ca1b9a79307650f9ef587e0d641c612",
+  "raw/verdelhan_Data.html": "8a3fc58b1642d6254ef1e5fedef108fea05de72a7b450a41b1e1de9e0c44ba98",
+  "raw/verdelhan_Data_for_AugmentedUIP_allcountries.xls": "f939969335608c8b06b6287a5430d3e8a9b8c729c0645b2b84422388c18dd42e",
+  "raw/verdelhan_Data_for_AugmentedUIP_allcountries.xls.headers": "0f3e71532dd15afbfe954f436bea2b1cdc040ab29a47e45021700db65f3ba6ae",
+  "raw/yahoo_CEW_daily.json": "9584cae1ae873d335e27ff7bf6fca0753562c854b1bf6e4346a01cc40ea4defd",
+  "raw/yahoo_DX-Y.NYB_daily.json": "8513468840ad54ae0195b368fde9754fbd285583937c4fd2c032c2b2597fa0e1",
+  "raw/yahoo_EBND_daily.json": "91e995630e98950878948fd8092b2eb8a164f723e48d5f0c0747ef679505842c",
+  "raw/yahoo_EEM_daily.json": "80ebd4b3983aa40e47074738dd06b87c056e68f42184f1964dd1fb750f87052e",
+  "raw/yahoo_EMLC_daily.json": "69079ed6d46f378b579ff1810b69a68c10d36aba31f1db25d4f558a62bde4ff4",
+  "raw/yahoo_HYG_daily.json": "05437c231e398a32fc5638d97d41842a21d8152922168924893c9923d597a04d",
+  "raw/yahoo_JNK_daily.json": "d6dba40756fe5b458583733d6a1021525263314041640362cb2983a376459932",
+  "raw/yahoo_LEMB_daily.json": "87a6e5934f12819514186d920442c8165581de8ac2242fcb1f0c6d9e6225234a",
+  "raw/yahoo_VIX_daily.json": "8f6376d80561c9c4fd0e3968cb2871653e6455f927a9f17756b291bcd0a73f05"
+ },
+ "_derived_tables": {
+  "broker_fx_availability.csv": {
+   "rows": 22
+  },
+  "broker_pages_opened.csv": {
+   "rows": 7
+  },
+  "ndf_gap_episodes.csv": {
+   "rows": 62
+  },
+  "costs_reference.csv": {
+   "rows": 26
+  },
+  "vehicles_reference.csv": {
+   "rows": 5
+  }
+ },
+ "_blocked_needs_owner": {
+  "fred.stlouisfed.org": "HTTP/2 INTERNAL_ERROR via proxy (ICE BofA HY OAS BAMLH0A0HYM2 / HY TR not acquired)",
+  "www.hannolustig.com": "CONNECT tunnel 502 (Lustig site)",
+  "sites.google.com/view/hannolustig": "redirects to Google sign-in (no login attempted)",
+  "www.wisdomtree.com": "403 Cloudflare challenge (CEW fact sheet; ER taken from stockanalysis.com)",
+  "www.imf.org (curl)": "403 to curl; WP/20/179 retrieved via WebFetch instead",
+  "www.sciencedirect.com": "403 (NDF carry trades paper not opened)"
+ },
+ "_notes": {
+  "partial_month": "Yahoo/Cboe monthly last row 2026-09-30 is partial (data through 2026-09-25)",
+  "lrv_staleness": "Verdelhan CurrencyPortfolios.xls Last-Modified 2021-06-18, data end 2021-05 despite 'Updated monthly' label",
+  "fed_h10_correction": "Fed RSS 2026-08-12: Aug-10 H.10 release had wrong Aug-3 data for all currencies/indexes (corrected); downloaded post-correction"
+ }
+}

@@ -415,6 +415,8 @@ def evaluate(path: Path, asof: dt.date, pricebook: PriceBook | None = None, anch
                 bt = spec_reg["payload"].get("spec", {})
                 entry["power_note"] = ("sessions needed for a 2-SE Sharpe at 0.8 (the pre-2024 backtest level): "
                                        f"{sessions_needed(0.8)} (~{sessions_needed(0.8) / TRADING_DAYS:.1f} years)") if bt else None
+            elif kind == "mstr_open_close":
+                entry["results"] = "scored by research.mstr_btc_0dte.forward evaluate (open-to-close round trips)"
             elif kind == "pead_events":
                 entry["results"] = evaluate_pead(spec_reg, classified, pead_pricebook or pricebook, asof)
             out["strategies"][sid] = entry

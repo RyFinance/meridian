@@ -1,0 +1,50 @@
+{
+  "generated_at_utc": "2026-10-17T07:42:33.328697+00:00",
+  "daily_path": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/mstr_daily_yf.parquet",
+  "daily_sha256": "2a69da621f275570b72e2727a1b14752e2c36a980da975cb4927c04d8f1cd2d7",
+  "end": "2022-12-30",
+  "conventions": {
+    "filing_availability": "first MSTR session strictly after filing date",
+    "btc_mark": "close of exact one-minute candle labelled 15:59 America/New_York; no as-of fallback",
+    "execution": "signal at close, execute following regular-session open",
+    "mnav_name": "gross BTC mNAV proxy, not enterprise mNAV",
+    "share_split_normalization": "multiply reported count by 10 only where share-as-of date is before 2024-08-01"
+  },
+  "sources": {
+    "btc_path": "/Users/rytty/CCP/BTC-Acum/data/btc_usd_1m_candles_polymarket_arb.parquet",
+    "btc_path_sha256": "234e3c8a3c8e4c26a1a33c46501fdd8213ccfc1c62f1d5b398a4a8a38f53318b",
+    "mark": "close of exact one-minute candle labelled 15:59 America/New_York; no as-of fallback",
+    "available_marks": 733,
+    "requested_marks": 777,
+    "event_index": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/events/8k_all.parquet",
+    "event_index_sha256": "9f4a65637fee4cbd4d534480037c69845ef0277a4a4d93494c44782d26623a46",
+    "documents_used": {
+      "0001193125-20-215604": "b69f33aa0af95f0aa3a9b6918b3fbaca4c0e94be93888db082b0d07195a09e34",
+      "0001193125-20-245835": "f922dc07b229987560ea17673d9bc08261e7f2b1fc8f2b2e95fc2481f802d7e8",
+      "0001193125-20-310787": "73ae0087391570c55b457aec604aa37b0b4ef8ba01b55fddd33b4e9ff361d4f3",
+      "0001193125-21-014227": "435c5d8a23f08b3a948472f381e2328ba2a9a72a27a8825050eeae0f5b9a0808",
+      "0001193125-21-025369": "8bf31a4a32eb1c5cdea57b8ff3651ec82a36cfbea3222b62f1f19309e75af361",
+      "0001193125-21-062322": "2d93ff2c319bc38a544265e64879f492f0ea4f524b871909b18cd6101fece6cc",
+      "0001193125-21-070446": "e0b166ff334df126e63e47b269a4a8e6875700e1d9081ab529932d7ac7358b19",
+      "0001193125-21-078715": "a11f893219e8a0d43918d6ff719d2fd3ea4a2c4b020bae092bfa04926cc062d4",
+      "0001193125-21-105625": "b513821d2667419033ace4c1b500316dbec8af9f50906211da0a56293e9a980d",
+      "0001193125-21-159855": "d7d9883b028df7c03d6c41a968f9226cb550a094be02e3433364aab2d44315e4",
+      "0001193125-21-164617": "66bbc16c365bddb25015279352a2603f3253b5411d60f1eee90a74ef1a71a05f",
+      "0001193125-21-254529": "5f7acb6dac162e2dd495342cc9ba4c651e0090ecee5a1f6578be37c8711575bc",
+      "0001193125-21-270915": "ed1e7c3977631568599cd021e084761d75c8f3dbc0923b1fdb0a234ea777edac",
+      "0001193125-21-341815": "5c7559ce3affb245d818ae9b4b30d3663d15c27be35561c3b9e41b1387b7b349",
+      "0001193125-21-352140": "65d05628145d3ee79a25d0705b554abd03ce89d9885ef0561ac3b51e29083db1",
+      "0001193125-21-369767": "0fc702d64678515d9435fab9ac5725ca130c11de31149d7125f6e89c503ba415",
+      "0001193125-22-024027": "1ca906a5a9e8291baf7693b1fccc831e45b84e8a7442a92c50aa56a4f2d00fb0",
+      "0001193125-22-095632": "bf07fd571c5583b202f02d3ca6e962e2cb63ccb4234f27dd563cb17c7b518cbb",
+      "0001193125-22-184423": "4162b47de04da72d5f80ffe701a489a8ba367c0d48aff40ca11f3659470c9f0c",
+      "0001193125-22-247427": "08a1936b33e06cabb652f3d1db6c045ecae4bfd8806495f15c5b25d5e6de61f9",
+      "0001193125-22-313098": "3b37c4e8db8938dd3e36e8f2345ced64ab42be5f4a3fe5515d62c539f0357ea2"
+    },
+    "missing_primary_docs_in_requested_date_range": [],
+    "ledger_rule": "explicit post-purchase total holdings supersedes prior total; only a bare increment after an explicit total is added",
+    "share_anchors": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/events/share_anchors.csv",
+    "share_anchors_sha256": "45a4f6d52a41386de3bf65d87f9a997e2caf2e454459c50d9175b97863bd1df1",
+    "share_rule": "Class A + Class B as reported in 10-Q/10-K cover pages; becomes usable first session strictly after filing date"
+  }
+}

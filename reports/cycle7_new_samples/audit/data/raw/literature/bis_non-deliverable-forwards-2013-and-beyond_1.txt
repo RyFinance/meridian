@@ -1,0 +1,618 @@
+
+=== PAGE 1 ===
+ 
+ 
+BIS Quarterly Review, March 2014 75
+ Robert McCauley
+robert.mccauley@bis.orgChang Shu
+chang.shu@bis.orgGuonan Ma
+guonan.ma@bis.org
+ 
+Non-deliverable forwards: 2013 and beyond1 
+Non-deliverable forwards (NDFs) allow investors and borrowers to take positions in currencies 
+that are subject to official controls. Turnover in  NDFs has risen in recent years as non-residents 
+use them to hedge increasing investment in lo cal currency bonds. Pricing in deliverable forward 
+and NDF markets is segmented, with NDFs leading in times of strain. Experience shows that 
+NDF markets tend to fade away gradually after liberalisation. But, looking ahead, market 
+centralisation might reduce the costs of maintain ing them. In a unique development, offshore 
+deliverable renminbi forwards are gaining on the established NDF.  
+JEL classification: F31, G15, G18 .  
+Non-deliverable forwards (NDFs) are contracts for the difference between an 
+exchange rate agreed months before and the actual spot rate at maturity. The spot rate at maturity is taken as the officially announced domestic rate or a market-
+determined rate. The cont ract is settled with a single US dollar payment. Thus NDFs 
+yield payoffs related to a currency’s perf ormance without providing and requiring 
+funding in the underlyin g currencies as do deliverable forwards. 
+NDFs trade principally outside the border s of the currency’s home jurisdiction 
+(“offshore”). This enables investors to circumvent restrictions on trading in the home 
+market (“onshore”) and limit s on delivery of the home currency offshore. Market 
+participants include direct and portfolio investors wishing to hedge currency risk and speculators (Ma et al (2004)). Bank s and firms with onshore and offshore 
+operations arbitrage, and thereby reduce, differences in forward rates. In recent 
+years the growing importance  of non-resident investors in local currency bond 
+markets has increased the salience of NDF markets, particularly in times of strain. 
+This special feature provides  answers to three questions. First, how big was the 
+NDF market in 2013, and what can be sa id about its growth? Second, how does 
+pricing of NDFs differ from that of onshore deliverable forwards, and where are prices discovered, especially in stresse d markets? And third, how might NDFs 
+evolve? 
+In 2013, the BIS Triennial Central Bank Survey showed that NDFs  constitute only 
+a fifth of the global foreign exchange market in outright forwards and a tiny fraction 
+ 
+1 The authors thank Matías Bernier, Claudio Borio, Jacob Gyntelberg, Frank Packer, Ilhyock Shim, 
+Claudia Sotz, Christian Upper and Alberto Zapata for discussion and Denis Petre, Jimmy Shek and 
+Alan Villegas for resear ch assistance. Views expressed are those of the authors and not necessarily 
+those of the BIS. 
+=== PAGE 2 ===
+ 
+ 
+ 
+ 
+76 BIS Quarterly Review, March 2014
+ of overall foreign exchange trading. For the separately identified NDFs, however, 
+dollar NDFs represent three quarters of all dollar forwards in the six currencies 
+detailed by the survey. Data from the Bank of England on  London trading, from the 
+Depository Trust & Clearing Corporation (DTCC) and from an electronic broker 
+show that the market for NDFs grew rapidly from April 2008 to April 2013, but its 
+development since April 2013 is less clear.  
+By analysing the relationship between the prices of NDFs and deliverable 
+forwards, the feature finds th at the segmentation between  deliverable forwards and 
+NDFs is evident in deviations from the la w of one price. The NDF market tends to 
+lead the domestic market, especially in stressed periods. 
+Looking forward, we chart two paths fo r the evolution of NDFs. With capital 
+account opening, offshore and onshore mark ets can merge. But this seems to take 
+time. There is also a different path, taken by the Korean won. Its deliverable and non-deliverable markets persist in parallel even as arbitrage joins them and markets 
+deepen. The Chinese renm inbi’s recent internationalisat ion follows neither path and 
+the offshore deliverable renmin bi is outcompeting the NDF.  
+How big is the NDF market and how fast is it growing? 
+The latest Triennial Survey reported $127 billion in daily NDF turnover (Table 1). This represented 19% of all forward trading globally and 2.4% of all currency turnover. 
+Almost two thirds took place in six curr encies against the dollar, for which the 
+survey obtained detail. Like forward mark ets and emerging market currencies in 
+general, a very high share of NDF tradin g (94%) takes place against the dollar.  
+Data published by the London Foreign Exchange Joint Standi ng Committee show 
+that London accounts for 36% of NDF trading.
+2  Asian centres are especially important 
+ 
+2  Note, however, that the Triennia l Survey allocates trading by the location of the sales desk, while 
+the London survey does so by the location of the trading desk. Because two big banks have moved 
+their sales desks out of London but still trade ther e, the London share on the sales desk basis is 
+only about a third of net-net turnover. Global and London NDF turnover 
+Daily turnover in millions of US dollars, April 2013 Table 1
+ USD EUR 
+ JPY 
+ Other
+ Total
+ Global BRL CNY INR KRW RUB TWD Other Total 
+Net-net1 15,894 17,083 17,204 19,565 4,118 8,856 36,790 119,510 1,642 973 4,438 126,563
+Net-
+gross2 19,928 23,696 22,678 29,086 4,975 12,131 45,309 157,803 1,916 1,156 5,478 166,353
+London2 12,315 5,970 10,471 8,735 4,225 … 16,530 58,246 1,260 … 5083 60,019 
+Memo: Oct 2013  
+8,141  
+4,453  
+6,014  
+6,807  
+2,291  
+…  
+13,794  
+41,500  
+1,044  
+…  
+4143  
+42,959 
+BRL = Brazilian real; CNY = Chinese renminbi; EUR = euro; INR = Indian rupee; JPY = Japanese yen; KRW = Korean won; RUB = Russi an 
+rouble; TWD = New Taiwan dollar; USD = US dollar. 
+1  Adjusted for local and cross-border inter-dealer double-counting.    2  Adjusted for local inter-dealer double-counting.    3  Includes 
+sterling. 
+Sources: Bank of England; Triennial Central Bank Survey; authors’ calculations. 
+=== PAGE 3 ===
+ 
+ 
+BIS Quarterly Review, March 2014 77
+ for NDFs in the renminbi (Ehlers and Pack er (2013)) and, to a lesser extent, the 
+Korean won. 
+The relationship between location and deliverability 
+Onshore trading is concentr ated in deliverable forwards and offshore trading is 
+specialised in NDFs. As shown in the top se ction of Table 2, NDF trading represents 
+72% of all forward trading in the featured currency pairs, and offshore trading 87%. 
+Based on these observations, one would expe ct 62% of forward trading to occur in 
+NDFs offshore (72% * 87% = 62%). In fact, the percentage is even higher, 68%. 
+Correspondingly, there is more onshore deliv erable trading than  one would expect. 
+Indeed, the chi-squared test strongly re jects the independence of trading and 
+deliverability, confirming the concentration of deliverable forwards onshore and 
+NDFs offshore.  
+The remaining sections of Table 2 ma ke clear that the strength of the 
+relationship varies across the six currency pairs (though it is highly statistically 
+significant in all cases). Segmentation is strongest in th e Indian rupee, followed by 
+the renminbi,3  the Brazilian real, the Korean won, the New Taiwan dollar and finally 
+the Russian rouble. 
+The strength of this relationship testifies to the robustness of the controls 
+separating the onshore and offshore markets.  In India, the sense that NDF activity 
+ 
+3  See Ma and McCauley (2013)  for a multidimensional comp arison of China and India. Trade location and deliverability of forwards 
+Daily turnover in millions of US dollars, April 2013 Table 2
+Six currencies DFs NDFs Total Memo % DFs NDFs Total 
+Onshore 10,138 4,550 14,688 Onshore 8.9% 4.0% 12.8% 
+Offshore 21,543 78,170 99,713 Offshore 18.8% 68.3% 87.2% 
+Total 31,680 82,720 114,401 Total 27.7% 72.3% 100.0% 
+Brazilian real DFs NDFs Total  Chinese renminbi DFs NDFs Total 
+Onshore 2,709 559 3,268 Onshore 2,441 – 2,441 
+Offshore 6,908 15,335 22,243 Offshore 7,102 17,083 24,185 
+Total 9,617 15,894 25,511 Total 9,543 17,083 26,626 
+Indian rupee DFs NDFs Total Korean won DFs NDFs Total 
+Onshore 3,140 – 3,140 Onshore 1,118 3,538 4,656 
+Offshore 1,879 17,204 19,083 Offshore 1,410 16,027 17,437 
+Total 5,019 17,204 22,223 Total 2,528 19,565 22,094 
+Russian rouble DFs NDFs Total New Taiwan dollar DFs NDFs Total 
+Onshore 512 231 743 Onshore 218 222 440 
+Offshore 3,187 3,887 7,074 Offshore 1,057 8,634 9,691 
+Total 3,699 4,118 7,817 Total 1,274 8,856 10,130 
+DFs = deliverable forwards; NDFs = non-deliverable forwards. Data are reported on a net-net basis, ie adjusted for local and cr oss-border 
+inter-dealer double-counting. Chi-squared statistics strongly reje ct the null hypothesis of no re lationship between location and 
+deliverability: 14,375 for all six currencies; 3,260 for BRL; 4,811 for CNY; 12,534 for INR; 920 for KRW; 154 for RUB; 572 for TWD. The 
+critical value for p = .0005 is 12, so all are highly statistically significant. 
+Sources: Triennial Central Bank Survey; authors’ calculations 
+=== PAGE 4 ===
+ 
+ 
+ 
+ 
+78 BIS Quarterly Review, March 2014
+ strongly affected the domestic market in August 2013 ha s led to discussion of how 
+to bring NDF trading into the domestic market (see below). From 2010, the 
+relationship for the renminbi weakened when an offshore deliverable forward 
+market started trading in parallel with th e onshore deliverable forward and offshore 
+NDF markets (McCauley (2011, Graph 1)).  In Korea and Chinese Taipei, some 
+domestic financial firms are allowed to  trade NDFs (Tsuyuguchi and Wooldridge 
+2008), Annex A). The rouble foreign exchange market was liberalised in mid-2006. 
+Growth of the NDF market 
+NDF turnover grew rapidly in the five years up to April 2013, in line with emerging market turnover in general (Rime and Schrimpf (2013)). Following Bech and Sobrun (2013), we examine partial data si nce April 2013, which raise the question of 
+how much the growth through April reflected a search for yield.  
+London surveys show that the NDF market grew faster than the forward market 
+or the foreign exchange market as a whole from April 2008 to April 2013 (Table 3). During those five years, NDF turnover doub led its share to 2.4% of overall turnover 
+and 23% of forwards. Looking further back, there is no doubt th at NDF trading has 
+grown:  the turnover in Asian NDFs in Tabl e 1 is at least 10 times estimates of their 
+turnover from the early 2000s (Ma et  al (2004), Kim and Song (2010)).  
+Since April 2013, NDF trading has been affected by investors’ and borrowers’ 
+hedging in anticipation of a reduction in global monet ary easing. Over the last 
+several years, investors poured large sums  into emerging market local currency 
+bonds, and in some markets increased their holdings to substantial shares of outstanding bonds. For their part, many em erging market firms that had used their 
+unprecedented access to the global dollar (a nd euro) bond market to fund domestic 
+assets also had exposures to hedge.  
+NDF trading in London1 
+Average daily volume, in billions of US dollars Table 3
+ NDFs 
+ All forwards2 
+ NDFs as % 
+of all forwards All FX 
+ NDFs as 
+% of all FX Memo: Tokyo 
+NDF3 
+Apr 2008 23 200 11.5 1,832 1.3 2.4 
+Oct 2008 19 230 8.3 1,699 1.1 … 
+Apr 2009 16 162 9.9 1,356 1.2 0.3 
+Oct 2009 26 191 13.6 1,522 1.7 … 
+Apr 2010 25 186 13.4 1,687 1.5 0.3 
+Oct 2010 37 188 19.7 1,787 2.1 … 
+Apr 2011 42 192 21.9 2,042 2.1 1.6 
+Oct 2011 37 192 19.3 2,038 1.8 … 
+Apr 2012 36 192 18.8 2,014 1.8 1.4 
+Oct 2012 45 211 21.3 2,017 2.2 1.9 
+Apr 2013 60 265 22.6 2,547 2.4 2.4 
+Oct 2013 43 205 21.0 2,234 1.9 1.9 
+1  Adjusted for local and cross-border inter-dealer double-counting.    2  Non-deliverable forwards and outright 
+forwards.    3  Transactions in Asian and other emerging market currencies.  
+Sources: London Foreign Exchange Joint Standing Committee; Tokyo Foreign Exchange Market Committee. 
+=== PAGE 5 ===
+ 
+ 
+BIS Quarterly Review, March 2014 79
+ Surprisingly, when seemingly impending “tapering” by the US Federal Reserve 
+led investors to reduce their exposures to  emerging market bonds, some markets 
+experienced little net selling. Instead, investors sold local currencies in well-
+functioning forward currency markets, incl uding NDFs. These serv ed as what Chang 
+(2013) called the “main adjustment valve”, allowing investors to hedge the currency 
+risk in their bond holdings.4  
+For instance, in the smaller markets of Chile and Peru,5  where the central bank 
+measures not just turnover but also net po sitions, the data show a sharp turnaround 
+in positioning in May–June 2013. The left -hand panel of Graph 1 shows stocks of 
+long positions in the Chilean peso and Peruvian new sol. The larger stock of 
+positions in Chile declined by $9 billion between end-April and end-June 2013. The 
+smaller position in Peru declined by $2 billion between end-May and end-August. NDFs were used to reduce net exposures, while the Peruvian da ta show a decline in 
+turnover consistent with  the London data for October 2013 discussed below. 
+Regulatory changes promising high-frequency and granular reporting of trades 
+also buffeted the NDF market in the latter  half of 2013. Global efforts to shift 
+derivatives markets to more transparent tr ading venues and to centralise clearing 
+ 
+4  Chang (2013, pp 14–15) shows that rising bond yields tracked fallin g currencies, allowing the liquid 
+foreign exchange market to proxy hedge rates as  well. See also the results of Eichengreen and 
+Gupta (2013), who find that larger, more liquid markets felt  more pressure during the tapering 
+episode. 
+5  Which together reported tr ades of about $6 billion per day to the DTCC in January 2014. Positioning and activity in selected NDF markets 
+In billions of US dollars Graph 1
+Positioning in NDFs: Chilean peso 
+and Peruvian new sol  Turnover of Korean won NDFs on 
+EBS3  NDF trading reported to DTCC4 
+   
+BRL = Brazilian real; CLP = Chilean peso; CNY = Chinese renminbi; COP = Colombian peso; IDR = Indonesian rupiah; INR = Indian r upee; 
+KRW = Korean won; MYR = Malaysian ringgit; PEN = Peruvian new sol; PHP = Philippine peso; RUB = Russian rouble; TWD = New Taiwa n 
+dollar; USD = US dollar; SEF = swap execution facility. 
+1  Of counterparties of commercial banks in Peru.    2  Of the Chilean formal exchange market; includes some deliverable forwards.    3  One-
+month USD/KRW NDFs, average daily volume ; data through 24 February 2014.    4  Total notional amounts by currency, five-day moving 
+average. From Clarus Financial Technology, based on DTCC data. 
+Sources: Central Bank of Chile; Central Reserve Bank of Peru; Clarus Fi nancial Technology; EBS. –4–2024
+–20–15–10–50
+07 08 09 10 11 12 13 14
+NDF net position in PEN (lhs)1
+FX derivatives foreign market 
+net position in CLP (rhs)20.00.10.20.30.4
+Q1 13 Q2 13 Q3 13 Q4 13 Q1 14Non-SEF SEF015304560
+Oct 13 Nov 13 Dec 13 Jan 14 Feb 14
+USD /:BRL
+KRW
+INR
+CNYRUBTWD
+MYR+PHP+IDR
+CLP+COP+PEN
+=== PAGE 6 ===
+ 
+ 
+ 
+ 
+80 BIS Quarterly Review, March 2014
+ include not just swaps but also NDFs. In mid-2013, the US Commodity Futures 
+Trading Commission (CFTC) r equired that NDF trading in volving a US resident be 
+reported to the DTCC starting in October 2013 and that NDFs traded on multilateral 
+platforms be transacted on an author ised swap execution facility. Market 
+participants expect the CFTC to mandate centralised clearing of NDFs in 2014, and 
+pending European legislation to do so in 2015. Meanwhile, post -trade transparency 
+and regulation of multilateral trading venues were implemented fo r US residents in 
+October 2013. 
+The London data indicate a sharp contraction (28%) in NDF turnover in October 
+2013 (Tables 1 and 3). The dollar/yen spot ap art, this contraction was larger than 
+that for the foreign exchange market in general, and only  part of the contraction 
+can be ascribed to the depreciation of the emerging market currencies. 
+However, daily DTCC data show higher turnover since October 2013. Trades 
+reported to the DTCC have reached $40–60 billion a day (Graph 1, right-hand 
+panel). This is equivalent to a third to a half of the global volume in April 2013. Data 
+on one-month Korean won NDFs traded on  the electronic broker EBS also show 
+strong turnover in January 2014 (Graph 1, centre panel). 
+All in all, despite the huge amounts of data  now available, it is difficult to reach 
+a firm conclusion on the trend of NDF turnover since the Triennial Survey. Some of the growth to April 2013 may have reflec ted the cyclical search for yield.  
+How do deliverable forwar d and NDF pricing differ? 
+Effective capital controls can drive a wedge between on- and offshore exchange 
+rates, especially at times of market strain. In this section, after documenting the deviations, we test which market, onshore or  offshore, provides leading prices. Then 
+we examine how the two markets respon d differently to global factors.  
+Forward rate differentials 
+Differences between deliverable forward and NDF rates reflect the effectiveness of capital controls. On the whole, deviation s are largest for the renminbi and the 
+Indian rupee, as well as th e Indonesian rupiah and Phili ppine peso (Table 4). The 
+liberalised Russian rouble serves as a benc hmark, with much na rrower differentials. 
+The pricing differentials tend to widen sharply in stressed market conditions 
+(Table 4). The 2008–09 global financial crisis  witnessed a spike in pricing deviations 
+across the board. Market strain also oc curred in May–August 2013 during the sell-
+off in emerging market currencies, bonds and equities. Yet, wi th the exception of 
+Indonesia, nothing happened like the fractu ring of the markets observed during the 
+global crisis. This suggests that the NDF market still functioned reasonably as the 
+main adjustment valve for asset managers holding long positions in local bonds and firms with unhedged dollar bonds outstanding. 
+Interpreting lead-lag relationships 
+If the deliverable and non-deliverable forward markets are segmented, which 
+market moves first and subsequently influe nces the pricing of the other? One way 
+=== PAGE 7 ===
+ 
+ 
+BIS Quarterly Review, March 2014 81
+ of approaching this question is to measure which market leads the other in the 
+sense of today’s rate in one market providin g a useful clue to tomorrow’s rate in the 
+other. Previous studies of the won, Indi an rupee and Indonesi an rupiah tend to 
+show that there is two-way influence be tween deliverable forwards and NDFs in 
+normal times, but that the NDF market drives the domestic market during more 
+volatile periods (Misra and Behera ( 2006), Kim and Song (2010), Behera (2011), 
+Cadarajat and Lubis (2012) and Goyal et al (2013)).6  
+We broadly confirm this finding. We anal yse the direction of influence for nine 
+currencies in 2005–13 as well as separately  for the 2008–09 crisis and May–August 
+2013. Granger causality tests point to two-way causation for most currencies for the 
+full sample (Table 5). The exception is the Malaysian ringgit, where the NDF 
+influences the deliverable forward market. There is no case wh ere the deliverable 
+rate leads the NDF.  
+Analysis of the two subsample periods sh ows that the NDF’s influence seems to 
+increase during market stress. During the global financial crisis, the NDF tended to 
+lead the onshore market. A rise in th e influence of the NDF was even more 
+noticeable in May–August 2013 (eight out of nine cases). In India, the impression 
+that the offshore NDF drov e the domestic market in summer 2013 has reportedly 
+prompted consideration of opening up the domestic market to foreign investors 
+(Sikarwar (2013)).   
+H o w e v e r ,  n o t  t o o  m u c h  s h o u l d  b e  r e a d  i n t o  t h i s  f i n d i n g ,  n o  m a t t e r  h o w  
+sophisticated the econometrics . One often ignored subtlety is that the price change 
+in the NDF market is measured at the cl ose in London or New York, whereas the 
+domestic forward is measured at the close in the domestic mark et, generally in a 
+ 
+6  Such results are robust to use of different econometric methodologies, including Granger causality 
+tests, autoregressive models with time-var ying volatility and co-integration analysis.    Onshore less offshore foreign exchange forward premia1 
+Average of absolute value as a percentage of spot price, for three-month contracts Table 4 
+ Full sample Non-crisis Global financial 
+crisis Taper fears (May–
+Aug 2013) 
+CNY 0.43 0.41 0.59 0.48 
+INR 0.44 0.35 1.17 0.57 
+IDR 0.82 0.56 2.37 2.53 
+KRW 0.30 0.23 0.90 0.25 
+MYR 0.29 0.26 0.51 0.26 
+PHP 0.44 0.31 1.62 0.24 
+TWD 0.39 0.38 0.59 0.10 
+BRL 0.22 0.18 0.60 0.17 
+RUB 0.08 0.08 0.08 0.10 
+BRL = Brazilian real; CNY = Chinese renminbi; IDR = Indonesian rupiah; INR = Indian rupee; KRW = Korean won; MYR = Malaysian 
+ringgit; PHP = Philippine peso; RUB = Russian rouble; TWD = New Taiwan dollar. 
+1  Daily data for the forward premium gap are calculated as the difference between onshore forward and offshore NDF rates as a 
+percentage of the spot price. Full sample = January 2005–December 2013; global financial crisis = September 2008–July 2009; non -
+crisis = rest of sample period. 
+Sources: Bloomberg; CEIC ; authors’ calculations. 
+=== PAGE 8 ===
+ 
+ 
+ 
+ 
+82 BIS Quarterly Review, March 2014
+ different time zone. For Asian currencies, the London or New York close reflects 
+news from Europe and the US morning that arrives after the domestic market has 
+closed. Thus, it is not surprising that the NDF market moves the domestic forward 
+market on the following day, especially when financial markets are more volatile. 
+The Granger causality test for the Brazilian real is much more revealing given more 
+proximate time zones.   
+All that said, how NDF trading in the home currency affects pricing in the 
+domestic market is still of interest to ma rket participants and central bankers. For 
+Asian markets, the influence of NDF market action must be understood as reflecting 
+news flows after the Asian market close as  well as a more global set of market 
+participants.  
+The response of deliver able forward and NDF ra tes to global factors 
+A different exercise is to ask how global factors affect pricing in the two markets. 
+Consistent with the discussi on above, we use observations on global factors that 
+match the observations on domestic forwards. Thus we use Tokyo closing rates for 
+the major currencies to analyse East Asian domestic forward rates, London rates for 
+the rupee and the rouble, and New York closing rates for the real.  
+Table 6 shows that both deliverable fo rwards and NDFs generally respond to 
+global factors. Following Cairns et al (2007), we supplement the (Haldane and Hall / 
+Frankel and Wei) regression of a given cu rrency on the major currencies with an 
+indicator of global risk – the VIX. That is, we regress both the deliverable forward 
+and NDF of a given currency on percentage changes in the euro/d ollar forward rate, 
+the yen/dollar rate and the VIX. If the fo rward rate is affected by global risk 
+conditions, a rise in the VIX would lead to a depreciation, ie an increase in the forward rate defined as above. Note that we lag the VIX for the Asian currencies, 
+using the previous day’s New York close.  
+The estimation results sug gest that, by and large, d omestic markets, not just 
+NDFs, incorporate global factors. In particular, contemporaneously measured major 
+exchange rates figure similarly in both deliverable fo rwards and NDFs. The only 
+cases where global factors seem to figu re much more in the NDF rate are the 
+renminbi, Indian rupee and Indonesian rupiah. Granger causality test for three-mont h deliverable forwards and NDFs  Table 5
+ 
+DF CNY IDR INR KRW MYR PHP TWD BRL RUB 
+ NDF  Full sample          
+Non-crisis          
+Global financial crisis          
+Taper fears          
+BRL = Brazilian real; CNY = Chinese renminbi; IDR = Indonesian rupiah; INR = Indian rupee; KRW = Korean won; MYR = Malaysian ri nggit; 
+PHP = Philippine peso; RUB = Russian rouble; TWD = New Taiwan dollar. 
+Full sample = January 2005–December 2013; global financial crisis = September 2008–July 2009; taper fears = May–August 2013; no n-
+crisis = rest of sample period. The lag selection is based on the Schwarz information criterion.  indicates two-way causality between DF 
+and NDF rates;   indicates the NDF causes the DF;  indicates no relationship.  
+Sources: Bloomberg, authors’ estimations. 
+=== PAGE 9 ===
+ 
+ 
+BIS Quarterly Review, March 2014 83
+ How do NDF markets evolve? 
+Two different paths for the evolution of NDF markets can be distinguished. First, if 
+non-residents are allowed to buy and sell forwards domestically – in effect, to lend 
+and to borrow domestic cu rrency – such liberalisation makes an NDF market 
+unnecessary. But the NDF market does not necessarily go away immediately. 
+Second, if restrictions remain, the NDF persists. However, markets can still develop based on the NDF.  
+One example of the first path is the Aust ralian dollar. Debelle et al (2006) tell 
+the surprising story of the slow passing of the Australian dollar NDF. Deliverable forwards opened up in 1983, but the NDF continued to tr ade, lingering until 1987. 
+The NDF share of trading in the rouble  has declined even mo re gradually. The 
+Russian authorities made the rouble fully  convertible in mid-2006 amid current 
+account surpluses, large foreign exch ange reserves and ambitions for its 
+international use. Since then, the London data show that NDFs fell from 75–80% of 
+Elasticity of three-month forward ra tes to major currencies and the VIX Table 6 
+Deliverable BRL CNY IDR INR KRW MYR PHP RUB TWD 
+€/$ 0.522** 0.038** 0.183** 0.052** 0.403** 0.250** 0.173** 0.644** 0.145** 
+ (15.196) (8.917) (8.567) (2.752) (15.692) (20.305) (12.745) (34.456) (16.912) 
+¥/$ –0.162** 0.010* –0.059** 0.005 –0.229** –0.054** –0.068** –0.148** 0.005 
+ (–5.019) (2.397) (–2.852) (0.294) (–9.149) (–4.474) (–5.125) (–8.611) (0.640) 
+VIX 0.047** 0.000 0.015** 0.012** 0.021** 0.012** 0.011** 0.008** 0.007** 
+ (14.733) (0.423) (7.971) (7.270) (8.844) (10.760) (9.095) (5.040) (8.889) 
+Observations 2,088 1,974 2,107 1,927 2,014 1,876 2,183 2,049 2,033 
+R2 0.263 0.048 0.073 0.037 0.177 0.246 0.121 0.379 0.169 
+N D F           
+€ 0.513** 0.077** 0.422** 0.367** 0.488** 0.274** 0.209** 0.556** 0.172** 
+ (15.067) (13.616) (13.575) (17.893) (18.186) (19.916) (11.932) (28.212) (13.190) 
+¥ –0.196** –0.017** –0.267** –0.124** –0.213** –0.065** –0.077** –0.109** –0.035** 
+ (–6.149) (–3.141) (–9.161) (–6.458) (–8.456) (–5.029) (–4.665) (–5.903) (–2.864) 
+VIX 0.049** 0.002** 0.013** 0.018** 0.021** 0.013** 0.011** 0.010** 0.003* 
+ (15.460) (3.017) (4.628) (9.732) (8 .625) (9.996) (6.520) (5.252) (2.347) 
+Observations 2,061 2,183 2,181 2,159 2,181 2,140 2,183 2,156 2,161 R
+2 0.278 0.105 0.143 0.232 0.232 0.259 0.119 0.329 0.096 
+BRL = Brazilian real; CNY = Chinese renminbi; IDR = Indonesian rupiah; INR = Indian rupee; KRW = Korean won; MYR = Malaysian ri nggit; 
+PHP = Philippine peso; RUB = Russian rouble; TWD = New Taiwan dollar. 
+Table reports estimates of ∆log(DF or NDF)/$t = α + β1∆log€/$ t + β2∆log¥/$ t + β3∆VIX + εt. For deliverable forwards, data for the major 
+currencies and the lag structure vary to mat ch timing of the domestic market. For CNY, IDR, KRW, MYR, PHP and TWD, changes in T okyo 
+close prices for the euro and yen and changes in the VIX from the New York close lagge d one day are used; for INR, changes in L ondon 
+open prices for the euro and yen and change s in the VIX lagged one day; for RUB, changes in London close prices for the euro an d yen 
+and changes in the VIX lagged one day; for BRL, contemporaneous changes of the euro, yen and VIX from the New York close. For NDF 
+regressions, contemporaneous changes in all variables from the New York close are used. * represents significance at the 5% lev el; 
+** represents significance at the 1% level.  Source: Authors’ estimates. 
+=== PAGE 10 ===
+ 
+ 
+ 
+ 
+84 BIS Quarterly Review, March 2014
+ forwards in 2008 to about half in April 2013 (Graph 2).7  Especially given the bounce 
+of the NDF share back to more than 60% in October 2013, the rouble NDF could 
+linger for 10 years after its liberalisation in 2006. 
+On the other path, the Korean authorities have shown caution in removing 
+restrictions, and the won NDF continues to  trade – and in fact remains the most 
+traded NDF. Still, its markets have developed quite a bit. Korean banks’ ability to arbitrage the onshore forw ard and NDF markets has tended to keep the gap 
+between them narrow. And no n-deliverable currency options, interest rate swaps 
+and cross-currency swaps trade actively. As noted, there is subs tantial turnover of 
+won NDFs on EBS. Key to the market  development is an acceptable and 
+representative mechanism for determining the market average spot rate for the 
+NDF to settle on.
+8  
+The costs to Korea of maintaining won NDFs may decline with the changing 
+market structure. The continuing existenc e of the NDF market alongside deliverable 
+forwards no doubt exacts a cost in terms of  lower liquidity from the division of the 
+forward markets. However, it is possible that the change in th e NDF market to more 
+transparent trading and centralised clearing will make NDF markets deeper and 
+more liquid. If so, the won’s path may prove to be conducive to more market 
+development than seen to date.  
+The renminbi, with its idiosyncratic intern ationalisation, is not travelling either 
+path. Certainly, the Chinese authorities have not allowed unrestricted non-resident 
+access to the onshore forward market. Instead, they have permitted, within still effective (although leaky) capital controls, a pool of renminbi to collect offshore that 
+can be freely traded and delivered offshore (S hu et al (2013)). A three-way split of 
+ 
+7  Similar to the unique features of the Australia n dollar NDF (domestic trading and AUD settlement), 
+special factors may limit the applicability of the ro uble’s lessons. Foreign in vestors suffered defaults 
+in 1998 on rouble forwards with domestic banks contracted to he dge their holdings of Russian 
+government securities. HSBC (2013, p 121) notes, ”A  large portion of [forwa rd market] liquidity is 
+still offshore due to credit constrain[t]s among local banks.” 
+8  An acceptable measure of the spot rate of the rupiah for NDFs, by contrast, has proven elusive, with 
+the Association of Banks in Sing apore opting for one based on the NDF itself in August 2013. 
+Illiquidity associated with this problem was sa id in interviews to lie  b e h i n d  s o m e  o f  t h e  
+observations above regarding the rupiah.  NDFs as a share of forward turnover in five currencies 
+In per cent Graph 2
+Source: London Foreign Exchange Joint Standing Committee. 020406080100
+2008 2009 2010 2011 2012 2013
+Vis-à-vis US dollar: Brazilian real Chinese renminbi Indian rupee Korean won Russian rouble
+=== PAGE 11 ===
+ 
+ 
+BIS Quarterly Review, March 2014 85
+ the renminbi forward market has resulted, with an onshore market (dating to 2006), 
+an offshore NDF market (dating back to the 1990s) and an offs hore deliverable, or 
+CNH, market (since 2010). 
+As is evident from Table 2, the offshore  deliverable forward is challenging the 
+offshore NDF market: between April 2010 and April 2013, CNH forwards rose from 
+zero to $7 billion per day, while NDFs probably rose by less, to $17 billion per day. 
+Since April 2013, the CNH may have closed in further on the NDF market. Graph 2 
+shows that the London share of renminbi NDFs in all renminbi forwards dropped 
+between April and October 2013 from 80% to 75%, as CNH trading spread from 
+Hong Kong SAR to Singapore and London.9  It is remarkable how similar the NDF 
+shares of rouble and renminbi trading in  London are, given the differences in 
+Russian and Chinese capital account policies. 
+CNH forwards have several advantages in competing with NDFs. First, some 
+investors, including official investors, have mandates that do not permit NDFs but 
+do permit CNH. Second, the Triennial Surv ey shows $17 billion in renminbi options, 
+including those written offshore on th e CNH, and these generate activity in 
+deliverable forwards. Implied volatility in th e CNH tends to be very low, and market 
+participants report a reach for yield among investors who bet on the stability of the renminbi/dollar rate. The liquidity thereby generated in the CNH market, however cyclical, has attracted asset managers, including some hedge funds, to switch from 
+NDFs. 
+In addition, the limited loos ening of the exchange rate system in Shanghai has 
+also increased the so-called basis risk of using the NDF market, which seems to be another factor encouraging corporate hedgers to shift fr om NDFs to CNH (Minikin 
+and Lau (2013)). NDFs settle by reference to the official central parity rate against 
+the US dollar (the “fixing rate”) set ever y day at 9.30 am in the Shanghai, China 
+Foreign Exchange Trade System. However, actual trading occurs within +/–1% 
+bands around this fixing rate, which were widened from +/–0.5% in April 2012. Many market participants anticipate another widening of the band. 
+As Graph 3 shows, the widening of th e band and the tendency for actual 
+trading to occur near its edges make for substantial basis risk. When the NDF settles at the fixing rate, this can be 1 percenta ge point higher or lowe r than the rate at 
+which the renminbi can actually be sold onshore. From the standpoint of a firm 
+trying to fix the dollar value of profits to  be remitted from China, a 1% gap between 
+the NDF and the actual rate of exchange can produce unwanted volatility. Since the 
+band’s widening, the CNH has averaged an absolute difference from the Shanghai 
+close of just 0.1%, much narrower th an the 0.7% absolute gap between the 
+Shanghai fixing and close. The CNH is bec oming more attractive to those seeking to 
+hedge because it tracks the onshor e rate better than the NDF. 
+As things stand, NDFs are evolving al ong distinct paths. While the rouble 
+deliverable forward is slowly displacing the NDF, the Korean won NDF continues to 
+dominate trading and may gain liquidity fr om ongoing market centralisation. At the 
+ 
+9  Interviews with market participants in Hong Ko ng in late 2013 suggested th at they perceived that 
+the CNH had already eclipsed the NDF market in April. In the Triennial Survey, renminbi NDFs 
+represented 71% of offshore forwards. Summing CNH forwards, CNH spot and renminbi NDFs, on the grounds that any one of them transforms currency exposure, NDFs were still 45% of such 
+offshore trading. London data for October 2013 show  that this share fell by 10 percentage points 
+over the previous six months.  
+=== PAGE 12 ===
+ 
+ 
+ 
+ 
+86 BIS Quarterly Review, March 2014
+ same time, the renminbi offshore deliverable forward is closing in on the NDF, 
+notwithstanding capital controls.  
+Conclusions 
+The NDF market will continue to grow fast er than the foreign exchange market as 
+long as authorities try to insulate their domestic financial systems from global market developments, albeit at the cost of lower liquidity. The insulation, however, 
+can seem pretty thin at times. When ND Fs serve as a main adjustment valve for 
+non-resident investors in local assets and local firms with dollar debt, they can lead domestic markets.   
+Looking forward, as suggest ed by the current experience  of the rouble and the 
+previous experience of the Australian do llar, NDFs are likely to disappear only 
+gradually even after non-residents are allowed full access to domestic forward 
+markets. At the same time, continuing re strictions do not preclude considerable 
+market development, as seen with the Ko rean won. NDF markets may become more 
+transparent and liquid as trading moves to authorised multilateral trading and centralised clearing in accord with the current wave of r egulatory reforms. The fast-
+developing offshore deliverable market in the renminbi is challenging the 
+incumbent NDF as a better hedging tool.   
+If foreign investors use NDFs to hedge exposures in local assets in times of 
+stress, sales of these assets in the bala nce of payment statistics capture their 
+behaviour only very partia lly. Analysts need not only  to follow the money, 
+ie measure capital flows, but also to fo llow the risk, and newly available data on 
+NDFs can help (Caruana (2013)). 
+ 
+  Chinese renminbi closing and trading band1 
+In per cent Graph 3
+1  The trading band was widened from +/– 0.3% to +/– 0.5% on 21 May 2007, and then to +/– 1% on 16 April 2012. 
+Source: Bloomberg. –1.5–1.0–0.50.00.51.0
+2006 2007 2008 2009 2010 2011 2012 2013
+Per cent deviation from fixing rate against USD Trading band
+=== PAGE 13 ===
+ 
+ 
+BIS Quarterly Review, March 2014 87
+ References 
+Bech, M and J Sobrun (2013): “FX market trends before, between and beyond 
+Triennial Surveys”, BIS Quarterly Review , December, pp 45–54.  
+Behera, H K (2011): “Onshore and offshore ma rket for Indian rupe e: recent evidence 
+on volatility and shock spillover”, Macroeconomics and Finance in Emerging Market 
+Economies , vol 4, no 1, March, pp 43–55. 
+Cadarajat, Y and A Lubis (2012):  “Offshore and onshore IDR market: an evidence on 
+information spillover”, Bulletin of Monetary Economics and Banking , April, pp 323–
+47. 
+Cairns, J, C Ho and R McCauley (2007): “Exchange rates and global volatility: 
+implications for Asia-Pacific currencies”, BIS Quarterly Review, March, pp 41–52. 
+Caruana, J (2013): “Ebbing global liquidity and monetary policy interactions”, speech 
+given at the Central Bank of Chile Fifth Summit Meeting of Central Banks on 
+Inflation Targeting, Santiago, Chile, 15 November.  
+Chang, J (2013): Emerging markets outlook and strategy for 2014 , JPMorgan, 
+November. 
+Debelle, G, J Gyntelberg and M Plumb ( 2006): “Forward currency markets in Asia: 
+lessons from the Australian experience”, BIS Quarterly Review , September,  
+pp 53–64. Ehlers, T and F Packer (2013): “FX and der ivatives markets in emerging economies 
+and the internationalisation of their currencies”, BIS Quarterly Review , December, 
+pp 55–67. Eichengreen, B and P Gupta (2013): “Tapering talk: the impact of expectations of 
+reduced Federal Reserve security purcha ses on emerging markets”, December. 
+Goyal, R, R Jain and S Tewari (2013): “Non  deliverable forward and onshore Indian 
+rupee market: a study on inter-linkages”, Reserve Bank of India  Working Paper Series,  
+11/2013, December. 
+HSBC (2013): “Emerging Markets Currenc y Guide 2014”, HSBC Global Research, 
+December.  Kim, K and C Y Song (2010): “Foreign exchange liberalization and its implications: 
+the case of the won”, in W Peng and C Shu (eds), Currency internationalization: 
+global experiences and implications for the renminbi , pp 78–111. 
+Ma, G, C Ho and R McCauley (2004): “The markets for non-deliverable forwards in 
+Asia”, BIS Quarterly Review , June, pp 81–94. 
+Ma, G and R McCauley (2013): “Is Chin a or India more financially open?”, Journal of 
+International Money and Finance , vol 39, pp 6–27. 
+McCauley, R (2011): “Renminbi internat ionalisation and China’s financial 
+development”, BIS Quarterly Review , December, pp 41–56. 
+Minikin, R and K Lau (2013): The offshore renminbi: the rise of the Chinese currency 
+and its global future , John Wiley & Sons.  
+Misra, S and H Behera (2006): “Non-deliv erable foreign exchan ge forward market: 
+an overview”, Reserve Bank of India Occasional Papers , vol 27, no 3, pp 25–55. 
+=== PAGE 14 ===
+ 
+ 
+ 
+ 
+88 BIS Quarterly Review, March 2014
+ Rime, D and A Schrimpf (2013): “The anatom y of the global FX market through the 
+lens of the 2013 Triennial Survey”, BIS Quarterly Review, December, pp 27–44. 
+Shu, C, D He and X Chen (2014): “’One cu rrency, two markets’ and the renminbi’s 
+growing influence in Asia-Pacific”, BIS Working Papers, forthcoming. 
+Sikarwar, D (2013): “Government set to kill rupee NDF market by easing restrictions 
+& lowering costs”, Economic Times , October. 
+Tsuyuguchi, Y and P Wooldri dge (2008): “The evolution of trading activity in Asian 
+foreign exchange markets”, BIS Working Papers , no 252, May. 

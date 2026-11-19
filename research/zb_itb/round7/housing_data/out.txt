@@ -1,0 +1,148 @@
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:242: IOError: sysctlbyname failed for 'hw.optional.neon'. Detail: [errno 1] Operation not permitted
+starts 23
+newhome 24
+existing 27
+pending 27
+constr 25
+nahb 27
+cs 27
+days 718 r10 127 r830 23 both 0
+
+=== (a) 10:00 releases, ITB
+ALL10
+  10:30bar->11:30..close net(mom)    n=127 mean=   10.6bp t= 1.31
+  10:30bar->11:30..close gross       n=127 mean=   14.6bp t= 1.81
+  10:30bar->11:30..close FLIP net    n=127 mean=  -18.6bp t=-2.31
+  10:30bar->11:30bar net(mom)        n=127 mean=   -2.2bp t=-0.61
+  10:30bar->11:30bar gross           n=127 mean=    1.8bp t= 0.48
+  10:30bar->11:30bar FLIP net        n=127 mean=   -5.8bp t=-1.58
+  09:30bar->10:30..close net(mom)    n=127 mean=   -2.7bp t=-0.27
+  09:30bar->10:30..close gross       n=127 mean=    1.3bp t= 0.13
+  09:30bar->10:30..close FLIP net    n=127 mean=   -5.3bp t=-0.52
+newhome
+  10:30bar->11:30..close net(mom)    n= 24 mean=  -23.7bp t=-1.60
+  10:30bar->11:30..close gross       n= 24 mean=  -19.7bp t=-1.33
+  10:30bar->11:30..close FLIP net    n= 24 mean=   15.7bp t= 1.06
+  10:30bar->11:30bar net(mom)        n= 24 mean=   -0.6bp t=-0.07
+  10:30bar->11:30bar gross           n= 24 mean=    3.4bp t= 0.39
+  10:30bar->11:30bar FLIP net        n= 24 mean=   -7.4bp t=-0.85
+  09:30bar->10:30..close net(mom)    n= 24 mean=    2.3bp t= 0.12
+  09:30bar->10:30..close gross       n= 24 mean=    6.3bp t= 0.32
+  09:30bar->10:30..close FLIP net    n= 24 mean=  -10.3bp t=-0.53
+existing
+  10:30bar->11:30..close net(mom)    n= 27 mean=    1.6bp t= 0.09
+  10:30bar->11:30..close gross       n= 27 mean=    5.6bp t= 0.32
+  10:30bar->11:30..close FLIP net    n= 27 mean=   -9.6bp t=-0.54
+  10:30bar->11:30bar net(mom)        n= 27 mean=    3.5bp t= 0.54
+  10:30bar->11:30bar gross           n= 27 mean=    7.5bp t= 1.16
+  10:30bar->11:30bar FLIP net        n= 27 mean=  -11.5bp t=-1.78
+  09:30bar->10:30..close net(mom)    n= 27 mean=  -12.8bp t=-0.65
+  09:30bar->10:30..close gross       n= 27 mean=   -8.8bp t=-0.45
+  09:30bar->10:30..close FLIP net    n= 27 mean=    4.8bp t= 0.24
+pending
+  10:30bar->11:30..close net(mom)    n= 27 mean=   43.1bp t= 2.26
+  10:30bar->11:30..close gross       n= 27 mean=   47.1bp t= 2.46
+  10:30bar->11:30..close FLIP net    n= 27 mean=  -51.1bp t=-2.67
+  10:30bar->11:30bar net(mom)        n= 27 mean=  -15.4bp t=-2.24
+  10:30bar->11:30bar gross           n= 27 mean=  -11.4bp t=-1.66
+  10:30bar->11:30bar FLIP net        n= 27 mean=    7.4bp t= 1.08
+  09:30bar->10:30..close net(mom)    n= 27 mean=   -0.6bp t=-0.02
+  09:30bar->10:30..close gross       n= 27 mean=    3.4bp t= 0.12
+  09:30bar->10:30..close FLIP net    n= 27 mean=   -7.4bp t=-0.27
+constr
+  10:30bar->11:30..close net(mom)    n= 25 mean=   21.1bp t= 1.07
+  10:30bar->11:30..close gross       n= 25 mean=   25.1bp t= 1.27
+  10:30bar->11:30..close FLIP net    n= 25 mean=  -29.1bp t=-1.48
+  10:30bar->11:30bar net(mom)        n= 25 mean=   -6.0bp t=-0.54
+  10:30bar->11:30bar gross           n= 25 mean=   -2.0bp t=-0.18
+  10:30bar->11:30bar FLIP net        n= 25 mean=   -2.0bp t=-0.19
+  09:30bar->10:30..close net(mom)    n= 25 mean=    8.7bp t= 0.35
+  09:30bar->10:30..close gross       n= 25 mean=   12.7bp t= 0.51
+  09:30bar->10:30..close FLIP net    n= 25 mean=  -16.7bp t=-0.67
+nahb
+  10:30bar->11:30..close net(mom)    n= 26 mean=    9.0bp t= 0.61
+  10:30bar->11:30..close gross       n= 26 mean=   13.0bp t= 0.88
+  10:30bar->11:30..close FLIP net    n= 26 mean=  -17.0bp t=-1.15
+  10:30bar->11:30bar net(mom)        n= 26 mean=    1.1bp t= 0.13
+  10:30bar->11:30bar gross           n= 26 mean=    5.1bp t= 0.61
+  10:30bar->11:30bar FLIP net        n= 26 mean=   -9.1bp t=-1.09
+  09:30bar->10:30..close net(mom)    n= 26 mean=   -3.4bp t=-0.16
+  09:30bar->10:30..close gross       n= 26 mean=    0.6bp t= 0.03
+  09:30bar->10:30..close FLIP net    n= 26 mean=   -4.6bp t=-0.21
+ALL10_pure(no 0830/cs)
+  10:30bar->11:30..close net(mom)    n=124 mean=   10.9bp t= 1.33
+  10:30bar->11:30..close gross       n=124 mean=   14.9bp t= 1.83
+  10:30bar->11:30..close FLIP net    n=124 mean=  -18.9bp t=-2.32
+  10:30bar->11:30bar net(mom)        n=124 mean=   -1.9bp t=-0.52
+  10:30bar->11:30bar gross           n=124 mean=    2.1bp t= 0.55
+  10:30bar->11:30bar FLIP net        n=124 mean=   -6.1bp t=-1.63
+  09:30bar->10:30..close net(mom)    n=124 mean=   -3.6bp t=-0.34
+  09:30bar->10:30..close gross       n=124 mean=    0.4bp t= 0.04
+  09:30bar->10:30..close FLIP net    n=124 mean=   -4.4bp t=-0.43
+dev/check ALL10
+dev
+  10:30bar->11:30..close net(mom)    n= 69 mean=    8.0bp t= 0.79
+  10:30bar->11:30..close gross       n= 69 mean=   12.0bp t= 1.18
+  10:30bar->11:30..close FLIP net    n= 69 mean=  -16.0bp t=-1.58
+check
+  10:30bar->11:30..close net(mom)    n= 58 mean=   13.7bp t= 1.06
+  10:30bar->11:30..close gross       n= 58 mean=   17.7bp t= 1.37
+  10:30bar->11:30..close FLIP net    n= 58 mean=  -21.7bp t=-1.68
+CONTROL non-release days (no r10/r830/r9)
+  10:30bar->11:30..close net(mom)    n=544 mean=   -0.5bp t=-0.12
+  10:30bar->11:30..close gross       n=544 mean=    3.5bp t= 0.95
+  10:30bar->11:30..close FLIP net    n=544 mean=   -7.5bp t=-2.02
+  10:30bar->11:30bar net(mom)        n=544 mean=   -4.6bp t=-2.61
+  10:30bar->11:30bar gross           n=544 mean=   -0.6bp t=-0.36
+  10:30bar->11:30bar FLIP net        n=544 mean=   -3.4bp t=-1.89
+CONTROL SPY on ALL10 days
+  SPY 10:30bar->11:30..close net(mom) n=126 mean=    1.5bp t= 0.33
+  SPY 10:30bar->11:30..close gross   n=126 mean=    5.5bp t= 1.17
+  SPY 10:30bar->11:30..close FLIP net n=126 mean=   -9.5bp t=-2.02
+  placebo perm: real gross mean 14.6bp, placebo mean 3.6, p(two-sided)=0.058
+
+=== (b) ZB rule (net, 4bp RT) by day type
+  all days                           n=580 mean=   21.5bp t= 5.07
+  08:30 starts days                  n= 22 mean=   10.7bp t= 0.59
+     dev                             n= 13 mean=   -9.6bp t=-0.51
+     check                           n=  9 mean=   39.9bp t= 1.17
+  10:00 release days                 n=122 mean=   29.9bp t= 3.12
+     dev                             n= 64 mean=   24.8bp t= 2.17
+     check                           n= 58 mean=   35.5bp t= 2.24
+  10:00 release pure                 n=119 mean=   27.9bp t= 2.92
+     dev                             n= 62 mean=   24.0bp t= 2.10
+     check                           n= 57 mean=   32.2bp t= 2.05
+  CS 09:00 days                      n= 26 mean=   40.4bp t= 2.31
+     dev                             n= 13 mean=   37.2bp t= 1.78
+     check                           n= 13 mean=   43.6bp t= 1.51
+  non-release                        n=413 mean=   19.0bp t= 3.75
+     dev                             n=178 mean=   13.7bp t= 1.98
+     check                           n=235 mean=   23.1bp t= 3.20
+  diff 0830 vs non: -8.4bp  Welch t=-0.44 p=0.661
+  diff 10:00 vs non: 10.9bp  Welch t=1.00 p=0.318
+  ZB rule on newhome days            n= 23 mean=   73.8bp t= 3.09
+  ZB rule on existing days           n= 26 mean=   44.1bp t= 2.36
+  ZB rule on pending days            n= 27 mean=    3.8bp t= 0.20
+  ZB rule on constr days             n= 23 mean=    4.0bp t= 0.16
+  ZB rule on nahb days               n= 25 mean=   11.3bp t= 0.52
+
+=== (c) first-hour vol (09:30 bar)
+  08:30 days   n= 23 mean|ret|=  77.6bp  mean range= 149.0bp  sd=  96.8
+  10:00 days   n=127 mean|ret|=  84.8bp  mean range= 159.4bp  sd= 112.2
+  CS days      n= 27 mean|ret|=  80.1bp  mean range= 152.3bp  sd= 105.2
+  non-release  n=544 mean|ret|=  75.9bp  mean range= 148.3bp  sd= 102.1
+  MWU 08:30 vs non abs0930: p=0.611
+  MWU 08:30 vs non rng0930: p=0.408
+  MWU 10:00 vs non abs0930: p=0.181
+  MWU 10:00 vs non rng0930: p=0.030
+  MWU CS vs non abs0930: p=0.767
+  MWU CS vs non rng0930: p=0.538
+
+=== skip/double on 10:00 days: ZB rule gross/net (above) and sizing sim
+  skip    total=    8827bp mean= 15.2bp Sharpe-ish t=4.06
+  double  total=   16121bp mean= 27.8bp Sharpe-ish t=5.03
+  half    total=   10650bp mean= 18.4bp Sharpe-ish t=4.75
+  base    total=   12474bp mean= 21.5bp t=5.07

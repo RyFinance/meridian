@@ -1,0 +1,7 @@
+{"frozen_at": "2026-10-16, before any validation data examined; read by validate.py",
+ "success": "net t > 2.39 (two-sided Bonferroni, 3 candidates, p<0.0167), positive net mean, not single-year",
+ "candidates": {
+  "C1": {"names": ["MARA","RIOT","CLSK","HUT","CIFR","WULF","IREN","BTBT","COIN","HOOD","XYZ","HIVE","BTDR","CAN","GBTC","BITO","IBIT","FBTC","CORZ"], "mode": "cond", "k": 1.0, "btc_min": 0.0, "dev": {"net_bp": 25.7, "t": 2.74, "sharpe": 1.49}},
+  "C2": {"names": ["COIN","MARA","RIOT","HOOD","XYZ","GBTC","BITO","IBIT","FBTC"], "mode": "long", "k": 1.0, "btc_min": 0.0, "dev": {"net_bp": 17.3, "t": 2.03, "sharpe": 1.10}},
+  "C3": {"names": ["COIN","HOOD","WULF","CLSK","HUT"], "mode": "cond", "k": 1.0, "btc_min": 0.0, "dev": {"net_bp": 14.3, "t": 2.47, "sharpe": 1.34}}},
+ "descriptive_only": ["validation per-name correlations", "same rules at open->10:30 horizon (60m bars, 2023-11-17+)"]}

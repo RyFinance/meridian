@@ -1,0 +1,8 @@
+{
+  "overlap_first": "2004-11-19",
+  "overlap_last": "2010-12-31",
+  "days": 1211,
+  "daily_correlation": -0.004449744352096377,
+  "tracking_error_ann": 0.3070423355626918,
+  "note": "London 15:00 fixing vs US ETF daily adjusted close, unsynchronized intervals; not a NAV replication."
+}

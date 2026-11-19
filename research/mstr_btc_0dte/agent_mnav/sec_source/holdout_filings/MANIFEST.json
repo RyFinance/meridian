@@ -1,0 +1,152 @@
+[
+  {
+    "form": "10-K",
+    "filing_date": "2023-02-16",
+    "report_date": "2022-12-31",
+    "accession": "0001564590-23-002012",
+    "primary_document": "mstr-10k_20221231.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000156459023002012/mstr-10k_20221231.htm",
+    "file": "2023-02-16_10-K_0001564590-23-002012.html",
+    "sha256": "6e41c60b812ca8baaed67584af5357ce77ac92ea430ba40b4bc910abae43b4d3"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2023-05-01",
+    "report_date": "2023-03-31",
+    "accession": "0000950170-23-016229",
+    "primary_document": "mstr-20230331.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000095017023016229/mstr-20230331.htm",
+    "file": "2023-05-01_10-Q_0000950170-23-016229.html",
+    "sha256": "401ad2824a0c19e89daa488e70694534152f2ce09adb12d060bc5793b9438660"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2023-08-01",
+    "report_date": "2023-06-30",
+    "accession": "0000950170-23-036448",
+    "primary_document": "mstr-20230630.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000095017023036448/mstr-20230630.htm",
+    "file": "2023-08-01_10-Q_0000950170-23-036448.html",
+    "sha256": "bee92bb660ebe1f3bfb8de3591fd4bd494e84c8333187c2c00bdd5f0a7dfe358"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2023-11-01",
+    "report_date": "2023-09-30",
+    "accession": "0000950170-23-057418",
+    "primary_document": "mstr-20230930.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000095017023057418/mstr-20230930.htm",
+    "file": "2023-11-01_10-Q_0000950170-23-057418.html",
+    "sha256": "24f39d9e5b7a3db3e4ef43a0a3873da3c48d56df504030c9364d7f54340532c8"
+  },
+  {
+    "form": "10-K",
+    "filing_date": "2024-02-15",
+    "report_date": "2023-12-31",
+    "accession": "0000950170-24-015847",
+    "primary_document": "mstr-20231231.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024015847/mstr-20231231.htm",
+    "file": "2024-02-15_10-K_0000950170-24-015847.html",
+    "sha256": "9b66ee0413c85c5325281f3c05a5956cfc7dd53dfebf37f925b92929fb29a262"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2024-05-01",
+    "report_date": "2024-03-31",
+    "accession": "0000950170-24-051230",
+    "primary_document": "mstr-20240331.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024051230/mstr-20240331.htm",
+    "file": "2024-05-01_10-Q_0000950170-24-051230.html",
+    "sha256": "7a6c4da923a10024399912617373a5dd81eef3f0f678190061907cb212f26d82"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2024-08-06",
+    "report_date": "2024-06-30",
+    "accession": "0000950170-24-091778",
+    "primary_document": "mstr-20240630.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024091778/mstr-20240630.htm",
+    "file": "2024-08-06_10-Q_0000950170-24-091778.html",
+    "sha256": "575d5a42051505a0f8d2ebe3878bec9a8d165b97beec0725560a35ff2a345c53"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2024-10-31",
+    "report_date": "2024-09-30",
+    "accession": "0000950170-24-119263",
+    "primary_document": "mstr-20240930.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024119263/mstr-20240930.htm",
+    "file": "2024-10-31_10-Q_0000950170-24-119263.html",
+    "sha256": "6a5b6066161fb0156d535d6786b8fa39f031e9987cfa0fb6874e47fdff40c0f3"
+  },
+  {
+    "form": "10-K",
+    "filing_date": "2025-02-18",
+    "report_date": "2024-12-31",
+    "accession": "0000950170-25-021814",
+    "primary_document": "mstr-20241231.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025021814/mstr-20241231.htm",
+    "file": "2025-02-18_10-K_0000950170-25-021814.html",
+    "sha256": "29cfdaf5d26b9e45e7234552958d5299f207640ae2d5da06e7fe415ac35ca782"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2025-05-05",
+    "report_date": "2025-03-31",
+    "accession": "0000950170-25-063536",
+    "primary_document": "mstr-20250331.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025063536/mstr-20250331.htm",
+    "file": "2025-05-05_10-Q_0000950170-25-063536.html",
+    "sha256": "da196bdd8396f5ec4bda70a64bdee29b48060a4a571319d541b24a639c50063d"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2025-08-05",
+    "report_date": "2025-06-30",
+    "accession": "0000950170-25-102209",
+    "primary_document": "mstr-20250630.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025102209/mstr-20250630.htm",
+    "file": "2025-08-05_10-Q_0000950170-25-102209.html",
+    "sha256": "af2810201ad8745aa1ca7fe5b3d9ea08ff742a0df3a8a61c139b1e0145867b1b"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2025-11-03",
+    "report_date": "2025-09-30",
+    "accession": "0001193125-25-262568",
+    "primary_document": "mstr-20250930.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525262568/mstr-20250930.htm",
+    "file": "2025-11-03_10-Q_0001193125-25-262568.html",
+    "sha256": "d42a00dbaad51d48698d77c9c4b353c4999cc6beb9df3be961871fd8e381aa40"
+  },
+  {
+    "form": "10-K",
+    "filing_date": "2026-02-19",
+    "report_date": "2025-12-31",
+    "accession": "0001050446-26-000020",
+    "primary_document": "mstr-20251231.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000020/mstr-20251231.htm",
+    "file": "2026-02-19_10-K_0001050446-26-000020.html",
+    "sha256": "1bc4ab1f53be845d84781ef23252da8a14efe5e88491d0324d5de5bd88bbf914"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2026-05-06",
+    "report_date": "2026-03-31",
+    "accession": "0001050446-26-000031",
+    "primary_document": "mstr-20260331.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000031/mstr-20260331.htm",
+    "file": "2026-05-06_10-Q_0001050446-26-000031.html",
+    "sha256": "503cc2ed07c908295935d0bada4c401e7ea64906e0fa02e7ccbf7fdfbdb56cae"
+  },
+  {
+    "form": "10-Q",
+    "filing_date": "2026-08-03",
+    "report_date": "2026-06-30",
+    "accession": "0001050446-26-000044",
+    "primary_document": "mstr-20260630.htm",
+    "url": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000044/mstr-20260630.htm",
+    "file": "2026-08-03_10-Q_0001050446-26-000044.html",
+    "sha256": "53115b86a85950aaf8ba35f142645ded003ce227ecee649b8e455554b62b133b"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "input_paths": {
+    "btc": "/Users/rytty/CCP/BTC-Acum/data/btc_usd_1m_candles_polymarket_arb.parquet",
+    "mstr": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/mstr_daily_yf.parquet",
+    "MARA": "/Users/rytty/CCP/quant_v7/data/sec_insider/prices/MARA.parquet",
+    "RIOT": "/Users/rytty/CCP/quant_v7/data/sec_insider/prices/RIOT.parquet",
+    "CLSK": "/Users/rytty/CCP/quant_v7/data/sec_insider/prices/CLSK.parquet",
+    "COIN": "/Users/rytty/CCP/quant_v7/data/sec_insider/prices/COIN.parquet"
+  },
+  "btc": {
+    "path": "/Users/rytty/CCP/BTC-Acum/data/btc_usd_1m_candles_polymarket_arb.parquet",
+    "raw_rows": 4469515,
+    "rows_after_clean": 4469515,
+    "duplicate_timestamps_removed": 0,
+    "start_utc": "2017-08-17 04:00:00+00:00",
+    "end_utc": "2026-08-11 08:03:00+00:00"
+  },
+  "panel_rows": 7417,
+  "panel_date_start": "2020-08-12",
+  "panel_date_end": "2026-10-16",
+  "valid_signal_rows": 6950,
+  "invalid_signal_rows": 467,
+  "btc_target_max_age_minutes": {
+    "prev_close": 0.0,
+    "open": 0.0
+  },
+  "development_cutoff": "2022-12-30",
+  "development_rows": 2743,
+  "development_valid_signal_rows": 2666,
+  "script_sha256": "4fc4c9c1878da6d3bb6fd5e54dcc7f0e3333e76f160a51af666bb3ed13cc454f"
+}

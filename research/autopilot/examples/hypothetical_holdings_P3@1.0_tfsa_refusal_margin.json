@@ -1,0 +1,11 @@
+{
+ "as_of": "2026-08-31",
+ "cash_cad": 13464.94,
+ "cash_usd": 0.0,
+ "margin_loan_cad": 10000.0,
+ "net_external_flow_cad": 0,
+ "positions": {
+  "XEQT.TO": 1592,
+  "ZAG.TO": 2882
+ }
+}

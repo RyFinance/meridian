@@ -1,0 +1,359 @@
+{
+ "checked_state": null,
+ "checks": [
+  {
+   "detail": "post-trade NAV must be positive",
+   "limit": 0.0,
+   "name": "nav_positive",
+   "ok": true,
+   "value": 116866.67
+  },
+  {
+   "detail": "shorts are never allowed",
+   "limit": [],
+   "name": "no_negative_shares",
+   "ok": true,
+   "value": []
+  },
+  {
+   "detail": "tfsa accounts can never borrow; cash may never go below 0",
+   "limit": 0.0,
+   "name": "no_borrowing_no_negative_cash",
+   "ok": true,
+   "value": {
+    "cash_cad": 2744.38,
+    "cash_usd": 550.05
+   }
+  },
+  {
+   "detail": "effective gross exposure / NAV <= config target gross + add-on",
+   "limit": 1.4,
+   "name": "leverage_cap",
+   "ok": true,
+   "value": 1.213358
+  },
+  {
+   "detail": "largest position vs its cap (SSO: max_position_sso; XEQT.TO/ZAG.TO: target + one_ticket_cap_addon; others: max_position)",
+   "limit": {
+    "max_position": 0.65,
+    "max_position_sso": 0.3,
+    "one_ticket_cap_addon": 0.05,
+    "per_ticker": {
+     "RSSB": 0.65,
+     "XEQT.TO": 0.545,
+     "ZAG.TO": 0.2975
+    }
+   },
+   "name": "position_cap",
+   "ok": true,
+   "value": {
+    "ticker": "XEQT.TO",
+    "weight": 0.51812
+   }
+  }
+ ],
+ "config": {
+  "account_type": "tfsa",
+  "config_id": "P3@1.25",
+  "error": null,
+  "exposures": {
+   "BOND": 0.5,
+   "EQ": 0.75,
+   "GOLD": 0.0,
+   "TREND": 0.0
+  },
+  "file": "config_P3@1.25_tfsa.json",
+  "label": "HYPOTHETICAL HOLDINGS — research sample, not a recommendation",
+  "overrides": {},
+  "owner_tolerance_pct": 50,
+  "portfolio_id": "sample|P3@1.25|tfsa",
+  "recipe_kind": "stacked",
+  "recipe_loan_fraction": 0.0,
+  "recipe_weights": {
+   "RSSB": 0.25,
+   "XEQT.TO": 0.5,
+   "ZAG.TO": 0.25
+  },
+  "sha256": "b3115992d3c81d1cbd0fcee1009992f7ca73e7d3d53780613e92cdfdea0ed0d4",
+  "supported": true,
+  "target_gross": 1.25,
+  "uses_letf": false
+ },
+ "costs": {
+  "commission_cad": 0.0,
+  "fx_cad": 0.0,
+  "spread_cad": 0.0,
+  "total_cad": 0.0,
+  "turnover_cad": 0.0,
+  "turnover_over_nav": 0.0
+ },
+ "decision": {
+  "action": "no trade",
+  "borrow_capacity_cad": 0.0,
+  "leverage_check": null,
+  "quarter_end": false,
+  "rows": [
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.24336515,
+    "drift": -0.00413485,
+    "rel_drift": 0.016706,
+    "rel_trigger": false,
+    "target": 0.2475,
+    "ticker": "RSSB"
+   },
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.51812042,
+    "drift": 0.02312042,
+    "rel_drift": 0.046708,
+    "rel_trigger": false,
+    "target": 0.495,
+    "ticker": "XEQT.TO"
+   },
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.20850709,
+    "drift": -0.03899291,
+    "rel_drift": 0.157547,
+    "rel_trigger": false,
+    "target": 0.2475,
+    "ticker": "ZAG.TO"
+   }
+  ],
+  "triggered": false,
+  "triggers": []
+ },
+ "disclaimer": "Research tool output only. Nothing in this report is a recommendation to trade. No order has been placed, sent or generated for any broker; the owner reads it and decides.",
+ "drawdown": {
+  "alert": "NONE",
+  "drawdown": 0.0,
+  "fraction_of_tolerance": 0.0,
+  "policy": "Alerts never trigger automatic de-risking; the owner decides.",
+  "thresholds": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "tolerance": 0.5
+ },
+ "fx": {
+  "any_conversion": false,
+  "cad_to_usd": {
+   "cad_spent": 0.0,
+   "est_cost_cad": 0.0,
+   "for": [],
+   "usd_needed": 0.0
+  },
+  "usd_to_cad": {
+   "cad_needed": 0.0,
+   "est_cost_cad": 0.0,
+   "for": [],
+   "usd_spent": 0.0
+  },
+  "usdcad": 1.3862
+ },
+ "inputs": {
+  "holdings": {
+   "as_of": "2026-08-31",
+   "error": null,
+   "file": "hypothetical_holdings_P3@1.25_tfsa.json",
+   "net_external_flow_cad": 0.0,
+   "sha256": "7674587fbfad765cd580b6a87d0c353d2ad313b1b4836b8da363293438c9cc1c"
+  },
+  "prices": {
+   "dataset_version": "autopilot_prices_20260831",
+   "error": null,
+   "expected_manifest_sha256": null,
+   "files": {
+    "prices/prices_20250829_20260831.csv": "be676d58576d04ae5f7119f63b244fab9333a4a388b5eaf16786120ade8d1099"
+   },
+   "manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab",
+   "max_date": "2026-08-31",
+   "mode": "verified",
+   "pinned_by_seq": 0,
+   "pinned_manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab"
+  },
+  "usdcad": {
+   "date": "2026-08-31",
+   "rate": 1.3862
+  }
+ },
+ "kind": "autopilot_rebalance_report",
+ "notes": [
+  "RSSB: equity leg is global; the bond leg is US Treasuries (not Canadian bonds)."
+ ],
+ "paper_log": {
+  "entries_before": 1,
+  "prev_entry_hash": "8ff36de4a4058019d5f878500d0d6b493c024eb5b926fef14eaabcffa07d09d3",
+  "seq": 1
+ },
+ "params": {
+  "alert_levels": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "band_abs": 0.05,
+  "band_rel": 0.25,
+  "band_rel_min_abs": 0.01,
+  "calendar_abs": 0.01,
+  "calendar_months": [
+   3,
+   6,
+   9,
+   12
+  ],
+  "cash_buffer": 0.01,
+  "cash_buffer_vehicle": "broker_cash",
+  "commission_cad": 0.0,
+  "equity_assets_floor": 0.4,
+  "freshness_days": 5,
+  "fx_cost": 0.001,
+  "half_spread": {
+   "CASH.TO": 0.0005,
+   "DBMF": 0.001,
+   "GDE": 0.001,
+   "RSSB": 0.001,
+   "RSST": 0.001,
+   "SSO": 0.0003,
+   "XEQT.TO": 0.0005,
+   "ZAG.TO": 0.0005,
+   "ZGLD.TO": 0.001
+  },
+  "leverage_cap_addon": 0.15,
+  "margin_leverage_band": 0.1,
+  "max_position": 0.65,
+  "max_position_sso": 0.3,
+  "min_trade_cad": 100.0,
+  "one_ticket_cap_addon": 0.05
+ },
+ "portfolio_id": "sample|P3@1.25|tfsa",
+ "post_trade": {
+  "assets_cad": 116866.67,
+  "basis": "current holdings (no trades proposed)",
+  "cash_cad": 2744.38,
+  "cash_usd": 550.05,
+  "equity_over_assets": 1.0,
+  "etf_value_cad": 113359.82,
+  "gross_exposure_over_nav": 1.213358,
+  "leverage_assets_over_equity": 1.0,
+  "margin_loan_cad": 0.0,
+  "nav_cad": 116866.67,
+  "positions": [
+   {
+    "ccy": "USD",
+    "close": 31.04,
+    "price_date": "2026-08-31",
+    "shares": 661,
+    "target": 0.2475,
+    "ticker": "RSSB",
+    "value_cad": 28441.28,
+    "weight": 0.24336515
+   },
+   {
+    "ccy": "CAD",
+    "close": 45.63,
+    "price_date": "2026-08-31",
+    "shares": 1327,
+    "target": 0.495,
+    "ticker": "XEQT.TO",
+    "value_cad": 60551.01,
+    "weight": 0.51812042
+   },
+   {
+    "ccy": "CAD",
+    "close": 13.53,
+    "price_date": "2026-08-31",
+    "shares": 1801,
+    "target": 0.2475,
+    "ticker": "ZAG.TO",
+    "value_cad": 24367.53,
+    "weight": 0.20850709
+   }
+  ],
+  "sleeve_exposure_over_nav": {
+   "BOND": 0.451872,
+   "EQ": 0.761486,
+   "GOLD": 0.0,
+   "TREND": 0.0
+  }
+ },
+ "refusal_reasons": [],
+ "report_date": "2026-08-31",
+ "report_file": "report_2026-08-31_P3@1.25.md",
+ "report_sha256": "815ab9c81c356b1e07eec3288d5392f6f0d0bb5dcab4283cb517369c86e454c4",
+ "schema": "autopilot_v1",
+ "skipped_trades": [],
+ "status": "accepted",
+ "targets": {
+  "RSSB": 0.2475,
+  "XEQT.TO": 0.495,
+  "ZAG.TO": 0.2475
+ },
+ "trades": [],
+ "trades_emitted": false,
+ "unit_ledger": {
+  "carried": true,
+  "flow_applied_cad": 0.0,
+  "initialised": true,
+  "net_external_flow_cad": 0.0,
+  "peak": 100.0,
+  "prior_report_date": null,
+  "unit_value": 100.0,
+  "units": 1168.66674638,
+  "units_before": null
+ },
+ "valuation": {
+  "assets_cad": 116866.67,
+  "cash_cad": 2744.38,
+  "cash_usd": 550.05,
+  "equity_over_assets": 1.0,
+  "etf_value_cad": 113359.82,
+  "gross_exposure_over_nav": 1.213358,
+  "leverage_assets_over_equity": 1.0,
+  "margin_loan_cad": 0.0,
+  "nav_cad": 116866.67,
+  "positions": [
+   {
+    "ccy": "USD",
+    "close": 31.04,
+    "price_date": "2026-08-31",
+    "shares": 661,
+    "target": 0.2475,
+    "ticker": "RSSB",
+    "value_cad": 28441.28,
+    "weight": 0.24336515
+   },
+   {
+    "ccy": "CAD",
+    "close": 45.63,
+    "price_date": "2026-08-31",
+    "shares": 1327,
+    "target": 0.495,
+    "ticker": "XEQT.TO",
+    "value_cad": 60551.01,
+    "weight": 0.51812042
+   },
+   {
+    "ccy": "CAD",
+    "close": 13.53,
+    "price_date": "2026-08-31",
+    "shares": 1801,
+    "target": 0.2475,
+    "ticker": "ZAG.TO",
+    "value_cad": 24367.53,
+    "weight": 0.20850709
+   }
+  ],
+  "sleeve_exposure_over_nav": {
+   "BOND": 0.451872,
+   "EQ": 0.761486,
+   "GOLD": 0.0,
+   "TREND": 0.0
+  }
+ }
+}

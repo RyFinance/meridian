@@ -1,0 +1,238 @@
+{
+ "code_sha256": {
+  "__init__.py": "de224fd090a1e025e17b3e9d65cf5f16719e67187dd04426f5bdb44391e94fd8",
+  "cli.py": "34c8f0b8e4ddc2b7f04153c875f85afa7db9d6cc35690fbc99f4682b8565d9f3",
+  "config.py": "c3fbfda540bfd9893f6afdd4891c05159aac2973b40309f3c23a220cb4b8119e",
+  "engine.py": "5ce30375be208b4da462333ebdbc9b54a0515f528dcbd4aecf5f9fd833997d80",
+  "holdings.py": "a9209dc7baf45dbd3ae3b24be8385fbdbec1b606243bf25756ec40f0815fd962",
+  "make_samples.py": "915fedaaef860472b58915325879e886d2ae260a7b6a6b13513d0172a5502123",
+  "paperlog.py": "a0148bf3fc12dfefc811f34c7071757425e4b9793504e58270ce1c3e4b59d332",
+  "prices.py": "c03d46cf12238e76fb82eb8660526858f17dc8737a4040099cb85a60d62964e8",
+  "replay.py": "42cebefa7520e0178ec68defbbe88680682eda443d1e45221a54df5866f1f429",
+  "report.py": "10f954824f3649d717a4ba73b73763cc50602b7b7c0962b0886054e445959e27",
+  "synth_prices.py": "84e95e603396923815c3ac2451a7854048949e0d7988b2b93d3c659c3f2ae81e"
+ },
+ "conventions": [
+  "Start: all cash (CAD) on the first report date; that first report's purchase counts as a band event and is reported separately (initial_*) and excluded from the *_ex_initial per-year averages.",
+  "band_events: accepted reports triggered by the drift band or (margin) the assets/equity band; calendar_events: accepted reports triggered only by the quarter-end calendar check.",
+  "turnover_pct_nav and est_cost_bps: sums over reports of traded value / pre-trade NAV and estimated cost / pre-trade NAV; est_cost_cad: half-spread + commission + FX conversion cost as estimated by the engine (fills use the same cost model, and the realised NAV change is checked against the estimate).",
+  "fx_converted_cad: CAD value of currency converted to fund buys (CAD->USD at the amount of CAD spent, USD->CAD at the USD spent times USDCAD).",
+  "alerts_*: number of monthly reports whose drawdown alert was at that level (unit value vs running peak of accepted reports in the throwaway paper log).",
+  "Carry between reports: positive CAD cash earns cycle-8 CASH, a CAD margin loan costs cycle-8 MRATE, USD cash earns cycle-8 RF_USD; balances are rounded to cents each month (holdings files carry cents).",
+  "replay_cagr / replay_max_dd: on month-end NAV after the month's fills, from the start cash; cycle8_ideal_*: the cycle-8 item (item_returns_monthly.parquet, same config id) compounded over the same return months."
+ ],
+ "cycle8_item_returns_sha256": "a8bdf1279045bc7a07bc569ac6715510acdeaa348a352c805a33df7ba357f37a",
+ "kind": "autopilot_replay",
+ "outputs_sha256": {
+  "replay_by_year.csv": "6f90c6ba47ab5afcb1620509af8f87958cd21872040f7a9682e3a70aa6dfb9ee",
+  "replay_monthly.csv": "865bbd8992617e57a4ccfe3b0ec344f85e7094c8dd81fa3a84b173d73f8f6aa8",
+  "replay_summary.csv": "b84c477ac754d8a15504203fad2c7b1da8e96b6c715cea86d56b0f7b9c90ec30"
+ },
+ "owner_tolerance_pct": {
+  "P3@1.0": 35,
+  "P3@1.25": 50,
+  "P3@1.5": 50,
+  "P4@1.0": 25,
+  "P4@1.25": 25,
+  "P4@1.5": 25,
+  "P6a@1.0": 35,
+  "P6a@1.25": 50
+ },
+ "price_snapshot": {
+  "files": {
+   "prices/synthetic_etf_prices.csv": "cf9566ab0fb9d11918ac9979e89da447bc3eb2da7481bd5621f26bc1912d803f",
+   "prices/usdcad_monthly.csv": "8f0e75e1e9ea56c8232cb70bd3c5eac6a32f25f1b925fd36c4e7616a73c4c82f"
+  },
+  "manifest_sha256": "0e4b6c4627bd71c2508a09cd6d3eb6bc29c44e82416bbad533b3d6fc3fe17a38",
+  "version": "autopilot_replay_synth_v2"
+ },
+ "runs": [
+  {
+   "account": "tfsa",
+   "config": "P3@1.0",
+   "last_entry_hash": "c2d39cf7e02555bd01e98bf8578f201a111cc295ac4d289761a69bd719dcb5c0",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "tfsa",
+   "config": "P3@1.25",
+   "last_entry_hash": "8058aeaafc3a93e36d0a7190b116ed2f3ceb8a75a65411f434202549d3909535",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "tfsa",
+   "config": "P3@1.5",
+   "last_entry_hash": "33de9ab642a5b27ae1670ad4b550f0d79a4549b7be358079deb1572278d1e362",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "tfsa",
+   "config": "P4@1.0",
+   "last_entry_hash": "b844dad782a64a3f16437b2b3ff74753fca5133590e65f59594181cb1838967b",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "tfsa",
+   "config": "P4@1.25",
+   "last_entry_hash": "2bc7a4b594ec73ed6f4568c7ea5494fbd55c84a8c24b76aa822d4e2f61fde39f",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "tfsa",
+   "config": "P4@1.5",
+   "last_entry_hash": "5c26e067e28b5f0ff3d1ed9002cf671d0dbf2ec87039dbdb3b29c6eddc27aea1",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "tfsa",
+   "config": "P6a@1.0",
+   "last_entry_hash": "4507c87a975e688c59beedf75433284f60fdff7c0a744bf6253a833c1f9de974",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "tfsa",
+   "config": "P6a@1.25",
+   "last_entry_hash": "368c88aad6ae93b49bed248dc68192536a85e7599c51547d8fe4b4d4076d16d2",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "nonreg_margin",
+   "config": "P3@1.25",
+   "last_entry_hash": "53bb19e2701eb52fdb5efcb935db30c71f6380e2a9074046bd60214b25ef9e6c",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "nonreg_margin",
+   "config": "P3@1.5",
+   "last_entry_hash": "eefedf929c7827d37621ed59ff558ecdb3a0459415c4b30992a0dc098627381a",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "nonreg_margin",
+   "config": "P4@1.25",
+   "last_entry_hash": "ce49c7d1d49282ed8b405b8f67a14dec567aea2c8aea608005bf56e77f8cbd69",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "nonreg_margin",
+   "config": "P4@1.5",
+   "last_entry_hash": "49ed07ac0a793446a2a6dfde8789683c7193eba6b9d81999ea3bc4b7d31b3756",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "nonreg_margin",
+   "config": "P6a@1.25",
+   "last_entry_hash": "7c457450f22833ce8fdd6e8a3fd67c212d626485052da4b665ab04a7518c9d9f",
+   "log_entries": 497,
+   "start_cad": 100000
+  },
+  {
+   "account": "tfsa",
+   "config": "P3@1.0",
+   "last_entry_hash": "35675fb2d33e11ec7fde5be4f00155bcae1526147c3c5ad71f1bb94dee4837d5",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "tfsa",
+   "config": "P3@1.25",
+   "last_entry_hash": "440ec12e2b8cf8cc8a69a51609689ea00455f9a46ada1b00b5611b9012a8c182",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "tfsa",
+   "config": "P3@1.5",
+   "last_entry_hash": "81ab750bbe51858381c5ea730446bc28c864ee56bb6b0cab4071039b9d743706",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "tfsa",
+   "config": "P4@1.0",
+   "last_entry_hash": "4cf08b18a1d436b6cba403a94492a13863a3214152ed78db063ff2ae6c694b8d",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "tfsa",
+   "config": "P4@1.25",
+   "last_entry_hash": "2f088b05e96323dd3e2fcc397740545ca54471aeb80bf43053074839ae8fc6a9",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "tfsa",
+   "config": "P4@1.5",
+   "last_entry_hash": "81a4b9b58d50f7e59d55819bd88390e739730dce9032205571d06f7d4a5f33e8",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "tfsa",
+   "config": "P6a@1.0",
+   "last_entry_hash": "1e40f679f1f8d74e8c518000b39d272b54e44b81ba7ed775b976eceaa3767abf",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "tfsa",
+   "config": "P6a@1.25",
+   "last_entry_hash": "ef2dc0995d0f3cd64b807a2398f28ce1916a57b98f9e53f7bd3431d9dc6764bc",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "nonreg_margin",
+   "config": "P3@1.25",
+   "last_entry_hash": "e56953cf4706b668889875745c6db5bcb61bdd514337d646de81a234afc9ef40",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "nonreg_margin",
+   "config": "P3@1.5",
+   "last_entry_hash": "b8553d1888710cb87c62598cc898c599f69264249bba28be6ce7ccdd6cb68340",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "nonreg_margin",
+   "config": "P4@1.25",
+   "last_entry_hash": "77581d9a4075b8b95ced779872c53558ab950f2c8020c4362cdfc4954043739b",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "nonreg_margin",
+   "config": "P4@1.5",
+   "last_entry_hash": "36880905663b13a3292419cb0dccf4ad385c65b32bbc6e421aae587d55123f53",
+   "log_entries": 497,
+   "start_cad": 25000
+  },
+  {
+   "account": "nonreg_margin",
+   "config": "P6a@1.25",
+   "last_entry_hash": "d7fc3261af4bfda9598d03374ccfb786f90f2f645fd999356e9b64813d47c46f",
+   "log_entries": 497,
+   "start_cad": 25000
+  }
+ ],
+ "window": {
+  "first_report": "1985-01-31",
+  "last_report": "2026-05-31",
+  "reports": 497
+ }
+}

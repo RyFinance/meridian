@@ -1,0 +1,175 @@
+{
+  "purpose": "Read-only causal 15:59 completed-bar audit of frozen M1; not a rule search or replacement candidate.",
+  "intentional_change_only": {
+    "old": "Use the close of a candle timestamped 16:00 ET.",
+    "new": "Use the close of the last fully completed candle, timestamped no later than 15:59 ET.",
+    "staleness": "Retains the <=15-minute frozen policy, measured from completed bar end to 16:00 ET."
+  },
+  "held_fixed": {
+    "m1_parameters": {
+      "premium_momentum_days_L": 10,
+      "premium_sma_days_S": 50,
+      "btc_momentum_days": null
+    },
+    "sec_observations": "same cached 10-Q/10-K manifests and parser",
+    "mstr_prices": "same pinned parquet",
+    "share_and_split_logic": "same mnav_core build_panel fields",
+    "execution": "same next-open simulator",
+    "costs": {
+      "slippage_bps_each_side": 3.0,
+      "commission_usd_per_actual_share_each_side": 0.005
+    }
+  },
+  "input_hashes": {
+    "FROZEN_RULES.json": "24a76236dcf954e8a2d89ed5b505291a89bac9ea28625acf453f841829ca88ba",
+    "FROZEN_RULES_AMENDMENT_01.json": "6dafec5824ae7ea66cb35f471bd826a5e14b20fd7f8a0a28ecd51fc17285d1f8",
+    "mnav_core.py": "a6d7f40ecd53f1b9b108ff1e78b1d8431d11bcc589806173258b887466a7b743",
+    "validate_frozen.py": "29c72b2f0e8c571687009f73d2694e83435552e0134fbd19da5879490008287a",
+    "mstr_daily_yf.parquet": "2a69da621f275570b72e2727a1b14752e2c36a980da975cb4927c04d8f1cd2d7",
+    "btc_usd_1m_candles_polymarket_arb.parquet": "234e3c8a3c8e4c26a1a33c46501fdd8213ccfc1c62f1d5b398a4a8a38f53318b"
+  },
+  "input_hashes_match_declared_or_sealed": {
+    "FROZEN_RULES.json": true,
+    "FROZEN_RULES_AMENDMENT_01.json": true,
+    "mnav_core.py": true,
+    "validate_frozen.py": true,
+    "mstr_daily_yf.parquet": true,
+    "btc_usd_1m_candles_polymarket_arb.parquet": true
+  },
+  "unmodified_frozen_path_matches_declared_sealed_summary": true,
+  "frozen_1600_path": {
+    "start": "2023-01-03",
+    "end": "2026-08-10",
+    "sessions": 903,
+    "total_return": 5.342088357486891,
+    "cagr": 0.6704187497394809,
+    "annualized_sharpe": 1.1483697591999376,
+    "max_drawdown": -0.4696720288717925,
+    "entry_trades": 37,
+    "exit_trades": 37,
+    "round_trips": 37.0,
+    "time_long": 0.3599114064230343
+  },
+  "causal_1559_path": {
+    "start": "2023-01-03",
+    "end": "2026-08-10",
+    "sessions": 903,
+    "total_return": 5.320077713425623,
+    "cagr": 0.668806488789373,
+    "annualized_sharpe": 1.14642267074478,
+    "max_drawdown": -0.4696720288717925,
+    "entry_trades": 36,
+    "exit_trades": 36,
+    "round_trips": 36.0,
+    "time_long": 0.3610188261351052
+  },
+  "causal_minus_frozen": {
+    "total_return_fraction": -0.02201064406126818,
+    "total_return_percentage_points": -2.201064406126818,
+    "cagr_percentage_points": -0.16122609501079133,
+    "annualized_sharpe": -0.001947088455157564,
+    "max_drawdown_percentage_points": 0.0,
+    "round_trips": -1.0
+  },
+  "valid_btc_quote_days_frozen": 1405,
+  "valid_btc_quote_days_causal": 1405,
+  "valid_signal_differences": {
+    "count": 5,
+    "dates": [
+      "2023-04-26",
+      "2024-05-15",
+      "2024-06-07",
+      "2024-06-24",
+      "2025-05-08"
+    ]
+  },
+  "trade_key_changes": {
+    "only_frozen": [
+      [
+        "2023-04-27",
+        "buy"
+      ],
+      [
+        "2023-04-28",
+        "sell"
+      ],
+      [
+        "2024-05-16",
+        "buy"
+      ],
+      [
+        "2024-05-17",
+        "sell"
+      ],
+      [
+        "2024-06-26",
+        "buy"
+      ],
+      [
+        "2025-05-09",
+        "sell"
+      ]
+    ],
+    "only_causal": [
+      [
+        "2024-06-10",
+        "buy"
+      ],
+      [
+        "2024-06-11",
+        "sell"
+      ],
+      [
+        "2024-06-25",
+        "buy"
+      ],
+      [
+        "2025-05-12",
+        "sell"
+      ]
+    ]
+  },
+  "source_bar_examples_on_changed_signal_days": [
+    {
+      "date": "2023-04-26",
+      "bar_1559_start_et": "2023-04-26 15:59:00-04:00",
+      "bar_1559_close": 27884.24,
+      "bar_1600_start_et": "2023-04-26 16:00:00-04:00",
+      "bar_1600_open": 27884.25,
+      "bar_1600_close": 27615.06
+    },
+    {
+      "date": "2024-05-15",
+      "bar_1559_start_et": "2024-05-15 15:59:00-04:00",
+      "bar_1559_close": 66006.23,
+      "bar_1600_start_et": "2024-05-15 16:00:00-04:00",
+      "bar_1600_open": 66006.23,
+      "bar_1600_close": 65992.14
+    },
+    {
+      "date": "2024-06-07",
+      "bar_1559_start_et": "2024-06-07 15:59:00-04:00",
+      "bar_1559_close": 69255.0,
+      "bar_1600_start_et": "2024-06-07 16:00:00-04:00",
+      "bar_1600_open": 69255.01,
+      "bar_1600_close": 69247.99
+    },
+    {
+      "date": "2024-06-24",
+      "bar_1559_start_et": "2024-06-24 15:59:00-04:00",
+      "bar_1559_close": 59306.73,
+      "bar_1600_start_et": "2024-06-24 16:00:00-04:00",
+      "bar_1600_open": 59306.72,
+      "bar_1600_close": 59572.16
+    },
+    {
+      "date": "2025-05-08",
+      "bar_1559_start_et": "2025-05-08 15:59:00-04:00",
+      "bar_1559_close": 101299.99,
+      "bar_1600_start_et": "2025-05-08 16:00:00-04:00",
+      "bar_1600_open": 101300.0,
+      "bar_1600_close": 101370.0
+    }
+  ],
+  "writes_only": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/agent_mnav_audit/CAUSAL_1559_M1.json"
+}

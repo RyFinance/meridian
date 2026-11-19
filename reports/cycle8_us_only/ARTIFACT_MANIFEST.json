@@ -1,0 +1,40 @@
+{
+  "utc": "2026-09-29T20:42:04.651275+00:00",
+  "checks": {
+    "frozen_code_unchanged": true,
+    "numerical_snapshot_unchanged": true,
+    "portfolio_rows": 56,
+    "crisis_rows": 784,
+    "report_local_links_valid": true
+  },
+  "files": {
+    "reports/cycle8_us_only/ACCOUNT_IMPLEMENTATION.md": "6814de0a575901f7f04258e6d84e2e64f722583ca905375b12d7e4fc788bc59c",
+    "reports/cycle8_us_only/ALL_CRISES.md": "01c3196340de7e83d7e7218911f8ea884ff0a45137c8004227f7da6ec1c650d4",
+    "reports/cycle8_us_only/ALL_METRICS.md": "467b9c6261a25ef6f7e7d4683a91b1dcabf825950acf54042c78ab53d5289884",
+    "reports/cycle8_us_only/DATA_AUDIT.md": "cb7cb900344164f95ad776cea341344bc297c9027dcb4f557b78089b889ac7a4",
+    "reports/cycle8_us_only/ETF_CALENDAR_CHECK.csv": "a4f27f3dc9ef175e10916a4576509fbfa9a37ea7d46bb11147bd2d615e07f902",
+    "reports/cycle8_us_only/ETF_COMPLETENESS.csv": "94db2982c45dd88bd24fff7afcb0f18c5586e041e8aba67630f1bc99cb9ccbe2",
+    "reports/cycle8_us_only/ETF_EXTREME_MOVES.csv": "314f80d2134038341c2c9d906744921b6798d67d68674c8db7e22a8cd0337085",
+    "reports/cycle8_us_only/FORWARD_SOURCES.md": "6745829444aa9b2a88a7ff2fb045a6450e91cfd317076172869d448641477f6b",
+    "reports/cycle8_us_only/RESEARCH_LIMITATIONS.md": "af2c470f24b6e9b0ed2bab4727650b74c9537910b6b3e464653434fae8878dd5",
+    "reports/cycle8_us_only/RESULTS.md": "d674eaff461a2fa600a7148960bc86459801d736c3a8f8bf9d2b5b0ae1f2df71",
+    "reports/cycle8_us_only/forward_risk.png": "de79083206039aec2ac34030df80e8ee0734026d7ccd69046db0b3dcee276527",
+    "reports/cycle8_us_only/out/account_feasibility.csv": "edb26105cb1e0253fd69378f7064d2a0f7205266644338006377f9b0e7782845",
+    "reports/cycle8_us_only/out/common_window.csv": "75b1f548533a4800372a8d56108f7b553116cce49328223faa2b367b935766d9",
+    "reports/cycle8_us_only/out/completed.json": "83c1f9b2c0f43c4e394383375b39d6ef06e20274fd383785ca7f5db07fe64905",
+    "reports/cycle8_us_only/out/crises.csv": "021948e2e32f3fde051c09b0abd48ec1226561eea1404b3e4b584119b23af642",
+    "reports/cycle8_us_only/out/letf_sim.parquet": "30f8426c77850502153353c0260c736dbd0f7b8ce87c34bc4727e96b4ec42b11",
+    "reports/cycle8_us_only/out/live_etfs.csv": "ef37cf6d06e39484653ac67fcd028e73417e993b53bdae44aa631425f172342c",
+    "reports/cycle8_us_only/out/ranking_flips.csv": "27a483c8c9df922c5c2b26cd696f32cd8a8041dcf78d7f0f0522cfee22dc90bf",
+    "reports/cycle8_us_only/out/results.csv": "b64bd5c276d2ebe82b3e67ba0d9d9b452eca3ad40e305b0dacf5a555952ac670",
+    "reports/cycle8_us_only/out/returns_usd.parquet": "093be80ab35d0a3b1008a4b1e096eef09e4c7330a81fff91ba5bc3b92dbc6931",
+    "reports/cycle8_us_only/out/sleeves.parquet": "c670091a1a8061313eb5238c5cfae8aafdd48168477a226efbf22722d02caa29",
+    "reports/cycle8_us_only/out/started.json": "65ad41163ff05ea0dd6d72034178b98709b36d98588cf4482bb7344dae6d2cb5",
+    "reports/cycle8_us_only/out/tfsa_equity_tax.csv": "86f8c024a20309050ade913858f538e35bcf28313c4e8e38e5e255549f03043a",
+    "reports/cycle8_us_only/out/us1926.csv": "0232d5d35c1858ec3dcb64f5336304e8336445314149d7d467bfbde83da96944",
+    "reports/cycle8_us_only/out/validation.csv": "d8ab003e52418ee92cc7751cacd26f2f162cbafcd9ac606c046c159bdf6016d9",
+    "reports/cycle8_us_only/out/verification.json": "899264ce8c90d35c703267287912c10efcf94433b736c0d5dcfaed14f76ce474",
+    "reports/cycle8_us_only/run.log": "2514c8a97096b576679bc0e97d202efa07feacc8206c7e3e8b23353e463ca04a",
+    "reports/cycle8_max_return/US_ONLY_RESULTS.md": "6715677ef96b3690dfe7a47cbde5e8bef9a53d3bb2ab31799c177ba3a7c749ad"
+  }
+}

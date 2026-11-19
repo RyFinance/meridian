@@ -1,0 +1,27 @@
+{
+  "purpose": "development only; no 2023+ performance data loaded into this run",
+  "development_price_start": "2020-11-02",
+  "development_price_end": "2022-12-30",
+  "source_filings": 9,
+  "latest_source_filing_date": "2022-11-01",
+  "source_manifest": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/agent_mnav/sec_source/dev_filings/MANIFEST.json",
+  "mnav_definition": "MSTR close * total reported Class A+B shares / (explicitly disclosed BTC held * 16:00 ET BTC spot); gross-BTC proxy, not enterprise mNAV",
+  "execution": "signal after close; position changed at next session open; 3 bp per side plus $0.005 actual share per side",
+  "grid": {
+    "premium_momentum_days": [
+      10,
+      20,
+      40
+    ],
+    "premium_sma_days": [
+      30,
+      50,
+      80
+    ],
+    "btc_momentum_days": [
+      null,
+      20,
+      50
+    ]
+  }
+}

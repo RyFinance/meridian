@@ -1,0 +1,40 @@
+{
+  "amendment": "source-audited_parser_provenance_only_final_remedial_validation",
+  "registered_at_utc": "2026-10-17T08:02:51Z",
+  "original_freeze_file_sha256": "8a90d7471ba9dfbc079f00a52274aa58375033b65b733fd564ed6fae8d43651b",
+  "prior_amendment_sha256": "0d6ed3472cf5f8de239588fbd1b8c28f633bec05af77082ad0442152a5946d3c",
+  "unchanged_rule_payload_sha256": "1e3bf4ae5093c144fb5fc70d7c81d5773582fc862a9373407bc12eeefeac7486",
+  "unchanged_rules": [
+    {
+      "id": "MNL1_FAST_MOM05",
+      "lookback": 5,
+      "level_sma": null,
+      "max_share_age_sessions": 120
+    },
+    {
+      "id": "MNL2_MOM10_LEVEL50",
+      "lookback": 10,
+      "level_sma": 50,
+      "max_share_age_sessions": 120
+    }
+  ],
+  "invalidated_run": {
+    "prefix": "SEALED_REMEDIATION_01",
+    "record": "SEALED_REMEDIATION_01_INVALID.md",
+    "reason": "The first table-parser remediation still selected an incorrect first row in certain multi-row filings, did not structurally guard no-purchase rows, and omitted four structured BTC-sale updates.  Its performance outputs are quarantined and not interpreted."
+  },
+  "allowed_code_change": {
+    "scope": "Parser/provenance mechanics only: structurally bound BTC Acquired/Purchased/Sold rows to Aggregate BTC Holdings, select the latest disclosed As of row, accept asterisked date footnotes, handle zero/em-dash no-purchase rows, include sale updates and activity provenance, and change only the output prefix to avoid overwriting invalid artifacts.  No signal, threshold, lookback, share-age cap, cost, execution, date boundary, benchmark, statistical test, or input dataset was changed.",
+    "final_ledger_study_py_sha256": "4bd3dd606bfb17fa30d766145d12b4140e9918e3cdc365c6259bc2c8998df8c1",
+    "source_audit_file": "PARSER_REMEDIATION_02_SOURCE_AUDIT.md",
+    "source_audit_sha256": "05fe4baf639698417f4afb4678f2ceb6250385dc696b65faebe018930e103922"
+  },
+  "corrected_validation": {
+    "validation_window": ["2023-01-03", "2026-08-10"],
+    "output_prefix": "SEALED_REMEDIATION_02",
+    "maximum_runs": 1,
+    "must_not_overwrite_invalid_artifacts": true,
+    "must_use": "FROZEN_RULES.json"
+  },
+  "attestation": "The source-audit changes above are compelled by primary-document reconciliation, not selected from validation performance.  The frozen rule payload hash is unchanged.  This amendment authorizes exactly one final corrected validation; its outputs must be independently reproduced/audited before any edge claim."
+}

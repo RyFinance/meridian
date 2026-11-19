@@ -1,0 +1,39 @@
+{
+ "A_common_sign": {
+  "n_null": 10000,
+  "share_ci90_excludes_zero_raw": 0.1431,
+  "share_null_sharpe_ge_real": 0.0932,
+  "share_active_mean_ge_real": 0.0787,
+  "null_median_sharpe": 0.13194260412776138,
+  "null_median_ci_lo": -0.5261865018979833
+ },
+ "B_independent_signs": {
+  "n_null": 10000,
+  "share_ci90_excludes_zero_raw": 0.0875,
+  "share_null_sharpe_ge_real": 0.0862,
+  "share_active_mean_ge_real": 0.0701,
+  "null_median_sharpe": 0.13703853169011654,
+  "null_median_ci_lo": -0.47950942087177717
+ },
+ "B_resolved_ERC_300": {
+  "n_null": 300,
+  "share_ci90_excludes_zero_raw": 0.11666666666666667,
+  "share_null_sharpe_ge_real": 0.11,
+  "null_median_sharpe": 0.15166699124331917
+ },
+ "real": {
+  "sharpe_post": 0.5983038184034669,
+  "ci90": [
+   0.08452309623920745,
+   1.1505666359312288
+  ],
+  "active_mean_ann": -0.002217315021329596
+ },
+ "core_part_only": {
+  "sharpe_post": 0.6457085351132043,
+  "ci90": [
+   0.03580823941286379,
+   1.2258847423505226
+  ]
+ }
+}

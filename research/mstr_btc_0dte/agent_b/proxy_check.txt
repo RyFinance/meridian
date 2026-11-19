@@ -1,0 +1,7 @@
+20: n=53 corr(real,A)=0.81 corr(real,B)=0.99 beta real~BTC_R=1.55 share of gap left=1.00
+   rule long if E>0 on REAL prints: n=20 gross -81.8 bp, net -99.0 bp, proxyA gross -27.3, proxyB gross -66.6
+04: n=52 corr(real,A)=0.85 corr(real,B)=0.95 beta real~BTC_R=2.06 share of gap left=0.81
+   rule long if E>0 on REAL prints: n=25 gross -54.1 bp, net -71.3 bp, proxyA gross -10.8, proxyB gross -10.8
+OLS real MSTR remainder on BTC E and R (does MSTR's extended-hours price lag BTC's E move?):
+  20: n=53 coef_E=-0.81 (se 0.44) coef_R=1.56 (se 0.15); gap~E+R: [0.39 1.58]
+  04: n=52 coef_E=-0.21 (se 0.13) coef_R=2.09 (se 0.18); gap~E+R: [0.85 2.04]

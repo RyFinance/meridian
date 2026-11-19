@@ -1,0 +1,1498 @@
+
+=== PAGE 1 ===
+ Electronic  copy available at: http://ssrn.com/abstract=2329738 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+UNDERSTANDING FX LIQUIDITY  
+ 
+ 
+ 
+ 
+ 
+NINA KARNAUKH  
+ANGELO RANALDO  
+PAUL SÖDERLIND  
+   
+ 
+ 
+W
+ORKING PAPERS ON FINANCE NO. 2013/15 
+ 
+ 
+ 
+SWISS INSTITUTE OF BANKING AND FINANCE  (S/BF  – HSG)  
+ 
+ 
+ 
+SEPTEMBER 2013 
+ 
+   
+ 
+
+=== PAGE 2 ===
+ Electronic  copy available at: http://ssrn.com/abstract=2329738 Understanding FX Liquidity
+Nina Karnaukh, Angelo Ranaldo, Paul Söderlind
+First Draft , 20 September 2013
+Comments are welcome
+Abstract
+Previous studies of liquidity in the foreign exchange (FX) market span short time
+periods or focus on speciﬁc measures of liquidity. In contrast, we provide a compre-
+hensive study of FX liquidity and commonality over more than two decades and a
+cross-section of forty exchange rates. After identifying the most accurate liquidity
+proxies based on low-frequency and readily available data, we show that common-
+ality in FX liquidities is stronger for developed currencies and in highly volatile
+markets. We also show that FX liquidity deteriorates with risk in stock, bond and FX
+markets, and that riskier currencies are more exposed to liquidity drops.
+Keywords : exchange rates, liquidity, transaction costs, commonality, low-frequency
+data.
+JEL Classiﬁcation : C15, F31, G12, G15
+University of St. Gallen. Address: SBF, University of St. Gallen, Rosenbergstrasse 52, CH-
+9000 St. Gallen, Switzerland. E-mail addresses: Nina.Karnaukh@student.unisg.ch (N. Karnaukh), An-
+gelo.Ranaldo@unisg.ch (A. Ranaldo), Paul.Soderlind@unisg.ch (P. Söderlind). We thank Yakov Amihud,
+Roberto Renò, Loriano Mancini, Avanidhar Subrahmanyam, Jan Wrampelmeyer, and Rico von Wyss, as
+well as participants of the 2013 Arne Ryde Workshop in Financial Economics in Lund and 2013 Work-
+shop “Measuring and Modeling Financial Risk with High Frequency Data” in Florence for comments and
+suggestions.
+1
+=== PAGE 3 ===
+ Electronic  copy available at: http://ssrn.com/abstract=2329738 1 Introduction
+How does liquidity of the foreign exchange market (FX) evolve across time and how does
+it differ across currency pairs? Does FX liquidity deteriorate with an increase of risk in
+stock and bond markets? Do funding strains decrease FX liquidity? Does FX liquidity
+co-move with stock and bond market liquidities? Are riskier currencies more exposed
+to liquidity drops? Do common patterns in FX liquidity strengthen in highly volatile
+markets? In this paper, we address these relevant questions.
+Financial markets need liquidity to function well. This is true also for the FX mar-
+ket that determines the relative values of currencies and any related assets. This paper
+provides a comprehensive study of FX liquidity and commonality. It deﬁnes the most
+accurate low-frequency liquidity measures and it offers a method to gauge FX liquid-
+ity on aggregate and currency-pair levels. More importantly, it documents when and for
+which currencies commonality in FX liquidities is stronger and which factors explain the
+time-series and cross-sectional variation of FX liquidity.
+An in-depth understanding of FX liquidity is important for several reasons. First,
+illiquidity erodes asset returns and liquidity risk demands a premium (e.g. Amihud and
+Mendelson (1986)). This has been widely documented in the literature on stocks (e.g.
+Pàstor and Stambaugh (2003) and Acharya and Pedersen (2005)) and other assets but
+only recently on foreign exchange (Christiansen, Ranaldo, and Söderlind (2011), Banti,
+Phylaktis, and Sarno (2012), Mancini, Ranaldo, and Wrampelmeyer (2012)). However,
+a clear understanding of why and how FX illiquidity materializes is still missing. Sec-
+ond, a new strand of theoretical models (thereafter called “liquidity spirals theories”)
+sheds light on the intricate linkages between market liquidity, funding liquidity and risk
+(e.g. Brunnermeier and Pedersen (2009) and Vayanos and Gromb (2002)). Empirically,
+Brunnermeier, Nagel, and Pedersen (2009) show that ﬁnancial crises are typically associ-
+ated with unwinding carry trade and liquidity drops (Brunnermeier, Nagel, and Pedersen
+(2009)) and Mancini, Ranaldo, and Wrampelmeyer (2012) show that after the Lehman
+bankruptcy, even the nine most liquid FX rates suffered from sharp liquidity drops. But
+more aspects need to be studied empirically. For instance, it is not clear how FX liquidity
+relates to developments of risk and return on the global asset markets and how individual
+FX rates react to distressed markets.
+The FX market is the world’s largest ﬁnancial market with a daily average trading
+2
+=== PAGE 4 ===
+volume of four trillion U.S. dollars in 2013 (Bank of International Settlements (2013)).
+Liquidity in the FX market is crucial to guarantee efﬁciency and arbitrage conditions in
+many other markets including bonds and derivatives. Despite its importance, the literature
+on FX liquidity is scant or limited to speciﬁc measures such as the order ﬂow1or the
+bid-ask spread based on indicative quotes.2Using high-frequency data from 2007 to
+2009, Mancini, Ranaldo, and Wrampelmeyer (2012) provide an accurate measurement of
+FX liquidity. We closely follow this study to build our benchmark measures. However,
+none of the previous papers studies the possibility of accurately measuring FX liquidity
+and commonality in FX liquidities using low-frequency and readily available data. More
+importantly, none of the previous studies performs a comprehensive analysis of liquidity
+measures over an extended period of time (in our case, more than 20 years) and a large
+cross-section of currencies (in our case, forty exchange rates).
+To address our research questions, we need to construct reliable liquidity measures
+from price data that are readily available on a daily frequency. Low-frequency liquidity
+measures are necessary since high-frequency data have several disadvantages, including
+a very limited access only to recent data, a restricted and delayed use, the need of time-
+consuming data handling and ﬁltering techniques.
+We use two main sources of data: ﬁrst, low-frequency data from Thomson Reuters
+(a very common data provider) from which we compute many low-frequency liquidity
+measures widely used in the equity and bond literature. Second, high-frequency and
+sophisticated data from Electronic Broking Services (EBS), which is the leading platform
+for FX spot interdealer trading, from which we derive the benchmark measures of FX
+liquidity. Then, we compare the low-frequency and high-frequency measures on the nine
+mostly traded currency pairs over the period January 2007 to May 2012.
+Due to the limited data sets with high-quality trade and quote data, researchers have
+for decades been looking for reliable low-frequency measures of market liquidity. Roll
+(1984) introduced a simple proxy for the effective spread that can be estimated using
+low-frequency data. A number of studies were later conducted to develop further liquid-
+ity proxies from daily data on the stock market (Lesmond, Ogden, and Trzcinka (1999),
+1Following the seminal work of Evans and Lyons (2002) on the FX order ﬂow, several papers investigate
+the role of the FX order ﬂow including Marsh and O’Rourke (2011), Breedon and Vitale (2010), Breedon
+and Ranaldo (2012), Berger, Chaboud, Chernenko, Howorka, and Wright (2008) and Banti, Phylaktis, and
+Sarno (2012).
+2See Bessembinder (1994), Bollerslev and Melvin (1994), Lee (1994), and Hsieh and Kleidon (1996)
+and more recently Menkhoff, Sarno, Schmeling, and Schrimpf (2012a).
+3
+=== PAGE 5 ===
+Amihud (2002), Pàstor and Stambaugh (2003), Hasbrouck (2009), Holden (2009), Cor-
+win and Schultz (2012)). With the increased importance of liquidity during the ﬁnan-
+cial crisis, several papers addressed liquidity on the corporate bonds market (Bao, Pan,
+and Wang (2011), Dick-Nielsen, Feldhütter, and Lando (2012)), government bond mar-
+ket (Hu, Pan, and Wang (2012)), and OTC market (Deuskar, Gupta, and Subrahmanyam
+(2011)).3
+Several studies compare low-frequency and high-frequency liquidity measures for
+stocks (Hasbrouck (2009), Goyenko, Holden, and Trzcinka (2009), Holden (2009), Fong,
+Holden, and Trzcinka (2011)) and commodities (Marshall, Nguyen, and Visaltanachoti
+(2012)), to provide a guide to the most accurate low-frequency measures in the absence
+of high-frequency information. But to our knowledge, there is no such study of FX liq-
+uidity. By identifying the best low-frequency liquidity measures, we therefore aim to ﬁll
+a gap in the literature. This permits us to measure FX liquidity across a large panel of
+currency pairs, over an extended period of time.
+We ﬁnd that the Corwin-Schultz (Corwin and Schultz (2012)), the Gibbs sampler es-
+timate of Roll’s model (Hasbrouck (2009)), and volatility dominate other low-frequency
+measures in the sense of having the highest time-series correlation with the (high-frequency)
+benchmarks. For instance, the daily bid-ask spread based on daily snaps of indicative
+quotes and some other measures that often perform well in gauging liquidity in the stock
+and corporate bond markets work less well on the FX market.
+Based on these ﬁndings, we construct a systematic low-frequency measure as the ﬁrst
+principal component across the “best” low-frequency measures and across all currencies.
+Over January 2007 to May 2012, this measure has a 0.93 correlation with an effective
+cost liquidity measure constructed from the EBS data. We provide monthly estimates of
+the low-frequency FX liquidity measure based on forty currencies over January 1991 to
+May 2012.
+[Figure 1 about here.]
+The availability of reliable LF measures of FX liquidity is important in practice. For
+instance, one can estimate FX trading costs using the estimated coefﬁcients by ﬁtting low-
+frequency FX liquidity to high-frequency effective cost. To illustrate it, Figure 1 shows
+two historical cases, i.e. “the Black Wednesday” and “Lehman collapse” in September
+3See Johann and Theissen (2013) for a recent and comprehensive survey.
+4
+=== PAGE 6 ===
+1992 and 2008, respectively. In the earlier episode the British government was forced
+to withdraw the pound sterling from the European Exchange Rate Mechanism. The es-
+timated effective spread on GBP/USD that was around 0.5 basis points in August 1992
+increased approximately by three times. By the end of October 2008 after the Lehman
+bust, the effective spread measure on AUD/USD increased by 4 times (i.e. from 0.9 to 4.1
+b.p.)! Both FX rates would have been involved in typical carry trade strategies since the
+money market rates in GBP and AUD were the highest (across the panel) while the USD
+money market rate was the lowest interest rates in August 1992 and the second-lowest
+rate in August 2008. Since any international portfolio position involves FX trading costs
+and eventually liquidity risk, LF measures of FX liquidities can help estimate (net) returns
+and risks related to international portfolio allocations.
+After having found the most reliable low-frequency measures of FX liquidity, we can
+perform the main analysis of this paper, i.e. studying the properties of FX liquidity and
+commonality. First, we follow the previous literature on commonality in stock liquidities.
+We ﬁnd strong commonality in FX liquidities, stronger than that on the stock market.
+Commonality is particularly remarkable for developed currencies and in highly volatile
+markets. We also ﬁnd that FX liquidity comoves with stock and bond market liquidity
+suggesting cross-market liquidity movements.
+Second, we ﬁnd that FX systematic illiquidity can be explained by increases of risk in
+stock and bond markets in addition to FX risk–consistent with ﬂight-to-quality or ﬂight-
+to-liquidity episodes. Thus, we ﬁnd that cross-markets linkages not only via volatility
+(Fleming, Kirby, and Ostdiek (1998)) but via illiquidity as well. These ﬁndings add to
+the extant literature on the interconnections between stock-bond illiquidity (Goyenko and
+Ukhov (2009)) by showing that FX liquidity is tied to stock and bond risk and liquidities.
+Our results are also in line with the liquidity spirals theories, i.e. an adverse shock and
+an increase in volatility trigger feedback loops between funding constraints and market
+illiquidity. In the last part of this paper, we analyze currency-pair liquidities. We ﬁnd
+that riskier currencies are more exposed to liquidity drops. More speciﬁcally, liquidity
+of riskier currencies tends to decrease more with an increase of risk in stock and bond
+market as well as tighter funding constraints.
+The paper proceeds as follows. Section 2 documents the data; sections 3 and 4 dis-
+cusses the high-frequency and low-frequency methods, respectively; sections 5 and 6
+present the results on FX systematic and currency-pair liquidities, respectively; section 7
+5
+=== PAGE 7 ===
+concludes.
+2 Data
+Hereafter, we will use the abbreviations LFandHFto refer to low-frequency and high-
+frequency. We obtain HF data from ICAP that runs the leading interdealer electronic FX
+platform called Electronic Broking Services (EBS). The EBS data set spans January 2007
+to May 2012 and it is organized on a one-second basis (i.e. 86,400 observations per day).
+This rich source of information contains order and transaction data. From the order data,
+we use the prevailing bid and ask (offer) quotes. From the trading data, we keep track of
+the transaction price and trade direction (i.e. if the trade was buyer- or seller-initiated).
+From the trade direction, we compute the order ﬂow as the number of buys minus the
+number of sells over a given period.
+EBS quotes reliably represent the prevalent spot interdealer exchange rates. Dealers
+on the EBS platform are prescreened for credit and bilateral credit lines, which together
+with the continuously monitoring by the system, makes the potential counterparty risk
+virtually negligible.4
+We use HF data on nine currency pairs, namely the AUD/USD, EUR/CHF, EUR/GBP,
+EUR/JPY , GBP /USD, USD/CAD, USD/CHF, and USD/JPY . These exchange rates ac-
+counted for 71% of daily average trading volume in April 2013 (see Bank of International
+Settlements (2013)). For every second, we compute log-returns using the midpoint of the
+best bid and ask quotes or alternatively, the transaction price. Observations between Fri-
+day 10 p.m. and Sunday 10 p.m. GMT are excluded, since only minimal trading activity
+is observed during these non-standard hours.5
+The LF data are daily high, low, bid, ask and midquote prices as well as trading
+volumes from Datastream Thomson Reuters. Daily close bid, ask and midquote prices
+are snapped at 21:00 GMT. The data set covers 1991 to 2012 and it includes forty ex-
+change rates (over 84% of daily average trading volume in April 2013). The EUR/USD
+is replaced with the DEM/USD prior to 1999. The other FX rates against the EUR are re-
+placed with the quotes against the ECU prior to 1999 due to data availability in Thomson
+4Chaboud, Chernenko, and Wright (2007) provide a descriptive study of the EBS data set.
+5We drop U.S. holidays and other days with unusually light trading activity from the data set. We also
+remove a few obvious outlying observations. The internet appendix for Mancini, Ranaldo, and Wram-
+pelmeyer (2012) discusses in detail the ﬁltering procedure for the data.
+6
+=== PAGE 8 ===
+Reuters.6To guarantee a consistent matching between HF and LF data, we consider the
+same set of trading days and we compute the daily measures from the EBS data taking
+21:00 GMT as the end of the day. For one of our LF measures ( LOT, see below), we also
+use the daily effective exchange rate computed by the U.S. Federal Reserve.
+To link FX liquidity with the variables of the main asset classes, we use a large dataset
+of monthly return and risk measures on FX markets, US and global equity/corporate/
+government bond markets, money market and central bank rates. All the data are avail-
+able from January 1991 except from JP FX implied volatility and stock market liquidity,
+which are accessible from April 1992 and January 1995, respectively. The description
+and sources of these variables is available in the internet appendix. The stock market
+liquidity is based on the PCA across price impact proxies of the monthly Amihud (2002)
+measure, calculated as the value-weighted average of all individual stock in each coun-
+try. We use data from Karolyi, Lee, and Dijk (2012) to get the Amihud (2002) measure
+for each country, which currency appears in our sample of the forty exchange rates. The
+bond market liquidity is the off-the-run liquidity premium the yield difference between
+less and more liquid (“off-the-run” and “on-the-run”) ten-year nominal Treasury bonds.
+The data on “off-the-run” bonds is from Gurkaynak, Sack, and Wright (2007), the data
+on “on-the-run” bonds is from the St. Louis FRED database.
+3 High-frequency measures
+The HF data allows us to compute very accurate estimates of liquidity in the FX market.
+The effective cost ( EC) captures the cost of executing a trade. The ECis computed by
+comparing transaction prices with the quotes prevailing at the time of execution as
+ECD(
+.PT P/=P; for buyer-initiated trades,
+.P PT/=P; for seller-initiated trades,(1)
+withPdenoting the transaction price, superscripts AandBask and bid quotes, and PD
+.PACPB/=2the midquote price. Following the previous literature, we refer to the EC
+as the main benchmark measure for market liquidity.
+6The ECU was an accounting unit made up of the sum of ﬁxed amounts of 12 out of then 15 currencies of
+the European Union. The value of the ECU was calculated as weighted average of its component currencies,
+please see details at http://fx.sauder.ubc.ca/ECU.html. The ECU was replaced by the EUR on a one-for-one
+basis on 1 January 1999.
+7
+=== PAGE 9 ===
+Another measure of transaction cost is the proportional quoted bid-ask spread, BA,
+BAD.PA PB/=P: (2)
+The price impact ( PI) measures the FX return associated with the order ﬂow (Kyle
+(1985)). Similarly, the return reversal ( RR) shows the reversal of the price to the funda-
+mental value after the initial price impact (Campbell, Grossman, and Wang (1993)). We
+estimate PIandRRfrom the linear regression
+ptD#CPI.b;t s;t/C5X
+kD1k.b;t k s;t k/C"t; (3)
+whereptis the change of the log midquote price between tandt 1,b;tis the number
+of buyer-initiated trades and s;tthe number of seller-initiated trades at time t(i.e. the
+order ﬂow). For each day, we estimate the parameter vector #;PI;1:::5. The price
+impact PIis expected to be positive due to net buying pressure, while the return reversal
+RRDP5
+kD1kis expected to be negative.
+The price dispersion ( PD) or volatility is often used as an additional proxy for illiquid-
+ity (Chordia, Roll, and Subrahmanyam (2001)). To get a consistent and unbiased estimate,
+we use the two-scale nonparametric estimator (Aït-Sahalia, Mykland, and Zhang (2005))
+of realized volatility.7
+A liquid exchange rate is associated with a lower value of EC,BA,PI,PDas well as
+lower absolute value of ( RR).
+4 Low-frequency measures
+For each exchange rate, we compute eight LF liquidity measures that are widely used
+in the literature on stock and bond liquidity. This section summarizes these measures,
+and more detailed information can be found in an internet appendix. We compute the LF
+measures for each month, but later we consider other granularities.
+Roll (1984) shows that a transaction cost induces a bid-ask bounce, so the cost can
+be estimated from the (negative of the) autocovariance of the return process. Following
+7We compute the effective cost, bid-ask spread, price impact, return reversal and price dispersion for
+each FX rate.
+8
+=== PAGE 10 ===
+the previous literature, when the autocovariance is positive,8we substitute the transaction
+cost estimator with zero
+RollD(
+2p
+ Cov.pt;pt 1/;when Cov.pt;pt 1/<0 ,
+0; when Cov.pt;pt 1/>0,(4)
+whereptis the change of the log midquote price between tandt 1. The higher is the
+Roll spread, the lower is the liquidity. We compute the Roll estimate for each month in
+our sample using daily midquote prices.
+The second LF liquidity measure is the gamma ( BPW ) measure put forward by Bao,
+Pan, and Wang (2011) to measure liquidity in the corporate bond market, deﬁned as
+BPWD  Cov.pt;pt 1/: (5)
+Clearly, this is very similar to the Roll measure. We compute the BPW measure for each
+month in our sample using daily midquote prices.
+The third LF liquidity measure is the Bayesian Gibbs sampler estimate of the effective
+cost in the Roll model (Hasbrouck (2009)). The higher is the Gibbs , the lower is liquidity.
+We compute the Gibbs estimates for each month from the daily log midquote prices. We
+run each Gibbs sampler for 1000 sweeps and discard ﬁrst 200 draws. We calibrate the
+prior for the transaction cost to get a good proxy of the HF benchmark.9Details are
+discussed in the robustness section.
+The fourth LF liquidity measure is the relative bid-ask spread ( BA) deﬁned as in (2).
+A high BA, indicates low liquidity. We obtain monthly estimates of BAby averaging the
+daily bid-ask spreads.
+The ﬁfth LF liquidity measure is the high-low cost estimate CSfrom Corwin and
+Schultz (2012). The basic idea is that the bid-ask spread is unaffected by the horizon
+8Positive autocovariances are not infrequent. For instance, Roll (1984) ﬁnds positive autocovariances
+in roughly half of his sample. Goyenko, Holden, and Trzcinka (2009) also use the modiﬁed version of the
+Roll estimator used in this paper.
+9Joel Hasbrouck generously provides the programming code of the Gibbs estimation procedure on his
+web-site. We use this code for our estimations. This code uses a half-normal distribution - and we set (for
+each currency and month) the standard deviation of the transaction cost prior equal toq
+pA pB, where
+pAandpBare the monthly averages of log ask and log bid prices, respectively. The estimates are robust to
+this choice, unless we choose a very small value.
+9
+=== PAGE 11 ===
+while the variance scales with the horizon. The CSis calculated as
+CSD2.e 1/
+1Ce, withD.1Cp
+2/.p
+ p/; (6)
+whereis the sum (over two days) of the squared daily log(high/low) and is the squared
+log(high/low) but where the high (low) is over two days. To estimate on a monthly basis,
+we estimate spreads separately for each 2-day period and calculate the average across all
+overlapping 2-day periods in the month. The higher is the CS, the lower is the liquid-
+ity. Following Corwin and Schultz (2012), we correct for overnight returns and negative
+values (by setting the estimate to zero).
+The sixth LF liquidity measure is the Effective Tick (Efftick ) from Holden (2009) and
+Goyenko, Holden, and Trzcinka (2009). This method estimates the transaction cost from
+the clustering (relative frequency) of the last digits of the transaction prices. The basic
+idea is that price clustering signals more bargaining power of market makers and less
+competitive quotes. We implement the Holden method on daily midquote prices to get
+monthly estimates.
+The seventh LF liquidity measure is the transaction cost estimator LOT from Lesmond,
+Ogden, and Trzcinka (1999). Its rationale is that the marginal investor trades only if ex-
+pected gains outweigh the costs of trading. In this model, returns of a speciﬁc asset are
+benchmarked against market returns. We implement this idea by benchmarking currency-
+pair returns to the USD effective exchange rate.10In line with Lesmond, Ogden, and
+Trzcinka (1999), we deﬁne the three regions for FX returns (equal to zero, positive and
+negative) and we perform a maximum likelihood estimation on daily returns for each
+month.11
+Finally, the eighth LF liquidity measure is an estimate of realized Volatility . Following
+Menkhoff, Sarno, Schmeling, and Schrimpf (2012a), we calculate monthly averages of
+the daily absolute returns. Although the microstructure theory relates transaction costs to
+volatility in various ways (e.g. directly as in Roll (1984) and through inventory risk (e.g.,
+Stoll (1978)) and probability of informed trading (e.g., Glosten and Milgrom (1985)),
+volatility is clearly an indirect measure of FX liquidity that has been commonly used in
+the literature (e.g., Chordia, Roll, and Subrahmanyam (2001)).
+10The USD effective exchange rate represents the “market” trade-weighted value of the USD against the
+other currencies.
+11We are very grateful to David Lesmond for providing us with the code for computing the LOT measure.
+10
+=== PAGE 12 ===
+5 Results on measuring FX liquidity
+5.1 Results for high-frequency liquidity measures
+Using the EBS data set over January 2007 – May 2012, we estimate effective cost and
+four alternative HF liquidity measures (bid-ask spread, price impact, return reversal, and
+price dispersion) for each month and each exchange rate.
+The full descriptive statistics are found in an internet appendix, but the following
+are worth mentioning. First, average effective costs are smaller than average bid-ask
+spreads, reﬂecting within-quote trading. Second, the average return reversal (temporary
+price change accompanying order ﬂow) is negative and the order ﬂow price impact is
+positive for all exchange rates. Third, comparing liquidity estimates across currencies,
+we observe a substantial cross-sectional variation in which EUR/USD is the most liquid
+exchange rate, while AUD/USD is the least liquid.
+For the subsequent analysis we standardize each monthly HF liquidity measure for
+each currency by subtracting the time-series mean and dividing by the standard deviation.
+After the standardization process, we use the ﬁrst principal component to construct across-
+currencies liquidity measures (one for each method: EC,BA,PI,RR, and PD).
+[Table 1 about here.]
+The evidence in Table 1 indicate strong comovements among liquidity measures: the
+lowest correlation of different across-currencies measures is 0.89. This means that all
+these HF liquidity measures are very similar.
+[Figure 2 about here.]
+Looking at the dynamics of the HF effective cost in Figure 2 (dotted line, disregard
+the other line for now), it is clear that liquidity is fairly persistent (autocorrelated). Liq-
+uidity was quite stable from January 2007 to mid 2008, followed by a substantial drop
+in September 2008 to November 2008. The decline reﬂected the collapse of Lehman
+Brothers together with the increased turmoil and uncertainty after the bankruptcy. Liq-
+uidity gradually recovered during 2009, but was still below the pre-crisis level at the end
+of 2009. We observe a contraction of liquidity when the European sovereign debt crisis
+intensiﬁed in early 2010. During the ﬁrst half of 2012, liquidity was visibly improving,
+being quite close to the pre-crisis level in May 2012.
+11
+=== PAGE 13 ===
+5.2 Results for low-frequency liquidity measures
+In this section, we identify the best low-frequency FX liquidity measures —deﬁned as the
+ones with the highest correlation with the high-frequency benchmark. The aim is to give
+guidance for the estimation of FX liquidity over a long time span and many currencies
+(where only daily data is available) and to circumvent various other limitations imposed
+by high-frequency data.
+We use daily midquote, bid, ask, high, and low prices from Thomson Reuters on
+the same nine currency pairs as above and over the same time period to compute eight
+different LF liquidity measures. We compute the liquidity measures for each month and
+for each exchange rate. The full descriptive statistics are found in an internet appendix,
+but it can be noticed that the LF measures have much larger cross-sectional differences
+than the HF measures.
+Following the literature on evaluating the performance of LF liquidity measures (see
+e.g. Goyenko, Holden, and Trzcinka (2009) Hasbrouck (2009), Corwin and Schultz
+(2012), Marshall, Nguyen, and Visaltanachoti (2012)), we compare the LF liquidities
+with the effective cost computed from the high-frequency EBS data. Given the very high
+correlation between the HF liquidity measures (as demonstrated above), the choice of HF
+benchmark is not crucial.
+[Table 2 about here.]
+Table 2 reports the times-series correlations of each LF liquidity measure for each
+exchange rate with their respective HF effective cost benchmark. Boldfaced numbers
+are different from zero at the 5% signiﬁcance level.12The Volatility measure has the
+highest average (across exchange rates) correlation at 0.81, followed by the CSandGibbs
+measures with 0.71 and 0.70 average correlations. Notice also that, for each individual
+exchange rate, the correlation coefﬁcients between these three best measures and the HF
+benchmark is always above 0.51 (the lowest value is CSfor the EUR/USD). Among the
+other measures, LOT has a mild average correlation at 0.43. The Roll,BPW , and EffTick
+show poor performance, having average correlations with the effective cost measures of
+0.30, 0.10, and 0.06, respectively.
+To conﬁrm the ﬁndings from individual exchange rates, we now consider the evidence
+for across-currencies measures. That is, for each standardized LF liquidity measure, we
+12We apply a GMM based test using a Newey-West covariance estimator with 4 lags.
+12
+=== PAGE 14 ===
+calculate the ﬁrst principal component across exchange rates. We compare these LF mea-
+sures with the HF across-currencies effective cost (the ﬁrst principal component across
+currencies of the effective cost).
+[Table 3 about here.]
+Table 3 shows how the LF liquidities correlate with the across-currencies effective
+cost ( EC). For the full sample (January 2007 to May 2012), shown on top, the ﬁndings
+are similar to those for individual currencies: the CS,Gibbs andVolatility measures out-
+perform the other measures.
+To study the consistency of performance across time, we break the time-series corre-
+lations down by sub-periods in the rest of Table 3. Speciﬁcally, we compute time-series
+correlations for three sub-periods: the pre-Lehman period, the Lehman bankruptcy and
+the successive turmoil, and ﬁnally, the European sovereign debt crisis. Despite the limited
+number of observations (only 18 months in each of the ﬁrst two sub-periods) which cau-
+tions against drawing strong conclusions, some patterns are clear. In particular, the BPW
+andEffTick measures both perform poorly at the peak of the U.S. ﬁnancial crisis. Thus,
+a weakness of these two measures is that their estimates of FX liquidity can severely be
+biased by market conditions. In contrast, the CS,Gibbs andVolatility measures (once
+again) perform well in all three sub-periods (the correlation with the HF benchmark is
+always above 0.76).
+To summarize, Tables 2–3 suggest that some of the LF liquidity measures ( CS,Gibbs ,
+andVolatility ) provide accurate proxies of the HF benchmark. The other LF measures
+have low and/or unstable correlations with the HF benchmark.
+The previous evidence suggests that some LF measures perform worse on the FX mar-
+ket than on the stock and bond markets (see e.g. Goyenko, Holden, and Trzcinka (2009)).
+One reason for the poor performance of the Roll measure can be that the FX market is
+inherently more liquid. In this regard, Harris (1990) points to signiﬁcant deterioration of
+theRoll estimator performance when the spread gets smaller (i.e. for more liquid stocks).
+Another problem could be due to the use of indicative quotes rather than actual trans-
+action prices, as it is the case for FX data. Being estimated from daily midquote prices
+rather than transaction prices, the Roll measure may underestimate the transaction costs.
+TheBPW measure, originally designed for corporate bond liquidity, may suffer for the
+same reasons. The indicative quotes probably affect also the BA. In addition, the timing
+13
+=== PAGE 15 ===
+(21.00 GMT) of the daily bid-ask spread seems to lead to a noisy and unrepresentative
+measure of the transaction costs.13Finally, the poor performance of the EffTick measure
+as a proxy of FX liquidity may be due to the speciﬁc characteristics of the FX data. In
+fact, the number of digits after the point in daily bid and ask quotes can deviate from 1 to
+5 during a single month, distorting the EffTick estimates.
+To sum up, we provide evidence that the CS,Gibbs , and Volatility measures give
+the best proxies of the HF liquidity benchmark on the FX market. This conclusion is
+substantiated by the comparison between LF and HF measures, by consistent time-series
+patterns and by cross-sectional evaluations.
+5.3 Quote-based measures
+Trading volume data are not readily available for FX markets. A method to approximate
+trading volume proposed in FX literature is the quote frequency, i.e. the number of quote
+revisions over a given period (e.g. Melvin and Yin (2000)). In this section we apply this
+method to extend the set of LF liquidity measures by three quote-based measures of price
+impact, namely the liquidity measures proposed by Amihud (2002), Pàstor and Stam-
+baugh (2003) and the so-called Amivest measure from Cooper, Groth, and Avera (1985)
+and Amihud, Mendelson, and Lauterbach (1997). These measures require daily number
+of quote revisions, which are available only from January 2007. They are therefore not
+useful for calculating LF measures for a long sample period (which is our main goal), but
+of independent interest.
+Table 4 shows correlations of the across-currencies quote based LF measures with the
+HF effective cost benchmark. The Amihud performs relatively well: the correlation for
+the entire sample (January 2007 to May 2012) is 0.82, and the correlation coefﬁcient is
+reasonably stable (0.65 to 0.92) across sub-periods. In contrast, the Amivest performs
+only modestly well and is less consistent (with correlations ranging from -0.37 to -0.82).
+ThePastor-Stambaugh measure is clearly the worst: it appears almost uncorrelated with
+the HF effective cost.14
+13Thomson Reuters provides bid-ask quotes at 21:00 GMT based on the indicative data from the latest
+contributor, while the EBS data contains the best transactable bid and ask prices. Daily snaps of the EBS
+bid-ask at 21:00 GMT have weak correlations (0.04–0.28) with the Thomson Reuters daily bid-ask over
+the sample Jan 2007–May 2012, depending on the currency pair. The standard deviation of the Thomson
+Reuters bid-ask for the highly liquid FX rates (EUR/USD, EUR/CHF, USD/JPY) is more than twice as
+large as that from EBS.
+14We also analyzed the Zeros measure from Lesmond, Ogden, and Trzcinka (1999) and the FHT measure
+14
+=== PAGE 16 ===
+[Table 4 about here.]
+The poor performance of the Pastor-Stambaugh is probably explained by two facts: it
+relies on a rough proxy of order ﬂow (number of quote revisions signed by the direction
+of return) and it uses the lagged (instead of the contemporaneous) order ﬂow.
+5.4 Systematic low-frequency liquidity over 2007–2012
+We now construct a systematic (market wide) LF liquidity (see Korajczyk and Sadka
+(2008)) by computing the ﬁrst principal component across the nine exchange rates and
+the three best LF liquidity measures ( CS,Gibbs andVolatility ).15This is the solid line
+in Figure 2, while the dotted line is the HF effective cost discussed before. Clearly, the
+systematic LF liquidity and its HF benchmark share very similar patterns over the 65
+months of our sample period: the correlation is 0.93.
+[Table 5 about here.]
+This evidence suggests that it is possible to measure systematic liquidity by combining
+the best LF measures by a principal component approach. Using an unweighted average
+instead of the ﬁrst principal component gives very similar results (see robustness section
+for more details). However, it is not obvious that any of these methods attach the best
+weights to the different LF measures—in the sense of proxying for the HF measure as
+well as possible. We therefore also consider a regression approach.
+Table 5, column 1, shows the regression of the monthly HF effective cost on the
+systematic LF liquidity. The coefﬁcient is 0.93, highly signiﬁcant and the coefﬁcient of
+determination ( R2) is 0.86. Column 2 instead uses only LF volatility as the regressor—
+and it works equally well.
+Columns 3 and 4 include also the other good LF measures–and that gives a small
+improvement in the R2(increases from 0.86 to 0.88). Given the high correlations between
+the different LF liquidity measures (potential multicollinearity issues), we orthogonalize
+the LF measures by applying rotating transformations before using them as regressors.
+In column (3) we let the ﬁrst transformed factor be Volatility , while the second factor is
+from Fong, Holden, and Trzcinka (2011). However, we discarded them due to the almost complete absence
+of daily zero returns.
+15First principal component explains 59% of the total variation. For details, see internet appendix.
+15
+=== PAGE 17 ===
+the residuals from regressing the CSon the Volatility and the third factor represents the
+residuals from regressing the Gibbs on the ﬁrst two factors. In column (4), we switch the
+order of the CS(now third) and Gibbs (now second). The results suggest that both CSand
+Gibbs are useful.
+Column (5) shows a speciﬁcation based on only volatility and volatility interacted
+with a dummy that is one when there was an increase in volatility last month, and zero
+otherwise. This speciﬁcation adds somewhat to the ﬁt, but perhaps more interestingly, it
+shows that the relation between the HF effective cost and volatility is somewhat weaker
+when there has been a recent surge in volatility. Further nonlinear speciﬁcations give very
+small improvements in ﬁt and therefore not reported.
+Overall, the regression results shed light on which HF measures that are most impor-
+tant for proxying the HF effective cost and that a regression can improve the ﬁt somewhat.
+However, it also shows that using the principal components approach is almost as good
+as the regression based “optimal” weights. Since the principal component approach is
+already well established in the literature (see eg. Korajczyk and Sadka (2008)), we will
+henceforth rely on this.
+5.5 Granularity of the LF measures
+The previous analysis shows that some LF measures provide good proxies of the HF
+effective cost on the monthly frequency . This section explores what happens at higher
+frequencies than a month.
+This exercise is possible for only four measures. We compute the LF Volatility andBA
+on frequencies of 1 to 5 days as well as 1 to 4 weeks. In contrast, CSrequires a minimum
+of two consecutive days and the Gibbs estimator seems to need at least ﬁve days of data
+to work.
+[Figure 3 about here.]
+Figure 3 plots the correlation of each of these four across-currencies LF measures
+with the across-currencies HF effective cost benchmark for different frequencies. Two
+ﬁndings emerge: ﬁrst, as expected, the performance deteriorates at higher frequencies: the
+correlations with the HF benchmark are 0.66–0.93 on the four-week frequency and only
+0.47–0.70 on the two-day frequency. However, the overall performance is fairly good
+down to the two-week frequency—and some of the measures (in particular, Volatility )
+16
+=== PAGE 18 ===
+seem to perform reasonably well even on the two-day frequency. Second, the systematic
+liquidity always provides the most precise technique to measure liquidity.
+5.6 Systematic low-frequency liquidity over 1991–2012
+High-frequency data is available only for a small number of exchange rates—and for
+very recent time periods. This severely restricts the possibility to calculate HF liquidity
+measures outside the major currencies and back in time. However, our previous analy-
+sis shows that it is possible to construct accurate liquidity proxies from low-frequency
+(daily) data. We now demonstrate the usefulness of that by considering a larger panel of
+exchange rates and by extending the sample period. The source of the LF data (Datas-
+tream Thomson Reuters) naturally deﬁnes the limits of the cross section and the length of
+the time series, which are 40 exchange rates and more than 20 years (from January 1991
+to May 2012).
+We compute monthly times series 1991–2012 of the CS,Gibbs , and Volatility mea-
+sures for each exchange rate. For each measure, we also calculate the across-currencies
+measure (by the ﬁrst principal component across the forty currency pairs). To create a
+measure of systematic FX liquidity we calculate the ﬁrst principal component across the
+120 data series (40 currency pairs, 3 measures).
+[Table 6 about here.]
+Table 6 shows the correlation coefﬁcients between the LF measures. All correlations
+are very high, ranging from 0.81 to 0.97—so these different measures capture virtually
+the same time patterns.
+Figure 4 shows the time series of the systematic liquidity measure. As references
+chosen arbitrarily, we have also indicated some major (ﬁnancial and geopolitical) crises.
+While the turmoil around the Lehman bankruptcy caused the largest drop in systematic
+liquidity, there are also a number of other signiﬁcant events, for instance, the ERM crisis
+(1992), the peso crisis (1994), the Russian default (1998) and 9/11 (2001). Looking at
+further details shows that the reaction to stock market events is mixed. There is a decline
+in FX liquidity after the October 1997 crash, perhaps some decline after the burst of the
+dotcom bubble (spring 2000) but very little response to the Enron scandal (Dec 2001).
+In addition, the systematic FX liquidity has a correlation of 0.67 with the VIX and only
+0.51 with the TED spread. Overall, FX liquidity seems to share some time series patterns
+17
+=== PAGE 19 ===
+with other asset markets, but also contains some features that are not directly reﬂected
+by the stock market or measures of funding liquidity (TED spread). These preliminary
+ﬁndings motivate an in-depth understanding of the main drivers of FX liquidity that will
+be conducted in the next sessions.
+[Figure 4 about here.]
+5.7 Robustness checks
+In this section, we brieﬂy describe the main robustness checks and additional analysis.
+Further details are reported in an internet appendix.
+First, we replicated our analysis by using other HF benchmarks than the HF effective
+cost. Overall, we obtain very similar results. Given the very high correlation between the
+HF liquidity measures (see Table 1), the choice of benchmark is not important.
+Second, we changed the details of how the methods are implemented—and our main
+results are almost unchanged. For instance, in the Gibbs sampler, using a higher number
+of sweeps (up to 10000) or changing the prior of the transaction cost does not affect the
+mean parameter estimates materially. However, there are two exceptions to this ﬁnding:
+(a) setting the standard deviation of the prior to a very small value (eg. 0.001) gives esti-
+mates that are much less correlated with the HF benchmark; (b) when we study liquidity
+on a weekly instead of the monthly frequency, then the prior becomes more important.
+(The latter conﬁrms the evidence in Hasbrouck (2009).) Similarly, in the LOT measure
+we replaced the effective exchange rate from the Fed with a simple average change in the
+dollar versus all the other currencies in the same spirit of “the dollar factor” (see Lustig
+and Verdelhan (2007)). The resulting LOT estimates have somewhat lower correlations
+with the effective cost benchmark.
+Third, we have replaced the principal component analysis with straight or trimmed
+averages across currencies and/or liquidity measures. This has very small effects on our
+results, since the ﬁrst principal component typically loads more or less equally on the
+currencies/measures. However, there is one exception to this ﬁnding: some of the across-
+currencies LF measures (for instance, in Table 3) have unequal (and even negative) load-
+ings on the different exchange rates. This affects mostly the BPW andEffTick measures.
+When using a straight (or trimmed) average, these measures tend to perform even worse.
+18
+=== PAGE 20 ===
+Fourth, we assessed the correlations of changes instead of levels for the different liq-
+uidity measures. Similarly to the analysis on levels, the CS,Gibbs andVolatility perform
+better than the other LF measures in terms of correlations with the HF effective cost
+benchmark.
+Fifth, for the long sample 1991-2012, we also investigated the effect of using just the
+9 main currencies instead of the full cross-section of 40 currencies. The results are very
+similar. For instance, the systematic liquidity measure from the 9 and the 40 currencies
+have a correlation of 0.97.
+Finally, we found very similar results to those reported in Table 5 when we regress the
+across-currencies EC on LF liquidities using the quantile regression technique. Addition-
+ally, we found that the orthogonalized liquidity measures have signiﬁcant coefﬁcients in
+mid-quantiles, i.e. not when liquidity is extremely low or high.
+6 Understanding FX liquidity
+In the previous section, we showed that it is possible to accurately measure FX liquidity
+using low-frequency data. In this section, we try to understand FX liquidity by analyzing
+the commonality of FX liquidities and by relating FX liquidity to its possible drivers. We
+proceed in three steps: ﬁrst, we study commonality in FX liquidity. Second, we regress
+FX systematic liquidity on returns, risk proxies and liquidites of the main asset classes.
+Finally, we extended this analysis to individual exchange rates. In most of our analysis, we
+take into separate consideration the few pegged currencies in our sample since a pegged
+exchange rate means that the central bank steps in as a liquidity provider.
+6.1 Commonality in FX liquidity
+Commonality in liquidity has been extensively analyzed in stock and bond markets (e.g.
+Chordia, Roll, and Subrahmanyam (2000), Hasbrouck and Seppi (2001), Chordia, Sarkar,
+and Subrahmanyam (2005), Korajczyk and Sadka (2008) and Karolyi, Lee, and Dijk
+(2012)). However, to our knowledge only two papers investigate commonality of FX liq-
+uidity. Mancini, Ranaldo, and Wrampelmeyer (2012) use HF data to study FX common-
+ality of nine exchange rates during the recent ﬁnancial crisis of 2007-9. Banti, Phylaktis,
+and Sarno (2012) use the institutional customer data provided by State Street Corporation
+to approximate the market order ﬂow of 14 exchange rates over a period of 14 years and of
+19
+=== PAGE 21 ===
+six additional exchange rates over a shorter period. Here, we extend the FX literature by
+investigating FX commonality across a long period (1991-2012) and a large cross-section
+(40 currencies). This allows us to identify different patterns for developed and emerging
+currencies as well as the asymmetries of up- and down-markets.
+We extend the analysis of commonality in FX liquidities following Chordia et al.
+(2000). We regress the changes of currency pair liquidity measures on changes of FX
+systematic liquidity
+4Lj;tDjCj4LM;tC"j;t (7)
+where4Lj;tis, for FX rate j, the change from month t 1totin individual FX
+rate liquidity (obtained from the PCA across the three best LF liquidity proxies), and
+4LM;tis the concurrent change in the systematic LF liquidity. We run the regressions
+over 257 months, Jan 1991 - May 2012. All estimated slope coefﬁcients are positive and
+statistically signiﬁcant at any conventional level.16
+[Figure 5 about here.]
+As in Karolyi, Lee, and Dijk (2012), we use the R-square as an indicator of common-
+ality in liquidity. Figure 5 shows the R2for 40 currencies organized into three groups: (1)
+developed and much traded exchange rates (based on market share of FX market turnover
+by currency pair resulting from the Bank of International Settlements (2013)), (2) devel-
+oped and less traded exchange rates and (3) emerging currencies. Solid black bars are for
+currencies that were not pegged at any time during our sample, shaded bars for currencies
+that were pegged for at least some time.
+The ﬁgure has three main messages. First, commonality in FX liquidity is strong.
+The average R-square across our sample of 40 currencies is 36%. Only seven exchange
+rates have an R-square lower than 10% (several of which involved pegged currencies),
+suggesting that liquidity co-moves for the vast majority of the currencies. This implies
+that there are periods when the entire FX market is systematically illiquid or liquid.
+Second, commonality of the FX market is stronger than that found in the stock market
+literature. Several papers ﬁnd signiﬁcant co-movement of liquidity in cross-sections of
+U.S. stocks (e.g. Datar, Naik, and Radcliffe (1998), Chordia, Roll, and Subrahmanyam
+16Excluding exchange rate jin the computation of 4LM;tor including one lead and one lag of the
+systematic LF liquidity as additional regressors (i.e. 4LM;tC1and4LM;t 1) does not affect the results
+materially, see internet appendix for details.
+20
+=== PAGE 22 ===
+(2000), Chordia, Roll, and Subrahmanyam (2000), Hasbrouck and Seppi (2001), Huber-
+man and Halka (2001), A. (2005)). Karolyi, Lee, and Dijk (2012) show that common-
+ality is also discernible across international stock markets. Our analysis suggests that
+comovement in liquidity is even more pervasive than previously documented for stocks
+(for instance, Korajczyk and Sadka (2008) ﬁnd adjusted R2values ranging from 4% to
+26%).
+Third, our ﬁndings indicate that FX commonality is stronger for developed currencies
+(R2values of around 45% compared to around 20%). This holds also if we compare
+the emerging currencies with those developed currencies that are relatively less traded
+(according to the BIS turnover data; see the middle group in the ﬁgure). Also, within
+the group of developed and liquid currencies (ﬁrst group) there seem to be no relation
+between the more trading volume and commonality.
+[Figure 6 about here.]
+Figure 6 illustrates how the degree of commonality (for ﬂoating currencies) has changed
+across different time periods. Emerging currencies have lower commonality than devel-
+oped currencies across all sub-periods, but they seem to be catching up. Since mid-2008
+their average R2is 28%, compared with just 19% during the second half of the 1990s
+(when the Asian crisis drove down the liquidity for several of the emerging currencies in
+our cross-section).
+[Table 7 about here.]
+In the spirit of Hameed, Kang, and Viswanathan (2010), we test whether commonal-
+ity in the FX market liquidity increases in distressed markets, associated with the drop
+in liquidity and tighter funding constraints. Speciﬁcally, we run the panel regression of
+individual FX rate liquidities on the FX systematic liquidity as well as the FX systematic
+liquidity interacted with a dummy for severely distressed markets.17Table 7 provides the
+evidence of signiﬁcantly stronger FX market commonality in the periods of high volatil-
+ity in FX, interest rate, stock markets as well as tighter funding conditions and sharp
+depreciation of exchange rates against the U.S. dollar.
+17As in Hameed, Kang, and Viswanathan (2010), the dummy takes one if and only if the risk factor at
+timet 1is more than 1.5 standard deviations above its unconditional mean
+21
+=== PAGE 23 ===
+6.2 Explaining FX systematic liquidity
+In this section, we try to identify some possible drivers of FX liquidity. The market
+microstructure literature suggests various frictions which may cause low liquidity, includ-
+ing participation and transaction costs, asymmetric information, imperfect competition,
+funding constraints and search costs. These frictions may be particularly relevant in a de-
+centralized and opaque trading environment like the FX market.18These issues translate
+into several forms of risk (e.g. inventory and asymmetric information risks),19portfolio
+rebalancing and delegation that may affect time-variation and cross-sectional differences
+in FX liquidity.
+One of the main tenets in FX literature is the parity condition, and that arbitrage
+trades push prices between two similar assets denominated in different currencies towards
+parity. This applies to ﬁxed-income securities (e.g. covered and uncovered interest rate
+parity) and stocks (e.g. uncovered equity parity, as in Hau and Rey (2006)). No matter
+how trading strategies that exploit deviations from the parity condition are implemented,
+cross-market linkages between return and FX trading are likely to arise.
+Market liquidity should also relate to risk. For instance, in ﬂight-to-quality and ﬂight-
+to-liquidity scenarios investors rebalance their portfolios toward less risky and more liq-
+uid securities (e.g. Beber, Brandt, and Kavajecz (2009)). A recent strand of the literature
+sheds light on the intricate dynamics between market liquidity, funding constraints and
+risk (e.g. Vayanos and Gromb (2002), Morris and Shin (2004), Vayanos (2004), Brun-
+nermeier and Pedersen (2009), Garleanu and Pedersen (2007), Acharya and Viswanathan
+(2011)). While the exact mechanisms in the theoretical models above differ, they all pre-
+dict that funding constraints and market illiquidity can generate spirals through ﬁre-sales
+and increased risk.20This mechanism can spill over across various asset classes including
+FX markets, creating contagion and commonality in illiquidity (e.g. Xiong (2001) and
+Kyle and Xiong (2001)).
+[Table 8 about here.]
+18See Vayanos and Wang (2012) for excellent survey of the literature on market liquidity and Lyons
+(2001) for speciﬁc issues on FX microstructure.
+19Inventory and the asymmetric information effects are documented in several papers, e.g. Lyons (2001)
+and Bjønnes and Rime (2005).
+20The main idea behind these models is that large price ﬂuctuations increase the demand for liquidity as
+agents liquidate their positions across many assets and reduce the supply of liquidity as liquidity providers
+hit their wealth or funding constraints.
+22
+=== PAGE 24 ===
+On the one hand, the parity condition principle suggests that FX liquidity can be re-
+lated to returns of FX and other assets such as bonds and stocks. On the other hand, the
+liquidity spirals theory implies a link between market illiquidity, risk and funding con-
+straints. Below, we analyze whether FX liquidity is linked to returns and risk variables
+of the main asset classes, i.e. stocks, government and corporate bonds and FX. It should
+be kept in mind, however, that we make no attempts to control endogeneity and reverse
+causality, which may limit the economic interpretation of the analysis. We proceed in
+three steps: First, we construct a large dataset of monthly returns on FX markets, US
+and global equity/corporate/government bond markets, money market rates and central
+bank rates. Similarly, we consider several risk measures for each asset class. The list
+of these variables is available in the internet appendix. Second, we regress (changes of)
+FX systematic liquidity on each individual variable to identify the most signiﬁcant vari-
+ables within each asset class. Detailed results are reported in the internet appendix. The
+main idea is to isolate some possible “global factors” linked to FX liquidity. Third and
+ﬁnally, we estimate various encompassing models that include representative variables
+for the risk, return and liquidity of each asset class. Table 8 summarizes the main results.
+The regression models (1)-(4), (5)-(8) and (9)-(12) refer to the (changes of) FX system-
+atic liquidity including all (ﬂoating) 32 currencies, developed currencies and emerging
+currencies, respectively.
+Some clear patterns emerge. First, we can explain much of the variation in FX system-
+atic liquidity. The R2values for the FX systematic liquidity for the 32 ﬂoating currencies
+are above 50% in several speciﬁcations. The separate analysis of (ﬂoating) developed and
+emerging currencies suggest that the global factors explain developed currencies better
+than the emerging currencies (higher R2values).
+Second, the risk variables are more important than the return variables. A Wald test
+easily rejects the null hypothesis that the estimated coefﬁcients of all risk variables are
+equal to zero. The coefﬁcients of the risk variables have (with very few exceptions) neg-
+ative signs, indicating that FX liquidity decreases with an increase of risk in each asset
+classes. In most speciﬁcations, the risk variables of bond and stock markets are signiﬁcant
+(t-stats in brackets). This holds also when variables from the FX market are included. In
+addition, that FX liquidity of developed currencies is negatively related to the TED spread.
+Other measures of funding strains such as the Libor-OIS conﬁrm the same result (see in-
+ternet appendix). It is also worth noting that we replicated our analysis for all EUR and
+23
+=== PAGE 25 ===
+GBP currency pairs. The results obtained taken the EUR and GBP as base currency are
+exactly in line with the ﬁndings reported here when the U.S. dollar is the base currency
+(see internet appendix). In general, our ﬁndings suggest that ﬂight-to-liquidity dynamics
+and liquidity spirals theory explain better FX liquidity patterns. On the other hand, the
+parity condition theory, at least in its original risk-neutral framework, provides a weaker
+explanation for time-varying FX liquidity.
+Third, we ﬁnd signiﬁcant commonality in liquidity between FX, stock and bond mar-
+kets (see columns (3), (7) and (11) of Table 8). This ﬁnding extends the previous literature
+by showing that FX-stock-bonds commonality holds for both developed and emerging
+currencies. However, the importance of the stock liquidity is overshadowed by the other
+variables (see columns (4), (8) and (12)) — and the risk factors remain signiﬁcant when
+we control for stock and bond liquidity.
+6.3 Explaining FX currency-pair liquidities
+This section extends the analysis in the previous section by studying the FX liquidity of
+individual exchange rates. We are particularly interested in whether the exposure to the
+global factors depends on the risk characteristics of the currency.
+[Table 9 about here.]
+The recent FX asset pricing literature shows that various types of risks are associated
+with FX excess returns. In the spirit of the factor model in Fama and French (1993),
+Lustig, Roussanov, and Verdelhan (2011) ﬁnd that two risk factors can explain most of the
+variation in monthly carry trade returns. These factors are the U.S. dollar average currency
+return (denoted “FX return risk” thereafter) and the carry trade risk factor (denoted “carry
+trade risk”), given by a currency portfolio that is long in high interest rate currencies and
+short in low interest rate currencies. Menkhoff, Sarno, Schmeling, and Schrimpf (2012a)
+show that “volatility risk” supplements the FX return and carry trade risk factors. Mancini,
+Ranaldo, and Wrampelmeyer (2012) illustrate that a “liquidity risk” factor also has a
+strong impact on carry trade returns. Motivated by these papers, we construct regression
+models referring to each one of the four risk categories discussed. We perform ﬁxed-effect
+panel regressions in which (changes of) the liquidities of individual exchange rates are
+regressed on the global factors, interacted with dummies that represent the risk categories.
+24
+=== PAGE 26 ===
+The t-stats of the coefﬁcients are robust to cross-sectional correlations, using the Driscoll
+and Kraay (1998) covariance estimator. Table 9 presents the main ﬁndings.
+As a validation of the panel approach, column 1 of Table 9 performs almost the same
+analysis as previously in Table 8, where the dependent variable was the change of the
+systematic liquidity for the ﬂoating currencies. However, there are two differences. First,
+the dependent variable is now a panel of currency-speciﬁc liquidities. Second, Table 9
+applies a time-varying deﬁnition of whether a currency is ﬂoating or pegged. (In practice,
+this is done by interacting all global factors with a time-varying “ﬂoating dummy” and
+also with another “pegged dummy”. The results for the latter are not reported.) Not
+surprisingly, the coefﬁcients from the panel regression are in line with those found for the
+FX systematic liquidity: the same signs and the same degree of statistical signiﬁcance as
+in Table 8.21However, the R-square is reduced to 0.12, since the panel contains much
+more idiosyncratic noise than the systematic liquidity.
+The remaining columns in Table 9 introduce some speciﬁc dummy variables aimed
+at capturing risky currencies. Each speciﬁcation is based in column (1), but adds a new
+dummy variable interacted with the global factors. For instance, the new dummy in col-
+umn (2) in Table 9 is equal to one if a currency pair underperforms the cross-sectional
+average U.S. dollar return in that month (and the currency is ﬂoating). We interpret this
+dummy as capturing general FX return risk.22Hence, the new regression coefﬁcients
+measure the extra exposure to the global factors for currencies that bear some FX return
+risk (and are ﬂoating).
+In column (3) of Table 9, we instead use a carry trade risk dummy which is one if a
+currency pair has a forward premium (difference between monthly forward and current
+spot rate) higher than the cross-sectional average in that month (and the currency is ﬂoat-
+ing).23In column (4), we use a volatility risk dummy which is equal to one if a currency
+pair has a higher realized volatility than the cross-sectional average in that month (and
+is ﬂoating). V olatility is measured as the monthly squared return. Finally, in column
+(5), liquidity risk is captured by a dummy variable equal to one if an exchange rate has
+21The magnitude of the coefﬁcients differs a bit compared to Table 8 since the various exchange rates
+are here given a different weighting than according to the principal component that deﬁnes the systematic
+liquidity.
+22Conceptually, this variable can also be related to momentum strategies in FX markets, recently stud-
+ied by e.g. Asness, Moskowitz, and Pedersen (2012), Burnside, Eichenbaum, and Rebelo (2011), and
+Menkhoff, Sarno, Schmeling, and Schrimpf (2012b).
+23We exclude from the panel the observations, for which monthly forward data is not available.
+25
+=== PAGE 27 ===
+stronger commonality (in terms of R2as in Figure 5) in FX liquidity than the sample
+average (and is ﬂoating). This last dummy variable is (in contrast to the other dummies)
+not time-varying.
+The main result in Table 9 is that riskier currencies are more exposed to FX market liq-
+uidity drops. This pattern materializes in three ways. First, an increase in stock volatility
+and in default spreads is associated with more severe liquidity drops for those exchange
+rates that depreciate more against the U.S. dollar (column 2) and for those exchange rates
+with large volatility increases (column 4). Hence, the FX return risk and volatility risk
+strengthen the effects of the stock market and corporate bond risks. Second, the liquidity
+of those currencies more exposed to the carry trade risk deteriorates more with an in-
+crease of corporate bonds yields (column 3). Third, the liquidity risk appears to be more
+discernible in terms of funding liquidity risk, that is, as the TED spread increases (column
+5), the liquidity tends to evaporate more for those currencies with stronger commonality
+in FX liquidity. Overall, these ﬁndings conﬁrm that currency-pair liquidities and not only
+FX liquidity are related to global risk factors. Moreover, the exchange rates that bear
+larger risk premiums are more exposed to liquidity drops.
+7 Concluding Remarks
+This paper provides evidence that liquidity measures based on low-frequency (LF) data
+can reliably measure liquidity on the foreign exchange (FX) market. To do this, we com-
+pare LF measures based on readily available data to high-frequency (HF) measures based
+on data that are highly sophisticated but very limited and difﬁcult to access.
+We perform a comparative analysis between LF and HF measures using nine currency
+pairs that roughly captures three quarters of the daily average FX trading volume. Our
+sample period spans from January 2007 to May 2012, which includes a pre-crisis phase
+and the most recent ﬁnancial turmoil. Comparing the monthly time series of eight LF
+liquidity measures to the HF effective cost (our benchmark), we ﬁnd that three measures
+perform particularly well, namely CS(from Corwin and Schultz (2012)), Gibbs (from
+Hasbrouck (2009)), and Volatility . These liquidities measures have correlations of around
+0.90 with the HF effective cost benchmark. Two other measures, the LOT measure from
+Lesmond, Ogden, and Trzcinka (1999) and the BAspread, do a worse, but still reasonably
+good job. In contrast, the Roll from Roll (1984), BPW from Bao, Pan, and Wang (2011)
+26
+=== PAGE 28 ===
+andEffTick from Holden (2009) are much less effective in gauging FX liquidity. We then
+combine the best LF measures for all currency pairs to construct an index of systematic
+FX liquidity. This index has a 0.93 correlation with the HF effective cost benchmark. This
+is evidence of that FX liquidity can be measured on the basis of readily available (daily)
+data and fairly simple methods.
+In order to document the long-term pattern of FX liquidity, we compute the systematic
+LF liquidity index from 1991 across forty currency pairs. First, we analyze commonality
+in FX liquidities. Our results indicate strong commonality, especially for developed cur-
+rencies and in highly volatile markets. Our ﬁndings also suggest that FX commonality is
+more pronounced than on stock markets and that FX liquidity of developed and emerg-
+ing currencies is positively related to stock and bond market liquidity. Second, our study
+suggests that a substantial part of the common variation in currency liquidity is due to
+risk. FX illiquidity is tied to risk variables of the main asset markets consistent with the
+liquidity spirals theory and more in general, with ﬂight-to-quality and ﬂight-to-liquidity
+phenomena. Cross-sectionally, exchange rates bearing larger risk premiums identiﬁed by
+the recent FX asset pricing literature tend to be more exposed to liquidity drops.
+Our ﬁndings are relevant for investors, policymakers and researchers. First, investors
+are interested in returns net of transaction costs. The liquidity measures analyzed in this
+study should help estimate transaction costs in FX markets. Second, for market partici-
+pants the recent ﬁnancial crisis has proved that liquidity can suddenly evaporate even on
+the FX market. More generally, our results suggest other channel of risk spillovers, i.e.
+from risk intensiﬁcation in one market to illiquidity in another (the FX market, in this
+case). Third, liquidity issues dominate the agenda of policymakers, see e.g. the liquid-
+ity requirements in Basel III. Fourth and ﬁnally, researchers try to shed light on intricate
+market mechanisms, including the spiral dynamics between market liquidity and funding
+liquidity. All this calls for reliable methods and accessible data to gauge FX liquidity and
+in-depth understanding of liquidity issues on currency markets.
+27
+=== PAGE 29 ===
+References
+A., L. D., 2005, “Liquidity of emerging markets,” Journal of Financial Economics , 77,
+411–452.
+Acharya, V . V ., and L. H. Pedersen, 2005, “Asset pricing with liquidity risk,” Journal of
+Financial Economics , 77, 375–410.
+Acharya, V . V ., and S. Viswanathan, 2011, “Leverage, moral hazard, and liquidity,” The
+Journal of Finance , 66, 99–138.
+Aït-Sahalia, Y ., P. A. Mykland, and L. Zhang, 2005, “How often to sample a continuous-
+time process in the presence of market microstructure noise,” Review of Financial Stud-
+ies, 18, 351–416.
+Amihud, Y ., 2002, “Illiquidity and stock returns: cross-section and time-series effects,”
+Journal of Financial Markets , 5, 31–56.
+Amihud, Y ., and H. Mendelson, 1986, “Asset Prising and the bid-ask spread,” Journal of
+Financial Economics , 17, 223–249.
+Amihud, Y ., H. Mendelson, and B. Lauterbach, 1997, “Market microstructure and securi-
+tites values: evidence from Tel Aviv stock exchange,” Journal of Financial Economics ,
+45, 365–390.
+Asness, C., T. Moskowitz, and L. H. Pedersen, 2012, “Value and Momentum Every-
+where,” Journal of Finance, forthcoming.
+Bank of International Settlements, 2013, “Foreign exchange and derivatives market activ-
+ity in April 2013,” Triennial Central Bank Survey.
+Banti, C., K. Phylaktis, and L. Sarno, 2012, “Global liquidity risk in the foreign exchange
+market,” Journal of International Money and Finance , 31, 267–291.
+Bao, J., J. Pan, and J. Wang, 2011, “The illiquidity of corporate bonds,” Journal of Fi-
+nance , 66, 911–946.
+Beber, A., M. W. Brandt, and K. A. Kavajecz, 2009, “What Does Equity Sector Orderﬂow
+Tell Us About the Economy?,” Review of Financial Studies , 24, 3688–3730.
+28
+=== PAGE 30 ===
+Berger, D. W., A. P. Chaboud, S. V . Chernenko, E. Howorka, and J. H. Wright, 2008,
+“Order ﬂow and exchange rate dynamics in electronic brokerage system data,” Journal
+of International Economics , 75, 93–109.
+Bessembinder, H., 1994, “Bid-ask spreads in the interbank foreign exchange markets,”
+Journal of Financial Economics , 35, 317–348.
+Bjønnes, G. H., and D. Rime, 2005, “Dealer Behavior and Trading Systems in Foreign
+Exchange Markets,” Journal of Financial Economics , 75, 571–605.
+Bollerslev, T., and M. Melvin, 1994, “Bid-ask spreads and volatility in the foreign ex-
+change market,” Journal of International Economics , 36, 355–372.
+Breedon, F., and A. Ranaldo, 2012, “Intraday Patterns in FX Returns and Order Flow,”
+Journal of Money, Credit and Banking, forthcoming.
+Breedon, F., and P. Vitale, 2010, “An empirical study of portfolio-balance and information
+effects of order ﬂow on exchange rates,” Journal of International Money and Finance ,
+29, 504–524.
+Brunnermeier, M. K., S. Nagel, and L. H. Pedersen, 2009, “Carry trades and currency
+crashes,” NBER Macroeconomics Annual , 23, 313–347.
+Brunnermeier, M. K., and L. H. Pedersen, 2009, “Market Liquidity and Funding Liquid-
+ity,”The Review of Financial Studies , 22, 2201–2238.
+Burnside, C., M. Eichenbaum, and S. Rebelo, 2011, “Carry trade and momentum in cur-
+rency markets,” Annual Review of Financial Economics , 3, 511–535.
+Campbell, J. Y ., S. J. Grossman, and J. Wang, 1993, “Trading volume and serial correla-
+tion in stock returns,” The Quarterly Journal of Economics , 108, 905–39.
+Chaboud, A. P., S. V . Chernenko, and J. H. Wright, 2007, “Trading activity and exchange
+rates in high-frequency EBS data,” International Finance Discussion Papers, Board of
+Governors of the Reserve System and Harvard University.
+Chordia, T., R. Roll, and A. Subrahmanyam, 2000, “Commonality in liquidity,” Journal
+of Finance , 52, 3–28.
+29
+=== PAGE 31 ===
+Chordia, T., R. Roll, and A. Subrahmanyam, 2001, “Market liquidity and trading activity,”
+Journal of Finance , 56, 501–530.
+Chordia, T., A. Sarkar, and A. Subrahmanyam, 2005, “An empirical analysis of stock and
+bond market liquidity,” Review of Finan , 18, 85–129.
+Christiansen, C., A. Ranaldo, and P. Söderlind, 2011, “The time-varying systematic risk
+of carry trade strategies,” Journal of Financial and Quantitative Analysis , 46, 1107–
+1125.
+Cooper, K. S., J. C. Groth, and W. E. Avera, 1985, “Liquidity, exchange listing and com-
+mon stock performance,” Journal of Economics and Business , 37, 19–33.
+Corwin, S. A., and P. H. Schultz, 2012, “A simple way to estimate bid-ask spreads from
+daily high and low prices,” Journal of Finance , 67, 719–759.
+Datar, V . T., N. Y . Naik, and R. Radcliffe, 1998, “Liquidity and stock returns: An alterna-
+tive test,” Journal of Financial Markets , 1, 203 –219.
+Deuskar, P., A. Gupta, and M. G. Subrahmanyam, 2011, “Liquidity effect in OTC options
+markets: premium or discount?,” Journal of Financial Markets , 14, 127–160.
+Dick-Nielsen, J., P. Feldhütter, and D. Lando, 2012, “Corporate bond liquidity before and
+after the onset of the subprime crisis,” Journal of Financial Economics , 103, 471–492.
+Driscoll, J. C., and A. C. Kraay, 1998, “Consistent covariance matrix estimation with
+spatially dependent panel data,” Review of Economics and Statistics , 80, 549–560.
+Evans, M. D. D., and R. K. Lyons, 2002, “Order ﬂow and exchange rate dynamics,”
+Journal of Political Economy , 110, 170–180.
+Fama, E. F., and K. R. French, 1993, “Common risk factors in the returns on stocks and
+bonds,” Journal of Financial Economics , 33, 3–56.
+Fleming, J., C. Kirby, and B. Ostdiek, 1998, “Information and volatility linkages in the
+stock, bond, and money markets,” Journal of Financial Economics , 49, 111–137.
+Fong, K. Y . L., C. W. Holden, and C. Trzcinka, 2011, “What are the best liquidity proxies
+for global research?,” Working paper.
+30
+=== PAGE 32 ===
+Garleanu, N., and L. H. Pedersen, 2007, “Liquidity and risk management,” American
+Economic Review , 97, 193–197.
+Glosten, L. R., and P. R. Milgrom, 1985, “Bid, ask and transaction prices in a specialist
+market with heterogeneously informed traders,” Journal of Financial Economics , 14,
+71–100.
+Goyenko, R. Y ., C. W. Holden, and C. A. Trzcinka, 2009, “Do liquidity measures measure
+liquidity?,” Journal of Financial Economics , 92, 153–181.
+Goyenko, R. Y ., and A. D. Ukhov, 2009, “Stock and Bond Market Liquidity: A Long-Run
+Empirical Analysis,” Journal of Financial and Quantitative Analysis , 44, 189–212.
+Gurkaynak, R. S., B. Sack, and J. H. Wright, 2007, “The U.S. Treasury Yield Curve: 1961
+to the Present,” Journal of Monetary Economics , 54(8), 2291–2304.
+Hameed, A., W. Kang, and S. Viswanathan, 2010, “Stock market declines and liquidity,”
+Journal of Finance , 65, 257–293.
+Harris, L. E., 1990, “Statistical properties of the Roll serial covariance bid/ask spread
+estimator,” Journal of Finance , 45, 579–590.
+Hasbrouck, J., 2009, “Trading costs and returns for us equities: estimating effective costs
+from daily data,” Journal of Finance , 64, 1445–1477.
+Hasbrouck, J., and D. J. Seppi, 2001, “Common factors in prices, order ﬂows, and liquid-
+ity,”Journal of Financial Economics , 59, 383–411.
+Hau, H., and H. Rey, 2006, “Exchange Rates, Equity Prices, and Capital Flows,” Review
+of Financial Studies , 19, 273–317.
+Holden, C. W., 2009, “New low-frequency liquidity measures,” Journal of Financial Mar-
+kets, 12, 778–813.
+Hsieh, D. A., and A. W. Kleidon, 1996, “Bid-Ask Spreads in Foreign Exchange Mar-
+kets: Implications for Models of Asymmetric Information,” in J.A. Frankel, G. Galli,
+andA. Giovannini (ed.), The Microstructure of Foreign Exchange Markets . pp. 41–65,
+Chicago University Press, Chicago, National Bureau of Economic Research Confer-
+ence Report Series.
+31
+=== PAGE 33 ===
+Hu, X., J. Pan, and J. Wang, 2012, “Noise as information for illiquidity,” Journal of
+Finance, forthcoming.
+Huberman, G., and D. Halka, 2001, “Systematic Liquidity,” Journal of Financial Re-
+search , 24, 161–178.
+Johann, T., and E. Theissen, 2013, “Liquidity measures,” Bell, A., C. Brooks and M.
+Prokopczuk (eds): Handbook of Research Methods and Applications in Empirical Fi-
+nance, forthcoming.
+Karolyi, G. A., K.-H. Lee, and M. A. V . Dijk, 2012, “Understanding commonality in
+liquidity around the world,” Journal of Financial Economics , 105, 82–112.
+Korajczyk, R. A., and R. Sadka, 2008, “Pricing the commonality across alternative mea-
+sures of liquidity,” Journal of Financial Economics , 87, 45–72.
+Kyle, A. S., 1985, “Continuous auctions and insider trading,” Econometrica , 53, 1315–
+1335.
+Kyle, A. S., and W. Xiong, 2001, “Contagion as a wealth effect,” Journal of Finance , 56,
+1401–1440.
+Lee, T.-H., 1994, “Spread and volatility in spot and forward exchange rates,” Journal of
+International Money and Finance , 13, 375–383.
+Lesmond, D. A., J. P. Ogden, and C. Trzcinka, 1999, “A new estimate of transaction
+costs,” Review of Financial Studies , 12, 1113–1141.
+Lustig, H., and A. Verdelhan, 2007, “The cross-Section of foreign currency risk premia
+and consumption growth risk,” American Economic Review , 97 (1), 89–117.
+Lustig, H. N., N. L. Roussanov, and A. Verdelhan, 2011, “Common risk factors in cur-
+rency markets,” Review of Financial Studies , 24, 3731–3777.
+Lyons, R. K., 2001, The microstructure approach to exchange rates , MIT Press.
+Mancini, L., A. Ranaldo, and J. Wrampelmeyer, 2012, “Liquidity in the foreign exchange
+market: measurement, commonality, and risk premiums,” Journal of Finance, forth-
+coming.
+32
+=== PAGE 34 ===
+Marsh, I. W., and C. O’Rourke, 2011, “Customer order ow and exchange rate movements:
+Is there really information content?,” Working paper, Cass Business School.
+Marshall, B. R., N. H. Nguyen, and N. Visaltanachoti, 2012, “Commodity Liquidity Mea-
+surement and Transaction Costs,” Review of Financial Studies , 25, 599–638.
+Melvin, M., and X. Yin, 2000, “Public information arrival, exchange rate volatility, and
+quote frequency,” Economic Journal , 110, 644–661.
+Menkhoff, L., L. Sarno, M. Schmeling, and A. Schrimpf, 2012a, “Carry trades and global
+foreign exchange volatility,” Journal of Finance , 67, 681–718.
+Menkhoff, L., L. Sarno, M. Schmeling, and A. Schrimpf, 2012b, “Currency momentum
+strategies,” Journal of Financial Economics , 106, 660–684.
+Morris, S., and H. S. Shin, 2004, “Liquidity Black Holes,” Review of Finance , 8, 1–18.
+Newey, W. K., and K. D. West, 1987, “A simple, positive semi-deﬁnite, heteroskedasticity
+and autocorrelation consistent covariance matrix,” Econometrica , 55, 703–708.
+Pàstor, L., and R. F. Stambaugh, 2003, “Liquidity risk and expected stock returns,” Jour-
+nal of Political Economy , 111, 642–685.
+Roll, R., 1984, “A simple implicit measure of the effective bid-ask spread in an efﬁcient
+market,” Journal of Finance , 39, 1127–1139.
+Stoll, H. R., 1978, “The Supply of Dealer Services in Securities Markets,” Journal of
+Finance , 33, 1133–51.
+Vayanos, D., 2004, “Flight to quality, ﬂight to liquidity, and the pricing of risk,” NBER
+Working paper.
+Vayanos, D., and D. Gromb, 2002, “Equilibrium and Welfare in Markets with Financially
+Constrained Arbitrageurs,” Journal of Financial Economics , 66, 361–407.
+Vayanos, D., and J. Wang, 2012, “Liquidity and Asset Prices under Asymmetric Informa-
+tion and Imperfect Competition,” Review of Financial Studies , 25, 1339–1365.
+Xiong, W., 2001, “Convergence trading with wealth effects: an ampliﬁcation mechanism
+in ﬁnancial markets,” Journal of Financial Economics , 62, 247–292.
+33
+=== PAGE 35 ===
+AUD/USD ECU/CHF ECU/GBP ECU/JPY DEM/USD GBP/USD USD/CAD USD/CHF USD/JPY00.511.5Black Wednesday, Sep 1992
+  
+Month before the event
+End−event month
+End−next month
+End−second next month
+AUD/USD EUR/CHF EUR/GBP EUR/JPY EUR/USD GBP/USD USD/CAD USD/CHF USD/JPY01234Lehman collapse, Sep 2008
+  
+Month before the event
+End−event month
+End−next month
+End−second next monthFigure 1: Effect of the crisis events on the estimated EC. Figure depicts the monthly esti-
+mated EC (in basis points) for 9 exchange rates before and after two crisis events: “the
+Black Wednesday” on 16 September 1992 and “Lehman collapse” on 15 September 2008.
+The estimated Effective Cost (EC) for FX rate iis calculated from ECest
+iDCLi,
+whereLiis the low-frequency currency pair liquidity ( iD1:::9),andare taken
+from regressions ECiDCLiC", performed over 2007 - 2012 with the actual high-
+frequency EC as the dependent variable. The R2values from these nine regressions range
+from 46% to 82% and are on average 66%. The low-frequency currency pair liquidity is
+obtained from the PCA across three best LF liquidity proxies ( CS,Gibbs andVolatility ).
+34
+=== PAGE 36 ===
+01/07 07/07 01/08 08/08 02/09 08/09 03/10 09/10 04/11 10/11 04/12−4−3−2−1012Figure 2: Across-currencies effective cost (HF) vs. systematic low-frequency (LF) liquidity.
+The across-currencies effective cost liquidity is obtained from the PCA across exchange
+rates (dotted line). The systematic LF liquidity is obtained from the PCA across exchange
+rates as well as three best LF liquidity measures ( CS,Gibbs andVolatility ). Both measures
+are standardized. The sign of each liquidity measure is adjusted such that the measure
+represents liquidity rather than illiquidity. The sample is January 2007 – May 2012, 65
+months.
+35
+=== PAGE 37 ===
+0 2 4 6 8 10 12 14 16 18 200.40.50.60.70.80.91
+Frequency (number of working days)Correlation coefficient
+  
+CS
+Gibbs
+Volatility
+BA
+Systematic liquidityFigure 3: Low-frequency (LF) liquidity measures based on different frequencies vs effective
+cost liquidity. Each line represents the correlations of the LF liquidity measures based on
+different frequencies with the effective cost benchmark. Whenever it is possible, each
+liquidity measure is computed for one, two, three days and for one, two and four weeks.
+LF liquidity measures include across-currencies CS,Gibbs ,Volatility ,BA, and systematic
+LF liquidity. The systematic LF liquidity is based on the PCA across the FX rates as well
+as across the best LF measures available at each frequency ( Volatility andBAon one-
+day; Volatility ,CSandBAon two- and three-day; Volatility ,Gibbs andCSfrom ﬁve-day
+frequency up). The sample is January 2007 – May 2012.
+36
+=== PAGE 38 ===
+1991 1994 1997 2000 2003 2006 2009 2012−6−5−4−3−2−1012
+Black
+Wednesday
+Tequila
+peso
+crisisAsian
+crisis
+Russian
+crisis9/11Sovereign
+crisis"Liquidity"
+crisis
+Financial
+crisisFigure 4: Systematic low-frequency (LF) FX liquidity over 1991–2012. Figure depicts the
+monthly standardized systematic LF liquidity obtained from the PCA across the 40 ex-
+change rates as well as three best LF liquidity proxies ( CS,Gibbs andVolatility ). The
+sign of each liquidity measure is adjusted such that the measure represents liquidity rather
+than illiquidity. The dotted lines denote the dates of ﬁnancial and geopolitical crises over
+1991–2012. The sample is January 1991 – May 2012, 257 months.
+37
+=== PAGE 39 ===
+00.10.20.30.40.50.60.70.8
+EUR/USD
+JPY/USD
+GBP/USD
+AUD/USDCAD/USD
+CHF/USD
+JPY/EUR
+GBP/EURCHF/EUR
+SEK/USD
+CAD/EURAUD/EUR
+DKK/USD
+DKK/GBP
+AUD/GBPCAD/GBP
+CHF/GBP
+JPY/GBP
+NOK/EUR
+NOK/GBP
+NOK/USD
+NZD/EUR
+NZD/GBP
+NZD/USD
+SEK/USD
+HKD/USD
+MYR/USD
+HKD/EUR
+HKD/GBP
+MYR/GBP
+TRY/GBP
+INR/USD
+KRW/USD
+MXN/USD
+SGD/EUR
+SGD/GBP
+SGD/USD
+TWD/USD
+ZAR/GBP
+ZAR/USDFloating and emerging
+mean R2 = 0.18Pegged and emerging
+mean R2 = 0.37Floating, developed and less liquid
+mean R2 = 0.43Floating, developed and liquid
+mean R2 = 0.45Figure 5: Commonality in the FX liquidity for each currency pair. The Figure shows the R2
+from regressing individual FX liquidities on the systematic LF liquidity. The individual
+FX rate liquidities are obtained from the PCA across the three best LF liquidity proxies
+(CS,Gibbs andVolatility ) for each currency pair. The systematic LF liquidity is obtained
+from the PCA across the 40 exchange rates as well as the three best LF liquidity proxies.
+For each exchange rate, its liquidity is regressed on the systematic LF liquidity. Each
+bar represents the R2from these regressions. The exchange rates in the developed and
+liquid group are sorted according to their FX market turnover in April 2010 (Bank of
+International Settlements (2013)), starting from the highest turnover (on the left). The
+exchange rates in all the other groups are sorted alphabetically. White bars denote the
+pegged currency pairs. Grey bars denote the currency pairs, where one currency in a pair
+is pegged to the currency outside the pair. The sample is January 1991 – May 2012, 257
+months.
+38
+=== PAGE 40 ===
+00.10.20.30.40.5
+  
+All currencies
+Developed
+Emerging
+Whole period,
+Jan 1991 − May 2012Pre−Euro,
+Jan 1991 − Dec 1998After−Euro,
+Jan 1999 − Jun 2008Financial crisis,
+Jul 2008 − May 2012Figure 6: Commonality in the FX liquidity by groups and sub-periods. The Figure shows
+the averageR2from regressing individual FX liquidities on the systematic LF liquidity
+for different groups of non-pegged currencies and for different periods. The groups of
+(ﬂoating) currencies are: all 32 currencies, 23 developed and 9 emerging. The periods
+are: whole period (Jan 1991 - May 2012), pre-Euro (Jan 1991 - Dec 1998), after-Euro
+(Jan 1999 - Jun 2008) and ﬁnancial crisis (Jul 2008 - May 2012). The individual FX
+rate liquidities are obtained from the PCA across the three best LF liquidity proxies ( CS,
+Gibbs andVolatility ) for each currency pair. The systematic LF liquidity is obtained from
+the PCA across the 40 exchange rates as well as the three best LF liquidity proxies. The
+sample is January 1991 – May 2012, 257 months.
+39
+=== PAGE 41 ===
+EC BA PI RR PD
+Effective cost 1
+Bid-ask 0.985 1
+Price impact 0.963 0.946 1
+Return reversal -0.939 -0.951 -0.917 1
+Price dispersion 0.940 0.947 0.898 -0.937 1
+Table 1: Correlations between the across-currencies high-frequency (HF) liquidity mea-
+sures. The table shows correlations between the across-currencies effective cost ( EC),
+bid-ask spread ( BA), price impact ( PI), return reversal ( RR), and price dispersion ( PD).
+The across-currencies EC,BA,PI,RR, and PDare computed from the PCA (within mea-
+sures) across individual FX rate liquidities. Bold numbers are statistically signiﬁcant at
+the 5% level. The signiﬁcance test is the GMM based test using a Newey and West (1987)
+covariance estimator with 4 lags. Correlations are computed using 65 non-overlapping
+monthly observations. The sample is January 2007 – May 2012.
+40
+=== PAGE 42 ===
+Roll BPW BA CS Gibbs V olatility EffTick LOT
+AUD/USD 0.678 0.597 0.540 0.852 0.812 0.851 0.284 0.629
+EUR/CHF 0.425 0.170 0.505 0.780 0.790 0.848 0.199 0.381
+EUR/GBP 0.156 -0.353 0.745 0.754 0.623 0.867 0.093 0.214
+EUR/JPY 0.543 0.525 0.750 0.687 0.673 0.729 -0.034 0.581
+EUR/USD 0.234 0.073 0.477 0.510 0.600 0.712 0.020 0.347
+GBP/USD -0.013 -0.501 0.725 0.818 0.747 0.929 0.142 0.595
+USD/CAD -0.008 -0.017 0.254 0.628 0.616 0.710 0.037 0.213
+USD/CHF 0.280 0.035 0.520 0.609 0.756 0.874 0.014 0.443
+USD/JPY 0.423 0.400 0.413 0.746 0.643 0.759 -0.224 0.431
+Average 0.302 0.103 0.548 0.709 0.695 0.809 0.059 0.426
+Table 2: Correlations between the FX rate LF liquidities and the EC. The table
+shows the time-series correlations of the eight low-frequency liquidity measures for each
+exchange rate with the effective cost measure for the same exchange rate. Effective cost
+denotes the monthly average of daily effective cost estimates. The monthly low-frequency
+spread proxies are: Roll from Roll from Roll (1984), BAis the relative bid-ask spread,
+BPW from Bao, Pan, and Wang (2011), CSfrom Corwin and Schultz (2012), Gibbs from
+Hasbrouck (2009), Volatility ,EffTick from Holden (2009), and LOT from Lesmond, Og-
+den, and Trzcinka (1999). Bold numbers are statistically signiﬁcant at the 5% level (GMM
+based test using a Newey-West covariance estimator with 4 lags). The sample is January
+2007 – May 2012, 65 months.
+41
+=== PAGE 43 ===
+Roll BPW BA CS Gibbs V olatility EffTick LOT
+Whole sample (Jan 2007 - May 2012), 65 months
+0.584 0.555 0.663 0.896 0.890 0.930 0.023 0.612
+Pre-crisis (Jan 2007 - Jun 2008), 18 months
+0.493 0.282 0.704 0.838 0.761 0.887 -0.156 0.066
+Financial crisis (Jul 2008 - Dec 2009), 18 months
+0.568 0.591 0.818 0.902 0.900 0.935 0.072 0.702
+European sovereign debt crisis (Jan 2010 - May 2012), 29 months
+0.445 0.110 0.390 0.826 0.763 0.783 0.086 0.139
+Table 3: Correlations between the across-currencies LF liquidities and the EC. The
+table shows times-series correlations between the across-currencies LF liquidities and
+the across-currencies effective cost over the whole period and over three subperiods:
+pre-crisis (Jan 2007 – June 2008), ﬁnancial crisis (Jul 2008 – Dec 2009) and European
+sovereign debt crisis (Jan 2010 – May 2012). The monthly low-frequency spread prox-
+ies are: Roll from Roll (1984), BAis the relative bid-ask spread, BPW from Bao, Pan,
+and Wang (2011), CSfrom Corwin and Schultz (2012), Gibbs from Hasbrouck (2009),
+Volatility ,EffTick from Holden (2009), and LOT from Lesmond, Ogden, and Trzcinka
+(1999). The across-currencies measures are based on the PCA (within measures) across
+individual FX rate liquidites. Bold numbers are statistically signiﬁcant at the 5% level
+(GMM based test using a Newey and West (1987) covariance estimator with 4 lags). The
+sample is January 2007 – May 2012, 65 months.
+42
+=== PAGE 44 ===
+Amihud Amivest Pastor-
+Stambaugh
+Whole sample (Jan 2007 - May 2012), 65 months
+0.815 -0.502 -0.144
+Pre-crisis (Jan 2007 - Jun 2008), 18 months
+0.652 -0.371 0.001
+Financial crisis (Jul 2008 - Dec 2009), 18 months
+0.916 -0.825 -0.297
+European sovereign debt crisis (Jan 2010 - May 2012), 29 months
+0.797 -0.770 -0.032
+Table 4: Correlations between the across-currencies quote-based LF liquidities and
+the EC. The table shows the time-series correlations of the across-currencies quote-
+based LF measures with the across-currencies effective cost over the whole period and
+over three subperiods: pre-crisis (Jan 2007 - Jun 2008), ﬁnancial crisis (Jul 2008 - Dec
+2009) and European sovereign debt crisis (Jan 2010 - May 2012). The monthly quote-
+based low-frequency spread proxies are: Amihud from Amihud (2002), Amivest from
+Cooper, Groth, and Avera (1985) and Amihud, Mendelson, and Lauterbach (1997), and
+Pastor-Stambaugh from Pàstor and Stambaugh (2003). The across-currencies measures
+are based on the PCA (within measures) across the individual FX rate liquiditites. Bold
+numbers are statistically signiﬁcant at the 5% level. The sample is January 2007 - May
+2012, 65 months.
+43
+=== PAGE 45 ===
+(1) (2) (3) (4) (5)
+LF liquidity 0.929
+[19.950]
+V olatility 0.930 0.930 0.930 1.049
+[20.092] [21.059] [21.059] [15.124]
+V olatilitydummy -0.207
+[-2.214]
+CS0.253
+[2.187]
+Gibbs0.204
+[1.851]
+GibbsC0.245
+[2.275]
+CSCC0.206
+[1.742]
+R20.863 0.865 0.881 0.881 0.872
+Table 5: Regressions of the across-currencies EC on the LF liquidities. The table shows
+the output of the regression of the across-currencies effective cost on (1) the systematic
+LF liquidity, obtained from the PCA across FX rates as well as best LF liquidities, (2)
+the across-currencies volatility, (3)-(4) the rotated best across-currencies low-frequency
+measures, (5) the across-currencies volatility and the latter interacted with the dummy,
+which takes 1, if there was an increase in volatility (illiquidity) one month before, zero
+otherwise. The best across-currencies low-frequency measures include: Volatility ,CS
+(from Corwin and Schultz (2012)), Gibbs (Hasbrouck (2009)). All the across-currencies
+liquidity measures are obtained from the PCA (within measures) across individual FX
+rates liquidites and standardized. * denotes the second factor in the rotation [V olatility,
+CS, Gibbs]. ** denotes the third factor in the rotation [V olatility, CS, Gibbs].Cdenotes
+the second factor in the rotation [V olatility, Gibbs, CS].CCdenotes the third factor in the
+rotation [V olatility, Gibbs, CS]. The t-statistics is shown in the brackets. Bold numbers
+are statistically signiﬁcant at the 5% level. The sample is January 2007 – May 2012, 65
+months.
+44
+=== PAGE 46 ===
+CS Gibbs V olatility Systematic
+CS 1
+Gibbs 0.812 1
+V olatility 0.861 0.877 1
+Systematic 0.931 0.935 0.973 1
+Table 6: Correlation between the across-currencies low-frequency (LF) liquidities over 1991-
+2012. The table shows correlations between the across-currencies LF liquidities and sys-
+tematic LF liquidity based on 40 FX rates. The across-currencies CS,Gibbs , and Volatility
+liquidities are obtained from the PCA (within measures) across individual FX rate liq-
+uidites. The systematic liquidity measure is obtained from the PCA across FX rates as
+well as across CS,Gibbs , and Volatility liquidities. Bold numbers are statistically sig-
+niﬁcant at the 5% level. The signiﬁcance test is the GMM based test using a Newey
+and West (1987) covariance estimator with 4 lags. Correlations are computed using 257
+non-overlapping monthly observations. The sample is January 1991 – May 2012.
+45
+=== PAGE 47 ===
+Simple panelSystematic
+FX volatilityJP implied
+FX volatilityTED spreadMSCI
+volatilityVIX indexMean USD
+return
+(1) (2) (3) (4) (5) (6) (7)
+4LM;t 0.579 0.567 0.572 0.564 0.569 0.573 0.570
+[55.415] [62.974] [62.282] [66.052] [62.889] [51.205] [63.163]
+4LM;tDDISTRESSEDMKT;t  1 0.065 0.065 0.090 0.064 0.054 0.055
+[3.020] [3.595] [5.916] [2.875] [2.118] [2.124]
+R20.3347 0.3353 0.3361 0.3358 0.3352 0.3350 0.3351
+Sum(DDISTRESSEDMKT;t  1) 14 10 18 18 18 16
+Number of obs. 255 255 239 255 255 255 255
+Table 7: Commonality in FX liquidity in the distressed markets. Panel of changes in FX rate liquidities is regressed on the
+changes in systematic FX liquidity and systematic FX liquidity 4LM;t, interacted with a dummy DDISTRESSEDMKT;t  1.
+DDISTRESSEDMKT;t  1is equal to one if the risk factor (systematic FX volatility, JP implied FX volatility, TED spread, MSCI
+volatility, VIX index or mean USD return) is more than 1.5 standard deviations above its unconditional mean. The intercepts
+are omitted. Standard errors, robust to conditional heteroscedasticity and spatial correlations as in Driscoll and Kraay (1998),
+are reported in brackets. Bold numbers are statistically signiﬁcant at the 5% level. The sample for speciﬁcations (1), (2) and
+(4)-(7) is January 1991 – May 2012, the sample for speciﬁcation (3) is April 1992 – May 2012.
+46
+=== PAGE 48 ===
+4LM;t is based on... 32 currencies 23 developed currencies 11 emerging currencies
+Group "Best" factor (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12)
+FX return Mean USD return -0.011 -0.020 0.016 0.012 -0.135 -0.163
+[-0.189] [-0.338] [0.282] [0.207] [-2.278] [-2.165]
+FX risk 4JP FX impl vol -0.372 -0.345 -0.341 -0.294 -0.428 -0.510
+[-4.334] [-3.837] [-3.736] [-3.075] [-6.675] [-6.721]
+Int rates return 4Fefunds rate 0.103 0.063 -0.019 0.109 0.070 -0.019 0.050 0.013 0.006
+[1.662] [1.038] [-0.305] [1.693] [1.090] [-0.299] [1.013] [0.284] [0.104]
+Int rates risk 4TED -0.114 -0.104 -0.142 -0.128 -0.121 -0.160 -0.005 0.018 -0.004
+[-2.439] [-2.774] [-3.440] [-2.661] [-2.994] [-3.639] [-0.100] [0.475] [-0.095]
+Corp bonds return 4iBAA 0.062 0.035 0.019 0.063 0.034 0.011 0.062 0.053 0.074
+[1.068] [0.682] [0.282] [1.116] [0.666] [0.169] [1.001] [0.933] [0.905]
+Corp bonds risk 4US def spread -0.188 -0.121 -0.095 -0.174 -0.113 -0.085 -0.196 -0.115 -0.105
+[-2.930] [-2.140] [-1.368] [-2.701] [-1.960] [-1.254] [-2.980] [-1.848] [-1.150]
+Stocks return MSCI return 0.047 -0.029 -0.012 0.050 -0.004 0.020 0.027 -0.134 -0.159
+[0.776] [-0.467] [-0.184] [0.834] [-0.070] [0.310] [0.368] [-1.569] [-1.575]
+Stocks risk 4MSCI vol -0.435 -0.325 -0.268 -0.428 -0.323 -0.264 -0.384 -0.281 -0.250
+[-6.432] [-4.169] [-3.088] [-6.272] [-3.975] [-2.944] [-4.994] [-4.490] [-2.910]
+4LM;t 1 -0.299 -0.289 -0.275 -0.185 -0.302 -0.291 -0.268 -0.182 -0.189 -0.185 -0.240 -0.143
+[-4.382] [-4.139] [-4.272] [-3.461] [-4.266] [-3.968] [-3.956] [-3.215] [-3.123] [-3.300] [-3.268] [-2.334]
+4Stock liquidity 0.212 -0.059 0.200 -0.057 0.234 -0.044
+[2.779] [-0.952] [2.807] [-0.891] [2.211] [-0.487]
+4Bond liquidity 0.392 0.172 0.394 0.192 0.251 -0.008
+[4.137] [2.150] [4.330] [2.296] [2.283] [-0.106]
+R20.395 0.504 0.283 0.537 0.393 0.484 0.281 0.517 0.240 0.391 0.153 0.411
+Number of obs. 255 241 179 179 255 241 179 179 255 241 179 179
+Start of the sample 01/1991 04/1992 01/1995 01/1995 01/1991 04/1992 01/1995 01/1995 01/1991 04/1992 01/1995 01/1995
+End of the sample 05/2012 05/2012 12/2009 12/2009 05/2012 05/2012 12/2009 12/2009 05/2012 05/2012 12/2009 12/2009
+Table 8: Explaining FX systematic liquidity. Systematic FX liquidity (based on the PCA for 32 ﬂoating currencies, 23 ﬂoating developed and 9
+ﬂoating emerging currencies) is regressed on (a) non-FX contemporaneous risk and return variables, and lagged systematic FX liquidity–speciﬁcations
+(1), (5), and (9), correspondingly; (b) all contemporaneous risk and return variables, and lagged systematic FX liquidity–speciﬁcations (2), (6), and
+(10); (c) lagged systematic FX liquidity, contemporaneous stock and bond liquidity–speciﬁcations (3), (7), and (11); (d) all contemporaneous risk and
+return variables, lagged systematic FX liquidity, and contemporaneous stock and bond liquidity–speciﬁcations (4), (8), and (12). All variables except
+for mean USD return and MSCI stock return are in changes. Lagged systematic FX liquidity 4LM;t 1is based on the PCA for all 40 currencies. The
+t-statistics based on the standard errors, robust to conditional heteroscedasticity and serial correlation up to one lag as in Newey and West (1987), are
+reported in brackets. Bold numbers are statistically signiﬁcant at the 5% level. The full sample is January 1991 – May 2012, 257 months.
+47
+=== PAGE 49 ===
+Basic setup FX return risk Carry trade risk V olatility risk Liquidity risk
+(1) (2) (3) (4) (5)
+Int rates return 4Fefunds rateDfloat 0.059 0.046 0.063 0.013 0.033
+[1.575] [1.139] [1.430] [0.354] [1.292]
+Int rates risk 4TEDDfloat -0.056 -0.086 -0.087 -0.076 -0.014
+[-2.088] [-3.714] [-3.600] [-3.294] [-0.458]
+Corp bonds return 4iBAADfloat 0.042 0.040 0.078 0.054 0.037
+[1.260] [1.300] [2.264] [1.857] [1.131]
+Corp bonds risk 4US def spreadDfloat -0.104 -0.053 -0.113 -0.050 -0.079
+[-2.919] [-1.685] [-2.854] [-1.774] [-2.254]
+Stocks return MSCI return Dfloat 0.030 0.028 0.027 0.027 0.036
+[0.846] [0.763] [0.664] [0.836] [1.164]
+Stocks risk 4US def spreadDfloat -0.252 -0.198 -0.216 -0.201 -0.231
+[-6.675] [-5.135] [-4.798] [-5.457] [-6.793]
+4LM;t 1Dfloat -0.168 -0.198 -0.184 -0.146 -0.074
+[-4.598] [-4.726] [-4.077] [-3.953] [-2.775]
+Int rates return 4Fedfunds rateDfloat &cond 0.027 0.001 0.133 0.042
+[0.936] [0.032] [3.055] [1.056]
+Int rates risk 4TEDDfloat &cond 0.058 0.064 0.051 -0.069
+[1.783] [1.628] [1.434] [-2.263]
+Corp bonds return 4iBAADfloat &cond 0.012 -0.082 -0.019 0.008
+[0.321] [-2.041] [-0.512] [0.282]
+Corp bonds risk 4US def spreadDfloat &cond -0.099 0.007 -0.156 -0.041
+[-2.337] [0.114] [-3.774] [-0.953]
+Stocks return MSCI return Dfloat &cond 0.001 -0.004 -0.002 -0.011
+[0.027] [-0.084] [-0.049] [-0.284]
+Stocks risk 4MSCI volatilityDfloat &cond -0.108 -0.106 -0.127 -0.035
+[-2.286] [-1.743] [-3.019] [-0.743]
+4LM;t 1Dfloat &cond 0.057 0.017 -0.094 -0.152
+[1.806] [0.399] [-2.389] [-3.375]
+R20.121 0.128 0.139 0.137 0.127
+Table 9: Explaining FX currency-pair liquidities. In column (1) panel of FX rate liquidities is regressed on non-FX contemporaneous risk
+and return variables and lagged systematic FX liquidity, interacted with the contemporaneous time-varying Dfloat dummy, which takes one if and
+only if the currency pair is ﬂoating. In columns (2)-(4) panel of FX rate liquidities is regressed on non-FX contemporaneous risk and return variables
+and lagged systematic FX liquidity, interacted with the dummy Dfloat &cond , which takes one if and only if the currency pair is ﬂoating and the risk
+condition holds. The dummy in column (2) is one if a currency pair underperforms the cross-sectional average U.S. dollar return in that month (FX
+return risk). The dummy in column (3) is one if a currency pair has forward premium higher than the cross-sectional average in that month (carry trade
+risk). The dummy in column (4) is one if a currency pair has a higher realized volatility (monthly squared return) than the cross-sectional average
+in that month (volatility risk). The dummy in column (5) is one if a currency pair has a stronger commonality than the sample average (liquidity
+risk). The last dummy variable is (in contrast to the other dummies) not time-varying. All variables except for dummies and MSCI stock return are
+in changes. Standard errors, robust to conditional heteroscedasticity and spatial correlations as in Driscoll and Kraay (1998), are reported in brackets.
+Bold numbers are statistically signiﬁcant at the 5% level. The sample is January 1991 – May 2012, 257 months.
+48

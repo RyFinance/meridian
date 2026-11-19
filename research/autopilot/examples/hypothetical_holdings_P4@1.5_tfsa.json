@@ -1,0 +1,13 @@
+{
+ "as_of": "2026-08-31",
+ "cash_cad": 1804.41,
+ "cash_usd": 891.12,
+ "net_external_flow_cad": 0,
+ "positions": {
+  "RSSB": 926,
+  "RSST": 446,
+  "XEQT.TO": 583,
+  "ZAG.TO": 936,
+  "ZGLD.TO": 291
+ }
+}

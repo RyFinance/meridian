@@ -1,0 +1,152 @@
+signal counts NG: {-1.0: 285, 1.0: 277, nan: 4}
+signal counts CL: {1.0: 309, -1.0: 257, nan: 4}
+timing check SPY 09:30 bar open vs daily open: n=297, median abs diff=0.00 bp
+EQT: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$385M cost=2.0bp
+RRC: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$99M cost=5.0bp
+AR: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$153M cost=5.0bp
+CNX: dropped(open mismatch)=0 days=613 dev=273 chk=322 ADV(med)=$65M cost=5.0bp
+EXE: dropped(open mismatch)=0 days=509 dev=185 chk=324 ADV(med)=$319M cost=2.0bp
+LNG: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$387M cost=2.0bp
+KOLD: dropped(open mismatch)=0 days=615 dev=273 chk=324 ADV(med)=$125M cost=5.0bp
+BOIL: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$144M cost=5.0bp
+FCG: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$9M cost=10.0bp
+XOP: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$402M cost=2.0bp
+OIH: dropped(open mismatch)=0 days=615 dev=273 chk=324 ADV(med)=$125M cost=5.0bp
+RIG: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$105M cost=5.0bp
+VAL: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$67M cost=5.0bp
+NOG: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$47M cost=5.0bp
+MTDR: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$77M cost=5.0bp
+SM: dropped(open mismatch)=0 days=613 dev=273 chk=322 ADV(med)=$66M cost=5.0bp
+FRO: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$46M cost=5.0bp
+STNG: dropped(open mismatch)=0 days=613 dev=273 chk=322 ADV(med)=$49M cost=5.0bp
+USO: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$328M cost=2.0bp
+XLE: dropped(open mismatch)=0 days=614 dev=273 chk=323 ADV(med)=$1317M cost=2.0bp
+SPY: dropped(open mismatch)=0 days=613 dev=273 chk=322 ADV(med)=$36879M cost=2.0bp
+ family sig  sym  exit  cost  dev_n  dev_bp  dev_t  chk_n  chk_bp  chk_t  chk_hit  flip_dev_bp  flip_dev_t  flip_chk_bp  flip_chk_t
+    gas  NG  EQT  1030   2.0    248    4.99   0.57    313   15.40   2.03     0.55       -12.99       -1.47       -23.40       -3.09
+    gas  NG  EQT  1130   2.0    248   13.94   1.42    313   11.81   1.39     0.50       -21.94       -2.24       -19.81       -2.33
+    gas  NG  EQT close   2.0    248   15.73   1.23    313   11.29   1.12     0.52       -23.73       -1.85       -19.29       -1.91
+    gas  NG  RRC  1030   5.0    248    5.15   0.61    313   -2.87  -0.41     0.49       -25.15       -2.95       -17.13       -2.45
+    gas  NG  RRC  1130   5.0    248    8.47   0.89    313   -9.12  -1.15     0.44       -28.47       -2.99       -10.88       -1.37
+    gas  NG  RRC close   5.0    248   10.06   0.76    313   -8.26  -0.82     0.47       -30.06       -2.27       -11.74       -1.17
+    gas  NG   AR  1030   5.0    248    4.33   0.46    313   10.11   1.24     0.50       -24.33       -2.58       -30.11       -3.70
+    gas  NG   AR  1130   5.0    248   10.47   0.96    313    3.88   0.43     0.49       -30.47       -2.79       -23.88       -2.64
+    gas  NG   AR close   5.0    248   18.77   1.23    313    4.02   0.35     0.50       -38.77       -2.54       -24.02       -2.08
+    gas  NG  CNX  1030   5.0    248   -3.40  -0.39    312    2.01   0.24     0.52       -16.60       -1.93       -22.01       -2.69
+    gas  NG  CNX  1130   5.0    248   -0.89  -0.09    312   -1.28  -0.15     0.51       -19.11       -1.97       -18.72       -2.15
+    gas  NG  CNX close   5.0    248   -1.84  -0.14    312   -5.72  -0.56     0.49       -18.16       -1.35       -14.28       -1.40
+    gas  NG  EXE  1030   2.0    170    8.45   1.01    314   18.44   2.64     0.57       -16.45       -1.97       -26.44       -3.78
+    gas  NG  EXE  1130   2.0    170    9.62   1.04    314   16.51   2.11     0.54       -17.62       -1.90       -24.51       -3.13
+    gas  NG  EXE close   2.0    170    3.45   0.27    314   14.60   1.53     0.53       -11.45       -0.91       -22.60       -2.37
+    gas  NG  LNG  1030   2.0    248    6.33   0.89    313   11.73   1.77     0.55       -14.33       -2.02       -19.73       -2.98
+    gas  NG  LNG  1130   2.0    248    6.17   0.78    313    9.37   1.33     0.55       -14.17       -1.80       -17.37       -2.47
+    gas  NG  LNG close   2.0    248   -4.53  -0.42    313    6.49   0.78     0.50        -3.47       -0.32       -14.49       -1.75
+    gas  NG KOLD  1030   5.0    248   -8.06  -0.65    313  -11.89  -1.28     0.44       -11.94       -0.96        -8.11       -0.87
+    gas  NG KOLD  1130   5.0    248  -32.38  -1.70    313  -11.08  -0.78     0.45        12.38        0.65        -8.92       -0.63
+    gas  NG KOLD close   5.0    248  -25.26  -0.87    313   -6.48  -0.32     0.48         5.26        0.18       -13.52       -0.68
+    gas  NG BOIL  1030   5.0    248  -10.04  -0.81    313   -4.08  -0.45     0.51        -9.96       -0.81       -15.92       -1.77
+    gas  NG BOIL  1130   5.0    248   11.30   0.61    313   -5.10  -0.36     0.52       -31.30       -1.68       -14.90       -1.06
+    gas  NG BOIL close   5.0    248   10.69   0.38    313  -11.14  -0.58     0.50       -30.69       -1.08        -8.86       -0.46
+    gas  NG  FCG  1030  10.0    248  -15.24  -2.24    313   -8.10  -1.42     0.47       -24.76       -3.65       -31.90       -5.60
+    gas  NG  FCG  1130  10.0    248  -17.85  -2.35    313  -12.92  -2.08     0.45       -22.15       -2.92       -27.08       -4.36
+    gas  NG  FCG close  10.0    248  -23.99  -2.18    313  -16.33  -2.11     0.46       -16.01       -1.46       -23.67       -3.05
+    oil  CL  XOP  1030   2.0    252    1.39   0.20    313   -4.18  -0.70     0.48        -9.39       -1.38        -3.82       -0.64
+    oil  CL  XOP  1130   2.0    252   -0.22  -0.03    313   -2.56  -0.39     0.49        -7.78       -1.00        -5.44       -0.83
+    oil  CL  XOP close   2.0    252  -16.20  -1.48    313   -3.43  -0.42     0.50         8.20        0.75        -4.57       -0.56
+    oil  CL  OIH  1030   5.0    252   -3.49  -0.47    313  -11.54  -1.67     0.47       -16.51       -2.20        -8.46       -1.23
+    oil  CL  OIH  1130   5.0    252   -3.80  -0.44    313  -13.26  -1.68     0.47       -16.20       -1.86        -6.74       -0.85
+    oil  CL  OIH close   5.0    252  -20.90  -1.71    313  -16.01  -1.71     0.47         0.90        0.07        -3.99       -0.43
+    oil  CL  RIG  1030   5.0    252   -1.52  -0.11    313  -19.01  -1.63     0.48       -18.48       -1.29        -0.99       -0.08
+    oil  CL  RIG  1130   5.0    252    6.90   0.43    313  -20.33  -1.53     0.49       -26.90       -1.66         0.33        0.03
+    oil  CL  RIG close   5.0    252    2.75   0.13    313  -28.45  -1.72     0.48       -22.75       -1.06         8.45        0.51
+    oil  CL  VAL  1030   5.0    252  -12.81  -1.17    313  -12.94  -1.20     0.49        -7.19       -0.65        -7.06       -0.66
+    oil  CL  VAL  1130   5.0    252  -10.09  -0.74    313  -14.11  -1.12     0.49        -9.91       -0.73        -5.89       -0.47
+    oil  CL  VAL close   5.0    252  -31.02  -1.66    313  -19.83  -1.22     0.49        11.02        0.59        -0.17       -0.01
+    oil  CL  NOG  1030   5.0    252    3.87   0.40    313  -12.15  -1.30     0.45       -23.87       -2.45        -7.85       -0.84
+    oil  CL  NOG  1130   5.0    252    0.32   0.03    313   -6.78  -0.64     0.49       -20.32       -1.73       -13.22       -1.25
+    oil  CL  NOG close   5.0    252  -22.02  -1.33    313    5.20   0.38     0.50         2.02        0.12       -25.20       -1.83
+    oil  CL MTDR  1030   5.0    252    4.23   0.42    313   -1.80  -0.21     0.49       -24.23       -2.40       -18.20       -2.07
+    oil  CL MTDR  1130   5.0    252    0.15   0.01    313    4.70   0.47     0.50       -20.15       -1.70       -24.70       -2.49
+    oil  CL MTDR close   5.0    252  -18.56  -1.16    313    2.27   0.18     0.50        -1.44       -0.09       -22.27       -1.81
+    oil  CL   SM  1030   5.0    252   -5.98  -0.50    312   -2.38  -0.22     0.48       -14.02       -1.17       -17.62       -1.63
+    oil  CL   SM  1130   5.0    252   -9.25  -0.67    312   -0.16  -0.01     0.49       -10.75       -0.78       -19.84       -1.62
+    oil  CL   SM close   5.0    252  -20.55  -1.13    312   -6.33  -0.42     0.45         0.55        0.03       -13.67       -0.91
+    oil  CL  FRO  1030   5.0    252  -27.43  -3.05    313  -15.52  -1.71     0.47         7.43        0.83        -4.48       -0.49
+    oil  CL  FRO  1130   5.0    252  -25.85  -2.40    313   -3.24  -0.32     0.51         5.85        0.54       -16.76       -1.65
+    oil  CL  FRO close   5.0    252  -36.53  -2.75    313  -19.08  -1.60     0.47        16.53        1.24        -0.92       -0.08
+    oil  CL STNG  1030   5.0    252  -26.30  -2.77    312  -12.48  -1.42     0.46         6.30        0.66        -7.52       -0.86
+    oil  CL STNG  1130   5.0    252  -24.43  -2.33    312   -9.41  -0.98     0.46         4.43        0.42       -10.59       -1.10
+    oil  CL STNG close   5.0    252  -24.00  -1.88    312  -11.14  -1.00     0.49         4.00        0.31        -8.86       -0.79
+    oil  CL  USO  1030   2.0    252   -0.10  -0.02    313   -3.16  -0.76     0.51        -7.90       -1.61        -4.84       -1.16
+    oil  CL  USO  1130   2.0    252   -5.70  -0.87    313   -4.97  -0.80     0.51        -2.30       -0.35        -3.03       -0.49
+    oil  CL  USO close   2.0    252   -9.29  -1.10    313    0.31   0.03     0.53         1.29        0.15        -8.31       -0.88
+    oil  CL  XLE  1030   2.0    252   -2.73  -0.53    313   -5.68  -1.24     0.48        -5.27       -1.02        -2.32       -0.51
+    oil  CL  XLE  1130   2.0    252   -5.17  -0.86    313   -4.09  -0.82     0.45        -2.83       -0.47        -3.91       -0.79
+    oil  CL  XLE close   2.0    252  -14.49  -1.71    313   -8.12  -1.33     0.46         6.49        0.77         0.12        0.02
+placebo  NG  SPY  1030   2.0    248   -6.60  -2.54    312   -5.97  -3.19     0.41        -1.40       -0.54        -2.03       -1.08
+placebo  NG  SPY  1130   2.0    248   -9.91  -3.10    312   -7.85  -3.30     0.43         1.91        0.60        -0.15       -0.06
+placebo  NG  SPY close   2.0    248  -14.74  -2.17    312   -7.04  -2.00     0.44         6.74        0.99        -0.96       -0.27
+placebo  CL  SPY  1030   2.0    252   -6.49  -2.55    312   -6.05  -3.24     0.46        -1.51       -0.59        -1.95       -1.05
+placebo  CL  SPY  1130   2.0    252   -6.00  -1.88    312   -6.45  -2.71     0.43        -2.00       -0.63        -1.55       -0.65
+placebo  CL  SPY close   2.0    252  -18.96  -2.83    312   -8.47  -2.41     0.45        10.96        1.64         0.47        0.13
+  wrong  CL  EQT  1030   2.0    252  -13.46  -1.54    313  -12.02  -1.57     0.45          NaN         NaN          NaN         NaN
+  wrong  CL  EQT  1130   2.0    252  -18.16  -1.84    313  -10.66  -1.25     0.49          NaN         NaN          NaN         NaN
+  wrong  CL  EQT close   2.0    252  -24.96  -1.96    313  -12.30  -1.22     0.44          NaN         NaN          NaN         NaN
+  wrong  CL  RRC  1030   5.0    252  -13.73  -1.62    313  -12.41  -1.77     0.45          NaN         NaN          NaN         NaN
+  wrong  CL  RRC  1130   5.0    252  -10.64  -1.11    313  -12.23  -1.54     0.48          NaN         NaN          NaN         NaN
+  wrong  CL  RRC close   5.0    252  -27.38  -2.08    313  -16.98  -1.69     0.44          NaN         NaN          NaN         NaN
+  wrong  CL   AR  1030   5.0    252  -13.32  -1.45    313  -13.09  -1.60     0.45          NaN         NaN          NaN         NaN
+  wrong  CL   AR  1130   5.0    252  -11.21  -1.02    313  -10.17  -1.12     0.48          NaN         NaN          NaN         NaN
+  wrong  CL   AR close   5.0    252  -26.97  -1.79    313  -13.04  -1.13     0.45          NaN         NaN          NaN         NaN
+  wrong  CL  CNX  1030   5.0    252  -26.57  -3.13    312  -20.67  -2.54     0.46          NaN         NaN          NaN         NaN
+  wrong  CL  CNX  1130   5.0    252  -30.18  -3.17    312  -17.50  -2.02     0.45          NaN         NaN          NaN         NaN
+  wrong  CL  CNX close   5.0    252  -54.11  -4.09    312  -13.82  -1.36     0.48          NaN         NaN          NaN         NaN
+  wrong  CL  EXE  1030   2.0    170  -15.20  -1.72    314  -13.75  -1.92     0.49          NaN         NaN          NaN         NaN
+  wrong  CL  EXE  1130   2.0    170  -21.53  -2.16    314  -13.74  -1.71     0.47          NaN         NaN          NaN         NaN
+  wrong  CL  EXE close   2.0    170  -39.01  -3.04    314  -11.66  -1.20     0.44          NaN         NaN          NaN         NaN
+  wrong  CL  LNG  1030   2.0    252   -3.15  -0.45    313   -2.59  -0.39     0.52          NaN         NaN          NaN         NaN
+  wrong  CL  LNG  1130   2.0    252  -12.12  -1.57    313   -5.97  -0.84     0.51          NaN         NaN          NaN         NaN
+  wrong  CL  LNG close   2.0    252  -17.84  -1.73    313  -15.86  -1.92     0.48          NaN         NaN          NaN         NaN
+  wrong  CL KOLD  1030   5.0    252   -7.28  -0.58    313   -2.84  -0.31     0.48          NaN         NaN          NaN         NaN
+  wrong  CL KOLD  1130   5.0    252    3.68   0.19    313   -5.56  -0.39     0.50          NaN         NaN          NaN         NaN
+  wrong  CL KOLD close   5.0    252   14.80   0.50    313  -39.24  -2.00     0.47          NaN         NaN          NaN         NaN
+  wrong  CL BOIL  1030   5.0    252  -12.37  -1.00    313  -15.79  -1.77     0.47          NaN         NaN          NaN         NaN
+  wrong  CL BOIL  1130   5.0    252  -26.27  -1.38    313  -13.42  -0.96     0.48          NaN         NaN          NaN         NaN
+  wrong  CL BOIL close   5.0    252  -38.75  -1.34    313   19.24   1.01     0.52          NaN         NaN          NaN         NaN
+  wrong  CL  FCG  1030  10.0    252  -10.04  -1.51    313  -14.82  -2.59     0.43          NaN         NaN          NaN         NaN
+  wrong  CL  FCG  1130  10.0    252  -11.60  -1.54    313  -12.00  -1.93     0.43          NaN         NaN          NaN         NaN
+  wrong  CL  FCG close  10.0    252  -23.10  -2.16    313  -11.24  -1.45     0.46          NaN         NaN          NaN         NaN
+  wrong  NG  XOP  1030   2.0    248   -1.54  -0.22    313    6.72   1.14     0.51          NaN         NaN          NaN         NaN
+  wrong  NG  XOP  1130   2.0    248   -4.72  -0.60    313    1.98   0.30     0.50          NaN         NaN          NaN         NaN
+  wrong  NG  XOP close   2.0    248  -12.02  -1.07    313   -1.02  -0.12     0.50          NaN         NaN          NaN         NaN
+  wrong  NG  OIH  1030   5.0    248  -18.92  -2.46    313   -0.25  -0.04     0.50          NaN         NaN          NaN         NaN
+  wrong  NG  OIH  1130   5.0    248  -22.19  -2.49    313   -6.19  -0.78     0.52          NaN         NaN          NaN         NaN
+  wrong  NG  OIH close   5.0    248  -29.43  -2.31    313   -5.41  -0.57     0.50          NaN         NaN          NaN         NaN
+  wrong  NG  RIG  1030   5.0    248  -31.91  -2.25    313    0.27   0.02     0.50          NaN         NaN          NaN         NaN
+  wrong  NG  RIG  1130   5.0    248  -33.97  -2.07    313   -9.48  -0.72     0.50          NaN         NaN          NaN         NaN
+  wrong  NG  RIG close   5.0    248  -44.65  -2.05    313   -2.03  -0.12     0.48          NaN         NaN          NaN         NaN
+  wrong  NG  VAL  1030   5.0    248  -20.38  -1.79    313   -2.14  -0.20     0.50          NaN         NaN          NaN         NaN
+  wrong  NG  VAL  1130   5.0    248  -25.14  -1.79    313  -11.39  -0.90     0.50          NaN         NaN          NaN         NaN
+  wrong  NG  VAL close   5.0    248  -37.64  -1.96    313   -0.19  -0.01     0.50          NaN         NaN          NaN         NaN
+  wrong  NG  NOG  1030   5.0    248  -15.36  -1.54    313   -2.13  -0.23     0.47          NaN         NaN          NaN         NaN
+  wrong  NG  NOG  1130   5.0    248  -20.94  -1.77    313   -9.59  -0.90     0.49          NaN         NaN          NaN         NaN
+  wrong  NG  NOG close   5.0    248  -35.14  -2.07    313  -15.92  -1.15     0.48          NaN         NaN          NaN         NaN
+  wrong  NG MTDR  1030   5.0    248   -7.33  -0.71    313    0.24   0.03     0.49          NaN         NaN          NaN         NaN
+  wrong  NG MTDR  1130   5.0    248  -10.32  -0.86    313   -4.54  -0.46     0.49          NaN         NaN          NaN         NaN
+  wrong  NG MTDR close   5.0    248  -24.41  -1.47    313  -11.14  -0.90     0.48          NaN         NaN          NaN         NaN
+  wrong  NG   SM  1030   5.0    248   -6.64  -0.54    312    2.43   0.23     0.50          NaN         NaN          NaN         NaN
+  wrong  NG   SM  1130   5.0    248  -12.89  -0.91    312   -4.43  -0.36     0.53          NaN         NaN          NaN         NaN
+  wrong  NG   SM close   5.0    248  -19.13  -1.01    312  -13.83  -0.92     0.51          NaN         NaN          NaN         NaN
+  wrong  NG  FRO  1030   5.0    248  -22.74  -2.48    313  -11.61  -1.28     0.47          NaN         NaN          NaN         NaN
+  wrong  NG  FRO  1130   5.0    248  -32.64  -2.98    313  -14.58  -1.43     0.46          NaN         NaN          NaN         NaN
+  wrong  NG  FRO close   5.0    248  -38.88  -2.86    313   -5.04  -0.42     0.50          NaN         NaN          NaN         NaN
+  wrong  NG STNG  1030   5.0    248  -25.49  -2.64    312   -6.58  -0.75     0.46          NaN         NaN          NaN         NaN
+  wrong  NG STNG  1130   5.0    248  -31.97  -3.03    312   -6.74  -0.70     0.48          NaN         NaN          NaN         NaN
+  wrong  NG STNG close   5.0    248  -35.49  -2.74    312   -3.47  -0.31     0.47          NaN         NaN          NaN         NaN
+  wrong  NG  USO  1030   2.0    248   -5.67  -1.13    313    2.45   0.59     0.52          NaN         NaN          NaN         NaN
+  wrong  NG  USO  1130   2.0    248  -14.16  -2.12    313   -1.21  -0.20     0.48          NaN         NaN          NaN         NaN
+  wrong  NG  USO close   2.0    248  -17.80  -1.91    313  -10.87  -1.15     0.48          NaN         NaN          NaN         NaN
+  wrong  NG  XLE  1030   2.0    248   -3.03  -0.58    313    3.41   0.75     0.51          NaN         NaN          NaN         NaN
+  wrong  NG  XLE  1130   2.0    248   -6.33  -1.05    313    1.83   0.37     0.51          NaN         NaN          NaN         NaN
+  wrong  NG  XLE close   2.0    248  -13.52  -1.55    313   -0.02  -0.00     0.50          NaN         NaN          NaN         NaN
+total variants (all rows): 126 | primary family rows: 60

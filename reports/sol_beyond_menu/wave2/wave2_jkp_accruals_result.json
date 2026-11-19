@@ -1,0 +1,22 @@
+{
+  "experiment": "wave2_jkp_accruals",
+  "status": "DEVELOPMENT_ONLY",
+  "n_months": 336,
+  "first": "1988-01-31",
+  "last": "2015-12-31",
+  "mean_annualized": -0.035287117417433095,
+  "active_sharpe": -1.4938786299072992,
+  "calibrated_p": 1.0,
+  "a4_t": -9.68871518073569,
+  "a4_ar_order": 0,
+  "a4_bandwidth": 68,
+  "effective_n": 336.0,
+  "variance_inflation_D": 1.0,
+  "stress_mean_annualized": -0.10728711741743309,
+  "max_year_share_of_total_pnl": null,
+  "largest_year": 1999,
+  "positive_threshold": 0.025,
+  "positive": false,
+  "holdout": "2016-01 through 2025-12 locked; not read numerically",
+  "manifest_sha256": "3c4a6c2be6ff507b79fac2aa0361a90607c56e20bfe6ce9bfaed2ab0ae3334a7"
+}

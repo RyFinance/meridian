@@ -1,0 +1,358 @@
+{
+ "checked_state": null,
+ "checks": [
+  {
+   "detail": "post-trade NAV must be positive",
+   "limit": 0.0,
+   "name": "nav_positive",
+   "ok": true,
+   "value": 115095.95
+  },
+  {
+   "detail": "shorts are never allowed",
+   "limit": [],
+   "name": "no_negative_shares",
+   "ok": true,
+   "value": []
+  },
+  {
+   "detail": "tfsa accounts can never borrow; cash may never go below 0",
+   "limit": 0.0,
+   "name": "no_borrowing_no_negative_cash",
+   "ok": true,
+   "value": {
+    "cash_cad": 1127.54,
+    "cash_usd": 0.0
+   }
+  },
+  {
+   "detail": "effective gross exposure / NAV <= config target gross + add-on",
+   "limit": 1.15,
+   "name": "leverage_cap",
+   "ok": true,
+   "value": 0.990203
+  },
+  {
+   "detail": "largest position vs its cap (SSO: max_position_sso; XEQT.TO/ZAG.TO: target + one_ticket_cap_addon; others: max_position)",
+   "limit": {
+    "max_position": 0.65,
+    "max_position_sso": 0.3,
+    "one_ticket_cap_addon": 0.05,
+    "per_ticker": {
+     "XEQT.TO": 0.644,
+     "ZAG.TO": 0.446
+    }
+   },
+   "name": "position_cap",
+   "ok": true,
+   "value": {
+    "ticker": "XEQT.TO",
+    "weight": 0.594281
+   }
+  }
+ ],
+ "config": {
+  "account_type": "tfsa",
+  "config_id": "P3@1.0",
+  "error": null,
+  "exposures": {
+   "BOND": 0.4,
+   "EQ": 0.6,
+   "GOLD": 0.0,
+   "TREND": 0.0
+  },
+  "file": "config_P3@1.0_tfsa.json",
+  "label": "HYPOTHETICAL HOLDINGS — research sample, not a recommendation",
+  "overrides": {},
+  "owner_tolerance_pct": 35,
+  "portfolio_id": "sample|P3@1.0|tfsa",
+  "recipe_kind": "stacked",
+  "recipe_loan_fraction": 0.0,
+  "recipe_weights": {
+   "XEQT.TO": 0.6,
+   "ZAG.TO": 0.4
+  },
+  "sha256": "f4b8a11ef32fadad22394d90cacc88de9b4b996f9987a7f99b8349ab9e27362c",
+  "supported": true,
+  "target_gross": 1.0,
+  "uses_letf": false
+ },
+ "costs": {
+  "commission_cad": 0.0,
+  "fx_cad": 0.0,
+  "spread_cad": 5.41,
+  "total_cad": 5.41,
+  "turnover_cad": 10819.17,
+  "turnover_over_nav": 0.093997
+ },
+ "decision": {
+  "action": "full rebalance of all positions to target",
+  "borrow_capacity_cad": 0.0,
+  "leverage_check": null,
+  "quarter_end": false,
+  "rows": [
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.63112165,
+    "drift": 0.03712165,
+    "rel_drift": 0.062494,
+    "rel_trigger": false,
+    "target": 0.594,
+    "ticker": "XEQT.TO"
+   },
+   {
+    "abs_trigger": true,
+    "calendar_trigger": false,
+    "current": 0.33877497,
+    "drift": -0.05722503,
+    "rel_drift": 0.144508,
+    "rel_trigger": false,
+    "target": 0.396,
+    "ticker": "ZAG.TO"
+   }
+  ],
+  "triggered": true,
+  "triggers": [
+   {
+    "detail": [
+     "ZAG.TO: abs drift -5.72 pp > 5.00 pp"
+    ],
+    "kind": "band"
+   }
+  ]
+ },
+ "disclaimer": "Research tool output only. Nothing in this report is a recommendation to trade. No order has been placed, sent or generated for any broker; the owner reads it and decides.",
+ "drawdown": {
+  "alert": "NONE",
+  "drawdown": 0.0,
+  "fraction_of_tolerance": 0.0,
+  "policy": "Alerts never trigger automatic de-risking; the owner decides.",
+  "thresholds": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "tolerance": 0.35
+ },
+ "fx": {
+  "any_conversion": false,
+  "cad_to_usd": {
+   "cad_spent": 0.0,
+   "est_cost_cad": 0.0,
+   "for": [],
+   "usd_needed": 0.0
+  },
+  "usd_to_cad": {
+   "cad_needed": 0.0,
+   "est_cost_cad": 0.0,
+   "for": [],
+   "usd_spent": 0.0
+  },
+  "usdcad": 1.3862
+ },
+ "inputs": {
+  "holdings": {
+   "as_of": "2026-08-31",
+   "error": null,
+   "file": "hypothetical_holdings_P3@1.0_tfsa.json",
+   "net_external_flow_cad": 0.0,
+   "sha256": "8fe7e4ca1cc52d5c8f76a9f45dfd39e43e9fe381a9bda4edeb49d6a3d39e8030"
+  },
+  "prices": {
+   "dataset_version": "autopilot_prices_20260831",
+   "error": null,
+   "expected_manifest_sha256": null,
+   "files": {
+    "prices/prices_20250829_20260831.csv": "be676d58576d04ae5f7119f63b244fab9333a4a388b5eaf16786120ade8d1099"
+   },
+   "manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab",
+   "max_date": "2026-08-31",
+   "mode": "verified",
+   "pinned_by_seq": null,
+   "pinned_manifest_sha256": null
+  },
+  "usdcad": {
+   "date": "2026-08-31",
+   "rate": 1.3862
+  }
+ },
+ "kind": "autopilot_rebalance_report",
+ "notes": [],
+ "paper_log": {
+  "entries_before": 0,
+  "prev_entry_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "seq": 0
+ },
+ "params": {
+  "alert_levels": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "band_abs": 0.05,
+  "band_rel": 0.25,
+  "band_rel_min_abs": 0.01,
+  "calendar_abs": 0.01,
+  "calendar_months": [
+   3,
+   6,
+   9,
+   12
+  ],
+  "cash_buffer": 0.01,
+  "cash_buffer_vehicle": "broker_cash",
+  "commission_cad": 0.0,
+  "equity_assets_floor": 0.4,
+  "freshness_days": 5,
+  "fx_cost": 0.001,
+  "half_spread": {
+   "CASH.TO": 0.0005,
+   "DBMF": 0.001,
+   "GDE": 0.001,
+   "RSSB": 0.001,
+   "RSST": 0.001,
+   "SSO": 0.0003,
+   "XEQT.TO": 0.0005,
+   "ZAG.TO": 0.0005,
+   "ZGLD.TO": 0.001
+  },
+  "leverage_cap_addon": 0.15,
+  "margin_leverage_band": 0.1,
+  "max_position": 0.65,
+  "max_position_sso": 0.3,
+  "min_trade_cad": 100.0,
+  "one_ticket_cap_addon": 0.05
+ },
+ "portfolio_id": "sample|P3@1.0|tfsa",
+ "post_trade": {
+  "assets_cad": 115095.95,
+  "basis": "after the proposed trades (estimated)",
+  "cash_cad": 1127.54,
+  "cash_usd": 0.0,
+  "equity_over_assets": 1.0,
+  "etf_value_cad": 113968.41,
+  "gross_exposure_over_nav": 0.990203,
+  "leverage_assets_over_equity": 1.0,
+  "margin_loan_cad": 0.0,
+  "nav_cad": 115095.95,
+  "positions": [
+   {
+    "ccy": "CAD",
+    "close": 45.63,
+    "price_date": "2026-08-31",
+    "shares": 1499,
+    "target": 0.594,
+    "ticker": "XEQT.TO",
+    "value_cad": 68399.37,
+    "weight": 0.59428129
+   },
+   {
+    "ccy": "CAD",
+    "close": 13.53,
+    "price_date": "2026-08-31",
+    "shares": 3368,
+    "target": 0.396,
+    "ticker": "ZAG.TO",
+    "value_cad": 45569.04,
+    "weight": 0.39592218
+   }
+  ],
+  "sleeve_exposure_over_nav": {
+   "BOND": 0.395922,
+   "EQ": 0.594281,
+   "GOLD": 0.0,
+   "TREND": 0.0
+  }
+ },
+ "refusal_reasons": [],
+ "report_date": "2026-08-31",
+ "report_file": "report_2026-08-31_P3@1.0.md",
+ "report_sha256": "5acc9fafea9875977eec3c54dc32249816b74f2ccfd1a21ed83e723ef38ee394",
+ "schema": "autopilot_v1",
+ "skipped_trades": [],
+ "status": "accepted",
+ "targets": {
+  "XEQT.TO": 0.594,
+  "ZAG.TO": 0.396
+ },
+ "trades": [
+  {
+   "ccy": "CAD",
+   "est_commission_cad": 0.0,
+   "est_cost_cad": 2.12,
+   "est_price": 45.63,
+   "est_spread_cad": 2.12,
+   "est_value_cad": 4243.59,
+   "est_value_ccy": 4243.59,
+   "note": null,
+   "shares": 93,
+   "side": "SELL",
+   "ticker": "XEQT.TO"
+  },
+  {
+   "ccy": "CAD",
+   "est_commission_cad": 0.0,
+   "est_cost_cad": 3.29,
+   "est_price": 13.53,
+   "est_spread_cad": 3.29,
+   "est_value_cad": 6575.58,
+   "est_value_ccy": 6575.58,
+   "note": null,
+   "shares": 486,
+   "side": "BUY",
+   "ticker": "ZAG.TO"
+  }
+ ],
+ "trades_emitted": true,
+ "unit_ledger": {
+  "carried": true,
+  "flow_applied_cad": 0.0,
+  "initialised": true,
+  "net_external_flow_cad": 0.0,
+  "peak": 100.0,
+  "prior_report_date": null,
+  "unit_value": 100.0,
+  "units": 1151.0136000000002,
+  "units_before": null
+ },
+ "valuation": {
+  "assets_cad": 115101.36,
+  "cash_cad": 3464.94,
+  "cash_usd": 0.0,
+  "equity_over_assets": 1.0,
+  "etf_value_cad": 111636.42,
+  "gross_exposure_over_nav": 0.969897,
+  "leverage_assets_over_equity": 1.0,
+  "margin_loan_cad": 0.0,
+  "nav_cad": 115101.36,
+  "positions": [
+   {
+    "ccy": "CAD",
+    "close": 45.63,
+    "price_date": "2026-08-31",
+    "shares": 1592,
+    "target": 0.594,
+    "ticker": "XEQT.TO",
+    "value_cad": 72642.96,
+    "weight": 0.63112165
+   },
+   {
+    "ccy": "CAD",
+    "close": 13.53,
+    "price_date": "2026-08-31",
+    "shares": 2882,
+    "target": 0.396,
+    "ticker": "ZAG.TO",
+    "value_cad": 38993.46,
+    "weight": 0.33877497
+   }
+  ],
+  "sleeve_exposure_over_nav": {
+   "BOND": 0.338775,
+   "EQ": 0.631122,
+   "GOLD": 0.0,
+   "TREND": 0.0
+  }
+ }
+}

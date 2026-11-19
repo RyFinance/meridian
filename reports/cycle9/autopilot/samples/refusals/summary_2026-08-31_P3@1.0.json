@@ -1,0 +1,127 @@
+{
+ "checked_state": null,
+ "checks": [],
+ "config": {
+  "account_type": "tfsa",
+  "config_id": "P3@1.0",
+  "error": null,
+  "exposures": {
+   "BOND": 0.4,
+   "EQ": 0.6,
+   "GOLD": 0.0,
+   "TREND": 0.0
+  },
+  "file": "config_P3@1.0_tfsa_refusal_margin.json",
+  "label": "HYPOTHETICAL HOLDINGS — research sample, not a recommendation",
+  "overrides": {},
+  "owner_tolerance_pct": 35,
+  "portfolio_id": "sample-refusal-tfsa-margin|P3@1.0|tfsa",
+  "recipe_kind": "stacked",
+  "recipe_loan_fraction": 0.0,
+  "recipe_weights": {
+   "XEQT.TO": 0.6,
+   "ZAG.TO": 0.4
+  },
+  "sha256": "329c8c7bad1dccb26aa75e4ea8a34288fd6bbe06d98584c5e829a35004105c93",
+  "supported": true,
+  "target_gross": 1.0,
+  "uses_letf": false
+ },
+ "costs": null,
+ "decision": null,
+ "disclaimer": "Research tool output only. Nothing in this report is a recommendation to trade. No order has been placed, sent or generated for any broker; the owner reads it and decides.",
+ "drawdown": null,
+ "fx": null,
+ "inputs": {
+  "holdings": {
+   "as_of": "2026-08-31",
+   "error": null,
+   "file": "hypothetical_holdings_P3@1.0_tfsa_refusal_margin.json",
+   "net_external_flow_cad": 0.0,
+   "sha256": "f6b3e633dcd7bf4f215847c9281d76d14319aa888d26c3e4d1f14ab964a45a99"
+  },
+  "prices": {
+   "dataset_version": "autopilot_prices_20260831",
+   "error": null,
+   "expected_manifest_sha256": null,
+   "files": {
+    "prices/prices_20250829_20260831.csv": "be676d58576d04ae5f7119f63b244fab9333a4a388b5eaf16786120ade8d1099"
+   },
+   "manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab",
+   "max_date": "2026-08-31",
+   "mode": "verified",
+   "pinned_by_seq": 0,
+   "pinned_manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab"
+  },
+  "usdcad": {
+   "date": "2026-08-31",
+   "rate": 1.3862
+  }
+ },
+ "kind": "autopilot_rebalance_report",
+ "notes": [],
+ "paper_log": {
+  "entries_before": 11,
+  "prev_entry_hash": "6cc06e83732ec109520aa45b66b5bfe2f87c750024c96fef553c73ad7ba5aca1",
+  "seq": 11
+ },
+ "params": {
+  "alert_levels": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "band_abs": 0.05,
+  "band_rel": 0.25,
+  "band_rel_min_abs": 0.01,
+  "calendar_abs": 0.01,
+  "calendar_months": [
+   3,
+   6,
+   9,
+   12
+  ],
+  "cash_buffer": 0.01,
+  "cash_buffer_vehicle": "broker_cash",
+  "commission_cad": 0.0,
+  "equity_assets_floor": 0.4,
+  "freshness_days": 5,
+  "fx_cost": 0.001,
+  "half_spread": {
+   "CASH.TO": 0.0005,
+   "DBMF": 0.001,
+   "GDE": 0.001,
+   "RSSB": 0.001,
+   "RSST": 0.001,
+   "SSO": 0.0003,
+   "XEQT.TO": 0.0005,
+   "ZAG.TO": 0.0005,
+   "ZGLD.TO": 0.001
+  },
+  "leverage_cap_addon": 0.15,
+  "margin_leverage_band": 0.1,
+  "max_position": 0.65,
+  "max_position_sso": 0.3,
+  "min_trade_cad": 100.0,
+  "one_ticket_cap_addon": 0.05
+ },
+ "portfolio_id": "sample-refusal-tfsa-margin|P3@1.0|tfsa",
+ "post_trade": null,
+ "refusal_reasons": [
+  "account constraint: tfsa accounts can never borrow, but the holdings show a margin loan of CAD 10,000.00"
+ ],
+ "report_date": "2026-08-31",
+ "report_file": "report_2026-08-31_P3@1.0.md",
+ "report_sha256": "98ee817cf104842336b14b12649e2aceff16c19a2e4e1203b53d623f9c4e3c5d",
+ "schema": "autopilot_v1",
+ "skipped_trades": [],
+ "status": "refused",
+ "targets": {
+  "XEQT.TO": 0.594,
+  "ZAG.TO": 0.396
+ },
+ "trades": [],
+ "trades_emitted": false,
+ "unit_ledger": null,
+ "valuation": null
+}

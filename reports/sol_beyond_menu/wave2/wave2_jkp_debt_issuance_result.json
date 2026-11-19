@@ -1,0 +1,22 @@
+{
+  "experiment": "wave2_jkp_debt_issuance",
+  "status": "DEVELOPMENT_ONLY",
+  "n_months": 336,
+  "first": "1988-01-31",
+  "last": "2015-12-31",
+  "mean_annualized": -0.028996234227060276,
+  "active_sharpe": -1.4989063372439562,
+  "calibrated_p": 1.0,
+  "a4_t": -4.854343496611445,
+  "a4_ar_order": 0,
+  "a4_bandwidth": 68,
+  "effective_n": 125.48701602617292,
+  "variance_inflation_D": 2.6775678523578903,
+  "stress_mean_annualized": -0.10099623422706028,
+  "max_year_share_of_total_pnl": null,
+  "largest_year": 1999,
+  "positive_threshold": 0.025,
+  "positive": false,
+  "holdout": "2016-01 through 2025-12 locked; not read numerically",
+  "manifest_sha256": "3c4a6c2be6ff507b79fac2aa0361a90607c56e20bfe6ce9bfaed2ab0ae3334a7"
+}

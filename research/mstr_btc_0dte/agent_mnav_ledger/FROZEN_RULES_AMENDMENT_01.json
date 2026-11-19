@@ -1,0 +1,40 @@
+{
+  "amendment": "parser_mechanics_only_remedial_validation",
+  "registered_at_utc": "2026-10-17T07:46:50Z",
+  "original_freeze_file_sha256": "8a90d7471ba9dfbc079f00a52274aa58375033b65b733fd564ed6fae8d43651b",
+  "unchanged_rule_payload_sha256": "1e3bf4ae5093c144fb5fc70d7c81d5773582fc862a9373407bc12eeefeac7486",
+  "unchanged_rules": [
+    {
+      "id": "MNL1_FAST_MOM05",
+      "lookback": 5,
+      "level_sma": null,
+      "max_share_age_sessions": 120
+    },
+    {
+      "id": "MNL2_MOM10_LEVEL50",
+      "lookback": 10,
+      "level_sma": 50,
+      "max_share_age_sessions": 120
+    }
+  ],
+  "invalidated_run": {
+    "files": [
+      "SEALED_SUMMARY.csv",
+      "SEALED_INFERENCE.csv",
+      "SEALED_BTC_LEDGER.csv"
+    ],
+    "reason": "The post-2024 table header 'BTC Acquired (1)' was parsed as a one-BTC row, producing 63 spurious one-BTC purchase values and stale/incorrect interim holdings marks."
+  },
+  "allowed_code_change": {
+    "scope": "Parse the explicitly ordered BTC Update table row before generic prose regexes: acquired BTC, aggregate purchase price, average price, aggregate BTC holdings, aggregate purchase price, average price.  Preserve all event availability, pricing, signal, rules, execution, cost and inference code.",
+    "corrected_ledger_study_py_sha256": "4b19411356852de77f079616b42501f68c8b9a4090d193d841ba03fc0b5b6a04",
+    "evidence_file": "PARSER_REMEDIATION_SAMPLES.csv"
+  },
+  "corrected_validation": {
+    "validation_window": ["2023-01-03", "2026-08-10"],
+    "output_prefix": "SEALED_REMEDIATION_01",
+    "maximum_runs": 1,
+    "must_not_overwrite_invalid_artifacts": true
+  },
+  "attestation": "No signal definition, threshold, lookback, share-age rule, cost assumption, benchmark, date boundary, or statistical test was changed after observing the invalidated run.  The only change corrects a source-evidenced field-extraction bug."
+}

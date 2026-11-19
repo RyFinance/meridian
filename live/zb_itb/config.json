@@ -1,0 +1,48 @@
+{
+  "symbol": "ITB",
+  "default_account": "ITB",
+  "accounts": {
+    "ITB": {
+      "symbol": "ITB",
+      "env": ".env.alpaca.itb",
+      "start_equity_usd": 2000,
+      "cost_bp_side": 2.0,
+      "gap_cushion_pct": 1.0,
+      "virtual": false,
+      "rebased_on": "2026-11-05",
+      "rebased_note": "new paper account opened at $2,155.55 = old broker equity + all simulated P&L through 2026-11-05"
+    },
+    "NAIL": {
+      "symbol": "NAIL",
+      "env": ".env.alpaca.nail",
+      "start_equity_usd": 2000,
+      "cost_bp_side": 5.0,
+      "gap_cushion_pct": 3.0,
+      "virtual": false,
+      "rebased_on": "2026-11-05",
+      "rebased_note": "new paper account opened at $2,188.18 = old broker equity + all simulated P&L through 2026-11-05"
+    }
+  },
+  "side_mode": "auto",
+  "max_fraction_of_equity": 1.0,
+  "max_notional_usd": 25000,
+  "protective_stop_pct": 3.0,
+  "max_drawdown_pct": 15.0,
+  "signal_ready_et": "09:15:00",
+  "opg_deadline_et": "09:27:00",
+  "fill_check_et": "09:31:30",
+  "late_entry_cutoff_et": "09:35:00",
+  "exit_et": "10:30:00",
+  "failsafe_et": "15:50:00",
+  "short_min_equity_usd": 2000,
+  "regime_filter": true,
+  "regime_min_corr": 0.0,
+  "regime_window_days": 60,
+  "virtual_capital_usd": 2000,
+  "virtual_commission": {
+    "plan": "ibkr_tiered",
+    "per_share": 0.0035,
+    "min_per_order": 0.35,
+    "extra_per_share": 0.0005
+  }
+}

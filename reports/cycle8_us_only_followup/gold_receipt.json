@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-02T06:06:33.337382+00:00",
+  "client_date": "2026-10-01",
+  "files": {
+    "research/cycle8_us_only_followup/GOLD_REPAIR_PREREG.md": "3ff98e5801b6eae36532a0e61a9b142daebafcd782068a535bbe487925acc422",
+    "research/cycle8_us_only_followup/gold_repair.py": "0d45151605db0bef2bd2f1e533d591cca493c5dac5101c8bd2dec9b134faabb5",
+    "research/cycle8_us_only_followup/analyze.py": "6917c781989f9847cf80db8164639f55300026e5a0b4fe1db93ee0257216af70",
+    "data/cycle8_us_only_followup/gold_cfs_daily.csv": "6f5f47f51990f19cb211ce39cffd6fbac713b543aded587bef944d641d49dec5",
+    "data/cycle8_us_only_followup/gold_columns.json": "2f90fbddcb0ca52b81f9234b300ac5b71cf44ad7c02ef487d2309443683799d4",
+    "data/cycle8_us_only_followup/Market_exchange_rates.xlsb": "a5baa2fe85e9a284fb84f529ae935ce6ded6c10cd416139043fdfbe354185fc7"
+  }
+}

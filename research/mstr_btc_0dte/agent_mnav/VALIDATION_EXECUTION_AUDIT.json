@@ -1,0 +1,9 @@
+{
+  "check": "frictionless M1 event-driven simulator equals causal next-open vector return",
+  "initial_long": false,
+  "event_driven_terminal_nav": 6.49222845342503,
+  "vector_terminal_nav": 6.492228453425026,
+  "absolute_difference": 3.552713678800501e-15,
+  "passed": true,
+  "frictionless_transactions": 74
+}

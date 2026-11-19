@@ -1,0 +1,14 @@
+{
+  "retrieved": "2026-10-16",
+  "cik": "0001050446",
+  "source": "SEC submissions JSON plus filing-directory / document URLs",
+  "filings_scanned": 234,
+  "candidate_document_matches": 129,
+  "failures": 0,
+  "method": "8-K filing/exhibit text has completed-acquisition and bitcoin/BTC terms within 220 characters",
+  "include_exhibits": false,
+  "date_range": [
+    "2020-01-01",
+    "9999-12-31"
+  ]
+}

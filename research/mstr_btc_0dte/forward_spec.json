@@ -1,0 +1,10 @@
+{
+  "strategy_id": "mstr_btc_monday_v1",
+  "plan": "research/mstr_btc_0dte/FORWARD_PLAN.md",
+  "rule": "Monday NYSE sessions only: d = sign(ln(BTC_0925ET / BTC_prev_official_close)), Coinbase BTC-USD 1m closes; hold d x $100k MSTR from official open to official close.",
+  "decision_window_et": ["09:25:00", "09:29:30"],
+  "costs": "research/mstr_btc_0dte/costs.py (base and stress)",
+  "gate": {"final_at_counted_mondays": 104, "pass": "t_one_sided>=1.65 AND stress_mean>0 AND sharpe_ann>=0.5", "kill": "cum_net_pnl<=-15000"},
+  "sim_account": 1717158,
+  "prior_evidence": "2020-08..2026-08 fully viewed; same-spec history net +21bp/trade, t 0.67, Sharpe 0.27"
+}

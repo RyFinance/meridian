@@ -1,0 +1,134 @@
+{
+ "checked_state": null,
+ "checks": [],
+ "config": {
+  "account_type": "tfsa",
+  "config_id": "P4@1.0",
+  "error": null,
+  "exposures": {
+   "BOND": 0.32,
+   "EQ": 0.48,
+   "GOLD": 0.1,
+   "TREND": 0.1
+  },
+  "file": "config_P4@1.0_tfsa_refusal_stale.json",
+  "label": "HYPOTHETICAL HOLDINGS — research sample, not a recommendation",
+  "overrides": {},
+  "owner_tolerance_pct": 25,
+  "portfolio_id": "sample-refusal-stale|P4@1.0|tfsa",
+  "recipe_kind": "stacked",
+  "recipe_loan_fraction": 0.0,
+  "recipe_weights": {
+   "DBMF": 0.1,
+   "XEQT.TO": 0.48,
+   "ZAG.TO": 0.32,
+   "ZGLD.TO": 0.1
+  },
+  "sha256": "e0bcfc7abc339ce92fb6e080aebcc8921af689b34ae3f66257bf0aea6296d070",
+  "supported": true,
+  "target_gross": 1.0,
+  "uses_letf": false
+ },
+ "costs": null,
+ "decision": null,
+ "disclaimer": "Research tool output only. Nothing in this report is a recommendation to trade. No order has been placed, sent or generated for any broker; the owner reads it and decides.",
+ "drawdown": null,
+ "fx": null,
+ "inputs": {
+  "holdings": {
+   "as_of": "2026-09-08",
+   "error": null,
+   "file": "hypothetical_holdings_P4@1.0_tfsa_refusal_stale.json",
+   "net_external_flow_cad": 0.0,
+   "sha256": "c024088f9a1591c96188382c233088bbaea8e95c39eac383f5b1a7625ea581f4"
+  },
+  "prices": {
+   "dataset_version": "autopilot_prices_20260831",
+   "error": null,
+   "expected_manifest_sha256": null,
+   "files": {
+    "prices/prices_20250829_20260831.csv": "be676d58576d04ae5f7119f63b244fab9333a4a388b5eaf16786120ade8d1099"
+   },
+   "manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab",
+   "max_date": "2026-08-31",
+   "mode": "verified",
+   "pinned_by_seq": 0,
+   "pinned_manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab"
+  },
+  "usdcad": null
+ },
+ "kind": "autopilot_rebalance_report",
+ "notes": [
+  "DBMF: USD-listed managed-futures replication ETF."
+ ],
+ "paper_log": {
+  "entries_before": 10,
+  "prev_entry_hash": "5b209a216e21b377a0851af696ced4611316a742776ffa41125b615aa7d68265",
+  "seq": 10
+ },
+ "params": {
+  "alert_levels": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "band_abs": 0.05,
+  "band_rel": 0.25,
+  "band_rel_min_abs": 0.01,
+  "calendar_abs": 0.01,
+  "calendar_months": [
+   3,
+   6,
+   9,
+   12
+  ],
+  "cash_buffer": 0.01,
+  "cash_buffer_vehicle": "broker_cash",
+  "commission_cad": 0.0,
+  "equity_assets_floor": 0.4,
+  "freshness_days": 5,
+  "fx_cost": 0.001,
+  "half_spread": {
+   "CASH.TO": 0.0005,
+   "DBMF": 0.001,
+   "GDE": 0.001,
+   "RSSB": 0.001,
+   "RSST": 0.001,
+   "SSO": 0.0003,
+   "XEQT.TO": 0.0005,
+   "ZAG.TO": 0.0005,
+   "ZGLD.TO": 0.001
+  },
+  "leverage_cap_addon": 0.15,
+  "margin_leverage_band": 0.1,
+  "max_position": 0.65,
+  "max_position_sso": 0.3,
+  "min_trade_cad": 100.0,
+  "one_ticket_cap_addon": 0.05
+ },
+ "portfolio_id": "sample-refusal-stale|P4@1.0|tfsa",
+ "post_trade": null,
+ "refusal_reasons": [
+  "stale price for DBMF: latest is 2026-08-31, 8 calendar days before the report date (limit 5)",
+  "stale price for XEQT.TO: latest is 2026-08-31, 8 calendar days before the report date (limit 5)",
+  "stale price for ZAG.TO: latest is 2026-08-31, 8 calendar days before the report date (limit 5)",
+  "stale price for ZGLD.TO: latest is 2026-08-31, 8 calendar days before the report date (limit 5)",
+  "stale USD/CAD rate (USDCAD): latest is 2026-08-31, 8 calendar days before the report date (limit 5)"
+ ],
+ "report_date": "2026-09-08",
+ "report_file": "report_2026-09-08_P4@1.0.md",
+ "report_sha256": "47a72c515c0af3c473665e391feb109762583c1ac0f7d99daab177f9ca68d62e",
+ "schema": "autopilot_v1",
+ "skipped_trades": [],
+ "status": "refused",
+ "targets": {
+  "DBMF": 0.099,
+  "XEQT.TO": 0.4752,
+  "ZAG.TO": 0.3168,
+  "ZGLD.TO": 0.099
+ },
+ "trades": [],
+ "trades_emitted": false,
+ "unit_ledger": null,
+ "valuation": null
+}

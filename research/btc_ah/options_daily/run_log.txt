@@ -1,0 +1,65 @@
+MSTR rows 1003002 days 1625 spot days 1487 range 2020-01-06 2026-08-10
+IBIT rows 294287 days 430 spot days 429 range 2024-11-20 2026-08-10
+
+== BTC: does 15-16 ET move carry past 16:00? (sign-aligned mean of next 16:00->09:29 move)
+  |lh|>0.000 n=2214 mean_aligned=6.0bp t=0.84 corr=-0.020
+  |lh|>0.005 n=675 mean_aligned=8.3bp t=0.55 corr=-0.038
+  |lh|>0.010 n=258 mean_aligned=-18.0bp t=-0.67 corr=-0.082
+  overnight |off_in|>4%: n=344 (up 192, down 152)
+
+variants (primary rules, each with flip control): 54
+                                             rule  inst  dev_n  dev_ret_w_mean  dev_ret_w_t  chk_n  chk_ret_w_mean  chk_ret_w_t  chk_win  chk_ret_p_mean  flip_chk_mean_w  all_n
+0           A lh thr0.0% dte2-10 close->next open  MSTR    331          -0.402      -17.029    945          -0.530      -51.355    0.062          -0.046           -0.562   1276
+1            A lh thr0.0% dte2-5 close->next open  MSTR    198          -0.496      -18.999    569          -0.589      -45.162    0.053          -0.061           -0.610    767
+2           A lh thr0.0% dte6-10 close->next open  MSTR    252          -0.268      -10.577    765          -0.407      -39.079    0.072          -0.040           -0.443   1017
+3           A lh thr0.5% dte2-10 close->next open  MSTR    150          -0.395      -12.762    243          -0.492      -20.687    0.095          -0.022           -0.617    393
+4            A lh thr0.5% dte2-5 close->next open  MSTR     94          -0.463      -11.962    153          -0.564      -18.534    0.072          -0.043           -0.652    247
+5           A lh thr0.5% dte6-10 close->next open  MSTR    110          -0.271       -8.234    194          -0.360      -15.850    0.113          -0.012           -0.498    304
+6           A lh thr1.0% dte2-10 close->next open  MSTR     52          -0.363       -7.743     66          -0.472       -9.599    0.106          -0.056           -0.630    118
+7            A lh thr1.0% dte2-5 close->next open  MSTR     35          -0.432       -7.941     40          -0.550       -8.591    0.100          -0.072           -0.650     75
+8           A lh thr1.0% dte6-10 close->next open  MSTR     37          -0.162       -2.819     53          -0.332       -7.097    0.113          -0.041           -0.518     90
+9         A sess thr0.0% dte2-10 close->next open  MSTR    335          -0.418      -18.672    944          -0.499      -45.653    0.082          -0.028           -0.594   1279
+10         A sess thr0.0% dte2-5 close->next open  MSTR    197          -0.477      -17.270    570          -0.554      -40.112    0.068          -0.039           -0.645    767
+11        A sess thr0.0% dte6-10 close->next open  MSTR    253          -0.290      -11.710    764          -0.378      -34.040    0.103          -0.024           -0.472   1017
+12        A sess thr0.5% dte2-10 close->next open  MSTR    266          -0.393      -15.126    676          -0.490      -36.073    0.089          -0.030           -0.600    942
+13         A sess thr0.5% dte2-5 close->next open  MSTR    161          -0.445      -13.978    405          -0.550      -32.215    0.072          -0.045           -0.649    566
+14        A sess thr0.5% dte6-10 close->next open  MSTR    200          -0.266       -9.303    554          -0.370      -26.980    0.110          -0.025           -0.481    754
+15        A sess thr1.0% dte2-10 close->next open  MSTR    192          -0.373      -12.082    463          -0.494      -30.328    0.095          -0.050           -0.604    655
+16         A sess thr1.0% dte2-5 close->next open  MSTR    112          -0.449      -12.007    267          -0.564      -26.442    0.075          -0.070           -0.654    379
+17        A sess thr1.0% dte6-10 close->next open  MSTR    145          -0.254       -8.051    383          -0.375      -22.962    0.115          -0.042           -0.489    528
+18  B off_in>3% reversal vertical open->close t+1  MSTR     91          -0.628      -16.437    135          -0.807      -34.916    0.015          -0.071           -0.845    226
+19  B off_in>3% reversal vertical open->close t+2  MSTR     77          -0.683      -16.171    129          -0.772      -30.725    0.031           0.223           -0.830    206
+20  B off_in>3% reversal vertical open->close t+4  MSTR     43          -0.716      -13.156     57          -0.760      -16.142    0.070          -0.183           -0.757    100
+21  B off_in>4% reversal vertical open->close t+1  MSTR     65          -0.623      -13.237     72          -0.786      -24.513    0.028           0.080           -0.886    137
+22  B off_in>4% reversal vertical open->close t+2  MSTR     53          -0.638      -13.208     72          -0.730      -19.810    0.042           0.645           -0.892    125
+23  B off_in>4% reversal vertical open->close t+4  MSTR     29          -0.688       -9.157     27          -0.733      -10.018    0.037          -0.224           -0.853     56
+24  B off_in>5% reversal vertical open->close t+1  MSTR     42          -0.582      -10.448     40          -0.813      -20.087    0.025           0.130           -0.902     82
+25  B off_in>5% reversal vertical open->close t+2  MSTR     38          -0.629      -10.881     40          -0.753      -14.793    0.025           1.131           -0.911     78
+26  B off_in>5% reversal vertical open->close t+4  MSTR     18          -0.780      -10.460     17          -0.799       -8.327    0.059          -0.320           -0.860     35
+27          A lh thr0.0% dte2-10 close->next open  IBIT      0             NaN          NaN    388          -0.571      -31.503    0.080          -0.106           -0.573    388
+28           A lh thr0.0% dte2-5 close->next open  IBIT      0             NaN          NaN    281          -0.611      -28.499    0.075          -0.124           -0.614    281
+29          A lh thr0.0% dte6-10 close->next open  IBIT      0             NaN          NaN    338          -0.430      -25.339    0.098          -0.079           -0.438    338
+30          A lh thr0.5% dte2-10 close->next open  IBIT      0             NaN          NaN     84          -0.501      -11.834    0.143           0.013           -0.662     84
+31           A lh thr0.5% dte2-5 close->next open  IBIT      0             NaN          NaN     61          -0.561      -11.197    0.131          -0.036           -0.674     61
+32          A lh thr0.5% dte6-10 close->next open  IBIT      0             NaN          NaN     69          -0.369       -8.762    0.159           0.035           -0.526     69
+33          A lh thr1.0% dte2-10 close->next open  IBIT      0             NaN          NaN     22          -0.541       -7.923    0.045          -0.060           -0.717     22
+34           A lh thr1.0% dte2-5 close->next open  IBIT      0             NaN          NaN     18          -0.527       -6.363    0.056          -0.007           -0.749     18
+35          A lh thr1.0% dte6-10 close->next open  IBIT      0             NaN          NaN     18          -0.416       -5.361    0.111          -0.139           -0.551     18
+36        A sess thr0.0% dte2-10 close->next open  IBIT      0             NaN          NaN    388          -0.520      -25.329    0.103          -0.090           -0.623    388
+37         A sess thr0.0% dte2-5 close->next open  IBIT      0             NaN          NaN    281          -0.585      -24.399    0.082          -0.134           -0.641    281
+38        A sess thr0.0% dte6-10 close->next open  IBIT      0             NaN          NaN    338          -0.375      -20.483    0.124          -0.049           -0.493    338
+39        A sess thr0.5% dte2-10 close->next open  IBIT      0             NaN          NaN    279          -0.529      -21.882    0.097          -0.098           -0.634    279
+40         A sess thr0.5% dte2-5 close->next open  IBIT      0             NaN          NaN    203          -0.586      -20.445    0.079          -0.134           -0.655    203
+41        A sess thr0.5% dte6-10 close->next open  IBIT      0             NaN          NaN    249          -0.386      -18.417    0.120          -0.066           -0.502    249
+42        A sess thr1.0% dte2-10 close->next open  IBIT      0             NaN          NaN    191          -0.526      -17.654    0.105          -0.105           -0.636    191
+43         A sess thr1.0% dte2-5 close->next open  IBIT      0             NaN          NaN    136          -0.588      -16.516    0.088          -0.152           -0.648    136
+44        A sess thr1.0% dte6-10 close->next open  IBIT      0             NaN          NaN    169          -0.391      -15.004    0.130          -0.070           -0.515    169
+45  B off_in>3% reversal vertical open->close t+1  IBIT      0             NaN          NaN     48          -0.625      -15.110    0.000          -0.144           -0.748     48
+46  B off_in>3% reversal vertical open->close t+2  IBIT      0             NaN          NaN     47          -0.491       -6.441    0.149           0.068           -0.771     47
+47  B off_in>3% reversal vertical open->close t+4  IBIT      0             NaN          NaN     11          -0.514       -2.509    0.273          -0.153           -0.724     11
+48  B off_in>4% reversal vertical open->close t+1  IBIT      0             NaN          NaN     19          -0.637      -11.501    0.000          -0.056           -0.850     19
+49  B off_in>4% reversal vertical open->close t+2  IBIT      0             NaN          NaN     18          -0.533       -4.651    0.111           0.083           -0.832     18
+50  B off_in>4% reversal vertical open->close t+4  IBIT      0             NaN          NaN      1             NaN          NaN      NaN             NaN           -0.989      1
+51  B off_in>5% reversal vertical open->close t+1  IBIT      0             NaN          NaN     11          -0.594       -7.035    0.000           0.086           -0.916     11
+52  B off_in>5% reversal vertical open->close t+2  IBIT      0             NaN          NaN     11          -0.532       -3.093    0.182           0.203           -0.825     11
+53  B off_in>5% reversal vertical open->close t+4  IBIT      0             NaN          NaN      1             NaN          NaN      NaN             NaN           -0.989      1

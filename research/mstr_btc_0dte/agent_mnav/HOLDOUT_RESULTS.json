@@ -1,0 +1,267 @@
+{
+  "window": [
+    "2023-01-03",
+    "2026-08-10"
+  ],
+  "sessions": 903,
+  "btc_gap_sessions": 43,
+  "costs": {
+    "base": {
+      "slippage_bps_each_side": 3.0,
+      "commission_per_actual_share": 0.005
+    },
+    "stress": {
+      "slippage_bps_each_side": 6.0,
+      "commission_per_actual_share": 0.01
+    }
+  },
+  "rules": {
+    "M1": {
+      "name": "10-day gross-premium momentum plus 50-day proxy trend",
+      "params": {
+        "premium_momentum_days_L": 10,
+        "premium_sma_days_S": 50,
+        "btc_momentum_days": null
+      },
+      "base": {
+        "start": "2023-01-03",
+        "end": "2026-08-10",
+        "sessions": 903,
+        "total_return": 5.342088357486891,
+        "cagr": 0.6704187497394809,
+        "annualized_sharpe": 1.1483697591999376,
+        "max_drawdown": -0.4696720288717925,
+        "entry_trades": 37,
+        "exit_trades": 37,
+        "round_trips": 37.0,
+        "time_long": 0.3599114064230343,
+        "per_year_net": {
+          "2023": 0.6759647017493025,
+          "2024": 1.0297564048106045,
+          "2025": 0.5922807893197728,
+          "2026": 0.17085696803838557
+        },
+        "signal_days_true": 325
+      },
+      "stress": {
+        "start": "2023-01-03",
+        "end": "2026-08-10",
+        "sessions": 903,
+        "total_return": 5.1954203529411,
+        "cagr": 0.6595981004238749,
+        "annualized_sharpe": 1.1375600539896937,
+        "max_drawdown": -0.47000355766112933,
+        "entry_trades": 37,
+        "exit_trades": 37,
+        "round_trips": 37.0,
+        "time_long": 0.3599114064230343,
+        "per_year_net": {
+          "2023": 0.6575733374718193,
+          "2024": 1.0159651307760815,
+          "2025": 0.5887993674920828,
+          "2026": 0.16693308042111532
+        }
+      },
+      "bootstrap_base": {
+        "draws": 2000,
+        "block_sessions": 21.0,
+        "seed": 20260817,
+        "p_diff_gt_0": 0.5915,
+        "q05": -0.6021910563110288,
+        "q50": 0.11055420415578932,
+        "q95": 0.871464240180427,
+        "point_sr_diff": 0.10188741296541859
+      },
+      "bootstrap_stress": {
+        "draws": 2000,
+        "block_sessions": 21.0,
+        "seed": 20260817,
+        "p_diff_gt_0": 0.5805,
+        "q05": -0.6669297128693712,
+        "q50": 0.10034854960088518,
+        "q95": 0.8667010838289494,
+        "point_sr_diff": 0.09118352265271246
+      }
+    },
+    "M2": {
+      "name": "20-day gross-premium momentum plus 50-day proxy trend",
+      "params": {
+        "premium_momentum_days_L": 20,
+        "premium_sma_days_S": 50,
+        "btc_momentum_days": null
+      },
+      "base": {
+        "start": "2023-01-03",
+        "end": "2026-08-10",
+        "sessions": 903,
+        "total_return": 3.1609232618668868,
+        "cagr": 0.48588110819147,
+        "annualized_sharpe": 0.9383752958033971,
+        "max_drawdown": -0.5061977651490726,
+        "entry_trades": 34,
+        "exit_trades": 34,
+        "round_trips": 34.0,
+        "time_long": 0.4374307862679956,
+        "per_year_net": {
+          "2023": 0.15426852031325522,
+          "2024": 1.5644261592368234,
+          "2025": 0.3262820215405404,
+          "2026": 0.05988018733937772
+        },
+        "signal_days_true": 395
+      },
+      "stress": {
+        "start": "2023-01-03",
+        "end": "2026-08-10",
+        "sessions": 903,
+        "total_return": 3.0727416142816333,
+        "cagr": 0.47706678779117406,
+        "annualized_sharpe": 0.9290753065285311,
+        "max_drawdown": -0.5076930367617594,
+        "entry_trades": 34,
+        "exit_trades": 34,
+        "round_trips": 34.0,
+        "time_long": 0.4374307862679956,
+        "per_year_net": {
+          "2023": 0.1416194758492495,
+          "2024": 1.5485816007003073,
+          "2025": 0.3233758407074683,
+          "2026": 0.05775172819740426
+        }
+      },
+      "bootstrap_base": {
+        "draws": 2000,
+        "block_sessions": 21.0,
+        "seed": 20260817,
+        "p_diff_gt_0": 0.3885,
+        "q05": -0.7619024695438559,
+        "q50": -0.11236383734099009,
+        "q95": 0.5666269004487775,
+        "point_sr_diff": -0.10822481018287045
+      },
+      "bootstrap_stress": {
+        "draws": 2000,
+        "block_sessions": 21.0,
+        "seed": 20260817,
+        "p_diff_gt_0": 0.4,
+        "q05": -0.7918187363725022,
+        "q50": -0.10914437308702925,
+        "q95": 0.5871042247004016,
+        "point_sr_diff": -0.11741810909978834
+      }
+    },
+    "M3": {
+      "name": "20-day gross-premium trend with 20-day BTC regime confirmation",
+      "params": {
+        "premium_momentum_days_L": 20,
+        "premium_sma_days_S": 50,
+        "btc_momentum_days": 20
+      },
+      "base": {
+        "start": "2023-01-03",
+        "end": "2026-08-10",
+        "sessions": 903,
+        "total_return": 3.92473482349763,
+        "cagr": 0.5570908184225076,
+        "annualized_sharpe": 1.0779583315469625,
+        "max_drawdown": -0.4397065462805395,
+        "entry_trades": 32,
+        "exit_trades": 32,
+        "round_trips": 32.0,
+        "time_long": 0.31007751937984496,
+        "per_year_net": {
+          "2023": 0.4685678324765814,
+          "2024": 1.5519874129975024,
+          "2025": 0.2801746459861154,
+          "2026": 0.026457777255524118
+        },
+        "signal_days_true": 280
+      },
+      "stress": {
+        "start": "2023-01-03",
+        "end": "2026-08-10",
+        "sessions": 903,
+        "total_return": 3.8266519551696536,
+        "cagr": 0.5484144689492705,
+        "annualized_sharpe": 1.067758379885791,
+        "max_drawdown": -0.4397065462805396,
+        "entry_trades": 32,
+        "exit_trades": 32,
+        "round_trips": 32.0,
+        "time_long": 0.31007751937984496,
+        "per_year_net": {
+          "2023": 0.4570945720398545,
+          "2024": 1.5347693434410017,
+          "2025": 0.27656332884187096,
+          "2026": 0.02371114776823946
+        }
+      },
+      "bootstrap_base": {
+        "draws": 2000,
+        "block_sessions": 21.0,
+        "seed": 20260817,
+        "p_diff_gt_0": 0.514,
+        "q05": -0.6388703313294539,
+        "q50": 0.01489062267593702,
+        "q95": 0.7026537074006383,
+        "point_sr_diff": 0.03143643177555511
+      },
+      "bootstrap_stress": {
+        "draws": 2000,
+        "block_sessions": 21.0,
+        "seed": 20260817,
+        "p_diff_gt_0": 0.491,
+        "q05": -0.6317418826654216,
+        "q50": -0.00894695990407296,
+        "q95": 0.6790720036658999,
+        "point_sr_diff": 0.02134264828348198
+      }
+    }
+  },
+  "benchmark": {
+    "base": {
+      "start": "2023-01-03",
+      "end": "2026-08-10",
+      "sessions": 903,
+      "total_return": 5.8230884400412775,
+      "cagr": 0.7046835575938093,
+      "annualized_sharpe": 1.0464331859241838,
+      "max_drawdown": -0.8446128809099427,
+      "entry_trades": 1,
+      "exit_trades": 1,
+      "round_trips": 1.0,
+      "time_long": 1.0,
+      "per_year_net": {
+        "2023": 3.632594213389578,
+        "2024": 3.696886377727326,
+        "2025": -0.5070671071894342,
+        "2026": -0.3636382642786222
+      }
+    },
+    "stress": {
+      "start": "2023-01-03",
+      "end": "2026-08-10",
+      "sessions": 903,
+      "total_return": 5.8184188691508245,
+      "cagr": 0.7043594333038172,
+      "annualized_sharpe": 1.0462150463584736,
+      "max_drawdown": -0.8446128809099427,
+      "entry_trades": 1,
+      "exit_trades": 1,
+      "round_trips": 1.0,
+      "time_long": 1.0,
+      "per_year_net": {
+        "2023": 3.6325942133895897,
+        "2024": 3.696886377727318,
+        "2025": -0.5070671071894324,
+        "2026": -0.3638612417395837
+      }
+    }
+  },
+  "gates": {
+    "G1_base_sharpe_gt_bench_and_p95": false,
+    "G2_stress_sharpe_gt_bench_and_p90": false,
+    "G3_m1_total_return_positive": true
+  },
+  "pass": false
+}

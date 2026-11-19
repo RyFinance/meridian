@@ -1,0 +1,12 @@
+{
+  "status": "MECHANICAL CLARIFICATION BEFORE ANY SEALED STRATEGY PERFORMANCE RUN",
+  "date": "2026-10-17",
+  "applies_to": "FROZEN_RULES.json, proxy_definition.split_adjustment",
+  "reason": "The official 10-for-1 split took effect at the 2024-08-08 open. The last disclosure usable before the next post-split filing was the 2024-08-06 10-Q, whose cover share count was explicitly as of 2024-07-25 and therefore still on the pre-split basis. Because the Yahoo OHLC history is post-split adjusted, multiplying that report's shares by 10 remains necessary on 2024-08-08 and later until the first post-split report replaces it. Applying the multiplier solely based on the trading date would create a false approximately 90% mNAV discontinuity.",
+  "implementation": "Set split_factor_to_price_basis = 10 when the active report's share_asof date is before 2024-08-08, otherwise 1. The fixed commission conversion remains based on actual trade date: $0.0005 per split-adjusted pseudo-share before 2024-08-08 and $0.005 afterward.",
+  "non_changes": [
+    "No rule parameters, candidate count, or selection rationale changed.",
+    "No BTC source, SEC source, filing availability rule, execution timing, or cost assumption changed.",
+    "No 2023-or-later strategy performance, candidate ranking, equity curve, or return statistic had been run when this clarification was made."
+  ]
+}

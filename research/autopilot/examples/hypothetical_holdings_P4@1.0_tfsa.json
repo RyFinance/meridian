@@ -1,0 +1,12 @@
+{
+ "as_of": "2026-08-31",
+ "cash_cad": 3015.66,
+ "cash_usd": 372.24,
+ "net_external_flow_cad": 0,
+ "positions": {
+  "DBMF": 277,
+  "XEQT.TO": 1273,
+  "ZAG.TO": 2305,
+  "ZGLD.TO": 194
+ }
+}

@@ -1,0 +1,1130 @@
+
+=== PAGE 1 ===
+Separate Appendix to ‘Common Risk Factors in Currency Marke ts’
+This Appendix reports additional robustness checks. We ﬁrs t report in Appendix A asset pricing
+results obtained with the principal components of our curre ncy portfolios. We then consider,
+in Appendix B, diﬀerent samples of currency returns. We also report in Appendix C additional
+results obtained with volatility risk factors. Appendix D i nvestigates the time-varying equity risk
+of currency excess returns. Section Appendix E focuses on mo mentum portfolios. Finally, we
+illustrate the dynamics of our calibrated model in Appendix F.
+Appendix A Principal Components as Factors
+Table 14 reports asset pricing results obtained with the ﬁrs t two principal components of our
+benchmark currency portfolios. Results are described in th e main text.
+[Table 14 about here.]
+Appendix B Other Samples
+We perform four robustness checks. First, we consider the sa mple proposed by Burnside, Eichen-
+baum, Kleshchelski and Rebelo (2008). Following the method ology of Lustig and Verdelhan (2007),
+Burnside et al. (2008) build 5 currency portfolios. Burnsid e et al. (2008) claim that these currency
+excess returns are not related to any risk factor. Using the s ame methodology as in the main text,
+we ﬁnd that these currency excess returns are clearly explai ned by two risk factors. Second, we
+consider diﬀerent home countries. We take the perspective o f the Swiss, UK and Japanese in-
+vestors, and for each investor, we build currency portfolio s, test their business cycle properties and
+we estimate the corresponding market prices of risk. Third, we divide our main sample into two
+sub-samples, starting either in 1983 or in 1995. Fourth, we c onsider the longer sample of currency
+excess returns built using the Treasury bills that we studie d in Lustig and Verdelhan (2007).
+Appendix B1 Burnside et al (2006, 2008)
+Countries Burnside et al. (2008) consider a sample of 21 developed coun tries: Australia, Aus-
+tria, Belgium, Canada, Denmark, France, Germany, Ireland, Italy, Japan, the Netherlands, New
+Zealand, Norway, Portugal, South Africa, Spain, Sweden, Sw itzerland, the UK, the U.S. and the
+Euro. They ﬁnd large currency excess returns and note that, ‘ while transaction costs are quanti-
+tatively important, they do not explain the proﬁtability of the carry trade’ (page 9). As a result,
+1
+=== PAGE 2 ===
+they abstract from transaction costs and work with spot and f orward rates that are the average of
+bid and ask rates. Burnside et al. (2006) consider a smaller s et of (at most) 10 developed countries:
+Belgium, Canada, Euro area, France, Germany, Italy, Japan, Netherlands, Switzerland, the United
+Kingdom and the United States. In comparison to the 10 countr ies in Burnside et al. (2006), we
+include Australia, Denmark, New Zealand, Norway, and Swede n in our sample of 15 developed
+countries. Note that this sample is too restrictive because it does not even encompass forward
+(or equivalent futures) contracts traded on large institut ionalized currency markets as the Chicago
+Mercantile Exchange. Burnside et al. (2006) conclude that t here are no large exploitable excess
+returns that result from the failure of UIP because the diﬀer ence between the forward discount
+and the rate of depreciation is absorbed largely by bid-ask s preads.
+Burnside et al. (2008) build 5 portfolios of currency excess returns following the methodology
+of Lustig and Verdelhan (2007). They conclude that risk fact ors do not explain the excess returns
+of these 5 portfolios. In this appendix, we build the same 5 po rtfolios and show that we obtain the
+same conclusion as with our two other samples: two simple ris k factors reproduce the cross-section
+of excess returns, implying that these excess returns are co mpensations for risk.
+Burnside et al. (2008) use spot and forward rates denominate d in UK pounds, collected by
+Barclays and available on Datastream. We follow their assum ption and convert these series into
+dollars using midquotes. The sample starts in 02/1976 and en ds in 1/2008 as in Burnside et
+al. (2008). Table 15 below reports summary statistics on the se 5 currency portfolios. The carry
+trade strategy that goes short the currencies in the ﬁrst por tfolio and long the currencies in the
+last portfolio oﬀers an average log excess return of 6.47 per cent per year and an average Sharpe
+ratio of 0.9. Burnside et al. (2008) report monthly excess re turns (see their table 3 page 29). For
+example, their last portfolio oﬀers a monthly excess return of 0.0082 for a standard deviation of
+0.028. Annualized, these values imply a Sharpe ratio of 1.01 . These values are certainly upper
+bounds on carry trade excess returns since they do not take in to account any transaction costs.
+[Table 15 about here.]
+Cross-section of currency excess returns This cross-section of excess returns reﬂects diﬀerent
+exposures to risk factors. In order to make this point, we bui ld again two risk factors: the carry
+trade risk factor HML corresponds to the return on the ﬁfth portfolio minus the ret urn on the
+ﬁrst portfolio, and the dollar risk factor RXis the average return across the test assets. Table 16
+reports asset pricing results. The loadings on HML explain the cross-section of currency excess
+returns. The betas are highly signiﬁcant. The ﬁrst three por tfolios have negative betas. The last
+two have positive betas. The loadings on the dollar factor RXdo not vary across portfolios, as is
+to be expected. The alphas do not exceed 60 basis points per an num. They are not signiﬁcantly
+diﬀerent from zero on a case-by-case basis. We also cannot re ject the null that the alphas are
+2
+=== PAGE 3 ===
+jointly zero. The market price of risk is highly signiﬁcant; it is somehow higher than our own
+estimates because these excess returns do not take into acco unt bid-ask spreads.
+Figure 4 plots realized average excess returns on the vertic al axis against predicted average
+excess returns on the horizontal axis. In order to draw this ﬁ gure, we do not even estimate the
+market price of risk. We regress each actual excess return on a constant and the risk factors RX
+andHML to obtain the slope coeﬃcient βj. Each predicted excess returns is then obtained using
+the OLS estimate of βjtimes the sample mean of the factors. It is obvious that these currency
+excess returns are risk premia.
+As a ﬁnal robustness check, we build portfolios based on each currency’s exposure to aggregate
+currency risk as measured by HML . For each date t, we ﬁrst regress each currency ilog excess
+return rxion a constant and HML using a 36-month rolling window that ends in period t−1.
+This gives us currency i’s exposure to HML , and we denote it βi,HML
+t. Note that it only uses
+information available at date t. We then sort currencies into ﬁve groups at time tbased on these
+slope coeﬃcients βHML
+t. Portfolio 1 contains currencies with the lowest βs. Portfolio 5 contains
+currencies with the highest βs. Table 17 reports summary statistics on these portfolios. The ﬁrst
+panel reports average changes in exchange rates. The second panel shows that average forward
+discounts increase monotonically in these portfolios. As i n our main sample, sorts based on forward
+discounts and sorts based on betas are clearly related, whic h implies that the forward discounts
+convey information about riskiness of individual currenci es. The third panel reports the average
+log excess returns. They are monotonically increasing from the ﬁrst to the last portfolio. Clearly,
+currencies that covary more with our risk factor - and are thu s riskier - provide higher excess
+returns.
+[Table 16 about here.]
+[Figure 4 about here.]
+[Table 17 about here.]
+Appendix B2 Foreign Investors
+We now adopt the perspective of foreign investors and we cons ider currency excess returns de-
+nominated in foreign currency. We report summary statistic s on these excess returns, test their
+business cycle properties and we estimate the market prices of risk.
+Summary Statistics We consider the case of a UK investor, a Japanese investor and a Swiss
+investor. These are three countries with large and well-dev eloped currency markets. We compute
+the excess returns that local investors would obtain if they had access to forward contracts in their
+3
+=== PAGE 4 ===
+own currency. We obtained these excess returns by convertin g dollars into local currency at the
+midpoint rate. This way, investors are not hit twice by the bi d-ask spread. Summary statistics on
+these currency excess returns are reported in Table 18.
+[Table 18 about here.]
+Cross-sectional Asset Pricing We now check the Euler equation of foreign investors in the
+UK, Japan and Switzerland. We construct the new asset pricin g factors ( HML andRX) in local
+currency and we use the local currency returns on our currenc y portfolios as test assets. Table 19
+reports market prices of risk and cross-sectional measures of ﬁt.
+We construct the new asset pricing factors ( HML FXandRX) in local currencies, and we use
+the local currency returns as test assets. Note that HML FXis essentially the same risk factor in all
+currencies, if we abstract from bid-ask spreads. Our initia l spot and forward rates are quoted in US
+dollars. In order to convert these quotes in pounds, yen and S wiss francs, we use the corresponding
+midpoint quotes of these currencies against the US dollar.8The ﬁrst panel in Table 19 reports
+results for the UK, the second panel for Japan and the third pa nel for Switzerland.
+For all countries, the estimated market price of HML FXrisk is less than 70 basis points
+removed from the sample mean of the factor. The HML FXrisk price is estimated at 5.54 percent
+in the UK, 5.50 percent in Japan and 5.79 percent in Switzerla nd. These estimates are statistically
+diﬀerent from zero in all three cases. The two currency facto rs explain between 47 and 71 percent
+of the variation (after adjusting for degrees of freedom). T he mean squared pricing error is 95 basis
+points for the UK, 116 basis points for Japan and 81 basis poin ts for Switzerland. The null that
+the underlying pricing errors are zero cannot be rejected ex cept for Japan, for which the p-values
+are smaller than 10 percent.
+[Table 19 about here.]
+Appendix B3 Diﬀerent Time Periods
+We also check the robustness of our results by dividing our ma in sample over the 1983-2008 period
+in two sub-samples, spanning the 1983-1994 and 1995-2008 pe riods. Table 20 report summary
+statistics on our portfolios of developed and emerging coun tries. Sharpe ratios appear higher in
+the second sub-sample; currency excess returns have clearl y not disappeared in the last ten years.
+We run asset pricing tests for both samples of developed, and developed and emerging countries.
+For each time sub-sample, we redo all the cross-sectional as set pricing tests. To save space, we
+report only results obtained on our large sample of countrie s in table 21. We ﬁnd that the HML
+betas are very similar in both time sub-samples. In both case s, they range from -0.4 to 0.6 on
+8Table 18 in the appendix reports summary statistics on these portfolios.
+4
+=== PAGE 5 ===
+developed and emerging countries and from around -0.5 to 0.5 on developed countries. The market
+prices of risk diﬀer across time periods; it is higher and mor e precisely estimated in the 1995-2008
+period. The cross-sectional ﬁt is also much higher in the sec ond period. Because forward contracts
+were available only for a limited set of currencies, the ﬁrst sub-sample uses, for example, at most 18
+developed and emerging countries. The low number of countri es and short sample clearly decreases
+the estimation power.
+[Table 20 about here.]
+[Table 21 about here.]
+Appendix B4 Longer Sample of Treasury Bill-based Portfolio s
+Lustig and Verdelhan (2007) built eight portfolios of forei gn T-bills sorted on interest rates, from
+a panel of 81 currencies. The data are annual, and the sample s pans 1953-2002. We check whether
+the currency risk factors can explain the cross-sectional v ariation in excess returns on these foreign
+T-bills. HML is deﬁned as the spread between the seventh and the ﬁrst portf olio. Table 22 reports
+the results. The estimated risk price for HML varies between 4.10 percent on the whole sample
+and 6.20 percent on the post-Bretton-Woods subsample. This is very close to the estimate of 6.19
+percent that we obtained on the basket of forward contracts. Also, these estimates are close to
+their respective sample means of 5.32 and 6.92 percentage po ints per annum. We also test whether
+the null that the αs are zero can be rejected. The results for both samples are re ported in Table
+23. The null cannot be rejected. Table 23 reports also all the portfolios βs on the two risk factors.
+[Table 22 about here.]
+[Table 23 about here.]
+Using the HML we constructed from the longer time series, we can explore th e business cycle
+properties of HML . We run a time series regression of HML on US non-durable consumption
+growth and on durable consumption growth. Over the 1953-200 2 sample, the consumption β
+ofHML is one; in the post-Bretton-Woods sample, it increases to 1. 50. These estimates are
+statistically signiﬁcant at the 5 percent level. The curren cy risk factor HML FXis strongly pro-
+cyclical.
+[Table 24 about here.]
+5
+=== PAGE 6 ===
+Appendix C Volatility Risk Factors
+Appendix C1 Volatility Risk Factor Using Daily Equity Retur ns
+We describe in the main text the construction of this volatil ity factor. Tables 25 and 26 report the
+results of a horse race between HML FXand the equity volatility factor. HML FXdrives out the
+volatility factor.
+[Table 25 about here.]
+[Table 26 about here.]
+Appendix C2 Volatility Risk Factor Using Daily Currency Ret urns
+We build a currency volatility factor along the same lines as our equity volatility factor. We start
+oﬀ daily changes in exchange rates and obtain monthly standa rd deviations of all exchange rate
+series in our sample. We compute the cross-sectional mean of these volatility series. We multiply
+the volatility factor by√
+252 in order to annualize it.
+Table 27 reports asset pricing results using the currency vo latility factor. Betas on this risk
+factor decrease monotonically from the ﬁrst to the last port folio (with one exception, the fourth
+portfolio in the large sample). Spreads in betas are large: t hey vary between 1.8 and -2.2 in the
+large sample, and between 1.8 and -1.6 in the second sample. H igh interest rate countries tend
+to oﬀer low returns when exchange rate volatility is high. Lo w interest rate countries, on the
+contrary, oﬀer high returns in such bad times. As a result, th e market price of risk is negative and
+signiﬁcantly diﬀerent from zero.
+[Table 27 about here.]
+Appendix C3 Volatility Risk Factor Using Monthly Currency R eturns
+Finally, we compute the standard deviation of the past 12 mon th returns for each portfolio. Our
+volatility risk factor is the ﬁrst diﬀerence of the average s tandard deviation across all portfolios.
+Table 28 reports the asset pricing results.
+[Table 28 about here.]
+Appendix D Time-Varying Equity Risk of the Carry Trade
+We run the same asset pricing experiment on the cross-sectio n of currency excess returns using the
+US stock market excess return as the pricing factor, instead of the slope risk factor HML FX. To
+6
+=== PAGE 7 ===
+measure the return on the market, we use the CRSP value-weigh ted return on the NYSE, AMEX
+and NASDAQ markets in excess of the one-month average Fama ri sk-free rate. The US stock
+market excess return and the level factor RXcan explain 52 percent of the variation in returns.
+However, the estimated price of US market risk is 37 percent, while the actual annualized excess
+return on the market is only 7.1 percent over this sample. The risk price is 5 times too large.
+The CAPM betas vary monotonically from -.05 for the ﬁrst port folio to .08 for the last one. Low
+interest rate currencies provide a hedge, while high intere st rate currencies expose US investors to
+more stock market risk. These betas increase almost monoton ically from low to high interest rates,
+but they are too small to explain these excess returns. There fore, the cross-sectional regression of
+currency returns on market betas implies market price of ris k that are far too high. The null that
+that the α’s are zero is rejected at the 5 % signiﬁcance level.9
+Despite the low unconditional market beta of the carry trade , the carry risk factor HML FX
+is very highly correlated with the stock market during perio ds of increased market volatility. The
+recent subprime mortgage crisis oﬀers a good example. A typi cal currency carry trade at the start
+of July 2007 was to borrow in yen - a low interest rate currency - and invest in Australian and
+New Zealand dollars - high interest rate currencies. Over th e course of the summer, each large
+drop in the S&P 500 was accompanied by a large appreciation of the yen of up to 1.7 percent in
+one day and a large depreciation of the New Zealand and Austra lian dollar of up to 2.3 percent in
+one day. Figure 5 plots the monthly returns on HML FXat daily frequencies against the US stock
+market return. Clearly, a US investor who was long in these hi gh interest rate currencies and short
+in low interest rate currencies, was heavily exposed to US ag gregate stock market risk during the
+subprime mortgage crisis, and thus should have been compens ated by a risk premium ex ante.
+[Figure 5 about here.]
+This pattern is consistent with the model. In the two-factor aﬃne model, the conditional
+correlation of HML FXand the SDF in the home country is:
+corr t(hml t+1, mt+1) =/radicalbig
+δzw
+t/radicalbig
+δzw
+t+√γzt. (Appendix D.1)
+As the global component of the conditional market price of ri sk increases, the conditional correlation
+between the stochastic discount factor at home and the carry trade returns HML FXincreases.
+We ﬁnd strong evidence for this type of time-varying correla tion in the data.
+Following the intuition of the CAPM one might use the US stock market return as a proxy for the
+domestic SDF. We compute the correlation between one-month currency returns and the return on
+the value-weighted US stock market return using 12-month ro lling windows on daily data. Figure
+9Detailed results available upon request.
+7
+=== PAGE 8 ===
+6 plots the diﬀerence between the correlation of the 6th and t he 1st portfolio with the US stock
+market excess return. We denote it Corr τ[Rm
+t, rx6
+t]−Corr τ[Rm
+t, rx1
+t],where Corr τis the sample
+correlation over the previous 12 months [ τ−12, τ] and Rm, the stock market excess return. We
+also plot the stock market beta of HML FX. These market correlations exhibit enormous variation.
+In times of crisis and during US recessions, the diﬀerence in market correlation between high and
+low currencies increases signiﬁcantly. During the Mexican , Asian, Russian and Argentinean crises,
+the correlation diﬀerence jumps up by 50 to 90 basis points.
+[Figure 6 about here.]
+We now explore time-variation in market betas. There is evid ence that, in times of ﬁnancial
+crisis, the stock market beta of the high-minus-low strateg y in currency markets increases dramat-
+ically. We start by examining the recent sub-prime mortgage crisis, and we then consider other
+crisis episodes. The last 4 columns of Table 29 reports the ma rket betas of all the currency port-
+folios that we obtain on a 6-month window before 08/31/2007. To estimate the market betas, we
+use daily observations on monthly currency and stock market returns. The Newey-West standard
+error correction is computed with 20 lags. We estimate a mark et beta of HML FXof up to 62 basis
+points. The estimated market betas increase monotonically as we move from low to high interest
+rate currency portfolios, as we would expect. We report the αs in the bottom panel of Table 29.
+Over this period, the estimated pricing errors αon the high-minus-low strategy dropped to 30
+basis points over 6 months or 60 basis points per annum compar ed to an unconditional pricing
+errorαHMLof more than 500 basis points per annum.
+This is not an isolated event, as these results extend to othe r crises. In Table 29, we document
+similar increases in the US market beta of HML FXduring the LTCM crisis (column 1-4), the
+Mexican “Tequila” crisis (column 5-8) and the Brazilian/Ar gentine crisis (column 9-12). Again,
+the market betas increase monotonically in the forward disc ount rates. For example, βm
+τ,HML
+increases to 1.14 in the run-up to the Russian default in 1998 , implying that high interest rate
+currencies depreciate on average by 1.14 percent relative t o low interest rate currencies when the
+stock market goes down by one percent. Low interest rate curr encies provide a hedge against
+market risk while high interest rate currencies expose US in vestors to more market risk in times of
+crisis. For the Tequila crisis, the market betas of all the cu rrency portfolios are negative. This is
+consistent with our model, as the dollar risk premium compon ent is counter-cyclical with respect
+to the US business cycle, and hence the expected returns on al l portfolios can be negative (see
+equation 3.2). In two of these crisis, the αon the high-minus-low strategy is negative: minus
+271 basis over the 6 months preceding the Russian default and minus 382 basis points during the
+Tequila crisis.10In the two other crisis, the αs are positive (96 and 29 basis points over 6 months
+10These numbers need to be multiplied by 12 to be annualized.
+8
+=== PAGE 9 ===
+respectively) but small, well below the average αof 4.46 percent per annum that we obtained over
+the entire sample. As we have shown, the market beta of the hig h-minus-low strategy increases
+dramatically in times when the price of global risk is high.
+[Table 29 about here.]
+Using the simulated return on the stock market portfolio we c an show that the CAPM fails to
+explain currency return generated by our model, as in the dat a. In a sample of 5000 simulated
+periods, we run a time-series regression of HML FXon the stock market return. We ﬁnd that
+the CAPM αofHML FXis large and statistically signiﬁcantly diﬀerent from zero : the CAPM
+understates the average return by over 3 percent (with very l ittle statistical uncertainty given
+the large size of the simulated sample). This large CAPM αrepresents the bulk of the average
+HML FXreturn. As a result, the CAPM cannot explain currency return s in this no-arbitrage model
+of exchange rates, even though the stock market wealth is pri ced using the same stochastic discount
+factor that prices currencies. The average stock market bet a of the carry trade is somewhat higher
+than in the data, at about .6. This is in part because the model understates the stock mar ket
+volatility.
+Both the betas and the correlations of the currency portfoli o returns with the stock market
+return exhibit a lot of variation over time, due to the fact th at time-varying prices of risk imply
+time-varying conditional correlations of portfolio retur ns with the stochastic discount factor. Figure
+9, in the separate appendix, plots the conditional betas and correlations of the carry factor returns
+with the stock market return (Panel A) as well as the realized volatility of the stock market
+return (Panels B), both computed using 12-month rolling win dows, as used when estimation these
+quantities in the data. The periods of high global risk and, c onsequently, high stock market
+volatility correspond to a greater spread in correlations/ betas of currency portfolios with the stock
+market return. Conditional market beta of HML FXvaries between close to zero in times of low
+volatility to well above one during episodes of spiking unce rtainty. Thus, in our model the stock
+market risk of the carry trade varies over time in a manner con sistent with the empirical evidence
+documented above.
+Appendix E Momentum Portfolios
+The upper panel in Table 30 lists the correlation matrix for t hese carry and momentum strategies
+in currency markets. Momentum and carry strategies are very diﬀerent. In fact, the return
+correlations between corresponding (i.e. high/high or low /low) carry and momentum strategies
+are small and sometimes even negative. The lower panel repor ts the principal component analysis
+of these momentum and carry portfolios.
+9
+=== PAGE 10 ===
+[Table 30 about here.]
+Appendix F Model
+Appendix F1 Inﬂation
+We assume that inﬂation is composed of a country-speciﬁc com ponent and a global component.
+Both components follow AR(1) processes:
+πw
+t+1= (1−ρw)πw+ρwπw
+t+σw$ǫw
+t+1,
+πci
+t+1= (1−ρi)πi+ρiπi
+t+σi$ǫi
+t+1,
+where the innovations ǫw
+tandǫi
+tare also i.i.dgaussian, with zero mean and unit variance. Inﬂation
+in country iis a weighted average of these two components:
+πi
+t+1=µiπci
+t+1+ (1−µi)πw
+t+1.
+We deﬁne world inﬂation as the cross-sectional, unweighted average of all annual inﬂation rates, and
+we measure the moments of the average world inﬂation rate for the countries in our sample. The
+average global inﬂation is calibrated to be 3 percent annual ly, autocorrelation is equal to 0.87, and
+standard deviation is 2 .1%. The relative weight µon domestic versus world inﬂation set equal to
+0.16; it is determined by the share of the total variance expl ained by the ﬁrst principal component.
+We subtract the world component from each country inﬂation r ate to obtain the autocorrelation
+and the shocks’ standard deviation in each country. We use th e average of these moments. This
+yields an average for the country-speciﬁc component equal t o 3 percent, an autocorrelation of
+0.5 and standard deviation equal to 10 percent, for the annua lized series. Inﬂation moments are
+reported in panel III of table 5. We use monthly values corres ponding to these annual quantities
+in calibrating the model parameters. Table 5 (panel IV) repo rts the calibrated parameters.
+Figure 7 documents the statistical properties of the intere st rates and exchange rates simulated
+from the model for a range of currencies.
+[Figure 7 about here.]
+10
+=== PAGE 11 ===
+Appendix F2 Stock Market Return
+The ex-dividend price of the stock market portfolio at time tin the units of domestic currency is
+given by
+Pi
+t=Et∞/summationdisplay
+s=1Di
+t+sexp/bracketleftBiggs/summationdisplay
+jmi
+t+j/bracketrightBigg
+.
+Since all the relevant information at time tis summarized by the state vector [ zi
+t, zw
+t],we can write
+the price-dividend ratio as
+Pi
+t
+Di
+t=E/braceleftBigg∞/summationdisplay
+s=1exp/bracketleftBiggs/summationdisplay
+j=1/parenleftbig
+∆di
+t+j+mi
+t+j/parenrightbig/bracketrightBigg/vextendsingle/vextendsingle/vextendsingle/vextendsingle/vextendsinglezi
+t, zw
+t/bracerightBigg
+We compute the price-dividend ratios that correspond to the simulated values of the state
+vector using Monte Carlo simulation and interpolate them us ing a kernel regression.
+The stock market return is then calculated using the identit y
+We compute the stock market returns using
+RDi
+t+1=Pi
+t+1+Di
+t+1
+Pi
+t=Pi
+t+1/Di
+t+1+ 1
+Pi
+t/Di
+texp/parenleftbig
+∆di
+t+1/parenrightbig
+by simulating the dividend process jointly with the state va riables and SDF innovations and using
+the kernel projection to interpolate the price-dividend ra tios. In order to calculate the conditional
+correlations and betas of this return with the currency port folio returns, as well as its conditional
+volatility, we consider 12-month rolling windows and estim ate these moments in the same way as
+in the data.
+Appendix F3 Time-Varying Equity Risk in the Model
+Figure 8 shows that, in “bad times,” when zwis high, the spread between the average δin the ﬁrst
+and the last portfolio increases.
+Figure 9 plots the conditional betas and correlations of the carry factor returns with the stock
+market return (Panel A) as well as the realized volatility of the stock market return (Panels B),
+both computed using 12-month rolling windows, as used when e stimation these quantities in the
+data.
+[Figure 8 about here.]
+[Figure 9 about here.]
+11
+=== PAGE 12 ===
+12
+=== PAGE 13 ===
+Table 14: Asset Pricing - US Investor - Principal Components
+Panel I: Factor Prices and Loadings
+All Countries Developed Countries
+λc λd bc bd R2RMSE χ2λ2 λ1 bc bd R2RMSE χ2
+GMM 1 7.42 1 .37 0 .40 0 .26 68 .69 0 .96 2 .20 2 .17 0 .72 0 .25 70 .75 0 .61
+[3.12] [1 .65] [0 .17] [0 .31] 12 .92 [1 .22] [2 .02] [0 .40] [0 .23] 51 .15
+GMM 2 6.23 0 .54 0 .34 0 .10 43 .12 1 .30 2 .63 2 .90 0 .86 0 .34 24 .08 0 .98
+[2.86] [1 .60] [0 .15] [0 .30] 15 .21 [1 .17] [1 .94] [0 .38] [0 .23] 57 .14
+FMB 7.42 1 .37 0 .40 0 .26 68 .72 0 .96 2 .20 2 .17 0 .72 0 .25 70 .75 0 .61
+[2.52] [1 .35] [0 .14] [0 .25] 11 .25 [1 .02] [1 .72] [0 .33] [0 .20] 41 .67
+[2.52] [1 .35] [0 .14] [0 .25] 12 .37 [1 .02] [1 .72] [0 .33] [0 .20] 42 .64
+Mean 7.42 1.37 2.20 2.17
+Panel II: Factor Betas
+All Countries Developed Countries
+Portfolio αj0(%) βj
+c βj
+dR2(%)χ2(α)p−value αj0(%) βj
+dβj
+cR2(%)χ2(α)p−value
+1 −0.99−0.23 1 .06 85 .69 −0.21−0.72 1 .07 91 .14
+[0.72] [0 .02] [0 .04] [0.64] [0 .05] [0 .02]
+2 −0.85−0.14 0 .96 81 .38 −0.43−0.38 1 .04 85 .94
+[0.69] [0 .02] [0 .04] [0.72] [0 .07] [0 .03]
+3 0 .31−0.14 0 .94 76 .89 1 .15−0.07 1 .02 85 .59
+[0.84] [0 .02] [0 .04] [0.81] [0 .07] [0 .03]
+4 1 .72−0.03 0 .92 68 .16 −0.54 0 .44 0 .94 85 .14
+[0.86] [0 .03] [0 .06] [0.77] [0 .06] [0 .03]
+5 0 .64 0 .06 1 .03 77 .41 0 .01 0 .89 0 .92 93 .64
+[0.80] [0 .03] [0 .04] [0.49] [0 .04] [0 .02]
+6 −0.64 0 .45 1 .06 96 .83
+[0.34] [0 .01] [0 .02]
+All 6.90 0 .33 2.40 0 .79
+Notes: The factors are the ﬁrst and the second principal components (denoted d, for the “dollar” factor, and c, for the “carry” factor, respectively).
+The panel on the left reports results for all countries. The p anel on the right reports results for the developed countrie s. Panel I reports results from
+GMM and Fama-McBeth asset pricing procedures. Market price s of risk λ, the adjusted R2, the square-root of mean-squared errors RMSE and the
+p-values of χ2tests on pricing errors are reported in percentage points. bdenotes the vector of factor loadings. Excess returns used a s test assets and
+risk factors take into account bid-ask spreads. All excess r eturns are multiplied by 12 (annualized). The standard erro rs in brackets are Newey and West
+(1987) standard errors computed with the optimal number of l ags according to Andrews (1991). Shanken (1992)-corrected standard errors are reported
+in parentheses. We do not include a constant in the second ste p of the FMB procedure. Panel II reports OLS estimates of the f actor betas. R2s and
+p-values are reported in percentage points. The χ2test statistic α′V−1
+ααtests the null that all intercepts are jointly zero. This sta tistic is constructed
+from the Newey-West variance-covariance matrix (1 lag) for the system of equations (see Cochrane (2001), p. 234). Data a re monthly, from Barclays
+and Reuters in Datastream. The sample period is 11/1983 - 03/ 2008. The alphas are annualized and in percentage points.
+13
+=== PAGE 14 ===
+Table 15: US Investor - Portfolios of Countries in Burnside e t alii (2008)
+Portfolio 1 2 3 4 5
+Spot change: ∆ sj
+Mean −1.47−1.19−0.16−0.34 2 .23
+Std 10.07 10 .02 9 .00 8 .88 9 .90
+Discount: fj−sj
+Mean −3.23−0.78 0 .79 2 .44 6 .94
+Std 0.78 0 .72 0 .72 0 .85 1 .56
+Excess Return: rxj(without bid-ask)
+Mean −1.77 0 .41 0 .96 2 .77 4 .71
+SR −0.17 0 .04 0 .11 0 .31 0 .48
+Long-Short: rxj−rx1(without bid-ask)
+Mean 2.17 2 .72 4 .54 6 .47
+SR 0.44 0 .47 0 .71 0 .90
+Notes: This table reports summary statistics for currencies sorte d into portfolios. We report the moments in dollars
+for average changes in log of the spot exchange rate ∆ sjin portfolio j, the average log forward discount fj−sj, the
+average log excess return rxjwithout bid-ask spreads, and the average returns on the long short strategy rxj−rx1.
+Log currency excess returns are computed as rxj
+t+1=−∆sj
+t+1+fj
+t−sj
+t. All moments are annualized and reported
+in percentage points. For excess returns, the table also rep orts Sharpe ratios, computed as ratios of annualized
+means to annualized standard deviations. Averages and stan dard deviations are reported in percentage points. The
+portfolios are constructed by sorting currencies into ﬁve g roups at time tbased on the one-month forward discount
+at the end of period t−1. Portfolio 1 contains currencies with the lowest interest rates. Portfolio 5 contains
+currencies with the highest interest rates. Data are monthl y, from Barclays (Datastream). The sample period is
+02/1976 - 01/2008.
+14
+=== PAGE 15 ===
+Table 16: Asset Pricing - Portfolios of Countries in Burnsid e et alii (2008)
+Panel I: Factor Prices and Loadings
+λHML F X λRX bHML F X bRX R2RMSE χ2
+GMM 1 6.60 3 .39 1 .04 0 .33 95 .70 0 .38
+[2.06] [2 .15] [0 .33] [0 .22] 74 .53
+GMM 2 6.29 3 .42 0 .99 0 .33 95 .36 0 .39
+[2.04] [2 .13] [0 .33] [0 .22] 75 .08
+FMB 6.60 3 .39 1 .04 0 .33 95 .70 0 .38
+[1.49] [1 .83] [0 .24] [0 .19] 64 .74
+(1.49) (1 .83) (0 .24) (0 .19) 67 .51
+Mean 6.38 3.41
+Panel II: Factor Betas
+Portfolio αj
+0(%) βj
+HML F Xβj
+RX R2(%) χ2(α)p−value
+1 −0.22 −0.50 1 .01 95 .41
+[0.48] [0 .02] [0 .02]
+2 −0.45 −0.11 1 .10 92 .83
+[0.68] [0 .03] [0 .02]
+3 0 .31 −0.01 0 .97 91 .22
+[0.59] [0 .03] [0 .02]
+4 0 .59 0 .12 0 .91 86 .15
+[0.75] [0 .03] [0 .02]
+5 −0.22 0 .50 1 .01 95 .54
+[0.48] [0 .02] [0 .02]
+All 1.24 0 .94
+Notes: Panel I reports results from GMM and Fama-McBeth asset prici ng procedures. Market prices of risk λ,
+the adjusted R2, the square-root of mean-squared errors RMSE and the p-values of χ2tests on pricing errors
+are reported in percentage points. bdenotes the vector of factor loadings. Excess returns used a s test assets and
+risk factors take into account bid-ask spreads. All excess r eturns are multiplied by 12 (annualized). The standard
+errors in brackets are Newey and West (1987) standard errors computed with the optimal number of lags according
+to Andrews (1991). Shanken (1992)-corrected standard erro rs are reported in parentheses. We do not include
+a constant in the second step of the FMB procedure. Panel II re ports OLS estimates of the factor betas. R2s
+andp-values are reported in percentage points. The χ2test statistic α′V−1
+ααtests the null that all intercepts are
+jointly zero. This statistic is constructed from the Newey- West variance-covariance matrix (1 lag) for the system of
+equations (see Cochrane (2001), p. 234). Data are monthly, f rom Datastream. The sample of currencies corresponds
+to the one used in Burnside et alii (2008). The sample period i s 2/1976 - 01/2008. The alphas are annualized.
+15
+=== PAGE 16 ===
+Table 17: Beta-Sorted Currency Portfolios - Portfolios of C ountries in Burnside et alii (2008)
+Portfolio 1 2 3 4 5
+Spot change: ∆ sj
+Mean −1.54 0 .14 0 .75 1 .11 0 .41
+Std 10.03 10 .71 9 .93 9 .75 8 .74
+Discount: fj−sj
+Mean −2.80−0.53 1 .46 2 .46 4 .25
+Std 0.75 0 .84 0 .80 0 .89 1 .07
+Excess Return: rxj(without b-a)
+Mean −1.26−0.67 0 .71 1 .35 3 .85
+Std 10.16 10 .78 10 .00 9.73 8 .80
+SR −0.12−0.06 0 .07 0 .14 0 .44
+High-minus-Low: rxj−rx1(without b-a)
+Mean 0.59 1 .97 2 .61 5 .10
+Std 5.53 5 .71 6 .40 7 .81
+SR 0.11 0 .34 0 .41 0 .65
+Notes: This table reports, for each portfolio j, the average change in the log spot exchange rate ∆ sj, the average log
+forward discount fj−sj, the average log excess return rxjwithout bid-ask spreads and the average returns on the
+long short strategy rxj−rx1. The left panel uses our sample of developed and emerging cou ntries. The right panel
+uses our sample of developed countries. Log currency excess returns are computed as rxj
+t+1=−∆sj
+t+1+fj
+t−sj
+t. All
+moments are annualized and reported in percentage points. F or excess returns, the table also reports Sharpe ratios,
+computed as ratios of annualized means to annualized standa rd deviations. Portfolios are constructed by sorting
+currencies into six groups at time tbased on slope coeﬃcients βi
+t. Each βi
+tis obtained by regressing currency ilog
+excess return rxionHML on a 36-period moving window that ends in period t−1. The ﬁrst portfolio contains
+currencies with the lowest βs. The last portfolio contains currencies with the highest βs. Data are monthly, from
+Barclays and Reuters (Datastream). The sample is 2/1976 - 01 /2008.
+16
+=== PAGE 17 ===
+Table 18: Summary Statistics - Foreign Investors - Portfoli os of Developed and Emerging Countries
+- Midpoint Conversion
+Portfolio 1 2 3 4 5 6
+Panel I: UK
+Excess Return: rxj
+net
+Mean −5.21−4.26−3.88−1.50−1.16−0.24
+SR −0.61−0.52−0.46−0.18−0.14−0.03
+Long-Short: rxj
+net−rx1
+net
+Mean 0.94 1 .33 3 .70 4 .04 4 .96
+SR 0.18 0 .23 0 .56 0 .61 0 .55
+Panel II: Japan
+Excess Return: rxj
+net
+Mean −1.31−2.12−0.63 1 .71 2 .24 2 .80
+SR −0.14−0.21−0.06 0 .16 0 .23 0 .24
+Long-Short: rxj
+net−rx1
+net
+Mean −0.81 0 .68 3 .03 3 .55 4 .11
+SR −0.15 0 .12 0 .50 0 .55 0 .47
+Panel III: Switzerland
+Excess Return: rxj
+net
+Mean −3.02−1.17−1.09 0 .58 1 .56 2 .23
+SR −0.40−0.15−0.12 0 .07 0 .20 0 .22
+Long-Short: rxj
+net−rx1
+net
+Mean 1.85 1 .93 3 .59 4 .57 5 .25
+SR 0.33 0 .32 0 .55 0 .72 0 .60
+Notes: This table reports summary statistics for currencies sorte d into portfolios. We report averages and Sharpe ratios of lo g excess
+returns rxj
+netwith bid-ask spreads and log excess returns on the long short strategy rxj
+net−rx1
+netinUK pounds , inJapanese yen , and
+inSwiss francs . All moments are annualized and reported in percentage poin ts. The portfolios are constructed by sorting currencies
+into six groups at time tbased on the one-month forward discount (i.e nominal intere st rate diﬀerential) at the end of period t−1.
+Portfolio 1 contains currencies with the lowest interest ra tes. Portfolio 6 contains currencies with the highest inter est rates. Data are
+monthly, from Barclays and Reuters (Datastream). The sampl e period is 11/1983 - 03/2008.
+17
+=== PAGE 18 ===
+Table 19: Asset Pricing - Foreign Investors
+λHML λRX R2RMSE χ2λHML λRX R2RMSE χ2λHML F XλRX R2RMSE χ2
+UK Jap Swi
+GMM 1 5.54−2.13 70 .12 0 .95 5 .50 1 .18 60 .16 1 .16 5 .79 0 .41 78 .57 0 .81
+[2.34] [1 .87] 24 .83 [2 .21] [2 .13] 9 .35 [2 .25] [1 .69] 27 .81
+GMM 2 5.47−2.25 69 .66 0 .96 4 .73 1 .92 41 .85 1 .40 6 .23 0 .62 76 .55 0 .85
+[2.17] [1 .70] 24 .89 [2 .12] [2 .10] 10 .76 [2 .11] [1 .61] 28 .30
+FMB 5.54−2.13 60 .16 0 .95 5 .50 1 .18 46 .88 1 .16 5 .79 0 .41 71 .43 0 .81
+[1.83] [1 .46] 20 .57 [1 .77] [1 .87] 6 .00 [1 .78] [1 .46] 28 .04
+(1.83) (1 .46) 22 .28 (1 .77) (1 .87) 6 .80 (1 .78) (1 .46) 30 .03
+Mean 5.44 -2.13 4.85 1.18 5.92 0.42
+Portfolio αi0βi
+HML βi
+RX R2αi0 βi
+HML βi
+RX R2αi0 βi
+HML βi
+RX R2
+UK Jap Swi
+1 −0.48−0.39 0 .98 91 .40 −0.11−0.37 0 .96 93 .83 −0.75−0.38 0 .99 89 .05
+[0.56] [0 .02] [0 .03] [0 .47] [0 .02] [0 .02] [0 .53] [0 .02] [0 .02]
+2 −0.90−0.15 1 .00 81 .97 −1.94−0.17 1 .05 86 .61 −0.44−0.13 1 .00 77 .39
+[0.84] [0 .03] [0 .04] [0 .79] [0 .03] [0 .03] [0 .95] [0 .04] [0 .05]
+3 −0.78−0.08 1 .02 79 .06 −0.67−0.11 1 .02 86 .47 −0.31−0.12 1 .09 79 .23
+[0.85] [0 .03] [0 .04] [0 .71] [0 .03] [0 .03] [0 .82] [0 .03] [0 .04]
+4 1 .57−0.08 0 .99 73 .07 1 .53−0.07 1 .05 84 .58 1 .10 −0.07 1 .00 72 .33
+[0.91] [0 .04] [0 .04] [0 .88] [0 .04] [0 .05] [0 .97] [0 .04] [0 .05]
+5 1 .06 0 .09 1 .02 77 .77 1 .31 0 .09 0 .96 84 .47 1 .15 0 .08 0 .94 76 .23
+[0.79] [0 .04] [0 .04] [0 .84] [0 .04] [0 .03] [0 .84] [0 .04] [0 .05]
+6 −0.48 0 .61 0 .98 92 .14 −0.11 0 .63 0 .96 96 .05 −0.75 0 .62 0 .99 93 .76
+[0.56] [0 .02] [0 .03] [0 .47] [0 .02] [0 .02] [0 .53] [0 .02] [0 .02]
+χ2(α) χ2(α) χ2(α)
+7.30 0 .29 14 .28 0 .03 4 .48 0 .61
+Notes: Panel I reports results from GMM and Fama-McBeth asset prici ng procedures. Market prices of risk λ,R2, square-root of mean-squared errors RMSE and p-values of
+χ2tests are reported in percentage points. b1represents the factor loading. The portfolios are construc ted by sorting currencies into six groups at time tbased on the interest
+rate diﬀerential at the end of period t−1. Portfolio 1 contains currencies with the lowest interest rate. Portfolio 6 contains currencies with the highest inte rest rate. Data are
+monthly, from Barclays and Reuters in Datastream. The sampl e period is 11/1983 - 03/2008. Excess returns used as test ass ets take into account bid-ask spreads. All excess
+returns are multiplied by 12. Standard errors are reported i n brackets. Shanken-corrected standard errors are reporte d in parenthesis. Panel II reports results OLS estimates of
+the factor betas. The intercept α0β, and the R2are reported in percentage points. The standard errors in br ackets are Newey-West standard errors computed with the opt imal
+number of lags. The χ2test statistic α′V−1
+ααtests the null that all intercepts are jointly zero. This sta tistic is constructed from the Newey-West variance-covari ance matrix (1
+lag) for the system of equations (Cochrane (2001), p. 234). T he portfolios are constructed by sorting currencies into si x groups at time tbased on the the currency excess return
+at the end of period t−1. Portfolio 1 contains currencies with the lowest previous excess return. Portfolio 5 contains currencies with the hig hest previous excess return. Data are
+monthly, from Barclays. The sample period is 11/1983 - 03/20 08. Excess returns used as test assets take into account bid- ask spreads. All excess returns are multiplied by 12.
+18
+=== PAGE 19 ===
+Table 20: Currency Portfolios - US Investor - Time Sub-Sampl es
+Portfolio 1 2 3 4 5 6 1 2 3 4 5 6
+Panel I: 1983-1995 Panel II: 1995-2008
+Spot change: ∆ sj∆sj
+Mean −2.59−2.64−1.29−4.25−1.61 1 .67 0 .42−0.28−1.87−1.49−0.49 2 .06
+Std 8.81 8 .11 8 .38 8 .85 9 .56 10 .00 7 .31 6 .51 6 .49 5 .91 5 .76 8 .37
+Forward Discount: fj−sjfj−sj
+Mean −2.95−1.28 0 .18 1 .53 3 .12 7 .72−4.70−1.33−0.43 0 .43 2 .04 7 .79
+Std 0.68 0 .65 0 .63 0 .67 0 .65 2 .45 2 .02 0 .29 0 .29 0 .30 0 .49 1 .72
+Excess Return: rxj(without b-a) rxj(without b-a)
+Mean −0.36 1 .36 1 .47 5 .77 4 .73 6 .05−5.11−1.05 1 .43 1 .91 2 .53 5 .73
+Std 8.91 8 .22 8 .42 8 .99 9 .70 10 .17 7 .53 6 .52 6 .54 5 .97 5 .83 8 .41
+SR −0.04 0 .17 0 .17 0 .64 0 .49 0 .60−0.68−0.16 0 .22 0 .32 0 .43 0 .68
+Net Excess Return: rxjnet(with b-a) rxjnet(with b-a)
+Mean 1.00 0 .29−0.20 3 .99 3 .06 3 .27−4.00−1.94 0 .49 0 .91 1 .18 2 .99
+Std 8.92 8 .21 8 .35 8 .91 9 .68 10 .15 7 .49 6 .52 6 .56 5 .97 5 .86 8 .41
+SR 0.11 0 .04−0.02 0 .45 0 .32 0 .32−0.53−0.30 0 .08 0 .15 0 .20 0 .35
+High-minus-Low: rxj−rx1(without b-a) rxj−rx1(without b-a)
+Mean 2.95 4 .33 6 .59 6 .46 8 .83 4 .06 6 .55 7 .03 7 .65 10 .84
+Std 5.52 5 .82 6 .55 6 .74 8 .98 5 .21 5 .23 6 .75 5 .97 8 .89
+SR 0.31 0 .32 0 .94 0 .76 0 .71 0 .78 1 .25 1 .04 1 .28 1 .22
+High-minus-Low: rxjnet−rx1net(with b-a) rxjnet−rx1net(with b-a)
+Mean −0.71−1.20 2 .99 2 .06 2 .27 2 .06 4 .49 4 .91 5 .18 6 .98
+Std 5.56 5 .86 6 .55 6 .79 9 .03 5 .17 5 .20 6 .69 5 .91 8 .88
+SR −0.13−0.20 0 .46 0 .30 0 .25 0 .40 0 .86 0 .73 0 .88 0 .79
+Notes: This table reports, for each portfolio j, the average change in log spot exchange rates ∆ sj, the average log forward discount fj−sj, the average
+log excess return rxjwithout bid-ask spreads, the average log excess return rxjnetwith bid-ask spreads, and the average return on the long shor t strategy
+rxjnet−rx1netandrxj−rx1(with and without bid-ask spreads). Log currency excess ret urns are computed as rxjt+1=−∆sjt+1+fj
+t−sjt. All moments
+are annualized and reported in percentage points. For exces s returns, the table also reports Sharpe ratios, computed as ratios of annualized means to
+annualized standard deviations. The portfolios are constr ucted by sorting currencies into six groups at time tbased on the one-month forward discount
+(i.e nominal interest rate diﬀerential) at the end of period t−1. Portfolio 1 contains currencies with the lowest interest rates. Portfolio 6 contains
+currencies with the highest interest rates. Both panels use data from developed and emerging countries. Data are monthl y, from Barclays and Reuters
+(Datastream). The sample periods are 11/1983 - 1/1995 and 1/ 1995 - 03/2008.
+19
+=== PAGE 20 ===
+Table 21: Asset Pricing - US Investor - Time Sub-Samples
+Panel I: Factor Prices and Loadings
+1983-1995 1995-2008
+λHML F X λRX bHML F X bRX R2RMSE χ2λHML F X λRX bHML F X bRX R2RMSE χ2
+GMM 1 3.41 2 .52 0 .34 0 .33 36 .09 1 .21 7 .21 0 .36 0 .81 0 .18 77 .93 1 .03
+[2.91] [2 .86] [0 .30] [0 .40] 44 .23 [3 .35] [1 .83] [0 .38] [0 .53] 22 .93
+GMM 2 3.22 1 .78 0 .33 0 .23 11 .75 1 .42 7 .37 0 .26 0 .83 0 .16 77 .67 1 .03
+[2.70] [2 .82] [0 .28] [0 .39] 45 .29 [3 .15] [1 .74] [0 .36] [0 .50] 22 .98
+FMB 3.41 2 .52 0 .34 0 .33 36 .09 1 .21 7 .21 0 .36 0 .81 0 .18 77 .93 1 .03
+[2.75] [2 .32] [0 .28] [0 .32] 43 .14 [2 .43] [1 .49] [0 .27] [0 .42] 31 .32
+(2.75) (2 .32) (0 .28) (0 .32) 44 .20 (2 .44) (1 .49) (0 .27) (0 .42) 34 .36
+Mean 2.65 2.48 7.66 0.44
+Panel II: Factor Betas
+1983-1995 1995-2008
+Portfolio αj0(%) βj
+HML F Xβj
+RX R2(%)χ2(α)p−value αj0(%) βj
+HML F Xβj
+RX R2(%)χ2(α)p−value
+1 −0.01 −0.40 1 .03 93 .33 −1.12 −0.38 1 .11 89 .03
+[0.76] [0 .02] [0 .04] [0.68] [0 .03] [0 .04]
+2 −1.40 −0.08 0 .96 83 .00 −0.78 −0.17 0 .98 73 .17
+[1.03] [0 .04] [0 .05] [1.11] [0 .03] [0 .07]
+3 −1.50 −0.17 0 .90 72 .15 0 .94 −0.07 1 .06 78 .62
+[1.50] [0 .06] [0 .06] [0.85] [0 .03] [0 .04]
+4 2 .03 0 .01 1 .00 76 .30 1 .42 −0.06 0 .81 56 .83
+[1.33] [0 .06] [0 .08] [1.03] [0 .04] [0 .07]
+5 0 .90 0 .03 1 .08 77 .25 0 .67 0 .06 0 .94 75 .46
+[1.45] [0 .07] [0 .07] [0.85] [0 .03] [0 .05]
+6 −0.01 0 .60 1 .03 94 .77 −1.12 0 .62 1 .11 90 .97
+[0.76] [0 .02] [0 .04] [0.68] [0 .03] [0 .04]
+All 3.71 0 .72 7.66 0 .26
+Notes: The panel on the left reports results for all countries. The p anel on the right reports results for the developed countrie s. Panel I reports results
+from GMM and Fama-McBeth asset pricing procedures. Market p rices of risk λ, the adjusted R2, the square-root of mean-squared errors RMSE and
+thep-values of χ2tests on pricing errors are reported in percentage points. bdenotes the vector of factor loadings. Excess returns used a s test assets
+and risk factors take into account bid-ask spreads. All exce ss returns are multiplied by 12 (annualized). The standard e rrors in brackets are Newey
+and West (1987) standard errors computed with the optimal nu mber of lags according to Andrews (1991). Shanken (1992)-co rrected standard errors
+are reported in parentheses. We do not include a constant in t he second step of the FMB procedure. Panel II reports OLS esti mates of the factor
+betas. R2s and p-values are reported in percentage points. The χ2test statistic α′V−1
+ααtests the null that all intercepts are jointly zero. This sta tistic
+is constructed from the Newey-West variance-covariance ma trix (1 lag) for the system of equations (see Cochrane (2001) , p. 234). Data are monthly,
+from Barclays and Reuters in Datastream. Both panels use dat a from developed and emerging countries. Data are monthly, f rom Barclays and Reuters
+(Datastream). The sample periods are 11/1983 - 1/1995 and 1/ 1995 - 03/2008.
+20
+=== PAGE 21 ===
+Table 22: Asset Pricing - T-Bill portfolios
+λHML λRX bHML bRX R2RMSE χ2
+1953-2002
+GMM 1 4.10 0 .25 8 .39 −2.05 42 .47 1 .11
+[1.25] [1 .10] [2 .76] [3 .60] 44 .44
+GMM 2 3.89 0 .18 8 .00 −2.13 42 .09 1 .11
+[0.81] [0 .91] [1 .95] [3 .05] 45 .47
+FMB 4.10 0 .25 8 .22 −2.01 42 .47 1 .11
+[1.17] [0 .84] [2 .34] [2 .54] 10 .18
+(1.21) (0 .84) (2 .43) (2 .56) 24 .16
+Mean 5.32 0.128
+1971-2002
+GMM 1 6.20 0 .31 9 .25 −2.48 72 .50 0 .92
+[2.07] [1 .93] [3 .29] [4 .17] 78 .19
+GMM 2 5.80 0 .30 8 .65 −2.29 72 .13 0 .92
+[1.09] [1 .18] [1 .96] [2 .73] 80 .26
+FMB 6.20 0 .31 8 .96 −2.41 72 .50 0 .92
+[1.66] [1 .30] [2 .37] [2 .55] 68 .36
+(1.73) (1 .30) (2 .49) (2 .57) 86 .28
+Mean 6.92 0.255
+Notes: This table reports results from GMM and Fama-McBeth asset pr icing procedures. Market prices of risk
+λ, the adjusted R2, the square-root of mean-squared errors RMSE and the p-values of χ2tests are reported in
+percentage points. b1represents the factor loading. The portfolios are construc ted by sorting currencies into six
+groups at time tbased on the interest rate diﬀerential at the end of period t−1. Portfolio 1 contains currencies
+with the lowest interest rates. Portfolio 8 contains curren cies with the highest interest rates. Data are annual, from
+Global Financial Data. Standard errors are reported in brac kets. Shanken-corrected standard errors are reported
+in parentheses. We do not include a constant in the second ste p of the FMB procedure.
+21
+=== PAGE 22 ===
+Table 23: Factor Betas - US Investor
+Portfolio αj
+0βj
+HML βj
+RX R2αj
+0βj
+HML βj
+RX R2
+1971-2002 1953-2002
+1 −0.02−0.46 0 .97 80 .91 0 .02−0.47 0 .95 79 .28
+[0.71] [0 .06] [0 .10] [0 .44] [0 .06] [0 .09]
+2 0 .07−0.03 0 .62 41 .16−1.16 0 .04 0 .64 32 .92
+[0.92] [0 .07] [0 .16] [0 .96] [0 .10] [0 .18]
+3 −0.77−0.04 0 .99 74 .28−0.58−0.05 0 .97 72 .11
+[0.86] [0 .09] [0 .12] [0 .52] [0 .08] [0 .12]
+4 0 .40 0 .06 1 .20 78 .00−0.33 0 .09 1 .19 73 .25
+[1.02] [0 .10] [0 .13] [0 .75] [0 .09] [0 .13]
+5 −0.32−0.09 0 .98 56 .83 0 .38−0.12 0 .98 55 .44
+[1.15] [0 .11] [0 .12] [0 .72] [0 .11] [0 .12]
+6 −1.38 0 .16 1 .05 67 .44−1.12 0 .15 1 .05 64 .26
+[1.21] [0 .10] [0 .14] [0 .78] [0 .09] [0 .14]
+7 −0.02 0 .54 0 .97 88 .39 0 .02 0 .53 0 .95 87 .25
+[0.71] [0 .06] [0 .10] [0 .44] [0 .06] [0 .09]
+8 2 .07−0.13 1 .22 34 .31 2 .76−0.17 1 .28 34 .00
+[3.40] [0 .19] [0 .44] [2 .10] [0 .15] [0 .40]
+χ2(α) 1.09 4 .55
+p−value 99.06 80 .33
+Notes: This table reports results OLS estimates of the factor betas . The intercept α0β, and the R2are reported
+in percentage points. The standard errors in brackets are Ne wey-West standard errors computed with the optimal
+number of lags. The χ2test statistic α′V−1
+ααtests the null that all intercepts are jointly zero. This sta tistic is
+constructed from the Newey-West variance-covariance matr ix (1 lag) for the system of equations (Cochrane (2001),
+p. 234). The portfolios are constructed by sorting currenci es into six groups at time tbased on the interest rate
+diﬀerential at the end of period t−1. Portfolio 1 contains currencies with the lowest interest rates. Portfolio 6
+contains currencies with the highest interest rates. Data a re annual from Global Financial Data. Standard errors
+are reported in parenthesis. Shanken-corrected standard e rrors are reported in brackets.
+22
+=== PAGE 23 ===
+Table 24: Consumption Betas for HML FX
+βHML F Xc p(%) R2βHML F X
+dp(%) R2
+Panel I: Nondurables Panel II: Durables
+1953−2002 1 .00 4 .04 1 .06 9 .07
+[0.44] 2 .23 [0 .40] 0 .89
+1971−2002 1 .54 8 .72 1 .65 14 .02
+[0.52] 0 .28 [0 .60] 0 .63
+Notes: Each entry of this table reports OLS estimates of β1in the following time-series regression of the spread on the factor:
+HML F X,t+1=β0+β1ft+ǫt+1. HML F X,t+1is the return on the seventh minus the return on the ﬁrst portf olio. The estimates are
+based on annual data. The standard errors are reported in bra ckets. We use Newey-West heteroskedasticity-consistent s tandard errors
+with an optimal number of lags to estimate the spectral densi ty matrix following Andrews (1991). The p-values (reported in %) are
+for a t-test on the slope coeﬃcient. The factor ftis non-durable consumption growth (∆ c) in the left panel and durable consumption
+growth (∆ d) in the right panel. The sample is 1953 −2002 in the upper panel and 1971 −2002 in the lower panel.
+23
+=== PAGE 24 ===
+Table 25: Asset Pricing - HML FXand Equity Volatility Risk Factor (Innovations) - All Count ries
+Panel I: Factor Prices and Loadings
+All Countries
+λHML F XλV ol Equity λRX bHML F XbV ol Equity bRX R2RMSE χ2
+GMM 1 5.47 0 .02 1 .35 0 .63 0 .80 0 .27 59 .07 0 .95
+[2.34] [3 .49] [1 .73] [0 .52] [9 .66] [0 .35] 7 .41
+GMM 2 5.14 −2.11 0 .49 0 .31 −5.15 0 .06 24 .66 1 .29
+[2.22] [3 .34] [1 .68] [0 .49] [9 .23] [0 .33] 9 .86
+FMB 5.47 0 .02 1 .35 0 .62 0 .80 0 .27 59 .09 0 .95
+[1.81] [3 .60] [1 .34] [0 .50] [9 .92] [0 .27] 7 .40
+(1.81) (3 .67) (1 .34) (0 .51) (10 .10) (0 .27) 8 .27
+Panel II: Factor Betas
+All Countries
+Portfolio αj0(%) βj
+HML F Xβj
+V ol Equityβj
+RXR2(%) χ2(α)p−value
+1 −0.55 −0.39 −0.04 1 .06 91 .37
+[0.52] [0 .02] [0 .07] [0 .03]
+2 −1.25 −0.12 0 .12 0 .97 78 .61
+[0.76] [0 .03] [0 .08] [0 .05]
+3 −0.12 −0.12 −0.03 0 .95 73 .73
+[0.83] [0 .03] [0 .12] [0 .04]
+4 1 .58 −0.02 0 .13 0 .93 68 .95
+[0.87] [0 .04] [0 .10] [0 .06]
+5 0 .88 0 .04 −0.13 1 .03 76 .45
+[0.79] [0 .04] [0 .11] [0 .05]
+6 −0.55 0 .61 −0.04 1 .06 93 .04
+[0.52] [0 .02] [0 .07] [0 .03]
+All 7.71 0 .26
+Notes: The panel on the left reports results for all countries. The p anel on the right reports results for the developed countrie s. Panel I reports results
+from GMM and Fama-McBeth asset pricing procedures. Market p rices of risk λ, the adjusted R2, the square-root of mean-squared errors RMSE and
+thep-values of χ2tests on pricing errors are reported in percentage points. bdenotes the vector of factor loadings. Excess returns used a s test assets
+and risk factors take into account bid-ask spreads. All exce ss returns are multiplied by 12 (annualized). The standard e rrors in brackets are Newey
+and West (1987) standard errors computed with the optimal nu mber of lags according to Andrews (1991). Shanken (1992)-co rrected standard errors
+are reported in parentheses. We do not include a constant in t he second step of the FMB procedure. Panel II reports OLS esti mates of the factor
+betas. R2s and p-values are reported in percentage points. The χ2test statistic α′V−1
+ααtests the null that all intercepts are jointly zero. This sta tistic
+is constructed from the Newey-West variance-covariance ma trix (1 lag) for the system of equations (see Cochrane (2001) , p. 234). Data are monthly,
+from Barclays and Reuters in Datastream. The sample period i s 11/1983 - 03/2008. The alphas are annualized and in percent age points.
+24
+=== PAGE 25 ===
+Table 26: Asset Pricing - HML FXand Equity Volatility Risk Factor (Innovations) - Develope d Countries
+Panel I: Factor Prices and Loadings
+Developed Countries
+λHML F XλV ol Equity λRX bHML F XbV ol Equity bRX R2RMSE χ2
+GMM 1 3.66 2 .33 2 .23 0 .73 6 .24 0 .33 72 .12 0 .49
+[2.54] [3 .58] [2 .21] [0 .45] [8 .81] [0 .26] 49 .14
+GMM 2 3.76 3 .23 2 .84 0 .86 8 .48 0 .41 26 .04 0 .79
+[2.53] [3 .36] [2 .13] [0 .43] [8 .27] [0 .25] 54 .88
+FMB 3.66 2 .33 2 .23 0 .73 6 .22 0 .33 72 .13 0 .49
+[1.80] [2 .67] [1 .71] [0 .37] [6 .60] [0 .20] 47 .59
+(1.80) (2 .90) (1 .71) (0 .39) (7 .16) (0 .20) 53 .28
+Panel II: Factor Betas
+Developed Countries
+Portfolio αj0(%) βj
+HML F Xβj
+V ol Equityβj
+RXR2(%) χ2(α)p−value
+1 0 .02 −0.50 −0.11 1 .00 94 .98
+[0.48] [0 .02] [0 .08] [0 .02]
+2 −0.90 −0.11 0 .03 1 .02 82 .38
+[0.82] [0 .05] [0 .14] [0 .04]
+3 0 .95 −0.01 0 .27 1 .02 85 .51
+[0.83] [0 .04] [0 .12] [0 .03]
+4 −0.10 0 .12 −0.09 0 .97 81 .46
+[0.85] [0 .04] [0 .14] [0 .04]
+5 0 .02 0 .50 −0.11 1 .00 93 .92
+[0.48] [0 .02] [0 .08] [0 .02]
+All 2.57 0 .77
+Notes: The panel on the left reports results for all countries. The p anel on the right reports results for the developed countrie s. Panel I reports results
+from GMM and Fama-McBeth asset pricing procedures. Market p rices of risk λ, the adjusted R2, the square-root of mean-squared errors RMSE and
+thep-values of χ2tests on pricing errors are reported in percentage points. bdenotes the vector of factor loadings. Excess returns used a s test assets
+and risk factors take into account bid-ask spreads. All exce ss returns are multiplied by 12 (annualized). The standard e rrors in brackets are Newey
+and West (1987) standard errors computed with the optimal nu mber of lags according to Andrews (1991). Shanken (1992)-co rrected standard errors
+are reported in parentheses. We do not include a constant in t he second step of the FMB procedure. Panel II reports OLS esti mates of the factor
+betas. R2s and p-values are reported in percentage points. The χ2test statistic α′V−1
+ααtests the null that all intercepts are jointly zero. This sta tistic
+is constructed from the Newey-West variance-covariance ma trix (1 lag) for the system of equations (see Cochrane (2001) , p. 234). Data are monthly,
+from Barclays and Reuters in Datastream. The sample period i s 11/1983 - 03/2008. The alphas are annualized and in percent age points.
+25
+=== PAGE 26 ===
+Table 27: Asset Pricing - Currency Volatility Risk Factor (I nnovations)
+Panel I: Factor Prices and Loadings
+All Countries Developed Countries
+λV ol F XλRX bV ol F X bRX R2RMSE χ2λV ol F X λRX bV ol F X bRX R2RMSE χ2
+GMM 1−1.67 1 .34−38.89 0 .13 74 .19 0 .87 −1.58 2 .24−35.18 0 .27 80 .29 0 .50
+[0.88] [2 .30] [20 .68] [0 .45] 62 .38 [0 .98] [2 .60] [21 .85] [0 .30] 83 .90
+GMM 2−1.54 1 .23−35.93 0 .12 73 .21 0 .89 −1.74 2 .52−38.66 0 .30 72 .97 0 .59
+[0.80] [2 .28] [18 .63] [0 .44] 62 .90 [0 .94] [2 .58] [20 .92] [0 .30] 85 .32
+FMB −1.67 1 .34−38.76 0 .13 74 .21 0 .87 −1.58 2 .24−35.06 0 .27 80 .29 0 .50
+[0.54] [1 .34] [12 .67] [0 .26] 17 .87 [0 .71] [1 .71] [15 .84] [0 .20] 58 .88
+(0.69) (1 .34) (16 .10) (0 .26) 43 .14 (0 .89) (1 .71) (19 .67) (0 .20) 74 .54
+Panel II: Factor Betas
+All Countries Developed Countries
+Portfolio αj0(%) βj
+RXβj
+V ol F XR2(%)χ2(α)p−value αj0(%) βj
+V ol F Xβj
+RX R2(%)χ2(α)p−value
+1 −2.67 1 .18 1 .07 74 .49 −1.87 1 .05 1 .06 77 .62
+[1.01] [0 .36] [0 .05] [0.98] [0 .51] [0 .04]
+2 −1.90 0 .58 0 .97 76 .45 −1.33 0 .64 1 .04 81 .51
+[0.75] [0 .34] [0 .05] [0.86] [0 .35] [0 .04]
+3 −0.76 0 .66 0 .95 72 .09 0 .93 0 .04 1 .02 85 .19
+[0.85] [0 .38] [0 .05] [0.83] [0 .37] [0 .03]
+4 1 .49 0 .11 0 .93 68 .79 0 .36−0.42 0 .95 80 .03
+[0.85] [0 .50] [0 .06] [0.88] [0 .32] [0 .04]
+5 1 .10−0.57 1 .03 76 .27 1 .90−1.30 0 .93 72 .37
+[0.82] [0 .36] [0 .04] [1.04] [0 .49] [0 .05]
+6 2 .74−1.96 1 .05 59 .96
+[1.23] [0 .70] [0 .06]
+All 45.11 0 .00 6.85 0 .23
+Notes: The panel on the left reports results for all countries. The p anel on the right reports results for the developed countrie s. Panel I reports results
+from GMM and Fama-McBeth asset pricing procedures. Market p rices of risk λ, the adjusted R2, the square-root of mean-squared errors RMSE and
+thep-values of χ2tests on pricing errors are reported in percentage points. bdenotes the vector of factor loadings. Excess returns used a s test assets
+and risk factors take into account bid-ask spreads. All exce ss returns are multiplied by 12 (annualized). The standard e rrors in brackets are Newey
+and West (1987) standard errors computed with the optimal nu mber of lags according to Andrews (1991). Shanken (1992)-co rrected standard errors
+are reported in parentheses. We do not include a constant in t he second step of the FMB procedure. Panel II reports OLS esti mates of the factor
+betas. R2s and p-values are reported in percentage points. The χ2test statistic α′V−1
+ααtests the null that all intercepts are jointly zero. This sta tistic
+is constructed from the Newey-West variance-covariance ma trix (1 lag) for the system of equations (see Cochrane (2001) , p. 234). Data are monthly,
+from Barclays and Reuters in Datastream. The sample period i s 11/1983 - 03/2008. The alphas are annualized and in percent age points.
+26
+=== PAGE 27 ===
+Table 28: Asset Pricing - Currency Volatility Risk Factor (1 2-month rolling windows)
+Panel I: Factor Prices and Loadings
+All Countries Developed Countries
+λV ol Equity λRX bV ol Equity bRX R2RMSE χ2λV ol Equity λRX bV ol Equity bRX R2RMSE χ2
+GMM 1 −0.18 2 .40 −652.65 0 .11 70 .65 0 .96 −0.14 3 .25 −307.25 0 .28 35 .39 0 .87
+[0.09] [1 .92] [341 .01] [0 .43] 43 .62 [0 .08] [2 .12] [189 .86] [0 .26] 41 .08
+GMM 2 −0.13 1 .56 −494.94 0 .03 43 .19 1 .34 −0.11 3 .53 −237.86 0 .34 23 .08 0 .94
+[0.07] [1 .84] [274 .14] [0 .42] 52 .98 [0 .06] [2 .08] [143 .38] [0 .26] 45 .31
+FMB −0.18 2 .40 −650.31 0 .11 70 .71 0 .96 −0.14 3 .25 −306.15 0 .28 35 .43 0 .87
+[0.05] [1 .33] [180 .21] [0 .29] 21 .18 [0 .07] [1 .73] [155 .06] [0 .22] 22 .59
+(0.07) (1 .33) (261 .81) (0 .31) 60 .85 (0 .08) (1 .73) (184 .22) (0 .22) 38 .37
+Panel II: Factor Betas
+All Countries Developed Countries
+Portfolio αj0(%) βj
+V ol Equityβj
+RXR2(%)χ2(α)p−value αj0(%) βj
+V ol Equityβj
+RXR2(%)χ2(α)p−value
+1 −2.67 1 .55 1 .08 73 .04 −1.87 0 .97 1 .07 76 .70
+[1.02] [0 .45] [0 .06] [1.01] [0 .45] [0 .04]
+2 −1.76 0 .02 0 .93 74 .22 −1.25 0 .46 1 .03 80 .14
+[0.77] [0 .38] [0 .05] [0.87] [0 .39] [0 .04]
+3 −0.99 0 .38 0 .94 70 .86 0 .68 −0.09 1 .01 85 .28
+[0.77] [0 .45] [0 .04] [0.76] [0 .28] [0 .03]
+4 1 .36 −0.83 0 .97 70 .52 0 .50 −0.99 0 .97 82 .33
+[0.85] [0 .57] [0 .06] [0.82] [0 .26] [0 .04]
+5 1 .35 −0.51 1 .05 77 .37 1 .95 −0.36 0 .92 69 .78
+[0.79] [0 .36] [0 .05] [1.07] [0 .39] [0 .05]
+6 2 .70 −0.60 1 .04 55 .68
+[1.29] [0 .71] [0 .07]
+All 13.51 0 .04 6.00 0 .31
+Notes: The panel on the left reports results for all countries. The p anel on the right reports results for the developed countrie s. Panel I reports results
+from GMM and Fama-McBeth asset pricing procedures. Market p rices of risk λ, the adjusted R2, the square-root of mean-squared errors RMSE and
+thep-values of χ2tests on pricing errors are reported in percentage points. bdenotes the vector of factor loadings. Excess returns used a s test assets
+and risk factors take into account bid-ask spreads. All exce ss returns are multiplied by 12 (annualized). The standard e rrors in brackets are Newey
+and West (1987) standard errors computed with the optimal nu mber of lags according to Andrews (1991). Shanken (1992)-co rrected standard errors
+are reported in parentheses. We do not include a constant in t he second step of the FMB procedure. Panel II reports OLS esti mates of the factor
+betas. R2s and p-values are reported in percentage points. The χ2test statistic α′V−1
+ααtests the null that all intercepts are jointly zero. This sta tistic
+is constructed from the Newey-West variance-covariance ma trix (1 lag) for the system of equations (see Cochrane (2001) , p. 234). Data are monthly,
+from Barclays and Reuters in Datastream. The sample period i s 11/1983 - 03/2008. The alphas are annualized and in percent age points.
+27
+=== PAGE 28 ===
+Table 29: CAPM in Crisis
+Portfolio αim βi
+mp(%) R2
+αim βi
+mp(%) R2
+αim βi
+mp(%) R2
+αim βi
+mp(%) R2
+Sample 26-May-1998 02-Aug-1995 10-Oct-1999 31-Aug-2007
+1 −1.13 0 .02 86 .16 0 .104.24−1.22 0 .09 18 .20−0.16−0.13 16 .91 7 .330.15−0.13 1.38 11 .85
+[0.62] [0 .14] [1.57] [0 .37] [0.57] [0 .09] [0.38] [0 .05]
+2 −0.64−0.05 75 .70 0 .593.48−0.90 8 .76 8 .52−0.45−0.11 5 .19 9 .300.17 0 .21 0 .04 27 .84
+[0.92] [0 .16] [1.90] [0 .53] [0.35] [0 .05] [0.37] [0 .06]
+3 −1.45 0 .21 11 .09 10 .973.51−0.89 7 .88 11 .970.85−0.05 34 .63 1 .930.74 0 .18 0 .02 28 .38
+[0.71] [0 .13] [1.80] [0 .50] [0.34] [0 .05] [0.27] [0 .05]
+4 −1.43 0 .28 2 .50 13 .552.21−0.48 5 .52 11 .88−0.24−0.23 3 .95 29 .240.31 0 .21 0 .00 40 .08
+[0.59] [0 .12] [0.83] [0 .25] [0.22] [0 .11] [0.25] [0 .03]
+5 −1.81 0 .50 0 .00 23 .412.14−0.55 5 .20 10 .14−0.40 0 .06 22 .28 4 .820.51 0 .25 0 .00 45 .52
+[0.47] [0 .11] [0.92] [0 .28] [0.30] [0 .05] [0.23] [0 .04]
+6 −3.84 1 .14 0 .00 23 .410.42−0.00 98 .46 10 .140.80 0 .25 0 .00 4 .820.44 0 .50 0 .00 45 .52
+[1.53] [0 .27] [0.43] [0 .14] [0.48] [0 .05] [0.43] [0 .10]
+HML FX−2.71 1 .11 0 .00 20 .15−3.82 1 .22 0 .02 11 .240.96 0 .37 0 .03 20 .870.29 0 .62 0 .00 56 .12
+0.60 0 .16 1.38 0 .33 0.75 0 .10 [0.38] [0 .08]
+Notes: This table reports results OLS estimates of the factor betas . The sample period is 129 days (6 months) before and includin g the mentioned
+date. The intercept α0β, and the R2are reported in percentage points. The standard errors in br ackets are Newey-West standard errors computed
+with the optimal number of lags. The p-value is for a t-test on the slope coeﬃcient. The portfolios are constructed by sort ing currencies into six groups
+at time tbased on the one-month forward discount (i.e nominal intere st rate diﬀerential) at the end of period t−1. The returns are 1-month returns,
+and take into account bid-ask spreads. Portfolio 1 contains currencies with the lowest interest rates. Portfolio 6 cont ains currencies with the highest
+interest rates. Data are daily, from Barclays and Reuters in Datastream. We use the value-weighted return on the US stock market (CRSP).
+28
+=== PAGE 29 ===
+Table 30: Correlation- Carry and Momentum Currency Portfol ios - US Investor
+Panel I: Correlation Matrix
+Portfolio 2−1 3−1 4−1 5−1 6−1 8 −7 9−7 10−7 11−7 12−7
+Carry Momentum
+2−1 1 .00
+3−1 0 .56 1 .00
+4−1 0 .51 0 .44 1 .00
+5−1 0 .51 0 .41 0 .58 1 .00
+6−1 0 .43 0 .43 0 .50 0 .61 1 .00
+8−7 0 .08 0 .03 0 .06−0.02−0.26 1 .00
+9−7 0 .07−0.01 0 .04−0.07−0.27 0 .78 1 .00
+10−7 0 .10−0.04 0 .11 0 .05−0.24 0 .74 0 .79 1 .00
+11−7 0 .14 0 .02 0 .17 0 .11−0.14 0 .67 0 .72 0 .83 1 .00
+12−7 0 .09−0.02 0 .10 0 .11−0.09 0 .65 0 .69 0 .78 0 .82 1 .00
+Panel II: Principal Components
+Portfolio 1 2 3 4 5 6 7 8 9 10 11 12
+1 0 .09 1 .54 6 .01 18 .96−0.30−45−3.80 3 .94−7.81−2.95−5.79 5 .13
+2 0 .08 2 .17 3 .55 6 .54−2.25 35 −0.02−4.64 8 .12 5 .14−13.38 4 .60
+3 0 .08 0 .78 4 .76 8 .48−7.73 81 5 .64−1.61 0 .15 1 .03 15 .63 5 .34
+4 0 .08 2 .34 0 .05−11.38 12 .43−29 3 .51 17 .26 1 .16 1 .60 0 .95 5 .52
+5 0 .08 1 .49−2.80−0.08 5 .29−133 −2.01−10.74 5 .09−4.46 7 .16 4 .98
+6 0 .09−4.31−10.35−9.72−9.97 28 −1.62 0 .46−3.12 0 .78−3.05 9 .31
+7 0 .09−11.33 0 .46 12 .00 7 .97 2 0 .73 1 .49 1 .96 0 .67 0 .68−5.02
+8 0 .09−1.37 5 .89−17.31−6.96−93 6 .53−4.92−3.13−0.23−5.45−5.41
+9 0 .09−0.11 5 .15−13.39−6.16 68 −7.35 6 .53 4 .06−4.74 2 .44−5.00
+10 0 .08 2 .12 0 .45−7.04 7 .28 13 −5.54−7.21−4.75 8 .11 5 .85−4.15
+11 0 .09 3 .32−4.32−0.02 9 .70 128 3 .82−6.91−2.19−5.43−5.32−3.67
+12 0 .08 4 .34−7.84 13 .98−8.31−54 1 .09 7 .35 1 .44 1 .48 1 .28−10.64
+V ar 67.02 8 .94 6 .62 3 .19 2 .95 2 .36 2 .10 1 .99 1 .53 1 .51 1 .45 0 .35
+Notes: Panel I of this table reports the correlations between the av erage return on the long short strategy rxj
+net−rx1
+net
+(after bid-ask spreads) for the carry currency portfolios ( 1-6) and the momentum currency portfolios(7-12). Log
+currency excess returns are computed as rxj
+t+1=−∆sj
+t+1+fj
+t−sj
+t. The bottom panel reports the principal
+components of the log excess returns (after bid-ask spreads ) on all 12 currency portfolios. The carry portfolios are
+constructed by sorting currencies into six groups at time tbased on the one-month forward discount (i.e nominal
+interest rate diﬀerential) at the end of period t−1. Portfolio 1 contains currencies with the lowest interest rates.
+Portfolio 6 contains currencies with the highest interest r ates. The momentum portfolios are constructed by sorting
+currencies into six groups at time tbased on the return realized at the end of period t−1. Portfolio 7 contains
+currencies with the lowest past returns. Portfolio 12 conta ins currencies with the highest past returns. Data are
+monthly, from Barclays and Reuters (Datastream). The sampl e period is 11/1983 - 03/2008.
+29
+=== PAGE 30 ===
+0 1 2 3 4 5 6 701234567
+12345
+Predicted Mean Excess Return (in %)Actual Mean Excess Return (in %)OLS Betas * Mean(factors) 
+Figure 4: Predicted against Actual Excess Returns - Portfol ios of Countries in Burnside et alii
+(2008).
+This ﬁgure plots realized average excess returns on the vert ical axis against predicted average excess returns on the
+horizontal axis. We regress each actual excess return on a co nstant and the risk factors RXandHML FXto obtain
+the slope coeﬃcient βj. Each predicted excess returns is obtained using the OLS est imate of βjtimes the sample
+mean of the factors. All returns are annualized. The data are monthly. The sample is 2/1976 - 01/2008.
+30
+=== PAGE 31 ===
+Jul Aug Sep Oct Nov Dec Jan Feb Mar−0.15−0.1−0.0500.050.1Mortgage Crisis (July 2007 − March 2008, One−Month Returns)
+  
+corr(HML,MSCI) = 0.73HML
+MSCI
+Figure 5: Carry Trade and US Stock Market Returns during the M ortgage Crisis - July 2007 to
+March 2008.
+This ﬁgure plots the one-month HML F Xreturn at daily frequency against the one-month return on th e US MSCI stock market index
+at daily frequency. The sample is 07/02/07-03/31/08.
+87 90 92 95 97 00 02 05 07−0.6−0.4−0.200.20.40.60.811.2
+  
+corr6 −corr1
+βHML
+Figure 6: Market Correlation Spread of Currency Returns
+This ﬁgure plots Corr τ[Rm
+t, rx6
+t]−Corr τ[Rm
+t, rx1
+t],where Corr τis the sample correlation over the previous 12 months [ τ−253, τ]. We
+use monthly returns at daily frequency. We also plot the stoc k market beta of HML F X,βHML . The stock market return is the return
+on the value-weighted US index (CRSP).
+31
+=== PAGE 32 ===
+−0.05 0 0.05 0.1 0.1501020304050Real Interest Rates − Averages
+0.015 0.02 0.025 0.0301020304050Real Interest Rates − Standard deviations
+0.1 0.12 0.14 0.1601020304050Real Exchange Rates − Standard deviations
+0.1 0.12 0.14 0.1601020304050Nominal Exchange Rates − Standard deviations
+−1 −0.8 −0.6 −0.4 −0.2 0 0.2 0.4 0.601020304050UIP Coefficients
+Figure 7: Interest Rates, Exchange Rates, and UIP Slope Coeﬃ cients - Simulated Data.
+This ﬁgure plots several histograms summarizing our simula ted data. We report the distributions of the interest rates’ ﬁrst two moments,
+the volatility of real and nominal exchange rates and the UIP slope coeﬃcients.
+0500 1000 1500 2000 2500 3000 3500 4000 4500 5000−8−6−4−20246Spread in Average Portfolio Deltas and World Risk Factor
+  
+Correlation Actual Series: 0.76Delta L − Delta H (mean zero and unit variance)
+ZW (mean zero and unit variance)
+Figure 8: Spreads in Portfolio Deltas and World Risk Factor - Simulated Data.
+This ﬁgure plots the diﬀerence between the average delta in t he ﬁrst portfolio and the average delta in the last portfolio , along with the
+world risk factor ZW. Both series are centered and scaled by their standard devia tions.
+32
+=== PAGE 33 ===
+0 50 100 150 200 250−0.500.511.52
+MonthsPanel A: Carry trade and stock market
+  
+corrHML
+βHML
+corr6 − corr1
+0 50 100 150 200 2500.0150.020.0250.030.0350.04
+MonthsPanel B: Stock market volatility
+Figure 9: Stock market risk of the carry trade
+This ﬁgure plots the conditional risk measures implied by th e calibrated model. Panel A displays the conditional correl ations and betas
+of the carry trade factor HML F Xwith the stock market return simulated from the model. corr6−corr1denotes the diﬀerence in
+conditional correlations with the stock market return betw een the highest interest rate portfolio and the lowest inter est rate portfolio,
+for a 20-year period (using monthly data). These quantities are estimated from simulated data using rolling 12-month wi ndows. Panel
+B plots the standard deviation of the stock market return usi ng the same rolling windows as the estimated betas.
+33

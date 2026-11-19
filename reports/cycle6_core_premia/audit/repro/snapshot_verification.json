@@ -1,0 +1,8 @@
+{
+ "embedded_manifest_sha256": "ba67379be094135e32557468710a078ea9ac6f0d87516fef331e7788b22d29be",
+ "canonical_payload_sha256": "ba67379be094135e32557468710a078ea9ac6f0d87516fef331e7788b22d29be",
+ "manifest_file_sha256": "755ffe9602925ccd50ae94738361b8b294f06a4ba92eff39bc031b8c4f4a60ce",
+ "ledger_sha256": "ba67379be094135e32557468710a078ea9ac6f0d87516fef331e7788b22d29be",
+ "n_records": 23,
+ "bad_files": []
+}

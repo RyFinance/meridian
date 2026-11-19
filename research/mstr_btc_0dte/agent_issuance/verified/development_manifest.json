@@ -1,0 +1,17 @@
+{
+  "price_file": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/mstr_daily_yf.parquet",
+  "price_sha256": "2a69da621f275570b72e2727a1b14752e2c36a980da975cb4927c04d8f1cd2d7",
+  "development_cutoff": "2023-12-29",
+  "development_rows_read": 1027,
+  "development_price_first_date": "2019-12-02",
+  "development_price_last_date": "2023-12-29",
+  "slippage_bp_each_side": 3.0,
+  "commission_per_share_each_side": 0.005,
+  "short_borrow_annual": 0.3,
+  "horizons_sessions": [
+    1,
+    3,
+    5
+  ],
+  "qualifying_rules": []
+}

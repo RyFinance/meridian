@@ -1,0 +1,54 @@
+{
+  "phase": "frozen_before_validation",
+  "frozen_at_utc": "2026-10-17T07:43:44Z",
+  "development_performance_end": "2022-12-30",
+  "sealed_validation_window": {
+    "start": "2023-01-03",
+    "end": "2026-08-10",
+    "run_count": 0
+  },
+  "rules": [
+    {
+      "id": "MNL1_FAST_MOM05",
+      "lookback": 5,
+      "level_sma": null,
+      "max_share_age_sessions": 120
+    },
+    {
+      "id": "MNL2_MOM10_LEVEL50",
+      "lookback": 10,
+      "level_sma": 50,
+      "max_share_age_sessions": 120
+    }
+  ],
+  "rule_payload_sha256": "1e3bf4ae5093c144fb5fc70d7c81d5773582fc862a9373407bc12eeefeac7486",
+  "selection_basis_development_only": {
+    "candidate_grid": [
+      "MOM05", "MOM10", "MOM20", "MOM40",
+      "MOM10_LEVEL50", "MOM20_LEVEL50", "MOM40_LEVEL50"
+    ],
+    "MNL1_FAST_MOM05": {
+      "development_baseline_total_return": 1.9911217062,
+      "development_double_cost_total_return": 1.9044637528,
+      "development_sharpe": 1.008031,
+      "development_max_drawdown": -0.423927,
+      "reason": "Fast premium momentum was the only plain-momentum candidate positive in every development calendar year and remained positive under doubled auction slippage."
+    },
+    "MNL2_MOM10_LEVEL50": {
+      "development_baseline_total_return": 0.643637,
+      "development_double_cost_total_return": 0.628910,
+      "development_sharpe": 0.660346,
+      "development_max_drawdown": -0.381141,
+      "reason": "Slow proxy-level confirmation is an economically distinct risk-control hypothesis; it was positive in both complete 2021 and 2022 development years and under doubled costs."
+    },
+    "important_caveat": "Neither selected rule has a statistically positive development daily-return differential versus the matched MSTR price-SMA50 benchmark (both 5-day block-bootstrap q025 bounds are below zero).  They are frozen test hypotheses, not development-proven alpha."
+  },
+  "development_artifact_hashes": {
+    "ledger_study.py": "135e2f17b934dc4d130cae60c15857ba3b9e597be470a7c414217191f51d1e96",
+    "DEV_SUMMARY.csv": "e8ccefc2b0b1b6419874276984ed8c3695b10658682b006694776642a2af4ab2",
+    "DEV_INFERENCE.csv": "585ce9dbadec676d3f0bd627015784bc58a42baf6bb38c6efbfaadeefca5f740",
+    "DEV_BTC_LEDGER.csv": "2ebdbf8614f8fabf940ebba6db25639d403dccea8d86a0951561437db9c06ac8",
+    "DEV_INPUT_MANIFEST.json": "1657cb7cafc743a2ea4abf98842fa56acb9809716293f450c294ab6bae3dd9da"
+  },
+  "no_peeking_attestation": "This file was written after reviewing only development artifacts whose performance end is 2022-12-30.  No 2023+ performance artifact in this workstream was opened before this freeze."
+}

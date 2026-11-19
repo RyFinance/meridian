@@ -1,0 +1,86 @@
+{
+  "status": "FROZEN BEFORE SEALED-VALIDATION RUN",
+  "frozen_on": "2026-10-17",
+  "development_boundary": {
+    "price_and_return_end": "2022-12-30",
+    "actual_usable_start": "2020-11-02",
+    "development_sessions": 545,
+    "selection_artifact": "DEV_GRID.csv",
+    "selection_artifact_sha256": "f141743fd43d909584a39c631e10941cd4e1de6574ead4e2f93e9ab39088644b",
+    "statement": "No 2023-or-later MSTR strategy return, equity curve, or candidate ranking was used to select these rules. Source-quality inspection did identify pre-existing BTC-cache gaps so that their no-interpolation treatment could be fixed before validation."
+  },
+  "proxy_definition": {
+    "name": "gross_btc_mnav_proxy",
+    "formula": "MSTR close * (reported Class A shares + reported Class B shares, on the same split basis as price) / (explicitly disclosed BTC held * BTC/USD last quote no later than 16:00 America/New_York)",
+    "not_enterprise_mnav": "This omits debt, preferred claims, cash, software operations, taxes, and other assets/liabilities. It is not Strategy's reported mNAV and must not be described as enterprise mNAV.",
+    "share_class_assumption": "Class A and B common shares are assigned equal economic claim per share for this gross proxy; the traded Class A price is used for both. This is an explicit approximation, not a claim that the two classes have identical market liquidity.",
+    "split_adjustment": "The official 10-for-1 Class A/B stock split traded split-adjusted from 2024-08-08. Historical reported shares are multiplied by 10 before 2024-08-08 to match the split-adjusted Yahoo OHLC price basis; post-split reported shares are unchanged.",
+    "disclosure_availability": "A 10-Q/10-K observation becomes usable only at the close of the first MSTR session strictly after its filing date, even if the filing was available earlier. BTC held is the latest explicit 'As of ... held approximately ... bitcoins' statement no later than the filing date; Class A/B shares are the cover-page count in that same filing."
+  },
+  "signal_and_execution": {
+    "premium_variable": "p_t = log(gross_btc_mnav_proxy_t)",
+    "trend_variable": "p_t > mean(p_{t-S+1}, ..., p_t)",
+    "momentum_variable": "p_t - p_{t-L} > 0",
+    "optional_btc_regime": "log(BTC_t) - log(BTC_{t-20}) > 0",
+    "decision_time": "After MSTR close on session t, using that session's MSTR close and BTC price no later than 16:00 ET plus only available filing observations.",
+    "execution_time": "At MSTR regular-session open on t+1. The long/cash decision remains in force until a later close produces a different signal; no same-close or same-open execution is credited.",
+    "position": "100% long MSTR or 100% cash only; no leverage, no shorting, no borrow assumptions.",
+    "gap_policy": "For a missing or >15-minute-stale 16:00-ET BTC source quote, do not forward-fill or interpolate BTC. Keep the prior signal/position through the gap and continue recording every MSTR open-to-open return. After a gap, rolling inputs must warm up from actual observed inputs before a new signal can occur.",
+    "baseline_costs": {
+      "slippage_bps_each_entry_or_exit": 3.0,
+      "commission_usd_per_actual_share_each_entry_or_exit": 0.005,
+      "commission_on_split_adjusted_price_basis_before_2024_08_08": 0.0005,
+      "buy_execution": "open * (1 + 0.0003) + per-share commission",
+      "sell_execution": "open * (1 - 0.0003) - per-share commission",
+      "final_position": "Force liquidated at the last included session open under the same exit costs, so reported return is fully realized."
+    }
+  },
+  "rules": [
+    {
+      "id": "M1",
+      "name": "10-day gross-premium momentum plus 50-day proxy trend",
+      "premium_momentum_days_L": 10,
+      "premium_sma_days_S": 50,
+      "btc_momentum_days": null,
+      "long_when": "p_t - p_{t-10} > 0 AND p_t > 50-session SMA(p)",
+      "development_selection": "Highest annualized Sharpe in the predeclared 3 x 3 x 3 no-threshold trend grid; 16 development round trips."
+    },
+    {
+      "id": "M2",
+      "name": "20-day gross-premium momentum plus 50-day proxy trend",
+      "premium_momentum_days_L": 20,
+      "premium_sma_days_S": 50,
+      "btc_momentum_days": null,
+      "long_when": "p_t - p_{t-20} > 0 AND p_t > 50-session SMA(p)",
+      "development_selection": "Adjacent momentum setting with the second-highest development Sharpe; 12 development round trips. It is retained as a predeclared parameter-stability check, not chosen after validation."
+    },
+    {
+      "id": "M3",
+      "name": "20-day gross-premium trend with 20-day BTC regime confirmation",
+      "premium_momentum_days_L": 20,
+      "premium_sma_days_S": 50,
+      "btc_momentum_days": 20,
+      "long_when": "p_t - p_{t-20} > 0 AND p_t > 50-session SMA(p) AND log(BTC_t) - log(BTC_{t-20}) > 0",
+      "development_selection": "Predeclared conservative regime-control variant: lower development return but substantially lower development maximum drawdown than M1/M2. It is retained to distinguish pure premium trend from a BTC-bull-regime filter."
+    }
+  ],
+  "source_snapshot": {
+    "mstr_daily_yf_parquet": {
+      "path": "../mstr_daily_yf.parquet",
+      "sha256": "2a69da621f275570b72e2727a1b14752e2c36a980da975cb4927c04d8f1cd2d7"
+    },
+    "btc_1m_polymarket_arb_parquet": {
+      "path": "../../../../BTC-Acum/data/btc_usd_1m_candles_polymarket_arb.parquet",
+      "sha256": "234e3c8a3c8e4c26a1a33c46501fdd8213ccfc1c62f1d5b398a4a8a38f53318b"
+    },
+    "sec_source_manifest": {
+      "path": "sec_source/MANIFEST.json",
+      "sha256": "de9a08ee119201ee55c95e44c2f58b50231db58f1360da42f1102f770d83f320"
+    },
+    "development_filings_manifest": {
+      "path": "sec_source/dev_filings/MANIFEST.json",
+      "sha256": "d41db4d77e8702d27630c139965617f050b2cc1f435e3e6e5464b8dbb29e2f34"
+    },
+    "official_split_source": "https://www.strategy.com/press/microstrategy-announces-10-for-1-stock-split_07-11-2024"
+  }
+}

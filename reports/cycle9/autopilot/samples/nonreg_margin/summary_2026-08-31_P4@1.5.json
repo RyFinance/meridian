@@ -1,0 +1,465 @@
+{
+ "checked_state": null,
+ "checks": [
+  {
+   "detail": "post-trade NAV must be positive",
+   "limit": 0.0,
+   "name": "nav_positive",
+   "ok": true,
+   "value": 124684.35
+  },
+  {
+   "detail": "shorts are never allowed",
+   "limit": [],
+   "name": "no_negative_shares",
+   "ok": true,
+   "value": []
+  },
+  {
+   "detail": "USD is never borrowed",
+   "limit": 0.0,
+   "name": "usd_cash_non_negative",
+   "ok": true,
+   "value": 0.0
+  },
+  {
+   "detail": "effective gross exposure / NAV <= config target gross + add-on",
+   "limit": 1.65,
+   "name": "leverage_cap",
+   "ok": true,
+   "value": 1.484932
+  },
+  {
+   "detail": "margin account: equity / assets after trades",
+   "limit": 0.4,
+   "name": "equity_assets_floor",
+   "ok": true,
+   "value": 0.673431
+  },
+  {
+   "detail": "largest position vs its cap (SSO: max_position_sso; XEQT.TO/ZAG.TO: target + one_ticket_cap_addon; others: max_position)",
+   "limit": {
+    "max_position": 0.65,
+    "max_position_sso": 0.3,
+    "one_ticket_cap_addon": 0.05,
+    "per_ticker": {
+     "DBMF": 0.65,
+     "XEQT.TO": 0.7628,
+     "ZAG.TO": 0.5252,
+     "ZGLD.TO": 0.65
+    }
+   },
+   "name": "position_cap",
+   "ok": true,
+   "value": {
+    "ticker": "ZAG.TO",
+    "weight": 0.475183
+   }
+  }
+ ],
+ "config": {
+  "account_type": "nonreg_margin",
+  "config_id": "P4@1.5",
+  "error": null,
+  "exposures": {
+   "BOND": 0.48,
+   "EQ": 0.72,
+   "GOLD": 0.15,
+   "TREND": 0.15
+  },
+  "file": "config_P4@1.5_nonreg_margin.json",
+  "label": "HYPOTHETICAL HOLDINGS — research sample, not a recommendation",
+  "overrides": {},
+  "owner_tolerance_pct": 25,
+  "portfolio_id": "sample|P4@1.5|nonreg_margin",
+  "recipe_kind": "margin",
+  "recipe_loan_fraction": 0.5,
+  "recipe_weights": {
+   "DBMF": 0.15,
+   "XEQT.TO": 0.72,
+   "ZAG.TO": 0.48,
+   "ZGLD.TO": 0.15
+  },
+  "sha256": "0b8c210a7640ea93a9e7ee6b5205bf9e7c93ad7c3121baf2e23637dfa971fff0",
+  "supported": true,
+  "target_gross": 1.5,
+  "uses_letf": false
+ },
+ "costs": {
+  "commission_cad": 0.0,
+  "fx_cad": 0.38,
+  "spread_cad": 8.13,
+  "total_cad": 8.51,
+  "turnover_cad": 15201.83,
+  "turnover_over_nav": 0.121914
+ },
+ "decision": {
+  "action": "full rebalance of all positions to target",
+  "borrow_capacity_cad": 62346.43,
+  "leverage_check": "leverage (assets/equity) 1.380 vs target 1.485: difference -0.105 > 0.10",
+  "quarter_end": false,
+  "rows": [
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.14512111,
+    "drift": -0.00337889,
+    "rel_drift": 0.022753,
+    "rel_trigger": false,
+    "target": 0.1485,
+    "ticker": "DBMF"
+   },
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.69894381,
+    "drift": -0.01385619,
+    "rel_drift": 0.019439,
+    "rel_trigger": false,
+    "target": 0.7128,
+    "ticker": "XEQT.TO"
+   },
+   {
+    "abs_trigger": true,
+    "calendar_trigger": false,
+    "current": 0.37521588,
+    "drift": -0.09998412,
+    "rel_drift": 0.210404,
+    "rel_trigger": false,
+    "target": 0.4752,
+    "ticker": "ZAG.TO"
+   },
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.1542365,
+    "drift": 0.0057365,
+    "rel_drift": 0.03863,
+    "rel_trigger": false,
+    "target": 0.1485,
+    "ticker": "ZGLD.TO"
+   }
+  ],
+  "triggered": true,
+  "triggers": [
+   {
+    "detail": [
+     "ZAG.TO: abs drift -10.00 pp > 5.00 pp"
+    ],
+    "kind": "band"
+   },
+   {
+    "detail": [
+     "leverage (assets/equity) 1.380 vs target 1.485: difference -0.105 > 0.10"
+    ],
+    "kind": "margin_leverage"
+   }
+  ]
+ },
+ "disclaimer": "Research tool output only. Nothing in this report is a recommendation to trade. No order has been placed, sent or generated for any broker; the owner reads it and decides.",
+ "drawdown": {
+  "alert": "NONE",
+  "drawdown": 0.0,
+  "fraction_of_tolerance": 0.0,
+  "policy": "Alerts never trigger automatic de-risking; the owner decides.",
+  "thresholds": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "tolerance": 0.25
+ },
+ "fx": {
+  "any_conversion": true,
+  "cad_to_usd": {
+   "cad_spent": 0.0,
+   "est_cost_cad": 0.0,
+   "for": [],
+   "usd_needed": 0.0
+  },
+  "usd_to_cad": {
+   "cad_needed": 382.68,
+   "est_cost_cad": 0.38,
+   "for": [
+    "ZAG.TO"
+   ],
+   "usd_spent": 276.34
+  },
+  "usdcad": 1.3862
+ },
+ "inputs": {
+  "holdings": {
+   "as_of": "2026-08-31",
+   "error": null,
+   "file": "hypothetical_holdings_P4@1.5_nonreg_margin.json",
+   "net_external_flow_cad": 0.0,
+   "sha256": "ab43117daa63404957246fe59dc5ce3f6829bd10572864d4de8efc5228719614"
+  },
+  "prices": {
+   "dataset_version": "autopilot_prices_20260831",
+   "error": null,
+   "expected_manifest_sha256": null,
+   "files": {
+    "prices/prices_20250829_20260831.csv": "be676d58576d04ae5f7119f63b244fab9333a4a388b5eaf16786120ade8d1099"
+   },
+   "manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab",
+   "max_date": "2026-08-31",
+   "mode": "verified",
+   "pinned_by_seq": 0,
+   "pinned_manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab"
+  },
+  "usdcad": {
+   "date": "2026-08-31",
+   "rate": 1.3862
+  }
+ },
+ "kind": "autopilot_rebalance_report",
+ "notes": [
+  "Margin recipe: unlevered sleeves x L funded partly by a margin loan; margin interest is not included in the cost estimates.",
+  "DBMF: USD-listed managed-futures replication ETF."
+ ],
+ "paper_log": {
+  "entries_before": 8,
+  "prev_entry_hash": "efeae28add7075f1e1ee18665c14a111b57dc7a56cf272870db916f03c555e3c",
+  "seq": 8
+ },
+ "params": {
+  "alert_levels": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "band_abs": 0.05,
+  "band_rel": 0.25,
+  "band_rel_min_abs": 0.01,
+  "calendar_abs": 0.01,
+  "calendar_months": [
+   3,
+   6,
+   9,
+   12
+  ],
+  "cash_buffer": 0.01,
+  "cash_buffer_vehicle": "broker_cash",
+  "commission_cad": 0.0,
+  "equity_assets_floor": 0.4,
+  "freshness_days": 5,
+  "fx_cost": 0.001,
+  "half_spread": {
+   "CASH.TO": 0.0005,
+   "DBMF": 0.001,
+   "GDE": 0.001,
+   "RSSB": 0.001,
+   "RSST": 0.001,
+   "SSO": 0.0003,
+   "XEQT.TO": 0.0005,
+   "ZAG.TO": 0.0005,
+   "ZGLD.TO": 0.001
+  },
+  "leverage_cap_addon": 0.15,
+  "margin_leverage_band": 0.1,
+  "max_position": 0.65,
+  "max_position_sso": 0.3,
+  "min_trade_cad": 100.0,
+  "one_ticket_cap_addon": 0.05
+ },
+ "portfolio_id": "sample|P4@1.5|nonreg_margin",
+ "post_trade": {
+  "assets_cad": 185147.83,
+  "basis": "after the proposed trades (estimated)",
+  "cash_cad": 0.0,
+  "cash_usd": 0.0,
+  "equity_over_assets": 0.673431,
+  "etf_value_cad": 185147.83,
+  "gross_exposure_over_nav": 1.484932,
+  "leverage_assets_over_equity": 1.484932,
+  "margin_loan_cad": 60463.48,
+  "nav_cad": 124684.35,
+  "positions": [
+   {
+    "ccy": "USD",
+    "close": 31.38,
+    "price_date": "2026-08-31",
+    "shares": 425,
+    "target": 0.1485,
+    "ticker": "DBMF",
+    "value_cad": 18487.06,
+    "weight": 0.14827087
+   },
+   {
+    "ccy": "CAD",
+    "close": 45.63,
+    "price_date": "2026-08-31",
+    "shares": 1947,
+    "target": 0.7128,
+    "ticker": "XEQT.TO",
+    "value_cad": 88841.61,
+    "weight": 0.71253218
+   },
+   {
+    "ccy": "CAD",
+    "close": 13.53,
+    "price_date": "2026-08-31",
+    "shares": 4379,
+    "target": 0.4752,
+    "ticker": "ZAG.TO",
+    "value_cad": 59247.87,
+    "weight": 0.4751829
+   },
+   {
+    "ccy": "CAD",
+    "close": 66.09,
+    "price_date": "2026-08-31",
+    "shares": 281,
+    "target": 0.1485,
+    "ticker": "ZGLD.TO",
+    "value_cad": 18571.29,
+    "weight": 0.14894644
+   }
+  ],
+  "sleeve_exposure_over_nav": {
+   "BOND": 0.475183,
+   "EQ": 0.712532,
+   "GOLD": 0.148946,
+   "TREND": 0.148271
+  }
+ },
+ "refusal_reasons": [],
+ "report_date": "2026-08-31",
+ "report_file": "report_2026-08-31_P4@1.5.md",
+ "report_sha256": "22897fbe42d9d56895c1af5d49504f12c60062467e5baaa46e11dc20a14811a1",
+ "schema": "autopilot_v1",
+ "skipped_trades": [],
+ "status": "accepted",
+ "targets": {
+  "DBMF": 0.1485,
+  "XEQT.TO": 0.7128,
+  "ZAG.TO": 0.4752,
+  "ZGLD.TO": 0.1485
+ },
+ "trades": [
+  {
+   "ccy": "CAD",
+   "est_commission_cad": 0.0,
+   "est_cost_cad": 0.66,
+   "est_price": 66.09,
+   "est_spread_cad": 0.66,
+   "est_value_cad": 660.9,
+   "est_value_ccy": 660.9,
+   "note": null,
+   "shares": 10,
+   "side": "SELL",
+   "ticker": "ZGLD.TO"
+  },
+  {
+   "ccy": "USD",
+   "est_commission_cad": 0.0,
+   "est_cost_cad": 0.39,
+   "est_price": 31.38,
+   "est_spread_cad": 0.39,
+   "est_value_cad": 391.49,
+   "est_value_ccy": 282.42,
+   "note": null,
+   "shares": 9,
+   "side": "BUY",
+   "ticker": "DBMF"
+  },
+  {
+   "ccy": "CAD",
+   "est_commission_cad": 0.0,
+   "est_cost_cad": 6.23,
+   "est_price": 13.53,
+   "est_spread_cad": 6.23,
+   "est_value_cad": 12461.13,
+   "est_value_ccy": 12461.13,
+   "note": null,
+   "shares": 921,
+   "side": "BUY",
+   "ticker": "ZAG.TO"
+  },
+  {
+   "ccy": "CAD",
+   "est_commission_cad": 0.0,
+   "est_cost_cad": 0.84,
+   "est_price": 45.63,
+   "est_spread_cad": 0.84,
+   "est_value_cad": 1688.31,
+   "est_value_ccy": 1688.31,
+   "note": null,
+   "shares": 37,
+   "side": "BUY",
+   "ticker": "XEQT.TO"
+  }
+ ],
+ "trades_emitted": true,
+ "unit_ledger": {
+  "carried": true,
+  "flow_applied_cad": 0.0,
+  "initialised": true,
+  "net_external_flow_cad": 0.0,
+  "peak": 100.00000000000001,
+  "prior_report_date": null,
+  "unit_value": 100.00000000000001,
+  "units": 1246.92856944,
+  "units_before": null
+ },
+ "valuation": {
+  "assets_cad": 172042.74,
+  "cash_cad": 0.0,
+  "cash_usd": 559.04,
+  "equity_over_assets": 0.724778,
+  "etf_value_cad": 171267.8,
+  "gross_exposure_over_nav": 1.373517,
+  "leverage_assets_over_equity": 1.379732,
+  "margin_loan_cad": 47349.88,
+  "nav_cad": 124692.86,
+  "positions": [
+   {
+    "ccy": "USD",
+    "close": 31.38,
+    "price_date": "2026-08-31",
+    "shares": 416,
+    "target": 0.1485,
+    "ticker": "DBMF",
+    "value_cad": 18095.57,
+    "weight": 0.14512111
+   },
+   {
+    "ccy": "CAD",
+    "close": 45.63,
+    "price_date": "2026-08-31",
+    "shares": 1910,
+    "target": 0.7128,
+    "ticker": "XEQT.TO",
+    "value_cad": 87153.3,
+    "weight": 0.69894381
+   },
+   {
+    "ccy": "CAD",
+    "close": 13.53,
+    "price_date": "2026-08-31",
+    "shares": 3458,
+    "target": 0.4752,
+    "ticker": "ZAG.TO",
+    "value_cad": 46786.74,
+    "weight": 0.37521588
+   },
+   {
+    "ccy": "CAD",
+    "close": 66.09,
+    "price_date": "2026-08-31",
+    "shares": 291,
+    "target": 0.1485,
+    "ticker": "ZGLD.TO",
+    "value_cad": 19232.19,
+    "weight": 0.1542365
+   }
+  ],
+  "sleeve_exposure_over_nav": {
+   "BOND": 0.375216,
+   "EQ": 0.698944,
+   "GOLD": 0.154237,
+   "TREND": 0.145121
+  }
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "ledgered_p_crash": {
+  "intensity_per_year": 0.2,
+  "jump_sd": -6
+ },
+ "bandwidth": 0.1,
+ "n": 464,
+ "ci_primary_level": 0.9,
+ "ci95": {
+  "est": 1.1222758143061486,
+  "hi": 1.7462249039899176,
+  "lo": 0.4699337510762754
+ }
+}

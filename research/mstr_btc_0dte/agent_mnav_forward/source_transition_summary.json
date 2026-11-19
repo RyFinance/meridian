@@ -1,0 +1,101 @@
+{
+  "binance_first_usable_mstr_session": "2026-02-02",
+  "binance_provenance": {
+    "archives": [
+      {
+        "completed_1559_rows": 28,
+        "file": "BTCUSDT-1m-2026-02.zip",
+        "raw_rows": 40320,
+        "sha256": "805626ad2dc5b704d52c211996d12e9e4b1be234998f3dba4b3d34ff79be0337",
+        "utc_open_max": "2026-02-28 23:59:00+00:00",
+        "utc_open_min": "2026-02-01 00:00:00+00:00"
+      },
+      {
+        "completed_1559_rows": 31,
+        "file": "BTCUSDT-1m-2026-03.zip",
+        "raw_rows": 44640,
+        "sha256": "c472a865f230bf1b5b17e124770a83c083144e3e11a115733288fb8f3e3b8baa",
+        "utc_open_max": "2026-03-31 23:59:00+00:00",
+        "utc_open_min": "2026-03-01 00:00:00+00:00"
+      },
+      {
+        "completed_1559_rows": 30,
+        "file": "BTCUSDT-1m-2026-04.zip",
+        "raw_rows": 43200,
+        "sha256": "515b86570f0c6924f6dc2cf90589d3db90f3de9c6bfd9a22dde0429995dc5405",
+        "utc_open_max": "2026-04-30 23:59:00+00:00",
+        "utc_open_min": "2026-04-01 00:00:00+00:00"
+      },
+      {
+        "completed_1559_rows": 31,
+        "file": "BTCUSDT-1m-2026-05.zip",
+        "raw_rows": 44640,
+        "sha256": "d91548e94220d5211bb32447cc4b604ee266d145f2092edc5ec613328cbbc20a",
+        "utc_open_max": "2026-05-31 23:59:00+00:00",
+        "utc_open_min": "2026-05-01 00:00:00+00:00"
+      },
+      {
+        "completed_1559_rows": 30,
+        "file": "BTCUSDT-1m-2026-06.zip",
+        "raw_rows": 43200,
+        "sha256": "9b214199eb5063585c7ed0f59ba19323326d68ac024b85106713989399204490",
+        "utc_open_max": "2026-06-30 23:59:00+00:00",
+        "utc_open_min": "2026-06-01 00:00:00+00:00"
+      },
+      {
+        "completed_1559_rows": 31,
+        "file": "BTCUSDT-1m-2026-07.zip",
+        "raw_rows": 44640,
+        "sha256": "f18440bb58f0c7e1ff63cbb906132002877c4914540c8aebab920da6937cff73",
+        "utc_open_max": "2026-07-31 23:59:00+00:00",
+        "utc_open_min": "2026-07-01 00:00:00+00:00"
+      },
+      {
+        "completed_1559_rows": 31,
+        "file": "BTCUSDT-1m-2026-08.zip",
+        "raw_rows": 44640,
+        "sha256": "adfd0846ea580681aeb18a6bdf06660dcfcc1a7b6819ea2eecfc3c53240ec67a",
+        "utc_open_max": "2026-08-31 23:59:00+00:00",
+        "utc_open_min": "2026-08-01 00:00:00+00:00"
+      },
+      {
+        "completed_1559_rows": 30,
+        "file": "BTCUSDT-1m-2026-09.zip",
+        "raw_rows": 43200,
+        "sha256": "e1a821b5bf6b48d57da01c3e390b8a467a698155def5c18c2c63c0eb044a3247",
+        "utc_open_max": "2026-09-30 23:59:00+00:00",
+        "utc_open_min": "2026-09-01 00:00:00+00:00"
+      }
+    ]
+  },
+  "full_overlap": {
+    "binance_exact_1559_covered": 131,
+    "btc_return_correlation": 0.9999880793928638,
+    "joint_covered": 131,
+    "m1_signal_agreement_joint_sessions": 1.0,
+    "m1_signal_disagreements_joint_sessions": 0,
+    "max_abs_price_difference_bp": 8.732840924724483,
+    "mean_binance_minus_primary_bp": -4.92442725366818,
+    "median_binance_minus_primary_bp": -4.853244344878993,
+    "mstr_sessions": 131,
+    "p95_abs_price_difference_bp": 6.839815636842661,
+    "primary_exact_1559_covered": 131,
+    "window": "2026-02-02 to 2026-08-10"
+  },
+  "last_20_overlap_sessions": {
+    "binance_exact_1559_covered": 20,
+    "btc_return_correlation": 0.9999186458456939,
+    "joint_covered": 20,
+    "m1_signal_agreement_joint_sessions": 1.0,
+    "m1_signal_disagreements_joint_sessions": 0,
+    "max_abs_price_difference_bp": 6.618523861282588,
+    "mean_binance_minus_primary_bp": -4.493177279883907,
+    "median_binance_minus_primary_bp": -4.3470334992756765,
+    "mstr_sessions": 20,
+    "p95_abs_price_difference_bp": 6.287471679683632,
+    "primary_exact_1559_covered": 20,
+    "window": "2026-07-14 to 2026-08-10"
+  },
+  "method": "Exact 15:59 America/New_York minute bars only. A bar is accepted only if its recorded close is no later than 16:00 ET; no 16:00-labelled source bar, fallback, interpolation, or BTC forward-fill is used.",
+  "primary_last_usable_session": "2026-08-10"
+}

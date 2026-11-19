@@ -1,0 +1,426 @@
+{
+ "checked_state": null,
+ "checks": [
+  {
+   "detail": "post-trade NAV must be positive",
+   "limit": 0.0,
+   "name": "nav_positive",
+   "ok": true,
+   "value": 122365.08
+  },
+  {
+   "detail": "shorts are never allowed",
+   "limit": [],
+   "name": "no_negative_shares",
+   "ok": true,
+   "value": []
+  },
+  {
+   "detail": "tfsa accounts can never borrow; cash may never go below 0",
+   "limit": 0.0,
+   "name": "no_borrowing_no_negative_cash",
+   "ok": true,
+   "value": {
+    "cash_cad": 1804.41,
+    "cash_usd": 891.12
+   }
+  },
+  {
+   "detail": "effective gross exposure / NAV <= config target gross + add-on",
+   "limit": 1.65,
+   "name": "leverage_cap",
+   "ok": true,
+   "value": 1.472252
+  },
+  {
+   "detail": "largest position vs its cap (SSO: max_position_sso; XEQT.TO/ZAG.TO: target + one_ticket_cap_addon; others: max_position)",
+   "limit": {
+    "max_position": 0.65,
+    "max_position_sso": 0.3,
+    "one_ticket_cap_addon": 0.05,
+    "per_ticker": {
+     "RSSB": 0.65,
+     "RSST": 0.65,
+     "XEQT.TO": 0.2678,
+     "ZAG.TO": 0.1787,
+     "ZGLD.TO": 0.65
+    }
+   },
+   "name": "position_cap",
+   "ok": true,
+   "value": {
+    "ticker": "XEQT.TO",
+    "weight": 0.217401
+   }
+  }
+ ],
+ "config": {
+  "account_type": "tfsa",
+  "config_id": "P4@1.5",
+  "error": null,
+  "exposures": {
+   "BOND": 0.48,
+   "EQ": 0.72,
+   "GOLD": 0.15,
+   "TREND": 0.15
+  },
+  "file": "config_P4@1.5_tfsa.json",
+  "label": "HYPOTHETICAL HOLDINGS — research sample, not a recommendation",
+  "overrides": {},
+  "owner_tolerance_pct": 25,
+  "portfolio_id": "sample|P4@1.5|tfsa",
+  "recipe_kind": "stacked",
+  "recipe_loan_fraction": 0.0,
+  "recipe_weights": {
+   "RSSB": 0.35,
+   "RSST": 0.15,
+   "XEQT.TO": 0.22,
+   "ZAG.TO": 0.13,
+   "ZGLD.TO": 0.15
+  },
+  "sha256": "d6ec6728da4d648b50785a1b86e544da8811498cdbdfc6a8255c04242d77b46d",
+  "supported": true,
+  "target_gross": 1.5,
+  "uses_letf": false
+ },
+ "costs": {
+  "commission_cad": 0.0,
+  "fx_cad": 0.0,
+  "spread_cad": 0.0,
+  "total_cad": 0.0,
+  "turnover_cad": 0.0,
+  "turnover_over_nav": 0.0
+ },
+ "decision": {
+  "action": "no trade",
+  "borrow_capacity_cad": 0.0,
+  "leverage_check": null,
+  "quarter_end": false,
+  "rows": [
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.32561251,
+    "drift": -0.02088749,
+    "rel_drift": 0.060281,
+    "rel_trigger": false,
+    "target": 0.3465,
+    "ticker": "RSSB"
+   },
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.17148063,
+    "drift": 0.02298063,
+    "rel_drift": 0.154752,
+    "rel_trigger": false,
+    "target": 0.1485,
+    "ticker": "RSST"
+   },
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.21740099,
+    "drift": -0.00039901,
+    "rel_drift": 0.001832,
+    "rel_trigger": false,
+    "target": 0.2178,
+    "ticker": "XEQT.TO"
+   },
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.10349423,
+    "drift": -0.02520577,
+    "rel_drift": 0.195849,
+    "rel_trigger": false,
+    "target": 0.1287,
+    "ticker": "ZAG.TO"
+   },
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.15717057,
+    "drift": 0.00867057,
+    "rel_drift": 0.058388,
+    "rel_trigger": false,
+    "target": 0.1485,
+    "ticker": "ZGLD.TO"
+   }
+  ],
+  "triggered": false,
+  "triggers": []
+ },
+ "disclaimer": "Research tool output only. Nothing in this report is a recommendation to trade. No order has been placed, sent or generated for any broker; the owner reads it and decides.",
+ "drawdown": {
+  "alert": "NONE",
+  "drawdown": 0.0,
+  "fraction_of_tolerance": 0.0,
+  "policy": "Alerts never trigger automatic de-risking; the owner decides.",
+  "thresholds": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "tolerance": 0.25
+ },
+ "fx": {
+  "any_conversion": false,
+  "cad_to_usd": {
+   "cad_spent": 0.0,
+   "est_cost_cad": 0.0,
+   "for": [],
+   "usd_needed": 0.0
+  },
+  "usd_to_cad": {
+   "cad_needed": 0.0,
+   "est_cost_cad": 0.0,
+   "for": [],
+   "usd_spent": 0.0
+  },
+  "usdcad": 1.3862
+ },
+ "inputs": {
+  "holdings": {
+   "as_of": "2026-08-31",
+   "error": null,
+   "file": "hypothetical_holdings_P4@1.5_tfsa.json",
+   "net_external_flow_cad": 0.0,
+   "sha256": "be27e0082c100825cb6fb92503f8da6e9542be19d65eb42f7fe8f75f0231523f"
+  },
+  "prices": {
+   "dataset_version": "autopilot_prices_20260831",
+   "error": null,
+   "expected_manifest_sha256": null,
+   "files": {
+    "prices/prices_20250829_20260831.csv": "be676d58576d04ae5f7119f63b244fab9333a4a388b5eaf16786120ade8d1099"
+   },
+   "manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab",
+   "max_date": "2026-08-31",
+   "mode": "verified",
+   "pinned_by_seq": 0,
+   "pinned_manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab"
+  },
+  "usdcad": {
+   "date": "2026-08-31",
+   "rate": 1.3862
+  }
+ },
+ "kind": "autopilot_rebalance_report",
+ "notes": [
+  "RSSB: equity leg is global; the bond leg is US Treasuries (not Canadian bonds).",
+  "RSST: equity leg is US-only (S&P 500-like), stacked with managed futures."
+ ],
+ "paper_log": {
+  "entries_before": 5,
+  "prev_entry_hash": "86d0c812d4d6854df338d69d590fba6824725b7f177bd91d08ebbd3ed986090b",
+  "seq": 5
+ },
+ "params": {
+  "alert_levels": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "band_abs": 0.05,
+  "band_rel": 0.25,
+  "band_rel_min_abs": 0.01,
+  "calendar_abs": 0.01,
+  "calendar_months": [
+   3,
+   6,
+   9,
+   12
+  ],
+  "cash_buffer": 0.01,
+  "cash_buffer_vehicle": "broker_cash",
+  "commission_cad": 0.0,
+  "equity_assets_floor": 0.4,
+  "freshness_days": 5,
+  "fx_cost": 0.001,
+  "half_spread": {
+   "CASH.TO": 0.0005,
+   "DBMF": 0.001,
+   "GDE": 0.001,
+   "RSSB": 0.001,
+   "RSST": 0.001,
+   "SSO": 0.0003,
+   "XEQT.TO": 0.0005,
+   "ZAG.TO": 0.0005,
+   "ZGLD.TO": 0.001
+  },
+  "leverage_cap_addon": 0.15,
+  "margin_leverage_band": 0.1,
+  "max_position": 0.65,
+  "max_position_sso": 0.3,
+  "min_trade_cad": 100.0,
+  "one_ticket_cap_addon": 0.05
+ },
+ "portfolio_id": "sample|P4@1.5|tfsa",
+ "post_trade": {
+  "assets_cad": 122365.08,
+  "basis": "current holdings (no trades proposed)",
+  "cash_cad": 1804.41,
+  "cash_usd": 891.12,
+  "equity_over_assets": 1.0,
+  "etf_value_cad": 119325.4,
+  "gross_exposure_over_nav": 1.472252,
+  "leverage_assets_over_equity": 1.0,
+  "margin_loan_cad": 0.0,
+  "nav_cad": 122365.08,
+  "positions": [
+   {
+    "ccy": "USD",
+    "close": 31.04,
+    "price_date": "2026-08-31",
+    "shares": 926,
+    "target": 0.3465,
+    "ticker": "RSSB",
+    "value_cad": 39843.6,
+    "weight": 0.32561251
+   },
+   {
+    "ccy": "USD",
+    "close": 33.94,
+    "price_date": "2026-08-31",
+    "shares": 446,
+    "target": 0.1485,
+    "ticker": "RSST",
+    "value_cad": 20983.24,
+    "weight": 0.17148063
+   },
+   {
+    "ccy": "CAD",
+    "close": 45.63,
+    "price_date": "2026-08-31",
+    "shares": 583,
+    "target": 0.2178,
+    "ticker": "XEQT.TO",
+    "value_cad": 26602.29,
+    "weight": 0.21740099
+   },
+   {
+    "ccy": "CAD",
+    "close": 13.53,
+    "price_date": "2026-08-31",
+    "shares": 936,
+    "target": 0.1287,
+    "ticker": "ZAG.TO",
+    "value_cad": 12664.08,
+    "weight": 0.10349423
+   },
+   {
+    "ccy": "CAD",
+    "close": 66.09,
+    "price_date": "2026-08-31",
+    "shares": 291,
+    "target": 0.1485,
+    "ticker": "ZGLD.TO",
+    "value_cad": 19232.19,
+    "weight": 0.15717057
+   }
+  ],
+  "sleeve_exposure_over_nav": {
+   "BOND": 0.429107,
+   "EQ": 0.714494,
+   "GOLD": 0.157171,
+   "TREND": 0.171481
+  }
+ },
+ "refusal_reasons": [],
+ "report_date": "2026-08-31",
+ "report_file": "report_2026-08-31_P4@1.5.md",
+ "report_sha256": "db1f8a26aad811818660988217b63731733185865e22cc1c9ce9e3da662389b9",
+ "schema": "autopilot_v1",
+ "skipped_trades": [],
+ "status": "accepted",
+ "targets": {
+  "RSSB": 0.3465,
+  "RSST": 0.1485,
+  "XEQT.TO": 0.2178,
+  "ZAG.TO": 0.1287,
+  "ZGLD.TO": 0.1485
+ },
+ "trades": [],
+ "trades_emitted": false,
+ "unit_ledger": {
+  "carried": true,
+  "flow_applied_cad": 0.0,
+  "initialised": true,
+  "net_external_flow_cad": 0.0,
+  "peak": 100.0,
+  "prior_report_date": null,
+  "unit_value": 100.0,
+  "units": 1223.6508468000002,
+  "units_before": null
+ },
+ "valuation": {
+  "assets_cad": 122365.08,
+  "cash_cad": 1804.41,
+  "cash_usd": 891.12,
+  "equity_over_assets": 1.0,
+  "etf_value_cad": 119325.4,
+  "gross_exposure_over_nav": 1.472252,
+  "leverage_assets_over_equity": 1.0,
+  "margin_loan_cad": 0.0,
+  "nav_cad": 122365.08,
+  "positions": [
+   {
+    "ccy": "USD",
+    "close": 31.04,
+    "price_date": "2026-08-31",
+    "shares": 926,
+    "target": 0.3465,
+    "ticker": "RSSB",
+    "value_cad": 39843.6,
+    "weight": 0.32561251
+   },
+   {
+    "ccy": "USD",
+    "close": 33.94,
+    "price_date": "2026-08-31",
+    "shares": 446,
+    "target": 0.1485,
+    "ticker": "RSST",
+    "value_cad": 20983.24,
+    "weight": 0.17148063
+   },
+   {
+    "ccy": "CAD",
+    "close": 45.63,
+    "price_date": "2026-08-31",
+    "shares": 583,
+    "target": 0.2178,
+    "ticker": "XEQT.TO",
+    "value_cad": 26602.29,
+    "weight": 0.21740099
+   },
+   {
+    "ccy": "CAD",
+    "close": 13.53,
+    "price_date": "2026-08-31",
+    "shares": 936,
+    "target": 0.1287,
+    "ticker": "ZAG.TO",
+    "value_cad": 12664.08,
+    "weight": 0.10349423
+   },
+   {
+    "ccy": "CAD",
+    "close": 66.09,
+    "price_date": "2026-08-31",
+    "shares": 291,
+    "target": 0.1485,
+    "ticker": "ZGLD.TO",
+    "value_cad": 19232.19,
+    "weight": 0.15717057
+   }
+  ],
+  "sleeve_exposure_over_nav": {
+   "BOND": 0.429107,
+   "EQ": 0.714494,
+   "GOLD": 0.157171,
+   "TREND": 0.171481
+  }
+ }
+}

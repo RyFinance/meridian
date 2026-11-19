@@ -1,0 +1,987 @@
+
+=== PAGE 1 ===
+WP/20/179
+Offshore Currency Markets: Non-Deliverable Forwards 
+(NDFs) in Asia 
+by Jochen M. Schmittmann and Chua Ha
+n Teng 
+IMF Working Papers describe research in progress by the author(s) and are published 
+to elicit comments and to encourage debate. The views expressed in IMF Working Papers 
+are those of the author(s) a nd do not necessarily represent the views of the IMF, its 
+Executive Board, or IMF mana gement.   
+=== PAGE 2 ===
+© 2020 International Monetary Fund WP/20/179 
+IMF Working Paper 
+Asia and Pacific Department 
+ Offshore Currency Markets: Non-Deliverable Forwards (NDFs) in Asia 
+Prepared by Jochen M. Schmittmann and Chua Han Teng  
+Authorized for distribu tion by Nada Choueiri  
+September 2020 
+Abstract 
+Non-deliverable forward (NDF) markets in many Asian emerging market currencies are 
+large, rapidly growing, and often exceed ons hore markets in trans action volume. NDFs tend 
+to price significant depreciation during ma rket stress episodes including COVID-19. 
+Spillovers from NDFs to onshore markets are a policymaker concern. Our analysis shows 
+that influences tend to  run both ways after co ntrolling for differences  in timezones between 
+markets. For the COVID-19 pandemic there is  some evidence of NDFs leading onshore 
+markets for a few currencies. Policy approaches to NDFs vary widely across Asia from 
+close integration with ons hore markets to severe rest rictions on NDF trading. 
+JEL Classification Numbers: F31, G12, G13, G15 
+Keywords: Currency Markets; Offshore Mark ets; Non-Deliverable Forwards; NDF; DNDF 
+Author’s E-Mail Address: jschmittmann@imf.org ; hchua@imf.org   IMF Working Papers describe research in progress by the author(s) a
+nd are published to 
+elicit comments and to encourage debate. The views expressed in IMF Working Papers are 
+those of the author(s) and do not necessarily represent the views of the IMF, its Executive Board, 
+or IMF mana gement.   
+=== PAGE 3 ===
+ 4 
+Contents 
+ 
+Abbreviations ................................................................................................................. ........... 6  
+I. Introduction ............................................................................................................... ............ 7  
+II. The Size of NDF Markets in Asian Currencies .................................................................... 9  
+III. Policy Approaches to NDF Markets ................................................................................. 11  
+IV. Volatility and Pricing of Ons hore Forwards and Offshore NDFs .................................... 13  
+V. Price Linkages Between Onshor e and Offshore Currency Markets .................................. 17  
+A. Empirical Approach and Data ........................................................................................ 17  
+B. Results .................................................................................................................... ........ 19 
+C. Price Linkages During the COVID-19 Pandemic .......................................................... 20  
+VI. Domestic Non-Deliverable Forwards (DNDFs) ............................................................... 21  
+VII. Conclusion ............................................................................................................... ........ 24 
+References .................................................................................................................... ........... 25  
+Appendix 1: Realized volatility of onshore forwards and NDFs ............................................ 27  
+Appendix 2: Coefficients and intercepts fo r the long-run cointegr ation regressions ............. 27  
+Appendix 3: Coefficients on error correction terms; daily data ............................................. 28  
+Appendix 4: Coefficients on error correction terms; hourly data ........................................... 28  
+ 
+  
+Figures 
+ Figure 1. BIS Survey: NDF Daily Transaction Volumes of Asian Currencies ...................... 10
+ 
+Figure 2. BIS Survey: Daily Transac tion Volumes by FX Instrument ................................... 10  
+Figure 3. NDF Average Daily Turnover in London ............................................................... 10  
+Figure 4. NDF Average Daily Turnover in Tokyo ................................................................. 10  
+Figure 5. Indonesia monthly FX Market Turnover ................................................................. 11  
+Figure 6. Malaysia monthly FX Market Turnover .................................................................. 11  
+Figure 7. Chinese Yuan Market Turnover .............................................................................. 13  
+Figure 8. Asian FX 1-Month Realized Volatility ................................................................... 14  
+Figure 9. Onshore Forward Less Offshore NDF Implied Yields............................................ 14  
+Figure 10. Korean won Onshore Forward Less Offshore NDF Implied Yield ...................... 16  
+Figure 11. New Taiwan dollar Onshore Forwar d Less Offshore NDF Implied Yield ........... 16  
+Figure 12. Indonesian Rupiah Onshore Forwar d Less Offshore NDF Implied Yield ............ 16  
+=== PAGE 4 ===
+ 5 
+Figure 13. Indian Rupee Onshore Forwar d Less Offshore NDF Implied Yield ..................... 16  
+Figure 14. Malaysian Ringgit Onshore Forwar d Less Offshore NDF Implied Yield ............ 16  
+Figure 15. Philippine Peso Onshore Forwar d Less Offshore NDF Implied Yield ................. 16  
+Figure 16. Indonesia Domestic NDF ...................................................................................... 23  
+Figure 17. Indonesia Domestic and Offshore NDF ................................................................ 23  
+Figure 18. IDR forward curves on 27 Dec 2019 ..................................................................... 23  
+Figure 19. IDR forward curves on 20 Mar 2020 .................................................................... 23  
+ 
+  
+Tables  
+Table 1. Granger Causality Tests for NDFs at New York Close ............................................ 20  
+Table 2. Granger Causality Tests fo r NDFs at Asia Trading Hours ....................................... 20  
+Table 3. Granger Causality Tests During COVID-19 ............................................................ 21  
+ 
+   
+=== PAGE 5 ===
+ 6 
+Abbreviations 
+ 
+ADF   Augmented Dickey-Fuller 
+BI   Bank Indonesia; Indonesia's central bank BIS   Bank for International Settlements 
+BNM   Bank Negara Malaysia; Malaysia's central bank 
+BSP   Bangko Sentral ng Pilipi nas; Philippines' central bank 
+CIP   Covered Interest Rate Parity CRRP   Currency Rate Risk Protection Program DNDF   Domestic Non-deliverable Forward DTCC   Depository Trust & Clearing Corporation 
+ECT    Error Correction Term 
+EM   Emerging Market IMF   International Monetary Fund NDF   Non-deliverable Forward OTC   Over-the-counter RBI   Reserve Bank of India; India's central bank SIC   Schwarz’ Bayesian Information Criterion 
+Taiwan POC  Taiwan Province of China 
+VECM   Vector Error Correction Model  
+ 
+Currency abbreviations:  CNH   Offshore Chinese yuan  CNY   Chinese yuan  
+IDR   Indonesian rupiah 
+INR   Indian rupee KRW   Korean won MYR   Malaysian ringgit  PHP   Phillipine peso THB   Thai baht TWD   New Taiwan dollar 
+USD   US dollar 
+ 
+  
+=== PAGE 6 ===
+ 7 
+I.   I NTRODUCTION1 
+Non-deliverable forward (NDF) ma rkets in many Asian emerging market currencies are large, 
+rapidly growing, and often exceed onshore ma rkets in transaction volume. Policymakers pay 
+close attention to NDF markets recognizing potential implications for financial stability and 
+onshore financial markets. The wide spectrum of policy approaches to NDFs across Asia 
+highlights policy tradeoffs. This paper provides  a comprehensive and current overview of Asian 
+NDF market developments, discusses policy approaches, and analyzes the direction of 
+influence between NDFs and onshore currency markets.   NDFs are foreign exchange forward contracts th at do not require physical delivery of the 
+underlying currencies. Transactions are cash-s ettled, typically in US dollar, through net 
+payments that are equivalent to the difference be tween the spot rate at the maturity date and 
+the previously agreed forward rate. NDFs trade over-the-counter, rather than on exchanges, 
+in major financial centers outside the jurisdic tion of the authorities of the corresponding 
+currencies.
+2 
+ NDF markets developed in response to restri ctions that constrained access to onshore 
+markets. Despite significant financial account li beralization across Asia, most Asian emerging 
+market currencies are only part ially convertible and not delivera ble offshore. Restrictions take 
+many forms including requirements on underlyin g asset exposure for currency positions. For 
+investors, banks, and corporates, NDF markets ar e often an attractive alternative to onshore 
+markets due to the absence of regulation, lo nger trading hours, reduced documentation 
+requirements, often good liquidity, no convertibi lity risk, and reduced credit risk because of 
+net settlement.  
+ 
+Asia accounts for the most traded NDF currencie s worldwide, with the largest volumes in the 
+Korean won (KRW), Indian rupee (INR), and Ne w Taiwan dollar (TWD). For these currencies, 
+NDF volumes exceed turnover in other foreign ex change products including spot transactions. 
+In Asia, sizeable NDF markets also exist for th e Chinese yuan (CNY) and the Indonesian rupiah 
+(IDR), and to a lesser extent for the Malaysia n ringgit (MYR), Philippine peso (PHP), and 
+Vietnamese dong. Section II describes the si ze of NDF markets in Asian currencies. 
+ 
+NDF markets’ large size, volatility, and pricing differentials relative to onshore markets have 
+raised concerns over spillovers from the offsho re to the onshore market. Policymakers’ ability 
+ 
+1 We thank Reda Cherif, Nada Choueiri, Dimitris Drakopoulos, Anna Ilyina, Rajeev de Mello, and Evan 
+Papageorgiou for helpful comments and Elise Toh for help with word processing. 
+2 London accounts for close to half of all trading (45%), followed by the US (16%), Singapore (16%), and Hong 
+Kong SAR (12%) (Patel & Xia 2019). 
+ 
+=== PAGE 7 ===
+ 8 
+to monitor and regulate trading in  offshore NDF markets is limited.3 As a result, exchange rate 
+management could be less effective, reducing th e ability to conduct an independent monetary 
+policy. A potential destabilizing influence from NDFs to onshore markets is a further concern, 
+particularly during times of stress. Such spillo vers are not limited to onshore currency markets. 
+For example, when hedging costs using NDFs be come very expensive—we show in section IV 
+that this is the case in crisis periods—it ca n lead international investors to liquidate local 
+currency bond holdings.4 Additional policymaker concerns  are market fragmentation and a 
+loss of revenue for domestic financial institutions.   
+Policy approaches to NDF markets vary across As ia. Some countries, notably Korea, maintain 
+few restrictions on onshore financial institutions ’ participation in the NDF market, resulting in 
+close integration between offshore and onsh ore markets. Other countries retain more 
+restrictions, with Malaysia taking some of the strongest policy measures to limit ringgit trading 
+to onshore markets. Indonesia introduced a domest ic version of NDFs (DNDFs), settled in local 
+currency, as an alternative to USD-settled offsho re NDFs. Section III surveys the range of policy 
+approaches to NDF markets in Asia and section VI discusses DNDFs. 
+ 
+The question of pricing relationships between NDFs and onshore FX markets is an empirical 
+one.
+5 In section V, we analyze pricing relations fo r the Asian currencies with the most important 
+NDF markets, the IDR, INR, KRW, MYR, PHP, and TWD.6 We employ a vector error correction 
+approach to analyze the equilibrium and the lead-lag relationships between markets. We 
+innovate by exactly time-matching NDF and onsh ore price quotes, unlike most of the existing 
+literature which uses end-of-day quotes across time  zones. We show that this is crucial—with 
+the traditional approach of using price quotes at different times of the day we find that 
+influences tend to be from NDFs to onshor e markets, but with careful time-matching of 
+quotes, influences tend to run in both directio ns consistent with price discovery in onshore 
+and offshore markets. For the COVID-19 pandem ic period, we find some evidence for an 
+increased influence of NDFs on onshore markets for a few currencies.  
+The literature on NDF markets in Asia is limite d. Most studies focus on individual currencies 
+and are dated. McCauley, Shu, and Ma (2014), McCauley and Shu (2016) and Reserve Bank of 
+India (2019) provide comprehensive overviews of NDF markets. Recent spillover studies 
+ 
+3 Policymakers can impose limits on domestic actors’ in volvement in NDF markets. They can also attempt to 
+forbid facilitation of NDF transactions by foreigners thro ugh attestations of non-participation in the market as a 
+precondition for domestic market access. 
+4 Market contacts pointed out the link between hedging costs and bond holdings. Empirically, hedge costs and 
+flows into local currency bo nds are correlated, but many factors includi ng global risk aversion are driving this 
+correlation. 
+5 Directional influence in this paper refers to an asse t price significantly affecting another asset price in the 
+sense of Granger (1969). See section V for technical details. 
+6 We do not include CNY in the analysis given that the offshore Chinese yuan (CNH) market is increasingly 
+replacing CNY NDF trading as discussed in section III. 
+=== PAGE 8 ===
+ 9 
+include McCauley, Shu, and Ma (2014) for majo r currencies and Reserve Bank of India (2019) 
+for INR. We contribute to the literature with a comprehensive and fresh look at Asian currency 
+NDFs that considers recent developments in cluding DNDFs and the COVID-19 pandemic. Our 
+analysis of the direction of influence betw een NDF and onshore FX markets provides new 
+insights by differentiating between time-zone in duced and concurrent spillovers. Our findings 
+help to explain the mixed results in the literature.  
+ 
+II.   T HE SIZE OF NDF  MARKETS IN ASIAN CURRENCIES  
+Turnover data for NDFs is mostly available from  surveys, given the over-the-counter nature of 
+NDF trading. A shift to centralized trading an d clearing in recent years (McCauley and Shu 
+2016) also made data from clearing and settlem ent service providers available. Data sources 
+vary in coverage and frequency but the relati ve importance of currencies across sources is 
+broadly consistent. Data on the investor base for NDF markets is not available, but it is thought 
+to mainly comprise multinational corporat ions, portfolio investors, hedge funds and 
+proprietary foreign exchange accounts of comm ercial and investment banks (Ma, Ho, and 
+McCauley 2004).  
+The Bank for International Settlements (BIS) Trie nnial Central Bank Survey provides the most 
+comprehensive information about the size and st ructure of global NDF markets but is only 
+available on a triennial basis and for a limited number of currencies (in Asia: CNY, INR, KRW, 
+TWD).
+7 Major trading centers for NDFs publish survey s of trading activity in their jurisdiction 
+with varying coverage and frequency—we pres ent data from London and Tokyo below. The 
+Depository Trust & Clearing Corporation (DTCC) , a clearing and settlement services provider, 
+provides data on NDF trades on its systems. We present DTCC and authorities’ data below to 
+cover IDR and MYR which are not included in the currency breakdown of the BIS survey.  
+ Asia accounts for three of the top four NDF cu rrencies by volume globally according to the 
+BIS survey. The INR, KRW, and TWD accounted fo r 55% of total daily global NDF turnover of 
+USD258 bn as of April 2019 (Figure 1). The CN Y accounts for another 5% of global NDF 
+turnover. Outside of Asia, the Brazilian real ( 14%) and the Russian ruble (2%) have sizeable 
+NDF markets. NDF trading in INR, TWD, and KR W experienced the fastest growth since 2016, 
+rising 204%, 168%, and 100%, respectively.   Relative to other foreign exchange products—s pot, outright forwards, swaps, options—NDF 
+trading volumes are large for INR, KRW, an d TWD (Figure 2). For these currencies, NDF 
+volumes far exceed all other FX products in cluding spot trading. This underscores the 
+importance of NDF markets for price discovery an d relevance from policymakers’ perspective.  
+ 
+ 
+7 In addition to CNY, INR, KRW, and TWD for which NDF  markets exist, the BIS reports data on other FX 
+instruments for these Asian currencies: AUD, HKD, JPY, NZD, SGD. 
+=== PAGE 9 ===
+ 10 
+Daily NDF trading in three Asian currencies (INR, KRW, 
+TWD) accounts for 55% of global NDF trading volume. NDFs account for the largest share of trading by 
+instrument for INR, KRW, and TWD.  
+Figure 1. BIS Survey: NDF Daily Transaction Volumes 
+of Asian Currencies 
+(Billions of US Dollars and Percent)  Figure 2. BIS Survey: Daily Transaction Volumes by 
+FX Instrument  
+(Billions of US Dollars)  
+  
+ 
+Bank of England NDF volume data for London, the world’s largest NDF trading hub, is broadly 
+in line with BIS data (Figure 3). The KRW and IN R are the most widely traded NDFs in London. 
+In Tokyo, an important NDF trading hub in As ia, the KRW, INR, TWD, and IDR are the most 
+widely traded NDF currencies (Figure 4).   
+  
+KRW and INR are the most widely traded NDFs in London, the world’s largest market for NDFs.  In Tokyo, an important regional hub for NDFs, KRW and 
+INR are also the most traded currencies, followed by IDR 
+and TWD.  
+Figure 3. NDF Average Daily Turnover in London 
+(Millions of US Dollars)  Figure 4. NDF Average Daily Turnover in Tokyo 
+(Millions of US Dollars)  
+  
+Among South East Asian currencies, the IDR is  the most traded NDF. IDR monthly NDF 
+turnover exceeds USD100 bn based on DTCC da ta, more than spot and onshore deliverable 
+forward transaction volumes combined (Figure 5).8 The MYR boasted a large NDF market until 
+Bank Negara Malaysia reinforced a ban on of fshore NDF trading in November 2016 (Figure 6). 
+There is no Thai baht offshore NDF market du e to the presence of an offshore deliverable 
+ 
+8 DTCC data likely substantially understates total NDF tr ading. For currencies wher e both DTCC and BIS data 
+is available, BIS data is larger by a factor of 2 to 4.  
+
+=== PAGE 10 ===
+ 11 
+forward market.9 Philippine peso NDF volumes are small, reflecting the relatively small foreign 
+participation in local asset markets and shallow financial markets in general.   
+IDR NDF turnover is the highest among South East Asian 
+currencies with volumes exceeding onsho re trading.  MYR NDF activity dropped sharply after the authorities 
+reinforced a ban on NDF trading.  
+Figure 5. Indonesia monthly FX Market Turnover 
+(Billions of US Dollars) Figure 6. Malaysia monthly FX Market Turnover 
+(Billions of US Dollars)   
+  
+ 
+III.   P OLICY APPROACHES TO NDF  MARKETS  
+NDF markets exist because of currency non-deliver ability offshore and restrictions in onshore 
+markets particularly for nonresid ents. Such restrictions are presen t in most emerging markets. 
+They take various forms including underlying asset requirements for currency positions, 
+restrictions on participants in currency market s, prudential and documentation requirements, 
+and regulation on permissible foreign exchan ge products. The motivation behind these 
+restrictions is to safeguard financial stability,  curb financial speculation and maintain control 
+over the currency onshore.  
+ Do NDFs disappear when a country moves its currency to full convertibility?
+10 Not necessarily. 
+Factors besides restrictions in onshore market s matter as well. Convenient trading hours and 
+good liquidity make NDFs attractive. In crisis episodes, convertibility risk11 can be a 
+consideration in favor of NDFs. The Russian ru ble was made fully convertible in 2006, yet an 
+active NDF market with a daily turnover of USD5 .5 bn still exists as of 2019. A factor for the 
+continued relevance of the rubl e NDF market could be credit and legal concerns related to 
+the enforceability of collateral arrangemen ts and sanctions (McCauley and Shu 2016). 
+ Against this backdrop, countries in Asia have made different choices in their approach to NDF 
+markets. Korea has a generally open capital a ccount but maintains limits on non-resident KRW 
+borrowing from banks in Korea and registrati on requirements for no n-resident portfolio 
+ 
+9 Historically, the Bank of Thailand also enforced a ban on NDF quotation by international banks that had 
+business activity in Thailand, similar to Bank Negara Malaysia.  
+10 Convertibility is the ease with which a currency can be converted into another currency. 
+11 Convertibility risk refers to the risk of loss arising from an inability to convert local currency into a fully 
+convertible currency and/or to repatr iate convertible currency back to a ho me country as a result of exchange 
+controls. 
+
+=== PAGE 11 ===
+ 12 
+investors. Korean onshore investors can freely participate in the NDF market. As a result, 
+arbitrage ensures close integration between on shore and offshore markets (see section IV). 
+The embrace of NDFs has made the KRW the worl d’s largest and most liquid NDF market with 
+daily turnover around USD 60bn according to  the BIS. For the TWD—another major NDF 
+currency—there is partial integration between onshore and NDF markets as Taiwanese banks 
+can participate in the NDF market up to 20% of their net open FX positions. Taiwan POC also 
+maintains limits on non-resident investment in local currency bonds and has onshore currency 
+transaction reporting requirements.  
+In contrast to Korea and Taiwan POC, Malaysia took a different approach aimed at developing 
+onshore FX markets while seeking to curtail MYR activity in offshore markets (IMF 2019). In 
+November 2016 Bank Negara Malaysia (BNM) enfo rced a requirement for banks to attest that 
+they do not engage or facilitate transact ions in the offshore ringgit NDF market.
+12 The measure 
+was related to concerns over speculative activi ty in the NDF market. Most international banks 
+complied and as a result activity in the MY R NDF market dropped significantly (Figure 6). 
+Initially, onshore FX volumes increased on ly marginally. Some international investors 
+liquidated holdings of Malaysian bonds.13 Subsequently, steps were taken to deepen onshore 
+FX markets including more convenient acce ss for non-resident investors, simplified 
+procedures, and relaxation of underlying asse t requirements for FX positions (IMF 2020).14 
+Partly as a result of these initiatives, onsh ore FX market turnover increased. The sum of 
+turnover in onshore markets and NDFs remains substantially below levels before November 
+2016, indicating that not all activity that disa ppeared from NDF markets migrated to onshore 
+markets.15 
+ The IDR has the largest NDF market among South East Asian currencies. The size of the IDR 
+NDF market is a function of strong global inve stor interest in the local bond market—foreign 
+participation is among the highest in Asia—a nd restrictions on non-resident currency 
+positions onshore without underlying assets. In  2018, Bank Indonesia introduced a domestic 
+NDF (DNDF) settled on a net basis in IDR (instead  of USD for the offshore NDF) to deepen the 
+onshore market. As of May 2020, the DNDF is primarily a monetary po licy tool for Bank 
+ 
+12 The requirement not to engage in the NDF market was longstanding but not strictly enforced. In November 
+2016, BNM required an attestation from banks to certify that they did not engage in the NDF market. In December 2016, BNM introduced a requirement for conv ersion of 75 per cent of export proceeds into MYR and 
+a measure limiting investment in FX assets by reside nts with domestic ringgit borrowing was extended to 
+exporters. 
+13 Some market participants indicated a preference for NDFs at  the time due to convenience. Restrictions on 
+currency positions without underlying asset exposures in onshore markets were an additional concern. 
+14 Since April 2017 registered nonresident investors are allowed to hedge up to 100 percent of their MYR 
+exposures, up from 25 percent, and take additional 25 percent MYR exposure on top of their underlying asset. 
+15 This is unsurprising since a large share of trading in NDFs is without underlying asset positions which is not 
+permissible in the Malaysian onshore market. 
+=== PAGE 12 ===
+ 13 
+Indonesia with limited secondary market activity  and non-resident participation. We discuss 
+the DNDF in detail in section VI.   
+The Chinese yuan is another unique case. 
+Through capital controls the market is 
+segmented into a tightly controlled 
+onshore market (CNY) and an offshore market without restrictions (CNH). There are three different forward markets: onshore deliverable (CNY) accessible mostly to residents; offshore NDF (CNY NDF); and offshore deliverable (CNH).  The 
+CNY NDF market in place since the 1990s 
+has been gradually replaced by the offshore deliverable forward (CNH) market, which was created in 2010 (Figure 7).  
+In India, the fast growth of the INR NDF market  raised concerns around the forces determining 
+the currency value and the authorities’ ability to  ensure currency stability (Reserve Bank of 
+India, 2019). The Reserve Bank of India commissio ned a Task Force to study the offshore INR 
+market. The commission recommend ed steps to develop the onshore FX market including 
+longer trading hours, new FX products, some liberalization of underlying asset requirements 
+for FX positions, and other market developmen t steps. The Reserve Bank of India allowed 
+onshore banks to participate in the NDF market from June 2020. 
+ 
+IV.   V OLATILITY AND PRICING OF ONSHORE FORWARDS AND OFFSHORE NDF S 
+The volatility and pricing of NDFs relative to  onshore FX markets provides insight in the 
+behavior of both markets and the interactio ns between them. High volatility does not 
+necessarily indicate a more speculative investor base or price overshooting. It would also be 
+consistent with the absence of policy interventi on or faster price discovery. Similarly, a 
+comparison of pricing between onshore and offsho re markets is not normative, but useful to 
+understand differences in market views and investor sets.  
+ Large price dislocations in currency forwards have real economic consequences. Hedging for 
+corporates and investors could become prohibitiv ely expensive. As a result, spillovers to other 
+assets can occur. For example, when NDF pr icing makes hedging currency risks stemming 
+from local currency bond investments expensive, it can prompt foreign investors to sell bonds. 
+ 
+Asian NDFs have been more volatile on aver age than corresponding onshore forwards over 
+the period from 2013 to April 2020 (Figure 8). Ho wever, the maximum realized volatility was 
+lower in NDFs for the IDR, INR, KRW, and TWD th an in the onshore forwards. In crisis episodes, Chinese yuan NDF activity dropped amid the rise of the 
+offshore deliverable forward market (CNH).  
+Figure 7. Chinese Yuan Market Turnover 
+(Average Daily Turnover; Billions of US Dollars)  
+ 
+
+=== PAGE 13 ===
+ 14 
+including the COVID-19 pandemic, volatility of ND Fs tended to increase slightly more than 
+onshore forward volatility (Appendix 1).  
+Pricing of onshore forwards and offshore NDFs is  primarily based on interest rate parity but 
+prices in both markets can diverge.
+16 Prices in the two markets can differ due to differences in 
+onshore and offshore interest rates, different in vestor sets, market liquidity, trading hours, 
+counterparty risks, convertibilit y risks and intervention by the authorities in the domestic 
+forward market. Pricing differences can persist if there are access restrictions to onshore 
+markets that constrain arbitrage between the two markets. Even without restrictions, arbitrage 
+activity may not operate as fully and immediately as  in the textbook case due to risk and costly 
+capital (Shleifer & Vishny 1997). 
+ 
+An intuitive way to look at the pricing of curre ncy forwards is to back out the home currency 
+implied interest rates using covered interest rate  parity (CIP). For example, to obtain the KRW 
+interest rate implied in a KRW/USD NDF one woul d take the NDF price, the spot price, and the 
+US interest rate as given and solve for the KRW interest rate using the standard CIP equation. 
+The higher the implied interest rate for the ho me currency, the greater is the forward implied 
+currency depreciation for that currency. 
+ 
+The difference in implied interest rates of NDFs  and onshore forwards in Asian currencies are 
+close to zero on average (Figure 9) suggestin g that deviations are eventually arbitraged. 
+During stress episodes, however, implied intere st rates in the onshore and offshore markets 
+have at times differed widely, most notably in In donesia with interest rate differentials of +/-
+50%. Substantial pricing deviations also occur in the MYR, PHP, and INR. In these four 
+currencies, deviations are greater to the downsi de, meaning higher implied interest rates and 
+hence depreciation pressure in the NDF. This asymmetry could be consistent with a stronger 
+reaction to negative news in the NDF or cent ral bank foreign exchange intervention in the 
+ 
+16 Since the GFC, violations of covered interest rate parity in the pricing of forwards are common. See, for 
+example, Du, Tepper, and Verdelhan 2018. Median volatility of Asian NDFs is larger than volatility of 
+onshore deliverable forwards.  Pricing differentials between onshore and offshore markets 
+can be very large.  
+Figure 8. Asian FX 1-Month Realized Volatility 
+(Percent) Figure 9. Onshore Forward Less Offshore NDF 
+Implied Yields 
+(Percent) 
+   
+
+=== PAGE 14 ===
+ 15 
+onshore market that cushions depreciation pres sures. For the KRW the variation in the implied 
+yield differentials between onshore and offshore  markets is close to zero including during 
+stress episodes due to arbitrage between the NDF and onshore markets by Korean banks and 
+investors who are permitted to participate in NDF trading. For the TWD deviations between 
+onshore and offshore implied interest rates are larger than for KRW, but smaller than for the 
+other currencies. This is consistent with part ial integration between the TWD onshore and NDF 
+markets which results from Taiwan POC onshore financial institutions being allowed to participate in the NDF market subject to li mits (20% of net open FX positions).  
+ 
+Figures 10 through 15 present the difference in onshore and NDF implied interest rates over 
+time. During the taper tantrum in 2013, large dislocations between onshore and offshore 
+pricing occurred for IDR and INR with the offshore  markets pricing large depreciations. At that 
+time, Indonesia and India were viewed as particul arly vulnerable to rising US interest rates.
+17 
+Following the taper tantrum, IDR offshore interest  rates collapsed relative to onshore rates as 
+international investors positioned for a rebound in IDR assets. Besides IDR and INR, the taper 
+tantrum affected TWD offshore/onshore pricing,  but had relatively little effect on the 
+onshore/offshore pricing different ials of other Asian currencies. 
+ Subsequent emerging market stress episodes incl ude in 2015 a sell-off in EM equities and oil, 
+in 2016 a rapid depreciation of the CNY, and in 2018 a drop in EM equities, oil prices and the 
+CNY. The impact of these episodes on Asian FX markets varied, depending on exposure to the underlying drivers of stresses. The 2015 episode was mostly confined to large price 
+dislocations in the MYR FX space with NDFs firs t pricing large depreciation relative to onshore 
+forwards and then appreciation. The volatile pattern suggests some overshooting in the NDF 
+market. MYR was exposed during this time to the decline in oil prices si nce Malaysia is a net 
+energy exporter, unlike the other Asian countries  in the sample, and relies to a significant 
+extent on oil and gas revenues for fiscal funding.  Implied yield differentials were also volatile 
+following BNM’s reinforcement of a ban on MYR NDFs in November 2016. NDFs were pricing 
+substantial depreciation for the IDR and PHP duri ng short episodes in the fall of 2016. This 
+could be related to spillovers from dislocations in the MYR NDF or from concerns over the 
+rapid depreciation of the Chinese yuan. In 20 18, the combined shock of EM equity, oil and 
+CNY declines led to some pricing deviations  between onshore forwards and NDFs, most 
+notably in the IDR.  In the COVID-19 pandemic, implied interest rate s and hence depreciation pressures spiked in 
+the IDR, INR, MYR, and PHP to high levels. Co nversely, for the TWD NDF implied interest rates 
+declined far below onshore rates suggesting appr eciation pressures in the offshore market. 
+Taiwan POC’s successful handling of the CO VID-19 pandemic with limited cases and less 
+restrictions than most countries  could have contributed to this  pattern. In addition, Taiwanese 
+investors, in particular life insurers, have buil t large overseas portfolios in recent years and 
+ 
+17 During the taper tantrum India and Indonesia were labe led the “fragile five” by Morgan Stanle y along with 
+Brazil, South Africa, and Turkey. 
+=== PAGE 15 ===
+ 16 
+increased currency hedges in the ND F market during the crisis co uld have contributed to lower 
+implied NDF interest rates. 
+ 
+ Deviations in Korean won NDF and onshore forward 
+implied interest rates have been limited.  For the New Taiwan dollar there have been more 
+deviations, often with NDF markets pricing more 
+appreciation than onshore markets.  
+Figure 10. Korean won Onshore Forward Less 
+Offshore NDF Implied Yield 
+(Percent) Figure 11. New Taiwan dolla r Onshore Forward Less 
+Offshore NDF Implied Yield 
+(Percent) 
+  
+The Indonesian rupiah experienced extreme onshore-
+offshore price differentials during the taper tantrum and 
+the COVID-19 pandemi c.  Indian rupee NDFs were pricing much more depreciation 
+in 2013 and during COVID-19 than onshore markets.  
+Figure 12. Indonesian Rupi ah Onshore Forward Less 
+Offshore NDF Implied Yield 
+(Percent) Figure 13. Indian Rupee Onshore Forward Less 
+Offshore NDF Implied Yield 
+(Percent) 
+  
+MYR NDFs were stable during the taper tantrum, but 
+pricing was very volatile in 2015 and after the central bank’s reinforcement of the NDF ban in November 2016.  PHP NDF pricing has been fairly close to onshore prices, 
+except in late 2016 and during the COVID-19 pandemic.  
+Figure 14. Malaysian Ringgi t Onshore Forward Less 
+Offshore NDF Implied Yield 
+(Percent) Figure 15. Philippine Pe so Onshore Forward Less 
+Offshore NDF Implied Yield 
+(Percent) 
+  
+
+=== PAGE 16 ===
+ 17 
+V.   P RICE LINKAGES BETWEEN ONSHORE AND OFFSHORE CURRENCY MARKETS  
+In the previous sections we showed that NDF markets in Asia are large and that NDF pricing 
+can deviate substantially from onshore FX pric es indicating some segmentation between the 
+markets. Large NDF volumes do not necessarily mean  that NDFs affect onshore pricing. In this 
+section we empirically examine price linkages  between NDFs and onshore forward and spot 
+markets using vector error correction models (V ECM). We employ Granger causality tests to 
+detect spillovers in returns. In contrast with  most existing studies, we time-match NDF and 
+onshore price quotes to control for spillover effe cts due to differences in trading hours. This 
+allows us to differentiate between time-zone in duced and concurrent spillovers. We separately 
+analyze the COVID-19 market stress episode using hourly data.  
+Results on spillovers between NDFs and onshor e markets in the literature are mixed and most 
+studies are dated. For currencies with the larg est NDF markets, McCauley, Shu, & Ma (2014) 
+find two-way spillovers in normal times and on e-directional effects from NDFs to onshore 
+markets in crisis periods. Most other studies fo cus on individual currencies. Reserve Bank of 
+India (2019) finds two-way influences for INR in normal times, and NDF to onshore during 
+crisis episodes. For KRW, Park (2001) finds onshore to NDF spillovers before 1997 and the 
+reverse after. For IDR, Cadarajat and Lubis (2012) find NDF to onshore spillovers. For INR, Misra 
+and Behera (2006) find that onshore markets in fluence the NDF, Behera (2011) found NDF to 
+onshore spillovers, and Goyal et al. (2013) find  a bidirectional relation between onshore and 
+offshore markets that turns unidirectional from  NDF to onshore during periods when INR is 
+under depreciation pressure.  
+ 
+A.   Empirical Approach and Data 
+We analyze the relationship between NDF and onshore markets using VECMs. The VECM 
+approach sheds light on the long-run equili brium relationship between NDF and onshore 
+markets, the adjustment toward that equilibrium in case of perturbations, and the influence of 
+changes in lags of one variable on the other. For the latter, there is a directional spillover 
+interpretation in the sense of Granger causality.  A variable X is said to Granger cause another 
+variable Y if lagged values of X help in predic ting Y beyond the information contained in the 
+lagged value Y. In other words, we test for lead-lag relationships across variables, while 
+controlling for a variable’s own lags and the e rror correction adjustment to the equilibrium of 
+the variables in levels.  
+ Our dataset covers NDF, spot, and onshore delive rable forward prices for IDR, INR, KRW, MYR, 
+PHP, and TWD extracted from Bloomberg using the BFIX function. We use daily and hourly 
+price data. For NDFs we use both New York end of trading day quotes in  line with most other 
+studies, as well as quotes that are ex actly time-matched to onshore prices.  
+ 
+We first establish stationarity of the time se ries using the Augmented Dickey-Fuller (ADF) unit 
+root test. The variables are non-stationary in leve ls but are stationary in their first differences.  
+=== PAGE 17 ===
+ 18 
+Second we perform Johansen cointegration te sts with lag selection using the Schwarz’ 
+Bayesian Information Criterion. We find cointe grating relationships (common long-term trend) 
+for NDFs with spot and onshore deliverable fo rwards, respectively, for all currencies. Next, 
+given cointegration, we estimate vector erro r correction models. The estimated cointegrating 
+coefficients from a regression in levels are clos e to one, pointing to the existence of a long-
+run equilibrium relation between NDFs and onsh ore FX markets where prices in both markets 
+are close to equal. To evaluate the short-run prop erties of the cointegrated series we estimate: 
+ 
+(1)       ∆𝑆௧ൌ 𝜇ௌ൅ 𝛾ௌ ሺ𝑆௧ିଵെ𝜃଴െ 𝜃ଵ𝐹௧ିଵሻ൅∑𝛼ௌ௜௡
+௜ୀଵ∆𝑆௧ି௜൅ ∑𝛽ௌ௜௡
+௜ୀଵ∆𝐹௧ି௜൅𝜀ௌ೟ 
+ 
+ሺ2ሻ        ∆𝐹௧ൌ 𝜇ி൅ 𝛾ி ሺ𝑆௧ିଵെ𝜃଴െ 𝜃ଵ𝐹௧ିଵሻ൅෍𝛼 ி௜௡
+௜ୀଵ∆𝐹௧ି௜൅ ෍𝛽ி௜௡
+௜ୀଵ∆𝑆௧ି௜൅𝜀ி೟ 
+ 
+where S is either the logged valu e of prices of spot or onshore deliverable forwards and F is 
+the logged value of prices of NDFs. Schwarz’ Ba yesian Information Criterion is employed to 
+select the optimal number of lags of th e lagged dependent variable and the lagged 
+independent variable. The expression ሺ𝑆௧ିଵെ𝜃଴െ 𝜃ଵ𝐹௧ିଵሻ is the error correction term from 
+estimating the cointegration relationship where both S and F are in log levels and 𝜃଴ is an 
+intercept. The coefficients 𝛾ௌ and 𝛾ி on the error correction term measure the response of 
+each variable to deviations from the long-run eq uilibrium in period t-1. Significant, opposite-
+signed coefficients on the error correction term in dicate that both variables are adjusting back 
+to equilibrium if there has been a perturbation. A clear directional influence from one variable 
+to the other cannot be derived from the coefficients on the error correction term.18      
+ The coefficients on the lagged independent variables, 𝛽
+ௌ௜ in equation (1) and 𝛽ி௜ in equation 
+(2), indicate the impact of changes in the la gged independent variables while controlling for 
+changes in the lagged dependent variables and the error correction adjustment to the long-
+run equilibrium relationship in levels.  We  employ joint significance tests on the 𝛽 coefficients 
+to test for Granger causality. There is a cl ear directional interpretation of the lagged 
+independent variable coefficients in the sense of Granger causality. A rejection of the null 
+hypothesis of no Granger causality in eith er direction between onshore quotes and NDF 
+suggests two-way spillovers between onshore an d offshore currency markets. A rejection of 
+the null hypothesis in one directio n implies a one-way spillover.  
+ 
+ 
+18 To illustrate this, consider for simplicity the case where 𝜃଴ is zero and 𝜃ଵ is 1 (the actual coefficients in our 
+data are close to this case). Then 𝑆௧ିଵെ𝐹௧ିଵൌ𝑒௧ିଵ, where 𝑒௧ିଵ is the deviation from the long-run equilibrium 
+at time t-1 (error correction term). The er ror correction term is a function of both 𝑆௧ିଵ and 𝐹௧ିଵ. It follows that 
+the coefficient on the error correctio n term in equations (1) and (2), 𝛾, could be driven by a perturbation to 𝑆௧ିଵ 
+or  𝐹௧ିଵ or both. 
+=== PAGE 18 ===
+ 19 
+B.   Results 
+NDFs and onshore forward and spot exchange  rates are linked in long-run equilibrium 
+relationships, as one would expect with at leas t partial market integration. Appendix 2 shows 
+estimates for the long-run cointegration regressi ons in levels. Most intercepts are close to 
+zero while the coefficients on the dependent variables are close to one, suggesting that 
+onshore and offshore prices are close to equal in  the long run. For most cases, adjustment to 
+deviations from the long-run equilibrium, th e coefficient on the error correction term in 
+equations (1) and (2), is statistically signific ant with the right sign (i.e. converging to 
+equilibrium). There are two exceptions. For MYR, the coefficients on the error correction term 
+in the regressions with NDFs as dependent vari able are statistically indistinguishable from 
+zero. Similarly, for INR the error correction term coefficients for NDFs are also statistically 
+insignificant in some cases. See A ppendix 3 for coefficient estimates. 
+ Turning to the coefficients on the lagged indepe ndent variables, we first analyze the direction 
+of influence between onshore prices at the lo cal market closing time and NDFs at the New 
+York close. In all cases we find that changes in NDF prices granger cause changes in onshore 
+spot and forward FX prices (Table 1).
+19 The relation is one-directio nal from NDF prices to spot 
+prices for IDR, KRW, PHP, and TWD, and to on shore forward prices for IDR, MYR, and PHP. 
+Two-way influences between NDFs and onshore FX are present for INR (spot and forward), 
+MYR (spot), and TWD (forward).   One-directional influences wi thout controlling for time differences are not surprising.
+20 New 
+information released during the European and New York trading hours will be priced into 
+NDFs in London or New York when Asian markets are closed. This information will be reflected 
+in Asian markets the following trading day. As a result, there will be a significant impact from the NDF on onshore FX prices si mply because the same information  is priced in at different 
+times. This is of interest to market partic ipants and policy makers to understand currency 
+dynamics and when deciding on market structure features such as trading hours. However, it 
+is not necessarily evidence that price discovery takes place to a greater extent in one market 
+than the other.  
+ 
+To study whether offshore or onshore markets le ad in price discovery, we need to compare 
+NDF quotes with onshore FX quotes at the same  time. We present the results in Table 2. For 
+most currencies we now find bi-directional influences between NDFs and onshore markets 
+based on the lagged independent variables. Pric e discovery in both markets influences the 
+other. There are three exceptions. First, for th e KRW there is only a one-directional relation 
+from NDFs to onshore forwards. This is unsur prising given the close integration of the NDF 
+and onshore forward market for KRW (which re sults in a large coefficient on the error 
+ 
+19 One exception are KR W onshore forwards. 
+20 Our result of two-way spillovers for INR, in line with the literature, could be due to the Indian trading day 
+having more overlap with the European and US trading day than is the case for East Asia. 
+=== PAGE 19 ===
+ 20 
+correction term) and the role of domestic Kore an banks and investors in the KRW NDF market. 
+In other words, the information set of onshor e investors is fully present in the KRW NDF 
+market, leaving no residual new information in  the onshore forward price discovery. Second, 
+for the MYR the granger causality runs only from onshore forwards to the NDF market. 
+Interestingly, this was the case even before th e collapse of NDF markets following Bank Negara 
+Malaysia regulation in 2016. For the MYR onshore sp ot market, we find a switch in the direction 
+of spillovers with the 2016 Bank Negara Malays ia measures. Before the measures, the direction 
+of influence was from NDF to onshore spot. Afte r the measures, it was from onshore spot to 
+NDF. This underscores the effectiveness of the regulation in moving price discovery onshore. 
+In the case of Malaysia, the spot market resu lt is more important than the forward market 
+result given that the former is much larger. Fi nally, for TWD we do no t find any significant 
+lead-lag relations. 
+Table 1. Granger Causality Tests for NDFs at New York Close 
+(Daily data 2012- Apr 2020; NDF quotes at  the end of the trading day in New York) 
+ 
+ 
+Sources: Bloomberg; IMF staff. 
+Note: NDF.NY refers to the NDF price at the end of the trading day in New York. indicates two-way causality, indicates influence on 
+the NDF market from either spot or onshore forward, indicates influence on either spot or onshore forward from NDF, × indicates no 
+relationship. Significance level is 5%. Granger causality tests are based on joint significance of  the lagged independent varia bles in VECM 
+regressions.  
+ 
+ 
+Table 2. Granger Causality Tests for NDFs at Asia Trading Hours  
+(Daily data 2012-Apr 2020; NDF quotes time-matched to onshore quotes) 
+ 
+ 
+ 
+Sources: Bloomberg; IMF staff. 
+Note: NDF refers to the NDF pri ce at the time of a country’s domestic end-of-day trading hours, i.e. the same time as the spot and onshore 
+forward price quotes. indicates two-way causality, indicates influence on the NDF market from either spot or onshore forward, 
+indicates influence on either spot or onshore forward from NDF,  × indicates no relationship. Si gnificance level is 5%. Granger causality 
+tests are based on joint significance of the lagge d independent variables in VECM regressions.  
+ 
+ 
+ 
+ 
+C.   Price Linkages During the COVID-19 Pandemic 
+Price linkages between markets in crisis period s could differ from normal times. The literature 
+finds for the most part that NDF market influence appears to increase in crisis times (Reserve 
+Bank of India 2019 for INR; Cadarajat & Lubis 2012 for IDR; McCauley, Shu, & Ma 2014 for EM 
+currencies).  
+IDR INR KRW MYR PHP TWD
+Spot     × NDF
+Onshore Forward      × NDF
+=== PAGE 20 ===
+ 21 
+The analysis of crisis episodes is statistically difficult because of short time series. To analyze 
+spillovers between NDF and onshore FX markets during the COVID-19 crisis (Jan 20 to Apr 30 
+2020) we use hourly price quotes which gives us sufficient observations.21 We match the exact 
+time between NDF and onshore quotes analogou s to the results in Table 2 above. This 
+removes any spillovers due to differences in when trading takes place. We are left with 
+concurrent spillovers that are due to one ma rket leading the other in price discovery. 
+ 
+For the error correction term, we find that all co efficients have the expected sign (convergence 
+to equilibrium) and are significant at the 10 pe rcent level except for the error correction term 
+in the IDR NDF regressions (Appendix 4). The lack  of convergence to equilibrium for IDR NDFs 
+during COVID-19 is likely due to the large,  sustained dislocation between IDR NDF and 
+onshore markets (Figure 12). Looking at the lagg ed independent variables, we find evidence 
+that during COVID-19 the NDF market led deve lopments in the onshore forward markets for 
+the IDR and the INR (Table 3), both currencies un der significant depreciation pressure during 
+the COVID-19 market turmoil. For other currency pa irs, there are either bi-directional relations 
+or no association for the high fr equency data. TWD is an interesting case with the direction of 
+influence from NDF to spot, but from onshore forward to NDF.22  
+ 
+Table 3. Granger Causality Tests During COVID-19 
+(Hourly data 20 Jan 2020 to 30 Apr 2020; NDF quotes time-matched to onshore quotes) 
+ 
+ 
+ 
+Sources: Bloomberg; IMF staff. 
+Note: Data is hourly with NDF, spot and onshore forward prices time-matched on an hourly basis. indicates two-way causality, 
+indicates influence on the NDF market from either spot or onshore forward, indicates influence on either spot or onshore forward 
+from NDF, × indicates no relationship. Significance level is 5%. At a 10% significance level there is no significant spillover from NDF to 
+spot for IDR and from spot to NDF for INR. Granger causality  tests are based on joint signifi cance of the lagged independent va riables in 
+VECM regressions.  
+ 
+ 
+ 
+VI.   D OMESTIC NON-DELIVERABLE FORWARDS (DNDF S) 
+Domestic non-deliverable forwards (DNDFs) ar e net-settled in local currency and traded 
+onshore in the jurisdiction of the issuing co untry. They are distinct from NDFs which are 
+typically settled in USD and trade offshore. They  are also distinct from deliverable onshore 
+forwards for which the entire notional amount is exchanged on the due date and not just the 
+ 
+21 To our knowledge, we are the first to move to higher frequency data than daily to analyze NDF and onshore 
+market relationships. 
+22 For the 2015/16 and 2018 EM sell-off episodes we also find some evidence for one-way spillovers from 
+NDFs to onshore markets, but many resu lts are not statistically significant. 
+
+=== PAGE 21 ===
+ 22 
+profit or loss (net settlement). DNDFs were pi oneered and extensively used by the Brazilian 
+central bank for intervention purposes (Garcia and Volpon 2014). In Asia, DNDFs are only used 
+in volume in Indonesia as a monetary policy tool while secondary market trading is in the 
+development stage. In the Philippines, the cent ral bank maintains a little-used DNDF facility. 
+ Motives for central banks to create DNDFs incl ude (1) intervention wi thout affecting foreign 
+exchange reserves (since DNDFs are settled in local currency, a short USD exposure on DNDFs 
+does not imply a USD liability on the issuing ce ntral bank’s balance sheet); (2) DNDFs can help 
+dampen spot or deliverable forward demand fo r USD by providing banks another option to 
+cover market risk from short USD positions; (3) provide another FX intervention tool with which 
+the central bank can set price signals.
+  
+ Although DNDFs do not count against central ba nks’ foreign exchange reserves, large short 
+USD DNDF positions can be risky for the centra l bank.  If counterparties choose to not roll 
+over DNDF positions at maturity and instead de mand USD in the spot or deliverable forward 
+market, depreciation pressures can be exacerbate d. Losses on DNDFs can impair central banks’ 
+capital. For banks, investors, and corporat es, DNDFs may not be perfect substitutes for 
+deliverable instruments or NDFs. For example, co rporates may have an actual USD demand in 
+the future and therefore prefer currency delivery . Convertibility risk is  a concern given that 
+DNDFs are settled in domestic currency at matu rity. In the case of Brazil, concerns about 
+convertibility during stress episodes led to larg e discounts on DNDFs relative to NDFs (Garcia 
+and Volpon 2014). 
+ 
+Bank Indonesia (BI) introduced IDR net settled DNDFs in November 2018 to ease pressures on 
+the rupiah by providing an alternative hedging instrument.23 Currently, DNDF transactions 
+largely happen in the primary market, with  BI offering 1 and 3-month DNDFs daily.24 Most 
+transactions take place at the 1-month tenor.  BI’s counterparties for DNDFs are mostly 
+domestic banks and offshore subsidiaries of global banks with a presence in Indonesia. Poor secondary market liquidity cont ributes to limited use of DNDFs by corporates and foreign 
+investors. In addition, for foreign investors the requirement of an underlying hedging need 
+makes DNDFs less attractive than NDFs.
+25  
+ We estimate that outstanding DNDFs auctioned by BI were in the range of USD1 to 4 bn prior 
+to COVID-19. Starting in February 2020 when Indonesia experienced large portfolio outflows 
+and IDR depreciation pressures, BI increased sa les of DNDFs to close to USD 8 bn (Figure 16). 
+This compares to net portfolio outflows of USD 2.4 bn in February and USD 7.9 bn in March. 
+ 
+23 DNDFs could also help reduce selling pressure by foreign investors in the bond market. As shown in section 
+IV, NDF implied interest rates tend to spike in stress  episodes which makes hedging of currency risk for bond 
+investors expensive, in turn leading them to liquidate bond positions.  
+24 The 3-month contract was introduced in February 2019. 
+25 The underlying asset requirement for DNDF use was waived for transaction below USD 5mn in April 2019. 
+=== PAGE 22 ===
+ 23 
+DNDF transactions have largely moved in tandem  with the rupiah exchange rate, rising when 
+the rupiah is under depreciation pressure.   
+DNDF transaction volumes increased during COVID-19.  DNDFs tend to price in less depreciation than NDFs when 
+the rupiah faces depreciation pressures.  
+Figure 16. Indonesia Domestic NDF  
+(Billions of US Dollars and Exchange Rate) Figure 17. Indonesia Domestic and Offshore NDF 
+(Exchange Rate and Difference) 
+  
+ 
+The IDR rate in the DNDF market is fixed by BI  using the Jakarta Interbank Spot Dollar Rate 
+daily and has typically been below that in th e NDF market. The spread was the widest when 
+the IDR came under depreciation pressure in mid-May and early August 2019 amid the 
+escalation in US-China trade tensions. During  the COVID-19 market turbulence the DNDF – 
+NDF spread reached record levels with the NDF market pricing more depreciation (Figure 17). 
+Interestingly, while DNDFs priced less deprec iation than NDFs they were pricing more 
+depreciation than onshore deliver able forwards (Figures 18 and 19), suggesting that BI may 
+have set DNDF pricing to bridge between ND F and onshore deliverable forward markets. 
+Market contacts argue that DNDFs helped reduce  depreciation pressure on the IDR spot rate 
+in stress episodes by absorbing some USD demand . Relative to the IDR NDF market, the DNDF 
+remains small and there has not been a signif icant move of trading volume from the NDF 
+market to DNDFs so far. That said, the IDR DN DF remains in the early development stages and 
+BI has made efforts in 2020 to increase DNDF liquidity including by expanding the types of 
+underlying transactions that are eligible for DNDF positions and allo wing banks to include 
+DNDFs as part of their net op en FX position calculation. 
+ 
+Prior to COVID-19, deliverable onshore forwards, NDFs, 
+and DNDFs were priced close to each othe r. During the COVID-19 market stress, NDFs priced more depreciation than onshore forwards and DNDFs.
+ 
+Figure 18. IDR forward curves on 27 Dec 2019 
+ Figure 19. IDR forward curves on 20 Mar 2020 
+ 
+
+=== PAGE 23 ===
+ 24 
+ 
+The Philippines’ central bank (BSP) offers a DNDF -like standing facility. The Currency Rate Risk 
+Protection Program (CRRP) facility offers no n-deliverable forward contracts net settled in 
+pesos to domestic banks. Banks act as an in termediary for customers with hedging needs 
+arising from eligible foreign currency obligati ons. The CRRP was reactivated in September 
+2018, but the facility was first introduced in 199 7 during the Asian Financial Crisis and last 
+utilized in 2009. The intent of the CRRP is to  serve as a hedging facility that prevents 
+corporates, notably importers, from buying USD on the spot market for future requirements, 
+in turn reducing depreciation pressures on the peso. BSP sets DNDF prices based on interest 
+parity, which could make DNDFs attractive rela tive to NDFs when there are depreciation 
+pressures. The size of outstanding transactions  is unknown, but uptake has been very limited 
+according to market contacts. 
+ 
+VII.   C ONCLUSION  
+NDF markets in major Asian currencies are larg e, often with higher trading volumes than 
+onshore FX markets. NDFs tend to be more vo latile than their onshore counterparts. During 
+market stress periods including the COVID-19 pand emic, pricing of NDFs often diverges from 
+onshore FX markets. In most cases NDFs price more depreciation than onshore markets in the 
+initial phases of markets stress. The sometimes very large deviations in NDF pricing can have 
+consequences for the real economy and nonres ident holdings of local currency assets by 
+making hedging expensive.  
+ 
+Spillovers from NDF markets and associated lo ss of control are a concern among policymakers 
+in many emerging markets. We find long-te rm equilibrium relationships between NDFs and 
+onshore markets and, in most cases, both NDFs  and onshore markets adjust back toward the 
+long-term equilibrium in case of perturbations.  Additionally, we find that changes in NDF 
+prices affect onshore FX markets and vice versa.  We show that the finding of one-way influence 
+from NDFs to onshore markets as in some ot her studies, for example McCauley, Shu and Ma 
+2014, results from using NDF quotes from a time zone outside of Asian trading hours. In that 
+case, NDFs appear to lead onshore markets be cause they price new information when onshore 
+markets were closed. During the COVID-19 market  stress, we find some evidence for greater 
+one-directional influence from NDF to onshore fo r the Indonesia rupiah and the Indian rupee.  
+ Policymakers’ approaches to NDF markets in As ia vary. Korea embraced NDFs by allowing 
+domestic financial institutions to participate.  As a result, the KRW NDF and onshore markets 
+are closely integrated. In contrast, Malaysia en forced regulation to li mit MYR NDF trading and 
+took measures to deepen onshore FX markets. China is following yet another path with the 
+offshore deliverable CNH market. Indonesia intr oduced a domestic local currency settled NDF. 
+Different policy approaches reflect country  specific circumstances and preferences. 
+Policymakers have to make tradeoffs involvin g many different aspects including control, 
+market depth, spillovers, attractiveness to no nresident investors, real economy impacts and 
+prudential considerations. For most emerging market currencies NDF markets are likely to 
+continue to flourish as long as full  convertibility is not established.  
+=== PAGE 24 ===
+ 25 
+ 
+References  
+Behera, H. K. (2011). Onshore and offshore mark et for Indian rupee: recent evidence on 
+volatility and shock spillover. Macroecono mics and Finance in Emerging Market 
+Economies, 4(1), 43-55. 
+ 
+BIS (2019). Triennial Central Bank Survey of Foreign Exchange and Over-the-counter (OTC) 
+Derivatives Markets in 2019.  
+ 
+Cadarajat, Y. & Lubis, A. (2012). Offshore  and onshore IDR market: an evidence on 
+information spillover. Bulletin of Moneta ry Economics and Banking, April, pp 323–47. 
+ 
+Du, W., Tepper, A., & Verdelhan, A. (2018). Deviat ions from covered interest rate parity. The 
+Journal of Finance, 73(3), 915-957. 
+ 
+Garcia, M., & Volpon, T. (2014). DNDFs: a more efficient way to intervene in FX 
+markets? (Texto para discussão, No. 621, Pontif ícia Universidade Católica do Rio de Janeiro 
+(PUC-Rio), Departamento de Economia, Rio de Janeiro. 
+ 
+Goyal, R., R. Jain & S. Tewari (2013). Non deliverable forward and onshore Indian rupee 
+market: a study on inter-linkages. Reserve Ba nk of India Working Paper Series, 11/2013, 
+December. 
+ 
+Granger, C. W. (1969). Investigating causal relations by econometric models and cross-
+spectral methods. Econometrica, 424-438. 
+ 
+International Monetary Fund (2019). Malays ia: Staff Report for the 2019 Article IV 
+Consultation. IMF Count ry Report No. 19/71 
+ 
+International Monetary Fund (2020). Malays ia: Staff Report for the 2020 Article IV 
+Consultation. IMF Count ry Report No. 20/57 
+ 
+Ishii, S., Ötker-Robe, I., & Cui, L. (2001). Measur es to limit the offshore use of currencies: pros 
+and cons. International Monetary Fund WP/01/43. 
+ 
+Ma, G., Ho, C., & McCauley, R. N. (2004). The markets for non-deliverable forwards in Asian 
+currencies. BIS Quarterly Review, June. 
+ 
+McCauley, R. N., Shu, C., & Ma, G. (2014). Non-deliverable forwards: 2013 and beyond. BIS 
+Quarterly Review, March. 
+ 
+McCauley, R. N., & Shu, C. (2016). Non-de liverable forwards: impact of currency 
+internationalisation and derivatives re form. BIS Quarterly Review December. 
+=== PAGE 25 ===
+ 26 
+ 
+McCauley, R. N., & Shu, C. (2019). Rece nt renminbi policy and currency co-
+movements. Journal of Internatio nal Money and Finance, 95, 444-456. 
+ 
+Misra, S., & Behera, H. (2006). Non delivera ble foreign exchange forward market: An 
+overview. Reserve Bank of India Occasional Papers, 27(3), 25-55. 
+ Packer, F., A. Schrimpf and V. Sushko (2019): “R enminbi turnover tilts onshore”, BIS Quarterly 
+Review, December. 
+ 
+Park, J. (2001). Information flows between non- deliverable forward (NDF) and spot markets: 
+Evidence from Korean currency. Paci fic-Basin Finance Jo urnal, 9(4), 363-377.  
+ 
+Patel, N., & Xia, F. D. (2019). Offshore markets drive trading of emerging market 
+currencies. BIS Quarterly Review, December.  
+ 
+RBI Reserve Bank of India (2019). Report of the task force on offshore rupee markets, July. 
+ 
+Shleifer, A., & Vishny, R. W. (1997). The limits of arbitrage. The Journa l of Finance, 52(1), 35-
+55. 
+ 
+  
+=== PAGE 26 ===
+ 27 
+Appendix 1: Realized volatility of onshore forwards and NDFs 
+ 
+ 
+Sources: Bloomberg, IMF staff estimates. 
+ 
+   Appendix 2: Coefficients and intercepts for the long-run cointegration regressions 
+ 
+ 
+ 
+ 
+Note: Presented results are from regressions in log levels of (1) spot on NDF (local time); (2) onshore forward on NDF (local A sia time); 
+(3) spot on NDF at NY close; (4) onshore forward on NDF at  NY close. All regressions include an intercept.  
+Source: IMF staff estimates. 
+  Period  IDR  MYR  PHP  INR  KRW  TWD  
+  Onshore 
+Forward NDF Onshore 
+Forward NDF Onshore 
+Forward NDF Onshore 
+Forward NDF Onshore 
+Forward NDF Onshore 
+Forward NDF 
+Taper Tantrum May 13 - 
+Aug 13 0.45 0.75 0.47 0.52 0.37 0.43 0.62 0.75 0.52 0.51 0.28 0.34 
+EM Sell Off (1) May 15 - 
+Jan 16 0.43 0.66 0.62 0.71 0.25 0.32 0.32 0.36 0.56 0.53 0.33 0.42 
+China Slowdown/ 
+RMB Weakness Feb 16 - 
+Dec 16 0.41 0.60 0.56 0.76 0.30 0.40 0.27 0.35 0.64 0.63 0.27 0.46 
+EM Sell Off (2) Jan 18 - 
+Dec 18 0.30 0.52 0.19 0.34 0.24 0.34 0.37 0.41 0.44 0.49 0.19 0.31 
+COVID-19 Jan 20 - 
+Apr 20 0.62 1.09 0.39 0.59 0.26 0.33 0.37 0.52 0.66 0.61 0.26 0.35 
+Entire Sample 
+Period 2013 - 
+Apr-20 0.35 0.51 0.30 0.39 0.27 0.32 0.32 0.38 0.46 0.48 0.20 0.30 
+
+=== PAGE 27 ===
+ 28 
+Appendix 3: Coefficients on erro r correction terms; daily data 
+Period: 2012 - Apr 2020 
+ 
+ 
+ 
+Note: Coefficients are 𝛾 from equations (1) and (2) in section V. Column head ings (spot/NDF.NY/NDF) identify the dependent variable. 
+NDF.NY is the NDF quote at the New York close.  NDF is the NDF quote at local Asia time. 
+Source: IMF staff estimates. 
+ 
+ 
+Appendix 4: Coefficients on error correction terms; hourly data  
+Period: 20 Jan 2020 to 30 Apr 2020 
+ 
+ 
+Note: Coefficients are 𝛾 from equations (1) and (2) in section V. Column head ings (spot/NDF.NY/NDF) identify the dependent variable. 
+NDF is the NDF quote at local Asia time. 
+Source: IMF staff estimates. 
+ 
+   Spot NDF.NY Spot NDF.NY Onshore Forward NDF.NY Onshore Forward NDF.NY
+IDR -0.0608 0.0523 0.0100 0.0149 -0.1195 0.0719 0.0152 0.0196
+INR -0.0400 0.0545 0.0215 0.0267 -0.0746 0.0679 0.0289 0.0363
+KRW -0.1934 0.1126 0.0303 0.0345 -0.7411 0.2536 0.0345 0.0402
+MYR -0.3077 -0.0165 0.0300 0.0454 -0.3232 0.0255 0.0335 0.0505
+PHP -0.2411 0.1823 0.0225 0.0263 -0.2575 0.2077 0.0254 0.0299
+TWD -0.2068 0.1218 0.0197 0.0270 -0.1556 0.1214 0.0157 0.0202Coefficients Standard Errors Coefficients Standard Errors
+Spot NDF Spot NDF Onshore Forward NDF Onshore Forward NDF
+IDR -0.0511 0.0472 0.0107 0.0149 -0.0918 0.0660 0.0165 0.0197
+INR 0.0112 0.0430 0.0244 0.0260 -0.0061 0.0404 0.0337 0.0362
+KRW -0.0945 0.1505 0.0367 0.0368 -0.6206 0.3815 0.1168 0.1165
+MYR -0.1493 -0.0006 0.0378 0.0424 -0.1418 0.0043 0.0462 0.0512
+PHP -0.1988 0.1959 0.0234 0.0252 -0.1646 0.1756 0.0293 0.0318
+TWD -0.2306 0.2614 0.0314 0.0405 -0.2089 0.1757 0.0272 0.0357Coefficients Standard Errors Coefficients Standard Errors
+Spot NDF Spot NDF Onshore Forward NDF Onshore Forward NDF
+IDR -0.0914 0.0167 0.0130 0.0181 -0.0902 0.0185 0.0126 0.0177
+INR -0.1163 0.0767 0.0215 0.0290 -0.1366 0.0978 0.0216 0.0300
+KRW -0.3698 0.2349 0.0487 0.0467 -0.6011 0.1820 0.0963 0.0993
+MYR -0.1817 0.1760 0.0204 0.0253 -0.2112 0.1665 0.0229 0.0282
+PHP -0.1297 0.0671 0.0264 0.0323 -0.2406 0.0876 0.0357 0.0433
+TWD -0.0514 0.0932 0.0178 0.0206 -0.0653 0.1015 0.0178 0.0221Coefficients Standard Errors Coefficients Standard Errors

@@ -1,0 +1,8 @@
+{
+  "research/cycle8_us_only/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "research/cycle8_us_only/core.py": "9750f0b605ddc5ee8db6632e4b61b3852fdf2bb72a87855e7e60673926aa8126",
+  "research/cycle8_us_only/metrics.py": "34c706afb1b03c3a51ebe4b366d9d1f0a76dccdb35effae609deb749d34d4080",
+  "research/cycle8_us_only/run.py": "9ad1eef14a3e3b6df845bfe99da4e9bc3d8bb54ac16b106841a1bccf214b84d8",
+  "research/cycle8_us_only/test_engine.py": "e43a1156b346fa46e44d39657d64eecdd812d289b35a52e401d17197bfc151fa",
+  "data/cycle8_us_only/snapshot/manifest.json": "0b2f26ed45985a18206423045d31d5e6597a849a0456a34dfd7eb8e61c108dd7"
+}

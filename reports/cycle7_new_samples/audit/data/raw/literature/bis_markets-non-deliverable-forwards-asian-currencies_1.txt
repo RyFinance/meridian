@@ -1,0 +1,651 @@
+
+=== PAGE 1 ===
+ 
+ 
+ 
+ 
+BIS Quarterly Review, June 2004  81
+ Guonan Ma
++852 2878 7015
+guonan.ma@bis.orgCorrinne Ho
++852 2878 7012
+corrinne.ho@bis.orgRobert N McCauley
++852 2878 7106
+robert.mccauley@bis.org
+ 
+The markets for non-deliverable forwards in Asian 
+currencies1 
+Trading in non-deliverable forwards on Asian currencies has grown in recent years. The 
+offshore interest rates implied by these contracts differ significantly from onshore interest rates and suggest upward pressure on most Asian currencies. 
+JEL classification: F310, G150, G180, N250. 
+Active, large and growing non-deliverabl e forward (NDF) markets trade six 
+Asian currencies. These offshore markets form an important part of the global 
+and Asian foreign exchange markets, equilibrating market demand and supply 
+in the presence of capital controls (Ish ii et al (2001), Watanabe et al (2002)).  
+While the NDF markets have at times presented challenges to 
+policymakers, the rise of NDF trading  could nevertheless prove beneficial to 
+the development of local currency bond markets in Asia. Monetary authorities 
+naturally regard these offshore specul ative trades and their possible cross-
+border spillovers with suspicion, and the general trend since the 1997–98 crisis 
+has been to further restrict onshore-offshore interactions. However, liquid NDF markets could serve international portfo lio investors by affording them an 
+otherwise unavailable means to hedge foreign exchange risk. An ability to 
+hedge currency risk is particularly important for offshore bond investors. Consequently, NDF markets could potentia lly facilitate foreign investment in 
+Asia’s expanding local currency bond markets and thereby add diversity and 
+liquidity to them (Jiang and McCauley (2004)).  
+This special feature sketches the char acteristics of NDF markets in Asia 
+and analyses the market segmentation between onshore interest rates and 
+offshore interest rates implied by ND Fs. Characteristics considered include 
+market turnover, liquidity, volatility, market participants and interactions among 
+the Asian NDFs. The analysis focuses on the implications of the changing 
+spread between the onshore interest ra te of the home currency and its NDF-
+implied interest rate offshore.  
+                                                     
+ 
+1  The views expressed in this article are t hose of the authors and do not necessarily reflect 
+those of the BIS. 
+=== PAGE 2 ===
+ 
+ 
+ 
+ 
+82 BIS Quarterly Review, June 2004 
+ Characteristics of Asian NDFs 
+NDFs are foreign exchange derivative products traded over the counter. The 
+parties of the NDF contract settle t he transaction, not by delivering the 
+underlying pair of currencies, but by ma king a net payment in a convertible 
+currency (typically the US dollar) propor tional to the difference between the 
+agreed forward exchange rate and the subs equently realised spot fixing. NDFs 
+are also distinct from deliverable forwa rds in that NDFs trade outside the direct 
+jurisdiction of the authorities of the corresponding currencies and their pricing 
+need not be constrained by domestic interest rates.  
+The NDF market offers an alternative hedging tool for foreign investors 
+with local currency exposure or a specul ative instrument for them to take 
+positions offshore in the local currency.  The use of Asian NDF markets by non-
+residents in part reflects restrictions on their access to domestic forward 
+markets (Table 1). However, in some cases, such as Korea, onshore players 
+are also important counterparties in  the NDF market of the home currency 
+(Hohensee and Lee (2004)). The NDF markets for some Asian currencies have 
+existed at least since the mid-1990s. Tightening of controls after the Asian 
+crisis may have boosted their growth in some cases.  
+Why these offshore instruments have emerged in the first place can be 
+illustrated by the birth of the Indonesian rupiah NDF in early 2001 (Goeltom 
+(2002), Watanabe et al (2002)). Before January 2001, deliverable  rupiah 
+forwards were actively traded offshore, mostly in Singapore, and non-residents 
+enjoyed easy access to rupiah funding. To  reduce speculative pressure on the 
+rupiah, rupiah loans and transfers by banks to non-residents and related 
+derivative transactions were prohibited or restricted by Bank Indonesia in 
+January 2001. This effectively limited t he offshore deliverability of the rupiah 
+and dried up trading in offshore deliverable  rupiah forwards. To meet the 
+offshore hedging or speculative demand, an offshore market in rupiah NDFs 
+gradually developed over the following months.2 
+                                                      
+2  A more actively traded Thai baht NDF market could emerge in the future in response to the 
+recent Bank of Thailand measures to limit non -resident holdings of Thai baht bank accounts. 
+There is effectively no Malaysian ringgit NDF ma rket at the moment, despite restrictions on 
+access by foreign investors to the onshore forward market, possibly because of market-makers’ concerns over their onshore banking li cences. In Asia, there are also non-deliverable 
+options (NDO) markets that trade off the NDFs.  What is an NDF … 
+… and what are its 
+uses? 
+NDFs arise in 
+response to cross-border restrictions 
+Access to onshore forward markets by non-residents  
+Chinese renminbi No offshore entities participate in onshore markets 
+Indian rupee Allowed but subject to underlying transactions requirement 
+Indonesian rupiah Allowed but restricted and limited 
+Korean won Allowed but subject to underlying transactions requirement 
+Philippine peso Allowed but restricted and limited 
+New Taiwan dollar Only onshore entities have access to onshore market 
+Sources: HSBC (2003); national data. Table 1 
+=== PAGE 3 ===
+ 
+ 
+ 
+ 
+BIS Quarterly Review, June 2004  83
+ Average daily NDF turnover in Asia 
+In millions of US dollars 
+Sources of estimates HSBC  
+(mid-2003) Deutsche Bank 
+(2003–04) EMTA  
+(1st quarter 
+2003) Lehman 
+Brothers  
+(June 2001) April 2001 
+forwards and 
+FX swaps1 
+Chinese renminbi 1,000 50 150 50 55 
+Indian rupee 100 20–50 38 35 1,628 
+Indonesian rupiah 100 50 65 50 301 
+Korean won 500 700–1,000 1,350 500 4,025 
+Philippine peso 50 20–30 38 35 301 
+New Taiwan dollar 500 300–500 250 250 922 
+Asian six total 2,250 1,140–1,680 1,890 920 7,232 
+As a percentage of April 2001 
+forwards, FX swaps and NDFs
+1  
+ 
+25.1  
+ 
+13–19  
+ 
+20.7  
+ 
+11.3  
+1  Daily turnover of the forwards and FX swaps is based on BIS (2002). 
+Sources: Leven (2001); HSBC (2003); Emerging Markets Traders Association (2003); Deutsche Bank (2003); Hohensee and 
+Lee (2004); BIS (2002).    Table 2 
+Turnover 
+Asia’s NDF turnover accounts for the overwhelming majority of global NDF 
+turnover. In particular, NDFs in the Korean won, the New Taiwan dollar, the 
+Chinese renminbi, the Indian rupee, t he Indonesian rupiah and the Philippine 
+peso amount to some 70% of the emergi ng market NDF turnover globally, as  
+measured by an Emerging Markets Trader s Association survey in early 2003 
+(EMTA (2003)).3 
+Turnover in the Asian NDF markets va ries a great deal across currencies. 
+While reliable, comparable and consistent  statistics on NDF turnover are hard 
+to come by, the available survey ev idence and estimates by market-makers 
+allow a rough ranking (Table 2). The Korean won NDF market has been the 
+deepest NDF market in Asia as well as  globally, with average daily trading 
+volume in excess of $500 million and representing nearly half of the global emerging market NDF turnover. Turnover in the New Taiwan dollar NDF market 
+has been the second most active in Asia. Given the relatively small amount of 
+foreign investment in local currency bond markets, the high turnover in won 
+and New Taiwan dollar NDFs may reflect the active participation of 
+international investors in the Kor ean and Taiwanese stock markets, though 
+currency hedging is more characteristic  of international bond investors.  
+Market participants report  that the shallower NDF markets in Asia have 
+generally deepened over the past few years. As recently as three years ago, 
+daily NDF turnover in the Chinese r enminbi, Indian rupee, Indonesian rupiah 
+and Philippine peso, respectively, was thought to be less than $100 million per 
+day on average. The turnover in the renminbi NDF market has been rising 
+                                                     
+ 
+3  The major remaining NDF markets are those in Latin American currencies (mainly the 
+Brazilian real and Chilean peso) and the Russian rouble, according to the same survey.  Predominance of 
+Asian NDFs globally 
+Korean won NDFs 
+most actively traded 
+Rapid growth in 
+Asian NDF markets 
+=== PAGE 4 ===
+ 
+ 
+ 
+ 
+84 BIS Quarterly Review, June 2004 
+ rapidly since, to about $200 million in early 2003. Estimates of renminbi NDF 
+turnover in 2003 vary, and indeed turnover is  said to fluctuate a lot from day to 
+day, but it seems to have doubled over t he year. Turnover in the rupiah NDF 
+market seems to have increased substant ially from the first months of NDF 
+trading in 2001, with increased non-resi dent investment in local currency 
+bonds, equities and other assets. Indian rupee and Philippine peso NDF 
+trading seems to have gained depth as well.  
+NDFs form an important part of overall forward trading in regional 
+currencies. For the six Asian curren cies being discussed, the reported NDF 
+turnover represents some 10 to 20% of  the combined trading volume of the 
+onshore outright forwards, foreign exchange swaps and NDFs.4  In the case of 
+China, since domestic trading of outri ght forwards has only recently begun, and 
+                                                      
+4  The turnover data for outright forwards and foreign exchange swaps are from BIS (2002), 
+while NDF trading volumes are estimates by market-makers (Table 2).  Volatility of spot, NDF and onshore forward markets 
+In per cent  
+ Spot Three-month NDF 12-month NDF 
+Chinese renminbi 0.04 1.35 2.75 
+Indian rupee 1.62 3.28 4.07 
+Indonesian rupiah 13.89 15.10 15.60 
+Korean won 6.84 6.90 7.06 
+Philippine peso 5.02 6.87 8.95 
+New Taiwan dollar 3.11 4.19 4.76 
+Memo :1    
+ Japanese yen 9.41 9.52 9.23 
+ Euro 10.55 10.54 10.50 
+ Hong Kong dollar 0.01 0.64 0.93 
+1  Three- or 12-month deliverable outright forwards. Annualised standard deviation of daily 
+percentage changes. All of the spot rates, forwards and NDFs are those against the US dollar. The 
+data range is from March 2001 to February 2004.  
+Sources: Bloomberg; CEIC; authors’ estimates.  Table 4 Bid-ask spreads for Asian NDFs 
+In per cent 
+Indicated (6 April 2004)2  Deutsche Bank 
+estimates1 One-month contract One-year contract 
+Chinese renminbi – 0.05–0.07 0.12–0.18 
+Indian rupee 0.11–0.43 0.23 0.46 
+Indonesian rupiah 1 mth: 0.24; 1 yr: 1.2 0.35 0.82 
+Korean won 0.25–0.84 0.09–0.12 0.17–0.21 
+Philippine peso – 0.18–0.25 0.53–0.60 
+New Taiwan dollar 0.08–0.14 0.03 0.06 
+1  Based on average US dollar spot rates in June 2003.    2  Based on NDF bid-ask spreads and 
+spot rates as indicated on Reuters.  
+Sources: Deutsche Bank (2003); Reuters; authors’ estimates.  Table 3 
+A substantial part of 
+forward trading in Asia 
+=== PAGE 5 ===
+ 
+ 
+ 
+ 
+BIS Quarterly Review, June 2004  85
+ an onshore swap market does not yet exist, renminbi NDFs amount to some 
+90% of the estimated combined turnov er of onshore deliverable forwards and 
+offshore NDFs. Therefore, the import ance of NDF markets should not be 
+underestimated, for policymakers and market participants alike.  
+Liquidity 
+Liquidity varies with turnover across cu rrencies as well as across maturities 
+(Table 3). Judging by reported bid-ask sp reads, the larger and more active 
+NDF markets in Asia – those of the won, the New Taiwan dollar and the 
+renminbi – are comparatively more liquid. The most liquid maturities of the 
+Asian NDFs seem to be much longer than those of the main currency pairs 
+Frequency distribution of daily percentage changes in spot and three-month  
+NDF-implied US dollar exchange rates 
+Number of days, January–December 2003 
+Chinese renminbi Korean won 
+0204060
+-2 -1 0 1 2Spot exchange rate  
+3-month NDF rate  
+0204060
+-2 -1 0 1 2 
+Indian rupee Philippine peso  
+0204060
+-2 -1 0 1 20204060
+-2 -1 0 1 2 
+New Taiwan dollar Indonesian rupiah  
+0204060
+-2 -1 0 1 20204060
+-2 -1 0 1 2 
+Note: All rates are expressed as domestic currency per US dollar; consequently, positive percentage changes on the 
+horizontal axis denote a depreciation against the dollar. 
+Sources: Bloomberg; BIS estimates.  Graph 1 Better liquidity at 
+longer maturities 
+=== PAGE 6 ===
+ 
+ 
+ 
+ 
+86 BIS Quarterly Review, June 2004 
+ globally, where the overwhelming majority  of forward transactions span three 
+months or less. In Asian NDF market s, most inter-dealer transactions are 
+concentrated in the two- to six-mont h maturities, while some bank-customer 
+trades even extend out to two to five y ears, in part due to the importance of 
+foreign direct investment (FDI) in Asia.  
+Volatility 
+For the period under consideration, NDF  volatilities have been consistently 
+higher than their spot counterparts for all six Asian currencies covered (Table 4 
+and Graph 1). This may be due to official intervention in the respective spot 
+markets. Market participants rank t he frequency of official spot market 
+intervention as the highest for China and India, followed by the Philippines and 
+Taiwan (China),5  and the lowest for Korea and Indonesia. Furthermore, the 
+volatility of the Asian NDFs typically in creases with maturity. By contrast, the 
+spot and forward volatilities of the major currency pairs tend to be much more 
+similar.  
+Market participants 
+The investor base for the Asian NDF markets is generally thought to have 
+become broader compared with five years ago. This base mainly comprises multinational corporations, portfolio investors, hedge funds and proprietary 
+foreign exchange accounts of co mmercial and investment banks.
+6  Both 
+hedging demand and speculative demand are present in Asian NDF markets. 
+                                                      
+5  Hereinafter Taiwan. 
+6  The net NDF positions of the main market par ticipants in Asia vary over time. Market-makers 
+reported that, as of early 2004, non-resident portfolio investors tended to be most short 
+regional currencies while offshore hedge funds were most long regional currencies. In 
+between, multinationals were somewhat short regional currencies, while offshore market-makers and commercial banks took limited open positions. In the case of the won, where local More volatile than 
+spot rates … 
+… and at longer 
+maturities 
+Renminbi NDF premium or discount 
+As a percentage of the spot fixing  
+-20 -10 0 10 20 30 
+1 mth 3 mth 6 mth 9 mth 12 mth 2 yr 3 yr 5 yrApril 1999  
+April 2000  
+April 2002  
+April 2003  
+April 2004  
+Note: First trading day of the months shown. A premium (discount) is shown as a positive (negative) 
+value. 
+Sources: Bloomberg; authors’ estimates. Graph 2 A broadening 
+investor base 
+=== PAGE 7 ===
+ 
+ 
+ 
+ 
+BIS Quarterly Review, June 2004  87
+ In the case of the won and the New Taiwan dollar, portfolio investors and 
+hedge funds are probably the most important players. In contrast, in the case 
+of the renminbi, multinationals (given la rge FDI inflows into China in recent 
+years) and more recently hedge funds (owing to heightened market 
+speculation) probably play a greater role.   
+Differences in the offshore renminbi forward rates across maturities are 
+said to reflect differences in the prefe rred maturity habitats of various market 
+participants. The observation is that longer  maturities show larger renminbi 
+NDF premia (in the late 1990s) or discounts (recently) (Graph 2). Multinational 
+corporate players probably trade along bot h short and long maturities, owing to 
+their diverse needs. In contrast, hedge funds’ bets reflect market analysts’ 
+often refreshed calls for an exchange rate policy change at a horizon of nine 
+months or more. Hence the premia or  discounts in the renminbi NDFs have 
+tended to be larger at longer maturiti es, as speculative players positioned 
+themselves for a possible renminbi deva luation during and after the Asian crisis 
+or a possible revaluation after late 2002. 
+                                                                                                                                        
+banks are important counterparties, onshore banks were found to be overwhelmingly long won 
+in the NDF market, accommodating offshore short positions.  Correlation matrix for Asian spots and NDFs 
+ CNY INR IDR KRW PHP TWD 
+CNY 1 0.061 0.028 0.079 0.016 0.089 
+INR 0.006 1 0.120 0.162 0.103 0.085 
+IDR –0.033 0.068 1 0.216 0.242 0.149 
+KRW –0.001 0.131 0.160 1 0.399 0.421 
+PHP 0.039 0.057 0.203 0.324 1 0.254 
+TWD –0.010 0.127 0.170 0.518 0.301 1 
+Note:  CNY = Chinese renminbi; IDR = Indonesian rupiah; INR = Indian rupee; KRW = Korean won; 
+PHP = Philippine peso; TWD = New Taiwan dollar. Correlations for the daily percentage changes of the three-month NDF (upper right-hand side of the matrix) and spot (lower left-hand side of the matrix in italics). March 2001 to February 2004.  
+Sources: Bloomberg; authors’ estimates.  Table 5 
+Renminbi NDF 
+premia (discounts) larger at longer maturities 
+Correlations between Asian NDFs and major forwards 
+Japanese yen Euro  
+Three-month 12-month Three-month 12-month 
+CNY 0.059 0.076 –0.062 –0.032 
+INR 0.092 0.063 –0.098 –0.097 
+IDR 0.120 0.128 –0.011 –0.028 
+KRW 0.495 0.506 –0.182 –0.018 
+PHP 0.305 0.268 –0.167 –0.150 
+TWD 0.347 0.312 –0.260 –0.290 
+Note:  See Table 5 for an explanation of the currency codes. The correlation of daily percentage 
+changes of the Asian NDF and bilateral dollar forward of the yen (or euro) against the US dollar of the same tenor. March 2001 to February 2004.  
+Sources: Bloomberg; authors’ estimates.  Table 6 
+=== PAGE 8 ===
+ 
+ 
+ 
+ 
+88 BIS Quarterly Review, June 2004 
+ Within the Asia-Pacific region, the principal trading locations for Asian 
+NDFs are in Hong Kong SAR, Singapore, Korea, Taiwan and Japan. Singapore is often thought to be the largest hub, according to the incomplete information 
+available in the central bank 2001 tri ennial global foreign exchange market 
+survey. Outside the region, New York  and London are the principal locations 
+for trading Asian NDFs.  
+Interactions among Asian NDF markets and with other forward markets 
+The NDFs of the six Asian currencie s under consideration have displayed 
+closer co-movements than thei r spot counterparts (Table 5). In particular, daily 
+percentage changes of the three-mont h Asian NDFs are all positively 
+correlated with each other and, except for the New Taiwan dollar, exhibit 
+stronger correlations than the respective  pairs of spot exchange rates. While 
+the spot correlations between the ren minbi and the other five currencies are 
+near zero, their NDF correlations are somewhat higher.  
+A possible common influence underlying the above positive correlations 
+among most Asian NDFs is the yen (Table 6). The euro may also play a role, albeit to a lesser extent, for all but the Indian rupee. All six Asian NDFs have 
+generally strengthened against the US dollar in response to an appreciating 
+yen or euro. The won, Philippine peso and New Taiwan dollar NDFs have shown the greatest co-movement  with the yen forwards.  
+Market participants harbour changi ng notions about the relationship 
+between the renminbi and the Hong Kong do llar, as seen in the time-varying 
+correlations between the respective NDFs and forwards. During and after the 
+1997-98 Asian crisis, many viewed the liquid Hong Kong dollar as an imperfect 
+proxy for the renminbi, which was still illiquid in NDF trading at the time, on the assumption that a depreciation of the latter would unpeg the former. In 2002 
+and early 2003, the theme of convergenc e between a rapidly growing mainland 
+and a mature and deflationary Hong Kong SAR led some to take positions short the Hong Kong dollar forward and l ong the renminbi NDF, contributing to 
+a negative correlation. All changed in September 2003, however, when the 
+market’s interpretation of the call for exchange rate flexibility in the G7 communiqué exerted appreciation pressure on not only the renminbi but also 
+the Hong Kong dollar, resulting in a pos itive correlation. For the period 2001–
+04 as a whole, the correlation of the pa ir is 0.28 for 12-month contracts.   
+Onshore/offshore interest rate spreads 
+Large and persistent spreads between the onshore yield on the home currency 
+and its NDF-implied offshore yield are found fo r five of the six Asian currencies 
+covered. Wide spreads suggest that capi tal controls effectively segment the 
+onshore and offshore markets.7  The Korean won stands out as an exception, 
+probably owing to active if not comple tely unconstrained arbitrage by onshore 
+participants in the offshore won NDF mark et. Furthermore, the signs of these 
+                                                      
+7  For a review of the literature on cross-border  mobility and capital controls, see Frankel (1992).  Higher positive 
+correlations among NDFs than among spot rates 
+The yen is a 
+possible common influence 
+Renminbi NDFs and 
+Hong Kong dollar forwards NDF trading hubs 
+=== PAGE 9 ===
+ 
+ 
+ 
+ 
+BIS Quarterly Review, June 2004  89
+ spreads may also reflect the direction of the underlying market pressure on 
+these currencies in the presence of capital controls. Finally, these spreads have narrowed and become less volatile over recent years.  
+Construction, interpretation and limitation of onshore spreads 
+One way to measure the degree of cros s-border market segmentation caused 
+by capital controls is the spread be tween the onshore interest rate and the 
+NDF-implied offshore interest rate on the home currency (Box 1). Using US dollar Libor, the NDF rate and the bilateral dollar spot rate (of the same 
+maturity and annualised), one may derive the offshore interest rate on the 
+home currency as implied by covered interest parity. This NDF-implied offshore yield on the home currency could be subs tantially negative, as it is not 
+constrained by the zero lower bound for nominal interest rates. A substantial 
+onshore/offshore yield gap would suggest that capital controls effectively 
+segment onshore and offshore markets.  
+Further, the sign of the onshore/offshore yield spread can signal 
+underlying market pressure on the currenc y. An onshore interest rate above its 
+offshore NDF-implied counterpart would indicate underlying appreciation 
+pressure on the home curre ncy but effective capital controls limiting capital 
+inflows into the home currency. An ons hore rate below its offshore counterpart 
+would indicate depreciation pressure but effective stemming of capital 
+outflows.
+8  Finally, the volatility of the spread may also contain information 
+ 
+Box 1: The spread between onshore yiel ds and NDF-implied offshore yields 
+In the absence of capital controls, the forward exchange rate of the home currency is linked by 
+arbitrage to its spot rate and the interest rate differential between the home currency and the US dollar through the covered interest parity condition 
+F = S(1+r)/(1+ r$) 
+where F is the forward rate, S the spot rate, r the interest rate on the home currency and r$ the US 
+dollar interest rate. When there are no cross-border restrictions, borrowing and lending ensure that 
+the above holds.  
+However, when capital controls bind, non-residents may not have full access to onshore credit 
+or placements, giving rise to NDFs.  
+NDF = S(1+i)/(1+ r$)  
+where i is the NDF-implied yield on the home currency offshore. To the extent that the arbitrage 
+between the onshore money market and offshore NDF market is effectively constrained by capital 
+controls, the NDF-implied offshore interest rate, i, can differ considerably from the interest rate 
+prevailing in the onshore money market, r. A large and persistent onshore/offshore spread ( r – i) 
+indicates the presence of effective cross-border restrictions.  
+Another, in principle equivalent, approach is to estimate the implied onshore yield on the home 
+currency using the onshore deliverable forwards and then to compare it to the NDF-implied offshore yield. Alternatively, one may directly compare the onshore deliverable forwards with their NDF 
+counterparts to derive a forward premium spread. The merits of these different approaches depend 
+in part on data availability and market liquidity.  
+ 
+                                                      
+8  A zero spread may suggest the absence of effe ctive capital controls, or the absence of market 
+pressure on the home currency, or both.  Size of spread 
+measures segmentation ... 
+... and its sign 
+signals market pressure 
+=== PAGE 10 ===
+ 
+ 
+ 
+ 
+90 BIS Quarterly Review, June 2004 
+ about the depth of the spot, NDF and ons hore money markets, and the ease of 
+transacting across them. 
+Interpretations of onshore/offshore interest spreads are qualified, 
+however, by a number of limitations.  Ideally, the comparison should be 
+between a liquid onshore bank interest rate and a similarly liquid offshore implied rate. But the fact that the domesti c money market is most liquid at short 
+maturities, while NDF markets tend to be more liquid at medium to long 
+maturities, makes it hard to find good liquidity at matching maturities. In the case of India, Indonesia and the Philippines , public sector interest rates rather 
+than bank interest rates are used. Si nce NDFs involve global banks with a 
+higher credit rating than onshore banks or even sovereigns, and in any case start out with only potential credit risk, onshore yields could exceed offshore 
+implied yields even with full capital mob ility. This implies that evolving credit 
+and country risk premia may complicate the interpretation of variations in the 
+onshore/offshore interest spreads.  
+Findings 
+Our estimates of the three-month onshor e/offshore interest spread for the six 
+Asian currencies actively traded in NDF ma rkets suggest that capital controls in 
+Asia are binding to varying degrees,  weakening or even preventing cross-
+border arbitrage (Graph 3). The main exc eption is the case of the Korean won 
+(Box 2). The estimated spreads for the other five Asian currencies appear to be 
+mostly larger than what could be acc ounted for by other factors (such as 
+transaction costs).  
+ 
+Spreads between onshore and offshore NDF-implied yields 
+In basis points 
+Average absolute spread Standard deviation of the absolute spread   
+0100200300400500
+PH IN ID CN TW KRJan 1999–Dec 2001  
+Jan 2002–Feb 2004  
+0150300450600750
+PH IN ID CN TW KR
+CN = China; KR = Korea; ID = Indonesia; IN = India; PH = Philippines; TW = Taiwan, China. 
+Note: The spread is calculated as the difference between a representative three-month onshore money yield and the NDF-
+implied offshore yield of the same maturity. The NDF-implied offshore yield is inferred from the spot rate, the NDF rate and US dollar Libor. The onshore yield is: for Korea, the CD rate; for Taiwan (China), the secondary CP rate; for Indonesia, the Bank Indonesia certificate rate; for China, Chibor; for India, the 91-day T-bill auction yield; and for the Philippines, the secondary 91-day T-bill rate. For Taiwan (China), data start in April 2000; for Indonesia, March 2001. 
+Sources: Bloomberg; CEIC; authors’ estimates.  Graph 3 
+ Some qualifications 
+Capital controls 
+bind to varying degrees 
+=== PAGE 11 ===
+ 
+ 
+ 
+ 
+BIS Quarterly Review, June 2004  91
+ Onshore less offshore NDF-implied yields 
+Three-month rates, in basis points 
+  China   Korea 
+-1,200-6000600
+Jan 99  Jan 00  Jan 01  Jan 02  Jan 03  Jan 04-1,200-6000600
+Jan 99 Jan 00 Jan 01 Jan 02  Jan 03  Jan 04
+  India   Philippines 
+-1,200-6000600
+Jan 99  Jan 00  Jan 01  Jan 02  Jan 03  Jan 04-1,200-6000600
+Jan 99 Jan 00 Jan 01 Jan 02  Jan 03  Jan 04
+  Taiwan, China   Indonesia 
+-1,200-6000600
+Jan 99  Jan 00  Jan 01  Jan 02  Jan 03  Jan 04-1,200-6000600
+Jan 99 Jan 00 Jan 01 Jan 02  Jan 03  Jan 04
+Note: See Graph 3. For China, monthly data; for all others, weekly. 
+Sources: Bloomberg; CEIC; BIS estimates.  Graph 4 
+ 
+The relationship between the onshore and NDF-implied offshore yields 
+also seems to reflect the swings in the underlying market pressure on the currencies in question (Graph 4). In the wake of the Asian crisis, offshore 
+implied interest rates were higher than onshore rates, reflecting ongoing 
+depreciation pressure in the offshor e trading at the time. Since 2001–02, 
+however, offshore positioning on further Asian currency appreciation has driven 
+offshore implied interest rates below onshore rates for some Asian currencies.  
+This development is most obvious in the case of the Chinese renminbi and 
+the Indian rupee, where the estimated on shore/offshore interest rate spreads 
+swung widely from a negative 400–1,000 basis points in 1999–2001 to a 
+positive 400–1,000 basis points by late 2003. The New Taiwan dollar and the  
+ Wide swings in 
+underlying market pressure 
+=== PAGE 12 ===
+ 
+ 
+ 
+ 
+92 BIS Quarterly Review, June 2004 
+ Box 2: The Korean won NDF market  
+The Korean won NDF market, the largest and most liquid NDF market globally, continues to thrive 
+offshore alongside a large and active onshore forward market. This is in spite of its effective 
+integration with the onshore money market as measured by the very small spread between onshore 
+and offshore yields (see Box 1). Why? There are three possible explanations.  
+The first explanation is the residual exchange r egulations in Korea, where underlying cross-
+border transactions (trade or investment) and documentation requirements apply to onshore forward 
+trading. Thus, pure speculative demand for won has to be met offshore. Moreover, in order to reduce pressure for depreciation, the authorities ha ve limited the Korean banking system’s ability to 
+provide credit to offshore entities. In particular, won lending by local banks to non-residents 
+required case by case approval before April 1999. Thereafter, the system shifted to a rule-based regime of a won lending quota that was raised from KRW 100 million by one domestic bank to a 
+single non-resident to KRW 1 billion after January 2001. In the face of pressure for appreciation, the 
+authorities introduced new restrictions on the net won NDF positions taken by onshore banks in January 2004, only to partially ease them in February 2004 (Hohensee and Lee (2004)).  
+These evolving regulations may give rise to an asymmetry of the onshore/offshore spreads 
+(see the table in this box). Before April 1999, the average absolute size of the yield spread when the offshore yield exceeded the onshore yield is larger than when the offshore yield was less than 
+the onshore yield. This was consistent with the policy bias against won outflows at the time. The 
+rule-based won lending quota lessened such a bias, resulting in similar average sizes of the negative and positive spreads for the 1999–2003 period. The latest measure in early 2004 was 
+intended to discourage offshore investors’ speculative won demand and to limit onshore banks’ 
+arbitraging between the domestic market and NDFs. This has indeed led to larger absolute spreads when onshore yields are below offshore yields. 
+A second and alternative hypothesis is that the offshore NDF market allows foreign investors 
+to limit taking on credit risk in currency trading. The observation that onshore rates rose relative to offshore rates in early 2003 at a time of heightened concerns over bank credit may be relevant. This 
+observation suggests that the onshore yields embody more credit risk than do their offshore 
+counterparts, both because of the nature of the contract (offshore, only differences are at risk to counterparty failure, not the full amount invested in a domestic certificate of deposit) and because 
+of the credit ratings of market participants (a larger share of foreign banks offshore).  
+A third view is that a thriving offshore NDF market benefits from the inertia of liquidity, so that 
+trade remains in the offshore Korean won NDF market because it is liquid. This perspective is 
+associated with the notion that liquidity begets liquidity in financial markets, consistent with the tight 
+bid-ask spreads in the won NDF market.  
+  
+Absolute size of onshore/offshore1 yield spreads  
+In basis points 
+ Onshore yield above offshore yield Onshore yield below offshore yield 
+Nov 1998–Mar 1999 106.6 281.6 
+Apr 1999–Dec 2003 69.4 67.1 
+ Apr 1999–Dec 2000 109.4 81.4 
+ Jan 2001–Dec 2003 39.3 60.8 
+Jan 2004 to date 143.5 75.3 
+1  Three-month NDF.  
+Sources: Bloomberg; authors’ estimates.  
+ 
+rupiah also show similar but less pronounced trends. The market’s interpretation of the G7 communiqué on exchange rate flexibility in September 
+2003 looks to have manifested itself as a spike in the onshore/offshore yield 
+spreads for China, India and Taiwan.  
+=== PAGE 13 ===
+ 
+ 
+ 
+ 
+BIS Quarterly Review, June 2004  93
+ A notable exception to the above trend is the Philippine peso. Just as it 
+alone weakened vis-à-vis the US dollar in the spot market, it showed 
+consistently higher offshore NDF-implied interest rates.9  
+Over time, however, the estimated absolute spreads for all six Asian 
+currencies have narrowed considerably, so metimes by as much as two thirds, 
+and the variability of the estimated spreads has also diminished noticeably 
+(Graph 3). In addition to the possibility t hat pressure for appreciation is weaker 
+or more consistent than the depreciati on pressure in previous years, two 
+possible reasons for these observations c an be offered. First, liquidity in the 
+NDF markets and the quality of data on them may have improved. For 
+example, the initial large onshore/offshore yield spread for the Indonesian rupiah briefly seen around early 2001 may be due to a lack of liquidity in the 
+nascent rupiah NDF market. Second, controls on capital flows may have 
+diminished or may be consistently less e ffective against the recent incipient 
+inflows. For instance, until recently , most regulations on cross-border 
+transactions in China and Korea had been biased against capital outflows.  
+Conclusion 
+Six Asian currencies trade actively in NDF  markets. Their turnover represents 
+the bulk of global trading in NDFs and am ounts to a substantial fraction of 
+onshore outright forward and foreign exchange swap turnover in the same 
+currencies. Aggregate turnover in regional  NDFs has risen, particularly in the 
+renminbi. The Asian NDF volatility is ty pically larger than the spot counterpart, 
+owing in part to official intervention in the spot market. Asian NDFs tend to 
+correlate more positively with each ot her than do their spot counterparts and 
+respond similarly to movements in t he forwards of major currencies.  
+The wide spreads between onshore interest rates and NDF-implied 
+offshore interest rates suggest effect ive segmentation of onshore and offshore 
+markets in Asia, with the exception of Korea. The recent upward pressure on 
+most Asian currencies is evident in  the low and even negative NDF-implied 
+offshore interest rates. One implicati on of the large negative implied offshore 
+yields is that competing firms with or without offshore operations may face 
+rather different funding costs. However,  both the size and volatility of such 
+spreads have diminished in recent years for all six Asian currencies covered.  
+References 
+Bank for International Settlements (2002): Triennial central bank survey: 
+foreign exchange and derivatives market activity in 2001 , Basel, March. 
+Deutsche Bank (2003): Asian local bond markets , June.   
+Emerging Markets Traders Association (2003): First quarter 2003 emerging 
+market NDF volume survey , New York, April.  
+                                                      
+9  The large negative spread briefly observed around late 2000 and early 2001 was consistent 
+with the political inst ability at the time.  Spreads have 
+narrowed over time 
+=== PAGE 14 ===
+ 
+ 
+ 
+ 
+94 BIS Quarterly Review, June 2004 
+ Frankel, J (1992): “Measuring international capital mobility: a review”, American 
+Economic Review , vol 82, no 2, pp 197–202.  
+Goeltom, M (2002): “Indonesian policy on non-resident participation in the 
+money market: the restriction of rupiah  transactions and foreign currency credit 
+offered by banks”, in Papers presented at the ASEAN+3 high-level seminar on 
+short-term capital account liberalisation , pp 162–69, Beijing.  
+Hohensee, M and K Lee (2004): “A survey  on hedging markets in Asia”, paper 
+presented at the Korea Un iversity/BIS conference Asian bond markets: issues 
+and prospects , Seoul, March.  
+HSBC (2003): Asian FX Regulation Handbook , Hong Kong SAR, June.   
+Ishii, S, I Otker-Robe and L Cui (2001): “Measures to limit the offshore use of 
+currencies: pros and cons”, IMF Working Paper , WP01/43, April.  
+Jiang, G and R McCauley (2004): “Asian local currency bond markets”, in this 
+Quarterly Review , June.   
+Leven, R (2001): Asian FX trading environment , Lehman Brothers Tokyo.  
+Watanabe, K, H Akama and J Mifune (2002): “The effectiveness of capital 
+controls and monitoring: the case of  non-internationalisation of emerging 
+market currencies”, EMEAP Discussion Paper , January.  
+ 

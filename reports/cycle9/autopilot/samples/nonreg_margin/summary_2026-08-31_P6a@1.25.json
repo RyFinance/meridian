@@ -1,0 +1,367 @@
+{
+ "checked_state": null,
+ "checks": [
+  {
+   "detail": "post-trade NAV must be positive",
+   "limit": 0.0,
+   "name": "nav_positive",
+   "ok": true,
+   "value": 140203.12
+  },
+  {
+   "detail": "shorts are never allowed",
+   "limit": [],
+   "name": "no_negative_shares",
+   "ok": true,
+   "value": []
+  },
+  {
+   "detail": "USD is never borrowed",
+   "limit": 0.0,
+   "name": "usd_cash_non_negative",
+   "ok": true,
+   "value": 0.0
+  },
+  {
+   "detail": "effective gross exposure / NAV <= config target gross + add-on",
+   "limit": 2.025,
+   "name": "leverage_cap",
+   "ok": true,
+   "value": 1.856266
+  },
+  {
+   "detail": "margin account: equity / assets after trades",
+   "limit": 0.4,
+   "name": "equity_assets_floor",
+   "ok": true,
+   "value": 0.808094
+  },
+  {
+   "detail": "largest position vs its cap (SSO: max_position_sso; XEQT.TO/ZAG.TO: target + one_ticket_cap_addon; others: max_position)",
+   "limit": {
+    "max_position": 0.65,
+    "max_position_sso": 0.3,
+    "one_ticket_cap_addon": 0.05,
+    "per_ticker": {
+     "RSST": 0.65,
+     "XEQT.TO": 0.66875
+    }
+   },
+   "name": "position_cap",
+   "ok": true,
+   "value": {
+    "ticker": "RSST",
+    "weight": 0.618787
+   }
+  }
+ ],
+ "config": {
+  "account_type": "nonreg_margin",
+  "config_id": "P6a@1.25",
+  "error": null,
+  "exposures": {
+   "BOND": 0.0,
+   "EQ": 1.25,
+   "GOLD": 0.0,
+   "TREND": 0.625
+  },
+  "file": "config_P6a@1.25_nonreg_margin.json",
+  "label": "HYPOTHETICAL HOLDINGS — research sample, not a recommendation",
+  "overrides": {},
+  "owner_tolerance_pct": 50,
+  "portfolio_id": "sample|P6a@1.25|nonreg_margin",
+  "recipe_kind": "margin",
+  "recipe_loan_fraction": 0.25,
+  "recipe_weights": {
+   "RSST": 0.625,
+   "XEQT.TO": 0.625
+  },
+  "sha256": "586f3afcdd71f482b44651d33467d9740c864da629c7ce5d51e4b4291f3704e5",
+  "supported": true,
+  "target_gross": 1.875,
+  "uses_letf": false
+ },
+ "costs": {
+  "commission_cad": 0.0,
+  "fx_cad": 1.35,
+  "spread_cad": 6.2,
+  "total_cad": 7.56,
+  "turnover_cad": 11746.76,
+  "turnover_over_nav": 0.083779
+ },
+ "decision": {
+  "action": "full rebalance of all positions to target",
+  "borrow_capacity_cad": 35052.67,
+  "leverage_check": "leverage (assets/equity) 1.168 vs target 1.238: difference -0.070 <= 0.10",
+  "quarter_end": false,
+  "rows": [
+   {
+    "abs_trigger": false,
+    "calendar_trigger": false,
+    "current": 0.62345105,
+    "drift": 0.00470105,
+    "rel_drift": 0.007598,
+    "rel_trigger": false,
+    "target": 0.61875,
+    "ticker": "RSST"
+   },
+   {
+    "abs_trigger": true,
+    "calendar_trigger": false,
+    "current": 0.5395776,
+    "drift": -0.0791724,
+    "rel_drift": 0.127955,
+    "rel_trigger": false,
+    "target": 0.61875,
+    "ticker": "XEQT.TO"
+   }
+  ],
+  "triggered": true,
+  "triggers": [
+   {
+    "detail": [
+     "XEQT.TO: abs drift -7.92 pp > 5.00 pp"
+    ],
+    "kind": "band"
+   }
+  ]
+ },
+ "disclaimer": "Research tool output only. Nothing in this report is a recommendation to trade. No order has been placed, sent or generated for any broker; the owner reads it and decides.",
+ "drawdown": {
+  "alert": "NONE",
+  "drawdown": 0.0,
+  "fraction_of_tolerance": 0.0,
+  "policy": "Alerts never trigger automatic de-risking; the owner decides.",
+  "thresholds": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "tolerance": 0.5
+ },
+ "fx": {
+  "any_conversion": true,
+  "cad_to_usd": {
+   "cad_spent": 0.0,
+   "est_cost_cad": 0.0,
+   "for": [],
+   "usd_needed": 0.0
+  },
+  "usd_to_cad": {
+   "cad_needed": 1352.82,
+   "est_cost_cad": 1.35,
+   "for": [
+    "XEQT.TO"
+   ],
+   "usd_spent": 976.89
+  },
+  "usdcad": 1.3862
+ },
+ "inputs": {
+  "holdings": {
+   "as_of": "2026-08-31",
+   "error": null,
+   "file": "hypothetical_holdings_P6a@1.25_nonreg_margin.json",
+   "net_external_flow_cad": 0.0,
+   "sha256": "d8f04a492f9adefc55ebd94e7262ef35e3620ba92efe0727544eda074344a500"
+  },
+  "prices": {
+   "dataset_version": "autopilot_prices_20260831",
+   "error": null,
+   "expected_manifest_sha256": null,
+   "files": {
+    "prices/prices_20250829_20260831.csv": "be676d58576d04ae5f7119f63b244fab9333a4a388b5eaf16786120ade8d1099"
+   },
+   "manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab",
+   "max_date": "2026-08-31",
+   "mode": "verified",
+   "pinned_by_seq": 0,
+   "pinned_manifest_sha256": "69c20f1ef94453a5013076041b06fbd0a8830826f548b804db02f9e7b476efab"
+  },
+  "usdcad": {
+   "date": "2026-08-31",
+   "rate": 1.3862
+  }
+ },
+ "kind": "autopilot_rebalance_report",
+ "notes": [
+  "Margin recipe: unlevered sleeves x L funded partly by a margin loan; margin interest is not included in the cost estimates.",
+  "RSST: equity leg is US-only (S&P 500-like), stacked with managed futures."
+ ],
+ "paper_log": {
+  "entries_before": 9,
+  "prev_entry_hash": "be6cc12cec2707c8e1ba8c418e80df01f819c69e6c81895239c89114a19e24c0",
+  "seq": 9
+ },
+ "params": {
+  "alert_levels": {
+   "BREACH": 1.0,
+   "INFO": 0.5,
+   "WARNING": 0.75
+  },
+  "band_abs": 0.05,
+  "band_rel": 0.25,
+  "band_rel_min_abs": 0.01,
+  "calendar_abs": 0.01,
+  "calendar_months": [
+   3,
+   6,
+   9,
+   12
+  ],
+  "cash_buffer": 0.01,
+  "cash_buffer_vehicle": "broker_cash",
+  "commission_cad": 0.0,
+  "equity_assets_floor": 0.4,
+  "freshness_days": 5,
+  "fx_cost": 0.001,
+  "half_spread": {
+   "CASH.TO": 0.0005,
+   "DBMF": 0.001,
+   "GDE": 0.001,
+   "RSSB": 0.001,
+   "RSST": 0.001,
+   "SSO": 0.0003,
+   "XEQT.TO": 0.0005,
+   "ZAG.TO": 0.0005,
+   "ZGLD.TO": 0.001
+  },
+  "leverage_cap_addon": 0.15,
+  "margin_leverage_band": 0.1,
+  "max_position": 0.65,
+  "max_position_sso": 0.3,
+  "min_trade_cad": 100.0,
+  "one_ticket_cap_addon": 0.05
+ },
+ "portfolio_id": "sample|P6a@1.25|nonreg_margin",
+ "post_trade": {
+  "assets_cad": 173498.46,
+  "basis": "after the proposed trades (estimated)",
+  "cash_cad": 0.0,
+  "cash_usd": 0.0,
+  "equity_over_assets": 0.808094,
+  "etf_value_cad": 173498.46,
+  "gross_exposure_over_nav": 1.856266,
+  "leverage_assets_over_equity": 1.237479,
+  "margin_loan_cad": 33295.34,
+  "nav_cad": 140203.12,
+  "positions": [
+   {
+    "ccy": "USD",
+    "close": 33.94,
+    "price_date": "2026-08-31",
+    "shares": 1844,
+    "target": 0.61875,
+    "ticker": "RSST",
+    "value_cad": 86755.83,
+    "weight": 0.6187867
+   },
+   {
+    "ccy": "CAD",
+    "close": 45.63,
+    "price_date": "2026-08-31",
+    "shares": 1901,
+    "target": 0.61875,
+    "ticker": "XEQT.TO",
+    "value_cad": 86742.63,
+    "weight": 0.61869258
+   }
+  ],
+  "sleeve_exposure_over_nav": {
+   "BOND": 0.0,
+   "EQ": 1.237479,
+   "GOLD": 0.0,
+   "TREND": 0.618787
+  }
+ },
+ "refusal_reasons": [],
+ "report_date": "2026-08-31",
+ "report_file": "report_2026-08-31_P6a@1.25.md",
+ "report_sha256": "3c35c29e43500d26b7264a0545c6f2c221c205b411f86e6f84b161d75ccd8011",
+ "schema": "autopilot_v1",
+ "skipped_trades": [],
+ "status": "accepted",
+ "targets": {
+  "RSST": 0.61875,
+  "XEQT.TO": 0.61875
+ },
+ "trades": [
+  {
+   "ccy": "USD",
+   "est_commission_cad": 0.0,
+   "est_cost_cad": 0.66,
+   "est_price": 33.94,
+   "est_spread_cad": 0.66,
+   "est_value_cad": 658.67,
+   "est_value_ccy": 475.16,
+   "note": null,
+   "shares": 14,
+   "side": "SELL",
+   "ticker": "RSST"
+  },
+  {
+   "ccy": "CAD",
+   "est_commission_cad": 0.0,
+   "est_cost_cad": 5.54,
+   "est_price": 45.63,
+   "est_spread_cad": 5.54,
+   "est_value_cad": 11088.09,
+   "est_value_ccy": 11088.09,
+   "note": null,
+   "shares": 243,
+   "side": "BUY",
+   "ticker": "XEQT.TO"
+  }
+ ],
+ "trades_emitted": true,
+ "unit_ledger": {
+  "carried": true,
+  "flow_applied_cad": 0.0,
+  "initialised": true,
+  "net_external_flow_cad": 0.0,
+  "peak": 100.0,
+  "prior_report_date": null,
+  "unit_value": 100.0,
+  "units": 1402.1067632600002,
+  "units_before": null
+ },
+ "valuation": {
+  "assets_cad": 163765.2,
+  "cash_cad": 0.0,
+  "cash_usd": 502.21,
+  "equity_over_assets": 0.856169,
+  "etf_value_cad": 163069.03,
+  "gross_exposure_over_nav": 1.78648,
+  "leverage_assets_over_equity": 1.167994,
+  "margin_loan_cad": 23554.52,
+  "nav_cad": 140210.68,
+  "positions": [
+   {
+    "ccy": "USD",
+    "close": 33.94,
+    "price_date": "2026-08-31",
+    "shares": 1858,
+    "target": 0.61875,
+    "ticker": "RSST",
+    "value_cad": 87414.49,
+    "weight": 0.62345105
+   },
+   {
+    "ccy": "CAD",
+    "close": 45.63,
+    "price_date": "2026-08-31",
+    "shares": 1658,
+    "target": 0.61875,
+    "ticker": "XEQT.TO",
+    "value_cad": 75654.54,
+    "weight": 0.5395776
+   }
+  ],
+  "sleeve_exposure_over_nav": {
+   "BOND": 0.0,
+   "EQ": 1.163029,
+   "GOLD": 0.0,
+   "TREND": 0.623451
+  }
+ }
+}

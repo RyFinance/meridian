@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict>
+<key>Label</key><string>com.rytty.quant_v7.zb_itb_live_failsafe</string>
+<key>ProgramArguments</key><array><string>/usr/bin/caffeinate</string><string>-i</string><string>/Users/rytty/CCP/quant_v7/.venv/bin/python</string><string>-m</string><string>live.zb_itb.trader</string><string>failsafe</string></array>
+<key>WorkingDirectory</key><string>/Users/rytty/CCP/quant_v7</string><key>EnvironmentVariables</key><dict><key>PYTHONPATH</key><string>/Users/rytty/CCP/quant_v7</string></dict>
+<key>StartCalendarInterval</key><array><dict><key>Weekday</key><integer>1</integer><key>Hour</key><integer>12</integer><key>Minute</key><integer>50</integer></dict><dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>12</integer><key>Minute</key><integer>50</integer></dict><dict><key>Weekday</key><integer>3</integer><key>Hour</key><integer>12</integer><key>Minute</key><integer>50</integer></dict><dict><key>Weekday</key><integer>4</integer><key>Hour</key><integer>12</integer><key>Minute</key><integer>50</integer></dict><dict><key>Weekday</key><integer>5</integer><key>Hour</key><integer>12</integer><key>Minute</key><integer>50</integer></dict></array>
+<key>StandardOutPath</key><string>/Users/rytty/Library/Logs/quant_v7/zb_itb_live_failsafe.log</string><key>StandardErrorPath</key><string>/Users/rytty/Library/Logs/quant_v7/zb_itb_live_failsafe.log</string>
+</dict></plist>

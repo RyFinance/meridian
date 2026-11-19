@@ -1,0 +1,106 @@
+{
+  "all_available_mstr_baseline_including_frozen_gap_tail": {
+    "annualized_sharpe": 1.871340940545582,
+    "cagr": 2.2520830847748483,
+    "end": "2026-10-16",
+    "entry_trades": 4,
+    "exit_trades": 4,
+    "max_drawdown": -0.17791702187785197,
+    "round_trips": 4,
+    "sessions": 48,
+    "start": "2026-08-11",
+    "time_long": 0.875,
+    "total_return": 0.23750413993163622
+  },
+  "carried_stance_at_extension_start": false,
+  "cost_consistent_mstr_buy_and_hold_descriptive_benchmark": {
+    "all_available_mstr": {
+      "annualized_sharpe": 2.872683219717643,
+      "cagr": 8.340891782432296,
+      "end": "2026-10-16",
+      "entry_trades": 1,
+      "exit_trades": 1,
+      "max_drawdown": -0.17791702187785197,
+      "round_trips": 1,
+      "sessions": 48,
+      "start": "2026-08-11",
+      "time_long": 1.0,
+      "total_return": 0.49743293130042976
+    },
+    "note": "This is a descriptive benchmark, not a fourth rule or an optimization input.",
+    "source_observed": {
+      "annualized_sharpe": 4.372642341755324,
+      "cagr": 37.91405932450378,
+      "end": "2026-09-30",
+      "entry_trades": 1,
+      "exit_trades": 1,
+      "max_drawdown": -0.09434497385283647,
+      "round_trips": 1,
+      "sessions": 36,
+      "start": "2026-08-11",
+      "time_long": 1.0,
+      "total_return": 0.6507211723999569
+    }
+  },
+  "costs": {
+    "commission_usd_per_actual_share_each_entry_or_exit": 0.005,
+    "note": "Every extension entry/exit is executed at open*(1 +/- 3bp) +/- $0.005/share. The standalone extension rebases to cash just before its first opening execution and charges a new entry if the carried stance is long.",
+    "slippage_bps_each_entry_or_exit": 3.0
+  },
+  "coverage": {
+    "available_mstr_last_session": "2026-10-16",
+    "binance_missing_mstr_sessions_within_forward_through_observed_end": 0,
+    "binance_observed_first_session": "2026-08-11",
+    "binance_observed_last_session": "2026-09-30",
+    "binance_observed_mstr_sessions": 36,
+    "forward_first_session": "2026-08-11",
+    "frozen_gap_policy": "No BTC price is filled after Binance ends; M1 carries its previously known stance and MSTR open-to-open P&L remains booked.",
+    "post_binance_gap_first_mstr_session": "2026-10-01",
+    "post_binance_missing_btc_mstr_sessions": 12,
+    "primary_last_usable_1559_mstr_session": "2026-08-10"
+  },
+  "data_provenance": {
+    "frozen_amendment": {
+      "path": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/agent_mnav/FROZEN_RULES_AMENDMENT_01.json",
+      "sha256": "6dafec5824ae7ea66cb35f471bd826a5e14b20fd7f8a0a28ecd51fc17285d1f8"
+    },
+    "frozen_rules": {
+      "path": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/agent_mnav/FROZEN_RULES.json",
+      "sha256": "24a76236dcf954e8a2d89ed5b505291a89bac9ea28625acf453f841829ca88ba"
+    },
+    "mstr_daily": {
+      "path": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/mstr_daily_yf.parquet",
+      "sha256": "2a69da621f275570b72e2727a1b14752e2c36a980da975cb4927c04d8f1cd2d7"
+    },
+    "primary_btc": {
+      "path": "/Users/rytty/CCP/BTC-Acum/data/btc_usd_1m_candles_polymarket_arb.parquet",
+      "sha256": "234e3c8a3c8e4c26a1a33c46501fdd8213ccfc1c62f1d5b398a4a8a38f53318b"
+    },
+    "sec_ledger": {
+      "path": "/Users/rytty/CCP/quant_v7/research/mstr_btc_0dte/agent_mnav/ALL_SEC_OBSERVATIONS.csv",
+      "sha256": "c6600555c8c043ec93d6ba01689fabe60e634ea051ebe67660a5c537d3e7e1ea"
+    }
+  },
+  "endpoint_note": "The simulator forces liquidation at the final included MSTR open under the same costs. Therefore an end date D includes open-to-open performance through D's open, not unknown performance after that open.",
+  "gap_tail_mark_to_market_from_2026_09_30_open_to_final_open": -0.09316170984742445,
+  "rule": {
+    "btc_cutoff": "Completed 15:59 ET BTC bar; 16:00-labelled minute bars excluded.",
+    "decision": "After MSTR close: 10-session gross-BTC-mNAV-proxy log momentum > 0 and proxy > its 50-session SMA.",
+    "execution": "Next MSTR regular-session open; long/cash only.",
+    "id": "M1"
+  },
+  "scope": "Frozen M1 forward source-transition extension only; no parameter search, no live orders.",
+  "source_observed_baseline": {
+    "annualized_sharpe": 3.312863399186422,
+    "cagr": 8.666010929706458,
+    "end": "2026-09-30",
+    "entry_trades": 4,
+    "exit_trades": 4,
+    "max_drawdown": -0.09434497385283658,
+    "round_trips": 4,
+    "sessions": 36,
+    "start": "2026-08-11",
+    "time_long": 0.8333333333333334,
+    "total_return": 0.36418415944928184
+  }
+}

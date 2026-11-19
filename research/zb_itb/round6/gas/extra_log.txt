@@ -1,0 +1,14 @@
+                  test  exit  dev_bp  dev_t  chk_bp  chk_t  n_chk
+           gas-pool NG x1030   -1.41  -0.29    3.94   0.85    314
+           gas-pool NG x1130    0.56   0.10    0.85   0.17    314
+           gas-pool NG    xc    0.10   0.01   -0.81  -0.13    314
+           oil-pool CL x1030   -6.44  -0.91   -9.17  -1.57    313
+           oil-pool CL x1130   -7.01  -0.85   -6.77  -1.02    313
+           oil-pool CL    xc  -19.17  -1.63   -9.50  -1.14    313
+hedged EQT vs SPY (NG) x1130   15.85   1.71   10.69   1.25    312
+hedged EQT vs SPY (NG) x1030    3.60   0.43   12.57   1.64    312
+hedged EXE vs SPY (NG) x1030    7.21   0.93   15.47   2.16    312
+hedged EXE vs SPY (NG) x1130   11.09   1.30   15.06   1.87    312
+hedged LNG vs SPY (NG) x1030    4.93   0.71    9.20   1.32    312
+hedged XLE vs SPY (CL)    xc   -3.53  -0.53   -7.67  -1.10    312
+hedged XOP vs SPY (CL) x1030   -0.11  -0.02   -5.88  -0.97    312

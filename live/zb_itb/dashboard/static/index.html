@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="glint">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gapup — desk</title>
+<link rel="icon" href="data:,">
+<script>
+  try {
+    var t = JSON.parse(localStorage.getItem("zb-term-theme-v4") || "null");
+    if (t === "glint" || t === "mummy" || t === "flash") document.documentElement.dataset.theme = t;
+  } catch (e) { /* ignore */ }
+</script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bg/reactbits.css">
+</head>
+<body>
+
+<!-- ═══════════════════════ sakura scene ═══════════════════════ -->
+<div id="bg-scene" aria-hidden="true"></div>
+<div class="scene" aria-hidden="true">
+  <svg class="branch scene-art" viewBox="0 0 1600 90" preserveAspectRatio="none">
+    <defs>
+      <g id="blossom">
+        <ellipse cx="0" cy="-5.2" rx="3.3" ry="4.7"></ellipse>
+        <ellipse cx="0" cy="-5.2" rx="3.3" ry="4.7" transform="rotate(72)"></ellipse>
+        <ellipse cx="0" cy="-5.2" rx="3.3" ry="4.7" transform="rotate(144)"></ellipse>
+        <ellipse cx="0" cy="-5.2" rx="3.3" ry="4.7" transform="rotate(216)"></ellipse>
+        <ellipse cx="0" cy="-5.2" rx="3.3" ry="4.7" transform="rotate(288)"></ellipse>
+        <circle r="1.5" class="blossom-center"></circle>
+      </g>
+    </defs>
+    <g class="branch-art">
+      <path class="branch-line" d="M-20 56 C 170 38 300 50 470 34 C 640 18 760 40 900 28 C 1060 14 1220 34 1620 10"></path>
+      <path class="branch-twig" d="M 205 46 C 270 26 330 20 410 14"></path>
+      <path class="branch-twig" d="M 470 34 C 520 46 570 52 640 48"></path>
+      <path class="branch-twig" d="M 755 30 C 815 14 870 10 940 8"></path>
+      <path class="branch-twig" d="M 1040 24 C 1100 38 1160 42 1230 38"></path>
+      <path class="branch-twig" d="M 1240 20 C 1300 8 1360 6 1440 4"></path>
+      <path class="branch-twig" d="M 1180 34 C 1210 22 1240 17 1275 13"></path>
+
+      <use href="#blossom" transform="translate(180 43) scale(0.9)"></use>
+      <use href="#blossom" transform="translate(300 35) scale(0.55)"></use>
+      <use href="#blossom" transform="translate(410 14) scale(1.05)"></use>
+      <use href="#blossom" transform="translate(470 34) scale(0.8)"></use>
+      <use href="#blossom" transform="translate(560 49) scale(0.62)"></use>
+      <use href="#blossom" transform="translate(640 48) scale(0.72)"></use>
+      <use href="#blossom" transform="translate(700 36) scale(0.5)"></use>
+      <use href="#blossom" transform="translate(760 29) scale(0.92)"></use>
+      <use href="#blossom" transform="translate(850 13) scale(0.6)"></use>
+      <use href="#blossom" transform="translate(940 8) scale(0.92)"></use>
+      <use href="#blossom" transform="translate(1040 24) scale(0.62)"></use>
+      <use href="#blossom" transform="translate(1120 39) scale(0.82)"></use>
+      <use href="#blossom" transform="translate(1195 31) scale(0.5)"></use>
+      <use href="#blossom" transform="translate(1230 38) scale(0.78)"></use>
+      <use href="#blossom" transform="translate(1275 13) scale(0.55)"></use>
+      <use href="#blossom" transform="translate(1300 7) scale(0.95)"></use>
+      <use href="#blossom" transform="translate(1440 4) scale(0.82)"></use>
+      <use href="#blossom" transform="translate(1510 8) scale(0.55)"></use>
+
+      <circle class="bud" cx="235" cy="41" r="1.5"></circle>
+      <circle class="bud" cx="350" cy="22" r="1.35"></circle>
+      <circle class="bud" cx="520" cy="47" r="1.2"></circle>
+      <circle class="bud" cx="815" cy="19" r="1.4"></circle>
+      <circle class="bud" cx="1000" cy="19" r="1.2"></circle>
+      <circle class="bud" cx="1160" cy="36" r="1.35"></circle>
+      <circle class="bud" cx="1370" cy="4" r="1.2"></circle>
+    </g>
+  </svg>
+
+  <div class="starfield scene-art" aria-hidden="true"></div>
+
+  <svg class="pines scene-art" viewBox="0 0 1600 46" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <path id="pine-tree" d="M0 -15 L4 -8 L2 -8 L6 0 L3 0 L7 7 L-7 7 L-3 0 L-6 0 L-2 -8 L-4 -8 Z"></path>
+    </defs>
+    <circle class="moon" cx="1328" cy="13" r="5.5"></circle>
+    <path class="ridge" d="M0 46 L0 39 C 120 34 240 39 360 35 C 520 30 650 38 800 35 C 980 31 1120 38 1270 34 C 1400 31 1510 36 1600 33 L1600 46 Z"></path>
+    <g class="pines-row">
+      <use class="pine" href="#pine-tree" transform="translate(70 41) scale(.72)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(150 41) scale(.5)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(245 42) scale(.92)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(338 41) scale(.62)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(438 42) scale(.84)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(540 41) scale(.55)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(660 42) scale(.68)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(790 41) scale(.5)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(930 42) scale(.78)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(1080 41) scale(.58)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(1220 42) scale(.86)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(1370 41) scale(.62)"></use>
+      <use class="pine" href="#pine-tree" transform="translate(1510 40) scale(.5)"></use>
+    </g>
+  </svg>
+
+  <svg class="dunes scene-art" viewBox="0 0 1600 46" preserveAspectRatio="none" aria-hidden="true">
+    <circle class="sun" cx="1240" cy="22" r="5.5"></circle>
+    <path class="dune dune-1" d="M0 46 L0 32 C 210 20 360 28 540 30 C 760 32 910 22 1110 26 C 1280 29 1430 23 1600 28 L1600 46 Z"></path>
+    <path class="dune dune-2" d="M0 46 L0 38 C 200 30 380 38 580 36 C 820 34 980 40 1180 35 C 1370 31 1490 38 1600 36 L1600 46 Z"></path>
+  </svg>
+</div>
+<div class="atmos" id="atmos" aria-hidden="true"></div>
+
+<div class="scene-ui">
+  <div class="scene-brand">
+    <span class="glyph">✦</span>
+    <span id="theme-name">glint</span>
+    <span class="scene-sub">paper desk · read-only</span>
+  </div>
+  <div class="theme-picker" id="theme-picker" role="group" aria-label="theme">
+    <button class="swatch" data-theme-choice="glint" title="glint · icy sparkle in the dark" aria-label="glint theme"></button>
+    <button class="swatch" data-theme-choice="mummy" title="mummy · pink lightning, green wraps" aria-label="mummy theme"></button>
+    <button class="swatch" data-theme-choice="flash" title="flash · white flash at night" aria-label="flash theme"></button>
+  </div>
+</div>
+
+<main class="term" id="term">
+
+  <header class="titlebar">
+    <div class="lights" id="lights">
+      <button class="light red"    data-g="×" title="reset layout and pane themes" aria-label="reset layout and pane themes"></button>
+      <button class="light yellow" data-g="−" title="cycle theme for the whole desk" aria-label="cycle theme for the whole desk"></button>
+      <button class="light green"  data-g="+" title="fullscreen" aria-label="fullscreen"></button>
+    </div>
+    <div class="win-title" id="win-title">gapup — -zsh — 142×41</div>
+    <div class="win-right">
+      <span class="mode-badge" id="mode-badge">PAPER</span>
+      <span class="conn" id="conn"><i></i><span>OFF</span></span>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="desk">desk</button>
+    <button class="tab" data-tab="research">research</button>
+    <button class="tab" data-tab="background">background</button>
+    <button class="tab" data-tab="nail">head to head</button>
+    <span class="tabs-fill"></span>
+    <span class="tabs-hint" id="tabs-hint">1–4 · r refresh · / cmd</span>
+  </nav>
+
+  <section class="screen" id="screen">
+
+    <!-- ═══════════════════════════ DESK ═══════════════════════════ -->
+    <div class="page active" data-page="desk">
+
+      <article class="pane span-5" data-pane="signal">
+        <header class="pane-head">
+          <span class="pi">01</span><span class="pt">SIGNAL</span>
+          <span class="pmeta" data-meta="signal">…</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-signal"><div class="skeleton">reading signal…</div></div>
+      </article>
+
+      <article class="pane span-4" data-pane="account">
+        <header class="pane-head">
+          <span class="pi">02</span><span class="pt">ACCOUNT <span class="ph-sep">/</span> MILESTONE</span>
+          <span class="pmeta" data-meta="account">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-account"></div>
+      </article>
+
+      <article class="pane span-3" data-pane="timeline">
+        <header class="pane-head">
+          <span class="pi">03</span><span class="pt">SESSION</span>
+          <span class="pmeta" data-meta="timeline">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-timeline"></div>
+      </article>
+
+      <article class="pane span-4 chart-pane" data-pane="liveeq">
+        <header class="pane-head">
+          <span class="pi">04</span><span class="pt">ITB EQUITY</span>
+          <span class="pmeta" data-meta="liveeq">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-liveeq"></div>
+      </article>
+
+      <article class="pane span-4 chart-pane" data-pane="naileq-desk">
+        <header class="pane-head">
+          <span class="pi">05</span><span class="pt">NAIL EQUITY (3×)</span>
+          <span class="pmeta" data-meta="naileq-desk">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-naileq-desk"></div>
+      </article>
+
+      <article class="pane span-4" data-pane="tape">
+        <header class="pane-head">
+          <span class="pi">06</span><span class="pt">DECISION TAPE</span>
+          <span class="pmeta" data-meta="tape">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-tape"></div>
+      </article>
+
+      <article class="pane span-12" data-pane="returns">
+        <header class="pane-head">
+          <span class="pi">07</span><span class="pt">TOTAL RETURN <span class="ph-sep">/</span> ITB vs NAIL</span>
+          <span class="pmeta" data-meta="returns">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-returns"><div class="skeleton">reading returns…</div></div>
+      </article>
+
+    </div>
+
+    <!-- ═════════════════════════ RESEARCH ═════════════════════════ -->
+    <div class="page" data-page="research">
+
+      <article class="pane span-12 tldr-pane" data-pane="tldr">
+        <header class="pane-head">
+          <span class="pi">00</span><span class="pt">TL;DR</span>
+          <span class="pmeta" data-meta="tldr">THE WHOLE PAGE IN ONE BREATH</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-tldr"><div class="skeleton">reading the evidence…</div></div>
+      </article>
+
+      <article class="pane span-12" data-pane="forward">
+        <header class="pane-head">
+          <span class="pi">06</span><span class="pt">FORWARD TEST</span>
+          <span class="pmeta" data-meta="forward">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-forward"></div>
+      </article>
+
+      <article class="pane span-8 chart-pane" data-pane="equity">
+        <header class="pane-head">
+          <span class="pi">07</span><span class="pt">EQUITY CURVE</span>
+          <span class="pmeta" data-meta="equity">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-equity"></div>
+      </article>
+
+      <article class="pane span-4" data-pane="kpi">
+        <header class="pane-head">
+          <span class="pi">08</span><span class="pt">STATISTICS</span>
+          <span class="pmeta" data-meta="kpi">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-kpi"></div>
+      </article>
+
+      <article class="pane span-12" data-pane="cmp">
+        <header class="pane-head">
+          <span class="pi">08b</span><span class="pt">LEG COMPARE <span class="ph-sep">/</span> ITB vs NAIL · LONG + SHORT vs LONG-ONLY</span>
+          <span class="pmeta" data-meta="cmp">SAME ZB SIGNAL · $1,000 EACH</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-cmp"><div class="skeleton">loading leg comparison…</div></div>
+      </article>
+
+      <article class="pane span-5 chart-pane" data-pane="monthly">
+        <header class="pane-head">
+          <span class="pi">09</span><span class="pt">MONTHLY RETURNS</span>
+          <span class="pmeta" data-meta="monthly">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-monthly"></div>
+      </article>
+
+      <article class="pane span-3" data-pane="costs">
+        <header class="pane-head">
+          <span class="pi">10</span><span class="pt">COST &amp; EXIT</span>
+          <span class="pmeta" data-meta="costs">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-costs"></div>
+      </article>
+
+      <article class="pane span-4" data-pane="robust">
+        <header class="pane-head">
+          <span class="pi">11</span><span class="pt">ROBUSTNESS</span>
+          <span class="pmeta" data-meta="robust">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-robust"></div>
+      </article>
+
+      <article class="pane span-12" data-pane="eras">
+        <header class="pane-head">
+          <span class="pi">12</span><span class="pt">LONG HISTORY</span>
+          <span class="pmeta" data-meta="eras">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-eras"></div>
+      </article>
+
+    </div>
+
+    <!-- ═══════════════════ HEAD TO HEAD (ITB vs NAIL) ═══════════════════ -->
+    <div class="page" data-page="nail">
+      <article class="pane span-12" data-pane="nailctl">
+        <header class="pane-head">
+          <span class="pi">20</span><span class="pt">HEAD TO HEAD <span class="ph-sep">/</span> ITB vs NAIL</span>
+          <span class="pmeta" data-meta="nailctl">SAME ZB SIGNAL · $2,000 EACH</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-nailctl"><div class="skeleton">loading ITB vs NAIL…</div></div>
+      </article>
+      <article class="pane span-6 chart-pane" data-pane="itbeq">
+        <header class="pane-head">
+          <span class="pi">21</span><span class="pt">ITB EQUITY</span>
+          <span class="pmeta" data-meta="itbeq">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-itbeq"><div class="skeleton">loading ITB vs NAIL…</div></div>
+      </article>
+      <article class="pane span-6 chart-pane" data-pane="naileq">
+        <header class="pane-head">
+          <span class="pi">22</span><span class="pt">NAIL EQUITY (3×)</span>
+          <span class="pmeta" data-meta="naileq">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-naileq"><div class="skeleton">loading ITB vs NAIL…</div></div>
+      </article>
+      <article class="pane span-12" data-pane="naildaily">
+        <header class="pane-head">
+          <span class="pi">23</span><span class="pt">DAY BY DAY</span>
+          <span class="pmeta" data-meta="naildaily">—</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body" id="p-naildaily"><div class="skeleton">loading ITB vs NAIL…</div></div>
+      </article>
+    </div>
+
+    <!-- ═══════════════════════ BACKGROUND ═════════════════════════ -->
+    <div class="page" data-page="background">
+
+      <article class="pane span-12 bg-pane" data-pane="background">
+        <header class="pane-head">
+          <span class="pi">13</span><span class="pt">BACKGROUND</span>
+          <span class="pmeta" data-meta="background">MODEL MEMORY · REASONING</span>
+          <span class="pctl"><button class="light red" data-act="close" data-g="×" title="close pane" aria-label="close pane"></button><button class="light yellow" data-act="theme" data-g="−" title="cycle pane theme" aria-label="cycle pane theme"></button><button class="light green" data-act="max" data-g="+" title="maximize pane" aria-label="maximize pane"></button></span>
+        </header>
+        <div class="pane-body bg-body" id="p-background">
+          <div class="skeleton">reading the model's working memory…</div>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+  <div class="console" id="console"><div class="console-inner" id="console-inner"></div></div>
+
+  <div class="prompt" id="prompt">
+    <span class="ps1">rytty@slimebook</span>
+    <span class="ps2">gapup</span>
+    <span class="ps3">%</span>
+    <span class="input-wrap">
+      <input id="cmd" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="terminal command">
+      <span id="ghost"></span>
+      <span id="block" class="block"></span>
+    </span>
+    <span class="prompt-hint">type <b>help</b> · <b>↑↓</b> history</span>
+  </div>
+
+  <footer class="statusbar">
+    <span class="sb-session">gapup</span>
+    <button class="sb-win active" data-tab="desk"><span class="n">1</span>desk<span class="star">*</span></button>
+    <button class="sb-win" data-tab="research"><span class="n">2</span>research</button>
+    <button class="sb-win" data-tab="background"><span class="n">3</span>background</button>
+    <button class="sb-win" data-tab="nail"><span class="n">4</span>head to head</button>
+    <span class="sb-right">
+      <span id="sb-kill" class="sb-kill">KILL —</span>
+      <span id="sb-broker">IBKR · PAPER</span>
+      <span id="sb-conn"><i class="dot"></i>OFFLINE</span>
+      <span id="sb-clock">--:--:--</span>
+    </span>
+  </footer>
+
+</main>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <header class="modal-head">
+      <span class="lights"><button id="modal-close" class="light red" data-g="×" title="close" aria-label="close"></button></span>
+      <span class="pt" id="modal-title">RAW</span>
+    </header>
+    <pre id="modal-body"></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script src="vendor/react/react.production.min.js"></script>
+<script src="vendor/react/react-dom.production.min.js"></script>
+<script src="bg/ImageDither.js"></script>
+<script src="bg/GhostFibers.js"></script>
+<script src="bg/scene.js"></script>
+</body>
+</html>

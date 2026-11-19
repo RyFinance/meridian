@@ -1,0 +1,17 @@
+HTTP/1.1 200 Connection Established
+
+HTTP/1.1 200 OK
+Server: Apache
+Last-Modified: Fri, 21 Feb 2014 16:05:24 GMT
+ETag: "3550a-4f2ecca1dd900"
+Accept-Ranges: bytes
+Content-Length: 218378
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+Cache-Control: public, max-age=3600, s-maxage=3600
+Date: Sun, 27 Sep 2026 23:11:59 GMT
+Connection: keep-alive
+Content-Security-Policy: frame-ancestors 'self' https://web.mit.edu https://www.mit.edu http://web.mit.edu http://www.mit.edu
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=600
+Akamai-GRN: 0.74951eb8.1790550718.e793e0d8
+
